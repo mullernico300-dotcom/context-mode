@@ -502,7 +502,13 @@
 
     function fokus(k) {
       const z = zelleEl(k);
-      if (z) { const i = z.querySelector('input'); i.focus({ preventScroll: false }); i.select(); }
+      if (!z) return;
+      const i = z.querySelector('input');
+      i.focus({ preventScroll: true });
+      i.select();
+      // selbst scrollen, damit das Feld nicht unter der schwebenden Kopfleiste landet
+      const b = z.getBoundingClientRect();
+      if (b.top < 150 || b.bottom > window.innerHeight - 20) window.scrollBy({ top: b.top - Math.min(260, window.innerHeight / 3), behavior: 'instant' });
     }
 
     function waehleZelle(k, umschalten) {
@@ -566,7 +572,6 @@
         const w = r.woerter[aktiv];
         aktualisiere();
         fokus(w.zellen.find((k) => !eingabe[k]) || w.zellen[0]);
-        el.querySelector('.raetsel-feld').scrollIntoView({ block: 'start', behavior: 'smooth' });
         return;
       }
       const b = e.target.closest('[data-r]');
