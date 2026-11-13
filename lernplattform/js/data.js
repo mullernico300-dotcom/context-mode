@@ -1571,7 +1571,7 @@ window.LERN_DATEN = {
         {
           "gruppe": "Arbeitsvertrag: Form, Befristung, Rechte und Pflichten",
           "ref": "§ 4 NachwG",
-          "text": "Hält der Arbeitgeber das nicht ein, droht ein Bußgeld bis 2.000 €. Der Arbeitsvertrag bleibt trotzdem gültig."
+          "text": "Händigt der Arbeitgeber die Vertragsbedingungen nicht schriftlich aus, droht ein Bußgeld bis 2.000 €. Der Arbeitsvertrag bleibt trotzdem gültig."
         },
         {
           "gruppe": "Arbeitsvertrag: Form, Befristung, Rechte und Pflichten",
@@ -1636,7 +1636,7 @@ window.LERN_DATEN = {
         {
           "gruppe": "Arbeitszeit, Pausen und Urlaub",
           "ref": "§ 5 BUrlG",
-          "text": "Vorher gibt es Teilurlaub: für jeden vollen Monat 1/12 des Jahresurlaubs. Halbe Tage und mehr werden aufgerundet."
+          "text": "In den ersten 6 Monaten gibt es Teilurlaub: für jeden vollen Monat 1/12 des Jahresurlaubs. Halbe Tage und mehr werden aufgerundet."
         },
         {
           "gruppe": "Arbeitszeit, Pausen und Urlaub",
@@ -1661,7 +1661,7 @@ window.LERN_DATEN = {
         {
           "gruppe": "Krankheit",
           "ref": "§ 44 SGB V",
-          "text": "Nach den 6 Wochen zahlt die Krankenkasse Krankengeld."
+          "text": "Nach 6 Wochen Krankheit endet die Lohnfortzahlung. Dann zahlt die Krankenkasse Krankengeld."
         },
         {
           "gruppe": "Mutterschutz",
@@ -1771,7 +1771,7 @@ window.LERN_DATEN = {
         {
           "gruppe": "Kündigung und Kündigungsschutz",
           "ref": "§ 1 Abs. 2 KSchG",
-          "text": "Dann braucht der Arbeitgeber einen Grund: in der Person (z. B. lange Krankheit), im Verhalten (z. B. ständiges Zuspätkommen) oder im Betrieb (z. B. Auftragsmangel)."
+          "text": "Greift der Kündigungsschutz, braucht der Arbeitgeber für die Kündigung einen Grund: in der Person (z. B. lange Krankheit), im Verhalten (z. B. ständiges Zuspätkommen) oder im Betrieb (z. B. Auftragsmangel)."
         },
         {
           "gruppe": "Kündigung und Kündigungsschutz",

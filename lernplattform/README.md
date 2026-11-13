@@ -9,6 +9,9 @@ Eine Web-App ohne Installation, ohne Anmeldung und ohne Server-Logik. Für jedes
 | 🃏 **Karteikarten** | Umdrehen per Tipp/Klick, „Schon gewusst“ / „Noch üben“, Filter nach Stapel, Mischen |
 | 🏆 **Quiz-Show** | Bis zu 10 Fragen mit steigender Schwierigkeit, Punktestufen, Sicherheitsstufen, Timer, zwei Joker, Highscore |
 | 🧩 **Kreuzworträtsel** | Wird automatisch aus der Wortliste erzeugt, prüft jedes vollständig ausgefüllte Wort sofort (grün/rot) |
+| ▶ **Tages-Training** | 7 gemischte Fragen aus allen Fächern mit drei Herzen; eigene Fehler kommen wieder dran |
+| ⚡ **Paare-Spiel** | Begriff und Erklärung auf Zeit zuordnen, mit Bestzeit |
+| 🔥 **Punkte, Serie, Abzeichen** | XP und Level, Tagesziel, Lerntage in Folge, 13 Abzeichen |
 
 Die App behandelt **ausschließlich Lernfelder**. Einträge, die als EStG- oder USt-Seminar benannt sind, werden weder in der Navigation noch in den Inhalten angezeigt (Filter in `js/store.js`).
 
@@ -92,6 +95,11 @@ Hinweise:
 
 `artifact.html` ist dieselbe Seite ohne HTML-Gerüst. Sie wird zusammen mit `css/` und `js/` als Artefakt veröffentlicht. Für neue Inhalte genügt es, dort `js/data.js` zu ersetzen. Die Felder `registerId` und `registerStand` in `data.js` merken, aus welchem Fach des Lernregisters ein Eintrag stammt und wie aktuell er ist.
 
+## Automatische Inhalte und Wiederholen
+
+- Hat ein Fach keine eigenen Karteikarten, entstehen sie automatisch aus den Paragrafen („Was regelt § …?“). Hat es weniger als fünf Quizfragen, kommen Zuordnungsfragen aus den Paragrafen dazu.
+- Karteikarten wandern durch fünf Fächer. Gewusste Karten kommen nach 1, 3, 7 und 21 Tagen wieder, nicht gewusste sofort. Der Filter „Heute dran“ zeigt, was fällig ist.
+
 ## Lernfortschritt und Datenschutz
 
 Karteikarten-Status, Highscores und gelöste Rätsel werden nur lokal im Browser des jeweiligen Geräts gespeichert (`localStorage`). Es werden keine Daten übertragen, es gibt keine Konten, keine Cookies, keine externen Dienste und keine Schriftarten von Dritten.
@@ -107,6 +115,7 @@ lernplattform/
     ├── data.js         ALLE Inhalte – diese Datei wird gepflegt
     ├── store.js        Laden/Speichern, Lernfortschritt, Lernfeld-Filter
     ├── crossword.js    Kreuzworträtsel-Generator
+    ├── extras.js       Punkte, Serie, Abzeichen, Tages-Training, Paare-Spiel, Wiederhol-Abstände
     ├── admin.js        Verwaltung
     └── app.js          Start, Themen, Paragrafen, Karteikarten, Quiz, Rätsel
 ```

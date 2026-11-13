@@ -20,6 +20,12 @@
     document.getElementById('marke').textContent = d.titel;
     document.title = d.titel;
     document.documentElement.style.removeProperty('--akzent');
+    Spiel.zeigeChip();
+    if (h === 'training') { aufraeumen = Spiel.zeigeTraining(app); return; }
+    if (h.startsWith('paare-')) {
+      const lfP = Store.lernfelder().find((l) => l.id === h.slice(6));
+      if (lfP) { document.documentElement.style.setProperty('--akzent', lfP.farbe); aufraeumen = Spiel.zeigePaare(app, lfP); return; }
+    }
     if (teile[0] === 'admin') return Admin.zeige(app, teile[1]);
     if (teile[0] === 'lf') {
       const lf = Store.lernfelder().find((l) => l.id === teile[1]);
@@ -32,8 +38,9 @@
   /* ---------------- Startseite ---------------- */
   function lfStatistik(lf) {
     const st = Store.kartenStatus(lf.id);
-    const gewusst = lf.karten.filter((k) => st[schluessel(k.vorne)] === 'gewusst').length;
-    return { ziele: Store.meineZiele().filter((z) => z.lfId === lf.id && !z.erledigt).length, gewusst, karten: lf.karten.length, quiz: Store.quizStand(lf.id), raetsel: Store.raetselGeloest(lf.id) };
+    const karten = Spiel.kartenFuer(lf);
+    const gewusst = karten.filter((k) => st[schluessel(k.vorne)] === 'gewusst').length;
+    return { ziele: Store.meineZiele().filter((z) => z.lfId === lf.id && !z.erledigt).length, gewusst, karten: karten.length, quiz: Store.quizStand(lf.id), raetsel: Store.raetselGeloest(lf.id) };
   }
 
   /* ---- Eigene Ziele auf der Startseite ---- */
@@ -105,7 +112,7 @@
       if (!id) return;
       const liste = Store.meineZiele();
       const z = liste.find((x) => x.id === id);
-      if (z) { z.erledigt = e.target.checked; Store.speichereZiele(liste); if (z.erledigt) toast('Stark – Ziel geschafft!'); }
+      if (z) { z.erledigt = e.target.checked; Store.speichereZiele(liste); if (z.erledigt) { toast('Stark – Ziel geschafft! +10 XP'); Spiel.xp(10, 'ziel'); Spiel.konfetti(); } }
       neu();
     });
     el.addEventListener('click', (e) => {
@@ -129,6 +136,7 @@
         <h1>${esc(d.titel)}</h1>
         <p>${esc(d.untertitel)}</p>
       </section>
+      ${Spiel.startHtml()}
       ${lfs.length ? '' : '<div class="glas leer">Noch keine Lernfelder vorhanden. Unter <a href="#verwaltung">Verwaltung</a> kannst du welche anlegen.</div>'}
       <section class="raster">
         ${lfs.map((lf) => {
@@ -257,6 +265,7 @@
     el.addEventListener('change', (e) => {
       if (!e.target.dataset.para) return;
       Store.zielUmschalten(lf.id, e.target.dataset.para);
+      if (e.target.checked) Spiel.xp(2, 'para');
       e.target.closest('.para').classList.toggle('ok', e.target.checked);
       const g = gelernt();
       const fertig = lf.paragrafen.filter((p) => g['p' + schluessel(p.ref + p.text)]).length;
@@ -267,12 +276,15 @@
 
   /* ---------------- 2. Karteikarten ---------------- */
   function zeigeKarten(lf, el) {
-    if (!lf.karten.length) { el.innerHTML = '<div class="glas leer">Noch keine Karteikarten vorhanden.</div>'; return; }
+    const alleKarten = Spiel.kartenFuer(lf); // eigene Karten oder automatisch aus den Paragrafen
+    if (!alleKarten.length) { el.innerHTML = '<div class="glas leer">Noch keine Karteikarten vorhanden.</div>'; return; }
     const z = { filter: 'alle', stapel: [], i: 0, offen: false };
+    if (alleKarten.some((k) => !Spiel.faellig(lf.id, schluessel(k.vorne)))) z.filter = 'faellig'; // wer schon gelernt hat, startet mit den fälligen Karten
 
     function baueStapel(gemischt) {
       const st = Store.kartenStatus(lf.id);
-      let karten = lf.karten.map((k) => ({ ...k, key: schluessel(k.vorne) }));
+      let karten = alleKarten.map((k) => ({ ...k, key: schluessel(k.vorne) }));
+      if (z.filter === 'faellig') karten = karten.filter((k) => Spiel.faellig(lf.id, k.key));
       if (z.filter === 'ueben') karten = karten.filter((k) => st[k.key] === 'ueben');
       if (z.filter === 'gewusst') karten = karten.filter((k) => st[k.key] === 'gewusst');
       if (z.filter === 'neu') karten = karten.filter((k) => !st[k.key]);
@@ -282,17 +294,18 @@
 
     function zeichne() {
       const st = Store.kartenStatus(lf.id);
-      const alle = lf.karten.map((k) => st[schluessel(k.vorne)]);
-      const n = { alle: alle.length, ueben: alle.filter((s) => s === 'ueben').length, gewusst: alle.filter((s) => s === 'gewusst').length, neu: alle.filter((s) => !s).length };
+      const alle = alleKarten.map((k) => st[schluessel(k.vorne)]);
+      const n = { alle: alle.length, ueben: alle.filter((s) => s === 'ueben').length, gewusst: alle.filter((s) => s === 'gewusst').length, neu: alle.filter((s) => !s).length, faellig: alleKarten.filter((k) => Spiel.faellig(lf.id, schluessel(k.vorne))).length };
       const k = z.stapel[z.i];
       const status = k ? st[k.key] : null;
       el.innerHTML = `
         <div class="filter">
-          ${[['alle', 'Alle'], ['neu', 'Neu'], ['ueben', 'Noch üben'], ['gewusst', 'Schon gewusst']].map(([id, name]) =>
+          ${[['faellig', '⏰ Heute dran'], ['alle', 'Alle'], ['neu', 'Neu'], ['ueben', 'Noch üben'], ['gewusst', 'Schon gewusst']].map(([id, name]) =>
             `<button class="pille ${z.filter === id ? 'aktiv' : ''}" data-filter="${id}">${name} <b>${n[id]}</b></button>`).join('')}
         </div>
         ${k ? `
         <div class="karten-info"><span>Karte ${z.i + 1} von ${z.stapel.length}</span>
+          <span class="chip" title="Karteikasten: Fach 5 = sitzt sicher">Fach ${Spiel.fach(lf.id, k.key) || 1} von 5</span>
           ${status ? `<span class="marke ${status}">${status === 'gewusst' ? '✓ Schon gewusst' : '↻ Noch üben'}</span>` : ''}</div>
         <div class="karte ${z.offen ? 'offen' : ''}" data-akt="drehen" tabindex="0" role="button" aria-label="Karte umdrehen">
           <div class="karte-innen">
@@ -307,11 +320,12 @@
           <button class="btn rund" data-akt="vor" aria-label="Nächste Karte">→</button>
         </div>
         <div class="karten-extra">
+          <a class="link" href="#paare-${esc(lf.id)}">⚡ Paare-Spiel</a>
           <button class="link" data-akt="mischen">🔀 Mischen</button>
           <button class="link" data-akt="reset">Fortschritt zurücksetzen</button>
         </div>` : `
         <div class="glas leer">
-          ${z.filter === 'ueben' ? '🎉 Kein Stapel „Noch üben“ – alles sitzt!' : 'In diesem Stapel sind keine Karten.'}
+          ${z.filter === 'faellig' ? '🎉 Für heute ist alles wiederholt. Morgen gibt es neue Karten.' : z.filter === 'ueben' ? '🎉 Kein Stapel „Noch üben“ – alles sitzt!' : 'In diesem Stapel sind keine Karten.'}
           <br><button class="btn" data-filter="alle" style="margin-top:14px">Alle Karten anzeigen</button>
         </div>`}`;
     }
@@ -320,6 +334,8 @@
       const k = z.stapel[z.i];
       if (!k) return;
       Store.setzeKarte(lf.id, k.key, status);
+      Spiel.bewerteKarte(lf.id, k.key, status === 'gewusst');
+      Spiel.xp(status === 'gewusst' ? 3 : 1);
       // Karte, die nicht mehr zum Filter passt, fällt aus dem Stapel
       if (z.filter !== 'alle' && z.filter !== status) {
         z.stapel.splice(z.i, 1);
@@ -343,7 +359,7 @@
       if (a === 'gewusst' || a === 'ueben') return bewerte(a);
       if (a === 'mischen') { baueStapel(true); toast('Karten gemischt'); }
       if (a === 'reset') {
-        lf.karten.forEach((k) => Store.setzeKarte(lf.id, schluessel(k.vorne), null));
+        alleKarten.forEach((k) => Store.setzeKarte(lf.id, schluessel(k.vorne), null));
         baueStapel(false);
         toast('Fortschritt zurückgesetzt');
       }
@@ -374,7 +390,7 @@
   const ZEIT = 30;
 
   function zeigeQuiz(lf, el) {
-    const gueltig = lf.quiz.filter((q) => q.frage && q.antworten.filter((a) => a).length >= 2 && q.antworten[q.richtig]);
+    const gueltig = Spiel.quizFuer(lf); // eigene Fragen, sonst automatisch aus den Paragrafen
     if (gueltig.length < 2) { el.innerHTML = '<div class="glas leer">Für das Quiz werden mindestens 2 Fragen benötigt.</div>'; return; }
     let z = null, timer = null;
     aufraeumen = () => clearInterval(timer);
@@ -442,6 +458,7 @@
     function weiter() {
       const f = z.fragen[z.i];
       const richtig = z.wahl >= 0 && f.optionen[z.wahl].richtig;
+      if (richtig) { Spiel.xp(5); Spiel.loescheFehler(f.frage); } else Spiel.merkeFehler(lf.id, f);
       if (!richtig) return beende('falsch', sicherePunkte(z.i), z.i);
       if (z.i === z.fragen.length - 1) return beende('gewonnen', STUFEN[z.i], z.i + 1);
       z.i++; z.phase = 'frage'; z.wahl = null; z.weg = []; z.zeit = ZEIT;
@@ -452,6 +469,7 @@
     function beende(art, punkte, richtige) {
       clearInterval(timer);
       const rekord = Store.setzeQuiz(lf.id, punkte, richtige, z.fragen.length);
+      if (art === 'gewonnen') { Spiel.xp(20, 'quizsieg'); Spiel.konfetti(); }
       z.phase = 'ende';
       z.ende = { art, punkte, richtige, rekord };
       zeichne();
@@ -649,7 +667,7 @@
       el.querySelector('#rStatus').innerHTML = alle
         ? '<div class="erfolg">🎉 Geschafft – alle Wörter sind richtig!</div>'
         : `<span>${geloest} von ${r.woerter.length} Wörtern gelöst</span>`;
-      if (alle && !fertig) { fertig = true; Store.setzeRaetsel(lf.id); toast('Rätsel gelöst!'); }
+      if (alle && !fertig) { fertig = true; Store.setzeRaetsel(lf.id); toast('Rätsel gelöst! +25 XP'); Spiel.xp(25, 'raetsel'); Spiel.konfetti(); }
     }
 
     function fokus(k) {
@@ -742,6 +760,6 @@
     neu();
   }
 
-  window.App = { route };
+  window.App = { route, setzeAufraeumen(f) { aufraeumen = f; } };
   route();
 })();
