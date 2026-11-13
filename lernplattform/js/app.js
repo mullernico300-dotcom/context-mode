@@ -36,14 +36,105 @@
     return { gewusst, karten: lf.karten.length, quiz: Store.quizStand(lf.id), raetsel: Store.raetselGeloest(lf.id) };
   }
 
+  /* ---- Eigene Ziele auf der Startseite ---- */
+  let suchVorgabe = ''; // Stichwort, mit dem der Paragrafen-Reiter geöffnet wird
+
+  function tageBis(datum) {
+    if (!datum) return null;
+    const heute = new Date(); heute.setHours(0, 0, 0, 0);
+    const ziel = new Date(datum + 'T00:00:00');
+    return isNaN(ziel) ? null : Math.round((ziel - heute) / 864e5);
+  }
+
+  function zieleHtml() {
+    const lfs = Store.lernfelder();
+    const ziele = Store.meineZiele().slice().sort((a, b) =>
+      (a.erledigt ? 1 : 0) - (b.erledigt ? 1 : 0) || String(a.datum || '9999').localeCompare(String(b.datum || '9999')));
+    const karte = (z) => {
+      const lf = lfs.find((l) => l.id === z.lfId);
+      const t = tageBis(z.datum);
+      const wann = t === null ? '' : t < 0 ? 'vorbei' : t === 0 ? 'heute' : t === 1 ? 'morgen' : `in ${t} Tagen`;
+      const datum = z.datum ? new Date(z.datum + 'T12:00:00').toLocaleDateString('de-DE', { weekday: 'short', day: '2-digit', month: '2-digit', year: 'numeric' }) : '';
+      const info = [lf ? U.kurz(lf) + ' · ' + lf.titel : '', z.stichwort ? 'Stichwort: ' + z.stichwort : '', datum].filter(Boolean).join(' · ');
+      return `
+        <li class="ziel ${z.erledigt ? 'erledigt' : ''} ${t !== null && t >= 0 && t <= 3 && !z.erledigt ? 'bald' : ''}" style="${lf ? `--akzent:${esc(lf.farbe)}` : ''}">
+          <label class="haken" title="Als geschafft markieren"><input type="checkbox" data-ziel-fertig="${esc(z.id)}" ${z.erledigt ? 'checked' : ''} aria-label="Ziel geschafft"></label>
+          <div class="ziel-text"><b>${esc(z.titel)}</b>${info ? `<span>${esc(info)}</span>` : ''}</div>
+          ${wann && !z.erledigt ? `<span class="chip wann">${wann}</span>` : ''}
+          ${lf ? `<button class="btn klein-btn" data-ziel-lernen="${esc(z.id)}">Dafür lernen</button>` : ''}
+          <button class="mini rot" data-ziel-weg="${esc(z.id)}" aria-label="Ziel löschen" title="Ziel löschen">✕</button>
+        </li>`;
+    };
+    return `
+      <section class="glas block ziele-box">
+        <h2>🎯 Meine Ziele</h2>
+        <p class="klein">Trag ein, worauf du gerade lernst – zum Beispiel einen Test zu einem bestimmten Thema.</p>
+        ${ziele.length ? `<ul class="ziel-liste">${ziele.map(karte).join('')}</ul>` : ''}
+        <details class="ziel-neu">
+        <summary class="btn">＋ Neues Ziel eintragen</summary>
+        <form id="zielForm" class="ziel-form" autocomplete="off">
+          <label class="feld breit"><span>Mein Ziel</span><input type="text" id="zielTitel" maxlength="120" placeholder="z. B. Test über Kündigung und Kündigungsschutz" required></label>
+          <label class="feld"><span>Fach (optional)</span><select id="zielFach"><option value="">– kein Fach –</option>${lfs.map((l) => `<option value="${esc(l.id)}">${esc(U.kurz(l))} · ${esc(l.titel)}</option>`).join('')}</select></label>
+          <label class="feld"><span>Stichwort zum Suchen (optional)</span><input type="text" id="zielStichwort" maxlength="40" placeholder="z. B. Kündigung"></label>
+          <label class="feld"><span>Datum (optional)</span><input type="date" id="zielDatum"></label>
+          <button class="btn primaer" type="submit">＋ Ziel speichern</button>
+        </form>
+        </details>
+      </section>`;
+  }
+
+  function verdrahteZiele(el) {
+    const neu = () => { el.querySelector('.ziele-box').outerHTML = zieleHtml(); };
+    el.addEventListener('submit', (e) => {
+      if (e.target.id !== 'zielForm') return;
+      e.preventDefault();
+      const titel = el.querySelector('#zielTitel').value.trim();
+      if (!titel) return;
+      const liste = Store.meineZiele();
+      liste.push({
+        id: 'z' + Date.now().toString(36),
+        titel,
+        lfId: el.querySelector('#zielFach').value,
+        stichwort: el.querySelector('#zielStichwort').value.trim(),
+        datum: el.querySelector('#zielDatum').value,
+        erledigt: false
+      });
+      toast(Store.speichereZiele(liste) ? 'Ziel gespeichert' : 'Speichern nicht möglich – der Browser-Speicher ist gesperrt.');
+      neu();
+    });
+    el.addEventListener('change', (e) => {
+      const id = e.target.dataset.zielFertig;
+      if (!id) return;
+      const liste = Store.meineZiele();
+      const z = liste.find((x) => x.id === id);
+      if (z) { z.erledigt = e.target.checked; Store.speichereZiele(liste); if (z.erledigt) toast('Stark – Ziel geschafft!'); }
+      neu();
+    });
+    el.addEventListener('click', (e) => {
+      const weg = e.target.closest('[data-ziel-weg]');
+      if (weg) { Store.speichereZiele(Store.meineZiele().filter((x) => x.id !== weg.dataset.zielWeg)); return neu(); }
+      const lernen = e.target.closest('[data-ziel-lernen]');
+      if (!lernen) return;
+      const z = Store.meineZiele().find((x) => x.id === lernen.dataset.zielLernen);
+      const lf = z && Store.lernfelder().find((l) => l.id === z.lfId);
+      if (!lf) return;
+      // mit Stichwort direkt in die Paragrafen-Suche, sonst zur Themen-Übersicht
+      const treffer = z.stichwort && lf.paragrafen.some((p) => (p.ref + ' ' + p.text + ' ' + (p.gruppe || '')).toLowerCase().includes(z.stichwort.toLowerCase()));
+      suchVorgabe = treffer ? z.stichwort : '';
+      location.hash = '#lf-' + lf.id + (treffer ? '-paragrafen' : '');
+    });
+  }
+
   function zeigeStart() {
     const d = Store.daten();
     const lfs = Store.lernfelder();
     app.innerHTML = `
+      <div id="startseite">
       <section class="hero">
         <h1>${esc(d.titel)}</h1>
         <p>${esc(d.untertitel)}</p>
       </section>
+      ${zieleHtml()}
       ${lfs.length ? '' : '<div class="glas leer">Noch keine Lernfelder vorhanden. Unter <a href="#verwaltung">Verwaltung</a> kannst du welche anlegen.</div>'}
       <section class="raster">
         ${lfs.map((lf) => {
@@ -63,7 +154,9 @@
             </div>
           </a>`;
         }).join('')}
-      </section>`;
+      </section>
+      </div>`;
+    verdrahteZiele(document.getElementById('startseite'));
   }
 
   /* ---------------- Lernfeld-Rahmen ---------------- */
@@ -126,7 +219,8 @@
   function zeigeParagrafen(lf, el) {
     if (!lf.paragrafen.length) { el.innerHTML = '<div class="glas leer">Für dieses Fach sind noch keine Paragrafen hinterlegt.</div>'; return; }
     const gelernt = () => Store.ziele(lf.id);
-    let suche = '';
+    let suche = suchVorgabe;
+    suchVorgabe = '';
 
     function liste() {
       const q = suche.trim().toLowerCase();
@@ -158,7 +252,7 @@
     el.innerHTML = `
       <section class="glas block psuche">
         <label class="feld"><span>Paragraf oder Stichwort suchen</span>
-          <input type="search" id="pSuche" placeholder="z. B. § 622, Urlaub, Geschenke" autocomplete="off"></label>
+          <input type="search" id="pSuche" value="${esc(suche)}" placeholder="z. B. § 622, Urlaub, Geschenke" autocomplete="off"></label>
         <div class="klein" id="pZahl"></div>
         <p class="klein">Die Paragrafen sind hier in einfachen Worten erklärt. Für Prüfung und Praxis gilt immer der genaue Gesetzestext – Beträge und Fristen können sich ändern.</p>
       </section>

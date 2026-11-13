@@ -159,6 +159,13 @@
       schreibe(K_FORT, f);
     },
     ziele(lfId) { return Store.fortschritt().ziele[lfId] || {}; },
+    /* ---- Eigene Ziele (z. B. „Test über Kündigung am 12.12.“) ---- */
+    meineZiele() { return Store.fortschritt().meineZiele || []; },
+    speichereZiele(liste) {
+      const f = Store.fortschritt();
+      f.meineZiele = liste;
+      return schreibe(K_FORT, f);
+    },
     fortschrittLoeschen() { try { localStorage.removeItem(K_FORT); } catch (e) { /* Speicher gesperrt */ } }
   };
 

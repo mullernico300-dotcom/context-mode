@@ -306,3 +306,27 @@ main { width: 100%; max-width: 1040px; margin: 0 auto; padding-block: 22px 40px;
 .sicher { background: var(--schlecht) !important; color: #fff !important; border-color: transparent !important; width: auto !important; padding-inline: 10px; }
 .exportbox { margin-top: 14px; display: grid; gap: 8px; justify-items: start; }
 .exportbox textarea { width: 100%; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; padding: 10px; border-radius: 12px; border: 1.5px solid #cfd3ee; background: rgba(255, 255, 255, 0.9); }
+
+/* Eigene Ziele */
+.ziele-box { margin-bottom: 20px; }
+.ziel-liste { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 8px; }
+.ziel { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 10px 12px; border-radius: 14px; background: rgba(255, 255, 255, 0.7); border-left: 5px solid var(--akzent); }
+.ziel-text { flex: 1 1 180px; min-width: 0; display: grid; gap: 1px; }
+.ziel-text b { overflow-wrap: anywhere; }
+.ziel-text span { font-size: 0.82rem; color: var(--leise); }
+.ziel.erledigt { opacity: 0.6; border-left-color: var(--gut); }
+.ziel.erledigt .ziel-text b { text-decoration: line-through; }
+.ziel.bald .wann { background: #f59e0b; color: #fff; }
+.chip.wann { white-space: nowrap; }
+.klein-btn { min-height: 36px; padding: 6px 12px; font-size: 0.85rem; border-radius: 10px; }
+.ziel-neu { margin-top: 12px; }
+.ziel-neu summary { list-style: none; cursor: pointer; }
+.ziel-neu summary::-webkit-details-marker { display: none; }
+.ziel-neu[open] summary { display: none; }
+.ziel-form { display: grid; gap: 0 12px; margin-top: 14px; padding-top: 14px; border-top: 1px dashed rgba(100, 100, 150, 0.25); align-items: end; }
+.ziel-form .btn { margin-bottom: 12px; }
+.ziel-form input[type="date"] { width: 100%; padding: 10px 12px; border-radius: 12px; border: 1.5px solid #cfd3ee; background: rgba(255, 255, 255, 0.9); font-size: 16px; min-height: 46px; }
+@media (min-width: 720px) {
+  .ziel-form { grid-template-columns: 1fr 1fr 1fr auto; }
+  .ziel-form .breit { grid-column: 1 / -1; }
+}
