@@ -447,8 +447,19 @@
           </section>
           <section class="glas block hinweise">${liste('h', 'Waagerecht →')}${liste('v', 'Senkrecht ↓')}</section>
         </div>`;
+      passeGroesse();
       aktualisiere();
     }
+
+    /* Zellgröße so wählen, dass das Gitter in die verfügbare Breite passt */
+    function passeGroesse() {
+      const rahmen = el.querySelector('.gitter-rahmen');
+      if (!rahmen || !r) return;
+      const z = Math.floor((rahmen.clientWidth - (r.cols - 1) * 2) / r.cols);
+      rahmen.firstElementChild.style.setProperty('--z', Math.max(18, Math.min(42, z)) + 'px');
+    }
+    window.addEventListener('resize', passeGroesse);
+    aufraeumen = () => window.removeEventListener('resize', passeGroesse);
 
     const zelleEl = (k) => el.querySelector(`.zelle[data-k="${k}"]`);
     const wortVoll = (w) => w.zellen.every((k) => eingabe[k]);
@@ -555,6 +566,7 @@
         const w = r.woerter[aktiv];
         aktualisiere();
         fokus(w.zellen.find((k) => !eingabe[k]) || w.zellen[0]);
+        el.querySelector('.raetsel-feld').scrollIntoView({ block: 'nearest', behavior: 'smooth' });
         return;
       }
       const b = e.target.closest('[data-r]');
