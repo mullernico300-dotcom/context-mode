@@ -84,7 +84,7 @@
     if (!d.lernfelder.some((l) => l.id === lfId)) lfId = d.lernfelder[0] ? d.lernfelder[0].id : null;
     const lf = aktuellesLF();
     wurzel.innerHTML = `
-      <a class="zurueck" href="#/">← Zur Lernplattform</a>
+      <a class="zurueck" href="#start">← Zur Lernplattform</a>
       <header class="lf-kopf"><h1>Verwaltung</h1>
         <p>Inhalte bearbeiten – Änderungen werden sofort in diesem Browser gespeichert.</p></header>
 
@@ -95,6 +95,11 @@
           <button class="btn" data-a="exportJson">⬇ Sicherung (JSON)</button>
           <label class="btn">⬆ Importieren<input type="file" accept=".json,.js,application/json" data-import hidden></label>
           <button class="btn" data-a="reset" ${Store.hatLokaleAenderungen() ? '' : 'disabled'}>↺ Auf data.js zurücksetzen</button>
+        </div>
+        <div id="exportBox" class="exportbox" hidden>
+          <p class="klein">Falls kein Download startet: Inhalt von <b></b> hier kopieren und als Datei speichern.</p>
+          <textarea id="exportText" rows="6" readonly aria-label="Exportierter Inhalt"></textarea>
+          <button class="btn" data-a="kopieren">Kopieren</button>
         </div>
       </section>
 
@@ -126,7 +131,7 @@
           ${feld('beschreibung', 'Kurzbeschreibung', 'text', lf.beschreibung)}
           <label class="feld"><span>Lernziele (eines pro Zeile)</span><textarea rows="6" data-zeilen="lernziele">${esc(lf.lernziele.join('\n'))}</textarea></label>
           <div class="admin-knoepfe">
-            <a class="btn" href="#/lf/${esc(lf.id)}">👁 Vorschau</a>
+            <a class="btn" href="#lf-${esc(lf.id)}">👁 Vorschau</a>
             <button class="btn rot" data-a="loescheLF">Lernfeld löschen</button>
           </div>` : zeichneListe(lf, bereich)}
       </section>` : ''}
@@ -159,6 +164,29 @@
     leser.readAsText(datei);
   }
 
+  /* Zweiter Klick bestätigt: Der Knopf fragt erst „Wirklich?“ und führt beim nächsten Klick aus. */
+  function bestaetigt(t) {
+    if (t.dataset.sicher) return true;
+    const alt = t.innerHTML;
+    t.dataset.sicher = '1';
+    t.classList.add('sicher');
+    t.textContent = 'Wirklich? Nochmal klicken';
+    setTimeout(() => { if (t.isConnected) { delete t.dataset.sicher; t.classList.remove('sicher'); t.innerHTML = alt; } }, 3500);
+    return false;
+  }
+
+  /* Export: Download versuchen und den Inhalt zusätzlich zum Kopieren anzeigen
+     (in manchen Umgebungen, z. B. im Artefakt-Viewer, sind Downloads gesperrt). */
+  function zeigeExport(name, inhalt, typ) {
+    download(name, inhalt, typ);
+    const box = wurzel.querySelector('#exportBox');
+    box.hidden = false;
+    box.querySelector('b').textContent = name;
+    const ta = box.querySelector('textarea');
+    ta.value = inhalt;
+    box.scrollIntoView({ block: 'nearest' });
+  }
+
   function klick(e) {
     const d = Store.daten();
     const lf = aktuellesLF();
@@ -170,7 +198,7 @@
     else if (ds.neu) { lf[ds.neu].push(LISTEN[ds.neu].neu()); sichern(); }
     else if (ds.entf) {
       const [key, i] = ds.entf.split('.');
-      if (!confirm('Diesen Eintrag wirklich löschen?')) return;
+      if (!bestaetigt(t)) return;
       lf[key].splice(Number(i), 1); sichern();
     } else if (ds.hoch) {
       const [key, i] = ds.hoch.split('.');
@@ -181,21 +209,27 @@
       const neu = { id: 'lf' + Date.now().toString(36), nummer: nr, titel: 'Neues Lernfeld', beschreibung: '', farbe: '#6366f1', lernziele: [], themen: [], paragrafen: [], karten: [], quiz: [], raetsel: [] };
       d.lernfelder.push(neu); lfId = neu.id; bereich = 'basis'; sichern();
     } else if (ds.a === 'loescheLF') {
-      if (!confirm(`„${lf.titel}“ mit allen Inhalten löschen?`)) return;
+      if (!bestaetigt(t)) return;
       d.lernfelder.splice(d.lernfelder.indexOf(lf), 1); lfId = null; sichern();
     } else if (ds.a === 'exportJs') {
       const kopf = '/* Lerninhalte – exportiert aus der Verwaltung am ' + new Date().toLocaleDateString('de-DE') + '. Diese Datei als js/data.js ablegen. */\n';
-      download('data.js', kopf + 'window.LERN_DATEN = ' + JSON.stringify(d, null, 2) + ';\n', 'text/javascript');
-      toast('data.js heruntergeladen – jetzt im Ordner js/ ersetzen.');
+      zeigeExport('data.js', kopf + 'window.LERN_DATEN = ' + JSON.stringify(d, null, 2) + ';\n', 'text/javascript');
       return;
     } else if (ds.a === 'exportJson') {
-      download('lerninhalte-sicherung.json', JSON.stringify(d, null, 2), 'application/json');
+      zeigeExport('lerninhalte-sicherung.json', JSON.stringify(d, null, 2), 'application/json');
+      return;
+    } else if (ds.a === 'kopieren') {
+      const ta = wurzel.querySelector('#exportBox textarea');
+      ta.select();
+      const fertig = () => toast('In die Zwischenablage kopiert');
+      try { navigator.clipboard.writeText(ta.value).then(fertig, () => toast('Text ist markiert – bitte mit Strg+C kopieren.')); }
+      catch (err) { toast('Text ist markiert – bitte mit Strg+C kopieren.'); }
       return;
     } else if (ds.a === 'reset') {
-      if (!confirm('Alle Änderungen in diesem Browser verwerfen und die Inhalte aus data.js laden?')) return;
+      if (!bestaetigt(t)) return;
       Store.zuruecksetzen(); lfId = null;
     } else if (ds.a === 'fortschritt') {
-      if (!confirm('Eigenen Lernfortschritt wirklich löschen?')) return;
+      if (!bestaetigt(t)) return;
       Store.fortschrittLoeschen(); toast('Fortschritt gelöscht'); return;
     }
     zeichne();
@@ -226,9 +260,9 @@
     if (!el._admin) {
       // einmalig je Container registrieren – der Container bleibt über Routenwechsel bestehen
       el._admin = true;
-      el.addEventListener('click', (e) => { if (location.hash.startsWith('#/admin')) klick(e); });
-      el.addEventListener('input', (e) => { if (location.hash.startsWith('#/admin')) eingabe(e); });
-      el.addEventListener('change', (e) => { if (location.hash.startsWith('#/admin')) eingabe(e); });
+      el.addEventListener('click', (e) => { if (location.hash.startsWith('#verwaltung')) klick(e); });
+      el.addEventListener('input', (e) => { if (location.hash.startsWith('#verwaltung')) eingabe(e); });
+      el.addEventListener('change', (e) => { if (location.hash.startsWith('#verwaltung')) eingabe(e); });
     }
     zeichne();
   }

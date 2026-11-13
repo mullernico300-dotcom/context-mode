@@ -8,7 +8,14 @@
   /* ---------------- Router ---------------- */
   function route() {
     if (aufraeumen) { aufraeumen(); aufraeumen = null; }
-    const teile = location.hash.replace(/^#\/?/, '').split('/').filter(Boolean).map(decodeURIComponent);
+    // Routen: #start · #lf-<id> · #lf-<id>-<reiter> · #verwaltung · #verwaltung-<id>
+    const h = decodeURIComponent(location.hash.replace(/^#\/?/, ''));
+    let teile = [];
+    if (/^verwaltung(-|$)/.test(h)) teile = ['admin', h.slice(11)];
+    else if (h.startsWith('lf-')) {
+      const m = /^(.+)-(themen|paragrafen|karten|quiz|raetsel)$/.exec(h.slice(3));
+      teile = m ? ['lf', m[1], m[2]] : ['lf', h.slice(3)];
+    }
     const d = Store.daten();
     document.getElementById('marke').textContent = d.titel;
     document.title = d.titel;
@@ -37,13 +44,13 @@
         <h1>${esc(d.titel)}</h1>
         <p>${esc(d.untertitel)}</p>
       </section>
-      ${lfs.length ? '' : '<div class="glas leer">Noch keine Lernfelder vorhanden. Unter <a href="#/admin">Verwaltung</a> kannst du welche anlegen.</div>'}
+      ${lfs.length ? '' : '<div class="glas leer">Noch keine Lernfelder vorhanden. Unter <a href="#verwaltung">Verwaltung</a> kannst du welche anlegen.</div>'}
       <section class="raster">
         ${lfs.map((lf) => {
           const s = lfStatistik(lf);
           const pct = s.karten ? Math.round((s.gewusst / s.karten) * 100) : 0;
           return `
-          <a class="glas lf-karte" href="#/lf/${esc(lf.id)}" style="--akzent:${esc(lf.farbe)}">
+          <a class="glas lf-karte" href="#lf-${esc(lf.id)}" style="--akzent:${esc(lf.farbe)}">
             <span class="lf-nr">${esc(U.kurz(lf))}</span>
             <h2>${esc(lf.titel)}</h2>
             <p>${esc(lf.beschreibung)}</p>
@@ -72,14 +79,14 @@
     document.documentElement.style.setProperty('--akzent', lf.farbe);
     if (!TABS.some((t) => t[0] === tab)) tab = 'themen';
     app.innerHTML = `
-      <a class="zurueck" href="#/">← Alle Lernfelder</a>
+      <a class="zurueck" href="#start">← Alle Lernfelder</a>
       <header class="lf-kopf">
         <span class="lf-nr">${esc(U.kurz(lf))}</span>
         <h1>${esc(lf.titel)}</h1>
         <p>${esc(lf.beschreibung)}</p>
       </header>
       <nav class="tabs glas" aria-label="Lernformate">
-        ${TABS.map(([id, icon, name]) => `<a href="#/lf/${esc(lf.id)}/${id}" class="${id === tab ? 'aktiv' : ''}"><span>${icon}</span>${name}</a>`).join('')}
+        ${TABS.map(([id, icon, name]) => `<a href="#lf-${esc(lf.id)}-${id}" class="${id === tab ? 'aktiv' : ''}"><span>${icon}</span>${name}</a>`).join('')}
       </nav>
       <div id="inhalt"></div>`;
     const ziel = document.getElementById('inhalt');
@@ -108,7 +115,7 @@
       </details>`).join('')}
       ${lf.themen.length ? '' : '<div class="glas leer">Für dieses Lernfeld gibt es noch keine Erklärungen.</div>'}
       <div class="weiter-zeile">
-        <a class="btn primaer" href="#/lf/${esc(lf.id)}/paragrafen">Weiter zu den Paragrafen →</a>
+        <a class="btn primaer" href="#lf-${esc(lf.id)}-paragrafen">Weiter zu den Paragrafen →</a>
       </div>`;
     el.addEventListener('change', (e) => {
       if (e.target.dataset.ziel) Store.zielUmschalten(lf.id, e.target.dataset.ziel);

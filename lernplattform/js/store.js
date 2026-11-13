@@ -76,7 +76,7 @@
     d.titel = d.titel || 'Lernfeld-Trainer';
     d.untertitel = d.untertitel || '';
     d.lernfelder.forEach((lf, i) => {
-      lf.id = String(lf.id || 'lf' + (i + 1)).replace(/[^\w-]/g, '');
+      lf.id = String(lf.id || 'lf' + (i + 1)).replace(/[^A-Za-z0-9]/g, '');
       lf.nummer = lf.nummer == null ? i + 1 : lf.nummer;
       lf.titel = lf.titel || 'Neues Lernfeld';
       lf.beschreibung = lf.beschreibung || '';
@@ -115,7 +115,7 @@
       return Store.speichere();
     },
     zuruecksetzen() {
-      localStorage.removeItem(K_DATEN);
+      try { localStorage.removeItem(K_DATEN); } catch (e) { /* Speicher gesperrt */ }
       cache = null;
     },
 
@@ -159,7 +159,7 @@
       schreibe(K_FORT, f);
     },
     ziele(lfId) { return Store.fortschritt().ziele[lfId] || {}; },
-    fortschrittLoeschen() { localStorage.removeItem(K_FORT); }
+    fortschrittLoeschen() { try { localStorage.removeItem(K_FORT); } catch (e) { /* Speicher gesperrt */ } }
   };
 
   window.U = U;

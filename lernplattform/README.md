@@ -88,6 +88,10 @@ Hinweise:
 - Rätselwörter: ein Wort ohne Leerzeichen, am besten 3–14 Buchstaben, 8–12 Wörter pro Lernfeld. Umlaute bleiben erhalten, `ß` wird zu `SS`. Wörter, die sich mit keinem anderen kreuzen lassen, werden ausgelassen.
 - Neue Lernfelder einfach als weiteren Block (durch Komma getrennt) in die Liste `lernfelder` einfügen.
 
+## Als Artefakt in Claude
+
+`artifact.html` ist dieselbe Seite ohne HTML-Gerüst. Sie wird zusammen mit `css/` und `js/` als Artefakt veröffentlicht. Für neue Inhalte genügt es, dort `js/data.js` zu ersetzen. Die Felder `registerId` und `registerStand` in `data.js` merken, aus welchem Fach des Lernregisters ein Eintrag stammt und wie aktuell er ist.
+
 ## Lernfortschritt und Datenschutz
 
 Karteikarten-Status, Highscores und gelöste Rätsel werden nur lokal im Browser des jeweiligen Geräts gespeichert (`localStorage`). Es werden keine Daten übertragen, es gibt keine Konten, keine Cookies, keine externen Dienste und keine Schriftarten von Dritten.
@@ -97,6 +101,7 @@ Karteikarten-Status, Highscores und gelöste Rätsel werden nur lokal im Browser
 ```
 lernplattform/
 ├── index.html          Seitengerüst
+├── artifact.html       dieselbe Seite für die Veröffentlichung als Artefakt
 ├── css/style.css       Design (mobile-first, Glas-Optik)
 └── js/
     ├── data.js         ALLE Inhalte – diese Datei wird gepflegt

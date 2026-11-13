@@ -16,6 +16,7 @@
  *   quiz        Fragen: { frage, antworten:[4 Texte], richtig: 0-3, stufe: 1-3, erklaerung }
  *   raetsel     Kreuzworträtsel: { wort, hinweis }   (ein Wort, ohne Leerzeichen)
  *   paragrafen  Paragrafen in einfacher Sprache: { gruppe, ref, text }
+ *   registerId / registerStand  Herkunft aus dem Lernregister (für die Wochen-Aktualisierung, nicht ändern)
  *   kurz        optionales Kürzel statt "LF <nummer>" (z. B. "SK" für ein Fach ohne LF-Nummer)
  *
  * Hinweis: Es werden ausschließlich Lernfelder angezeigt. Einträge, die als
@@ -995,7 +996,9 @@ window.LERN_DATEN = {
           "ref": "§ 169, § 170 AO",
           "text": "Nach vier Jahren darf das Finanzamt die Steuer nicht mehr festsetzen (Festsetzungsfrist). Die Frist beginnt am Ende des Jahres, in dem die Steuer entstanden ist."
         }
-      ]
+      ],
+      "registerId": "iq1aemufhjk50450ky6x",
+      "registerStand": 1794514339782
     },
     {
       "id": "lf8",
@@ -1374,7 +1377,9 @@ window.LERN_DATEN = {
           "ref": "§ 34 UStDV",
           "text": "Fahrkarten gelten als Rechnung. Daraus darf Vorsteuer gezogen werden."
         }
-      ]
+      ],
+      "registerId": "tmo7i73oqoibj79hwtql",
+      "registerStand": 1794514339782
     },
     {
       "id": "sk",
@@ -1829,7 +1834,9 @@ window.LERN_DATEN = {
           "text": "Das Verfahren beginnt mit einem Gütetermin. Dort soll möglichst eine Einigung (Vergleich) gefunden werden."
         }
       ],
-      "kurz": "Sozialkunde"
+      "kurz": "Sozialkunde",
+      "registerId": "zjxpf2nl7b6a5z8nue61",
+      "registerStand": 1794514339782
     }
   ]
 };

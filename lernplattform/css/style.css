@@ -50,7 +50,7 @@ button { cursor: pointer; }
 
 /* Kopfleiste */
 .leiste {
-  position: sticky; top: 10px; z-index: 20;
+  position: sticky; top: calc(env(safe-area-inset-top, 0px) + 10px); z-index: 20;
   margin: 10px 12px 0; padding: 10px 16px;
   display: flex; align-items: center; justify-content: space-between; gap: 12px;
   border-radius: 999px;
@@ -61,8 +61,8 @@ button { cursor: pointer; }
 .leiste nav a { text-decoration: none; color: var(--leise); font-size: 0.9rem; font-weight: 600; padding: 6px 10px; border-radius: 999px; }
 .leiste nav a:hover { background: rgba(255, 255, 255, 0.7); color: var(--text); }
 
-main { width: 100%; max-width: 1040px; margin: 0 auto; padding: 22px 16px 40px; flex: 1; }
-.fuss { text-align: center; font-size: 0.8rem; color: var(--leise); padding: 0 16px 24px; }
+main { width: 100%; max-width: 1040px; margin: 0 auto; padding-block: 22px 40px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); flex: 1; }
+.fuss { text-align: center; font-size: 0.8rem; color: var(--leise); padding-block: 0 24px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
 
 /* Start */
 .hero { text-align: center; padding: 26px 0 28px; }
@@ -257,14 +257,14 @@ main { width: 100%; max-width: 1040px; margin: 0 auto; padding: 22px 16px 40px; 
 .antwortfeld input[type="radio"] { width: 18px; height: 18px; accent-color: var(--gut); }
 .warnung { padding: 12px 14px; border-radius: 14px; background: #fff1d6; color: #7a4b00; font-weight: 600; margin-bottom: 14px; }
 
-#toast { position: fixed; left: 50%; bottom: 22px; transform: translate(-50%, 30px); opacity: 0; pointer-events: none; background: #1e2140; color: #fff; padding: 11px 18px; border-radius: 99px; font-weight: 600; font-size: 0.9rem; max-width: calc(100vw - 32px); text-align: center; transition: 0.25s; z-index: 50; }
+#toast { position: fixed; left: 50%; bottom: calc(22px + env(safe-area-inset-bottom, 0px)); transform: translate(-50%, 30px); opacity: 0; pointer-events: none; background: #1e2140; color: #fff; padding: 11px 18px; border-radius: 99px; font-weight: 600; font-size: 0.9rem; max-width: calc(100vw - 32px); text-align: center; transition: 0.25s; z-index: 50; }
 #toast.an { opacity: 1; transform: translate(-50%, 0); }
 
 @media (max-width: 479px) { .leiste nav a:first-child { display: none; } }
 
 /* Ab Tablet */
 @media (min-width: 720px) {
-  main { padding: 30px 24px 60px; }
+  main { padding-block: 30px 60px; padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); }
   .leiste { margin: 14px auto 0; max-width: 1040px; width: calc(100% - 48px); }
   .tabs a { flex-direction: row; justify-content: center; gap: 8px; font-size: 0.92rem; padding: 10px; }
   .block { padding: 24px; }
@@ -301,3 +301,8 @@ main { width: 100%; max-width: 1040px; margin: 0 auto; padding: 22px 16px 40px; 
 .haken { display: inline-flex; align-items: center; gap: 6px; font-size: 0.78rem; font-weight: 600; color: var(--leise); cursor: pointer; min-height: 28px; }
 .haken input { width: 18px; height: 18px; accent-color: var(--gut); }
 .tabs a span { line-height: 1.3; font-weight: 800; }
+
+/* Bestätigung per zweitem Klick und Export-Feld */
+.sicher { background: var(--schlecht) !important; color: #fff !important; border-color: transparent !important; width: auto !important; padding-inline: 10px; }
+.exportbox { margin-top: 14px; display: grid; gap: 8px; justify-items: start; }
+.exportbox textarea { width: 100%; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; padding: 10px; border-radius: 12px; border: 1.5px solid #cfd3ee; background: rgba(255, 255, 255, 0.9); }
