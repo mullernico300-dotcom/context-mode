@@ -566,7 +566,7 @@
         const w = r.woerter[aktiv];
         aktualisiere();
         fokus(w.zellen.find((k) => !eingabe[k]) || w.zellen[0]);
-        el.querySelector('.raetsel-feld').scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        el.querySelector('.raetsel-feld').scrollIntoView({ block: 'start', behavior: 'smooth' });
         return;
       }
       const b = e.target.closest('[data-r]');

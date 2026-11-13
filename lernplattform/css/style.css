@@ -281,3 +281,7 @@ main { width: 100%; max-width: 1040px; margin: 0 auto; padding: 22px 16px 40px; 
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
+
+/* Platz für die schwebende Kopfleiste beim Scrollen */
+.raetsel-feld { scroll-margin-top: 84px; }
+.zelle input { scroll-margin-top: 150px; }
