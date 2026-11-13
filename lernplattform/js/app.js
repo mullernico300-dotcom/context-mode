@@ -33,7 +33,7 @@
   function lfStatistik(lf) {
     const st = Store.kartenStatus(lf.id);
     const gewusst = lf.karten.filter((k) => st[schluessel(k.vorne)] === 'gewusst').length;
-    return { gewusst, karten: lf.karten.length, quiz: Store.quizStand(lf.id), raetsel: Store.raetselGeloest(lf.id) };
+    return { ziele: Store.meineZiele().filter((z) => z.lfId === lf.id && !z.erledigt).length, gewusst, karten: lf.karten.length, quiz: Store.quizStand(lf.id), raetsel: Store.raetselGeloest(lf.id) };
   }
 
   /* ---- Eigene Ziele auf der Startseite ---- */
@@ -46,35 +46,33 @@
     return isNaN(ziel) ? null : Math.round((ziel - heute) / 864e5);
   }
 
-  function zieleHtml() {
-    const lfs = Store.lernfelder();
-    const ziele = Store.meineZiele().slice().sort((a, b) =>
+  function zieleHtml(lf) {
+    const ziele = Store.meineZiele().filter((z) => z.lfId === lf.id).sort((a, b) =>
       (a.erledigt ? 1 : 0) - (b.erledigt ? 1 : 0) || String(a.datum || '9999').localeCompare(String(b.datum || '9999')));
     const karte = (z) => {
-      const lf = lfs.find((l) => l.id === z.lfId);
       const t = tageBis(z.datum);
       const wann = t === null ? '' : t < 0 ? 'vorbei' : t === 0 ? 'heute' : t === 1 ? 'morgen' : `in ${t} Tagen`;
       const datum = z.datum ? new Date(z.datum + 'T12:00:00').toLocaleDateString('de-DE', { weekday: 'short', day: '2-digit', month: '2-digit', year: 'numeric' }) : '';
-      const info = [lf ? U.kurz(lf) + ' · ' + lf.titel : '', z.stichwort ? 'Stichwort: ' + z.stichwort : '', datum].filter(Boolean).join(' · ');
+      const info = [z.stichwort ? 'Stichwort: ' + z.stichwort : '', datum].filter(Boolean).join(' · ');
+      const treffer = z.stichwort && lf.paragrafen.some((p) => (p.ref + ' ' + p.text + ' ' + (p.gruppe || '')).toLowerCase().includes(z.stichwort.toLowerCase()));
       return `
-        <li class="ziel ${z.erledigt ? 'erledigt' : ''} ${t !== null && t >= 0 && t <= 3 && !z.erledigt ? 'bald' : ''}" style="${lf ? `--akzent:${esc(lf.farbe)}` : ''}">
+        <li class="ziel ${z.erledigt ? 'erledigt' : ''} ${t !== null && t >= 0 && t <= 3 && !z.erledigt ? 'bald' : ''}">
           <label class="haken" title="Als geschafft markieren"><input type="checkbox" data-ziel-fertig="${esc(z.id)}" ${z.erledigt ? 'checked' : ''} aria-label="Ziel geschafft"></label>
           <div class="ziel-text"><b>${esc(z.titel)}</b>${info ? `<span>${esc(info)}</span>` : ''}</div>
           ${wann && !z.erledigt ? `<span class="chip wann">${wann}</span>` : ''}
-          ${lf ? `<button class="btn klein-btn" data-ziel-lernen="${esc(z.id)}">Dafür lernen</button>` : ''}
+          ${treffer ? `<button class="btn klein-btn" data-ziel-lernen="${esc(z.id)}">§ Paragrafen dazu</button>` : ''}
           <button class="mini rot" data-ziel-weg="${esc(z.id)}" aria-label="Ziel löschen" title="Ziel löschen">✕</button>
         </li>`;
     };
     return `
       <section class="glas block ziele-box">
         <h2>🎯 Meine Ziele</h2>
-        <p class="klein">Trag ein, worauf du gerade lernst – zum Beispiel einen Test zu einem bestimmten Thema.</p>
+        <p class="klein">Trag ein, worauf du in diesem Fach gerade lernst – zum Beispiel einen Test zu einem bestimmten Thema.</p>
         ${ziele.length ? `<ul class="ziel-liste">${ziele.map(karte).join('')}</ul>` : ''}
         <details class="ziel-neu">
         <summary class="btn">＋ Neues Ziel eintragen</summary>
         <form id="zielForm" class="ziel-form" autocomplete="off">
           <label class="feld breit"><span>Mein Ziel</span><input type="text" id="zielTitel" maxlength="120" placeholder="z. B. Test über Kündigung und Kündigungsschutz" required></label>
-          <label class="feld"><span>Fach (optional)</span><select id="zielFach"><option value="">– kein Fach –</option>${lfs.map((l) => `<option value="${esc(l.id)}">${esc(U.kurz(l))} · ${esc(l.titel)}</option>`).join('')}</select></label>
           <label class="feld"><span>Stichwort zum Suchen (optional)</span><input type="text" id="zielStichwort" maxlength="40" placeholder="z. B. Kündigung"></label>
           <label class="feld"><span>Datum (optional)</span><input type="date" id="zielDatum"></label>
           <button class="btn primaer" type="submit">＋ Ziel speichern</button>
@@ -83,8 +81,8 @@
       </section>`;
   }
 
-  function verdrahteZiele(el) {
-    const neu = () => { el.querySelector('.ziele-box').outerHTML = zieleHtml(); };
+  function verdrahteZiele(el, lf) {
+    const neu = () => { el.querySelector('.ziele-box').outerHTML = zieleHtml(lf); };
     el.addEventListener('submit', (e) => {
       if (e.target.id !== 'zielForm') return;
       e.preventDefault();
@@ -94,7 +92,7 @@
       liste.push({
         id: 'z' + Date.now().toString(36),
         titel,
-        lfId: el.querySelector('#zielFach').value,
+        lfId: lf.id,
         stichwort: el.querySelector('#zielStichwort').value.trim(),
         datum: el.querySelector('#zielDatum').value,
         erledigt: false
@@ -116,12 +114,9 @@
       const lernen = e.target.closest('[data-ziel-lernen]');
       if (!lernen) return;
       const z = Store.meineZiele().find((x) => x.id === lernen.dataset.zielLernen);
-      const lf = z && Store.lernfelder().find((l) => l.id === z.lfId);
-      if (!lf) return;
-      // mit Stichwort direkt in die Paragrafen-Suche, sonst zur Themen-Übersicht
-      const treffer = z.stichwort && lf.paragrafen.some((p) => (p.ref + ' ' + p.text + ' ' + (p.gruppe || '')).toLowerCase().includes(z.stichwort.toLowerCase()));
-      suchVorgabe = treffer ? z.stichwort : '';
-      location.hash = '#lf-' + lf.id + (treffer ? '-paragrafen' : '');
+      if (!z) return;
+      suchVorgabe = z.stichwort || '';
+      location.hash = '#lf-' + lf.id + '-paragrafen';
     });
   }
 
@@ -134,7 +129,6 @@
         <h1>${esc(d.titel)}</h1>
         <p>${esc(d.untertitel)}</p>
       </section>
-      ${zieleHtml()}
       ${lfs.length ? '' : '<div class="glas leer">Noch keine Lernfelder vorhanden. Unter <a href="#verwaltung">Verwaltung</a> kannst du welche anlegen.</div>'}
       <section class="raster">
         ${lfs.map((lf) => {
@@ -147,6 +141,7 @@
             <p>${esc(lf.beschreibung)}</p>
             <div class="balken"><i style="width:${pct}%"></i></div>
             <div class="chips">
+              ${s.ziele ? `<span class="chip">🎯 ${s.ziele} ${s.ziele === 1 ? 'Ziel' : 'Ziele'}</span>` : ''}
               ${lf.paragrafen.length ? `<span class="chip">§ ${lf.paragrafen.length}</span>` : ''}
               <span class="chip">🃏 ${s.gewusst}/${s.karten}</span>
               <span class="chip">🏆 ${s.quiz ? s.quiz.best.toLocaleString('de-DE') : '–'}</span>
@@ -156,7 +151,6 @@
         }).join('')}
       </section>
       </div>`;
-    verdrahteZiele(document.getElementById('startseite'));
   }
 
   /* ---------------- Lernfeld-Rahmen ---------------- */
@@ -190,9 +184,10 @@
   function zeigeThemen(lf, el) {
     const erledigt = Store.ziele(lf.id);
     el.innerHTML = `
+      ${zieleHtml(lf)}
       ${lf.lernziele.length ? `
       <section class="glas block">
-        <h2>🎯 Lernziele</h2>
+        <h2>📌 Lernziele aus dem Lehrplan</h2>
         <ul class="ziele">
           ${lf.lernziele.map((z) => {
             const k = schluessel(z);
@@ -213,6 +208,7 @@
     el.addEventListener('change', (e) => {
       if (e.target.dataset.ziel) Store.zielUmschalten(lf.id, e.target.dataset.ziel);
     });
+    verdrahteZiele(el, lf);
   }
 
   /* ---------------- Paragrafen in einfacher Sprache ---------------- */
