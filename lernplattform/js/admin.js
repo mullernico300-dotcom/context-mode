@@ -6,6 +6,7 @@
   const BEREICHE = [
     ['basis', 'Grunddaten'],
     ['themen', 'Themen'],
+    ['paragrafen', 'Paragrafen'],
     ['karten', 'Karteikarten'],
     ['quiz', 'Quiz'],
     ['raetsel', 'Rätsel']
@@ -15,6 +16,10 @@
     themen: {
       name: 'Thema', neu: () => ({ titel: '', text: '', merke: '' }),
       felder: [['titel', 'Überschrift', 'text'], ['text', 'Erklärung („- “ = Aufzählung, **fett**)', 'area'], ['merke', 'Merksatz (optional)', 'text']]
+    },
+    paragrafen: {
+      name: 'Paragraf', neu: () => ({ gruppe: '', ref: '', text: '' }),
+      felder: [['gruppe', 'Thema / Überschrift (gleiche Namen werden zusammengefasst)', 'text'], ['ref', 'Fundstelle, z. B. § 622 Abs. 1 BGB', 'text'], ['text', 'Erklärung in einfacher Sprache', 'area']]
     },
     karten: {
       name: 'Karte', neu: () => ({ vorne: '', hinten: '' }),
@@ -100,7 +105,7 @@
         </div>
         <h2>Lernfelder</h2>
         <div class="lf-auswahl">
-          ${d.lernfelder.map((l) => `<button class="pille ${l.id === lfId ? 'aktiv' : ''} ${Store.erlaubt(l) ? '' : 'gesperrt'}" data-lf="${esc(l.id)}">LF ${esc(l.nummer)} · ${esc(l.titel)}</button>`).join('')}
+          ${d.lernfelder.map((l) => `<button class="pille ${l.id === lfId ? 'aktiv' : ''} ${Store.erlaubt(l) ? '' : 'gesperrt'}" data-lf="${esc(l.id)}">${esc(U.kurz(l))} · ${esc(l.titel)}</button>`).join('')}
           <button class="pille neu" data-a="neuesLF">＋ Neues Lernfeld</button>
         </div>
       </section>
@@ -116,6 +121,7 @@
             ${feld('nummer', 'Nummer', 'zahl', lf.nummer)}
             ${feld('farbe', 'Akzentfarbe', 'farbe', lf.farbe)}
           </div>
+          ${feld('kurz', 'Kürzel statt „LF + Nummer“ (optional, z. B. SK)', 'text', lf.kurz)}
           ${feld('titel', 'Titel des Lernfelds', 'text', lf.titel)}
           ${feld('beschreibung', 'Kurzbeschreibung', 'text', lf.beschreibung)}
           <label class="feld"><span>Lernziele (eines pro Zeile)</span><textarea rows="6" data-zeilen="lernziele">${esc(lf.lernziele.join('\n'))}</textarea></label>
@@ -172,7 +178,7 @@
       [lf[key][n - 1], lf[key][n]] = [lf[key][n], lf[key][n - 1]]; sichern();
     } else if (ds.a === 'neuesLF') {
       const nr = d.lernfelder.reduce((m, l) => Math.max(m, Number(l.nummer) || 0), 0) + 1;
-      const neu = { id: 'lf' + Date.now().toString(36), nummer: nr, titel: 'Neues Lernfeld', beschreibung: '', farbe: '#6366f1', lernziele: [], themen: [], karten: [], quiz: [], raetsel: [] };
+      const neu = { id: 'lf' + Date.now().toString(36), nummer: nr, titel: 'Neues Lernfeld', beschreibung: '', farbe: '#6366f1', lernziele: [], themen: [], paragrafen: [], karten: [], quiz: [], raetsel: [] };
       d.lernfelder.push(neu); lfId = neu.id; bereich = 'basis'; sichern();
     } else if (ds.a === 'loescheLF') {
       if (!confirm(`„${lf.titel}“ mit allen Inhalten löschen?`)) return;
@@ -211,7 +217,7 @@
     } else return;
     sichern();
     // Ansicht nur neu aufbauen, wo sich Beschriftungen ändern
-    if (e.type === 'change' && (t.type === 'radio' || /^(titel|nummer)$/.test(t.dataset.pfad || ''))) zeichne();
+    if (e.type === 'change' && (t.type === 'radio' || /^(titel|nummer|kurz)$/.test(t.dataset.pfad || ''))) zeichne();
   }
 
   function zeige(el, id) {

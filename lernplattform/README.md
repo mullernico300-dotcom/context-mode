@@ -5,13 +5,14 @@ Eine Web-App ohne Installation, ohne Anmeldung und ohne Server-Logik. Für jedes
 | Format | Was es kann |
 | --- | --- |
 | 📖 **Themen** | Lernziele zum Abhaken, Erklärungen als aufklappbare Infoboxen mit Merksatz |
+| § **Paragrafen** | Die wichtigen Paragrafen je Fach in einfacher Sprache, nach Themen gruppiert, mit Suche und „verstanden“-Haken |
 | 🃏 **Karteikarten** | Umdrehen per Tipp/Klick, „Schon gewusst“ / „Noch üben“, Filter nach Stapel, Mischen |
 | 🏆 **Quiz-Show** | Bis zu 10 Fragen mit steigender Schwierigkeit, Punktestufen, Sicherheitsstufen, Timer, zwei Joker, Highscore |
 | 🧩 **Kreuzworträtsel** | Wird automatisch aus der Wortliste erzeugt, prüft jedes vollständig ausgefüllte Wort sofort (grün/rot) |
 
 Die App behandelt **ausschließlich Lernfelder**. Einträge, die als EStG- oder USt-Seminar benannt sind, werden weder in der Navigation noch in den Inhalten angezeigt (Filter in `js/store.js`).
 
-> Die drei mitgelieferten Lernfelder sind **Beispielinhalte**. Bitte Titel, Nummern und Inhalte an den eigenen Lehrplan anpassen.
+> Die Lernfelder 1–3 sind **Beispielinhalte**. LF 6, LF 8 und Sozialkunde enthalten die Paragrafen aus dem Lernregister, in einfache Sprache übertragen. Die Erklärungen ersetzen nicht den Gesetzestext; Beträge und Fristen bitte vor dem Einsatz prüfen.
 
 ## Starten
 
@@ -42,7 +43,7 @@ Alle Inhalte stehen in **einer einzigen Datei**: `js/data.js`. Es gibt zwei Wege
 
 1. In der App oben rechts auf **⚙ Verwaltung** klicken.
 2. Lernfeld auswählen oder **＋ Neues Lernfeld** anlegen.
-3. In den Reitern *Grunddaten, Themen, Karteikarten, Quiz, Rätsel* Einträge hinzufügen, ändern, sortieren oder löschen. Jede Eingabe wird sofort im eigenen Browser gespeichert; mit **👁 Vorschau** lässt sich das Ergebnis direkt ansehen.
+3. In den Reitern *Grunddaten, Themen, Paragrafen, Karteikarten, Quiz, Rätsel* Einträge hinzufügen, ändern, sortieren oder löschen. Jede Eingabe wird sofort im eigenen Browser gespeichert; mit **👁 Vorschau** lässt sich das Ergebnis direkt ansehen.
 4. Auf **⬇ data.js exportieren** klicken und die heruntergeladene Datei als `js/data.js` in den App-Ordner (bzw. auf den Webspace) kopieren.
 
 Wichtig: Schritt 4 ist nötig, damit die Klasse die Änderungen sieht. Die Verwaltung speichert zunächst nur im Browser der Lehrkraft – die App hat bewusst keinen Server und keine Benutzerkonten. Aus demselben Grund ist die Verwaltung nicht passwortgeschützt: Wer dort etwas ändert, ändert nur die eigene Ansicht.
@@ -72,7 +73,11 @@ Weitere Knöpfe: **Sicherung (JSON)** speichert einen Stand, **Importieren** lä
   ],
   "raetsel": [
     { "wort": "BILANZ", "hinweis": "Umschreibung" }
-  ]
+  ],
+  "paragrafen": [
+    { "gruppe": "Kündigung", "ref": "§ 622 Abs. 1 BGB", "text": "Erklärung in einfachen Worten" }
+  ],
+  "kurz": "SK"                 // optional: Kürzel statt "LF 4", z. B. für Sozialkunde
 }
 ```
 
@@ -98,5 +103,5 @@ lernplattform/
     ├── store.js        Laden/Speichern, Lernfortschritt, Lernfeld-Filter
     ├── crossword.js    Kreuzworträtsel-Generator
     ├── admin.js        Verwaltung
-    └── app.js          Start, Themen, Karteikarten, Quiz, Rätsel
+    └── app.js          Start, Themen, Paragrafen, Karteikarten, Quiz, Rätsel
 ```

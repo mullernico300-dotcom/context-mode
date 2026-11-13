@@ -44,11 +44,12 @@
           const pct = s.karten ? Math.round((s.gewusst / s.karten) * 100) : 0;
           return `
           <a class="glas lf-karte" href="#/lf/${esc(lf.id)}" style="--akzent:${esc(lf.farbe)}">
-            <span class="lf-nr">LF ${esc(lf.nummer)}</span>
+            <span class="lf-nr">${esc(U.kurz(lf))}</span>
             <h2>${esc(lf.titel)}</h2>
             <p>${esc(lf.beschreibung)}</p>
             <div class="balken"><i style="width:${pct}%"></i></div>
             <div class="chips">
+              ${lf.paragrafen.length ? `<span class="chip">§ ${lf.paragrafen.length}</span>` : ''}
               <span class="chip">🃏 ${s.gewusst}/${s.karten}</span>
               <span class="chip">🏆 ${s.quiz ? s.quiz.best.toLocaleString('de-DE') : '–'}</span>
               <span class="chip">🧩 ${s.raetsel ? 'gelöst' : 'offen'}</span>
@@ -61,7 +62,8 @@
   /* ---------------- Lernfeld-Rahmen ---------------- */
   const TABS = [
     ['themen', '📖', 'Themen'],
-    ['karten', '🃏', 'Karteikarten'],
+    ['paragrafen', '§', 'Paragrafen'],
+    ['karten', '🃏', 'Karten'],
     ['quiz', '🏆', 'Quiz'],
     ['raetsel', '🧩', 'Rätsel']
   ];
@@ -72,7 +74,7 @@
     app.innerHTML = `
       <a class="zurueck" href="#/">← Alle Lernfelder</a>
       <header class="lf-kopf">
-        <span class="lf-nr">LF ${esc(lf.nummer)}</span>
+        <span class="lf-nr">${esc(U.kurz(lf))}</span>
         <h1>${esc(lf.titel)}</h1>
         <p>${esc(lf.beschreibung)}</p>
       </header>
@@ -81,7 +83,7 @@
       </nav>
       <div id="inhalt"></div>`;
     const ziel = document.getElementById('inhalt');
-    ({ themen: zeigeThemen, karten: zeigeKarten, quiz: zeigeQuiz, raetsel: zeigeRaetsel })[tab](lf, ziel);
+    ({ themen: zeigeThemen, paragrafen: zeigeParagrafen, karten: zeigeKarten, quiz: zeigeQuiz, raetsel: zeigeRaetsel })[tab](lf, ziel);
   }
 
   /* ---------------- 1. Themen & Erklärungen ---------------- */
@@ -106,11 +108,64 @@
       </details>`).join('')}
       ${lf.themen.length ? '' : '<div class="glas leer">Für dieses Lernfeld gibt es noch keine Erklärungen.</div>'}
       <div class="weiter-zeile">
-        <a class="btn primaer" href="#/lf/${esc(lf.id)}/karten">Weiter zu den Karteikarten →</a>
+        <a class="btn primaer" href="#/lf/${esc(lf.id)}/paragrafen">Weiter zu den Paragrafen →</a>
       </div>`;
     el.addEventListener('change', (e) => {
       if (e.target.dataset.ziel) Store.zielUmschalten(lf.id, e.target.dataset.ziel);
     });
+  }
+
+  /* ---------------- Paragrafen in einfacher Sprache ---------------- */
+  function zeigeParagrafen(lf, el) {
+    if (!lf.paragrafen.length) { el.innerHTML = '<div class="glas leer">Für dieses Fach sind noch keine Paragrafen hinterlegt.</div>'; return; }
+    const gelernt = () => Store.ziele(lf.id);
+    let suche = '';
+
+    function liste() {
+      const q = suche.trim().toLowerCase();
+      const g = gelernt();
+      const treffer = lf.paragrafen.filter((p) => !q || (p.ref + ' ' + p.text + ' ' + (p.gruppe || '')).toLowerCase().includes(q));
+      const gruppen = [];
+      treffer.forEach((p) => {
+        const name = p.gruppe || 'Allgemein';
+        let gr = gruppen.find((x) => x.name === name);
+        if (!gr) gruppen.push(gr = { name, eintraege: [] });
+        gr.eintraege.push(p);
+      });
+      const fertig = lf.paragrafen.filter((p) => g['p' + schluessel(p.ref + p.text)]).length;
+      el.querySelector('#pZahl').textContent = `${treffer.length} von ${lf.paragrafen.length} Paragrafen · ${fertig} verstanden`;
+      el.querySelector('#pListe').innerHTML = gruppen.length ? gruppen.map((gr) => `
+        <details class="glas block pgruppe" open>
+          <summary><h2>${esc(gr.name)}</h2><span class="chip">${gr.eintraege.length}</span></summary>
+          ${gr.eintraege.map((p) => {
+            const k = 'p' + schluessel(p.ref + p.text);
+            return `<article class="para ${g[k] ? 'ok' : ''}">
+              <div class="para-kopf"><span class="ref">${esc(p.ref)}</span>
+                <label class="haken"><input type="checkbox" data-para="${k}" ${g[k] ? 'checked' : ''}> verstanden</label></div>
+              <p>${esc(p.text)}</p>
+            </article>`;
+          }).join('')}
+        </details>`).join('') : '<div class="glas leer">Kein Paragraf passt zu deiner Suche.</div>';
+    }
+
+    el.innerHTML = `
+      <section class="glas block psuche">
+        <label class="feld"><span>Paragraf oder Stichwort suchen</span>
+          <input type="search" id="pSuche" placeholder="z. B. § 622, Urlaub, Geschenke" autocomplete="off"></label>
+        <div class="klein" id="pZahl"></div>
+        <p class="klein">Die Paragrafen sind hier in einfachen Worten erklärt. Für Prüfung und Praxis gilt immer der genaue Gesetzestext – Beträge und Fristen können sich ändern.</p>
+      </section>
+      <div id="pListe"></div>`;
+    el.addEventListener('input', (e) => { if (e.target.id === 'pSuche') { suche = e.target.value; liste(); } });
+    el.addEventListener('change', (e) => {
+      if (!e.target.dataset.para) return;
+      Store.zielUmschalten(lf.id, e.target.dataset.para);
+      e.target.closest('.para').classList.toggle('ok', e.target.checked);
+      const g = gelernt();
+      const fertig = lf.paragrafen.filter((p) => g['p' + schluessel(p.ref + p.text)]).length;
+      el.querySelector('#pZahl').textContent = el.querySelector('#pZahl').textContent.replace(/· \d+ verstanden/, `· ${fertig} verstanden`);
+    });
+    liste();
   }
 
   /* ---------------- 2. Karteikarten ---------------- */

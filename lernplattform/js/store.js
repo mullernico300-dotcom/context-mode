@@ -36,6 +36,8 @@
       }
       return html + (inListe ? '</ul>' : '');
     },
+    /* Kürzel eines Lernfelds: eigenes Kürzel oder "LF <Nummer>" */
+    kurz(lf) { return lf.kurz ? String(lf.kurz) : 'LF ' + lf.nummer; },
     toast(text) {
       const t = document.getElementById('toast');
       t.textContent = text;
@@ -79,7 +81,7 @@
       lf.titel = lf.titel || 'Neues Lernfeld';
       lf.beschreibung = lf.beschreibung || '';
       lf.farbe = lf.farbe || '#6366f1';
-      ['lernziele', 'themen', 'karten', 'quiz', 'raetsel'].forEach((k) => { if (!Array.isArray(lf[k])) lf[k] = []; });
+      ['lernziele', 'themen', 'paragrafen', 'karten', 'quiz', 'raetsel'].forEach((k) => { if (!Array.isArray(lf[k])) lf[k] = []; });
       lf.quiz.forEach((q) => {
         if (!Array.isArray(q.antworten)) q.antworten = ['', '', '', ''];
         while (q.antworten.length < 4) q.antworten.push('');
