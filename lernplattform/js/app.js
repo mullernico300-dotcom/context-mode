@@ -22,6 +22,11 @@
     document.documentElement.style.removeProperty('--akzent');
     Spiel.zeigeChip();
     if (h === 'training') { aufraeumen = Spiel.zeigeTraining(app); return; }
+    if (h.startsWith('aufgaben-')) {
+      const m = /^aufgaben-(.+)-(\d+|ziel|fehler)$/.exec(h);
+      const lfA = m && Store.lernfelder().find((l) => l.id === m[1]);
+      if (lfA) { document.documentElement.style.setProperty('--akzent', lfA.farbe); aufraeumen = Trainer.zeige(app, lfA.id, m[2]); return; }
+    }
     if (h === 'videos' || h.startsWith('videos-')) { aufraeumen = Spiel.zeigeVideos(app, h.slice(7)); return; }
     if (h.startsWith('paare-')) {
       const lfP = Store.lernfelder().find((l) => l.id === h.slice(6));
@@ -68,6 +73,7 @@
           <label class="haken" title="Als geschafft markieren"><input type="checkbox" data-ziel-fertig="${esc(z.id)}" ${z.erledigt ? 'checked' : ''} aria-label="Ziel geschafft"></label>
           <div class="ziel-text"><b>${esc(z.titel)}</b>${info ? `<span>${esc(info)}</span>` : ''}</div>
           ${wann && !z.erledigt ? `<span class="chip wann">${wann}</span>` : ''}
+          ${Trainer.passend(lf.id, z.stichwort || z.titel).length ? `<button class="btn klein-btn primaer" data-ziel-aufgaben="${esc(z.id)}">🎬 Aufgaben dazu</button>` : ''}
           ${treffer ? `<button class="btn klein-btn" data-ziel-lernen="${esc(z.id)}">§ Paragrafen dazu</button>` : ''}
           <button class="mini rot" data-ziel-weg="${esc(z.id)}" aria-label="Ziel löschen" title="Ziel löschen">✕</button>
         </li>`;
@@ -119,6 +125,15 @@
     el.addEventListener('click', (e) => {
       const weg = e.target.closest('[data-ziel-weg]');
       if (weg) { Store.speichereZiele(Store.meineZiele().filter((x) => x.id !== weg.dataset.zielWeg)); return neu(); }
+      const auf = e.target.closest('[data-ziel-aufgaben]');
+      if (auf) {
+        const za = Store.meineZiele().find((x) => x.id === auf.dataset.zielAufgaben);
+        if (!za) return;
+        Trainer.vorgabe = Trainer.passend(lf.id, za.stichwort || za.titel);
+        Trainer.vorgabeTitel = za.titel;
+        location.hash = '#aufgaben-' + lf.id + '-ziel';
+        return;
+      }
       const lernen = e.target.closest('[data-ziel-lernen]');
       if (!lernen) return;
       const z = Store.meineZiele().find((x) => x.id === lernen.dataset.zielLernen);
@@ -195,6 +210,7 @@
     const erledigt = Store.ziele(lf.id);
     el.innerHTML = `
       ${zieleHtml(lf)}
+      ${Trainer.listeHtml(lf)}
       ${lf.lernziele.length ? `
       <section class="glas block">
         <h2>📌 Lernziele aus dem Lehrplan</h2>
@@ -762,6 +778,6 @@
     neu();
   }
 
-  window.App = { route, setzeAufraeumen(f) { aufraeumen = f; } };
+  window.App = { route, setzeAufraeumen(f) { aufraeumen = f; }, sucheParagraf(lfId, text) { suchVorgabe = text; location.hash = '#lf-' + lfId + '-paragrafen'; } };
   route();
 })();

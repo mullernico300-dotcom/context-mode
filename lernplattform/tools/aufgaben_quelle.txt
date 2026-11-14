@@ -1,0 +1,961 @@
+# Übungsaufgaben für die Aufgaben-Videos.
+# Format je Aufgabe:
+#   @ <lernfeld-id> | <Thema (Anfang des Gruppennamens der Paragrafen)>
+#   F: Sachverhalt und Frage (wird gesprochen und angezeigt)
+#   D: Beschriftung = Wert; Beschriftung = Wert      (Grafik: Kacheln mit Balken)
+#   A: <Zahl> <Einheit>          oder   A: wahl: Antwort 1 | *richtige Antwort | Antwort 3
+#   S: gesprochener Lösungsschritt | Beschriftung = Wert   (Rechenzeile optional)
+#   R: Paragraf; Paragraf
+
+@ lf8 | Gewerbebetrieb
+F: Herr Kaya hat zwei Betriebe. Sein Kiosk macht 30.000 Euro Gewinn, sein Imbiss 12.000 Euro Verlust. Wie hoch sind seine Einkünfte aus Gewerbebetrieb?
+D: Kiosk = 30.000 €; Imbiss = −12.000 €
+A: 18000 €
+S: Beide Betriebe gehören zur selben Einkunftsart, dem Gewerbebetrieb.
+S: Gewinn und Verlust werden deshalb miteinander verrechnet. | 30.000 € − 12.000 € = 18.000 €
+R: § 15 Abs. 1 Satz 1 Nr. 1 EStG; § 2 Abs. 3 EStG
+
+@ lf8 | Gewerbebetrieb
+F: Frau Lang verkauft einmalig ihr privates Auto über eine Anzeige. Ist das ein Gewerbebetrieb?
+D: Verkäufe = 1; Wiederholung geplant = nein
+A: wahl: Ja | *Nein
+S: Ein Gewerbebetrieb muss nachhaltig sein, also auf Wiederholung angelegt.
+S: Ein einmaliger Verkauf aus dem Privatvermögen ist nicht nachhaltig. | Nachhaltigkeit = fehlt
+R: § 15 Abs. 2 EStG
+
+@ lf8 | Gewerbebetrieb
+F: Herr Otto züchtet seit zehn Jahren Pferde als Hobby. Er macht jedes Jahr Verlust und will auch gar keinen Gewinn erzielen. Dieses Jahr sind es 8.000 Euro Verlust. Darf er den Verlust steuerlich abziehen?
+D: Verlust = 8.000 €; Gewinnabsicht = nein
+A: wahl: Ja | *Nein
+S: Ohne Gewinnerzielungsabsicht liegt Liebhaberei vor.
+S: Dann gibt es keine Einkünfte, und Verluste zählen steuerlich nicht. | Abziehbar = 0 €
+R: § 15 Abs. 2 Satz 3 EStG
+
+@ lf8 | Gewerbebetrieb
+F: Eine Einzelunternehmerin hat einen Gewerbeertrag von 64.500 Euro. Wie hoch ist der Gewerbesteuer-Messbetrag?
+D: Gewerbeertrag = 64.500 €; Freibetrag = 24.500 €; Messzahl = 3,5 %
+A: 1400 €
+S: Zuerst wird der Freibetrag für Einzelunternehmen abgezogen. | 64.500 € − 24.500 € = 40.000 €
+S: Darauf kommt die Steuermesszahl von 3,5 Prozent. | 40.000 € × 3,5 % = 1.400 €
+R: § 11 GewStG
+
+@ lf8 | Gewerbebetrieb
+F: Der Gewerbesteuer-Messbetrag beträgt 1.400 Euro. Die Gemeinde hat einen Hebesatz von 400 Prozent. Wie hoch ist die Gewerbesteuer?
+D: Messbetrag = 1.400 €; Hebesatz = 400 %
+A: 5600 €
+S: Die Gewerbesteuer ist der Messbetrag mal dem Hebesatz der Gemeinde. | 1.400 € × 400 % = 5.600 €
+R: § 11 GewStG; § 16 GewStG
+
+@ lf8 | Gewerbebetrieb
+F: Ein Einzelunternehmer hat einen Gewerbesteuer-Messbetrag von 1.400 Euro. Der Hebesatz liegt bei 380 Prozent. Seine Einkommensteuer ist hoch genug. Um wie viel Euro ermäßigt sich seine Einkommensteuer?
+D: Messbetrag = 1.400 €; Hebesatz = 380 %
+A: 5320 €
+S: Die Ermäßigung beträgt das Vierfache des Messbetrags. | 4 × 1.400 € = 5.600 €
+S: Sie ist aber auf die tatsächlich gezahlte Gewerbesteuer begrenzt. | 1.400 € × 380 % = 5.320 €
+S: Der kleinere Betrag gilt. | Ermäßigung = 5.320 €
+R: § 35 EStG
+
+@ lf8 | Gewerbebetrieb
+F: Der Gewinn laut Buchführung beträgt 50.000 Euro. Als Aufwand wurden 4.000 Euro Gewerbesteuer gebucht. Wie hoch ist der steuerliche Gewinn?
+D: Gewinn laut Buchführung = 50.000 €; Gewerbesteuer gebucht = 4.000 €
+A: 54000 €
+S: Die Gewerbesteuer ist keine Betriebsausgabe.
+S: Sie wird dem Gewinn deshalb wieder hinzugerechnet. | 50.000 € + 4.000 € = 54.000 €
+R: § 4 Abs. 5b EStG
+
+@ lf8 | Gewerbebetrieb
+F: Frau Weber ist Gesellschafterin einer OHG. Ihr Gewinnanteil beträgt 40.000 Euro. Für die Geschäftsführung bekommt sie von der OHG 36.000 Euro Gehalt, für ein Darlehen an die OHG 2.000 Euro Zinsen. Wie hoch sind ihre Einkünfte aus Gewerbebetrieb?
+D: Gewinnanteil = 40.000 €; Gehalt = 36.000 €; Zinsen = 2.000 €
+A: 78000 €
+S: Gehalt und Zinsen von der eigenen Gesellschaft sind Sondervergütungen.
+S: Sie gehören zusammen mit dem Gewinnanteil zu den Einkünften aus Gewerbebetrieb. | 40.000 € + 36.000 € + 2.000 € = 78.000 €
+R: § 15 Abs. 1 Satz 1 Nr. 2 EStG
+
+@ lf8 | Gewerbebetrieb
+F: Ein Kommanditist hat ein Kapitalkonto von 20.000 Euro. Sein Verlustanteil beträgt in diesem Jahr 35.000 Euro. Wie viel Euro Verlust darf er sofort mit anderen Einkünften ausgleichen?
+D: Kapitalkonto = 20.000 €; Verlustanteil = 35.000 €
+A: 20000 €
+S: Ein Kommanditist darf Verluste nur bis zur Höhe seines Kapitalkontos sofort ausgleichen. | Sofort ausgleichbar = 20.000 €
+S: Der Rest wird aufgehoben und mit späteren Gewinnen aus dieser Beteiligung verrechnet. | 35.000 € − 20.000 € = 15.000 €
+R: § 15a EStG
+
+@ lf8 | Gewerbebetrieb
+F: Ein eingetragener Kaufmann hat ein Wirtschaftsjahr vom 1. April 2025 bis zum 31. März 2026. Der Gewinn beträgt 60.000 Euro. In welchem Jahr wird der Gewinn versteuert?
+D: Beginn = 1. April 2025; Ende = 31. März 2026; Gewinn = 60.000 €
+A: wahl: Im Jahr 2025 | *Im Jahr 2026 | Je zur Hälfte in beiden Jahren
+S: Bei Gewerbetreibenden zählt der Gewinn für das Kalenderjahr, in dem das Wirtschaftsjahr endet.
+S: Das Wirtschaftsjahr endet im März 2026. | Versteuerung = 2026
+R: § 4a Abs. 2 Nr. 2 EStG
+
+@ lf8 | Land- und Forstwirtschaft
+F: Ein Landwirt hat im Wirtschaftsjahr vom 1. Juli 2025 bis zum 30. Juni 2026 einen Gewinn von 40.000 Euro. Wie viel Euro davon entfallen auf das Kalenderjahr 2025?
+D: Wirtschaftsjahr = 1. Juli bis 30. Juni; Gewinn = 40.000 €
+A: 20000 €
+S: Bei Landwirten wird der Gewinn nach Monaten auf die beiden Kalenderjahre verteilt.
+S: Von Juli bis Dezember 2025 sind es sechs Monate. | 40.000 € × 6/12 = 20.000 €
+R: § 4a Abs. 1 Satz 2 Nr. 1 EStG; § 4a Abs. 2 Nr. 1 EStG
+
+@ lf8 | Land- und Forstwirtschaft
+F: Ein Landwirt hat im Wirtschaftsjahr 2024/2025 einen Gewinn von 30.000 Euro und im Wirtschaftsjahr 2025/2026 einen Gewinn von 50.000 Euro. Wie hoch sind seine Einkünfte aus Land- und Forstwirtschaft im Jahr 2025?
+D: Gewinn 2024/2025 = 30.000 €; Gewinn 2025/2026 = 50.000 €
+A: 40000 €
+S: Auf 2025 entfällt die zweite Hälfte des ersten Wirtschaftsjahres. | 30.000 € × 6/12 = 15.000 €
+S: Dazu kommt die erste Hälfte des zweiten Wirtschaftsjahres. | 50.000 € × 6/12 = 25.000 €
+S: Beide Teile werden zusammengezählt. | 15.000 € + 25.000 € = 40.000 €
+R: § 4a Abs. 2 Nr. 1 EStG
+
+@ lf8 | Land- und Forstwirtschaft
+F: Ein lediger Landwirt hat Einkünfte aus Land- und Forstwirtschaft von 12.000 Euro. Seine Summe der Einkünfte beträgt 28.000 Euro. Wie hoch ist sein Freibetrag für Land- und Forstwirte?
+D: Einkünfte Landwirtschaft = 12.000 €; Summe der Einkünfte = 28.000 €; Grenze = 30.700 €
+A: 900 €
+S: Die Summe der Einkünfte liegt unter der Grenze von 30.700 Euro. | 28.000 € < 30.700 €
+S: Deshalb bekommt er den vollen Freibetrag. | Freibetrag = 900 €
+R: § 13 Abs. 3 EStG
+
+@ lf8 | Land- und Forstwirtschaft
+F: Ein Ehepaar wird zusammen veranlagt. Die Einkünfte aus Land- und Forstwirtschaft betragen 10.000 Euro, die Summe der Einkünfte 65.000 Euro. Wie hoch ist der Freibetrag für Land- und Forstwirte?
+D: Summe der Einkünfte = 65.000 €; Grenze für Ehepaare = 61.400 €
+A: 0 €
+S: Für Ehepaare liegt die Grenze bei 61.400 Euro. | 65.000 € > 61.400 €
+S: Die Summe der Einkünfte ist höher. Deshalb gibt es keinen Freibetrag. | Freibetrag = 0 €
+R: § 13 Abs. 3 EStG
+
+@ lf8 | Land- und Forstwirtschaft
+F: Ein Ehepaar wird zusammen veranlagt. Die Einkünfte aus Land- und Forstwirtschaft betragen 5.000 Euro, die Summe der Einkünfte 58.000 Euro. Wie hoch ist der Freibetrag?
+D: Einkünfte Landwirtschaft = 5.000 €; Summe der Einkünfte = 58.000 €; Grenze für Ehepaare = 61.400 €
+A: 1800 €
+S: Die Summe der Einkünfte liegt unter der Grenze für Ehepaare. | 58.000 € < 61.400 €
+S: Bei Zusammenveranlagung verdoppelt sich der Freibetrag. | 2 × 900 € = 1.800 €
+R: § 13 Abs. 3 EStG
+
+@ lf8 | Land- und Forstwirtschaft
+F: Ein lediger Nebenerwerbslandwirt hat nur 600 Euro Einkünfte aus Land- und Forstwirtschaft. Seine Summe der Einkünfte beträgt 20.000 Euro. Wie viel Euro bleiben durch den Freibetrag steuerfrei?
+D: Einkünfte Landwirtschaft = 600 €; Freibetrag höchstens = 900 €
+A: 600 €
+S: Der Freibetrag beträgt höchstens 900 Euro.
+S: Er kann aber nicht höher sein als die Einkünfte aus Land- und Forstwirtschaft selbst. | Steuerfrei = 600 €
+R: § 13 Abs. 3 EStG
+
+@ lf8 | Land- und Forstwirtschaft
+F: Ein Landwirt bewirtschaftet 25 Hektar. Für die ersten 20 Hektar sind 10 Vieheinheiten je Hektar erlaubt, für die nächsten 10 Hektar 7 Vieheinheiten je Hektar. Wie viele Vieheinheiten darf er höchstens halten, damit die Tierhaltung Landwirtschaft bleibt?
+D: Fläche = 25 Hektar; erste 20 Hektar = je 10 VE; nächste 10 Hektar = je 7 VE
+A: 235 VE
+S: Für die ersten 20 Hektar gilt: | 20 × 10 = 200 VE
+S: Für die restlichen 5 Hektar gilt: | 5 × 7 = 35 VE
+S: Zusammen ergibt das die Grenze. | 200 + 35 = 235 VE
+R: § 13 Abs. 1 Nr. 1 EStG
+
+@ lf8 | Land- und Forstwirtschaft
+F: Eine Landwirtin bewirtschaftet 40 Hektar. Erlaubt sind 10 Vieheinheiten je Hektar für die ersten 20 Hektar, 7 für die nächsten 10 Hektar und 6 für die nächsten 20 Hektar. Wie viele Vieheinheiten darf sie höchstens halten?
+D: Fläche = 40 Hektar; erste 20 = je 10 VE; nächste 10 = je 7 VE; nächste 20 = je 6 VE
+A: 330 VE
+S: Die ersten 20 Hektar ergeben: | 20 × 10 = 200 VE
+S: Die nächsten 10 Hektar ergeben: | 10 × 7 = 70 VE
+S: Die letzten 10 Hektar ergeben: | 10 × 6 = 60 VE
+S: Alles zusammen: | 200 + 70 + 60 = 330 VE
+R: § 13 Abs. 1 Nr. 1 EStG
+
+@ lf8 | Land- und Forstwirtschaft
+F: Herr Blum betreibt eine Imkerei und verkauft den Honig. Zu welcher Einkunftsart gehört das?
+D: Tätigkeit = Imkerei
+A: wahl: *Land- und Forstwirtschaft | Gewerbebetrieb | Sonstige Einkünfte
+S: Die Imkerei zählt zur sonstigen land- und forstwirtschaftlichen Nutzung. | Einkunftsart = Land- und Forstwirtschaft
+R: § 13 Abs. 1 Nr. 2 EStG
+
+@ lf8 | Land- und Forstwirtschaft
+F: Ein Landwirt mit 30 Hektar dürfte höchstens 270 Vieheinheiten halten. Er hält dauerhaft 400. Was gilt für die Tierhaltung, die über der Grenze liegt?
+D: Erlaubt = 270 VE; Tatsächlich = 400 VE
+A: wahl: Sie bleibt Landwirtschaft | *Sie wird zum Gewerbebetrieb | Sie ist nicht steuerbar
+S: Tierhaltung gehört nur zur Landwirtschaft, wenn genug eigene Fläche da ist. | 400 VE > 270 VE
+S: Wird die Grenze dauerhaft überschritten, ist der Überschuss ein Gewerbebetrieb.
+R: § 13 Abs. 1 Nr. 1 EStG; § 15 EStG
+
+@ lf8 | Geschenke
+F: Ein Unternehmer schenkt einem Kunden zu Weihnachten eine Flasche Wein für 45 Euro netto. Es ist das einzige Geschenk an diesen Kunden im Jahr. Wie viel Euro sind als Betriebsausgabe abziehbar?
+D: Geschenk = 45 €; Grenze = 50 €
+A: 45 €
+S: Geschenke an Geschäftspartner sind bis 50 Euro netto je Person und Jahr abziehbar. | 45 € ≤ 50 €
+S: Die Grenze ist eingehalten, das Geschenk ist voll abziehbar. | Abziehbar = 45 €
+R: § 4 Abs. 5 Satz 1 Nr. 1 EStG
+
+@ lf8 | Geschenke
+F: Ein Kunde bekommt im selben Jahr zwei Geschenke: im März eines für 30 Euro netto und im Dezember eines für 25 Euro netto. Wie viel Euro sind insgesamt als Betriebsausgabe abziehbar?
+D: Geschenk März = 30 €; Geschenk Dezember = 25 €; Grenze = 50 €
+A: 0 €
+S: Alle Geschenke an dieselbe Person in einem Jahr werden zusammengerechnet. | 30 € + 25 € = 55 €
+S: Die 50 Euro sind eine Freigrenze. Wird sie überschritten, ist gar nichts abziehbar. | Abziehbar = 0 €
+R: § 4 Abs. 5 Satz 1 Nr. 1 EStG
+
+@ lf8 | Geschenke
+F: Ein Geschenk an einen Kunden kostet 60 Euro netto, dazu kommen 11,40 Euro Umsatzsteuer. Wie viel Euro Vorsteuer darf der Unternehmer abziehen?
+D: Geschenk netto = 60 €; Umsatzsteuer = 11,40 €; Grenze = 50 €
+A: 0 €
+S: Das Geschenk liegt über 50 Euro und ist deshalb keine abziehbare Betriebsausgabe. | 60 € > 50 €
+S: Dann gibt es auch keinen Vorsteuerabzug. | Vorsteuer = 0 €
+R: § 15 Abs. 1a UStG; § 4 Abs. 5 Satz 1 Nr. 1 EStG
+
+@ lf8 | Geschenke
+F: Eine Mitarbeiterin bekommt vom Chef zum Geburtstag einen Blumenstrauß für 55 Euro brutto. Ist das für sie steuerfrei?
+D: Blumenstrauß = 55 €; Grenze = 60 €
+A: wahl: *Ja | Nein
+S: Aufmerksamkeiten an eigene Mitarbeiter zu einem persönlichen Anlass sind bis 60 Euro brutto steuerfrei. | 55 € ≤ 60 €
+R: R 19.6 LStR
+
+@ lf8 | Geschenke
+F: Ein Unternehmen verschenkt an Kunden Sachgeschenke im Wert von 2.000 Euro brutto und übernimmt dafür die Pauschalsteuer. Wie hoch ist die Pauschalsteuer ohne Zuschläge?
+D: Geschenke brutto = 2.000 €; Pauschalsteuer = 30 %
+A: 600 €
+S: Der Schenker kann die Steuer für die Beschenkten pauschal mit 30 Prozent übernehmen. | 2.000 € × 30 % = 600 €
+R: § 37b EStG
+
+@ lf8 | Geschenke
+F: Eine Betriebsfeier kostet 150 Euro pro Mitarbeiter. Es ist die erste Feier in diesem Jahr. Wie viel Euro sind pro Mitarbeiter steuerpflichtiger Arbeitslohn?
+D: Kosten pro Person = 150 €; Freibetrag = 110 €
+A: 40 €
+S: Bei Betriebsfeiern sind 110 Euro pro Mitarbeiter steuerfrei.
+S: Nur der Teil darüber ist Arbeitslohn. | 150 € − 110 € = 40 €
+R: § 19 Abs. 1 Satz 1 Nr. 1a EStG
+
+@ lf8 | Bewirtung
+F: Ein Unternehmer lädt einen Kunden zum Geschäftsessen ein. Die Rechnung beträgt 200 Euro netto und ist angemessen. Wie viel Euro sind als Betriebsausgabe abziehbar?
+D: Rechnung netto = 200 €; abziehbar = 70 %
+A: 140 €
+S: Von Bewirtungskosten sind nur 70 Prozent abziehbar. | 200 € × 70 % = 140 €
+R: § 4 Abs. 5 Satz 1 Nr. 2 EStG
+
+@ lf8 | Bewirtung
+F: Ein Geschäftsessen kostet 350 Euro netto. Wie viel Euro davon sind nicht abziehbar?
+D: Rechnung netto = 350 €; nicht abziehbar = 30 %
+A: 105 €
+S: 70 Prozent sind abziehbar, 30 Prozent nicht. | 350 € × 30 % = 105 €
+R: § 4 Abs. 5 Satz 1 Nr. 2 EStG
+
+@ lf8 | Bewirtung
+F: Auf der Rechnung für ein angemessenes Geschäftsessen stehen 30 Euro Umsatzsteuer. Wie viel Euro Vorsteuer darf der Unternehmer abziehen?
+D: Umsatzsteuer laut Rechnung = 30 €
+A: 30 €
+S: Anders als bei der Betriebsausgabe gibt es bei der Vorsteuer keine Kürzung.
+S: Die Vorsteuer aus angemessener Bewirtung ist voll abziehbar. | Vorsteuer = 30 €
+R: § 15 Abs. 1a Satz 2 UStG
+
+@ lf8 | Bewirtung
+F: Eine Restaurantrechnung über 280 Euro brutto nennt keinen Namen des Unternehmers. Reicht diese Rechnung für den Vorsteuerabzug aus?
+D: Rechnung brutto = 280 €; Kleinbetragsgrenze = 250 €
+A: wahl: Ja | *Nein
+S: Nur bis 250 Euro brutto reicht eine vereinfachte Kleinbetragsrechnung. | 280 € > 250 €
+S: Darüber muss der Name des Unternehmers auf der Rechnung stehen.
+R: § 33 UStDV
+
+@ lf8 | Bewirtung
+F: In einem Restaurant werden im Jahr 2026 Speisen für 100 Euro netto und Getränke für 50 Euro netto berechnet. Wie viel Euro Umsatzsteuer stehen insgesamt auf der Rechnung?
+D: Speisen = 100 €; Getränke = 50 €
+A: 16,50 €
+S: Für Speisen im Restaurant gelten seit 2026 sieben Prozent. | 100 € × 7 % = 7,00 €
+S: Für Getränke bleiben es 19 Prozent. | 50 € × 19 % = 9,50 €
+S: Zusammen ergibt das: | 7,00 € + 9,50 € = 16,50 €
+R: § 12 Abs. 2 Nr. 15 UStG
+
+@ lf8 | Reisekosten
+F: Ein Unternehmer ist für einen Kundentermin zehn Stunden unterwegs und kommt am selben Tag zurück. Wie viel Euro Verpflegungspauschale kann er ansetzen?
+D: Abwesenheit = 10 Stunden; Grenze = 8 Stunden
+A: 14 €
+S: Bei mehr als acht Stunden Abwesenheit gibt es die kleine Pauschale. | 10 Stunden > 8 Stunden
+S: Sie beträgt 14 Euro. Die echten Kosten spielen keine Rolle. | Pauschale = 14 €
+R: § 9 Abs. 4a EStG
+
+@ lf8 | Reisekosten
+F: Eine Unternehmerin reist am Montag an, hat am Dienstag einen vollen Tag vor Ort und reist am Mittwoch zurück. Wie viel Euro Verpflegungspauschale kann sie insgesamt ansetzen?
+D: Montag = Anreise; Dienstag = voller Tag; Mittwoch = Abreise
+A: 56 €
+S: Für An- und Abreisetag gibt es je 14 Euro. | 2 × 14 € = 28 €
+S: Für den vollen Tag gibt es 28 Euro. | 1 × 28 € = 28 €
+S: Zusammen ergibt das: | 28 € + 28 € = 56 €
+R: § 9 Abs. 4a EStG
+
+@ lf8 | Reisekosten
+F: Ein Arbeitnehmer ist auf Dienstreise und hat einen vollen Reisetag. Der Arbeitgeber zahlt das Hotel mit Frühstück. Wie viel Euro Verpflegungspauschale bleiben für diesen Tag?
+D: Pauschale voller Tag = 28 €; Kürzung Frühstück = 5,60 €
+A: 22,40 €
+S: Für den vollen Tag gibt es 28 Euro.
+S: Weil das Frühstück gestellt wird, wird um 5 Euro 60 gekürzt. | 28,00 € − 5,60 € = 22,40 €
+R: § 9 Abs. 4a Satz 8 EStG
+
+@ lf8 | Reisekosten
+F: Ein Arbeitnehmer fährt auf einer Dienstreise mit seinem privaten Auto insgesamt 240 Kilometer. Wie viel Euro Fahrtkosten kann er ansetzen?
+D: Gefahrene Kilometer = 240; je Kilometer = 0,30 €
+A: 72 €
+S: Für Fahrten mit dem privaten Auto gibt es 30 Cent je gefahrenem Kilometer. | 240 × 0,30 € = 72 €
+R: § 9 Abs. 1 Satz 3 Nr. 4a EStG
+
+@ lf8 | Reisekosten
+F: Eine Arbeitnehmerin hat einen vollen Reisetag. Der Arbeitgeber stellt ihr das Mittagessen und das Abendessen. Wie viel Euro Verpflegungspauschale bleiben für diesen Tag?
+D: Pauschale voller Tag = 28 €; Kürzung je Hauptmahlzeit = 11,20 €
+A: 5,60 €
+S: Für Mittag- und Abendessen wird jeweils um 11 Euro 20 gekürzt. | 2 × 11,20 € = 22,40 €
+S: Das wird von der Tagespauschale abgezogen. | 28,00 € − 22,40 € = 5,60 €
+R: § 9 Abs. 4a Satz 8 EStG
+
+@ lf8 | Grundbegriffe
+F: Du bekommst als Azubi jeden Monat deine Ausbildungsvergütung. Zu welcher Einkunftsart gehört sie?
+D: Einnahme = Ausbildungsvergütung
+A: wahl: *Nichtselbständige Arbeit | Gewerbebetrieb | Sonstige Einkünfte
+S: Die Ausbildungsvergütung ist Arbeitslohn. | Einkunftsart = nichtselbständige Arbeit
+R: § 19 Abs. 1 EStG
+
+@ lf8 | Grundbegriffe
+F: Herr Sommer gewinnt 50.000 Euro im Lotto. Muss er den Gewinn bei der Einkommensteuer versteuern?
+D: Lottogewinn = 50.000 €
+A: wahl: Ja | *Nein
+S: Steuerbar ist nur, was unter eine der sieben Einkunftsarten fällt.
+S: Ein Lottogewinn passt in keine davon. Er ist nicht steuerbar. | Steuer = 0 €
+R: § 2 Abs. 1 EStG
+
+@ lf8 | Grundbegriffe
+F: Eine Arbeitnehmerin hat einen Bruttolohn von 30.000 Euro. Eigene Werbungskosten weist sie nicht nach. Wie hoch sind ihre Einkünfte aus nichtselbständiger Arbeit?
+D: Bruttolohn = 30.000 €; Pauschbetrag = 1.230 €
+A: 28770 €
+S: Ohne Nachweis wird der Arbeitnehmer-Pauschbetrag abgezogen. | 30.000 € − 1.230 € = 28.770 €
+R: § 9a EStG; § 2 Abs. 2 EStG
+
+@ lf8 | Grundbegriffe
+F: Ein lediger Sparer bekommt 1.400 Euro Zinsen. Wie viel Euro Abgeltungsteuer fallen an, ohne Solidaritätszuschlag?
+D: Zinsen = 1.400 €; Sparer-Pauschbetrag = 1.000 €; Abgeltungsteuer = 25 %
+A: 100 €
+S: Zuerst wird der Sparer-Pauschbetrag abgezogen. | 1.400 € − 1.000 € = 400 €
+S: Auf den Rest kommen 25 Prozent Abgeltungsteuer. | 400 € × 25 % = 100 €
+R: § 20 Abs. 9 EStG; § 32d EStG
+
+@ lf8 | Grundbegriffe
+F: Die Summe der Einkünfte beträgt 40.000 Euro. Es gibt 4.000 Euro Sonderausgaben und 1.000 Euro außergewöhnliche Belastungen, sonst nichts. Wie hoch ist das zu versteuernde Einkommen?
+D: Summe der Einkünfte = 40.000 €; Sonderausgaben = 4.000 €; außergewöhnliche Belastungen = 1.000 €
+A: 35000 €
+S: Vom Gesamtbetrag der Einkünfte gehen die Sonderausgaben ab. | 40.000 € − 4.000 € = 36.000 €
+S: Dann werden die außergewöhnlichen Belastungen abgezogen. | 36.000 € − 1.000 € = 35.000 €
+R: § 2 Abs. 4 und 5 EStG
+
+@ lf8 | Grundbegriffe
+F: Frau Yilmaz bekommt drei Monate lang Arbeitslosengeld. Wie wird es bei der Einkommensteuer behandelt?
+D: Einnahme = Arbeitslosengeld
+A: wahl: Es ist voll steuerpflichtig | *Es ist steuerfrei, erhöht aber den Steuersatz | Es ist nicht steuerbar
+S: Arbeitslosengeld ist steuerfrei.
+S: Es erhöht aber den Steuersatz für das übrige Einkommen. Das nennt man Progressionsvorbehalt.
+R: § 3 Nr. 2 EStG; § 32b EStG
+
+@ lf8 | Betriebsausgaben
+F: Ein Unternehmer kauft im Mai einen Drucker für 700 Euro netto. Wie viel Euro kann er im Jahr des Kaufs als Betriebsausgabe abziehen?
+D: Drucker netto = 700 €; Grenze = 800 €
+A: 700 €
+S: Der Drucker kostet höchstens 800 Euro netto. Er ist ein geringwertiges Wirtschaftsgut. | 700 € ≤ 800 €
+S: Deshalb kann er sofort komplett abgezogen werden. | Abziehbar = 700 €
+R: § 6 Abs. 2 EStG
+
+@ lf8 | Betriebsausgaben
+F: Eine Unternehmerin kauft im Januar eine Maschine für 12.000 Euro netto. Die Nutzungsdauer beträgt sechs Jahre. Wie hoch ist die lineare Abschreibung im ersten Jahr?
+D: Anschaffungskosten = 12.000 €; Nutzungsdauer = 6 Jahre
+A: 2000 €
+S: Bei der linearen Abschreibung werden die Kosten gleichmäßig auf die Nutzungsdauer verteilt. | 12.000 € ÷ 6 = 2.000 €
+R: § 7 EStG
+
+@ lf8 | Betriebsausgaben
+F: Ein Unternehmer nutzt seinen Firmenwagen auch privat und führt kein Fahrtenbuch. Der Listenpreis beträgt 40.000 Euro. Wie viel Euro muss er im ganzen Jahr für die Privatnutzung ansetzen?
+D: Listenpreis = 40.000 €; je Monat = 1 %
+A: 4800 €
+S: Ohne Fahrtenbuch gilt die Ein-Prozent-Regel. | 40.000 € × 1 % = 400 €
+S: Das gilt für jeden Monat des Jahres. | 400 € × 12 = 4.800 €
+R: § 6 Abs. 1 Nr. 4 EStG
+
+@ lf8 | Betriebsausgaben
+F: Ein Unternehmer kauft für Kundentermine einen normalen Anzug für 400 Euro. Ist das eine Betriebsausgabe?
+D: Anzug = 400 €
+A: wahl: Ja | *Nein
+S: Normale Kleidung gehört zur privaten Lebensführung.
+S: Sie ist nicht abziehbar, auch wenn sie dem Beruf nützt. | Abziehbar = 0 €
+R: § 12 Nr. 1 EStG
+
+@ lf8 | Betriebsausgaben
+F: Ein kleiner Betrieb plant, in zwei Jahren eine Maschine für 60.000 Euro zu kaufen. Wie hoch darf der Investitionsabzugsbetrag höchstens sein?
+D: Geplante Kosten = 60.000 €; Abzug höchstens = 50 %
+A: 30000 €
+S: Kleine Betriebe dürfen bis zu 50 Prozent der geplanten Kosten vorab abziehen. | 60.000 € × 50 % = 30.000 €
+R: § 7g EStG
+
+@ lf8 | Betriebsausgaben
+F: Ein Unternehmer bekommt auf einer Geschäftsfahrt ein Bußgeld von 100 Euro wegen Falschparkens. Wie viel Euro sind als Betriebsausgabe abziehbar?
+D: Bußgeld = 100 €
+A: 0 €
+S: Bußgelder gehören zu den Betriebsausgaben, die man nicht abziehen darf. | Abziehbar = 0 €
+R: § 4 Abs. 5 EStG
+
+@ lf8 | Betrieb verkaufen
+F: Herr Maier verkauft seinen ganzen Betrieb für 300.000 Euro. Die Kosten des Verkaufs betragen 10.000 Euro, der Buchwert des Betriebsvermögens 190.000 Euro. Wie hoch ist der Veräußerungsgewinn?
+D: Verkaufspreis = 300.000 €; Verkaufskosten = 10.000 €; Buchwert = 190.000 €
+A: 100000 €
+S: Vom Verkaufspreis gehen die Kosten des Verkaufs ab. | 300.000 € − 10.000 € = 290.000 €
+S: Dann wird der Buchwert abgezogen. | 290.000 € − 190.000 € = 100.000 €
+R: § 16 Abs. 2 EStG
+
+@ lf8 | Betrieb verkaufen
+F: Frau Schulz ist 58 Jahre alt und verkauft ihren Betrieb mit einem Gewinn von 100.000 Euro. Sie beantragt den Freibetrag zum ersten Mal. Wie viel Euro bleiben steuerpflichtig?
+D: Veräußerungsgewinn = 100.000 €; Freibetrag = 45.000 €; Alter = 58 Jahre
+A: 55000 €
+S: Sie ist über 55 und der Gewinn liegt unter 136.000 Euro. Sie bekommt den vollen Freibetrag. | Freibetrag = 45.000 €
+S: Der Freibetrag wird vom Gewinn abgezogen. | 100.000 € − 45.000 € = 55.000 €
+R: § 16 Abs. 4 EStG
+
+@ lf8 | Betrieb verkaufen
+F: Ein 60-jähriger Unternehmer verkauft seinen Betrieb mit einem Gewinn von 150.000 Euro. Wie hoch ist sein Freibetrag?
+D: Veräußerungsgewinn = 150.000 €; Grenze = 136.000 €; voller Freibetrag = 45.000 €
+A: 31000 €
+S: Der Gewinn liegt über der Grenze von 136.000 Euro. | 150.000 € − 136.000 € = 14.000 €
+S: Um diesen Betrag wird der Freibetrag gekürzt. | 45.000 € − 14.000 € = 31.000 €
+R: § 16 Abs. 4 EStG
+
+@ lf8 | Betrieb verkaufen
+F: Eine 62-jährige Unternehmerin verkauft ihren Betrieb mit einem Gewinn von 200.000 Euro. Wie hoch ist ihr Freibetrag?
+D: Veräußerungsgewinn = 200.000 €; Freibetrag entfällt ab = 181.000 €
+A: 0 €
+S: Der Freibetrag schmilzt ab, sobald der Gewinn über 136.000 Euro liegt. | 200.000 € − 136.000 € = 64.000 €
+S: Die Kürzung ist größer als der Freibetrag von 45.000 Euro. Es bleibt nichts übrig. | Freibetrag = 0 €
+R: § 16 Abs. 4 EStG
+
+@ lf8 | Betrieb verkaufen
+F: Ein 50-jähriger, gesunder Unternehmer verkauft seinen Betrieb mit 80.000 Euro Gewinn. Wie hoch ist sein Freibetrag?
+D: Alter = 50 Jahre; Mindestalter = 55 Jahre; Veräußerungsgewinn = 80.000 €
+A: 0 €
+S: Den Freibetrag bekommt nur, wer mindestens 55 Jahre alt oder dauernd berufsunfähig ist. | 50 Jahre < 55 Jahre
+S: Beides trifft nicht zu. | Freibetrag = 0 €
+R: § 16 Abs. 4 EStG
+
+@ lf8 | Betrieb verkaufen
+F: Frau Klein hält seit Jahren 0,5 Prozent der Anteile an einer GmbH in ihrem Privatvermögen und verkauft sie jetzt. Sind das Einkünfte aus Gewerbebetrieb?
+D: Beteiligung = 0,5 %; Grenze = 1 %
+A: wahl: Ja | *Nein
+S: Einkünfte aus Gewerbebetrieb sind es nur, wenn man mit mindestens einem Prozent beteiligt war. | 0,5 % < 1 %
+S: Bei einer kleineren Beteiligung gehört der Gewinn zum Kapitalvermögen.
+R: § 17 EStG
+
+@ lf8 | Rechtsformen
+F: Eine OHG macht 90.000 Euro Gewinn. Laut Gesellschaftsvertrag bekommt Anna 50 Prozent, Ben 30 Prozent und Cem 20 Prozent. Wie hoch ist der Gewinnanteil von Ben?
+D: Gewinn = 90.000 €; Anna = 50 %; Ben = 30 %; Cem = 20 %
+A: 27000 €
+S: Der Gewinn wird nach dem Gesellschaftsvertrag verteilt. | 90.000 € × 30 % = 27.000 €
+R: § 709 Abs. 3 BGB; § 120 HGB
+
+@ lf8 | Rechtsformen
+F: Drei Gesellschafter einer GbR machen 90.000 Euro Gewinn. Sie haben keine Anteile vereinbart, und ihre Beiträge lassen sich nicht bewerten. Wie viel Euro bekommt jeder?
+D: Gewinn = 90.000 €; Gesellschafter = 3; Vereinbarung = keine
+A: 30000 €
+S: Ohne Vereinbarung und ohne bewertbare Beiträge wird nach Köpfen verteilt. | 90.000 € ÷ 3 = 30.000 €
+R: § 709 Abs. 3 BGB
+
+@ lf8 | Rechtsformen
+F: Ein Kommanditist ist mit einer Haftsumme von 50.000 Euro eingetragen und hat seine Einlage voll bezahlt. Ein Gläubiger der KG verlangt von ihm persönlich 20.000 Euro. Muss er zahlen?
+D: Haftsumme = 50.000 €; Einlage bezahlt = 50.000 €
+A: wahl: Ja | *Nein
+S: Ein Kommanditist haftet nur bis zu seiner Haftsumme.
+S: Hat er seine Einlage vollständig geleistet, haftet er nicht weiter. | Haftung = 0 €
+R: § 171 HGB
+
+@ lf8 | Rechtsformen
+F: Eine OHG kann ihre Schulden nicht bezahlen. Wie haftet eine Gesellschafterin?
+D: Rechtsform = OHG
+A: wahl: *Persönlich und unbegrenzt, auch mit Privatvermögen | Nur bis zur Höhe ihrer Einlage | Gar nicht
+S: Bei der OHG haften alle Gesellschafter persönlich und unbegrenzt. | Haftung = unbegrenzt
+R: § 126 HGB
+
+@ lf8 | Rechtsformen
+F: Herr Demir ist typischer stiller Gesellschafter. Er hat nur Geld gegeben und nichts zu sagen. Sein Gewinnanteil beträgt 3.000 Euro. Zu welcher Einkunftsart gehört das?
+D: Gewinnanteil = 3.000 €; Mitsprache = keine
+A: wahl: Gewerbebetrieb | *Kapitalvermögen | Sonstige Einkünfte
+S: Ein typischer stiller Gesellschafter ist kein Mitunternehmer.
+S: Sein Gewinnanteil gehört deshalb zu den Einkünften aus Kapitalvermögen. | Einkunftsart = Kapitalvermögen
+R: § 20 Abs. 1 Nr. 4 EStG
+
+@ lf6 | Einkauf aus einem anderen EU-Land
+F: Ein deutscher Unternehmer kauft in Frankreich eine Maschine für 10.000 Euro netto. Sie wird nach Deutschland geliefert. Wie hoch ist die Umsatzsteuer auf den innergemeinschaftlichen Erwerb?
+D: Kaufpreis netto = 10.000 €; Steuersatz = 19 %
+A: 1900 €
+S: Die Ware kommt aus einem anderen EU-Land nach Deutschland. Der Käufer versteuert den Erwerb in Deutschland.
+S: Die Steuer wird vom Entgelt berechnet. | 10.000 € × 19 % = 1.900 €
+R: § 1 Abs. 1 Nr. 5 UStG; § 10 Abs. 1 UStG
+
+@ lf6 | Einkauf aus einem anderen EU-Land
+F: Der Unternehmer schuldet 1.900 Euro Erwerbsteuer für die Maschine aus Frankreich. Er ist voll zum Vorsteuerabzug berechtigt. Wie viel Euro muss er am Ende ans Finanzamt zahlen?
+D: Erwerbsteuer = 1.900 €; Vorsteuer = 1.900 €
+A: 0 €
+S: Die Erwerbsteuer darf er gleichzeitig als Vorsteuer abziehen. | 1.900 € − 1.900 € = 0 €
+S: Am Ende bleibt keine Zahlung übrig.
+R: § 15 Abs. 1 Satz 1 Nr. 3 UStG
+
+@ lf6 | Einkauf aus einem anderen EU-Land
+F: Eine Ware aus Italien kommt am 20. Februar in Deutschland an. Die Rechnung wird am 10. März ausgestellt. Wann entsteht die Erwerbsteuer?
+D: Ware kommt an = 20. Februar; Rechnung = 10. März
+A: wahl: Am 20. Februar | *Am 10. März | Am 30. April
+S: Die Steuer entsteht mit der Ausstellung der Rechnung.
+S: Spätestens entsteht sie am Ende des Monats nach dem Erwerb. Die Rechnung kam vorher. | Entstehung = 10. März
+R: § 13 Abs. 1 Nr. 6 UStG
+
+@ lf6 | Einkauf aus einem anderen EU-Land
+F: Eine Privatperson aus Köln kauft in Belgien ein neues Auto für 30.000 Euro netto und bringt es nach Deutschland. Wie viel Euro Umsatzsteuer muss sie in Deutschland zahlen?
+D: Neuwagen netto = 30.000 €; Steuersatz = 19 %
+A: 5700 €
+S: Bei neuen Fahrzeugen versteuert immer der Käufer im Ankunftsland, sogar als Privatperson.
+S: Die Steuer beträgt 19 Prozent vom Kaufpreis. | 30.000 € × 19 % = 5.700 €
+R: § 1b UStG
+
+@ lf6 | Einkauf aus einem anderen EU-Land
+F: Ein Kleinunternehmer kauft in diesem Jahr für insgesamt 8.000 Euro Ware in anderen EU-Ländern ein. Im Vorjahr war es ähnlich wenig. Eine Umsatzsteuer-Identifikationsnummer verwendet er nicht. Muss er den Erwerb in Deutschland versteuern?
+D: Einkäufe im Jahr = 8.000 €; Erwerbsschwelle = 12.500 €
+A: wahl: Ja | *Nein
+S: Für Kleinunternehmer gilt die Erwerbsschwelle von 12.500 Euro im Jahr. | 8.000 € < 12.500 €
+S: Er liegt darunter und hat nicht darauf verzichtet. Er muss keinen Erwerb versteuern.
+R: § 1a Abs. 3 UStG
+
+@ lf6 | Einkauf aus einem anderen EU-Land
+F: Ein Unternehmer hat Ware aus Spanien für 10.000 Euro netto gekauft. Er zahlt früh und zieht 2 Prozent Skonto ab. Wie hoch ist die Erwerbsteuer nach der Berichtigung?
+D: Kaufpreis netto = 10.000 €; Skonto = 2 %; Steuersatz = 19 %
+A: 1862 €
+S: Durch das Skonto wird das Entgelt niedriger. | 10.000 € − 200 € = 9.800 €
+S: Die Erwerbsteuer wird vom neuen Entgelt berechnet. | 9.800 € × 19 % = 1.862 €
+R: § 17 Abs. 1 UStG
+
+@ lf6 | Einkauf aus einem Nicht-EU-Land
+F: Ein Unternehmer führt Ware aus China ein. Der Zollwert beträgt 20.000 Euro, der Zoll 1.000 Euro und die Fracht bis zum ersten Zielort in der EU 500 Euro. Wie hoch ist die Bemessungsgrundlage für die Einfuhrumsatzsteuer?
+D: Zollwert = 20.000 €; Zoll = 1.000 €; Fracht = 500 €
+A: 21500 €
+S: Zum Zollwert kommen der Zoll und die Transportkosten bis zum ersten Zielort in der EU. | 20.000 € + 1.000 € + 500 € = 21.500 €
+R: § 11 Abs. 1 und 3 UStG
+
+@ lf6 | Einkauf aus einem Nicht-EU-Land
+F: Die Bemessungsgrundlage für eine Einfuhr beträgt 21.500 Euro. Es gilt der normale Steuersatz. Wie hoch ist die Einfuhrumsatzsteuer?
+D: Bemessungsgrundlage = 21.500 €; Steuersatz = 19 %
+A: 4085 €
+S: Auf die Bemessungsgrundlage kommen 19 Prozent. | 21.500 € × 19 % = 4.085 €
+R: § 11 UStG; § 12 Abs. 1 UStG
+
+@ lf6 | Einkauf aus einem Nicht-EU-Land
+F: Wer erhebt die Einfuhrumsatzsteuer, wenn Ware aus den USA nach Deutschland kommt?
+D: Herkunft = USA; Ziel = Deutschland
+A: wahl: Das Finanzamt | *Der Zoll | Die Gemeinde
+S: Für die Einfuhrumsatzsteuer gelten die Regeln des Zolls. | Zuständig = Zoll
+R: § 21 Abs. 2 UStG
+
+@ lf6 | Einkauf aus einem Nicht-EU-Land
+F: Ein deutscher Händler kauft Uhren in der Schweiz und lässt sie nach Deutschland liefern. Was liegt umsatzsteuerlich vor?
+D: Herkunft = Schweiz; EU-Mitglied = nein
+A: wahl: Ein innergemeinschaftlicher Erwerb | *Eine Einfuhr
+S: Die Schweiz gehört nicht zur EU. Sie ist ein Drittland.
+S: Ware aus einem Drittland ist eine Einfuhr. | Ergebnis = Einfuhr
+R: § 1 Abs. 1 Nr. 4 UStG
+
+@ lf6 | Einkauf aus einem Nicht-EU-Land
+F: Ein Lieferant aus den USA liefert verzollt und versteuert, er zahlt also selbst die Einfuhrumsatzsteuer. Woraus zieht der deutsche Kunde seine Vorsteuer?
+D: Lieferbedingung = verzollt und versteuert
+A: wahl: *Aus der Rechnung des Lieferanten | Aus dem Einfuhrbeleg des Zolls | Er hat keinen Vorsteuerabzug
+S: Zahlt der Lieferant die Einfuhrumsatzsteuer, gilt seine Lieferung als in Deutschland ausgeführt.
+S: Der Kunde zieht die Vorsteuer dann ganz normal aus der Rechnung.
+R: § 3 Abs. 8 UStG
+
+@ lf6 | Einkauf aus einem Nicht-EU-Land
+F: Eine Unternehmerin zahlt beim Zoll 4.085 Euro Einfuhrumsatzsteuer für Ware, die sie für ihre Firma einführt. Sie ist voll zum Vorsteuerabzug berechtigt. Wie viel Euro Vorsteuer kann sie abziehen?
+D: Einfuhrumsatzsteuer = 4.085 €
+A: 4085 €
+S: Die bezahlte Einfuhrumsatzsteuer ist als Vorsteuer abziehbar, wenn die Ware für das Unternehmen eingeführt wurde. | Vorsteuer = 4.085 €
+R: § 15 Abs. 1 Satz 1 Nr. 2 UStG
+
+@ lf6 | Wer muss in Deutschland Einkommensteuer zahlen
+F: Herr Jensen wohnt in Flensburg und arbeitet jeden Tag in Dänemark. Wie ist er in Deutschland steuerpflichtig?
+D: Wohnsitz = Flensburg; Arbeitsort = Dänemark
+A: wahl: *Unbeschränkt steuerpflichtig | Beschränkt steuerpflichtig | Gar nicht
+S: Entscheidend ist der Wohnsitz, nicht der Arbeitsort.
+S: Wer in Deutschland wohnt, ist unbeschränkt steuerpflichtig. | Ergebnis = unbeschränkt
+R: § 1 Abs. 1 EStG; § 8 AO
+
+@ lf6 | Wer muss in Deutschland Einkommensteuer zahlen
+F: Herr de Vries wohnt in den Niederlanden und hat dort seinen Lebensmittelpunkt. Er arbeitet in einem Betrieb in Aachen. Wie ist er in Deutschland steuerpflichtig?
+D: Wohnsitz = Niederlande; Arbeitsort = Aachen
+A: wahl: Unbeschränkt steuerpflichtig | *Beschränkt steuerpflichtig | Gar nicht
+S: Er hat in Deutschland weder Wohnsitz noch gewöhnlichen Aufenthalt.
+S: Er hat aber deutsche Einkünfte. Damit ist er beschränkt steuerpflichtig. | Ergebnis = beschränkt
+R: § 1 Abs. 4 EStG; § 49 EStG
+
+@ lf6 | Wer muss in Deutschland Einkommensteuer zahlen
+F: Eine Ingenieurin aus den USA arbeitet acht Monate am Stück in München und wohnt die ganze Zeit im Hotel. Ist sie in Deutschland unbeschränkt steuerpflichtig?
+D: Aufenthalt = 8 Monate am Stück; Grenze = 6 Monate
+A: wahl: *Ja | Nein
+S: Wer länger als sechs Monate am Stück in Deutschland ist, hat hier seinen gewöhnlichen Aufenthalt. | 8 Monate > 6 Monate
+S: Das gilt vom ersten Tag an. Sie ist unbeschränkt steuerpflichtig.
+R: § 9 AO; § 1 Abs. 1 EStG
+
+@ lf6 | Wer muss in Deutschland Einkommensteuer zahlen
+F: Eine OHG macht 120.000 Euro Gewinn. Wer zahlt darauf die Einkommensteuer?
+D: Gewinn der OHG = 120.000 €
+A: wahl: Die OHG selbst | *Die Gesellschafter | Niemand
+S: Einkommensteuer zahlen nur Menschen, also natürliche Personen.
+S: Der Gewinn der OHG wird festgestellt, verteilt und von jedem Gesellschafter selbst versteuert.
+R: § 180 Abs. 1 Satz 1 Nr. 2 Buchst. a AO; § 1 Abs. 1 EStG
+
+@ lf6 | Wer muss in Deutschland Einkommensteuer zahlen
+F: Frau Rossi zieht am 1. Juli von Italien nach Berlin. Vorher hatte sie schon deutsche Einkünfte. Wie viele Einkommensteuer-Veranlagungen gibt es für dieses Jahr?
+D: Umzug = 1. Juli; vorher = beschränkt steuerpflichtig; danach = unbeschränkt steuerpflichtig
+A: 1
+S: Auch beim Wechsel der Steuerpflicht im Laufe des Jahres gibt es nur eine Veranlagung für das ganze Jahr. | Veranlagungen = 1
+R: § 2 Abs. 7 Satz 3 EStG
+
+@ lf6 | Ehepaare
+F: Lena und Tim heiraten am 30. Dezember 2025. Beide wohnen in Deutschland und leben zusammen. Können sie für 2025 die Zusammenveranlagung wählen?
+D: Hochzeit = 30. Dezember 2025
+A: wahl: *Ja | Nein
+S: Die Voraussetzungen müssen nur an einem Tag im Jahr vorliegen.
+S: Die Heirat am 30. Dezember reicht also für das ganze Jahr 2025.
+R: § 26 Abs. 1 EStG
+
+@ lf6 | Ehepaare
+F: Ein Arbeitnehmer hat neben seinem Lohn 300 Euro Einkünfte aus einem kleinen Nebenjob ohne Lohnsteuerabzug. Muss er deshalb eine Steuererklärung abgeben?
+D: Nebeneinkünfte = 300 €; Grenze = 410 €
+A: wahl: Ja | *Nein
+S: Die Pflicht entsteht erst bei Nebeneinkünften von mehr als 410 Euro. | 300 € < 410 €
+R: § 46 Abs. 2 Nr. 1 EStG
+
+@ lf6 | Ehepaare
+F: Eine Arbeitnehmerin hat Nebeneinkünfte von 600 Euro. Wie hoch ist der Härteausgleich?
+D: Nebeneinkünfte = 600 €; Obergrenze = 820 €
+A: 220 €
+S: Zwischen 410 und 820 Euro gibt es einen gleitenden Abzug.
+S: Er beträgt 820 Euro minus die Nebeneinkünfte. | 820 € − 600 € = 220 €
+R: § 46 Abs. 3 EStG; § 70 EStDV
+
+@ lf6 | Ehepaare
+F: Herr Braun macht seine Steuererklärung für 2025 selbst, ohne Steuerberater. Bis wann muss er sie abgeben?
+D: Steuerjahr = 2025; Steuerberater = nein
+A: wahl: *Bis 31. Juli 2026 | Bis 31. Dezember 2026 | Bis 28. Februar 2027
+S: Ohne Steuerberater endet die Frist am 31. Juli des Folgejahres. | Frist = 31. Juli 2026
+R: § 149 AO
+
+@ lf6 | Ehepaare
+F: Frau Lange muss keine Steuererklärung abgeben, möchte aber für 2022 freiwillig eine einreichen. Bis wann ist das möglich?
+D: Steuerjahr = 2022; Frist = 4 Jahre
+A: wahl: Bis 31. Dezember 2024 | Bis 31. Dezember 2025 | *Bis 31. Dezember 2026
+S: Für die freiwillige Erklärung hat man vier Jahre Zeit.
+S: Die Frist beginnt am Ende des Jahres 2022. | 2022 + 4 Jahre = Ende 2026
+R: § 46 Abs. 2 Nr. 8 EStG; § 169 AO; § 170 AO
+
+@ lf6 | Ehepaare
+F: Ein Ehepaar hat zusammen ein zu versteuerndes Einkommen von 60.000 Euro. Angenommen, die Steuer für 30.000 Euro beträgt laut Tabelle 4.500 Euro. Wie hoch ist die Steuer nach dem Splittingtarif?
+D: Einkommen zusammen = 60.000 €; Hälfte = 30.000 €; Steuer für die Hälfte = 4.500 €
+A: 9000 €
+S: Beim Splitting wird das gemeinsame Einkommen halbiert. | 60.000 € ÷ 2 = 30.000 €
+S: Die Steuer für diese Hälfte wird verdoppelt. | 4.500 € × 2 = 9.000 €
+R: § 26b EStG; § 32a Abs. 5 EStG
+
+@ sk | Recht, Personen
+F: Ab wann ist ein Mensch rechtsfähig, kann also Rechte und Pflichten haben?
+D: Frage = Beginn der Rechtsfähigkeit
+A: wahl: *Mit Vollendung der Geburt | Mit 7 Jahren | Mit 18 Jahren
+S: Die Rechtsfähigkeit beginnt mit der Vollendung der Geburt.
+S: Mit 7 und 18 Jahren ändert sich nur die Geschäftsfähigkeit.
+R: § 1 BGB
+
+@ sk | Recht, Personen
+F: Jonas kauft im Laden ein Fahrrad. Wodurch wird er Eigentümer des Fahrrads?
+D: Sache = Fahrrad, beweglich
+A: wahl: Schon durch den Kaufvertrag | *Durch Einigung und Übergabe | Durch die Bezahlung
+S: Der Kaufvertrag verpflichtet nur zur Übereignung.
+S: Eigentum an beweglichen Sachen geht erst durch Einigung und Übergabe über.
+R: § 929 BGB
+
+@ sk | Recht, Personen
+F: Ein Schreiben geht am Dienstag, dem 3. März, zu. Ab dann läuft eine Frist von einer Woche. Wann endet die Frist?
+D: Zugang = Dienstag, 3. März; Frist = 1 Woche
+A: wahl: Am Montag, 9. März | *Am Dienstag, 10. März | Am Mittwoch, 11. März
+S: Der Tag des Zugangs zählt nicht mit.
+S: Eine Wochenfrist endet am gleichen Wochentag der nächsten Woche. | Fristende = Dienstag, 10. März
+R: §§ 187, 188 BGB
+
+@ sk | Rechtsgeschäfte
+F: Die sechsjährige Mia kauft sich allein am Kiosk ein Eis. Wie ist der Kaufvertrag rechtlich?
+D: Alter = 6 Jahre
+A: wahl: Wirksam | Schwebend unwirksam | *Nichtig
+S: Kinder unter sieben Jahren sind geschäftsunfähig.
+S: Ihre Erklärungen sind rechtlich ungültig, also nichtig.
+R: § 104 BGB; § 105 BGB
+
+@ sk | Rechtsgeschäfte
+F: Die 15-jährige Elif kauft ohne Wissen ihrer Eltern ein Smartphone für 600 Euro auf Raten. Wie ist der Vertrag rechtlich?
+D: Alter = 15 Jahre; Preis = 600 €; Zustimmung der Eltern = fehlt
+A: wahl: Wirksam | *Schwebend unwirksam | Nichtig
+S: Mit 15 ist Elif beschränkt geschäftsfähig. Sie braucht die Zustimmung der Eltern.
+S: Bis die Eltern entscheiden, ist der Vertrag schwebend unwirksam.
+R: § 106 bis § 108 BGB
+
+@ sk | Rechtsgeschäfte
+F: Der 16-jährige Paul kauft von seinem Taschengeld ein Buch für 15 Euro und bezahlt sofort bar. Wie ist der Vertrag rechtlich?
+D: Alter = 16 Jahre; Preis = 15 €; Bezahlung = sofort mit Taschengeld
+A: wahl: *Wirksam | Schwebend unwirksam | Nichtig
+S: Hier gilt der Taschengeldparagraf.
+S: Bezahlt ein Minderjähriger sofort mit seinem Taschengeld, ist der Kauf von Anfang an gültig.
+R: § 110 BGB
+
+@ sk | Rechtsgeschäfte
+F: Zwei Privatleute schließen einen Kaufvertrag über ein Grundstück nur schriftlich am Küchentisch, ohne Notar. Wie ist der Vertrag?
+D: Gegenstand = Grundstück; Form = privatschriftlich
+A: wahl: Wirksam | *Nichtig
+S: Ein Grundstückskauf muss vom Notar beurkundet werden.
+S: Wird die vorgeschriebene Form nicht eingehalten, ist der Vertrag nichtig.
+R: § 311b Abs. 1 BGB; § 125 BGB
+
+@ sk | Rechtsgeschäfte
+F: Herr Vogel wurde beim Autokauf arglistig getäuscht. Wie lange hat er Zeit, den Vertrag anzufechten, nachdem er die Täuschung entdeckt hat?
+D: Grund = arglistige Täuschung
+A: wahl: Er muss sofort anfechten | *Ein Jahr | Drei Jahre
+S: Bei Täuschung oder Drohung hat man ein Jahr Zeit.
+S: Nur bei einem Irrtum muss man sofort anfechten. | Frist = 1 Jahr
+R: § 123 BGB; § 124 BGB
+
+@ sk | Bewerbung
+F: Im Vorstellungsgespräch wird Frau Arslan gefragt, ob sie schwanger ist. Sie verneint, obwohl sie es ist, und bekommt die Stelle. Kann der Arbeitgeber den Vertrag später wegen Täuschung anfechten?
+D: Frage = nach Schwangerschaft; Antwort = gelogen
+A: wahl: Ja | *Nein
+S: Die Frage nach einer Schwangerschaft ist nicht erlaubt.
+S: Bei unerlaubten Fragen darf man lügen, ohne dass etwas passiert.
+R: § 123 BGB (Bewerbung); § 1, § 7 AGG
+
+@ sk | Bewerbung
+F: Ein Betrieb lädt Tom zum Vorstellungsgespräch ein. Er hat 80 Euro Fahrtkosten. Der Betrieb hat die Erstattung vorher nicht ausgeschlossen. Wie viel Euro muss der Betrieb erstatten?
+D: Fahrtkosten = 80 €; Ausschluss = nein
+A: 80 €
+S: Wer zum Gespräch einlädt, muss die nötigen Kosten erstatten.
+S: Das gilt nur dann nicht, wenn er es vorher ausdrücklich ausgeschlossen hat. | Erstattung = 80 €
+R: § 670 BGB
+
+@ sk | Bewerbung
+F: Eine Bewerberin wird wegen ihres Alters abgelehnt. Was kann sie vom Arbeitgeber verlangen?
+D: Ablehnungsgrund = Alter
+A: wahl: Die Einstellung | *Schadensersatz und Entschädigung | Nichts
+S: Eine Benachteiligung wegen des Alters ist verboten.
+S: Sie kann Schadensersatz und Entschädigung verlangen. Einen Anspruch auf die Stelle hat sie nicht.
+R: § 15 AGG; § 1, § 7 AGG
+
+@ sk | Arbeitsvertrag
+F: Herr Koch und sein neuer Chef einigen sich per Handschlag auf einen unbefristeten Arbeitsvertrag. Ist der Vertrag gültig?
+D: Form = mündlich; Befristung = keine
+A: wahl: *Ja | Nein
+S: Ein unbefristeter Arbeitsvertrag ist auch mündlich gültig.
+S: Der Arbeitgeber muss die wichtigsten Punkte aber schriftlich aushändigen.
+R: § 2 NachwG
+
+@ sk | Arbeitsvertrag
+F: Ein Betrieb möchte eine neue Mitarbeiterin ohne sachlichen Grund befristet einstellen. Wie viele Jahre darf die Befristung insgesamt höchstens dauern?
+D: Sachgrund = keiner
+A: 2 Jahre
+S: Ohne sachlichen Grund ist eine Befristung höchstens zwei Jahre erlaubt. | Höchstdauer = 2 Jahre
+S: In dieser Zeit sind höchstens drei Verlängerungen möglich.
+R: § 14 TzBfG
+
+@ sk | Arbeitsvertrag
+F: Ein Arbeitsvertrag soll auf ein Jahr befristet sein. Die Befristung wird aber nur mündlich vereinbart. Was gilt?
+D: Befristung = nur mündlich
+A: wahl: Der ganze Vertrag ist ungültig | *Der Vertrag gilt als unbefristet | Die Befristung gilt trotzdem
+S: Eine Befristung muss schriftlich vereinbart werden.
+S: Ist sie ungültig, gilt der Vertrag als unbefristet.
+R: § 14 TzBfG; § 16 TzBfG
+
+@ sk | Arbeitszeit
+F: Lisa arbeitet heute acht Stunden. Wie viele Minuten Pause stehen ihr mindestens zu?
+D: Arbeitszeit = 8 Stunden
+A: 30 Minuten
+S: Bei mehr als sechs Stunden Arbeit sind es mindestens 30 Minuten Pause. | 8 Stunden > 6 Stunden
+R: § 4 ArbZG
+
+@ sk | Arbeitszeit
+F: Ein Mitarbeiter arbeitet heute neuneinhalb Stunden. Wie viele Minuten Pause muss er mindestens machen?
+D: Arbeitszeit = 9,5 Stunden
+A: 45 Minuten
+S: Bei mehr als neun Stunden Arbeit sind es mindestens 45 Minuten Pause. | 9,5 Stunden > 9 Stunden
+R: § 4 ArbZG
+
+@ sk | Arbeitszeit
+F: Eine Mitarbeiterin hat um 22 Uhr Feierabend. Um wie viel Uhr darf sie am nächsten Morgen frühestens wieder anfangen?
+D: Feierabend = 22 Uhr; Ruhezeit = 11 Stunden
+A: 9 Uhr
+S: Nach Feierabend müssen mindestens elf Stunden Ruhe liegen. | 22 Uhr + 11 Stunden = 9 Uhr
+R: § 5 ArbZG
+
+@ sk | Arbeitszeit
+F: Das Gesetz nennt einen Mindesturlaub von 24 Werktagen. Wie viele Urlaubstage sind das bei einer Fünf-Tage-Woche?
+D: Mindesturlaub = 24 Werktage; Werktage je Woche = 6; Arbeitstage je Woche = 5
+A: 20 Tage
+S: Werktage sind Montag bis Samstag. 24 Werktage sind also vier Wochen. | 24 ÷ 6 = 4 Wochen
+S: Bei fünf Arbeitstagen pro Woche ergibt das: | 4 × 5 = 20 Tage
+R: § 3 BUrlG
+
+@ sk | Arbeitszeit
+F: Ein Arbeitnehmer fängt am 1. September neu im Betrieb an. Sein Jahresurlaub beträgt 24 Werktage. Wie viele Urlaubstage stehen ihm für dieses Jahr zu?
+D: Eintritt = 1. September; Jahresurlaub = 24 Werktage; volle Monate = 4
+A: 8 Tage
+S: Die Wartezeit von sechs Monaten ist in diesem Jahr nicht erfüllt. Es gibt Teilurlaub.
+S: Für jeden vollen Monat gibt es ein Zwölftel des Jahresurlaubs. | 24 ÷ 12 = 2 Tage
+S: Von September bis Dezember sind es vier Monate. | 4 × 2 = 8 Tage
+R: § 4 BUrlG; § 5 BUrlG
+
+@ sk | Arbeitszeit
+F: Frau Peters hat zehn Tage Urlaub genommen. Drei Tage davon war sie krank und hat ein Attest. Wie viele Urlaubstage sind verbraucht?
+D: Urlaub genommen = 10 Tage; krank mit Attest = 3 Tage
+A: 7 Tage
+S: Krankheitstage mit Attest zählen nicht als Urlaub. | 10 − 3 = 7 Tage
+R: § 9 BUrlG
+
+@ sk | Krankheit
+F: Herr Nowak ist seit Jahren im Betrieb und wird länger krank. Wie viele Wochen zahlt der Arbeitgeber höchstens den Lohn weiter?
+D: Betriebszugehörigkeit = mehrere Jahre
+A: 6 Wochen
+S: Der Arbeitgeber zahlt bis zu sechs Wochen weiter. | Lohnfortzahlung = 6 Wochen
+S: Danach zahlt die Krankenkasse Krankengeld.
+R: § 3 EntgFG; § 44 SGB V
+
+@ sk | Krankheit
+F: Sara arbeitet erst seit zwei Wochen in ihrem neuen Betrieb und wird krank. Bekommt sie Lohnfortzahlung vom Arbeitgeber?
+D: Im Betrieb seit = 2 Wochen; Wartezeit = 4 Wochen
+A: wahl: Ja | *Nein
+S: Der Anspruch entsteht erst, wenn man vier Wochen im Betrieb ist. | 2 Wochen < 4 Wochen
+R: § 3 EntgFG
+
+@ sk | Krankheit
+F: Ben ist seit Montag krank und es dauert länger. Er arbeitet von Montag bis Freitag. An welchem Tag muss er spätestens die Krankschreibung vorlegen?
+D: Krank seit = Montag; Grenze = 3 Kalendertage
+A: wahl: Am Dienstag | Am Mittwoch | *Am Donnerstag
+S: Montag, Dienstag und Mittwoch sind drei Kalendertage.
+S: Dauert die Krankheit länger, braucht er die Krankschreibung am nächsten Arbeitstag. | Spätestens = Donnerstag
+R: § 5 EntgFG
+
+@ sk | Mutterschutz
+F: Wie viele Wochen vor dem errechneten Geburtstermin beginnt die Schutzfrist?
+D: Frage = Schutzfrist vor der Geburt
+A: 6 Wochen
+S: Die Schutzfrist beginnt sechs Wochen vor dem errechneten Termin. | Schutzfrist = 6 Wochen
+S: In dieser Zeit darf die Frau nur arbeiten, wenn sie es ausdrücklich will.
+R: § 3 Abs. 1 MuSchG
+
+@ sk | Mutterschutz
+F: Frau Aydin bekommt Zwillinge. Wie viele Wochen darf sie nach der Geburt nicht arbeiten?
+D: Geburt = Zwillinge; normale Frist = 8 Wochen
+A: 12 Wochen
+S: Normalerweise sind es acht Wochen nach der Geburt.
+S: Bei Mehrlingen und Frühgeburten verlängert sich die Frist. | Schutzfrist = 12 Wochen
+R: § 3 Abs. 2 MuSchG
+
+@ sk | Mutterschutz
+F: Der errechnete Geburtstermin ist Mittwoch, der 20. Mai. Wann beginnt die Schutzfrist?
+D: Geburtstermin = Mittwoch, 20. Mai; Schutzfrist = 6 Wochen vorher
+A: wahl: Am 6. April | *Am 8. April | Am 22. April
+S: Die Schutzfrist beginnt sechs Wochen vor dem Termin.
+S: Sechs Wochen vor Mittwoch, dem 20. Mai, ist Mittwoch, der 8. April. | Beginn = 8. April
+R: § 3 Abs. 1 MuSchG
+
+@ sk | Mutterschutz
+F: Eine Arbeitnehmerin verdient netto 50 Euro pro Kalendertag. In der Schutzfrist bekommt sie von der Krankenkasse 13 Euro pro Tag. Wie viel Euro pro Tag zahlt der Arbeitgeber dazu?
+D: Netto pro Tag = 50 €; Krankenkasse = 13 €
+A: 37 €
+S: Die Krankenkasse zahlt höchstens 13 Euro pro Tag.
+S: Der Arbeitgeber legt den Rest bis zum Nettolohn drauf. | 50 € − 13 € = 37 €
+R: § 19, § 20 MuSchG
+
+@ sk | Mutterschutz
+F: Eine Mitarbeiterin ist im dritten Monat schwanger, und der Chef weiß das. Darf er ihr jetzt ordentlich kündigen?
+D: Schwangerschaft = 3. Monat; Arbeitgeber informiert = ja
+A: wahl: Ja | *Nein
+S: Während der Schwangerschaft gilt ein Kündigungsverbot.
+S: Es gilt bis vier Monate nach der Geburt.
+R: § 17 MuSchG
+
+@ sk | Schwerbehinderte
+F: Ab welchem Grad der Behinderung gilt ein Mensch als schwerbehindert?
+D: Frage = Mindestgrad der Behinderung
+A: 50
+S: Schwerbehindert ist, wer einen Grad der Behinderung von mindestens 50 hat. | Mindestgrad = 50
+R: § 2 Abs. 2 SGB IX
+
+@ sk | Schwerbehinderte
+F: Ein Betrieb hat 100 Arbeitsplätze. Wie viele davon muss er mit schwerbehinderten Menschen besetzen?
+D: Arbeitsplätze = 100; Pflichtquote = 5 %
+A: 5
+S: Betriebe ab 20 Arbeitsplätzen müssen fünf Prozent mit schwerbehinderten Menschen besetzen. | 100 × 5 % = 5
+S: Sonst zahlen sie eine Ausgleichsabgabe.
+R: § 154 SGB IX
+
+@ sk | Schwerbehinderte
+F: Ein schwerbehinderter Mitarbeiter ist seit zwei Jahren im Betrieb. Der Arbeitgeber kündigt, ohne das Integrationsamt zu fragen. Ist die Kündigung wirksam?
+D: Im Betrieb seit = 2 Jahre; Zustimmung Integrationsamt = fehlt
+A: wahl: Ja | *Nein
+S: Schwerbehinderten Menschen darf nur mit vorheriger Zustimmung des Integrationsamts gekündigt werden.
+S: Das gilt, sobald sie länger als sechs Monate im Betrieb sind.
+R: § 168 SGB IX
+
+@ sk | Kündigung
+F: Ein Chef kündigt seiner Mitarbeiterin per WhatsApp. Ist die Kündigung wirksam?
+D: Form = WhatsApp-Nachricht
+A: wahl: Ja | *Nein
+S: Eine Kündigung muss schriftlich auf Papier mit Unterschrift erfolgen.
+S: WhatsApp, E-Mail oder mündlich ist ungültig.
+R: § 623 BGB
+
+@ sk | Kündigung
+F: Herr Fischer ist seit sechs Jahren im Betrieb. Der Arbeitgeber will ihm ordentlich kündigen. Wie viele Monate beträgt die Kündigungsfrist zum Monatsende?
+D: Betriebszugehörigkeit = 6 Jahre; ab 2 Jahren = 1 Monat; ab 5 Jahren = 2 Monate; ab 8 Jahren = 3 Monate
+A: 2 Monate
+S: Je länger man im Betrieb ist, desto länger wird die Frist für den Arbeitgeber.
+S: Sechs Jahre liegen zwischen fünf und acht Jahren. | Frist = 2 Monate
+R: § 622 Abs. 2 BGB
+
+@ sk | Kündigung
+F: Mara ist im zweiten Monat ihrer Probezeit. Wie viele Wochen beträgt die Kündigungsfrist?
+D: Probezeit = 2. Monat
+A: 2 Wochen
+S: In der Probezeit von höchstens sechs Monaten beträgt die Kündigungsfrist zwei Wochen. | Frist = 2 Wochen
+R: § 622 Abs. 3 BGB
+
+@ sk | Kündigung
+F: Die schriftliche Kündigung liegt am Dienstag, dem 3. März, im Briefkasten von Herrn Sahin. Bis wann muss er spätestens Kündigungsschutzklage erheben?
+D: Zugang = Dienstag, 3. März; Klagefrist = 3 Wochen
+A: wahl: Bis 17. März | *Bis 24. März | Bis 3. April
+S: Für die Klage hat man drei Wochen ab Erhalt der Kündigung.
+S: Drei Wochen nach Dienstag, dem 3. März, ist Dienstag, der 24. März. | Fristende = 24. März
+R: § 4 KSchG
+
+@ sk | Kündigung
+F: Eine Mitarbeiterin ist seit drei Jahren in einem Betrieb mit acht Arbeitnehmern. Gilt für sie der allgemeine Kündigungsschutz?
+D: Im Betrieb seit = 3 Jahre; Arbeitnehmer = 8; nötig = mehr als 10
+A: wahl: Ja | *Nein
+S: Der Kündigungsschutz gilt nur in Betrieben mit mehr als zehn Arbeitnehmern. | 8 < 10
+R: § 1, § 23 KSchG
+
+@ sk | Kündigung
+F: Ein Arbeitnehmer übergibt seine Kündigung am 10. März. Es gilt die normale Frist von vier Wochen zum 15. oder zum Monatsende. Zu welchem Termin endet das Arbeitsverhältnis?
+D: Kündigung = 10. März; Frist = 4 Wochen
+A: wahl: Zum 31. März | *Zum 15. April | Zum 30. April
+S: Vier Wochen nach dem 10. März ist der 7. April.
+S: Der nächste mögliche Termin danach ist der 15. April. | Ende = 15. April
+R: § 622 Abs. 1 BGB
+
+@ sk | Zeugnis
+F: Was steht in einem qualifizierten Arbeitszeugnis zusätzlich zu Art und Dauer der Tätigkeit?
+D: Zeugnis = qualifiziert
+A: wahl: *Leistung und Verhalten | Die Höhe des Gehalts | Die Krankheitstage
+S: Das einfache Zeugnis nennt nur Art und Dauer der Tätigkeit.
+S: Das qualifizierte Zeugnis beschreibt zusätzlich Leistung und Verhalten.
+R: § 109 GewO, § 630 BGB
+
+@ sk | Zeugnis
+F: Frau Berg gewinnt ihren Prozess vor dem Arbeitsgericht in der ersten Instanz. Ihr Anwalt kostet 1.200 Euro. Wer zahlt diese Kosten?
+D: Instanz = erste; Anwaltskosten = 1.200 €
+A: wahl: Der Arbeitgeber, weil er verloren hat | *Sie selbst
+S: In der ersten Instanz vor dem Arbeitsgericht zahlt jeder seinen eigenen Anwalt.
+S: Das gilt auch für die Seite, die gewinnt.
+R: § 12a ArbGG
+
+@ sk | Zeugnis
+F: Herr Lutz will vor dem Arbeitsgericht gegen seine Kündigung klagen. Braucht er in der ersten Instanz einen Anwalt?
+D: Instanz = erste
+A: wahl: Ja | *Nein
+S: Vor dem Arbeitsgericht in der ersten Instanz darf man sich selbst vertreten.
+R: § 11 ArbGG
