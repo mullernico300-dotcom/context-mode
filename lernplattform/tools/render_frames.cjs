@@ -1,5 +1,5 @@
 /* Rendert die Einzelbilder der Lernvideos (720×1280) aus plan.json.
-   Aufruf: node tools/render_frames.js <arbeitsordner> [video-id]
+   Aufruf: node tools/render_frames.cjs <arbeitsordner> [video-id]
    Schriften: npm install @fontsource/inter @fontsource/space-grotesk im Arbeitsordner. */
 const fs = require('fs');
 const path = require('path');
@@ -11,7 +11,7 @@ const plan = JSON.parse(fs.readFileSync(path.join(arbeit, 'plan.json'), 'utf8'))
 const schrift = (p) => 'data:font/woff2;base64,' + fs.readFileSync(path.join(arbeit, 'node_modules', p)).toString('base64');
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
-const SEITE = `<!doctype html><html><head><meta charset="utf-8"><style>
+const SEITE = `<!doctype html><html lang="de"><head><meta charset="utf-8"><style>
 @font-face{font-family:Inter;font-weight:400;src:url(${schrift('@fontsource/inter/files/inter-latin-400-normal.woff2')})}
 @font-face{font-family:Inter;font-weight:600;src:url(${schrift('@fontsource/inter/files/inter-latin-600-normal.woff2')})}
 @font-face{font-family:Inter;font-weight:700;src:url(${schrift('@fontsource/inter/files/inter-latin-700-normal.woff2')})}
@@ -24,10 +24,10 @@ body{width:720px;height:1280px;overflow:hidden;font-family:Inter,sans-serif;colo
 .kopf{display:flex;align-items:center;justify-content:space-between;gap:16px}
 .fach{background:var(--f);font-weight:700;font-size:27px;padding:9px 22px;border-radius:99px;letter-spacing:.02em}
 .teil{font-size:25px;font-weight:600;opacity:.75}
-.titel{font-family:Grotesk,Inter,sans-serif;font-size:42px;line-height:1.14;font-weight:700;letter-spacing:-.01em;opacity:.92}
+.titel{hyphens:auto;overflow-wrap:break-word;font-family:Grotesk,Inter,sans-serif;font-size:42px;line-height:1.14;font-weight:700;letter-spacing:-.01em;opacity:.92}
 .karte{flex:1;min-height:0;border-radius:44px;padding:44px 42px;background:rgba(255,255,255,.09);border:2px solid rgba(255,255,255,.2);
   display:flex;flex-direction:column;gap:26px;justify-content:center}
-.ref{font-family:Grotesk,Inter,sans-serif;font-weight:700;font-size:56px;line-height:1.08;color:#fde68a;letter-spacing:-.01em}
+.ref{font-family:Inter,sans-serif;font-weight:700;font-size:56px;line-height:1.08;color:#fde68a;letter-spacing:-.01em}
 .ref.klein{font-size:44px}
 .text{font-size:var(--g,42px);line-height:1.36;font-weight:600}
 .text span{color:rgba(255,255,255,.3)}
@@ -41,10 +41,10 @@ body{width:720px;height:1280px;overflow:hidden;font-family:Inter,sans-serif;colo
 .balken{height:10px;border-radius:9px;background:rgba(255,255,255,.2);overflow:hidden}
 .balken b{display:block;height:100%;background:#fde68a;border-radius:9px}
 .gross{flex:1;display:flex;flex-direction:column;justify-content:center;gap:34px}
-.gross h1{font-family:Grotesk,Inter,sans-serif;font-size:82px;line-height:1.04;letter-spacing:-.02em}
+.gross h1{font-family:Grotesk,Inter,sans-serif;font-size:82px;line-height:1.06;letter-spacing:-.02em}
 .gross p{font-size:36px;line-height:1.35;font-weight:600;opacity:.85}
 .liste{display:flex;flex-wrap:wrap;gap:12px}
-.liste span{font-size:26px;font-weight:600;padding:8px 18px;border-radius:99px;background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.22)}
+.liste span{font-family:Inter,sans-serif;font-size:26px;font-weight:600;padding:8px 18px;border-radius:99px;background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.22)}
 .marke{font-size:30px;font-weight:700;color:#fde68a}
 </style></head><body><div class="rahmen" id="r"></div><div class="fuss" id="f"></div></body></html>`;
 
@@ -77,7 +77,8 @@ body{width:720px;height:1280px;overflow:hidden;font-family:Inter,sans-serif;colo
         <div class="liste">${v.szenen.map((s) => `<span>${esc(s.ref)}</span>`).join('')}</div></div>`, fuss(-1)]);
     await page.evaluate(() => { // Überschrift verkleinern, bis alles passt
       const h = document.querySelector('.gross h1'); let g = 82;
-      while (document.querySelector('.gross').scrollHeight > document.querySelector('.gross').clientHeight + 1 && g > 44) { g -= 4; h.style.fontSize = g + 'px'; }
+      const zuBreit = () => h.scrollWidth > h.clientWidth + 1 || document.querySelector('.gross').scrollHeight > document.querySelector('.gross').clientHeight + 1;
+      while (zuBreit() && g > 44) { g -= 4; h.style.fontSize = g + 'px'; }
     });
     await bild(v.vor[1]);
 

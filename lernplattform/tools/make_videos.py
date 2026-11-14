@@ -2,7 +2,7 @@
 """Erzeugt die Lernvideos (Hochformat, mit Sprecherstimme) aus den Paragrafen in js/data.js.
 
 Ablauf:  python3 tools/make_videos.py plan  <arbeitsordner> <stimme.onnx>   -> Sprechtexte, Ton, plan.json
-         node    tools/render_frames.js <arbeitsordner>                     -> Einzelbilder
+         node    tools/render_frames.cjs <arbeitsordner>                     -> Einzelbilder
          python3 tools/make_videos.py schnitt <arbeitsordner>               -> videos/*.mp4, *.jpg, js/videos.js
 
 Braucht: pip install piper-tts, eine Piper-Stimme (z. B. de_DE-thorsten-high), ffmpeg, Playwright.
@@ -143,23 +143,17 @@ def plan(arbeit, stimme):
                                'ref_ende': round(teile[0][1], 3), 'dauer': round(t + PAUSE_SZENE, 3)})
             gesamt = sum(s['dauer'] for s in szenen)
             n = max(1, math.ceil(gesamt / MAX_SEK))
-            # Szenen der Reihe nach gleichmäßig auf n Teile verteilen
-            teile_liste, akt, ziel = [], [], gesamt / n
-            for s in szenen:
-                if akt and sum(x['dauer'] for x in akt) + s['dauer'] / 2 > ziel and len(teile_liste) < n - 1:
-                    teile_liste.append(akt); akt = []
-                akt.append(s)
-            teile_liste.append(akt)
-            # falls ein Teil trotzdem zu lang wäre: weiter teilen
-            fertig = []
-            for tl in teile_liste:
-                while sum(x['dauer'] for x in tl) > MAX_SEK and len(tl) > 1:
-                    schnitt, summe = 0, 0
-                    for i, x in enumerate(tl):
-                        if summe + x['dauer'] > MAX_SEK: break
-                        summe += x['dauer']; schnitt = i + 1
-                    fertig.append(tl[:max(1, schnitt)]); tl = tl[max(1, schnitt):]
-                fertig.append(tl)
+            # Szenen der Reihe nach gleichmäßig auf n Teile verteilen; passt ein Teil nicht, einen Teil mehr nehmen
+            while True:
+                fertig, lauf = [[] for _ in range(n)], 0
+                for sz in szenen:
+                    mitte = lauf + sz['dauer'] / 2
+                    fertig[min(n - 1, int(mitte / (gesamt / n)))].append(sz)
+                    lauf += sz['dauer']
+                fertig = [t for t in fertig if t]
+                if all(sum(x['dauer'] for x in t) <= MAX_SEK or len(t) == 1 for t in fertig):
+                    break
+                n += 1
             for i, tl in enumerate(fertig):
                 nr += 1
                 teil = ' Teil %d von %d.' % (i + 1, len(fertig)) if len(fertig) > 1 else ''
