@@ -49,6 +49,7 @@
     ['paare', '⚡', 'Blitzmerker', 'Paare-Spiel in unter 45 Sekunden', (s) => Object.values(s.bestzeit).some((t) => t < 45)],
     ['ziel', '🎯', 'Zielstrebig', 'Ein eigenes Ziel geschafft', (s) => (s.zaehler.ziel || 0) >= 1],
     ['training', '💪', 'Trainings-Fan', 'Fünf Tages-Trainings beendet', (s) => (s.zaehler.training || 0) >= 5],
+    ['video', '🎬', 'Filmfan', 'Zehn Lernvideos zu Ende gesehen', (s) => Object.keys(s.videos || {}).length >= 10],
     ['fehlerfrei', '🎓', 'Fehlerfrei', 'Ein Tages-Training ohne Fehler', (s) => (s.zaehler.fehlerfrei || 0) >= 1]
   ];
 
@@ -204,6 +205,7 @@
           </div>
         </div>
         <a class="btn primaer training-knopf" href="#training">▶ Tages-Training starten <small>7 Fragen · ca. 3 Minuten${s.fehler.length ? ` · ${Math.min(3, s.fehler.length)} aus deinen Fehlern` : ''}</small></a>
+        ${videosVon().length ? `<a class="btn video-knopf" href="#videos">🎬 Lernvideos ansehen <small>${videosVon().length} Videos · je unter 2 Minuten · mit Ton</small></a>` : ''}
         <details class="abz">
           <summary>🏅 Abzeichen <span class="chip">${hat} von ${ABZEICHEN.length}</span></summary>
           <ul>${ABZEICHEN.map(([id, icon, name, text]) => `<li class="${s.abzeichen[id] ? 'hat' : ''}" title="${esc(text)}"><i>${icon}</i><b>${esc(name)}</b><span>${esc(text)}</span></li>`).join('')}</ul>
@@ -365,6 +367,133 @@
     return () => { clearInterval(timer); app.removeEventListener('click', klick); };
   }
 
-  window.Spiel = { xp, konfetti, kartenFuer, quizFuer, bewerteKarte, faellig, fach, merkeFehler, loescheFehler, startHtml, zeigeTraining, zeigePaare, zeigeChip };
+
+  /* ---------------- Lernvideos zum Durchwischen (Hochformat, je unter 2 Minuten) ---------------- */
+  function videosVon(lfId) {
+    const sichtbar = new Set(Store.lernfelder().map((l) => l.id));
+    return (window.LERN_VIDEOS || []).filter((v) => sichtbar.has(v.lfId) && (!lfId || v.lfId === lfId));
+  }
+  function videoGesehen(id) { return !!(lade().videos || {})[id]; }
+
+  function zeigeVideos(app, lfId) {
+    const lfs = Store.lernfelder();
+    const lf = lfs.find((l) => l.id === lfId);
+    const liste = videosVon(lf ? lf.id : null);
+    if (!liste.length) {
+      app.innerHTML = '<a class="zurueck" href="#start">← Zurück</a><div class="glas leer">Für dieses Fach gibt es noch keine Lernvideos.</div>';
+      return null;
+    }
+    const s0 = lade();
+    const gemerkt = s0.gemerkt || {};
+    const zeit = (sek) => Math.floor(sek / 60) + ':' + String(sek % 60).padStart(2, '0');
+    app.innerHTML = `
+      <a class="zurueck" href="${lf ? '#lf-' + esc(lf.id) : '#start'}">← Zurück</a>
+      <div class="feed-kopf"><h1>Lernvideos${lf ? ' · ' + esc(U.kurz(lf)) : ''}</h1>
+        <span class="chip" id="vZahl"></span></div>
+      <div class="feed" id="feed" tabindex="0" aria-label="Lernvideos, nach unten wischen für das nächste">
+        ${liste.map((v, i) => {
+          const l = lfs.find((x) => x.id === v.lfId);
+          return `<section class="clip" data-i="${i}" style="--akzent:${esc(l.farbe)}">
+            <video playsinline preload="none" poster="videos/${esc(v.id)}.jpg" data-src="videos/${esc(v.id)}.mp4"></video>
+            <button class="clip-start" aria-label="Video abspielen">▶</button>
+            <div class="clip-seite">
+              <button class="clip-knopf ${gemerkt[v.id] ? 'an' : ''}" data-merken="${esc(v.id)}" aria-label="Video merken" title="Merken">♥</button>
+              <button class="clip-knopf" data-tempo aria-label="Tempo ändern" title="Tempo">1×</button>
+              <button class="clip-knopf" data-neu aria-label="Von vorn" title="Von vorn">↺</button>
+            </div>
+            <div class="clip-info">
+              <span class="lf-nr">${esc(U.kurz(l))}</span>${videoGesehen(v.id) ? '<span class="chip gesehen">✓ gesehen</span>' : ''}
+              <b>${esc(v.titel)}${v.teile > 1 ? ` · Teil ${v.teil}/${v.teile}` : ''}</b>
+              <small>${zeit(v.sek)} min · ${v.refs.length} Paragrafen</small>
+            </div>
+            <div class="clip-leiste"><i></i></div>
+          </section>`;
+        }).join('')}
+      </div>
+      <p class="klein feed-hinweis">Tippen startet und pausiert. Nach unten wischen zeigt das nächste Video. Für jedes zu Ende gesehene Video gibt es 10 XP.</p>`;
+
+    const feed = app.querySelector('#feed');
+    const clips = [...feed.querySelectorAll('.clip')];
+    let aktiv = -1, darfTon = false, tempo = 1;
+    const zahl = () => { app.querySelector('#vZahl').textContent = `${liste.filter((v) => videoGesehen(v.id)).length} von ${liste.length} gesehen`; };
+    zahl();
+
+    function spiele(i, vonVorn) {
+      clips.forEach((c, k) => {
+        const v = c.querySelector('video');
+        if (k !== i) { if (!v.paused) v.pause(); return; }
+        if (!v.src) v.src = v.dataset.src;
+        if (vonVorn) v.currentTime = 0;
+        v.playbackRate = tempo;
+        const p = v.play();
+        if (p && p.catch) p.catch(() => c.classList.remove('laeuft')); // Browser verlangt erst einen Tipp
+      });
+      aktiv = i;
+    }
+
+    clips.forEach((c, i) => {
+      const v = c.querySelector('video');
+      v.addEventListener('play', () => c.classList.add('laeuft'));
+      v.addEventListener('pause', () => c.classList.remove('laeuft'));
+      v.addEventListener('timeupdate', () => { c.querySelector('.clip-leiste i').style.width = (v.duration ? (v.currentTime / v.duration) * 100 : 0) + '%'; });
+      v.addEventListener('ended', () => {
+        const id = liste[i].id;
+        const s = lade();
+        s.videos = s.videos || {};
+        if (!s.videos[id]) {
+          s.videos[id] = tag(); sichere(s); xp(10, 'video');
+          c.querySelector('.clip-info .lf-nr').insertAdjacentHTML('afterend', '<span class="chip gesehen">✓ gesehen</span>');
+          zahl();
+        }
+        if (clips[i + 1]) clips[i + 1].scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    const beobachter = new IntersectionObserver((eintraege) => {
+      eintraege.forEach((e) => {
+        const i = Number(e.target.dataset.i);
+        if (e.isIntersecting && e.intersectionRatio > 0.6) { if (darfTon && i !== aktiv) spiele(i, true); else aktiv = i; }
+        else if (!e.isIntersecting) e.target.querySelector('video').pause();
+      });
+    }, { root: feed, threshold: [0, 0.6] });
+    clips.forEach((c) => beobachter.observe(c));
+
+    function klick(e) {
+      const c = e.target.closest('.clip');
+      if (!c) return;
+      const i = Number(c.dataset.i), v = c.querySelector('video');
+      if (e.target.closest('[data-merken]')) {
+        const s = lade(); s.gemerkt = s.gemerkt || {};
+        const id = liste[i].id;
+        if (s.gemerkt[id]) delete s.gemerkt[id]; else s.gemerkt[id] = 1;
+        sichere(s);
+        e.target.closest('[data-merken]').classList.toggle('an', !!s.gemerkt[id]);
+        return toast(s.gemerkt[id] ? 'Video gemerkt' : 'Nicht mehr gemerkt');
+      }
+      const t = e.target.closest('[data-tempo]');
+      if (t) {
+        tempo = tempo === 1 ? 1.25 : tempo === 1.25 ? 1.5 : tempo === 1.5 ? 0.8 : 1;
+        feed.querySelectorAll('[data-tempo]').forEach((b) => { b.textContent = String(tempo).replace('.', ',') + '×'; });
+        v.playbackRate = tempo;
+        return;
+      }
+      if (e.target.closest('[data-neu]')) { darfTon = true; return spiele(i, true); }
+      darfTon = true;
+      if (v.paused) spiele(i, false); else v.pause();
+    }
+    feed.addEventListener('click', klick);
+    const taste = (e) => {
+      if (e.key !== ' ' && e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+      if (/INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) return;
+      e.preventDefault();
+      const i = Math.max(0, aktiv);
+      if (e.key === ' ') { darfTon = true; const v = clips[i].querySelector('video'); if (v.paused) spiele(i, false); else v.pause(); }
+      else { const z = clips[i + (e.key === 'ArrowDown' ? 1 : -1)]; if (z) z.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    };
+    document.addEventListener('keydown', taste);
+    return () => { beobachter.disconnect(); document.removeEventListener('keydown', taste); clips.forEach((c) => c.querySelector('video').pause()); };
+  }
+
+  window.Spiel = { xp, konfetti, kartenFuer, quizFuer, bewerteKarte, faellig, fach, merkeFehler, loescheFehler, startHtml, zeigeTraining, zeigePaare, zeigeChip, zeigeVideos, videosVon };
   zeigeChip();
 })();

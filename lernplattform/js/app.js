@@ -22,6 +22,7 @@
     document.documentElement.style.removeProperty('--akzent');
     Spiel.zeigeChip();
     if (h === 'training') { aufraeumen = Spiel.zeigeTraining(app); return; }
+    if (h === 'videos' || h.startsWith('videos-')) { aufraeumen = Spiel.zeigeVideos(app, h.slice(7)); return; }
     if (h.startsWith('paare-')) {
       const lfP = Store.lernfelder().find((l) => l.id === h.slice(6));
       if (lfP) { document.documentElement.style.setProperty('--akzent', lfP.farbe); aufraeumen = Spiel.zeigePaare(app, lfP); return; }
@@ -179,6 +180,7 @@
         <span class="lf-nr">${esc(U.kurz(lf))}</span>
         <h1>${esc(lf.titel)}</h1>
         <p>${esc(lf.beschreibung)}</p>
+        ${Spiel.videosVon(lf.id).length ? `<a class="btn video-knopf klein-btn" href="#videos-${esc(lf.id)}">🎬 ${Spiel.videosVon(lf.id).length} Lernvideos</a>` : ''}
       </header>
       <nav class="tabs glas" aria-label="Lernformate">
         ${TABS.map(([id, icon, name]) => `<a href="#lf-${esc(lf.id)}-${id}" class="${id === tab ? 'aktiv' : ''}"><span>${icon}</span>${name}</a>`).join('')}
