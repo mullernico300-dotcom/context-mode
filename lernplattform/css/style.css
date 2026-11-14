@@ -439,7 +439,7 @@ main { width: 100%; max-width: 1040px; margin: 0 auto; padding-block: 22px 40px;
 .av-punkte i.jetzt { background: #fde68a; width: 24px; border-radius: 6px; }
 .av-punkte i.gut { background: #34d399; }
 .av-punkte i.schlecht { background: #fb7185; }
-.av-inhalt { flex: 1; display: flex; flex-direction: column; gap: 14px; padding-bottom: 22px; }
+.av-inhalt { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 14px; padding-bottom: 22px; }
 .av-balken { height: 5px; margin: 0 -20px; background: rgba(255, 255, 255, 0.18); }
 .av-balken i { display: block; height: 100%; width: 0; background: #fde68a; transition: width 0.25s linear; }
 .av-mitte { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center; }
@@ -458,17 +458,17 @@ main { width: 100%; max-width: 1040px; margin: 0 auto; padding-block: 22px 40px;
 .av-frage { font-size: clamp(1.08rem, 4vw, 1.3rem); font-weight: 600; line-height: 1.4; }
 .av-frage span { color: rgba(255, 255, 255, 0.32); transition: color 0.15s; }
 .av-frage span.an { color: #fff; }
-.av-frage.klein { font-size: 0.9rem; font-weight: 500; opacity: 0.75; }
+.av-frage.alt { font-size: 0.9rem; font-weight: 500; color: rgba(255, 255, 255, 0.72); margin: 0; }
 .av-unten { margin-top: auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; }
 .av-unten.mitte { justify-content: center; margin-top: 8px; }
 .av-link { background: none; border: 0; color: #c7d2fe; font-weight: 600; font-size: 0.86rem; padding: 8px 0; text-decoration: underline; text-underline-offset: 3px; }
-.av-eingabe { margin-top: auto; display: grid; gap: 12px; padding: 14px; border-radius: 20px; background: rgba(255, 255, 255, 0.1); border: 1.5px solid rgba(255, 255, 255, 0.2); }
+.av-eingabe { margin-top: auto; display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; padding: 14px; border-radius: 20px; background: rgba(255, 255, 255, 0.1); border: 1.5px solid rgba(255, 255, 255, 0.2); }
 .av-zeit { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; font-weight: 600; opacity: 0.9; }
 .av-ring { --p: 1; width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; position: relative; background: conic-gradient(#fde68a calc(var(--p) * 360deg), rgba(255, 255, 255, 0.15) 0); }
 .av-ring::before { content: ""; position: absolute; inset: 4px; border-radius: 50%; background: #1a1c3d; }
 .av-ring b { position: relative; font-size: 0.95rem; font-variant-numeric: tabular-nums; }
 .av-ring.fertig { background: #34d399; }
-.av-feld { display: grid; gap: 4px; }
+.av-feld { display: grid; grid-template-columns: minmax(0, 1fr); gap: 4px; }
 .av-feld > span { font-size: 0.78rem; font-weight: 700; opacity: 0.8; }
 .av-feld > div { display: flex; align-items: center; gap: 10px; }
 .av-feld input { flex: 1; min-width: 0; padding: 12px 14px; border-radius: 14px; border: 2px solid rgba(255, 255, 255, 0.35); background: #fff; color: #151744; font-size: 1.25rem; font-weight: 700; font-variant-numeric: tabular-nums; }

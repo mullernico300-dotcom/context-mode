@@ -10,6 +10,7 @@ Eine Web-App ohne Installation, ohne Anmeldung und ohne Server-Logik. Für jedes
 | 🏆 **Quiz-Show** | Bis zu 10 Fragen mit steigender Schwierigkeit, Punktestufen, Sicherheitsstufen, Timer, zwei Joker, Highscore |
 | 🧩 **Kreuzworträtsel** | Wird automatisch aus der Wortliste erzeugt, prüft jedes vollständig ausgefüllte Wort sofort (grün/rot) |
 | 🎬 **Lernvideos** | 34 Hochformat-Videos mit Sprecherstimme zum Durchwischen, je unter 2 Minuten, mit mitlaufender Texthervorhebung |
+| 🎬 **Aufgaben-Videos** | 122 Übungsaufgaben: Die Stimme stellt die Aufgabe mit Grafik, nach kurzer Bedenkzeit gibt man die Antwort ein, dann folgt die gesprochene Lösung mit Rechenweg und Paragrafen |
 | ▶ **Tages-Training** | 7 gemischte Fragen aus allen Fächern mit drei Herzen; eigene Fehler kommen wieder dran |
 | ⚡ **Paare-Spiel** | Begriff und Erklärung auf Zeit zuordnen, mit Bestzeit |
 | 🔥 **Punkte, Serie, Abzeichen** | XP und Level, Tagesziel, Lerntage in Folge, 13 Abzeichen |
@@ -101,6 +102,10 @@ Hinweise:
 - Hat ein Fach keine eigenen Karteikarten, entstehen sie automatisch aus den Paragrafen („Was regelt § …?“). Hat es weniger als fünf Quizfragen, kommen Zuordnungsfragen aus den Paragrafen dazu.
 - Karteikarten wandern durch fünf Fächer. Gewusste Karten kommen nach 1, 3, 7 und 21 Tagen wieder, nicht gewusste sofort. Der Filter „Heute dran“ zeigt, was fällig ist.
 
+## Übungsaufgaben ergänzen
+
+Die Aufgaben stehen in `tools/aufgaben_quelle.txt` (Format oben in der Datei: Thema, Frage, Grafikdaten, Antwort, Lösungsschritte, Paragrafen). Nach Änderungen erzeugt `python3 tools/make_tasks.py <arbeitsordner> <stimme.onnx>` die Tondateien in `audio/` und die Datei `js/aufgaben.js` neu.
+
 ## Lernvideos neu erzeugen
 
 Die Videos in `videos/` entstehen aus den Paragrafen in `js/data.js`. Nach inhaltlichen Änderungen lassen sie sich neu bauen (braucht `pip install piper-tts`, eine deutsche Piper-Stimme, `ffmpeg` und Playwright):
@@ -128,6 +133,7 @@ lernplattform/
     ├── data.js         ALLE Inhalte – diese Datei wird gepflegt
     ├── store.js        Laden/Speichern, Lernfortschritt, Lernfeld-Filter
     ├── crossword.js    Kreuzworträtsel-Generator
+    ├── trainer.js      Aufgaben-Videos: Frage, Bedenkzeit, Eingabe, gesprochene Lösung
     ├── extras.js       Punkte, Serie, Abzeichen, Tages-Training, Paare-Spiel, Wiederhol-Abstände
     ├── admin.js        Verwaltung
     └── app.js          Start, Themen, Paragrafen, Karteikarten, Quiz, Rätsel

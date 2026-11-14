@@ -202,7 +202,7 @@
       rahmen(`
         <div class="av-urteil ${richtig ? 'gut' : 'schlecht'}"><b>${richtig ? '✓ Richtig!' : '✗ Leider nicht richtig'}</b>
           <span>Deine Antwort: ${esc(antwort)}${richtig ? '' : ` · Richtig: ${esc(a.at)}`}</span></div>
-        <p class="av-frage klein">${esc(a.f)}</p>
+        <p class="av-frage alt">${esc(a.f)}</p>
         <ol class="av-schritte">${a.s.map((s) => `<li><span>${esc(s.t)}</span>${s.l ? `<code>${esc(s.l)}${s.v ? ` = <b>${esc(s.v)}</b>` : ''}</code>` : ''}</li>`).join('')}
           <li class="av-ergebnis"><span>Die richtige Antwort</span><code><b>${esc(a.at)}</b></code></li></ol>
         <div class="av-refs" id="avRefs"><span>Wichtig dafür:</span>${a.r.map((r) => `<button class="av-ref" data-ref="${esc(r)}">${esc(r)}</button>`).join('')}</div>
