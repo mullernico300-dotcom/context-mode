@@ -105,7 +105,7 @@
       ton.pause();
       ton.onended = ton.ontimeupdate = ton.onerror = null;
       if (!tonAn) { beiZeit(1e9); return beiEnde(); }
-      ton.src = 'audio/' + datei + '.m4a';
+      ton.src = 'audio/' + datei + '.mp3';
       ton.ontimeupdate = () => beiZeit(ton.currentTime);
       ton.onended = () => { beiZeit(1e9); beiEnde(); };
       ton.onerror = () => { beiZeit(1e9); beiEnde(); };

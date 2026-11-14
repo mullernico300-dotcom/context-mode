@@ -2,7 +2,7 @@
 """Vertont die Übungsaufgaben aus tools/aufgaben_quelle.txt für die Aufgaben-Videos.
 
 Aufruf:  python3 tools/make_tasks.py <arbeitsordner> <stimme.onnx>
-Ergebnis: audio/<id>-f.m4a (Frage), audio/<id>-l.m4a (Lösung), audio/richtig.m4a, audio/falsch.m4a
+Ergebnis: audio/<id>-f.mp3 (Frage), audio/<id>-l.mp3 (Lösung), audio/richtig.mp3, audio/falsch.mp3
           und js/aufgaben.js mit Texten, Grafikdaten und Zeitmarken.
 """
 import hashlib, json, os, re, subprocess, sys, wave
@@ -88,8 +88,8 @@ def main(arbeit, stimme):
                     t += w.getnframes() / w.getframerate()
                 aus.writeframes(b'\x00\x00' * int(pause * 22050))
                 t += pause
-        subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', roh, '-c:a', 'aac', '-b:a', '48k', '-ar', '44100', '-ac', '1',
-                        '-movflags', '+faststart', os.path.join(ziel, name + '.m4a')], check=True)
+        subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', roh, '-c:a', 'libmp3lame', '-b:a', '48k', '-ar', '44100', '-ac', '1',
+                        os.path.join(ziel, name + '.mp3')], check=True)
         return starts, round(t, 2)
 
     # Themen den Paragrafen-Gruppen zuordnen (damit App und Suche dieselben Namen nutzen)
