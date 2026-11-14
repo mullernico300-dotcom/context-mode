@@ -9,6 +9,7 @@ Eine Web-App ohne Installation, ohne Anmeldung und ohne Server-Logik. Für jedes
 | 🃏 **Karteikarten** | Umdrehen per Tipp/Klick, „Schon gewusst“ / „Noch üben“, Filter nach Stapel, Mischen |
 | 🏆 **Quiz-Show** | Bis zu 10 Fragen mit steigender Schwierigkeit, Punktestufen, Sicherheitsstufen, Timer, zwei Joker, Highscore |
 | 🧩 **Kreuzworträtsel** | Wird automatisch aus der Wortliste erzeugt, prüft jedes vollständig ausgefüllte Wort sofort (grün/rot) |
+| 🎬 **Lernvideos** | 34 Hochformat-Videos mit Sprecherstimme zum Durchwischen, je unter 2 Minuten, mit mitlaufender Texthervorhebung |
 | ▶ **Tages-Training** | 7 gemischte Fragen aus allen Fächern mit drei Herzen; eigene Fehler kommen wieder dran |
 | ⚡ **Paare-Spiel** | Begriff und Erklärung auf Zeit zuordnen, mit Bestzeit |
 | 🔥 **Punkte, Serie, Abzeichen** | XP und Level, Tagesziel, Lerntage in Folge, 13 Abzeichen |
@@ -99,6 +100,18 @@ Hinweise:
 
 - Hat ein Fach keine eigenen Karteikarten, entstehen sie automatisch aus den Paragrafen („Was regelt § …?“). Hat es weniger als fünf Quizfragen, kommen Zuordnungsfragen aus den Paragrafen dazu.
 - Karteikarten wandern durch fünf Fächer. Gewusste Karten kommen nach 1, 3, 7 und 21 Tagen wieder, nicht gewusste sofort. Der Filter „Heute dran“ zeigt, was fällig ist.
+
+## Lernvideos neu erzeugen
+
+Die Videos in `videos/` entstehen aus den Paragrafen in `js/data.js`. Nach inhaltlichen Änderungen lassen sie sich neu bauen (braucht `pip install piper-tts`, eine deutsche Piper-Stimme, `ffmpeg` und Playwright):
+
+```bash
+python3 tools/make_videos.py plan <arbeitsordner> <stimme.onnx>
+node tools/render_frames.cjs <arbeitsordner>
+python3 tools/make_videos.py schnitt <arbeitsordner>
+```
+
+Die Stimme ist „Thorsten“ aus dem freien Piper-Projekt. Aussprache-Regeln für Abkürzungen, Daten und Beträge stehen oben in `tools/make_videos.py`.
 
 ## Lernfortschritt und Datenschutz
 
