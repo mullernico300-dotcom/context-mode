@@ -42,3 +42,10 @@ Ein Modell kann Claude nicht selbst wechseln. Der Nutzer stellt es mit `/model` 
 - **Noten:** jeder trägt selbst ein, nur auf dem eigenen Gerät gespeichert, nicht sichtbar für andere. Pro Fach ein Durchschnitt, daraus die Gesamtnote. Export/Import als Sicherung einbauen.
 - **Modell:** vor Bau Sonnet oder Opus wählen (siehe Tabelle oben). Bei jedem Wechsel oder Unteragenten vorher Bescheid geben.
 - **Bau:** erst mit neuen Tokens und nach Freigabe der Schultage, Startzeit des Abendlaufs und Mitschrift-Upload.
+
+## Videos bei Tests (verbindlich)
+
+- Wird ein Test eingetragen (z. B. „EStG, Geschenke, in 4 Tagen“), entsteht genau ein Erklärvideo zu diesem Thema: was der Begriff bedeutet und welche Paragrafen beachtet werden müssen.
+- Gibt es zum Thema schon ein Video, wird es wiederverwendet. Es entsteht nichts Neues.
+- Es entstehen keine Videos für Themen ohne Test.
+- Alte Videos bleiben erhalten.
