@@ -49,3 +49,9 @@ Ein Modell kann Claude nicht selbst wechseln. Der Nutzer stellt es mit `/model` 
 - Gibt es zum Thema schon ein Video, wird es wiederverwendet. Es entsteht nichts Neues.
 - Es entstehen keine Videos für Themen ohne Test.
 - Alte Videos bleiben erhalten.
+
+## Länge und Inhalt der Test-Videos (verbindlich)
+
+- Test-Videos dauern 3 bis 5 Minuten. Die 2-Minuten-Grenze gilt nur noch für die Paragrafen-Videos.
+- Jedes Test-Video erklärt das Thema mit Beispielaufgaben und zeigt die Lösungen mit Rechenweg und Paragrafen.
+- Längere Videos kosten mehr Tokens (Text und Aufgaben), deshalb nur für eingetragene Tests.
