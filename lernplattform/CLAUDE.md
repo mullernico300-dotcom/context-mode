@@ -62,3 +62,9 @@ Ein Modell kann Claude nicht selbst wechseln. Der Nutzer stellt es mit `/model` 
 - Schulwochen werden getrennt markiert. Der Plan gilt für alle markierten Schulwochen.
 - Ein Knopf „Kopieren“ übernimmt einen Tag oder die ganze Woche in alle markierten Schulwochen, damit nichts doppelt eingetragen werden muss.
 - Reine Eingabe ohne KI, also keine Tokens.
+
+## Startzeit des Abendlaufs (entschieden)
+
+- Der Lauf startet eine Minute nach Schulende des jeweiligen Tages, z. B. 14:41 Uhr bei Schulende 14:40 Uhr.
+- Die Schulende-Zeit kommt aus dem Stundenplan. Sie kann an jedem Wochentag anders sein.
+- An Tagen ohne Schule startet nichts.
