@@ -68,3 +68,9 @@ Ein Modell kann Claude nicht selbst wechseln. Der Nutzer stellt es mit `/model` 
 - Der Lauf startet eine Minute nach Schulende des jeweiligen Tages, z. B. 14:41 Uhr bei Schulende 14:40 Uhr.
 - Die Schulende-Zeit kommt aus dem Stundenplan. Sie kann an jedem Wochentag anders sein.
 - An Tagen ohne Schule startet nichts.
+
+## Mitschrift und Lernregister (entschieden)
+
+- Für den Anfang liest der Abendlauf alle Inhalte aus dem Lernregister (Fächer, Themen, Dateien, Lernübersichten).
+- Danach lädt der Nutzer die Dateien direkt in den Lernfeld-Trainer hoch. Das Lernregister wird dann nicht mehr gebraucht.
+- Vor dem Abschalten des Lernregisters: alle Inhalte in den Lernfeld-Trainer übernehmen und prüfen, dass nichts fehlt.
