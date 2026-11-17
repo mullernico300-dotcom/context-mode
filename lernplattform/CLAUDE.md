@@ -33,3 +33,12 @@ Ein Modell kann Claude nicht selbst wechseln. Der Nutzer stellt es mit `/model` 
 
 - Bau der Planung (Stundenplan, Tests, Lernplan, Lernregister) ist noch nicht begonnen.
 - Wartet auf neue Tokens und auf Entscheidungen: Schultage, Startzeit des Abendlaufs, Mitschrift-Upload, Modell.
+
+## Entscheidungen für die Planung (Stand 17.11.)
+
+- **Dateien hochladen:** nur der Besitzer. Die Schreibrechte setzt das Artefakt auf dem Server durch. Beim Bau prüfen, wie sich das für jemanden mit reinem Link verhält.
+- **Stundenplan:** wird von jedem per Handeingabe erstellt (Fächer, Wochentage, Schulwochen). Kein Foto-Auslesen, das spart Tokens und hält Fotos aus dem Dienst heraus. Der Plan bleibt pro Person, nicht sichtbar für andere.
+- **Tests und Lernzeiten:** jeder trägt selbst ein, pro Person.
+- **Noten:** jeder trägt selbst ein, nur auf dem eigenen Gerät gespeichert, nicht sichtbar für andere. Pro Fach ein Durchschnitt, daraus die Gesamtnote. Export/Import als Sicherung einbauen.
+- **Modell:** vor Bau Sonnet oder Opus wählen (siehe Tabelle oben). Bei jedem Wechsel oder Unteragenten vorher Bescheid geben.
+- **Bau:** erst mit neuen Tokens und nach Freigabe der Schultage, Startzeit des Abendlaufs und Mitschrift-Upload.
