@@ -55,3 +55,10 @@ Ein Modell kann Claude nicht selbst wechseln. Der Nutzer stellt es mit `/model` 
 - Test-Videos dauern 3 bis 5 Minuten. Die 2-Minuten-Grenze gilt nur noch für die Paragrafen-Videos.
 - Jedes Test-Video erklärt das Thema mit Beispielaufgaben und zeigt die Lösungen mit Rechenweg und Paragrafen.
 - Längere Videos kosten mehr Tokens (Text und Aufgaben), deshalb nur für eingetragene Tests.
+
+## Stundenplan-Eingabe (Ergänzung)
+
+- Der Stundenplan ändert sich nicht. Eingetragen wird er einmal, pro Person, von Hand.
+- Schulwochen werden getrennt markiert. Der Plan gilt für alle markierten Schulwochen.
+- Ein Knopf „Kopieren“ übernimmt einen Tag oder die ganze Woche in alle markierten Schulwochen, damit nichts doppelt eingetragen werden muss.
+- Reine Eingabe ohne KI, also keine Tokens.
