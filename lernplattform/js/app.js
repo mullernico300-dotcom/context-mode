@@ -30,6 +30,7 @@
     }
     if (h === 'planer' || h.startsWith('planer-')) { aufraeumen = Planer.zeige(app, h.slice(7)); return; }
     if (h === 'unterlagen' || h.startsWith('unterlagen-')) { aufraeumen = Unterlagen.zeige(app, h.slice(11)); return; }
+    if (h === 'pruefung' || h.startsWith('pruefung-')) { aufraeumen = Pruefung.zeige(app, h.slice(9)); return; }
     if (h.startsWith('aufgaben-')) {
       const m = /^aufgaben-(.+)-(\d+|ziel|fehler)$/.exec(h);
       const lfA = m && Store.lernfelder().find((l) => l.id === m[1]);
@@ -59,7 +60,7 @@
 
   /* Untere Navigation (Handy): aktiven Bereich hervorheben */
   function markiereNavigation(h) {
-    const bereich = /^planer/.test(h) ? 'planer' : /^unterlagen/.test(h) ? 'unterlagen' : /^(videos|training)/.test(h) ? 'ueben' : /^(lf-|thema-|aufgaben-|paare-)/.test(h) ? 'faecher' : /^verwaltung/.test(h) ? '' : 'start';
+    const bereich = /^planer/.test(h) ? 'planer' : /^unterlagen/.test(h) ? 'unterlagen' : /^(videos|training|pruefung)/.test(h) ? 'ueben' : /^(lf-|thema-|aufgaben-|paare-)/.test(h) ? 'faecher' : /^verwaltung/.test(h) ? '' : 'start';
     document.querySelectorAll('[data-nav]').forEach((a) => a.classList.toggle('aktiv', a.dataset.nav === bereich));
   }
 
@@ -196,6 +197,26 @@
           </a>`;
         }).join('')}
         </div>
+      </section>
+      <section class="abschnitt" id="seminare">
+        <div class="abschnitt-kopf"><h2>Seminare</h2><span class="klein">nur zum Nachlesen</span></div>
+        <div class="fach-raster">
+          <a class="glas fach-karte nachlesen" href="#unterlagen-seminare" style="--akzent:#7c3aed">
+            <div class="fach-karte-kopf"><span class="lf-nr">Seminar</span><span class="chip">📄 Dateien</span></div>
+            <h3>EStG- und USt-Seminar</h3><p>Seminarunterlagen ansehen – ohne Aufgaben</p></a>
+        </div>
+      </section>
+      <section class="abschnitt" id="zeitung">
+        <div class="abschnitt-kopf"><h2>Die Steuerfachangestellten-Zeitung</h2><span class="klein">nur zum Nachlesen</span></div>
+        <div class="fach-raster">
+          <a class="glas fach-karte nachlesen" href="#unterlagen-zeitung" style="--akzent:#0f766e">
+            <div class="fach-karte-kopf"><span class="lf-nr">Zeitung</span><span class="chip">📰 Ausgaben</span></div>
+            <h3>Die Steuerfachangestellten-Zeitung</h3><p>Alle Ausgaben zum Lesen</p></a>
+        </div>
+      </section>
+      <section class="abschnitt" id="pruefungsvorbereitung">
+        <div class="abschnitt-kopf"><h2>Prüfungsvorbereitung</h2></div>
+        ${Pruefung.startKachel()}
       </section>
       <section class="abschnitt">
         <div class="abschnitt-kopf"><h2>Dein Fortschritt</h2></div>

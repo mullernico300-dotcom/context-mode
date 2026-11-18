@@ -10,8 +10,12 @@
   let db = null, assets = null, user = null, bereit = false, fehler = '', darfSchreiben = false, gestartet = false;
   const hoerer = new Set();
 
-  const istSeminar = (s) => /seminar/i.test((s && s.name) || '');
-  const faecher = () => daten.subjects.filter((s) => !istSeminar(s)).sort((a, b) => String(a.name).localeCompare(String(b.name), 'de', { numeric: true }));
+  /* Bereiche: Lernfelder (mit Lernübersicht und Aufgaben) sowie Seminare und Zeitung (nur zum Nachlesen) */
+  const bereichVon = (s) => (s && s.bereich) || (/seminar/i.test((s && s.name) || '') ? 'seminar' : 'lernfeld');
+  const sortiert = (l) => l.sort((a, b) => String(a.name).localeCompare(String(b.name), 'de', { numeric: true }));
+  const faecher = () => sortiert(daten.subjects.filter((s) => bereichVon(s) === 'lernfeld'));
+  const ausBereich = (b) => sortiert(daten.subjects.filter((s) => bereichVon(s) === b));
+  const BEREICHE = { seminar: { titel: 'Seminare', etikett: 'Seminar' }, zeitung: { titel: 'Die Steuerfachangestellten-Zeitung', etikett: 'Zeitung' } };
   const fach = (id) => daten.subjects.find((s) => s.id === id);
   const themaVon = (id) => daten.topics.find((t) => t.id === id);
   const melden = () => hoerer.forEach((f) => { try { f(); } catch (e) { /* Ansicht weg */ } });
@@ -75,20 +79,48 @@
           <h2>${n} ${n === 1 ? 'Datei' : 'Dateien'}</h2>
           <p>${t} ${t === 1 ? 'Thema' : 'Themen'}${sum && (sum.sections || []).length ? ` · Lernübersicht mit ${sum.sections.length} Abschnitten` : ''}</p></a>`;
       }).join('')}</section>
-      ${fs.length ? '' : '<div class="glas leer">Noch keine Unterlagen.</div>'}`;
+      ${fs.length ? '' : '<div class="glas leer">Noch keine Unterlagen.</div>'}
+      ${abteilungHtml('seminar')}
+      ${abteilungHtml('zeitung')}`;
     verdrahteUpload(el, null);
+  }
+
+  /* Abteilung Seminare / Zeitung: nur Dateien zum Nachlesen */
+  function abteilungHtml(b) {
+    const liste = ausBereich(b);
+    if (!liste.length) return '';
+    return `<section class="abschnitt ul-abteilung">
+      <div class="abschnitt-kopf"><h2>${esc(BEREICHE[b].titel)}</h2><span class="klein">nur zum Nachlesen</span></div>
+      <div class="fach-raster">${liste.map((s) => {
+        const n = daten.files.filter((f) => f.subjectId === s.id).length;
+        return `<a class="glas fach-karte" href="#unterlagen-${esc(s.id)}" style="--akzent:${esc(s.color || '#0f766e')}">
+          <div class="fach-karte-kopf"><span class="lf-nr">${esc(BEREICHE[b].etikett)}</span></div>
+          <h3>${esc(s.name)}</h3><p>${n ? `${n} ${n === 1 ? 'Datei' : 'Dateien'}` : 'Noch keine Dateien'}</p></a>`;
+      }).join('')}</div>
+    </section>`;
+  }
+
+  /* Nur die Seminare (Route #unterlagen-seminare) */
+  function zeigeSeminare(el) {
+    const h = hinweis();
+    if (h) { el.innerHTML = '<a class="zurueck" href="#start">← Zur Übersicht</a>' + h; return; }
+    el.innerHTML = `<a class="zurueck" href="#unterlagen">← Alle Unterlagen</a>
+      <header class="lf-kopf"><span class="lf-nr">Unterlagen</span><h1>Seminare</h1>
+        <p>Unterlagen aus den Seminaren zum Nachlesen. Daraus entstehen keine Aufgaben.</p></header>
+      ${abteilungHtml('seminar') || '<div class="glas leer">Noch keine Seminar-Unterlagen.</div>'}`;
   }
 
   /* ---------------- Ein Fach ---------------- */
   function zeigeFach(el, id) {
     const h = hinweis();
     const s = fach(id);
-    if (h || !s || istSeminar(s)) { el.innerHTML = '<a class="zurueck" href="#unterlagen">← Alle Fächer</a>' + (h || '<div class="glas leer">Dieses Fach gibt es nicht.</div>'); return; }
-    const lf = lernfeldZu(s);
+    if (h || !s) { el.innerHTML = '<a class="zurueck" href="#unterlagen">← Alle Fächer</a>' + (h || '<div class="glas leer">Dieses Fach gibt es nicht.</div>'); return; }
+    const nurLesen = bereichVon(s) !== 'lernfeld';
+    const lf = nurLesen ? null : lernfeldZu(s);
     const themen = daten.topics.filter((t) => t.subjectId === s.id).sort((a, b) => String(a.name).localeCompare(String(b.name), 'de'));
     const dateien = daten.files.filter((f) => f.subjectId === s.id).sort((a, b) => (b.created || 0) - (a.created || 0));
     const sum = daten.summaries.find((x) => x.id === s.id);
-    const abschnitte = (sum && sum.sections) || [];
+    const abschnitte = nurLesen ? [] : (sum && sum.sections) || [];
     const liste = (a) => (a || []).length ? `<ul>${a.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : '';
     const gruppe = (t) => {
       const fs = dateien.filter((f) => f.topicId === (t && t.id));
@@ -110,29 +142,30 @@
       </details>`;
     };
     el.innerHTML = `
-      <a class="zurueck" href="#unterlagen">← Alle Fächer</a>
-      <header class="lf-kopf" style="--akzent:${esc(s.color || '#6366f1')}"><span class="lf-nr">Unterlagen</span><h1>${esc(s.name)}</h1>
+      <a class="zurueck" href="${bereichVon(s) === 'seminar' ? '#unterlagen-seminare' : '#unterlagen'}">← ${bereichVon(s) === 'seminar' ? 'Alle Seminare' : 'Alle Unterlagen'}</a>
+      <header class="lf-kopf" style="--akzent:${esc(s.color || '#6366f1')}"><span class="lf-nr">${nurLesen ? esc(BEREICHE[bereichVon(s)].etikett) : 'Unterlagen'}</span><h1>${esc(s.name)}</h1>
         <p>${dateien.length} ${dateien.length === 1 ? 'Datei' : 'Dateien'} · ${themen.length} ${themen.length === 1 ? 'Thema' : 'Themen'}${abschnitte.length ? ` · ${abschnitte.length} Abschnitte in der Lernübersicht` : ''}</p>
         ${lf ? `<a class="btn klein-btn" href="#lf-${esc(lf.id)}">Zum Lernfeld ${esc(U.kurz(lf))} →</a>` : ''}</header>
       ${darfSchreiben ? uploadHtml(s.id) : ''}
       ${themen.map(gruppe).join('')}
       ${gruppe(null) || ''}
       ${!dateien.length && !abschnitte.length ? '<div class="glas leer">In diesem Fach liegen noch keine Unterlagen.</div>' : ''}
-      ${dateien.some((f) => !(sum && (sum.includedFileIds || []).includes(f.id))) ? '<p class="klein ul-fuss">Neue Dateien werden im Abendlauf in die Lernübersicht eingearbeitet.</p>' : ''}`;
+      ${nurLesen ? '<p class="klein ul-fuss">Nur zum Nachlesen – aus diesen Dateien entstehen keine Aufgaben.</p>' : dateien.some((f) => !(sum && (sum.includedFileIds || []).includes(f.id))) ? '<p class="klein ul-fuss">Neue Dateien werden im Abendlauf in die Lernübersicht eingearbeitet.</p>' : ''}`;
     verdrahteUpload(el, s.id);
   }
 
   /* ---------------- Hochladen (nur Bearbeiter) ---------------- */
   function uploadHtml(subjectId) {
     const fs = faecher();
+    const optionen = (l) => l.map((s) => `<option value="${esc(s.id)}">${esc(s.name)}</option>`).join('');
     const themen = subjectId ? daten.topics.filter((t) => t.subjectId === subjectId) : [];
     return `<section class="glas block ul-upload">
       <h2>⬆ Dateien hochladen</h2>
       <p class="klein">Nur du siehst diesen Bereich. PDF, Fotos oder Textdateien bis 20 MB.</p>
       <form id="ulForm" class="pl-form" autocomplete="off">
-        ${subjectId ? `<input type="hidden" id="ulFach" value="${esc(subjectId)}">` : `<label class="feld"><span>Fach</span><select id="ulFach" required><option value="">Fach wählen</option>${fs.map((s) => `<option value="${esc(s.id)}">${esc(s.name)}</option>`).join('')}<option value="__neu">＋ Neues Fach …</option></select></label>
-        <label class="feld" id="ulNeuFachBox" hidden><span>Name des neuen Fachs</span><input id="ulNeuFach" maxlength="40" placeholder="z. B. LF 7"></label>`}
-        <label class="feld"><span>Thema</span><input id="ulThema" list="ulThemen" maxlength="60" placeholder="z. B. Reisekosten (leer = ohne Thema)">
+        ${subjectId ? `<input type="hidden" id="ulFach" value="${esc(subjectId)}">` : `<label class="feld"><span>Fach</span><select id="ulFach" required><option value="">Ordner wählen</option><optgroup label="Lernfelder">${optionen(fs)}</optgroup>${ausBereich('seminar').length ? `<optgroup label="Seminare">${optionen(ausBereich('seminar'))}</optgroup>` : ''}${ausBereich('zeitung').length ? `<optgroup label="Zeitung">${optionen(ausBereich('zeitung'))}</optgroup>` : ''}<option value="__neu">＋ Neuer Ordner …</option></select></label>
+        <label class="feld" id="ulNeuFachBox" hidden><span>Name des neuen Ordners</span><input id="ulNeuFach" maxlength="60" placeholder="z. B. LF 7 oder Seminar Bilanzsteuerrecht"></label>`}
+        ${subjectId === 'zeitung' ? '<label class="feld"><span>Ausgabe</span><input id="ulThema" list="ulThemen" maxlength="60" placeholder="z. B. Ausgabe März 2026 (leer = ohne)">' : '<label class="feld"><span>Thema</span><input id="ulThema" list="ulThemen" maxlength="60" placeholder="z. B. Reisekosten (leer = ohne Thema)">'}
           <datalist id="ulThemen">${themen.map((t) => `<option value="${esc(t.name)}">`).join('')}</datalist></label>
         <label class="feld breit"><span>Dateien</span><input type="file" id="ulDateien" multiple accept=".pdf,image/*,.txt,.md,.csv" required></label>
         <button class="btn primaer" type="submit">Hochladen</button>
@@ -163,9 +196,8 @@
         if (sid === '__neu') {
           const name = el.querySelector('#ulNeuFach').value.trim();
           if (!name) { knopf.disabled = false; return toast('Bitte einen Namen für das Fach eingeben.'); }
-          if (istSeminar({ name })) { knopf.disabled = false; return toast('Seminare gehören nicht in den Lernfeld-Trainer.'); }
           const vorh = daten.subjects.find((s) => s.name.toLowerCase() === name.toLowerCase());
-          sid = vorh ? vorh.id : (await db.collection('subjects').add({ name, color: '#6366f1', created: Date.now() })).id;
+          sid = vorh ? vorh.id : (await db.collection('subjects').add({ name, color: '#6366f1', created: Date.now(), bereich: /seminar/i.test(name) ? 'seminar' : /zeitung/i.test(name) ? 'zeitung' : 'lernfeld' })).id;
         }
         if (!sid) { knopf.disabled = false; return toast('Bitte ein Fach wählen.'); }
         const tname = el.querySelector('#ulThema').value.trim();
@@ -207,7 +239,7 @@
 
   function zeige(app, id) {
     starte();
-    const zeichne = () => (id ? zeigeFach(app, id) : zeigeUebersicht(app));
+    const zeichne = () => (id === 'seminare' ? zeigeSeminare(app) : id ? zeigeFach(app, id) : zeigeUebersicht(app));
     hoerer.add(zeichne);
     zeichne();
     return () => { hoerer.delete(zeichne); app.onchange = app.onsubmit = app.onclick = null; };

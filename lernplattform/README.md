@@ -110,6 +110,18 @@ Hinweise:
 
 Die Aufgaben stehen in `tools/aufgaben_quelle.txt` (Format oben in der Datei: Thema, Frage, Grafikdaten, Antwort, Lösungsschritte, Paragrafen). Nach Änderungen erzeugt `python3 tools/make_tasks.py <arbeitsordner> <stimme.onnx>` die Tondateien in `audio/` und die Datei `js/aufgaben.js` neu.
 
+## Prüfungssimulator
+
+Unter **📝 Prüfung** (`#pruefung`) übt man die Zwischen- oder Abschlussprüfung nach der Ausbildungsverordnung 2023: Bereiche wählen, ausführlich antworten, Timer wie in der Prüfung (Bereichszeit ÷ 100 Punkte × Aufgabenpunkte), danach Musterlösung, Punkteschema zum Abhaken, Note nach Kammerschlüssel. Dazu zwei Gesprächssimulationen mit 15 Minuten Vorbereitung und 30 Minuten Gespräch.
+
+Aufgaben ändern oder ergänzen: `tools/pruefung/fragen_zp.py` bzw. `fragen_ap.py` bearbeiten, dann
+
+```bash
+python3 tools/pruefung/bau.py js/pruefung-fragen.js
+```
+
+Das Skript prüft, dass die Punkte im Schema zur Aufgabe passen.
+
 ## Lernvideos neu erzeugen
 
 Die Videos in `videos/` entstehen aus den Paragrafen in `js/data.js`. Nach inhaltlichen Änderungen lassen sie sich neu bauen (braucht `pip install piper-tts`, eine deutsche Piper-Stimme, `ffmpeg` und Playwright):

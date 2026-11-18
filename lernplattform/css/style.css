@@ -809,3 +809,100 @@ h2 { font-size: 1.12rem; }
 .fallen h3 { margin-top: 0; color: #8a5300; }
 .fallen ul { margin: 6px 0 0; padding-left: 20px; display: grid; gap: 6px; }
 .quelle { margin: 0; }
+
+/* ---------------- Prüfungssimulator ---------------- */
+.pr-marke { --akzent: #b45309; background: #b45309; }
+.pr-weiter { border-left: 4px solid #b45309; }
+.pr-knoepfe { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+.btn.gross { min-height: 52px; padding: 12px 24px; font-size: 1.02rem; }
+.pr-wahl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 10px 0 18px; }
+.pr-art { display: flex; flex-direction: column; gap: 3px; text-align: left; padding: 14px; border-radius: 14px; border: 2px solid var(--linie); background: var(--flaeche, #fff); color: var(--text); cursor: pointer; font: inherit; }
+.pr-art span { font-size: 0.82rem; color: var(--leise); }
+.pr-art.aktiv { border-color: #b45309; background: #fff7ed; }
+.pr-bereiche { display: grid; gap: 8px; margin: 10px 0 18px; }
+.pr-bereich { display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; border-radius: 14px; cursor: pointer; }
+.pr-bereich input { width: 20px; height: 20px; margin-top: 2px; accent-color: #b45309; flex-shrink: 0; }
+.pr-bereich span { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.pr-bereich small { color: var(--leise); font-size: 0.8rem; }
+.pr-zeile { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 10px 0; }
+.pr-zeile select { min-height: 44px; border-radius: 12px; border: 1px solid var(--linie); padding: 0 12px; font: inherit; background: #fff; max-width: 100%; }
+.pr-haken { display: flex; gap: 8px; align-items: center; font-weight: 600; }
+.pr-haken input { width: 20px; height: 20px; accent-color: #b45309; }
+.pr-gespraeche { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; margin-top: 10px; }
+.pr-gespraech { display: flex; flex-direction: column; gap: 4px; padding: 14px; border-radius: 14px; text-align: left; cursor: pointer; font: inherit; color: var(--text); }
+.pr-gespraech span { font-size: 0.82rem; color: var(--leise); }
+.pr-info summary { cursor: pointer; }
+.pr-info ul { padding-left: 20px; }
+.pr-info li, .pr-info p { margin: 8px 0; line-height: 1.5; }
+.pr-verlauf { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 6px; }
+.pr-verlauf li { display: grid; grid-template-columns: auto 1fr auto auto; gap: 10px; align-items: center; padding: 8px 10px; border-radius: 10px; background: rgba(255, 255, 255, 0.6); font-size: 0.88rem; }
+.pr-verlauf li b { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pr-note { color: #fff; }
+.pr-note.n1, .pr-notenkreis.n1 { background: #15803d; }
+.pr-note.n2, .pr-notenkreis.n2 { background: #16a34a; }
+.pr-note.n3, .pr-notenkreis.n3 { background: #65a30d; }
+.pr-note.n4, .pr-notenkreis.n4 { background: #ca8a04; }
+.pr-note.n5, .pr-notenkreis.n5 { background: #ea580c; }
+.pr-note.n6, .pr-notenkreis.n6 { background: #dc2626; }
+.pr-leiste { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 78px); z-index: 19; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 14px; border-radius: 16px; margin-bottom: 10px; }
+.pr-leiste > div:first-child { display: flex; flex-direction: column; min-width: 0; }
+.pr-uhr { font-family: 'Space Grotesk', var(--schrift, sans-serif); font-size: 1.35rem; font-weight: 700; font-variant-numeric: tabular-nums; padding: 4px 12px; border-radius: 12px; background: #eef0f8; white-space: nowrap; }
+.pr-uhr.gelb { background: #fef3c7; color: #92400e; }
+.pr-uhr.rot { background: #fee2e2; color: #b91c1c; animation: prPuls 1s ease-in-out infinite; }
+@keyframes prPuls { 50% { opacity: 0.6; } }
+@media (prefers-reduced-motion: reduce) { .pr-uhr.rot { animation: none; } }
+.pr-nummern { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-bottom: 12px; }
+.pr-trenner { flex-basis: 100%; font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: var(--leise); margin-top: 4px; }
+.pr-nr { width: 36px; height: 36px; border-radius: 10px; border: 1px solid var(--linie); background: #fff; font: inherit; font-weight: 700; cursor: pointer; color: var(--text); }
+.pr-nr.fertig { background: #dcfce7; border-color: #86efac; }
+.pr-nr.aktiv { background: #b45309; color: #fff; border-color: transparent; }
+.pr-aufgabe h2 { margin: 4px 0 8px; }
+.pr-meta { display: flex; gap: 6px; flex-wrap: wrap; margin: 0 0 12px; }
+.pr-sachverhalt, .pr-frage, .pr-tipps { padding: 12px 14px; border-radius: 12px; background: rgba(255, 255, 255, 0.65); margin-bottom: 12px; line-height: 1.55; }
+.pr-frage { background: #fff7ed; border-left: 4px solid #f59e0b; }
+.pr-sachverhalt h3, .pr-frage h3, .pr-tipps h3 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--leise); margin: 0 0 6px; }
+.pr-sachverhalt p, .pr-frage p { margin: 4px 0; }
+.pr-aufgabe ul, .pr-loesung ul { margin: 6px 0; padding-left: 20px; }
+li.unter { margin-left: 18px; list-style: circle; }
+.pr-antwort-label { display: block; font-weight: 700; margin: 6px 0; }
+.pr-antwort { width: 100%; box-sizing: border-box; min-height: 220px; padding: 12px; border-radius: 12px; border: 1px solid var(--linie); font: inherit; line-height: 1.5; resize: vertical; background: #fff; }
+.pr-antwort:focus { outline: 2px solid #f59e0b; outline-offset: 1px; }
+.pr-blaettern { justify-content: space-between; }
+.pr-ergebnis { border-top: 4px solid #b45309; }
+.pr-gesamt { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.pr-notenkreis { width: 88px; height: 88px; border-radius: 50%; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0; }
+.pr-notenkreis b { font-size: 2.2rem; line-height: 1; }
+.pr-notenkreis span { font-size: 0.7rem; font-weight: 700; }
+.pr-bereichsnoten { list-style: none; padding: 0; margin: 14px 0 0; display: grid; gap: 6px; }
+.pr-bereichsnoten li { display: grid; grid-template-columns: 1fr auto auto; gap: 10px; align-items: center; padding: 8px 10px; border-radius: 10px; background: rgba(255, 255, 255, 0.6); }
+.pr-bestehen { margin: 12px 0 0; padding: 10px 12px; border-radius: 12px; font-weight: 600; }
+.pr-bestehen.ok { background: #dcfce7; color: #14532d; }
+.pr-bestehen.nein { background: #fee2e2; color: #7f1d1d; }
+.pr-loesung h2 { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.pr-loesung details { margin: 6px 0 12px; }
+.pr-loesung summary { cursor: pointer; font-weight: 600; color: var(--leise); }
+.pr-zwei { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.pr-deine, .pr-muster { padding: 12px 14px; border-radius: 12px; line-height: 1.55; min-width: 0; }
+.pr-deine { background: #f1f5f9; }
+.pr-muster { background: #ecfdf5; border-left: 4px solid #16a34a; }
+.pr-deine h3, .pr-muster h3 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--leise); margin: 0 0 6px; }
+.pr-muster p { margin: 6px 0; }
+.pr-antwort-zeigen { white-space: pre-wrap; overflow-wrap: anywhere; }
+.pr-schema { list-style: none; padding: 0 !important; display: grid; gap: 6px; }
+.pr-schema label { display: grid; grid-template-columns: auto 1fr auto; gap: 10px; align-items: center; padding: 8px 10px; border-radius: 10px; background: rgba(255, 255, 255, 0.7); cursor: pointer; }
+.pr-schema input { width: 20px; height: 20px; accent-color: #16a34a; }
+.pr-schema input:checked + span { color: #14532d; font-weight: 600; }
+.chip.pr-phase { background: #b45309; color: #fff; }
+.pr-kachel { display: flex; align-items: center; gap: 14px; padding: 16px; border-radius: 18px; text-decoration: none; color: var(--text); border-left: 4px solid #b45309; }
+.pr-kachel-icon { font-size: 1.8rem; }
+.pr-kachel span:nth-child(2) { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
+.pr-kachel small { color: var(--leise); }
+.pr-pfeil { font-size: 1.3rem; color: #b45309; font-weight: 800; }
+.fach-karte.nachlesen h3 { margin-top: 6px; }
+@media (max-width: 640px) {
+  .pr-wahl, .pr-zwei { grid-template-columns: 1fr; }
+  .pr-leiste { top: calc(env(safe-area-inset-top, 0px) + 74px); padding: 8px 10px; }
+  .pr-uhr { font-size: 1.1rem; padding: 4px 8px; }
+  .pr-verlauf li { grid-template-columns: 1fr auto; }
+  .pr-verlauf li > span:first-child { grid-column: 1 / -1; font-size: 0.75rem; color: var(--leise); }
+}
