@@ -660,6 +660,93 @@
     return false;
   }
 
+  /* ---------------- Wochenplan für die Startseite ---------------- */
+  let wochenAuswahl = null;
+  function wocheHtml() {
+    const s = lade(), tag = heute();
+    const wt = wochentag(tag);
+    const start = wt > 4 ? plus(montag(tag), 7) : montag(tag); // am Wochenende: nächste Woche
+    const tage = [0, 1, 2, 3, 4].map((i) => plus(start, i));
+    if (!wochenAuswahl || !tage.includes(wochenAuswahl)) wochenAuswahl = tage.includes(tag) ? tag : tage[0];
+    const ausw = wochenAuswahl;
+    const testAm = {};
+    s.tests.forEach((t) => { (testAm[t.datum] = testAm[t.datum] || []).push(t); });
+    const lernAm = (d) => s.tests.filter((t) => lerntage(t).includes(d));
+    const kommend = aktiveTests(s, tag);
+    const art = s.tage[ausw];
+    const st = art === 'schule' ? stundenAm(wochentag(ausw), s) : [];
+    const istHeute = ausw === tag;
+    const titel = (istHeute ? 'Heute · ' : '') + schoen(ausw, { weekday: 'long', day: 'numeric', month: 'long' });
+    let detail;
+    if (!art) {
+      detail = `<p class="klein">Noch nicht festgelegt. Ist an diesem Tag Schule oder Arbeit?</p>
+        <div class="pl-art"><button class="pille" data-wo-art="schule">🏫 Schule</button><button class="pille" data-wo-art="arbeit">💼 Arbeit</button></div>`;
+    } else if (art === 'arbeit') {
+      detail = `<p class="wo-arbeit">💼 Arbeitstag</p><button class="link" data-wo-art="schule">Doch Schule?</button>`;
+    } else if (!st.length) {
+      detail = '<p class="klein">🏫 Schultag – für diesen Wochentag ist noch kein Stundenplan eingetragen. <a href="#planer-stundenplan">Jetzt eintragen</a></p>';
+    } else {
+      const jetzt = new Date().getHours() * 60 + new Date().getMinutes();
+      detail = `<ol class="wo-stunden">${st.map((x) => {
+        const f = fachVon(x.fach, s);
+        const lf = lernfeldZu(x.fach, s);
+        const laeuft = istHeute && jetzt >= x.von && jetzt < x.bis;
+        const vorbei = istHeute && jetzt >= x.bis;
+        return `<li class="${laeuft ? 'jetzt' : ''} ${vorbei ? 'vorbei' : ''}" style="--akzent:${esc(lf ? lf.farbe : '#94a3b8')}">
+          <time>${uhr(x.von)}<br><small>${uhr(x.bis)}</small></time>
+          <div><b>${esc(f.name)}</b><span>${esc(f.lehrkraft || '')}${x.dauer === 90 ? ' · 90 Min.' : ''}</span></div>
+          ${laeuft ? '<em>jetzt</em>' : ''}</li>`;
+      }).join('')}</ol>
+      <p class="wo-ende">Schulende ${uhr(st[st.length - 1].bis)} Uhr</p>`;
+    }
+    const testsHeute = testAm[ausw] || [];
+    const lernen = lernAm(ausw);
+    const lernHtml = lernen.map((t) => {
+      const { lf, liste } = aufgabenAm(t, ausw, s);
+      const erl = (s.erledigt[t.id] || {})[ausw];
+      return `<div class="wo-lernen" style="--akzent:${esc(lf ? lf.farbe : '#6366f1')}">
+        <div><b>Lernen für ${esc(fachVon(t.fach, s).name)}: ${esc(t.thema)}</b>
+          <span>Test ${esc(schoen(t.datum))} · ${liste.length ? liste.length + ' Aufgaben' : 'Paragrafen lesen'}${erl ? ` · ✓ ${erl.richtig}/${erl.gesamt}` : ''}</span></div>
+        ${istHeute && liste.length ? `<button class="btn primaer klein-btn" data-pl-lernen="${esc(t.id)}">${erl ? '↻' : '▶'} Lernen</button>` : ''}
+      </div>`;
+    }).join('');
+    return `
+      <section class="glas block wo" id="wochenplan">
+        <div class="wo-kopf"><h2>${wt > 4 ? 'Nächste Woche' : 'Diese Woche'}</h2>
+          <a class="link" href="#planer-kalender">Kalender ›</a></div>
+        <div class="wo-tage" role="tablist">${tage.map((d, i) => {
+          const a = s.tage[d];
+          return `<button role="tab" aria-selected="${d === ausw}" class="wo-tag ${a || ''} ${d === tag ? 'heute' : ''} ${d === ausw ? 'aktiv' : ''}" data-wo-tag="${d}">
+            <small>${KURZ[i]}</small><b>${ausIso(d).getDate()}</b>
+            <span>${a === 'schule' ? '🏫' : a === 'arbeit' ? '💼' : '·'}</span>
+            ${testAm[d] ? '<i class="wo-test" title="Test">📝</i>' : lernAm(d).length ? '<i class="wo-lern" title="Lerntag"></i>' : ''}</button>`;
+        }).join('')}</div>
+        <div class="wo-detail">
+          <h3>${esc(titel)}</h3>
+          ${testsHeute.map((t) => `<p class="wo-testtag">📝 Test: ${esc(fachVon(t.fach, s).name)} · ${esc(t.thema)}</p>`).join('')}
+          ${detail}
+          ${lernHtml}
+        </div>
+        ${kommend.length ? `<div class="wo-naechste"><h3>Nächste Tests</h3>${kommend.slice(0, 3).map((t) => {
+          const n = tageZwischen(tag, t.datum);
+          return `<a href="#planer-tests" class="wo-test-zeile"><span class="wo-tage-bis ${n <= 2 ? 'bald' : ''}">${n === 0 ? 'heute' : n === 1 ? 'morgen' : n + ' Tage'}</span><b>${esc(fachVon(t.fach, s).name)} · ${esc(t.thema)}</b><small>${esc(schoen(t.datum))}</small></a>`;
+        }).join('')}</div>` : `<p class="klein wo-hinweis">Noch kein Test eingetragen. <a href="#planer-tests">Test eintragen</a> – dann verteilt der Lernplan die Aufgaben auf die Tage davor.</p>`}
+      </section>`;
+  }
+  function verdrahteWoche(wurzel) {
+    wurzel.addEventListener('click', (e) => {
+      const box = wurzel.querySelector('#wochenplan');
+      if (!box || !box.contains(e.target)) return;
+      const neu = () => { box.outerHTML = wocheHtml(); };
+      const t = e.target.closest('[data-wo-tag]');
+      if (t) { wochenAuswahl = t.dataset.woTag; return neu(); }
+      const a = e.target.closest('[data-wo-art]');
+      if (a) { const st = lade(); st.tage[wochenAuswahl] = a.dataset.woArt; sichere(st); return neu(); }
+      const l = e.target.closest('[data-pl-lernen]');
+      if (l) return starteLernen(l.dataset.plLernen, heute());
+    });
+  }
+
   /* ---------------- Kachel für die Startseite ---------------- */
   function startHtml() {
     const s = lade(), tag = heute();
@@ -677,5 +764,5 @@
       </a>`;
   }
 
-  window.Planer = { zeige, startHtml, lade, raster, stundenAm, schulende, aufgabenAm, lerntage, noteWert, schnitt };
+  window.Planer = { zeige, startHtml, wocheHtml, verdrahteWoche, fachVon, lernfeldZu, lade, raster, stundenAm, schulende, aufgabenAm, lerntage, noteWert, schnitt };
 })();

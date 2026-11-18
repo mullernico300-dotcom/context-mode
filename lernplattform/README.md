@@ -10,6 +10,8 @@ Eine Web-App ohne Installation, ohne Anmeldung und ohne Server-Logik. Für jedes
 | 🏆 **Quiz-Show** | Bis zu 10 Fragen mit steigender Schwierigkeit, Punktestufen, Sicherheitsstufen, Timer, zwei Joker, Highscore |
 | 🧩 **Kreuzworträtsel** | Wird automatisch aus der Wortliste erzeugt, prüft jedes vollständig ausgefüllte Wort sofort (grün/rot) |
 | 🎬 **Lernvideos** | 34 Hochformat-Videos mit Sprecherstimme zum Durchwischen, je unter 2 Minuten, mit mitlaufender Texthervorhebung |
+| 🏠 **Startseite** | Wochenplan Montag bis Freitag mit Stunden, Tests und den Lernaufgaben des Tages |
+| 📚 **Themen** | Jedes Lernfeld zeigt zuerst seine Themen; jedes Thema hat eine eigene Seite mit Videos, Übungsaufgaben, Paragrafen und Karteikarten |
 | 📅 **Planer** | Stundenplan (45/90 Minuten, Pausen), Kalender mit Schul- und Arbeitstagen, Tests mit automatischem Lernplan, Noten mit Fach- und Gesamtschnitt. Bleibt nur auf dem Gerät, mit Sicherung als Datei |
 | 📂 **Unterlagen** | Arbeitsblätter und Lernübersichten je Fach (nur in der Artefakt-Version). Hochladen dürfen nur Bearbeiter |
 | 🎬 **Aufgaben-Videos** | 122 Übungsaufgaben: Die Stimme stellt die Aufgabe mit Grafik, nach kurzer Bedenkzeit gibt man die Antwort ein, dann folgt die gesprochene Lösung mit Rechenweg und Paragrafen |

@@ -35,6 +35,8 @@ Ein Modell kann Claude nicht selbst wechseln. Der Nutzer stellt es mit `/model` 
 - Unterlagen gebaut (js/unterlagen.js): Fächer, Themen, Dateien, Lernübersichten in der Artefakt-Datenbank (subjects, topics, files, summaries). Lesen: alle mit Link; schreiben/hochladen: nur Bearbeiter (Regeln write "admin", assets nur für Bearbeiter). Geprüft mit as_level view/interact.
 - Lernregister übernommen (ohne Seminare): 6 Fächer, 13 Themen, 15 Dateien, 4 Lernübersichten. Das Lernregister selbst ist noch nicht gelöscht.
 - Schulzeiten, Pausen, Fächer und Lehrkräfte stehen in js/schule.js. Die Datei wird nur im Artefakt veröffentlicht und ist per lernplattform/.gitignore vom Repository ausgeschlossen. Vorlage: js/schule.beispiel.js.
+- Übersicht neu (18.11.): Startseite mit Wochenplan (Mo–Fr, Stunden des gewählten Tages, Tests, Lernaufgaben), Lernfeld zeigt zuerst Themen-Kacheln, jedes Thema hat eine eigene Seite (#thema-<lf>-<n>) mit Videos, Übungsaufgaben, Paragrafen und Karteikarten zum Thema. Ein Thema = Paragrafen-Gruppe gleichen Namens wie Aufgaben-Thema und Video-Titel. Untere Navigation auf dem Handy, Schriften Inter und Space Grotesk.
+- Geplant, noch nicht gebaut: Prüfungsthemen-Liste des Besitzers (nur für ihn lesbar) und Inhalte in der Datenbank statt in festen Dateien, damit der Nachtlauf Aufgaben, Videos, Karten, Quiz und Rätsel für neue Themen und große neue Dateien ergänzen kann, ohne die Seite neu zu veröffentlichen. Tages-Training soll dann auch aus der Datenbank lesen.
 - Offen: Abendlauf (Sonnet/medium) mit dem Nutzer abstimmen. Er läuft außerhalb der App und kann die lokalen Stundenpläne nicht lesen, deshalb braucht er die Schulende-Zeiten pro Wochentag vom Nutzer.
 
 ## Entscheidungen für die Planung (Stand 17.11.)

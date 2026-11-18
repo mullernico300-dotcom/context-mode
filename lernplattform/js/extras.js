@@ -494,6 +494,17 @@
     return () => { beobachter.disconnect(); document.removeEventListener('keydown', taste); clips.forEach((c) => c.querySelector('video').pause()); };
   }
 
-  window.Spiel = { xp, konfetti, kartenFuer, quizFuer, bewerteKarte, faellig, fach, merkeFehler, loescheFehler, startHtml, zeigeTraining, zeigePaare, zeigeChip, zeigeVideos, videosVon };
+  /* Video zu Ende gesehen (auch für Videos auf den Themenseiten) */
+  function videoFertig(id) {
+    const s = lade();
+    s.videos = s.videos || {};
+    if (s.videos[id]) return false;
+    s.videos[id] = tag();
+    sichere(s);
+    xp(10, 'video');
+    return true;
+  }
+
+  window.Spiel = { xp, konfetti, kartenFuer, quizFuer, bewerteKarte, faellig, fach, merkeFehler, loescheFehler, startHtml, zeigeTraining, zeigePaare, zeigeChip, zeigeVideos, videosVon, videoGesehen, videoFertig };
   zeigeChip();
 })();

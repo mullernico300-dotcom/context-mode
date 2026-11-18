@@ -22,6 +22,12 @@
     document.documentElement.style.removeProperty('--akzent');
     Spiel.zeigeChip();
     if (h === 'training') { aufraeumen = Spiel.zeigeTraining(app); return; }
+    markiereNavigation(h);
+    if (h.startsWith('thema-')) {
+      const m = /^thema-(.+)-(\d+)$/.exec(h);
+      const lfT = m && Store.lernfelder().find((l) => l.id === m[1]);
+      if (lfT) { document.documentElement.style.setProperty('--akzent', lfT.farbe); return zeigeThemaSeite(lfT, Number(m[2])); }
+    }
     if (h === 'planer' || h.startsWith('planer-')) { aufraeumen = Planer.zeige(app, h.slice(7)); return; }
     if (h === 'unterlagen' || h.startsWith('unterlagen-')) { aufraeumen = Unterlagen.zeige(app, h.slice(11)); return; }
     if (h.startsWith('aufgaben-')) {
@@ -42,6 +48,20 @@
     zeigeStart();
   }
   window.addEventListener('hashchange', () => { route(); window.scrollTo(0, 0); });
+  /* „Fächer“ in der unteren Navigation springt zur Fächer-Liste auf der Startseite */
+  document.addEventListener('click', (e) => {
+    const f = e.target.closest('[data-ziel-faecher]');
+    if (!f) return;
+    e.preventDefault();
+    const springe = () => { const z = document.getElementById('faecher'); if (z) z.scrollIntoView({ behavior: 'smooth', block: 'start' }); };
+    if (location.hash === '#start' || location.hash === '') springe(); else { location.hash = '#start'; setTimeout(springe, 60); }
+  });
+
+  /* Untere Navigation (Handy): aktiven Bereich hervorheben */
+  function markiereNavigation(h) {
+    const bereich = /^planer/.test(h) ? 'planer' : /^unterlagen/.test(h) ? 'unterlagen' : /^(videos|training)/.test(h) ? 'ueben' : /^(lf-|thema-|aufgaben-|paare-)/.test(h) ? 'faecher' : /^verwaltung/.test(h) ? '' : 'start';
+    document.querySelectorAll('[data-nav]').forEach((a) => a.classList.toggle('aktiv', a.dataset.nav === bereich));
+  }
 
   /* ---------------- Startseite ---------------- */
   function lfStatistik(lf) {
@@ -146,43 +166,69 @@
   }
 
   function zeigeStart() {
-    const d = Store.daten();
     const lfs = Store.lernfelder();
+    const jetzt = new Date();
+    const stunde = jetzt.getHours();
+    const gruss = stunde < 11 ? 'Guten Morgen' : stunde < 17 ? 'Hallo' : 'Guten Abend';
     app.innerHTML = `
       <div id="startseite">
-      <section class="hero">
-        <h1>${esc(d.titel)}</h1>
-        <p>${esc(d.untertitel)}</p>
+      <section class="start-kopf">
+        <p class="eyebrow">${esc(jetzt.toLocaleDateString('de-DE', { weekday: 'long', day: 'numeric', month: 'long' }))}</p>
+        <h1>${gruss}! Was steht an?</h1>
       </section>
-      ${Planer.startHtml()}
-      ${Spiel.startHtml()}
-      ${lfs.length ? '' : '<div class="glas leer">Noch keine Lernfelder vorhanden. Unter <a href="#verwaltung">Verwaltung</a> kannst du welche anlegen.</div>'}
-      <section class="raster">
+      ${Planer.wocheHtml()}
+      <section class="abschnitt" id="faecher">
+        <div class="abschnitt-kopf"><h2>Deine Lernfelder</h2><span class="klein">${lfs.length} Fächer</span></div>
+        ${lfs.length ? '' : '<div class="glas leer">Noch keine Lernfelder vorhanden. Unter <a href="#verwaltung">Verwaltung</a> kannst du welche anlegen.</div>'}
+        <div class="fach-raster">
         ${lfs.map((lf) => {
-          const s = lfStatistik(lf);
-          const pct = s.karten ? Math.round((s.gewusst / s.karten) * 100) : 0;
+          const th = themenVon(lf);
+          const fort = th.length ? Math.round((th.reduce((n, t) => n + t.fortschritt, 0) / th.length) * 100) : 0;
+          const vids = Spiel.videosVon(lf.id).length;
+          const auf = Trainer.von(lf.id).length;
+          const z = lfStatistik(lf).ziele;
           return `
-          <a class="glas lf-karte" href="#lf-${esc(lf.id)}" style="--akzent:${esc(lf.farbe)}">
-            <span class="lf-nr">${esc(U.kurz(lf))}</span>
-            <h2>${esc(lf.titel)}</h2>
-            <p>${esc(lf.beschreibung)}</p>
-            <div class="balken"><i style="width:${pct}%"></i></div>
-            <div class="chips">
-              ${s.ziele ? `<span class="chip">🎯 ${s.ziele} ${s.ziele === 1 ? 'Ziel' : 'Ziele'}</span>` : ''}
-              ${lf.paragrafen.length ? `<span class="chip">§ ${lf.paragrafen.length}</span>` : ''}
-              <span class="chip">🃏 ${s.gewusst}/${s.karten}</span>
-              <span class="chip">🏆 ${s.quiz ? s.quiz.best.toLocaleString('de-DE') : '–'}</span>
-              <span class="chip">🧩 ${s.raetsel ? 'gelöst' : 'offen'}</span>
-            </div>
+          <a class="glas fach-karte" href="#lf-${esc(lf.id)}" style="--akzent:${esc(lf.farbe)}">
+            <div class="fach-karte-kopf"><span class="lf-nr">${esc(U.kurz(lf))}</span>${z ? `<span class="chip">🎯 ${z}</span>` : ''}</div>
+            <h3>${esc(lf.titel)}</h3>
+            <p>${th.length} ${th.length === 1 ? 'Thema' : 'Themen'}${vids ? ` · ${vids} Videos` : ''}${auf ? ` · ${auf} Aufgaben` : ''}</p>
+            <div class="fach-fort"><div class="balken"><i style="width:${fort}%"></i></div><span>${fort} %</span></div>
           </a>`;
         }).join('')}
+        </div>
+      </section>
+      <section class="abschnitt">
+        <div class="abschnitt-kopf"><h2>Dein Fortschritt</h2></div>
+        ${Spiel.startHtml()}
       </section>
       </div>`;
+    Planer.verdrahteWoche(document.getElementById('startseite'));
+  }
+
+  /* ---------------- Themen eines Lernfelds ---------------- */
+  /* Ein Thema bündelt Paragrafen (Gruppe), Übungsaufgaben und Videos mit demselben Namen.
+     Lernfelder ohne Paragrafen nutzen ihre Erklär-Themen. */
+  function themenVon(lf) {
+    const verstanden = Store.ziele(lf.id);
+    const st = Trainer.status();
+    if (lf.paragrafen.length) {
+      const namen = [];
+      lf.paragrafen.forEach((p) => { if (p.gruppe && !namen.includes(p.gruppe)) namen.push(p.gruppe); });
+      return namen.map((name) => {
+        const paragrafen = lf.paragrafen.filter((p) => p.gruppe === name);
+        const aufgaben = Trainer.von(lf.id).filter((a) => a.thema === name);
+        const videos = Spiel.videosVon(lf.id).filter((v) => v.titel === name);
+        const erledigt = paragrafen.filter((p) => verstanden['p' + schluessel(p.ref + p.text)]).length + aufgaben.filter((a) => st[a.id] === 'r').length;
+        const gesamt = paragrafen.length + aufgaben.length;
+        return { name, paragrafen, aufgaben, videos, info: null, fortschritt: gesamt ? erledigt / gesamt : 0 };
+      });
+    }
+    return lf.themen.map((t) => ({ name: t.titel, paragrafen: [], aufgaben: [], videos: [], info: t, fortschritt: 0 }));
   }
 
   /* ---------------- Lernfeld-Rahmen ---------------- */
   const TABS = [
-    ['themen', '📖', 'Themen'],
+    ['themen', '📚', 'Themen'],
     ['paragrafen', '§', 'Paragrafen'],
     ['karten', '🃏', 'Karten'],
     ['quiz', '🏆', 'Quiz'],
@@ -204,7 +250,7 @@
         </div>
       </header>
       <nav class="tabs glas" aria-label="Lernformate">
-        ${TABS.map(([id, icon, name]) => `<a href="#lf-${esc(lf.id)}-${id}" class="${id === tab ? 'aktiv' : ''}"><span>${icon}</span>${name}</a>`).join('')}
+        ${TABS.filter(([id]) => id !== 'raetsel' || lf.raetsel.length).filter(([id]) => id !== 'paragrafen' || lf.paragrafen.length).map(([id, icon, name]) => `<a href="#lf-${esc(lf.id)}-${id}" class="${id === tab ? 'aktiv' : ''}"><span>${icon}</span>${name}</a>`).join('')}
       </nav>
       <div id="inhalt"></div>`;
     const ziel = document.getElementById('inhalt');
@@ -215,33 +261,126 @@
   /* ---------------- 1. Themen & Erklärungen ---------------- */
   function zeigeThemen(lf, el) {
     const erledigt = Store.ziele(lf.id);
+    const th = themenVon(lf);
+    const falsch = Trainer.von(lf.id).filter((a) => Trainer.status()[a.id] === 'f').length;
     el.innerHTML = `
+      <section class="themen-raster">
+        ${th.map((t, i) => `
+        <a class="glas thema-karte" href="#thema-${esc(lf.id)}-${i}">
+          <span class="thema-nr">${i + 1}</span>
+          <div class="thema-text"><b>${esc(t.name)}</b>
+            <span>${[t.videos.length ? `🎬 ${t.videos.length}` : '', t.aufgaben.length ? `📝 ${t.aufgaben.length}` : '', t.paragrafen.length ? `§ ${t.paragrafen.length}` : '', t.info ? 'Erklärung' : ''].filter(Boolean).join(' · ')}</span>
+            ${t.paragrafen.length || t.aufgaben.length ? `<div class="balken"><i style="width:${Math.round(t.fortschritt * 100)}%"></i></div>` : ''}</div>
+          <span class="pfeil">›</span>
+        </a>`).join('')}
+      </section>
+      ${th.length ? '' : '<div class="glas leer">Für dieses Lernfeld gibt es noch keine Themen.</div>'}
+      ${falsch ? `<a class="btn" href="#aufgaben-${esc(lf.id)}-fehler">↻ ${falsch} falsch gelöste Aufgaben wiederholen</a>` : ''}
+      <h2 class="pl-zw">Üben im ganzen Fach</h2>
+      <div class="ueben-raster">
+        <a class="glas ueben-karte" href="#lf-${esc(lf.id)}-karten"><span>🃏</span><b>Karteikarten</b></a>
+        <a class="glas ueben-karte" href="#lf-${esc(lf.id)}-quiz"><span>🏆</span><b>Quiz-Show</b></a>
+        <a class="glas ueben-karte" href="#paare-${esc(lf.id)}"><span>⚡</span><b>Paare-Spiel</b></a>
+        ${lf.raetsel.length ? `<a class="glas ueben-karte" href="#lf-${esc(lf.id)}-raetsel"><span>🧩</span><b>Rätsel</b></a>` : ''}
+        ${lf.paragrafen.length ? `<a class="glas ueben-karte" href="#lf-${esc(lf.id)}-paragrafen"><span>§</span><b>Alle Paragrafen</b></a>` : ''}
+      </div>
       ${zieleHtml(lf)}
-      ${Trainer.listeHtml(lf)}
       ${lf.lernziele.length ? `
-      <section class="glas block">
-        <h2>📌 Lernziele aus dem Lehrplan</h2>
+      <details class="glas block">
+        <summary class="einklapp"><h2>📌 Lernziele aus dem Lehrplan</h2></summary>
         <ul class="ziele">
           ${lf.lernziele.map((z) => {
             const k = schluessel(z);
             return `<li><label><input type="checkbox" data-ziel="${k}" ${erledigt[k] ? 'checked' : ''}><span>${esc(z)}</span></label></li>`;
           }).join('')}
         </ul>
-      </section>` : ''}
-      ${lf.themen.map((t, i) => `
-      <details class="glas block thema" ${i === 0 ? 'open' : ''}>
-        <summary><span class="nr">${i + 1}</span><h2>${esc(t.titel)}</h2></summary>
-        <div class="text">${format(t.text)}</div>
-        ${t.merke ? `<div class="merke"><b>Merke</b>${esc(t.merke)}</div>` : ''}
-      </details>`).join('')}
-      ${lf.themen.length ? '' : '<div class="glas leer">Für dieses Lernfeld gibt es noch keine Erklärungen.</div>'}
-      <div class="weiter-zeile">
-        <a class="btn primaer" href="#lf-${esc(lf.id)}-paragrafen">Weiter zu den Paragrafen →</a>
-      </div>`;
+      </details>` : ''}`;
     el.addEventListener('change', (e) => {
       if (e.target.dataset.ziel) Store.zielUmschalten(lf.id, e.target.dataset.ziel);
     });
     verdrahteZiele(el, lf);
+  }
+
+  /* ---------------- Seite eines Themas ---------------- */
+  let kartenThema = null; // Karteikarten auf ein Thema eingrenzen
+  function zeigeThemaSeite(lf, nr) {
+    const th = themenVon(lf);
+    const t = th[nr];
+    if (!t) { location.hash = '#lf-' + lf.id; return; }
+    const verstanden = Store.ziele(lf.id);
+    const st = Trainer.status();
+    const richtig = t.aufgaben.filter((a) => st[a.id] === 'r').length;
+    const aufIndex = Trainer.themen(lf.id).findIndex((x) => x.name === t.name);
+    const zeit = (sek) => Math.floor(sek / 60) + ':' + String(sek % 60).padStart(2, '0');
+    app.innerHTML = `
+      <a class="zurueck" href="#lf-${esc(lf.id)}">← ${esc(U.kurz(lf))} · alle Themen</a>
+      <header class="lf-kopf thema-kopf">
+        <span class="lf-nr">${esc(U.kurz(lf))} · Thema ${nr + 1} von ${th.length}</span>
+        <h1>${esc(t.name)}</h1>
+        <div class="thema-zahlen">
+          ${t.videos.length ? `<span>🎬 ${t.videos.length} ${t.videos.length === 1 ? 'Video' : 'Videos'}</span>` : ''}
+          ${t.aufgaben.length ? `<span>📝 ${richtig}/${t.aufgaben.length} Aufgaben gelöst</span>` : ''}
+          ${t.paragrafen.length ? `<span>§ ${t.paragrafen.filter((p) => verstanden['p' + schluessel(p.ref + p.text)]).length}/${t.paragrafen.length} verstanden</span>` : ''}
+        </div>
+      </header>
+
+      ${t.info ? `<section class="glas block thema-info"><div class="text">${format(t.info.text)}</div>${t.info.merke ? `<div class="merke"><b>Merke</b>${esc(t.info.merke)}</div>` : ''}</section>` : ''}
+
+      ${t.videos.length ? `
+      <section class="abschnitt">
+        <div class="abschnitt-kopf"><h2>🎬 Lernvideos</h2><span class="klein">mit Ton · je unter 2 Minuten</span></div>
+        <div class="video-reihe">${t.videos.map((v) => `
+          <figure class="glas video-karte">
+            <video controls playsinline preload="none" poster="videos/${esc(v.id)}.jpg" src="videos/${esc(v.id)}.mp4" data-video="${esc(v.id)}"></video>
+            <figcaption><b>${v.teile > 1 ? `Teil ${v.teil} von ${v.teile}` : 'Erklärvideo'}</b><span>${zeit(v.sek)} min · ${v.refs.length} Paragrafen${Spiel.videoGesehen(v.id) ? ' · ✓ gesehen' : ''}</span></figcaption>
+          </figure>`).join('')}</div>
+      </section>` : ''}
+
+      ${t.aufgaben.length ? `
+      <section class="glas block aufgaben-start">
+        <div><h2>📝 Übungsaufgaben</h2>
+          <p class="klein">${t.aufgaben.length} Aufgaben mit Stimme: Frage anhören, Antwort eingeben, Lösung mit Rechenweg hören.</p>
+          <div class="balken"><i style="width:${Math.round((richtig / t.aufgaben.length) * 100)}%"></i></div></div>
+        <a class="btn primaer" href="#aufgaben-${esc(lf.id)}-${aufIndex}">▶ ${richtig ? 'Weiter üben' : 'Aufgaben starten'}</a>
+      </section>` : ''}
+
+      ${t.paragrafen.length ? `
+      <section class="abschnitt">
+        <div class="abschnitt-kopf"><h2>§ Paragrafen</h2><span class="klein">in einfacher Sprache</span></div>
+        <div class="glas block">${t.paragrafen.map((p) => {
+          const k = 'p' + schluessel(p.ref + p.text);
+          return `<article class="para ${verstanden[k] ? 'ok' : ''}">
+            <div class="para-kopf"><span class="ref">${esc(p.ref)}</span>
+              <label class="haken"><input type="checkbox" data-para="${k}" ${verstanden[k] ? 'checked' : ''}> verstanden</label></div>
+            <p>${esc(p.text)}</p></article>`;
+        }).join('')}</div>
+      </section>` : ''}
+
+      <section class="abschnitt">
+        <div class="abschnitt-kopf"><h2>Weiter üben</h2></div>
+        <div class="ueben-raster">
+          ${t.paragrafen.length || lf.karten.length ? `<button class="glas ueben-karte" data-thema-karten><span>🃏</span><b>Karteikarten${t.paragrafen.length ? ' zum Thema' : ''}</b></button>` : ''}
+          <a class="glas ueben-karte" href="#lf-${esc(lf.id)}-quiz"><span>🏆</span><b>Quiz-Show</b></a>
+          <a class="glas ueben-karte" href="#paare-${esc(lf.id)}"><span>⚡</span><b>Paare-Spiel</b></a>
+        </div>
+      </section>
+
+      <nav class="thema-blaettern">
+        ${nr > 0 ? `<a class="btn" href="#thema-${esc(lf.id)}-${nr - 1}">← ${esc(th[nr - 1].name)}</a>` : '<span></span>'}
+        ${nr < th.length - 1 ? `<a class="btn primaer" href="#thema-${esc(lf.id)}-${nr + 1}">${esc(th[nr + 1].name)} →</a>` : ''}
+      </nav>`;
+    app.querySelectorAll('[data-video]').forEach((v) => {
+      v.addEventListener('play', () => app.querySelectorAll('[data-video]').forEach((o) => { if (o !== v) o.pause(); }));
+      v.addEventListener('ended', () => { if (Spiel.videoFertig(v.dataset.video)) toast('Video gesehen · +10 XP'); });
+    });
+    const knopfKarten = app.querySelector('[data-thema-karten]');
+    if (knopfKarten) knopfKarten.addEventListener('click', () => { kartenThema = t.paragrafen.length ? t.name : null; location.hash = '#lf-' + lf.id + '-karten'; });
+    app.querySelectorAll('[data-para]').forEach((c) => c.addEventListener('change', () => {
+      Store.zielUmschalten(lf.id, c.dataset.para);
+      if (c.checked) Spiel.xp(2, 'para');
+      c.closest('.para').classList.toggle('ok', c.checked);
+    }));
+    aufraeumen = () => app.querySelectorAll('video').forEach((v) => v.pause());
   }
 
   /* ---------------- Paragrafen in einfacher Sprache ---------------- */
@@ -301,7 +440,11 @@
 
   /* ---------------- 2. Karteikarten ---------------- */
   function zeigeKarten(lf, el) {
-    const alleKarten = Spiel.kartenFuer(lf); // eigene Karten oder automatisch aus den Paragrafen
+    const thema = kartenThema;
+    kartenThema = null;
+    let alleKarten = Spiel.kartenFuer(lf); // eigene Karten oder automatisch aus den Paragrafen
+    const imThema = thema ? alleKarten.filter((k) => k.thema === thema) : [];
+    if (imThema.length) alleKarten = imThema;
     if (!alleKarten.length) { el.innerHTML = '<div class="glas leer">Noch keine Karteikarten vorhanden.</div>'; return; }
     const z = { filter: 'alle', stapel: [], i: 0, offen: false };
     if (alleKarten.some((k) => !Spiel.faellig(lf.id, schluessel(k.vorne)))) z.filter = 'faellig'; // wer schon gelernt hat, startet mit den fälligen Karten

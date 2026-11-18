@@ -1,5 +1,8 @@
 <title>Lernfeld-Trainer</title>
 <meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap">
 <link rel="stylesheet" href="css/style.css">
 <style>
 /* Einheitlicher heller Glas-Look: Farben sind in css/style.css als Tokens auf :root festgelegt. */
@@ -18,6 +21,15 @@ body { background: #eef2ff; color: #1e2140; }
   </header>
 
   <main id="app"></main>
+
+  <nav class="unten" aria-label="Hauptnavigation">
+    <a href="#start" data-nav="start"><span>🏠</span>Start</a>
+    <a href="#start" data-nav="faecher" data-ziel-faecher><span>📚</span>Fächer</a>
+    <a href="#training" data-nav="ueben"><span>⚡</span>Üben</a>
+    <a href="#planer" data-nav="planer"><span>📅</span>Planer</a>
+    <a href="#unterlagen" data-nav="unterlagen"><span>📂</span>Unterlagen</a>
+  </nav>
+
 
   <footer class="fuss">Kostenlos · Lernfortschritt, Stundenplan, Tests und Noten bleiben auf diesem Gerät</footer>
   <div id="toast" role="status" aria-live="polite"></div>

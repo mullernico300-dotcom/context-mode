@@ -6,7 +6,10 @@
   <meta name="theme-color" content="#eef2ff">
   <title>Lernfeld-Trainer</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎓%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <div class="hintergrund" aria-hidden="true"><i></i><i></i><i></i></div>
@@ -22,6 +25,15 @@
   </header>
 
   <main id="app"></main>
+
+  <nav class="unten" aria-label="Hauptnavigation">
+    <a href="#start" data-nav="start"><span>🏠</span>Start</a>
+    <a href="#start" data-nav="faecher" data-ziel-faecher><span>📚</span>Fächer</a>
+    <a href="#training" data-nav="ueben"><span>⚡</span>Üben</a>
+    <a href="#planer" data-nav="planer"><span>📅</span>Planer</a>
+    <a href="#unterlagen" data-nav="unterlagen"><span>📂</span>Unterlagen</a>
+  </nav>
+
 
   <footer class="fuss">Kostenlos · Lernfortschritt, Stundenplan, Tests und Noten bleiben auf diesem Gerät</footer>
   <div id="toast" role="status" aria-live="polite"></div>
