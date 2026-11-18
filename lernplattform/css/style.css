@@ -791,3 +791,21 @@ h2 { font-size: 1.12rem; }
   #toast { bottom: calc(88px + env(safe-area-inset-bottom, 0px)); }
   .fuss { padding-bottom: 8px; }
 }
+
+/* Themen: Überblick, Darauf achten, Prüfungsrelevanz */
+.pruef { justify-self: start; font-style: normal; font-size: 0.7rem; font-weight: 800; padding: 2px 8px; border-radius: 99px; background: #eef0f8; color: var(--leise); }
+.pruef-hoch.pruef, .pruef-zeile.pruef-hoch b { background: #fde2e2; color: #9b1c1c; }
+.pruef-mittel.pruef, .pruef-zeile.pruef-mittel b { background: #fdf0d5; color: #8a5300; }
+.pruef-gering.pruef, .pruef-zeile.pruef-gering b { background: #e3f5ea; color: #08623d; }
+.thema-text-box { display: grid; gap: 10px; }
+.thema-text-box h2 { margin-top: 4px; }
+.thema-text-box h3 { margin: 6px 0 0; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--leise); }
+.thema-ueberblick { margin: 0; font-size: 1.02rem; line-height: 1.6; max-width: 68ch; }
+.pruef-zeile { display: grid; gap: 4px; justify-items: start; }
+.pruef-zeile b { font-size: 0.82rem; padding: 4px 12px; border-radius: 99px; text-transform: none; }
+.pruef-zeile span { font-size: 0.86rem; color: var(--leise); max-width: 70ch; }
+.achten { margin: 0; padding-left: 20px; display: grid; gap: 6px; max-width: 70ch; }
+.fallen { padding: 12px 14px; border-radius: 14px; background: #fff4e5; border: 1px solid #f7d9a8; }
+.fallen h3 { margin-top: 0; color: #8a5300; }
+.fallen ul { margin: 6px 0 0; padding-left: 20px; display: grid; gap: 6px; }
+.quelle { margin: 0; }

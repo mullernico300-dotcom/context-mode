@@ -17,6 +17,7 @@
  *   raetsel     Kreuzworträtsel: { wort, hinweis }   (ein Wort, ohne Leerzeichen)
  *   paragrafen  Paragrafen in einfacher Sprache: { gruppe, ref, text }
  *   registerId / registerStand  Herkunft aus dem Lernregister (für die Wochen-Aktualisierung, nicht ändern)
+ *   themenInfo  je Thema (Name der Paragrafen-Gruppe): { ueberblick, achten[], fallen[], pruefung: hoch|mittel|gering, pruefungText, quelle }
  *   kurz        optionales Kürzel statt "LF <nummer>" (z. B. "SK" für ein Fach ohne LF-Nummer)
  *
  * Hinweis: Es werden ausschließlich Lernfelder angezeigt. Einträge, die als
@@ -898,7 +899,43 @@ window.LERN_DATEN = {
       "quiz": [],
       "raetsel": [],
       "registerId": "0fbsnlzh1hsp4s16gp2y",
-      "registerStand": 1794599471386
+      "registerStand": 1794599471386,
+      "themenInfo": {
+        "Die fünf Zweige der Sozialversicherung": {
+          "ueberblick": "Die gesetzliche Sozialversicherung hat fünf Zweige: Kranken-, Pflege-, Renten-, Arbeitslosen- und Unfallversicherung. KV, PV, RV und AV tragen Arbeitgeber und Arbeitnehmer grundsätzlich je zur Hälfte; ihre Beiträge bilden zusammen den Gesamtsozialversicherungsbeitrag. Die Unfallversicherung zahlt der Arbeitgeber allein an die Berufsgenossenschaft. Der Arbeitgeber behält den Arbeitnehmeranteil vom Lohn ein und überweist alles an die Krankenkasse als Einzugsstelle.",
+          "achten": [
+            "Merksatz: 4 Zweige halb-halb (KV, PV, RV, AV), 1 Zweig nur Arbeitgeber (UV).",
+            "Bei „Wer erhält die Beiträge?“: Gesamtsozialversicherungsbeitrag an die Krankenkasse (Einzugsstelle, § 28h SGB IV); UV-Beitrag direkt an die Berufsgenossenschaft; Minijob an die Minijob-Zentrale.",
+            "Immer das passende Sozialgesetzbuch dazuschreiben (SGB V, XI, VI, III, VII)."
+          ],
+          "fallen": [
+            "Unfallversicherung gehört nicht zum Gesamtsozialversicherungsbeitrag und hat keinen Arbeitnehmeranteil.",
+            "Der Zusatzbeitrag zur KV wird ebenfalls halbiert (seit 2019), nicht vom Arbeitnehmer allein getragen.",
+            "Kinderlosenzuschlag in der PV trägt nur der Arbeitnehmer."
+          ],
+          "pruefung": "mittel",
+          "pruefungText": "Zweige, Träger und Beitragstragung werden eher als Kurzfragen gestellt (WiSo, mündliche Prüfung) oder als Einstieg in eine Entgeltabrechnung. In WiSo-Prüfungen kommt Sozialversicherung z. B. über Minijob-Fälle (welche Beiträge, an welche Stelle).",
+          "quelle": "Lernregister"
+        },
+        "Beiträge berechnen: Grenzen und Beitragssätze 2026": {
+          "ueberblick": "Der Beitrag ist beitragspflichtiges Entgelt mal Beitragssatz, höchstens bis zur Beitragsbemessungsgrenze. Es gibt zwei Grenzen: 5.812,50 € im Monat für KV und PV, 8.450 € für RV und AV. Die Versicherungspflichtgrenze (6.450 € im Monat) entscheidet dagegen, ob jemand überhaupt gesetzlich krankenversichert sein muss. Der Arbeitnehmeranteil beträgt im Normalfall 21,15 %, der PV-Satz hängt von der Kinderzahl ab.",
+          "achten": [
+            "1. Brutto mit BBG KV/PV (5.812,50 €) und RV/AV (8.450 €) vergleichen; jeweils den kleineren Wert als Basis nehmen.",
+            "2. PV-Satz nach Kinderzahl/Alter bestimmen (kinderlos ab 23: 2,4 %; ein Kind 1,8 %; je weiteres Kind −0,25 %).",
+            "3. Jeden Zweig einzeln rechnen und auf Cent runden: KV 7,3 %, ZKV halber Zusatzbeitrag, PV, RV 9,3 %, AV 1,3 %.",
+            "4. Summe bilden und Probe mit dem Gesamtsatz (z. B. 21,15 % × Brutto, wenn keine Grenze überschritten)."
+          ],
+          "fallen": [
+            "Beitragsbemessungsgrenze ≠ Versicherungspflichtgrenze: Die BBG deckelt den Beitrag, die JAEG entscheidet über die Pflicht zur gesetzlichen KV.",
+            "Bei Brutto zwischen 5.812,50 € und 8.450 € unterschiedliche Basis: KV/PV gedeckelt, RV/AV vom vollen Brutto (Hildegard, Peter).",
+            "Folie nennt „zum 01.01.2025“, die Zahlen sind aber die Werte 2026 (2025 wären 5.512,50 € und 8.050 €). Geprüft: Die Werte 5.812,50 €, 8.450 €, 6.450 €, 2,9 % und 0,15 % stimmen für 2026.",
+            "Der PV-Abschlag gilt nur für Kinder unter 25 Jahren; der AG-Anteil bleibt immer 1,8 % (außer Sachsen)."
+          ],
+          "pruefung": "hoch",
+          "pruefungText": "Entgeltabrechnung ist Teil des Abschlussprüfungsbereichs „Finanzbuchhaltungen, Entgeltabrechnungen und Jahresabschlüsse“ (§ 15 StFachAngAusbV). Typisch: Beiträge mit BBG berechnen, AN- und AG-Anteil trennen und die Abrechnung buchen. Die Werte des Prüfungsjahres stehen meist im Aufgabentext.",
+          "quelle": "Lernregister"
+        }
+      }
     },
     {
       "id": "lf6",
@@ -1134,7 +1171,79 @@ window.LERN_DATEN = {
         }
       ],
       "registerId": "iq1aemufhjk50450ky6x",
-      "registerStand": 1794514339782
+      "registerStand": 1794514339782,
+      "themenInfo": {
+        "Einkauf aus einem anderen EU-Land (innergemeinschaftlicher Erwerb)": {
+          "ueberblick": "Gelangt eine Ware aus einem EU-Mitgliedstaat in einen anderen, liefert der Verkäufer im Abgangsland steuerfrei (innergemeinschaftliche Lieferung) und der Käufer versteuert den Kauf im Bestimmungsland als innergemeinschaftlichen Erwerb (igE). So wird die Ware mit der Umsatzsteuer des Landes belastet, in dem sie ankommt. Der deutsche Unternehmer schuldet die Erwerbsteuer selbst und zieht sie im selben Voranmeldungszeitraum wieder als Vorsteuer ab – bei vollem Vorsteuerabzug bleibt also keine Belastung. Kommt die Ware aus einem Drittland (z. B. USA, Schweiz, Albanien, Serbien), ist kein igE, sondern die Einfuhr (Einfuhrumsatzsteuer) zu prüfen. Wie ein igE behandelt wird auch das Verbringen eigener Gegenstände in eine deutsche Betriebsstätte zur dauerhaften Nutzung.",
+          "achten": [
+            "Erst klären: Woher kommt die Ware? EU-Staat → igE prüfen; Drittland → Einfuhr (§ 1 Abs. 1 Nr. 4 UStG). Maßgeblich ist, wo die Ware zollrechtlich in den freien Verkehr kommt, nicht die Durchfahrt.",
+            "In der Lösungstabelle als „Art des Umsatzes“ ausdrücklich „innergemeinschaftlicher Erwerb“ bzw. „innergemeinschaftliches Verbringen (§ 1a Abs. 2 UStG)“ schreiben – das Wort allein bringt oft schon einen Punkt.",
+            "Entstehung: Rechnungsdatum mit dem Ende des Folgemonats vergleichen – das frühere Datum gewinnt. Das Zahlungsdatum ignorieren.",
+            "In der Umsatzsteuer-Voranmeldung: Bemessungsgrundlage des igE zu 19 % in Kennzahl 89, zu 7 % in Kennzahl 93; die Vorsteuer aus igE in Kennzahl 61."
+          ],
+          "fallen": [
+            "Durchfahrt durch EU-Staaten macht aus Drittlandsware keinen igE (Albanien über Österreich nach Deutschland → Einfuhr).",
+            "Ware aus dem Drittland, die bereits in einem anderen EU-Staat verzollt wurde (Serbien → Slowenien), ist danach Gemeinschaftsware: in Deutschland igE, keine Einfuhr.",
+            "Die USt-IdNr. ersetzt nicht die Prüfung der Tatbestandsmerkmale des § 1a UStG.",
+            "Erwerbsteuer nur aus § 3d Satz 2 UStG (falsche/fremde USt-IdNr.) ist NICHT als Vorsteuer abziehbar – doppelte Besteuerung bis zum Nachweis, dann Berichtigung nach § 17 Abs. 2 Nr. 4 UStG.",
+            "Erwerbsschwelle 12.500 € gilt nur für Halbunternehmer (§ 1a Abs. 3 UStG) – beim normalen regelbesteuerten Unternehmer spielt sie keine Rolle."
+          ],
+          "pruefung": "mittel",
+          "pruefungText": "In der Abschlussprüfung (Bereich Steuerrecht) ist Umsatzsteuer jedes Mal ein eigener Sachverhalt mit Lösungstabelle; EU-Warenbezüge tauchen dort regelmäßig als einer von mehreren Teilsachverhalten auf (z. B. Fernseher von einem Unternehmen aus Linz/Österreich, Berlin Winter 2023/24). Gefragt sind dann Art des Umsatzes (igE), Ort (§ 3d Satz 1), steuerbar/steuerpflichtig, Bemessungsgrundlage, Erwerbsteuer, Entstehung, Steuerschuldner und Vorsteuer – jeweils mit Paragraph.",
+          "quelle": "Lernregister"
+        },
+        "Einkauf aus einem Nicht-EU-Land (Einfuhr)": {
+          "ueberblick": "Kommt Ware aus einem Drittland (z. B. China, USA, Brasilien) nach Deutschland, liegt eine steuerbare Einfuhr vor; der Zoll erhebt Einfuhrumsatzsteuer auf den Zollwert plus Zoll und Beförderungskosten bis zum ersten Bestimmungsort. Unternehmer ziehen die entstandene Einfuhrumsatzsteuer als Vorsteuer ab, Privatpersonen nicht. Liefert der ausländische Lieferer „verzollt und versteuert“ und schuldet er selbst die Einfuhrumsatzsteuer, verlagert sich der Ort seiner Lieferung ins Inland – er muss sich dann in Deutschland registrieren und eine Rechnung mit deutscher Umsatzsteuer stellen. Wird die Ware zuerst in einem anderen EU-Staat eingeführt, ist der Erwerb in Deutschland ein innergemeinschaftlicher Erwerb.",
+          "achten": [
+            "„Verzollt und versteuert“ ⇒ § 3 Abs. 8 ⇒ inländische Lieferung, Vorsteuer aus Rechnung (Nr. 1).",
+            "Buchung unverzollt: Wareneingang an Verbindlichkeiten; EUSt (Vorsteuer aus EUSt) an Bank."
+          ],
+          "fallen": [
+            "Ein Lieferer, der nach § 3 Abs. 8 im Inland liefert, muss sich in Deutschland umsatzsteuerlich registrieren.",
+            "Privatpersonen (z. B. Motorradkauf in den USA) zahlen EUSt ohne Vorsteuerabzug.",
+            "Ermäßigter Satz für Kunst nur unter den Voraussetzungen der Anlage 2 (z. B. Lieferung durch den Urheber) – prüfen.",
+            "Zitat § 13a Abs. 2 UStG ist vertretbar: Er verweist für die EUSt auf § 21 Abs. 2 UStG (Zollrecht)."
+          ],
+          "pruefung": "mittel",
+          "pruefungText": "Drittlandsfälle (Einfuhr, EUSt als Vorsteuer, Buchung unverzollt/verzollt) erscheinen in USt-Sachverhalten und in der Buchführung (LF 6).",
+          "quelle": "Lernregister"
+        },
+        "Wer muss in Deutschland Einkommensteuer zahlen?": {
+          "ueberblick": "Einkommensteuerpflichtig sind nur natürliche Personen. Wer im Inland einen Wohnsitz oder gewöhnlichen Aufenthalt hat, ist unbeschränkt steuerpflichtig und versteuert sein Welteinkommen. Deutsche im Auslandsdienst des Staates sind erweitert unbeschränkt steuerpflichtig; Grenzpendler können auf Antrag als unbeschränkt steuerpflichtig behandelt werden, wenn fast alle Einkünfte in Deutschland steuerpflichtig sind. Alle anderen mit inländischen Einkünften sind beschränkt steuerpflichtig. Wechselt die Steuerpflicht im Jahr, gibt es trotzdem nur eine Veranlagung.",
+          "achten": [
+            "Aufenthaltsdauer in Tagen ausrechnen (Monate einzeln addieren) und mit 183 Tagen / 6 Monaten vergleichen.",
+            "90-%-Test: inländische Einkünfte ÷ Welteinkünfte; Grundfreibetrag-Test: ausländische Einkünfte ≤ 12.348 €. Eine Grenze reicht."
+          ],
+          "fallen": [
+            "Zitate: § 1 Abs. 1 S. 1 EStG (nicht „Nr. 1“); der Wohnsitz steht in § 8 AO, nicht im EStG.",
+            "Für § 1 Abs. 3 ist § 19 EStG keine Rechtsgrundlage – richtig ist § 1 Abs. 3 S. 2 EStG.",
+            "Die 6 Monate nach § 9 S. 2 AO wirken ab Beginn des Aufenthalts (rückwirkend), nicht erst ab dem 7. Monat.",
+            "Bei Wegzug im Jahr: nicht zwei Veranlagungen, sondern eine (§ 2 Abs. 7 S. 3 EStG)."
+          ],
+          "pruefung": "hoch",
+          "pruefungText": "Die Prüfung der persönlichen Steuerpflicht steht am Anfang jedes ESt-Veranlagungsfalls; eigene Kurzfälle (Saisonarbeiter, Wegzug, Grenzpendler) sind häufig.",
+          "quelle": "Lernregister"
+        },
+        "Ehepaare, Pflicht zur Steuererklärung und Fristen": {
+          "ueberblick": "Ehegatten, die beide unbeschränkt steuerpflichtig sind und nicht dauernd getrennt leben, haben ein Wahlrecht zwischen Zusammenveranlagung (Splittingtarif) und Einzelveranlagung (Grundtarif); es genügt, dass die Voraussetzungen an einem Tag im Jahr vorliegen. Im Jahr nach dem Tod eines Ehegatten gilt für den Überlebenden noch der Splittingtarif (Gnadensplitting). Arbeitnehmer werden nur in den Fällen des § 46 Abs. 2 EStG von Amts wegen veranlagt, sonst auf Antrag innerhalb von vier Jahren. Pflichterklärungen sind ohne Berater bis 31.07. des Folgejahres, mit Berater bis Ende Februar des zweiten Folgejahres abzugeben.",
+          "achten": [
+            "Ehegatten: 1. verheiratet (auch Heirat am 28.12.)? 2. beide unbeschränkt? 3. nicht dauernd getrennt (an mindestens einem Tag)? ⇒ Wahlrecht § 26; sonst Einzelveranlagung § 25 mit Grundtarif.",
+            "Todesfall: Todesjahr ⇒ Zusammenveranlagung möglich; Folgejahr ⇒ Gnadensplitting § 32a Abs. 6 S. 1 Nr. 1; danach Grundtarif.",
+            "§ 46: Fall für Fall die Nrn. 1–7 prüfen; trifft keine zu ⇒ Antrag (Nr. 8).",
+            "Fristen: Datum + Wochentag prüfen (§ 108 Abs. 3 AO)."
+          ],
+          "fallen": [
+            "Entfernungspauschale ab 2026: einheitlich 0,38 € ab dem 1. km – die vorhandene Lösung rechnet noch „0,30 €/0,38 € ab dem 21. km“.",
+            "Nils (ein Arbeitgeber, StKl I) ist kein Pflichtfall nach Nr. 2 (das betrifft mehrere Arbeitgeber) – Antragsveranlagung Nr. 8.",
+            "Frau Wolf (Ehemann 2025 gestorben): 2026 Einzelveranlagung mit Splittingtarif – nicht Grundtarif.",
+            "Kinderbetreuung seit VZ 2025: 80 %, max. 4.800 € je Kind (alte Aufgaben: 2/3, 4.000 €).",
+            "Fristende 31.07.2027 ist ein Samstag ⇒ Montag 02.08.2027; Beraterfrist 29.02.2028 (Schaltjahr)."
+          ],
+          "pruefung": "hoch",
+          "pruefungText": "Veranlagungsart, Tarif und Erklärungspflicht gehören in jeden Veranlagungsfall; Westfalen-Lippe Sommer 2026: „Veranlagung von Eheleuten“ und „Steuererklärungspflicht“ als eigene Teilaufgaben.",
+          "quelle": "Lernregister"
+        }
+      }
     },
     {
       "id": "lf8",
@@ -1800,7 +1909,183 @@ window.LERN_DATEN = {
         }
       ],
       "registerId": "tmo7i73oqoibj79hwtql",
-      "registerStand": 1794599390428
+      "registerStand": 1794599390428,
+      "themenInfo": {
+        "Grundbegriffe: Einkünfte und das Rechenschema": {
+          "ueberblick": "Bevor du rechnest, prüfst du drei Stufen. Erstens: Fällt die Einnahme unter eine der sieben Einkunftsarten des § 2 Abs. 1 EStG? Wenn nicht, ist sie nicht steuerbar (Lotto, Erbschaft, Schenkung, privater Verkauf von Gebrauchtem). Zweitens: Ist sie steuerbar, kann § 3 EStG sie befreien, dann ist sie steuerfrei. Drittens: Greift keine Befreiung, ist sie steuerpflichtig.",
+          "achten": [
+            "1. Frage: Welche Einkunftsart? Keine ⇒ „nicht steuerbar“ und fertig.",
+            "2. Frage: Gibt es eine Befreiung in § 3 EStG? Ja ⇒ „steuerfrei“ und die Nummer angeben (z. B. § 3 Nr. 2, Nr. 51).",
+            "3. Sonst „steuerpflichtig“. Bei Gewinneinkünften zusätzlich „Betriebseinnahme“, bei Überschusseinkünften „Einnahme (§ 8)“ ankreuzen.",
+            "Steuerpflichtig heißt nur „dem Grunde nach“: ob wirklich Steuer anfällt, entscheidet erst der Grundfreibetrag.",
+            "Schema auswendig: Einkünfte (7 Arten) → Summe → − AEB, − § 24b, − § 13 Abs. 3 = GdE → − § 10d, − SA, − agB = Einkommen → − Kinderfreibeträge, − Härteausgleich = zvE → Tarif → − Ermäßigungen = festzusetzende ESt → − Lohnsteuer/VZ."
+          ],
+          "fallen": [
+            "Nicht steuerbar und steuerfrei verwechseln: Bei Lotto und Erbschaft gehört KEINE § 3-Nummer in die Tabelle (in deiner Lösung stand bei b) und g) eine „3“).",
+            "Arbeitslosengeld ist steuerfrei, wirkt aber über den Progressionsvorbehalt auf den Steuersatz.",
+            "Trinkgeld nur steuerfrei, wenn es freiwillig von Dritten kommt; ein Anspruch darauf (z. B. Bedienungszuschlag) ist Arbeitslohn.",
+            "Schreibweisen: Bundesrat, Einkommensteuer-Durchführungsverordnung, EStH, Verwaltungsvorschrift, Härteausgleich, zu versteuerndes Einkommen.",
+            "Personengesellschaft: nicht „die Gesellschaften“, sondern die einzelnen Gesellschafter werden besteuert."
+          ],
+          "pruefung": "hoch",
+          "pruefungText": "Zuordnungs-Tabellen (nicht steuerbar / steuerfrei / steuerpflichtig mit § 3-Nummer) sind ein Klassiker in Zwischenprüfung und Klassenarbeiten. Punkte gibt es meist für das Kreuz und die Rechtsgrundlage.",
+          "quelle": "Lernregister"
+        },
+        "Betriebsausgaben, Werbungskosten und private Kosten": {
+          "ueberblick": "Aufwand bei Gewinneinkünften heißt Betriebsausgabe, bei Überschusseinkünften Werbungskosten. Was zur privaten Lebensführung gehört, ist gar nicht abziehbar, auch wenn es dem Beruf nützt. Entscheidend ist der Veranlassungszusammenhang: betrieblich, beruflich oder privat.",
+          "achten": [
+            "Erst die Einkunftsart bestimmen: Gewinneinkunft (§§ 13, 15, 18) ⇒ BA; Überschusseinkunft (§§ 19–22) ⇒ WK.",
+            "Dann fragen: Ist es auch privat nutzbar? Wenn ja und nicht trennbar ⇒ KPL (§ 12 Nr. 1).",
+            "In der Begründung immer den Paragraphen nennen: § 4 Abs. 4, § 9 oder § 12 Nr. 1 EStG."
+          ],
+          "fallen": [
+            "Das Wort „allgemein“: Ein allgemeines Nachschlagewerk ist privat (KPL), nur Fachliteratur ist WK. Hier lag dein Fehler beim Biologielehrer.",
+            "Kunst im anerkannten Arbeitszimmer bleibt privat.",
+            "Steuerberatung für den Mantelbogen ist privat; nur der Teil für Anlagen zu Einkunftsarten ist BA/WK.",
+            "Kontoführungsgebühren: grundsätzlich privat, die Finanzverwaltung erkennt aber ohne Nachweis 16 € im Jahr als WK an. Frag, was eure Lehrkraft erwartet."
+          ],
+          "pruefung": "hoch",
+          "pruefungText": "BA/WK/KPL-Zuordnungen kommen in fast jeder Grundlagen-Klausur vor, oft als „nur eine Möglichkeit“-Tabelle.",
+          "quelle": "Lernregister"
+        },
+        "Gewerbebetrieb": {
+          "ueberblick": "Ein Gewerbebetrieb liegt vor, wenn vier positive Merkmale erfüllt sind und keine Ausnahme greift. Wer Einkünfte aus Gewerbebetrieb hat, hängt von der Rechtsform ab: Einzelunternehmer direkt, bei OHG und KG die Gesellschafter als Mitunternehmer. Die Personengesellschaft selbst zahlt Gewerbesteuer, aber keine Einkommensteuer.",
+          "achten": [
+            "Gewerbe prüfen: vier positive Merkmale nacheinander abhaken, dann die drei Ausschlüsse (L+F, freier Beruf, Vermögensverwaltung).",
+            "Bei Rechtsformfragen immer drei Punkte nennen: Haftung, Geschäftsführung/Vertretung, Steuern.",
+            "Steuern bei OHG/KG: Gesellschaft ⇒ Gewerbesteuer; Gesellschafter ⇒ Einkommensteuer auf den Anteil (§ 15 Abs. 1 S. 1 Nr. 2 EStG).",
+            "1. Liegt ein Gewerbebetrieb vor? Die vier Merkmale des § 15 Abs. 2 S. 1 EStG abhaken, dann die drei Ausschlüsse (Land- und Forstwirtschaft, freier Beruf, andere selbständige Arbeit) und die private Vermögensverwaltung prüfen.",
+            "4. Gewinn ermitteln: § 5 i. V. m. § 4 Abs. 1 bei Buchführungspflicht, sonst § 4 Abs. 3. Entnahmen und Einlagen mit dem Teilwert ansetzen (§ 6 Abs. 1 Nr. 4 und 5)."
+          ],
+          "fallen": [
+            "Vermögensverwaltung steht nicht im Gesetzestext, sie ist Rechtsprechung. Schreib als Fundstelle § 15 Abs. 2 EStG.",
+            "„EStH § 15 Rz. 2 ff.“ ist keine korrekte Zitierweise; richtig ist R 15.x EStR bzw. H 15.x EStH.",
+            "Personengesellschaften zahlen keine Einkommensteuer.",
+            "Stiller: typisch = Kapitalvermögen (§ 20), atypisch = Gewerbebetrieb (§ 15). „Inhaber versteuert entsprechend seiner Tätigkeit“ ist zu ungenau.",
+            "Eine freiberufliche GbR mit gewerblichem Nebengeschäft kann insgesamt gewerblich werden (Abfärbung)."
+          ],
+          "pruefung": "hoch",
+          "pruefungText": "Rechtsformvergleich (Haftung, Geschäftsführung, Steuern) kommt in WiSo und in der Mandantenberatung, die Merkmale des § 15 Abs. 2 bei Abgrenzungsfällen im Steuerteil.",
+          "quelle": "Lernregister"
+        },
+        "Rechtsformen und Gewinnverteilung": {
+          "ueberblick": "Der Gewinn einer OHG oder KG wird den Gesellschaftern zugerechnet und dort versteuert, egal ob er ausgezahlt wird. Verteilt wird nach dem Gesellschaftsvertrag, meist in drei Stufen: Vorab für die Tätigkeit, Zinsen auf das Kapital, Rest nach einem Schlüssel. Ohne Vertrag gilt seit 2024 das Beteiligungsverhältnis.",
+          "achten": [
+            "1. Steuerlichen Gewinn bestimmen (Gesellschaftsgewinn + Sondervergütungen).",
+            "2. Vorab-Tätigkeitsvergütungen abziehen.",
+            "3. Zinsen je Kapitalanteil (Kapital × Satz) abziehen.",
+            "4. Rest nach Schlüssel: Teile addieren (8 : 2 : 1 = 11), Rest ÷ Teile × Anteil.",
+            "5. Je Gesellschafter addieren. Probe: Summe = Gesamtgewinn. Rundungs-Cent beim letzten Gesellschafter ausgleichen."
+          ],
+          "fallen": [
+            "Verhältniszahlen addieren: 4 : 1 sind 5 Teile, nicht 4.",
+            "Reihenfolge Vorab ⇒ Zinsen ⇒ Rest; bei „aus dem verbleibenden Restgewinn“ genau lesen.",
+            "Ohne Vertrag nicht mehr 4 %, sondern § 120 HGB i. V. m. § 709 Abs. 3 BGB.",
+            "Immer die Probe machen; in der Lösungsdatei zu Aufgabe 5 fehlten so 40.000 €.",
+            "Ein Gesellschafter-Geschäftsführer der OHG hat keine Einkünfte aus § 19."
+          ],
+          "pruefung": "hoch",
+          "pruefungText": "Kam in Niedersachsen mehrfach vor: Sommer 2025 Steuerwesen (OHG, Kapitalverzinsung und Köpfe), Winter 2025 Rechnungswesen (Korrektur von Gesellschafterzahlungen und Verteilung), Winter 2024/25 (abweichendes Wj).",
+          "quelle": "Lernregister"
+        },
+        "Betrieb verkaufen oder aufgeben": {
+          "ueberblick": "Wird der ganze Betrieb verkauft, gehört der Gewinn daraus zu den Einkünften aus Gewerbebetrieb. Er berechnet sich als Preis minus Kosten minus Buchwert des Kapitals. Wer 55 Jahre alt oder dauernd berufsunfähig ist, bekommt einmal im Leben einen Freibetrag.",
+          "achten": [
+            "Kapital = übertragene Aktiva − übernommene Passiva (Buchwerte).",
+            "Gewinn berechnen, dann Alter prüfen, dann Freibetrag: 45.000 − (Gewinn − 136.000), mindestens 0.",
+            "Laufenden Gewinn und Entnahmegewinne getrennt dazurechnen."
+          ],
+          "fallen": [
+            "Nicht übernommene Verbindlichkeiten bleiben beim Verkäufer und mindern das übertragene Kapital nicht.",
+            "Die 136.000-€-Grenze bezieht sich auf den Veräußerungsgewinn, nicht auf den Preis.",
+            "Zurückbehaltener Pkw = Entnahme zum Teilwert (gemeiner Wert) minus Buchwert.",
+            "Alter prüfen: mit 45 kein Freibetrag."
+          ],
+          "pruefung": "mittel",
+          "pruefungText": "In den angesehenen Niedersachsen-Aufgabenübersichten nicht aufgefallen; gehört aber zu den Grundlagen der Gewinneinkünfte und steht in den Musterklausuren Einkommensteuer.",
+          "quelle": "Lernregister"
+        },
+        "Land- und Forstwirtschaft": {
+          "ueberblick": "Land- und Forstwirte haben ein gesetzlich festgelegtes Wirtschaftsjahr (1.7. bis 30.6.). Der Gewinn wird zeitanteilig auf die beiden Kalenderjahre verteilt. Bei Tierhaltung entscheidet die Fläche, wie viele Vieheinheiten (VE) noch Landwirtschaft sind; wird die Grenze nachhaltig überschritten, wird ein ganzer Tierzweig zum Gewerbebetrieb.",
+          "achten": [
+            "Wj bestimmen (Regel 1.7.–30.6., sonst § 8c EStDV), dann die Monate je Kalenderjahr zählen.",
+            "Gewinn × Monate/12 je Wj, dann je Kalenderjahr addieren. Erst ungerundet addieren, dann runden.",
+            "Rumpf-Wj bei Eröffnung: Gewinn × Monate im Jahr / Monate des Rumpf-Wj.",
+            "VE-Prüfung: 1. Fläche in VE-Grenze umrechnen (gestaffelt), 2. Tiere in VE umrechnen, 3. vergleichen, 4. bei Überschreitung ganzen Zweig herausnehmen.",
+            "§ 13 Abs. 3: erst die Summe der Einkünfte bilden, dann prüfen, ob 30.700 € überschritten sind."
+          ],
+          "fallen": [
+            "Das „Einvernehmen mit dem Finanzamt“ gilt nur für Gewerbetreibende (§ 4a Abs. 1 S. 2 Nr. 2), nicht für L+F.",
+            "Ein Wj 1.4.–31.3. gibt es bei L+F nicht.",
+            "Rechenfehler: 18.000 + 47.250 = 65.250 €, nicht 62.250 €.",
+            "Freibetrag § 13 Abs. 3: bei 30.720 € Summe der Einkünfte schon weg (Grenze 30.700 €).",
+            "Bei Verkauf endet das Wj mit dem Verkauf (Rumpf-Wj); euer Blatt rechnet teils vereinfachend mit vollem Wj. Frag die Lehrkraft."
+          ],
+          "pruefung": "mittel",
+          "pruefungText": "Zeitanteilige Gewinnaufteilung beim Wj der L+F und die VE-Prüfung sind beliebte Rechenaufgaben in Klassenarbeiten; in Kammerprüfungen eher selten und dann als Teil eines größeren ESt-Falls.",
+          "quelle": "Lernregister"
+        },
+        "Geschenke": {
+          "ueberblick": "Geschenke an Kunden und Geschäftsfreunde sind nur abziehbar, wenn sie je Empfänger und Jahr zusammen höchstens 50 € netto kosten. Es ist eine Freigrenze: schon 1 Cent darüber und alles ist nicht abziehbar, dann gibt es auch keine Vorsteuer. Geschenke müssen auf eigenen Konten mit Empfänger festgehalten werden.",
+          "achten": [
+            "1. Geschenk? Unentgeltlich, an Nichtarbeitnehmer, keine Gegenleistung, kein Streuartikel.",
+            "2. Nur betrieblich nutzbar (Fachbuch für Arzt)? ⇒ voll abziehbar.",
+            "3. Netto aller Geschenke an diesen Empfänger im Jahr zusammenrechnen, auch Geld; ohne Verpackung/Versand.",
+            "4. ≤ 50 € netto ⇒ Geschenke abzugsfähig + Vorsteuer. > 50 € ⇒ Geschenke nicht abzugsfähig mit Bruttobetrag.",
+            "5. Paragraphen dazuschreiben: § 4 Abs. 5 S. 1 Nr. 1 EStG und § 15 Abs. 1a UStG."
+          ],
+          "fallen": [
+            "Freigrenze, kein Freibetrag: bei 50,01 € ist alles weg.",
+            "Netto prüfen: 59,50 € brutto bei 19 % sind genau 50 € netto ⇒ abziehbar.",
+            "Zusammenrechnen: 28 € Geschenk + 150 € Geld = 178 € ⇒ auch das erste Geschenk wird nicht abziehbar, Vorsteuer korrigieren.",
+            "Geldgeschenke haben keine Umsatzsteuer, zählen aber für die 50 €.",
+            "Alte Lehrbücher nennen 35 €; seit 2024 gilt 50 €."
+          ],
+          "pruefung": "hoch",
+          "pruefungText": "Zwischenprüfung 2024 Niedersachsen: Vorsteuerabzug bei Geschenken (Lebensmittel 7 % und Wein 19 %); Sommer 2025: USt-Fälle mit Geschenken. Rechtsgrundlage wird fast immer verlangt.",
+          "quelle": "Lernregister"
+        },
+        "Bewirtung": {
+          "ueberblick": "Bewirtungen aus geschäftlichem Anlass sind nur zu 70 % als Betriebsausgabe abziehbar, die Vorsteuer aber zu 100 %. Unangemessen hohe Kosten sind gar nicht abziehbar, auch nicht die Vorsteuer darauf. Der Beleg braucht Ort, Tag, Teilnehmer, Anlass und Höhe.",
+          "achten": [
+            "1. Netto und USt herausrechnen.",
+            "2. Angemessen und unangemessen (netto) trennen.",
+            "3. Angemessen: 70 % Bewirtungskosten, 30 % nicht abziehbare Bewirtungskosten.",
+            "4. Vorsteuer 100 % auf den angemessenen Teil; unangemessen netto + seine USt ⇒ nicht abziehbare Betriebsausgaben.",
+            "5. Probe: Soll = Brutto. Gewinnauswirkung nur in Höhe des abziehbaren Teils."
+          ],
+          "fallen": [
+            "Vorsteuer nicht auf 70 % kürzen.",
+            "Unangemessenen Teil nicht noch einmal 70/30 aufteilen.",
+            "Speisen 7 % (seit 2026), Getränke 19 %: Satz auf der Rechnung nehmen.",
+            "Betriebsfeier mit eigenen Mitarbeitern ist keine Geschäftsfreunde-Bewirtung.",
+            "Private Kreditkarte ⇒ „an Privateinlage“."
+          ],
+          "pruefung": "hoch",
+          "pruefungText": "Niedersachsen: Zwischenprüfung 2024 (USt aus Bewirtung mit verschiedenen Sätzen), Winter 2025 Rechnungswesen (Bewirtung mit privater Kreditkarte, Gewinnauswirkung), Winter 2025 Steuerwesen (GmbH: Bewirtung hinzurechnen).",
+          "quelle": "Lernregister"
+        },
+        "Reisekosten": {
+          "ueberblick": "Fahrt-, Übernachtungs- und Nebenkosten einer Geschäftsreise sind in tatsächlicher Höhe Betriebsausgaben. Verpflegung darf nur mit den Pauschalen abgezogen werden. Vorsteuer gibt es nur aus Belegen, nie aus einer Pauschale.",
+          "achten": [
+            "1. Abwesenheitsdauer und Kalendertage bestimmen ⇒ Pauschale.",
+            "2. Jeden Beleg netto/USt aufteilen (Steuersatz prüfen).",
+            "3. Fahrt: betrieblicher Pkw tatsächliche Kosten, Privat-Pkw 0,30 €/km.",
+            "4. Essen mit Rechnung: VSt aus der Rechnung, Aufwand nur in Höhe der Pauschale, Rest Privatentnahme.",
+            "5. Buchen auf Reisekosten Unternehmer (Fahrt, Übernachtung, Verpflegung)."
+          ],
+          "fallen": [
+            "Kilometerangaben beim betrieblichen Pkw sind Ablenkung.",
+            "Genau 8 Std. ergibt 0 €; 07:00–16:00 sind 9 Std. ⇒ 14 €.",
+            "Zwei Übernachtungen = drei Tage: 14 + 28 + 14 = 56 €.",
+            "Hotel 7 %, Frühstück 19 %; Bahn/Taxi 7 %; Tanken/Parken 19 %.",
+            "Keine Vorsteuer aus der Verpflegungspauschale."
+          ],
+          "pruefung": "hoch",
+          "pruefungText": "Winter 2025 Rechnungswesen Niedersachsen: Geschäftsreise zur Messe mit Pkw, Übernachtung, Verpflegung, Nebenkosten – Berechnung, Buchung, Gewinnauswirkung. Entspricht den Aufgaben 10 und 11 deines NABA-Blatts.",
+          "quelle": "Lernregister"
+        }
+      }
     },
     {
       "id": "sk",
@@ -2257,7 +2542,171 @@ window.LERN_DATEN = {
       ],
       "kurz": "Sozialkunde",
       "registerId": "zjxpf2nl7b6a5z8nue61",
-      "registerStand": 1794514339782
+      "registerStand": 1794514339782,
+      "themenInfo": {
+        "Recht, Personen, Sachen und Eigentum": {
+          "ueberblick": "Die Rechtsordnung unterscheidet öffentliches Recht (Über- und Unterordnung, z. B. Bürger – Finanzamt) und Privatrecht (Gleichordnung, z. B. Kaufvertrag). Rechtssubjekte sind natürliche Personen und juristische Personen des öffentlichen Rechts (z. B. Steuerberaterkammer) oder des Privatrechts (z. B. GmbH). Sachen sind körperliche Gegenstände; vertretbare Sachen sind nach Maß, Zahl oder Gewicht bestimmbar, nicht vertretbare sind Einzelstücke. Eigentum an beweglichen Sachen wird durch Einigung und Übergabe übertragen; die Übergabe kann entfallen oder durch Abtretung des Herausgabeanspruchs ersetzt werden.",
+          "achten": [
+            "Rechtssubjekt einordnen: Mensch ⇒ natürliche Person; Kammer, Gemeinde, Finanzamt-Träger ⇒ jur. Person des öffentlichen Rechts; GmbH, AG, eingetragener Verein ⇒ jur. Person des Privatrechts.",
+            "Vereinbarkeit mit dem StB-Beruf: Ist es gewerblich (§ 57 Abs. 4 Nr. 1) oder Arbeitnehmertätigkeit (Nr. 2)? Dann unvereinbar; sonst Katalog § 57 Abs. 3 prüfen.",
+            "Antwort immer mit Paragraph (z. B. „Einigung nach § 929 S. 2 BGB, Übergabe entfällt“)."
+          ],
+          "fallen": [
+            "Die Vorstandsvorsitzende einer AG ist selbst eine natürliche Person – die AG ist die juristische Person.",
+            "Die Gewerbesteuer verwalten Finanzamt (Messbetrag) und Gemeinde (Festsetzung/Erhebung); in Ankreuzaufgaben meist „Landesbehörde“ für den Messbetrag.",
+            "Ein Rechtsanwalt mit eigener Kanzlei ist natürliche Person – kein Unternehmen mit eigener Rechtspersönlichkeit."
+          ],
+          "pruefung": "mittel",
+          "pruefungText": "Kurzfragen aus dem BGB-Allgemeinteil und Sachenrecht gehören zum Prüfungsbereich Wirtschafts- und Sozialkunde (10 %, 60 Minuten); in Westfalen-Lippe Sommer 2026 waren Schuld- und Sachenrecht 16 von 100 Punkten. Berufsrecht (Vereinbarkeit, Kammer) kommt eher in der Zwischenprüfung (LF 1).",
+          "quelle": "Lernregister"
+        },
+        "Rechtsgeschäfte: Wer darf was, Form und Fehler": {
+          "ueberblick": "Ein Rechtsgeschäft ist wirksam, wenn die Beteiligten geschäftsfähig sind, die vorgeschriebene Form eingehalten ist und kein Nichtigkeitsgrund vorliegt. Kinder unter 7 Jahren sind geschäftsunfähig, ihre Willenserklärungen sind nichtig; Minderjährige von 7 bis 17 sind beschränkt geschäftsfähig und brauchen die Zustimmung der Eltern, außer beim Taschengeldgeschäft. Formverstöße (z. B. mündlicher Grundstückskauf, mündliche Kündigung) und Scheingeschäfte führen zur Nichtigkeit. Irrtümer und Täuschung machen ein Geschäft dagegen nur anfechtbar – es ist bis zur Anfechtung wirksam.",
+          "achten": [
+            "Wirksamkeit prüfen in Reihenfolge: 1. Geschäftsfähigkeit (§§ 104–113) 2. Form (§ 125 + Spezialnorm) 3. Gesetz/Sitten (§§ 134, 138) 4. Scheingeschäft (§ 117) 5. Anfechtbarkeit (§§ 119, 123).",
+            "Ergebnis klar benennen: „nichtig“ (von Anfang an unwirksam), „schwebend unwirksam“ (Genehmigung möglich), „anfechtbar“ (wirksam bis zur Anfechtung).",
+            "Vertragsart + Form + Paragraph als Dreiklang angeben: z. B. „Bürgschaftsvertrag – Schriftform – § 766 S. 1 BGB“."
+          ],
+          "fallen": [
+            "Fehler in der Lösung korrigiert: Martha (6 Jahre) kauft einen Lolli vom Taschengeld – das Geschäft ist nichtig (§ 104 Nr. 1, § 105 Abs. 1 BGB), nicht wirksam. Der Taschengeldparagraph § 110 gilt erst ab 7 Jahren.",
+            "Berufsausbildungsvertrag: Rechtsgrundlage ist § 10 und § 11 BBiG, nicht § 611 BGB (Dienstvertrag). Der Vertrag selbst ist formfrei, nur der Inhalt ist schriftlich niederzulegen – ein Verstoß macht ihn nicht nichtig.",
+            "Mietvertrag über 2 Jahre ohne Schriftform ist nicht nichtig, sondern gilt als unbefristet (§ 550 BGB).",
+            "Mündliche Kündigung ist nichtig (§ 623, § 125 BGB) – auch wenn der Chef sie „annimmt“."
+          ],
+          "pruefung": "hoch",
+          "pruefungText": "Geschäftsfähigkeit, Formvorschriften und Wirksamkeit (wirksam/anfechtbar/nichtig) sind Dauerbrenner in WiSo und der Zwischenprüfung (z. B. Westfalen-Lippe 2026: 16-Jährige kauft Nähmaschine für 900 €, Minderjährige betreibt Schneiderei – §§ 107, 110, 112 BGB).",
+          "quelle": "Lernregister"
+        },
+        "Bewerbung und Regeln im Arbeitsrecht": {
+          "ueberblick": "Arbeitsrecht ergibt sich aus Grundgesetz, Gesetzen (BGB, BBiG, JArbSchG …), Tarifverträgen, Betriebsvereinbarungen und Einzelarbeitsverträgen. Grundsätzlich geht das ranghöhere Recht vor (Rangprinzip); eine rangniedrigere Regelung gilt aber, wenn sie für den Arbeitnehmer günstiger ist (Günstigkeitsprinzip). Arbeitnehmer ist, wer aufgrund eines privatrechtlichen Vertrags weisungsgebunden und fremdbestimmt gegen Entgelt arbeitet – nicht Beamte, Richter, Soldaten, Vorstände und GmbH-Geschäftsführer. Im Bewerbungsverfahren gelten Offenbarungspflichten, das eingeschränkte Fragerecht des Arbeitgebers (AGG) und die Erstattung der Vorstellungskosten.",
+          "achten": [
+            "Rangfolge auswendig: Grundgesetz > Gesetze/Verordnungen > Tarifvertrag > Betriebsvereinbarung > Arbeitsvertrag; Ausnahme Günstigkeitsprinzip.",
+            "Rechtsfolge einer Lüge: zulässige Frage ⇒ Anfechtung § 123 BGB; unzulässige Frage ⇒ keine Folgen."
+          ],
+          "fallen": [
+            "Fehler in der Mitschrift korrigiert: Die Frage nach einer Schwangerschaft ist grundsätzlich unzulässig – auch bei einem befristeten Arbeitsvertrag (§ 3 Abs. 1 S. 2, § 7 AGG; EuGH). Die Bewerberin darf lügen.",
+            "Frage nach Schwerbehinderung vor der Einstellung ist grundsätzlich unzulässig (§ 7 AGG); zulässig sind Fragen nach konkreten gesundheitlichen Anforderungen der Stelle (z. B. Flugtauglichkeit beim Piloten).",
+            "HIV-Infektion: Frage grundsätzlich unzulässig (außer bei Ansteckungsgefahr im Beruf); akute AIDS-Erkrankung, die die Arbeitsfähigkeit betrifft, darf erfragt werden.",
+            "Vorstands-AG und GmbH-Geschäftsführer sind keine Arbeitnehmer (Organe), auch wenn sie Gehalt beziehen."
+          ],
+          "pruefung": "mittel",
+          "pruefungText": "Rangfolge/Günstigkeitsprinzip, Arbeitnehmerbegriff und zulässige/unzulässige Fragen sind klassische Kurzfragen in WiSo und Zwischenprüfung (LF 1).",
+          "quelle": "Lernregister"
+        },
+        "Arbeitsvertrag: Form, Befristung, Rechte und Pflichten": {
+          "ueberblick": "Ein unbefristeter Arbeitsvertrag ist formfrei, auch mündlich wirksam; der Arbeitgeber muss aber die wesentlichen Vertragsbedingungen nach dem Nachweisgesetz schriftlich aushändigen. Ein Verstoß macht den Vertrag nicht unwirksam, ist aber eine Ordnungswidrigkeit. Die Befristung eines Arbeitsvertrags braucht dagegen die Schriftform – fehlt sie, gilt der Vertrag als unbefristet. Aus dem Arbeitsvertrag folgen Hauptpflichten (Arbeit gegen Vergütung) und Nebenpflichten (Treue- und Fürsorgepflicht).",
+          "achten": [
+            "Formfrage beantworten: unbefristet ⇒ formfrei (NachwG beachten); befristet ⇒ Schriftform § 14 Abs. 4 TzBfG, sonst unbefristet § 16 TzBfG; Kündigung ⇒ Schriftform § 623 BGB.",
+            "Pflichtverletzungsfälle: Wer verletzt (AG oder AN)? Welche Pflicht (Haupt-/Nebenpflicht)? Paragraph nennen."
+          ],
+          "fallen": [
+            "Nachweisgesetz: Es droht eine Geldbuße (Ordnungswidrigkeit), keine „Geldstrafe“ – und der Vertrag bleibt wirksam.",
+            "Gehalt am Ende des Folgemonats verstößt gegen die Fälligkeit (§ 614 BGB) – Vergütungspflicht verletzt."
+          ],
+          "pruefung": "mittel",
+          "pruefungText": "Formfragen (unbefristet/befristet, NachwG) und Zuordnung von Pflichtverletzungen zu Rechten/Pflichten kommen in WiSo und der Zwischenprüfung vor.",
+          "quelle": "Lernregister"
+        },
+        "Arbeitszeit, Pausen und Urlaub": {
+          "ueberblick": "Die Fallsituationen verbinden Bundesurlaubsgesetz, Arbeitszeitgesetz und Entgeltfortzahlungsgesetz. Der gesetzliche Mindesturlaub von 24 Werktagen entspricht bei einer 5-Tage-Woche 20 Arbeitstagen; vertraglich darf mehr vereinbart werden. Vor Ablauf der 6-monatigen Wartezeit gibt es nur Teilurlaub. Bei Krankheit wird das Entgelt bis zu 6 Wochen fortgezahlt; bei derselben Krankheit (Fortsetzungserkrankung) entsteht ein neuer Anspruch nur unter den Fristen des § 3 Abs. 1 S. 2 EntgFG.",
+          "achten": [
+            "Urlaub: 1. Wartezeit erfüllt? 2. Wenn nicht: Teilurlaub = Jahresurlaub ÷ 12 × volle Monate, aufrunden ab 0,5. 3. Bei Teilzeit: Urlaubstage × Arbeitstage/Woche ÷ 6 (Werktage) bzw. ÷ 5 (Arbeitstage).",
+            "Pausen: Arbeitszeit = Anwesenheit − Pausen; danach Pausenstufe nach § 4 ArbZG.",
+            "Fortsetzungserkrankung: Monate seit Ende der letzten AU (6-Monats-Grenze) und seit Beginn der ersten AU (12-Monats-Grenze) zählen.",
+            "Urlaubsrechnung: gesetzlich 24 Werktage ÷ 6 × Arbeitstage/Woche (5-Tage-Woche ⇒ 20 Arbeitstage).",
+            "Teilurlaub: Jahresurlaub ÷ 12 × volle Monate; ab 0,5 Tagen aufrunden (§ 5 Abs. 2 BUrlG)."
+          ],
+          "fallen": [
+            "Zitat korrigiert: Teilurlaub steht in § 5 Abs. 1 Buchst. a BUrlG (in der Datei „§ 5 Abs. 1a“).",
+            "Teilurlaub aus vertraglichem Urlaub (23 Tage) ergibt 6 Tage, aus dem gesetzlichen (20 Tage) nur 5 Tage – Aufgabenstellung genau lesen.",
+            "Verzicht auf Pausen und früher Gehen ist unzulässig.",
+            "Werktage ≠ Arbeitstage: Samstag ist Werktag (§ 3 Abs. 2 BUrlG).",
+            "Wartezeit Entgeltfortzahlung 4 Wochen (§ 3 Abs. 3 EntgFG) ≠ Wartezeit Urlaub 6 Monate (§ 4 BUrlG)."
+          ],
+          "pruefung": "hoch",
+          "pruefungText": "Urlaubsberechnung (voller Anspruch, Teilurlaub, Umrechnung auf Arbeitstage) und Entgeltfortzahlung waren in Westfalen-Lippe Sommer 2026 mit 13 bzw. weiteren Punkten der größte Teil des Arbeitsrechts.",
+          "quelle": "Lernregister"
+        },
+        "Krankheit": {
+          "ueberblick": "Wer krank ist, meldet sich sofort beim Arbeitgeber. Dauert die Krankheit länger als drei Kalendertage, braucht man spätestens am nächsten Arbeitstag eine ärztliche Bescheinigung. Der Arbeitgeber zahlt bis zu sechs Wochen den Lohn weiter, wenn das Arbeitsverhältnis schon vier Wochen besteht. Danach zahlt die Krankenkasse Krankengeld.",
+          "achten": [
+            "Die drei Tage sind Kalendertage, nicht Arbeitstage – auch das Wochenende zählt mit.",
+            "Lohnfortzahlung gibt es erst nach vier Wochen im Betrieb (Wartezeit).",
+            "Wird man im Urlaub krank und hat ein Attest, zählen diese Tage nicht als Urlaub.",
+            "Bei derselben Krankheit beginnen die sechs Wochen nur neu, wenn man vorher mindestens sechs Monate deswegen nicht krank war oder seit Beginn der ersten Erkrankung zwölf Monate vergangen sind."
+          ],
+          "fallen": [
+            "Krankmelden und Krankschreibung sind zwei verschiedene Pflichten: Melden sofort, Bescheinigung erst ab dem vierten Kalendertag.",
+            "Nach sechs Wochen zahlt nicht mehr der Arbeitgeber, sondern die Krankenkasse – und zwar weniger als den vollen Lohn."
+          ],
+          "pruefung": "hoch",
+          "pruefungText": "Urlaubsberechnung (voller Anspruch, Teilurlaub, Umrechnung auf Arbeitstage) und Entgeltfortzahlung waren in Westfalen-Lippe Sommer 2026 mit 13 bzw. weiteren Punkten der größte Teil des Arbeitsrechts.",
+          "quelle": "neu geschrieben"
+        },
+        "Mutterschutz": {
+          "ueberblick": "Das Mutterschutzgesetz schützt Gesundheit und Einkommen schwangerer und stillender Frauen in Beschäftigung (auch Azubis und Praktikantinnen, nicht Selbständige). Die Schutzfrist beginnt 6 Wochen vor dem voraussichtlichen Entbindungstermin und endet 8 Wochen (bei Früh-, Mehrlingsgeburt oder Behinderung des Kindes 12 Wochen) nach der tatsächlichen Geburt; bei vorzeitiger Geburt verlängert sich die Frist danach um die nicht genommenen Tage. Während der Schwangerschaft und bis 4 Monate nach der Entbindung darf der Arbeitgeber nicht kündigen. Finanziell sichern Mutterschaftsgeld der Krankenkasse, Arbeitgeberzuschuss und – bei Beschäftigungsverboten außerhalb der Schutzfristen – Mutterschutzlohn.",
+          "achten": [
+            "Beginn: voraussichtlicher Entbindungstermin − 42 Tage.",
+            "Ende: tatsächliche Geburt + 56 Tage (bzw. 84 Tage) + bei vorzeitiger Geburt die nicht genommenen Tage vor der Geburt.",
+            "Kündigung: Schwangerschaft bekannt oder binnen 2 Wochen nach Zugang mitgeteilt? ⇒ Verbot bis 4 Monate nach Entbindung; Ausnahme nur mit Zulassung der Behörde.",
+            "Leistungen zuordnen: Schutzfrist ⇒ Mutterschaftsgeld (KK) + AG-Zuschuss; Beschäftigungsverbot außerhalb ⇒ Mutterschutzlohn (AG)."
+          ],
+          "fallen": [
+            "Die Schutzfrist nach der Geburt beträgt dann 12 Wochen – sie wird nicht „um“ 12 Wochen verlängert.",
+            "„Mutterschaftslohn“ gibt es nicht: Mutterschutzlohn (AG, außerhalb der Schutzfristen) ≠ Mutterschaftsgeld (Krankenkasse, in den Schutzfristen).",
+            "Die Mitteilung der Schwangerschaft ist eine Soll-Vorschrift, keine Pflicht.",
+            "Kündigungsverbot ≠ Beschäftigungsverbot ≠ Verlängerung des Vertrags: Befristung, Aufhebungsvertrag und Eigenkündigung bleiben möglich.",
+            "Geburt nach dem errechneten Termin verkürzt die Zeit nach der Geburt nicht – sie bleibt 8 Wochen."
+          ],
+          "pruefung": "mittel",
+          "pruefungText": "Mutterschutz und besonderer Kündigungsschutz sind typische WiSo- und Zwischenprüfungsfragen (Schutzfristen berechnen, Kündigungsverbot, Leistungen unterscheiden).",
+          "quelle": "Lernregister"
+        },
+        "Schwerbehinderte Menschen": {
+          "ueberblick": "Schwerbehindert ist, wer einen Grad der Behinderung von mindestens 50 hat. Betriebe mit mindestens 20 Arbeitsplätzen müssen 5 % davon mit schwerbehinderten Menschen besetzen, sonst zahlen sie eine Ausgleichsabgabe. Schwerbehinderte Menschen haben einen besonderen Kündigungsschutz: Nach sechs Monaten im Betrieb darf nur noch mit vorheriger Zustimmung des Integrationsamts gekündigt werden.",
+          "achten": [
+            "Grenze für „schwerbehindert“: Grad der Behinderung 50.",
+            "Pflichtquote 5 %, erst ab 20 Arbeitsplätzen im Jahresdurchschnitt.",
+            "Ausbildungsplätze zählen bei der Berechnung nicht mit.",
+            "Schwerbehinderte Menschen bekommen zusätzlich fünf Arbeitstage Urlaub im Jahr (bei einer Fünf-Tage-Woche)."
+          ],
+          "fallen": [
+            "Die Zustimmung des Integrationsamts muss vor der Kündigung vorliegen, nicht danach.",
+            "Der besondere Kündigungsschutz gilt erst, wenn das Arbeitsverhältnis länger als sechs Monate besteht."
+          ],
+          "pruefung": "mittel",
+          "pruefungText": "Arbeitsrecht/Arbeitsschutz ist im Prüfungsbereich WiSo regelmäßig vertreten (Westfalen-Lippe Sommer 2026: Teil „Arbeitsrecht und Soziale Sicherung“ 24 Punkte mit Urlaubsanspruch, Krankheit im Urlaub, Minijob und Entgeltfortzahlung).",
+          "quelle": "neu geschrieben"
+        },
+        "Kündigung und Kündigungsschutz": {
+          "ueberblick": "Ein Arbeitsverhältnis endet durch Zeitablauf (Befristung), Aufhebungsvertrag oder Kündigung. Die Kündigung ist eine einseitige, empfangsbedürftige Willenserklärung; unter Anwesenden wird sie mit Übergabe, unter Abwesenden mit Zugang (z. B. Einwurf in den Briefkasten) wirksam und braucht immer die Schriftform. Die ordentliche Kündigung muss die Fristen des § 622 BGB einhalten, die außerordentliche setzt einen wichtigen Grund voraus und muss binnen 2 Wochen erklärt werden. In Betrieben mit mehr als 10 Arbeitnehmern und nach 6 Monaten Beschäftigung muss eine Kündigung durch den Arbeitgeber sozial gerechtfertigt sein; bestimmte Gruppen haben besonderen Kündigungsschutz.",
+          "achten": [
+            "Fristberechnung: Zugang + Frist (4 Wochen = 28 Tage) ⇒ nächster zulässiger Endtermin (15. oder Monatsende; bei verlängerten Fristen nur Monatsende). Rückwärts: Endtermin − Frist = spätester Zugang.",
+            "Sozialpunkte (Beispielschema): Dienstjahre bis 10 je 1 Punkt, danach je 2; Lebensalter 1 Punkt/Jahr (max. 55); Kind 4, verheiratet 8; Schwerbehinderung bis GdB 50 5 Punkte + 1 je weitere 10."
+          ],
+          "fallen": [
+            "Verlängerte Fristen (Abs. 2) gelten nur für die Kündigung durch den Arbeitgeber und nur zum Monatsende.",
+            "Besonderer Kündigungsschutz schließt nur die ordentliche Kündigung aus (Schwangere: auch die außerordentliche, außer Behördenzulassung).",
+            "Fristlose Kündigung: Ausschlussfrist 2 Wochen ab Kenntnis (§ 626 Abs. 2) – danach nicht mehr möglich."
+          ],
+          "pruefung": "hoch",
+          "pruefungText": "Kündigungsfristen berechnen, Wirksamkeit (Schriftform, Betriebsrat), KSchG-Voraussetzungen und besonderer Kündigungsschutz sind Schwerpunkt im WiSo-Teil Arbeitsrecht (laut Neuordnungs-Information Schwerpunkt „Kündigungsschutz und Vertragsarten“).",
+          "quelle": "Lernregister"
+        },
+        "Zeugnis und Arbeitsgericht": {
+          "ueberblick": "Bei Beendigung des Arbeits- oder Ausbildungsverhältnisses hat der Arbeitnehmer Anspruch auf ein schriftliches Zeugnis: einfach (Art und Dauer der Tätigkeit) oder qualifiziert (zusätzlich Leistung und Verhalten). Das Zeugnis muss wohlwollend und wahr sein – deshalb hat sich eine verschlüsselte Zeugnissprache entwickelt. Streitigkeiten aus dem Arbeitsverhältnis entscheiden die Arbeitsgerichte (Arbeitsgericht, Landesarbeitsgericht, Bundesarbeitsgericht in Erfurt) mit Berufsrichtern und ehrenamtlichen Richtern aus Arbeitnehmer- und Arbeitgeberkreisen; am Anfang steht eine Güteverhandlung.",
+          "achten": [
+            "Aufbau qualifiziertes Zeugnis: Einleitung/Personalien, Tätigkeitsbeschreibung, Leistungsbeurteilung, Führungsbeurteilung, Schlusssatz."
+          ],
+          "fallen": [
+            "Fehlende Teile (z. B. kein Verhalten gegenüber Vorgesetzten, kein Bedauern, kein Dank) sind negative Signale.",
+            "Anwaltskosten 1. Instanz trägt jeder selbst (§ 12a ArbGG) – nicht der Verlierer."
+          ],
+          "pruefung": "gering",
+          "pruefungText": "Zeugnisnoten und Instanzenzug werden eher als Kurzfragen in WiSo/Zwischenprüfung gefragt.",
+          "quelle": "Lernregister"
+        }
+      }
     }
   ]
 };

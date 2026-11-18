@@ -220,10 +220,11 @@
         const videos = Spiel.videosVon(lf.id).filter((v) => v.titel === name);
         const erledigt = paragrafen.filter((p) => verstanden['p' + schluessel(p.ref + p.text)]).length + aufgaben.filter((a) => st[a.id] === 'r').length;
         const gesamt = paragrafen.length + aufgaben.length;
-        return { name, paragrafen, aufgaben, videos, info: null, fortschritt: gesamt ? erledigt / gesamt : 0 };
+        const text = (lf.themenInfo || {})[name] || null;
+        return { name, paragrafen, aufgaben, videos, info: null, text, fortschritt: gesamt ? erledigt / gesamt : 0 };
       });
     }
-    return lf.themen.map((t) => ({ name: t.titel, paragrafen: [], aufgaben: [], videos: [], info: t, fortschritt: 0 }));
+    return lf.themen.map((t) => ({ name: t.titel, paragrafen: [], aufgaben: [], videos: [], info: t, text: null, fortschritt: 0 }));
   }
 
   /* ---------------- Lernfeld-Rahmen ---------------- */
@@ -269,6 +270,7 @@
         <a class="glas thema-karte" href="#thema-${esc(lf.id)}-${i}">
           <span class="thema-nr">${i + 1}</span>
           <div class="thema-text"><b>${esc(t.name)}</b>
+            ${t.text && t.text.pruefung ? `<i class="pruef pruef-${esc(t.text.pruefung)}">Prüfung: ${esc(t.text.pruefung)}</i>` : ''}
             <span>${[t.videos.length ? `🎬 ${t.videos.length}` : '', t.aufgaben.length ? `📝 ${t.aufgaben.length}` : '', t.paragrafen.length ? `§ ${t.paragrafen.length}` : '', t.info ? 'Erklärung' : ''].filter(Boolean).join(' · ')}</span>
             ${t.paragrafen.length || t.aufgaben.length ? `<div class="balken"><i style="width:${Math.round(t.fortschritt * 100)}%"></i></div>` : ''}</div>
           <span class="pfeil">›</span>
@@ -323,6 +325,24 @@
           ${t.paragrafen.length ? `<span>§ ${t.paragrafen.filter((p) => verstanden['p' + schluessel(p.ref + p.text)]).length}/${t.paragrafen.length} verstanden</span>` : ''}
         </div>
       </header>
+
+      ${t.text ? `
+      <section class="glas block thema-text-box">
+        <div class="pruef-zeile pruef-${esc(t.text.pruefung)}">
+          <b>Prüfungsrelevanz: ${esc(t.text.pruefung)}</b>
+          ${t.text.pruefungText ? `<span>${esc(t.text.pruefungText)}</span>` : ''}
+        </div>
+        <h2>Worum geht es?</h2>
+        <p class="thema-ueberblick">${esc(t.text.ueberblick)}</p>
+        ${t.text.achten.length ? (() => {
+          // Tipps, die schon nummeriert sind („1. …“), als echte Schrittfolge zeigen
+          const schritte = t.text.achten.every((x) => /^\d+\.\s/.test(x));
+          const items = t.text.achten.map((x) => `<li>${esc(schritte ? x.replace(/^\d+\.\s*/, '') : x)}</li>`).join('');
+          return `<h3>${schritte ? 'So gehst du vor' : 'Darauf musst du achten'}</h3>${schritte ? `<ol class="achten">${items}</ol>` : `<ul class="achten">${items}</ul>`}`;
+        })() : ''}
+        ${t.text.fallen.length ? `<div class="fallen"><h3>⚠️ Typische Fallen</h3><ul>${t.text.fallen.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>` : ''}
+        <p class="klein quelle">${t.text.quelle === 'Lernregister' ? 'Aus deinem Lernregister übernommen.' : 'Kurz zusammengefasst.'} Für die Prüfung gilt immer der genaue Gesetzestext.</p>
+      </section>` : ''}
 
       ${t.info ? `<section class="glas block thema-info"><div class="text">${format(t.info.text)}</div>${t.info.merke ? `<div class="merke"><b>Merke</b>${esc(t.info.merke)}</div>` : ''}</section>` : ''}
 
