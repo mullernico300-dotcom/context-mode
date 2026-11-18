@@ -32,7 +32,7 @@
   }
 
   /* Aufgaben, die zu einem Stichwort passen (für eigene Ziele wie „Test Gewerbesteuer“) – höchstens sechs */
-  function passend(lfId, text) {
+  function passend(lfId, text, max) {
     const woerter = String(text || '').toLowerCase().split(/[^a-zäöüß0-9§]+/).filter((w) => w.length > 3 && !/^(test|über|klausur|thema|arbeit|lernen|und|oder)$/.test(w));
     if (!woerter.length) return [];
     const st = lade().status;
@@ -41,7 +41,7 @@
       return woerter.some((w) => heu.includes(w) || (w.length > 6 && heu.includes(w.slice(0, 6))));
     });
     // noch nicht gelöste zuerst
-    return mischen(treffer).sort((a, b) => (st[a.id] === 'r' ? 1 : 0) - (st[b.id] === 'r' ? 1 : 0)).slice(0, 6);
+    return mischen(treffer).sort((a, b) => (st[a.id] === 'r' ? 1 : 0) - (st[b.id] === 'r' ? 1 : 0)).slice(0, max || 6);
   }
 
   /* Übersicht im Lernfeld */
@@ -224,6 +224,11 @@
     function zeigeEnde() {
       phase = 'ende';
       ton.pause();
+      // Rückmeldung an den Lernplan (falls die Runde aus dem Planer gestartet wurde)
+      if (wahl === 'ziel' && typeof Trainer.beiEnde === 'function') {
+        try { Trainer.beiEnde({ richtig: zaehlerRichtig, gesamt: liste.length }); } catch (e) { /* ignorieren */ }
+        Trainer.beiEnde = null;
+      }
       const alles = zaehlerRichtig === liste.length;
       if (alles) Spiel.konfetti();
       rahmen(`<div class="av-mitte"><p class="av-gross">${zaehlerRichtig} von ${liste.length}</p>
@@ -261,5 +266,5 @@
     return () => { clearInterval(uhr); ton.pause(); app.removeEventListener('click', klick); app.removeEventListener('submit', absenden); };
   }
 
-  window.Trainer = { zeige, listeHtml, themen, passend, von, vorgabe: null, vorgabeTitel: '' };
+  window.Trainer = { zeige, listeHtml, themen, passend, von, status: () => lade().status, vorgabe: null, vorgabeTitel: '', beiEnde: null };
 })();

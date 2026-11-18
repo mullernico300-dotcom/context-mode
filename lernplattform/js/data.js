@@ -765,6 +765,142 @@ window.LERN_DATEN = {
       "paragrafen": []
     },
     {
+      "id": "lf5",
+      "nummer": 5,
+      "titel": "Sozialversicherung und Lohnnebenkosten",
+      "beschreibung": "Die fünf Zweige der Sozialversicherung, ihre Beiträge und die Pflichten des Arbeitgebers.",
+      "farbe": "#0f6b6f",
+      "lernziele": [
+        "Ich kann die fünf Zweige der Sozialversicherung und ihre Träger nennen.",
+        "Ich weiß, wer die Beiträge trägt und wer sie zahlt.",
+        "Ich kenne die Beitragssätze und Beitragsbemessungsgrenzen 2026.",
+        "Ich kann Umlagen U1, U2 und U3 unterscheiden."
+      ],
+      "themen": [],
+      "paragrafen": [
+        {
+          "gruppe": "Die fünf Zweige der Sozialversicherung",
+          "ref": "SGB V",
+          "text": "Die Krankenversicherung (SGB V) zahlt Vorsorge, Krankenbehandlung, Krankengeld, Zahnersatz, Reha und das Mutterschaftsgeld. Träger sind die Krankenkassen."
+        },
+        {
+          "gruppe": "Die fünf Zweige der Sozialversicherung",
+          "ref": "SGB XI",
+          "text": "Die Pflegeversicherung hilft bei Pflegebedürftigkeit. Träger sind die Pflegekassen bei den Krankenkassen."
+        },
+        {
+          "gruppe": "Die fünf Zweige der Sozialversicherung",
+          "ref": "SGB VI",
+          "text": "Die Rentenversicherung zahlt Reha, Alters-, Erwerbsminderungs- und Hinterbliebenenrenten und Zuschüsse zur Krankenversicherung der Rentner. Träger ist die Deutsche Rentenversicherung."
+        },
+        {
+          "gruppe": "Die fünf Zweige der Sozialversicherung",
+          "ref": "SGB III",
+          "text": "Die Arbeitsförderung zahlt Arbeitslosengeld, Kurzarbeitergeld und Insolvenzgeld. Sie vermittelt Arbeit, berät zum Beruf und fördert Aus- und Weiterbildung. Träger ist die Bundesagentur für Arbeit."
+        },
+        {
+          "gruppe": "Die fünf Zweige der Sozialversicherung",
+          "ref": "SGB VII, § 150 Abs. 1 SGB VII",
+          "text": "Die Unfallversicherung bietet Prävention, Heilbehandlung, Verletztengeld sowie Unfall- und Hinterbliebenenrenten. Den Beitrag zahlt allein der Unternehmer. Träger sind die Berufsgenossenschaften."
+        },
+        {
+          "gruppe": "Die fünf Zweige der Sozialversicherung",
+          "ref": "§ 249 Abs. 1 SGB V",
+          "text": "Den Beitrag zur Krankenversicherung samt Zusatzbeitrag tragen Arbeitgeber und Arbeitnehmer je zur Hälfte."
+        },
+        {
+          "gruppe": "Die fünf Zweige der Sozialversicherung",
+          "ref": "§ 58 Abs. 1 SGB XI",
+          "text": "Den Pflegeversicherungsbeitrag tragen beide je zur Hälfte. Den Zuschlag für Kinderlose zahlt der Arbeitnehmer allein. In Sachsen ist die Aufteilung anders (§ 58 Abs. 3 SGB XI)."
+        },
+        {
+          "gruppe": "Die fünf Zweige der Sozialversicherung",
+          "ref": "§ 168 Abs. 1 Nr. 1 SGB VI",
+          "text": "Den Rentenversicherungsbeitrag tragen Arbeitgeber und Arbeitnehmer je zur Hälfte."
+        },
+        {
+          "gruppe": "Die fünf Zweige der Sozialversicherung",
+          "ref": "§ 346 Abs. 1 SGB III",
+          "text": "Den Beitrag zur Arbeitslosenversicherung tragen beide je zur Hälfte."
+        },
+        {
+          "gruppe": "Die fünf Zweige der Sozialversicherung",
+          "ref": "§ 28d SGB IV",
+          "text": "Der Gesamtsozialversicherungsbeitrag besteht aus den Beiträgen zur Kranken-, Pflege-, Renten- und Arbeitslosenversicherung."
+        },
+        {
+          "gruppe": "Die fünf Zweige der Sozialversicherung",
+          "ref": "§ 28e Abs. 1, § 28g SGB IV",
+          "text": "Der Arbeitgeber schuldet und zahlt den Gesamtsozialversicherungsbeitrag. Den Arbeitnehmeranteil zieht er vom Lohn ab."
+        },
+        {
+          "gruppe": "Die fünf Zweige der Sozialversicherung",
+          "ref": "§ 28h Abs. 1 SGB IV",
+          "text": "Einzugsstelle ist die Krankenkasse des Arbeitnehmers. Sie verteilt das Geld an die anderen Träger."
+        },
+        {
+          "gruppe": "Die fünf Zweige der Sozialversicherung",
+          "ref": "§ 23 Abs. 1 Satz 2 SGB IV",
+          "text": "Die Beiträge sind spätestens am drittletzten Bankarbeitstag des Monats fällig, in dem gearbeitet wurde."
+        },
+        {
+          "gruppe": "Beiträge berechnen: Grenzen und Beitragssätze 2026",
+          "ref": "§ 241 SGB V",
+          "text": "Der allgemeine Beitragssatz zur Krankenversicherung beträgt 14,6 %. Davon zahlt der Arbeitnehmer 7,3 %."
+        },
+        {
+          "gruppe": "Beiträge berechnen: Grenzen und Beitragssätze 2026",
+          "ref": "§ 242, § 242a SGB V",
+          "text": "Dazu kommt ein Zusatzbeitrag der Krankenkasse. Der durchschnittliche Zusatzbeitrag 2026 beträgt 2,9 %, der Arbeitnehmer zahlt 1,45 %."
+        },
+        {
+          "gruppe": "Beiträge berechnen: Grenzen und Beitragssätze 2026",
+          "ref": "§ 6 Abs. 6 und 7, § 223 Abs. 3 SGB V",
+          "text": "Die Versicherungspflichtgrenze 2026 liegt bei 77.400 € im Jahr (6.450 € im Monat). Die Beitragsbemessungsgrenze für Kranken- und Pflegeversicherung beträgt 69.750 € im Jahr (5.812,50 € im Monat). Verdienst darüber ist beitragsfrei."
+        },
+        {
+          "gruppe": "Beiträge berechnen: Grenzen und Beitragssätze 2026",
+          "ref": "§ 55 Abs. 1 SGB XI",
+          "text": "Der Beitragssatz zur Pflegeversicherung beträgt 3,6 %. Der Arbeitnehmer zahlt 1,8 %."
+        },
+        {
+          "gruppe": "Beiträge berechnen: Grenzen und Beitragssätze 2026",
+          "ref": "§ 55 Abs. 3 SGB XI",
+          "text": "Kinderlose ab 23 Jahren zahlen 0,6 % Zuschlag, der Arbeitnehmer dann also 2,4 %. Ab dem 2. Kind unter 25 Jahren gibt es einen Abschlag von 0,25 % je Kind. Der Arbeitnehmeranteil beträgt bei 2 Kindern 1,55 %, bei 3 Kindern 1,30 %, bei 4 Kindern 1,05 % und ab 5 Kindern 0,80 %."
+        },
+        {
+          "gruppe": "Beiträge berechnen: Grenzen und Beitragssätze 2026",
+          "ref": "§ 158, § 159 SGB VI",
+          "text": "Der Beitragssatz zur Rentenversicherung beträgt 18,6 %. Der Arbeitnehmer zahlt 9,3 %. Die Beitragsbemessungsgrenze 2026 beträgt bundesweit 101.400 € im Jahr (8.450 € im Monat)."
+        },
+        {
+          "gruppe": "Beiträge berechnen: Grenzen und Beitragssätze 2026",
+          "ref": "§ 341 Abs. 2 und 4 SGB III",
+          "text": "Der Beitragssatz zur Arbeitslosenversicherung beträgt 2,6 %. Der Arbeitnehmer zahlt 1,3 %. Es gilt die Beitragsbemessungsgrenze der Rentenversicherung."
+        },
+        {
+          "gruppe": "Beiträge berechnen: Grenzen und Beitragssätze 2026",
+          "ref": "§ 1, § 3 Abs. 1 AAG",
+          "text": "Die Umlage U1 (Entgeltfortzahlung bei Krankheit) zahlen nur Arbeitgeber mit bis zu 30 Arbeitnehmern. Azubis und schwerbehinderte Menschen zählen nicht mit, Teilzeitkräfte anteilig. Die Umlage U2 (Mutterschaft) zahlen alle Arbeitgeber. Sie erstattet 100 % (Zuschuss zum Mutterschaftsgeld nach § 20 MuSchG und Mutterschutzlohn)."
+        },
+        {
+          "gruppe": "Beiträge berechnen: Grenzen und Beitragssätze 2026",
+          "ref": "§ 7 AAG",
+          "text": "Die Umlagen trägt der Arbeitgeber allein. Die Höhe legt die Krankenkasse in ihrer Satzung fest."
+        },
+        {
+          "gruppe": "Beiträge berechnen: Grenzen und Beitragssätze 2026",
+          "ref": "§§ 358, 360 SGB III",
+          "text": "Die Insolvenzgeldumlage (U3) zahlt nur der Arbeitgeber. 2026 beträgt sie 0,15 % des rentenversicherungspflichtigen Entgelts, auch für Auszubildende."
+        }
+      ],
+      "karten": [],
+      "quiz": [],
+      "raetsel": [],
+      "registerId": "0fbsnlzh1hsp4s16gp2y",
+      "registerStand": 1794599471386
+    },
+    {
       "id": "lf6",
       "nummer": 6,
       "titel": "Einkauf über die Grenze und Steuerpflicht",
@@ -1093,6 +1229,106 @@ window.LERN_DATEN = {
           "text": "Die Einkommensteuer ist eine Gemeinschaftsteuer: Bund und Länder bekommen je 42,5 %, die Gemeinden 15 %."
         },
         {
+          "gruppe": "Grundbegriffe: Einkünfte und das Rechenschema",
+          "ref": "Art. 105 Abs. 2, Art. 106 Abs. 3 und 5, Art. 108 Abs. 2 GG",
+          "text": "Der Bund macht die Steuergesetze. Die Einkommensteuer ist eine Gemeinschaftsteuer: Bund und Länder bekommen je 42,5 %, die Gemeinden 15 %. Verwaltet wird sie von den Landesfinanzbehörden (Finanzämtern)."
+        },
+        {
+          "gruppe": "Grundbegriffe: Einkünfte und das Rechenschema",
+          "ref": "Art. 80 GG, EStDV, LStDV",
+          "text": "Verordnungen wie die EStDV und die LStDV erlässt die Bundesregierung mit Zustimmung des Bundesrates. Sie gelten für alle verbindlich."
+        },
+        {
+          "gruppe": "Grundbegriffe: Einkünfte und das Rechenschema",
+          "ref": "EStR, LStR, EStH, LStH (Art. 108 Abs. 7 GG)",
+          "text": "Richtlinien sind Anweisungen an die Finanzverwaltung. Sie binden nur die Behörden, nicht die Gerichte. Bürger können sich aber auf sie berufen, wenn sie günstiger sind."
+        },
+        {
+          "gruppe": "Grundbegriffe: Einkünfte und das Rechenschema",
+          "ref": "§ 1 Abs. 1 EStG",
+          "text": "Einkommensteuer zahlen natürliche Personen, also Menschen. Eine GmbH zahlt stattdessen Körperschaftsteuer."
+        },
+        {
+          "gruppe": "Grundbegriffe: Einkünfte und das Rechenschema",
+          "ref": "§ 39 Abs. 2 Nr. 2 AO, § 180 AO",
+          "text": "Bei einer Personengesellschaft (z. B. OHG) wird der Gewinn den Gesellschaftern anteilig zugerechnet. Das Finanzamt stellt ihn gesondert und einheitlich fest. Besteuert wird dann bei jedem Gesellschafter."
+        },
+        {
+          "gruppe": "Grundbegriffe: Einkünfte und das Rechenschema",
+          "ref": "§ 2 Abs. 2 Satz 1 Nr. 1 und 2 EStG",
+          "text": "Einkünfte sind entweder der Gewinn (Gewinneinkünfte) oder der Überschuss der Einnahmen über die Werbungskosten (Überschusseinkünfte)."
+        },
+        {
+          "gruppe": "Grundbegriffe: Einkünfte und das Rechenschema",
+          "ref": "§ 19 Abs. 2 EStG",
+          "text": "Für Versorgungsbezüge (Pensionen) gibt es einen Versorgungsfreibetrag mit Zuschlag."
+        },
+        {
+          "gruppe": "Grundbegriffe: Einkünfte und das Rechenschema",
+          "ref": "§ 24a, § 24b, § 13 Abs. 3 EStG",
+          "text": "Von der Summe der Einkünfte gehen noch der Altersentlastungsbetrag, der Entlastungsbetrag für Alleinerziehende und der Freibetrag für Land- und Forstwirte ab. Das Ergebnis ist der Gesamtbetrag der Einkünfte."
+        },
+        {
+          "gruppe": "Grundbegriffe: Einkünfte und das Rechenschema",
+          "ref": "§ 2 Abs. 4, § 10d EStG",
+          "text": "Vom Gesamtbetrag der Einkünfte gehen ein Verlustabzug (Verlust aus anderen Jahren), Sonderausgaben und außergewöhnliche Belastungen ab. Das Ergebnis ist das Einkommen."
+        },
+        {
+          "gruppe": "Grundbegriffe: Einkünfte und das Rechenschema",
+          "ref": "§ 2 Abs. 5, § 31, § 32 Abs. 6 EStG",
+          "text": "Vom Einkommen gehen die Freibeträge für Kinder ab, aber nur, wenn sie günstiger sind als das Kindergeld. Das Ergebnis ist das zu versteuernde Einkommen."
+        },
+        {
+          "gruppe": "Grundbegriffe: Einkünfte und das Rechenschema",
+          "ref": "§ 32a, § 2 Abs. 6, §§ 35, 35a EStG",
+          "text": "Aus dem zu versteuernden Einkommen ergibt der Tarif die tarifliche Einkommensteuer. Abzüglich Steuerermäßigungen ist das die festzusetzende Steuer. Davon werden Lohnsteuer und Vorauszahlungen abgezogen. Übrig bleibt eine Erstattung oder eine Nachzahlung."
+        },
+        {
+          "gruppe": "Grundbegriffe: Einkünfte und das Rechenschema",
+          "ref": "§ 22 Nr. 1 und 2, § 23, § 20 Abs. 2 EStG",
+          "text": "Private Verkäufe sind meist nicht steuerbar. Ausnahmen sind private Veräußerungsgeschäfte (§ 23), wesentliche Beteiligungen (§ 17) und Kapitalanlagen (§ 20 Abs. 2)."
+        },
+        {
+          "gruppe": "Grundbegriffe: Einkünfte und das Rechenschema",
+          "ref": "§ 1 Abs. 1 Nr. 1 ErbStG",
+          "text": "Eine Erbschaft unterliegt der Erbschaftsteuer, nicht der Einkommensteuer."
+        },
+        {
+          "gruppe": "Grundbegriffe: Einkünfte und das Rechenschema",
+          "ref": "§ 18 Abs. 1 Nr. 1 Satz 1 und 2 EStG",
+          "text": "Freiberufler haben Einkünfte aus selbständiger Arbeit. Dazu zählen wissenschaftliche, künstlerische, schriftstellerische, unterrichtende und erzieherische Tätigkeiten. Außerdem gibt es Katalogberufe wie Ärzte, Rechtsanwälte, Architekten, Ingenieure, Steuerberater, Wirtschaftsprüfer, Journalisten und Dolmetscher."
+        },
+        {
+          "gruppe": "Grundbegriffe: Einkünfte und das Rechenschema",
+          "ref": "§ 18 Abs. 1 Nr. 1 Satz 3 und 4 EStG",
+          "text": "Ein Freiberufler darf fachlich vorgebildete Mitarbeiter einsetzen. Er muss aber selbst leitend und eigenverantwortlich arbeiten. Eine Vertretung bei Krankheit oder Urlaub schadet nicht."
+        },
+        {
+          "gruppe": "Grundbegriffe: Einkünfte und das Rechenschema",
+          "ref": "§ 18 Abs. 1 Nr. 3, Abs. 2 EStG",
+          "text": "Auch Testamentsvollstreckung, Vermögensverwaltung für andere und die Arbeit im Aufsichtsrat sind selbständige Arbeit. Eine einmalige Tätigkeit reicht, sie muss nicht dauerhaft sein."
+        },
+        {
+          "gruppe": "Grundbegriffe: Einkünfte und das Rechenschema",
+          "ref": "§ 18 Abs. 4 Satz 2 EStG",
+          "text": "Für Freiberufler-Gesellschaften (z. B. eine GbR) gelten viele Regeln der Gewerbebetriebe entsprechend, etwa die zu Mitunternehmern und Sondervergütungen."
+        },
+        {
+          "gruppe": "Grundbegriffe: Einkünfte und das Rechenschema",
+          "ref": "§ 4 Abs. 3 EStG, § 141 AO",
+          "text": "Freiberufler müssen keine Bücher führen. Sie ermitteln den Gewinn meist per Einnahmen-Überschuss-Rechnung. Freiwillig geht auch der Betriebsvermögensvergleich."
+        },
+        {
+          "gruppe": "Grundbegriffe: Einkünfte und das Rechenschema",
+          "ref": "§ 2 Abs. 1 GewStG",
+          "text": "Gewerbesteuer zahlen nur Gewerbebetriebe. Freiberufler zahlen keine Gewerbesteuer."
+        },
+        {
+          "gruppe": "Grundbegriffe: Einkünfte und das Rechenschema",
+          "ref": "§ 19 Abs. 1 Satz 1 Nr. 1 EStG, § 1 Abs. 2 LStDV",
+          "text": "Nichtselbständig arbeitet, wer seine Arbeitskraft schuldet und weisungsgebunden in den Betrieb eingegliedert ist. Entscheidend ist das Gesamtbild der Verhältnisse."
+        },
+        {
           "gruppe": "Betriebsausgaben, Werbungskosten und private Kosten",
           "ref": "§ 4 Abs. 4 EStG",
           "text": "Betriebsausgaben sind Kosten, die durch den Betrieb entstehen. Sie mindern den Gewinn."
@@ -1146,6 +1382,31 @@ window.LERN_DATEN = {
           "gruppe": "Betriebsausgaben, Werbungskosten und private Kosten",
           "ref": "§ 7g EStG",
           "text": "Kleine Betriebe dürfen schon vor einem geplanten Kauf bis zu 50 % der Kosten vom Gewinn abziehen (Investitionsabzugsbetrag). Das spart früher Steuern."
+        },
+        {
+          "gruppe": "Betriebsausgaben, Werbungskosten und private Kosten",
+          "ref": "§ 4 Abs. 3 und Abs. 1 EStG",
+          "text": "Bei Gewinneinkünften heißen die Einnahmen Betriebseinnahmen."
+        },
+        {
+          "gruppe": "Betriebsausgaben, Werbungskosten und private Kosten",
+          "ref": "§ 9 Abs. 1 Satz 3 Nr. 1 und 6 EStG",
+          "text": "Schuldzinsen, die zu einer Einkunftsart gehören (z. B. für ein vermietetes Haus), sind Werbungskosten. Auch Arbeitsmittel wie Fachliteratur zählen dazu."
+        },
+        {
+          "gruppe": "Betriebsausgaben, Werbungskosten und private Kosten",
+          "ref": "§ 21 EStG",
+          "text": "Vermietung und Verpachtung ist eine Überschusseinkunftsart. Deshalb gibt es dort Werbungskosten statt Betriebsausgaben."
+        },
+        {
+          "gruppe": "Betriebsausgaben, Werbungskosten und private Kosten",
+          "ref": "§ 6 Abs. 1 Nr. 4 und 5 EStG",
+          "text": "Entnahmen und Einlagen werden mit dem Teilwert angesetzt. Privatnutzung des Firmenwagens: Bei mehr als 50 % betrieblicher Nutzung gilt 1 % des Listenpreises im Monat, alternativ ein Fahrtenbuch."
+        },
+        {
+          "gruppe": "Betriebsausgaben, Werbungskosten und private Kosten",
+          "ref": "§ 4 Abs. 5 Satz 1 EStG",
+          "text": "Manche Betriebsausgaben darf man nicht oder nur teilweise abziehen. Beispiele: Geschenke über 50 € je Empfänger und Jahr, Bewirtung nur zu 70 %, Gästehäuser, Jagd und Segeljachten, unangemessene Kosten, Geldbußen und Bestechungsgelder."
         },
         {
           "gruppe": "Gewerbebetrieb",
@@ -1203,6 +1464,51 @@ window.LERN_DATEN = {
           "text": "Bei der Gewerbesteuer haben Einzelunternehmen und Personengesellschaften einen Freibetrag von 24.500 €. Die Messzahl ist 3,5 %. Gewerbesteuer = Messbetrag × Hebesatz der Gemeinde."
         },
         {
+          "gruppe": "Gewerbebetrieb",
+          "ref": "§ 15 Abs. 2 Satz 1 EStG",
+          "text": "Ein Gewerbebetrieb ist selbständig, nachhaltig, will Gewinn machen und nimmt am allgemeinen Wirtschaftsverkehr teil. Land- und Forstwirtschaft, freie Berufe und reine Vermögensverwaltung gehören nicht dazu."
+        },
+        {
+          "gruppe": "Gewerbebetrieb",
+          "ref": "§ 15 Abs. 1 Satz 1 Nr. 3 EStG",
+          "text": "Auch die persönlich haftenden Gesellschafter einer KGaA haben gewerbliche Einkünfte, soweit ihr Gewinn nicht auf das Grundkapital entfällt."
+        },
+        {
+          "gruppe": "Gewerbebetrieb",
+          "ref": "§ 2 Abs. 3, § 10d EStG (Gewerbebetrieb)",
+          "text": "Alle gewerblichen Einkünfte einer Person bilden zusammen eine Einkunftsart. Ein Verlust aus einer Quelle wird mit Gewinnen aus anderen verrechnet. Bleibt ein Verlust übrig, kommt der Verlustabzug nach § 10d in Betracht."
+        },
+        {
+          "gruppe": "Gewerbebetrieb",
+          "ref": "§ 15 Abs. 3 Nr. 1 EStG, H 15.8 (5) EStH",
+          "text": "Die Abfärbung gilt nicht, wenn die gewerblichen Umsätze höchstens 3 % der Gesamtumsätze und höchstens 24.500 € im Jahr betragen. Für Einzelunternehmer gilt sie nicht, dort sind es zwei getrennte Betriebe."
+        },
+        {
+          "gruppe": "Gewerbebetrieb",
+          "ref": "§ 15 Abs. 4 EStG",
+          "text": "Verluste aus gewerblicher Tierzucht, aus Termingeschäften und aus stillen Gesellschaften mit Kapitalgesellschaften darf man nicht mit anderen Einkünften verrechnen. Sie mindern nur Gewinne der gleichen Art in anderen Jahren."
+        },
+        {
+          "gruppe": "Gewerbebetrieb",
+          "ref": "§ 24 Nr. 2 EStG",
+          "text": "Zahlungen nach der Betriebsaufgabe bleiben Einkünfte aus Gewerbebetrieb (nachträgliche Einkünfte)."
+        },
+        {
+          "gruppe": "Gewerbebetrieb",
+          "ref": "§ 4a Abs. 1 Satz 2 Nr. 2 und 3, Abs. 2 Nr. 2 EStG",
+          "text": "Nur im Handelsregister eingetragene Gewerbetreibende dürfen ein abweichendes Wirtschaftsjahr haben. Die Umstellung geht nur im Einvernehmen mit dem Finanzamt. Alle anderen haben das Kalenderjahr. Der Gewinn zählt in dem Jahr, in dem das Wirtschaftsjahr endet."
+        },
+        {
+          "gruppe": "Gewerbebetrieb",
+          "ref": "§ 8b EStDV",
+          "text": "Ein Rumpfwirtschaftsjahr ist kürzer als zwölf Monate, z. B. bei der Umstellung des Wirtschaftsjahres."
+        },
+        {
+          "gruppe": "Gewerbebetrieb",
+          "ref": "§ 180 Abs. 1 Satz 1 Nr. 2 Buchst. a AO",
+          "text": "Der Gewinn einer Personengesellschaft wird einheitlich und gesondert festgestellt und den Gesellschaftern zugerechnet."
+        },
+        {
           "gruppe": "Rechtsformen und Gewinnverteilung",
           "ref": "§ 1, § 2 HGB",
           "text": "Kaufmann ist, wer ein Handelsgewerbe betreibt, das einen kaufmännisch eingerichteten Betrieb braucht. Kleine Gewerbetreibende können sich freiwillig ins Handelsregister eintragen lassen."
@@ -1248,6 +1554,31 @@ window.LERN_DATEN = {
           "text": "OHG, KG und Partnerschaft können beantragen, steuerlich wie eine GmbH behandelt zu werden (Option zur Körperschaftsteuer)."
         },
         {
+          "gruppe": "Rechtsformen und Gewinnverteilung",
+          "ref": "§ 116, § 124 HGB",
+          "text": "Bei der OHG führen die Gesellschafter die Geschäfte und vertreten die Gesellschaft."
+        },
+        {
+          "gruppe": "Rechtsformen und Gewinnverteilung",
+          "ref": "§ 121, § 168 HGB a. F.",
+          "text": "Die alte Vier-Prozent-Regel für die Gewinnverteilung ist seit 2024 entfallen. Ältere Lehrbücher nennen sie noch."
+        },
+        {
+          "gruppe": "Rechtsformen und Gewinnverteilung",
+          "ref": "§ 15 Abs. 1 Satz 1 Nr. 2 EStG (Sondervergütungen)",
+          "text": "Vergütungen, die ein Gesellschafter für seine Tätigkeit, ein Darlehen oder die Überlassung von Gegenständen von der Gesellschaft bekommt, zählen zu seinem Gewinnanteil. Sie heißen Sondervergütungen."
+        },
+        {
+          "gruppe": "Rechtsformen und Gewinnverteilung",
+          "ref": "§ 166, § 233 HGB",
+          "text": "Kommanditisten und stille Gesellschafter haben Kontrollrechte. Sie sind ein Anzeichen dafür, dass jemand als Mitunternehmer mitentscheidet."
+        },
+        {
+          "gruppe": "Rechtsformen und Gewinnverteilung",
+          "ref": "§ 715 BGB",
+          "text": "Bei der GbR führen alle Gesellschafter gemeinsam die Geschäfte."
+        },
+        {
           "gruppe": "Betrieb verkaufen oder aufgeben",
           "ref": "§ 16 Abs. 1 EStG",
           "text": "Auch der Gewinn aus dem Verkauf des ganzen Betriebs gehört zu den Einkünften aus Gewerbebetrieb."
@@ -1278,6 +1609,26 @@ window.LERN_DATEN = {
           "text": "Wer mit mindestens 1 % an einer GmbH oder AG beteiligt war und seine Anteile aus dem Privatvermögen verkauft, hat Einkünfte aus Gewerbebetrieb."
         },
         {
+          "gruppe": "Betrieb verkaufen oder aufgeben",
+          "ref": "§ 14 EStG",
+          "text": "Der Gewinn aus dem Verkauf eines land- oder forstwirtschaftlichen Betriebs gehört in das Jahr des Verkaufs."
+        },
+        {
+          "gruppe": "Betrieb verkaufen oder aufgeben",
+          "ref": "§ 16 Abs. 3b EStG",
+          "text": "Bei Betriebsunterbrechung oder Verpachtung im Ganzen gilt der Betrieb erst als aufgegeben, wenn der Inhaber das ausdrücklich erklärt oder das Finanzamt davon erfährt. Gibt er die Erklärung innerhalb von drei Monaten nach dem gewählten Zeitpunkt ab, wirkt sie darauf zurück."
+        },
+        {
+          "gruppe": "Betrieb verkaufen oder aufgeben",
+          "ref": "§ 6b EStG",
+          "text": "Gewinne aus dem Verkauf z. B. von Grundstücken oder Gebäuden (Mindestbesitzzeit sechs Jahre) kann man auf neue Wirtschaftsgüter übertragen oder in eine Rücklage stellen. Wer § 6b nutzt, kann dafür die Fünftelregelung nach § 34 Abs. 1 EStG nicht nutzen."
+        },
+        {
+          "gruppe": "Betrieb verkaufen oder aufgeben",
+          "ref": "Rechenweg § 16 Abs. 1 und 2 EStG, R 7.1 GewStR",
+          "text": "Der Veräußerungsgewinn ist der Verkaufspreis minus Verkaufskosten minus Buchwert des Betriebsvermögens. Er unterliegt beim Einzelunternehmer nicht der Gewerbesteuer."
+        },
+        {
           "gruppe": "Land- und Forstwirtschaft",
           "ref": "§ 13 Abs. 1 EStG",
           "text": "Tierhaltung gehört nur zur Landwirtschaft, wenn genug eigene Fläche da ist. Sind es zu viele Tiere pro Hektar, wird der Überschuss zum Gewerbe."
@@ -1291,6 +1642,26 @@ window.LERN_DATEN = {
           "gruppe": "Land- und Forstwirtschaft",
           "ref": "§ 4a Abs. 1 Satz 2 Nr. 1 EStG",
           "text": "Das Wirtschaftsjahr der Landwirte geht vom 1. Juli bis 30. Juni. Der Gewinn wird nach Monaten auf die beiden Kalenderjahre aufgeteilt."
+        },
+        {
+          "gruppe": "Land- und Forstwirtschaft",
+          "ref": "§ 13 Abs. 1 Nr. 1 EStG",
+          "text": "Tierhaltung gehört zur Landwirtschaft, solange sie zur Fläche passt. Die Grenze in Vieheinheiten (VE): erste 20 ha 10 VE, nächste 10 ha 7 VE, nächste 20 ha 6 VE, nächste 50 ha 3 VE, darüber 1,5 VE je Hektar. Wird die Grenze dauerhaft überschritten, wird der Tierzweig gewerblich (§ 241 BewG)."
+        },
+        {
+          "gruppe": "Land- und Forstwirtschaft",
+          "ref": "§ 13 Abs. 1 Nr. 2 EStG",
+          "text": "Sonstige land- und forstwirtschaftliche Nutzung sind z. B. Imkerei, Fischzucht und Wanderschäferei."
+        },
+        {
+          "gruppe": "Land- und Forstwirtschaft",
+          "ref": "§ 4a Abs. 1 Satz 2 Nr. 1 EStG, § 8c EStDV",
+          "text": "Das Wirtschaftsjahr der Landwirte läuft vom 1. Juli bis 30. Juni. Abweichend gilt: Futterbau 1.5.–30.4., reine Forstwirtschaft 1.10.–30.9., reiner Weinbau 1.9.–31.8. Gartenbau hat kein Sonder-Wirtschaftsjahr."
+        },
+        {
+          "gruppe": "Land- und Forstwirtschaft",
+          "ref": "§ 4a Abs. 2 Nr. 1 EStG",
+          "text": "Der Gewinn des Wirtschaftsjahres wird zeitanteilig auf die beiden Kalenderjahre aufgeteilt. Veräußerungsgewinne sind davon ausgenommen."
         },
         {
           "gruppe": "Geschenke",
@@ -1328,6 +1699,31 @@ window.LERN_DATEN = {
           "text": "Betriebsfeiern: Pro Mitarbeiter sind 110 € steuerfrei – für bis zu zwei Feiern im Jahr."
         },
         {
+          "gruppe": "Geschenke",
+          "ref": "§ 4 Abs. 5 Satz 1 Nr. 1 EStG (Berechnung)",
+          "text": "Für die 50-€-Grenze zählt der Wert ohne abziehbare Vorsteuer. Verpackung und Versand zählen nicht. Geschenke an denselben Empfänger werden zusammengerechnet. Gegenstände, die nur im Betrieb nutzbar sind, sind ausgenommen (R 4.10 Abs. 2–4 EStR)."
+        },
+        {
+          "gruppe": "Geschenke",
+          "ref": "§ 3 Abs. 1b Satz 1 Nr. 3 UStG",
+          "text": "Geschenke von Gegenständen mit Vorsteuerabzug über geringem Wert gelten als unentgeltliche Wertabgabe."
+        },
+        {
+          "gruppe": "Geschenke",
+          "ref": "§ 4 Abs. 5 Satz 1 Nr. 10 EStG",
+          "text": "Bestechungsgelder sind nie als Betriebsausgabe abziehbar."
+        },
+        {
+          "gruppe": "Geschenke",
+          "ref": "§ 37b Abs. 1 bis 3 EStG",
+          "text": "Wer Geschenke oder Sachzuwendungen pauschal versteuert, zahlt 30 % (zuzüglich Soli und Kirchensteuer) auf die Kosten inklusive Umsatzsteuer. Das Wahlrecht gilt einheitlich für alle Zuwendungen eines Jahres, höchstens 10.000 € je Empfänger und Jahr. Der Empfänger muss unterrichtet werden und versteuert nichts. Das gilt auch für Sachzuwendungen an Arbeitnehmer."
+        },
+        {
+          "gruppe": "Geschenke",
+          "ref": "§ 40 Abs. 2 Satz 1 Nr. 2 EStG",
+          "text": "Den Rest einer Betriebsveranstaltung über dem Freibetrag kann der Arbeitgeber pauschal mit 25 % versteuern."
+        },
+        {
           "gruppe": "Bewirtung",
           "ref": "§ 4 Abs. 5 Satz 1 Nr. 2 EStG",
           "text": "Geschäftsessen mit Kunden: Nur 70 % der angemessenen Kosten sind Betriebsausgabe. 30 % sind nicht abziehbar."
@@ -1353,6 +1749,16 @@ window.LERN_DATEN = {
           "text": "Seit 2026 gilt für Speisen im Restaurant 7 % Umsatzsteuer. Für Getränke bleiben es 19 %."
         },
         {
+          "gruppe": "Bewirtung",
+          "ref": "§ 4 Abs. 5 Satz 1 Nr. 7 EStG",
+          "text": "Unangemessene Aufwendungen darf man nicht abziehen."
+        },
+        {
+          "gruppe": "Bewirtung",
+          "ref": "R 4.10 Abs. 5 bis 9 EStR",
+          "text": "Für die Bewirtung muss man Ort, Tag, Teilnehmer, Anlass und Höhe der Kosten nachweisen. Die Rechnung muss maschinell erstellt sein."
+        },
+        {
           "gruppe": "Reisekosten",
           "ref": "§ 9 Abs. 4a EStG",
           "text": "Für Essen auf Geschäftsreisen gibt es nur Pauschalen: 14 € bei mehr als 8 Stunden Abwesenheit sowie für An- und Abreisetag, 28 € für jeden vollen Tag. Die echten Kosten sind egal."
@@ -1376,10 +1782,25 @@ window.LERN_DATEN = {
           "gruppe": "Reisekosten",
           "ref": "§ 34 UStDV",
           "text": "Fahrkarten gelten als Rechnung. Daraus darf Vorsteuer gezogen werden."
+        },
+        {
+          "gruppe": "Reisekosten",
+          "ref": "§ 4 Abs. 5 Satz 1 Nr. 5 EStG, R 4.12 EStR",
+          "text": "Auch Unternehmer bekommen für Verpflegung auf Reisen nur die Pauschalen: eintägig mehr als 8 Stunden 14 €, mehrtägig An- und Abreisetag je 14 €, voller Tag 28 €."
+        },
+        {
+          "gruppe": "Reisekosten",
+          "ref": "§ 15 Abs. 1 UStG, §§ 33, 34 UStDV",
+          "text": "Die Vorsteuer aus Reisekosten kann man mit Rechnung, Kleinbetragsrechnung (bis 250 €) oder Fahrausweis abziehen."
+        },
+        {
+          "gruppe": "Reisekosten",
+          "ref": "§ 12 Abs. 2 Nr. 10 und 11 UStG (Steuersätze)",
+          "text": "7 % gelten für Bahn-Personenverkehr, Taxi bis 50 km und Übernachtungen. Das Frühstück wird mit 19 % besteuert."
         }
       ],
       "registerId": "tmo7i73oqoibj79hwtql",
-      "registerStand": 1794514339782
+      "registerStand": 1794599390428
     },
     {
       "id": "sk",

@@ -22,6 +22,8 @@
     document.documentElement.style.removeProperty('--akzent');
     Spiel.zeigeChip();
     if (h === 'training') { aufraeumen = Spiel.zeigeTraining(app); return; }
+    if (h === 'planer' || h.startsWith('planer-')) { aufraeumen = Planer.zeige(app, h.slice(7)); return; }
+    if (h === 'unterlagen' || h.startsWith('unterlagen-')) { aufraeumen = Unterlagen.zeige(app, h.slice(11)); return; }
     if (h.startsWith('aufgaben-')) {
       const m = /^aufgaben-(.+)-(\d+|ziel|fehler)$/.exec(h);
       const lfA = m && Store.lernfelder().find((l) => l.id === m[1]);
@@ -152,6 +154,7 @@
         <h1>${esc(d.titel)}</h1>
         <p>${esc(d.untertitel)}</p>
       </section>
+      ${Planer.startHtml()}
       ${Spiel.startHtml()}
       ${lfs.length ? '' : '<div class="glas leer">Noch keine Lernfelder vorhanden. Unter <a href="#verwaltung">Verwaltung</a> kannst du welche anlegen.</div>'}
       <section class="raster">
@@ -195,13 +198,17 @@
         <span class="lf-nr">${esc(U.kurz(lf))}</span>
         <h1>${esc(lf.titel)}</h1>
         <p>${esc(lf.beschreibung)}</p>
-        ${Spiel.videosVon(lf.id).length ? `<a class="btn video-knopf klein-btn" href="#videos-${esc(lf.id)}">🎬 ${Spiel.videosVon(lf.id).length} Lernvideos</a>` : ''}
+        <div class="lf-knoepfe">
+          ${Spiel.videosVon(lf.id).length ? `<a class="btn video-knopf klein-btn" href="#videos-${esc(lf.id)}">🎬 ${Spiel.videosVon(lf.id).length} Lernvideos</a>` : ''}
+          <span id="ulKnopf"></span>
+        </div>
       </header>
       <nav class="tabs glas" aria-label="Lernformate">
         ${TABS.map(([id, icon, name]) => `<a href="#lf-${esc(lf.id)}-${id}" class="${id === tab ? 'aktiv' : ''}"><span>${icon}</span>${name}</a>`).join('')}
       </nav>
       <div id="inhalt"></div>`;
     const ziel = document.getElementById('inhalt');
+    Unterlagen.knopfFuer(lf.id, document.getElementById('ulKnopf'));
     ({ themen: zeigeThemen, paragrafen: zeigeParagrafen, karten: zeigeKarten, quiz: zeigeQuiz, raetsel: zeigeRaetsel })[tab](lf, ziel);
   }
 

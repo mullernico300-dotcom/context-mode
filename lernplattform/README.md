@@ -10,6 +10,8 @@ Eine Web-App ohne Installation, ohne Anmeldung und ohne Server-Logik. Für jedes
 | 🏆 **Quiz-Show** | Bis zu 10 Fragen mit steigender Schwierigkeit, Punktestufen, Sicherheitsstufen, Timer, zwei Joker, Highscore |
 | 🧩 **Kreuzworträtsel** | Wird automatisch aus der Wortliste erzeugt, prüft jedes vollständig ausgefüllte Wort sofort (grün/rot) |
 | 🎬 **Lernvideos** | 34 Hochformat-Videos mit Sprecherstimme zum Durchwischen, je unter 2 Minuten, mit mitlaufender Texthervorhebung |
+| 📅 **Planer** | Stundenplan (45/90 Minuten, Pausen), Kalender mit Schul- und Arbeitstagen, Tests mit automatischem Lernplan, Noten mit Fach- und Gesamtschnitt. Bleibt nur auf dem Gerät, mit Sicherung als Datei |
+| 📂 **Unterlagen** | Arbeitsblätter und Lernübersichten je Fach (nur in der Artefakt-Version). Hochladen dürfen nur Bearbeiter |
 | 🎬 **Aufgaben-Videos** | 122 Übungsaufgaben: Die Stimme stellt die Aufgabe mit Grafik, nach kurzer Bedenkzeit gibt man die Antwort ein, dann folgt die gesprochene Lösung mit Rechenweg und Paragrafen |
 | ▶ **Tages-Training** | 7 gemischte Fragen aus allen Fächern mit drei Herzen; eigene Fehler kommen wieder dran |
 | ⚡ **Paare-Spiel** | Begriff und Erklärung auf Zeit zuordnen, mit Bestzeit |
@@ -133,6 +135,9 @@ lernplattform/
     ├── data.js         ALLE Inhalte – diese Datei wird gepflegt
     ├── store.js        Laden/Speichern, Lernfortschritt, Lernfeld-Filter
     ├── crossword.js    Kreuzworträtsel-Generator
+    ├── planer.js       Stundenplan, Kalender, Tests mit Lernplan, Noten (nur lokal)
+    ├── unterlagen.js   Unterlagen aus der Artefakt-Datenbank, Upload nur für Bearbeiter
+    ├── schule.beispiel.js  Vorlage für js/schule.js (Schulzeiten, Pausen, Fächer)
     ├── trainer.js      Aufgaben-Videos: Frage, Bedenkzeit, Eingabe, gesprochene Lösung
     ├── extras.js       Punkte, Serie, Abzeichen, Tages-Training, Paare-Spiel, Wiederhol-Abstände
     ├── admin.js        Verwaltung

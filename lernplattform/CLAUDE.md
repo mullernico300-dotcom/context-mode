@@ -29,10 +29,13 @@ Ein Modell kann Claude nicht selbst wechseln. Der Nutzer stellt es mit `/model` 
 - Rechnen übernehmen Skripte, nicht das Modell.
 - Vor dem Start eines größeren Laufs nennt Claude die geschätzten Tokens und fragt nach.
 
-## Stand
+## Stand (18.11.)
 
-- Bau der Planung (Stundenplan, Tests, Lernplan, Lernregister) ist noch nicht begonnen.
-- Wartet auf neue Tokens und auf Entscheidungen: Schultage, Startzeit des Abendlaufs, Mitschrift-Upload, Modell.
+- Planer gebaut (js/planer.js): Heute, Kalender (Schule/Arbeit je Tag, Woche kopieren), Stundenplan (45/90 Min, Pausen, Tag kopieren), Tests mit Lernplan, Noten mit Schnitt und Sicherung. Alles nur im Browser des Geräts (localStorage).
+- Unterlagen gebaut (js/unterlagen.js): Fächer, Themen, Dateien, Lernübersichten in der Artefakt-Datenbank (subjects, topics, files, summaries). Lesen: alle mit Link; schreiben/hochladen: nur Bearbeiter (Regeln write "admin", assets nur für Bearbeiter). Geprüft mit as_level view/interact.
+- Lernregister übernommen (ohne Seminare): 6 Fächer, 13 Themen, 15 Dateien, 4 Lernübersichten. Das Lernregister selbst ist noch nicht gelöscht.
+- Schulzeiten, Pausen, Fächer und Lehrkräfte stehen in js/schule.js. Die Datei wird nur im Artefakt veröffentlicht und ist per lernplattform/.gitignore vom Repository ausgeschlossen. Vorlage: js/schule.beispiel.js.
+- Offen: Abendlauf (Sonnet/medium) mit dem Nutzer abstimmen. Er läuft außerhalb der App und kann die lokalen Stundenpläne nicht lesen, deshalb braucht er die Schulende-Zeiten pro Wochentag vom Nutzer.
 
 ## Entscheidungen für die Planung (Stand 17.11.)
 
