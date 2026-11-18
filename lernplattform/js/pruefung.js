@@ -8,13 +8,17 @@
   const F = () => window.PRUEFUNG_FRAGEN || [];
   const ART = { zp: 'Zwischenprüfung', ap: 'Abschlussprüfung' };
   let tick = null;
+  let ansicht = null; // bricht Listener der vorigen Ansicht ab (das #app-Element bleibt bestehen)
+  function neueAnsicht() { if (ansicht) ansicht.abort(); ansicht = new AbortController(); return ansicht.signal; }
 
   /* ---------------- Speicher ---------------- */
   function lade() {
     let s = null;
     try { s = JSON.parse(localStorage.getItem(KEY)); } catch (e) { /* gesperrt */ }
-    s = Object.assign({ lauf: null, gespraech: null, verlauf: [] }, s || {});
+    s = Object.assign({ lauf: null, einzel: null, gespraech: null, verlauf: [], erledigt: {} }, s || {});
     if (!Array.isArray(s.verlauf)) s.verlauf = [];
+    if (!s.erledigt || typeof s.erledigt !== 'object') s.erledigt = {};
+    ['lauf', 'einzel'].forEach((k) => { const l = s[k]; if (l && l.timer === undefined) l.timer = !!l.ende; });
     return s;
   }
   function sichere(s) {
@@ -61,13 +65,39 @@
     return html;
   }
   function stoppeUhr() { if (tick) { clearInterval(tick); tick = null; } }
+  /* Unterbrechen: Restzeit merken, Uhr anhalten. Weiter: Uhr ab jetzt mit der Restzeit. */
+  function pausiere(slot) {
+    const st = lade(); const l = st[slot];
+    if (!l || l.abgegeben || l.pausiert) return;
+    if (l.timer && l.ende) { l.rest = Math.max(0, l.ende - Date.now()); l.ende = null; }
+    l.pausiert = Date.now();
+    sichere(st);
+  }
+  function setzeFort(slot) {
+    const st = lade(); const l = st[slot];
+    if (!l || !l.pausiert) return;
+    l.pausenMs = (l.pausenMs || 0) + (Date.now() - l.pausiert);
+    if (l.timer) l.ende = Date.now() + (l.rest || 0);
+    l.pausiert = null;
+    sichere(st);
+  }
+  const restSek = (l) => (l.pausiert ? (l.rest || 0) : (l.ende || 0) - Date.now()) / 1000;
+  function neuerLauf(art, ids, timer) {
+    const min = gesamtMinuten(ids);
+    return { art, ids, antworten: {}, haken: {}, start: Date.now(), minuten: min, timer, ende: timer ? Date.now() + min * 60000 : null, rest: null, pausiert: null, pausenMs: 0, abgegeben: null, pos: 0 };
+  }
+  const routeVon = (slot, teil) => '#pruefung-' + (slot === 'einzel' ? 'einzel' + (teil ? '-' + teil : '') : (teil || 'lauf'));
 
   /* ---------------- Einstieg ---------------- */
   function zeige(app, teil) {
     stoppeUhr();
+    neueAnsicht();
     const s = lade();
-    if (teil === 'lauf' && s.lauf) return zeigeLauf(app);
-    if (teil === 'auswertung' && s.lauf) return zeigeAuswertung(app);
+    if (teil === 'lauf' && s.lauf) return zeigeLauf(app, 'lauf');
+    if (teil === 'auswertung' && s.lauf) return zeigeAuswertung(app, 'lauf');
+    if (teil === 'einzel' && s.einzel) return zeigeLauf(app, 'einzel');
+    if (teil === 'einzel-auswertung' && s.einzel) return zeigeAuswertung(app, 'einzel');
+    if (teil === 'aufgaben' || teil === 'einzel' || teil === 'einzel-auswertung') return zeigeAufgaben(app);
     if (teil === 'gespraech' && s.gespraech) return zeigeGespraech(app);
     return zeigeStart(app);
   }
@@ -80,8 +110,9 @@
       <a class="zurueck" href="#start">← Zur Übersicht</a>
       <header class="lf-kopf"><span class="lf-nr pr-marke">Prüfung</span><h1>Prüfungssimulator</h1>
         <p>Übe mit Aufgaben im Stil der Kammerprüfung: ausführlich antworten, mit Zeitdruck wie in der echten Prüfung, danach Musterlösung und Punkteschema.</p></header>
-      ${s.lauf ? `<section class="glas block pr-weiter"><b>Du hast eine Simulation offen</b> (${esc(ART[s.lauf.art])}, ${s.lauf.ids.length} Aufgaben${s.lauf.abgegeben ? ', abgegeben' : ''}).
-        <div class="pr-knoepfe"><a class="btn primaer" href="#pruefung-${s.lauf.abgegeben ? 'auswertung' : 'lauf'}">${s.lauf.abgegeben ? 'Zur Auswertung' : 'Weiter schreiben'}</a>
+      ${modusHtml('ganz')}
+      ${s.lauf ? `<section class="glas block pr-weiter"><b>Du hast eine Simulation offen</b> (${esc(ART[s.lauf.art])}, ${s.lauf.ids.length} Aufgaben${s.lauf.abgegeben ? ', abgegeben' : s.lauf.pausiert ? `, unterbrochen${s.lauf.timer ? ' · noch ' + uhr(restSek(s.lauf)) : ''}` : ''}).
+        <div class="pr-knoepfe"><a class="btn primaer" href="#pruefung-${s.lauf.abgegeben ? 'auswertung' : 'lauf'}">${s.lauf.abgegeben ? 'Zur Auswertung' : s.lauf.pausiert ? '▶ Fortsetzen' : 'Weiter schreiben'}</a>
         <button class="btn rot" id="prVerwerfen">Verwerfen</button></div></section>` : ''}
       <section class="glas block">
         <h2>1. Welche Prüfung?</h2>
@@ -98,6 +129,8 @@
             <option value="15">15 zufällige Aufgaben</option>
             <option value="10">10 zufällige Aufgaben</option>
             <option value="5">5 zufällige Aufgaben</option>
+            <option value="3">3 zufällige Aufgaben</option>
+            <option value="1">1 zufällige Aufgabe</option>
           </select>
           <label class="pr-haken"><input type="checkbox" id="prUhr" checked> Mit Zeitlimit wie in der Prüfung</label>
         </div>
@@ -169,8 +202,7 @@
       if (!ids.length) return;
       const st = lade();
       if (st.lauf && !confirm('Die offene Simulation wird dabei verworfen. Neu starten?')) return;
-      const min = gesamtMinuten(ids);
-      st.lauf = { art, ids, antworten: {}, haken: {}, start: Date.now(), minuten: min, ende: el('#prUhr').checked ? Date.now() + min * 60000 : null, abgegeben: null, pos: 0 };
+      st.lauf = neuerLauf(art, ids, el('#prUhr').checked);
       sichere(st);
       location.hash = '#pruefung-lauf';
     });
@@ -190,18 +222,21 @@
   }
 
   /* ---------------- Simulation schreiben ---------------- */
-  function zeigeLauf(app) {
+  function zeigeLauf(app, slot) {
     const s = lade();
-    const lauf = s.lauf;
-    if (lauf.abgegeben) { location.hash = '#pruefung-auswertung'; return null; }
+    const lauf = s[slot];
+    if (lauf.abgegeben) { location.hash = routeVon(slot, 'auswertung'); return null; }
+    if (lauf.pausiert) return zeigePause(app, slot);
+    let fertig = false;
     let pos = Math.min(lauf.pos || 0, lauf.ids.length - 1);
     app.innerHTML = `
       <div class="pr-leiste glas" id="prLeiste">
         <div><span class="eyebrow">${esc(ART[lauf.art])}</span><b id="prStand"></b></div>
-        <div class="pr-uhr" id="prUhr" role="timer" aria-live="off">${lauf.ende ? '' : 'ohne Zeitlimit'}</div>
-        <button class="btn primaer klein-btn" id="prAbgeben">Abgeben</button>
+        <div class="pr-uhr" id="prUhr" role="timer" aria-live="off">${lauf.timer ? '' : 'ohne Zeitlimit'}</div>
+        <div class="pr-leiste-knoepfe"><button class="btn klein-btn" id="prPause" title="Unterbrechen – die Uhr hält an">⏸<span class="nur-breit"> Pause</span></button>
+        <button class="btn primaer klein-btn" id="prAbgeben">Abgeben</button></div>
       </div>
-      <nav class="pr-nummern" id="prNummern" aria-label="Aufgaben"></nav>
+      <nav class="pr-nummern" id="prNummern" aria-label="Aufgaben" ${lauf.ids.length === 1 ? 'hidden' : ''}></nav>
       <article class="glas block pr-aufgabe" id="prAufgabe"></article>
       <div class="pr-knoepfe pr-blaettern">
         <button class="btn" id="prZurueck">← Zurück</button>
@@ -209,10 +244,11 @@
       </div>`;
     const el = (sel) => app.querySelector(sel);
     function speichere() {
-      const st = lade(); if (!st.lauf) return;
-      st.lauf.antworten = lauf.antworten; st.lauf.pos = pos; sichere(st);
+      const st = lade(); if (!st[slot]) return;
+      st[slot].antworten = lauf.antworten; st[slot].pos = pos; sichere(st);
     }
     function nummern() {
+      if (!el('#prNummern')) return; // Ansicht schon gewechselt (Pause, Abgabe)
       el('#prNummern').innerHTML = lauf.ids.map((id, i) => {
         const q = frage(id);
         const neuerBereich = i === 0 || frage(lauf.ids[i - 1]).bereich !== q.bereich;
@@ -243,6 +279,7 @@
       ta.addEventListener('blur', () => { speichere(); nummern(); });
       zaehle();
       el('#prZurueck').disabled = pos === 0;
+      el('#prZurueck').hidden = lauf.ids.length === 1;
       el('#prVor').textContent = pos === lauf.ids.length - 1 ? 'Abgeben ✓' : 'Weiter →';
       nummern();
     }
@@ -251,17 +288,21 @@
       lauf.antworten[lauf.ids[pos]] = el('#prAntwort').value;
       const offen = lauf.ids.filter((id) => !(lauf.antworten[id] || '').trim()).length;
       if (!auto && !confirm(offen ? `${offen} Aufgaben sind noch leer. Trotzdem abgeben?` : 'Simulation abgeben und auswerten?')) return;
-      const st = lade(); if (!st.lauf) return;
-      st.lauf.antworten = lauf.antworten; st.lauf.abgegeben = Date.now(); sichere(st);
-      stoppeUhr();
+      const st = lade(); if (!st[slot]) return;
+      st[slot].antworten = lauf.antworten; st[slot].abgegeben = Date.now(); sichere(st);
+      stoppeUhr(); fertig = true;
       if (auto) toast('⏰ Die Zeit ist um – deine Antworten wurden abgegeben.');
-      location.hash = '#pruefung-auswertung';
+      location.hash = routeVon(slot, 'auswertung');
     }
     el('#prNummern').addEventListener('click', (e) => { const b = e.target.closest('[data-i]'); if (b) gehe(Number(b.dataset.i)); });
     el('#prZurueck').addEventListener('click', () => pos > 0 && gehe(pos - 1));
     el('#prVor').addEventListener('click', () => (pos < lauf.ids.length - 1 ? gehe(pos + 1) : abgeben(false)));
     el('#prAbgeben').addEventListener('click', () => abgeben(false));
-    if (lauf.ende) {
+    el('#prPause').addEventListener('click', () => {
+      lauf.antworten[lauf.ids[pos]] = el('#prAntwort').value; speichere();
+      stoppeUhr(); pausiere(slot); fertig = true; zeigePause(app, slot);
+    });
+    if (lauf.timer) {
       const uhrEl = el('#prUhr');
       const lauft = () => {
         const rest = (lauf.ende - Date.now()) / 1000;
@@ -274,7 +315,27 @@
       tick = setInterval(lauft, 1000);
     }
     aufgabe();
-    return () => { if (el('#prAntwort')) { lauf.antworten[lauf.ids[pos]] = el('#prAntwort').value; speichere(); } stoppeUhr(); };
+    /* Wer den Simulator verlässt oder die Seite schließt, unterbricht automatisch – die Zeit läuft nicht weiter. */
+    const weg = () => { if (fertig) return; if (el('#prAntwort')) { lauf.antworten[lauf.ids[pos]] = el('#prAntwort').value; speichere(); } pausiere(slot); };
+    window.addEventListener('pagehide', weg);
+    return () => { window.removeEventListener('pagehide', weg); stoppeUhr(); weg(); fertig = true; };
+  }
+
+  /* Pausenbildschirm: Aufgaben sind verdeckt, die Uhr steht. */
+  function zeigePause(app, slot) {
+    const l = lade()[slot];
+    const fertig = l.ids.filter((id) => (l.antworten[id] || '').trim()).length;
+    app.innerHTML = `
+      <a class="zurueck" href="#pruefung${slot === 'einzel' ? '-aufgaben' : ''}">← ${slot === 'einzel' ? 'Zur Aufgabenliste' : 'Zum Prüfungssimulator'}</a>
+      <section class="glas block pr-pause">
+        <div class="pr-pause-icon">⏸</div>
+        <h1>Unterbrochen</h1>
+        <p>${l.timer ? `Die Uhr steht. Restzeit: <b class="pr-uhr">${uhr(restSek(l))}</b>` : 'Deine Antworten sind gespeichert.'}</p>
+        <p class="klein">${esc(ART[l.art])} · ${fertig} von ${l.ids.length} ${l.ids.length === 1 ? 'Aufgabe' : 'Aufgaben'} bearbeitet. Die Aufgaben sind während der Pause verdeckt. Du kannst die Seite auch schließen und später hier weitermachen.</p>
+        <div class="pr-knoepfe"><button class="btn primaer gross" id="prFort">▶ Weiter</button><a class="btn" href="#pruefung${slot === 'einzel' ? '-aufgaben' : ''}">Später weitermachen</a></div>
+      </section>`;
+    app.querySelector('#prFort').addEventListener('click', () => { setzeFort(slot); const weg = zeigeLauf(app, slot); if (window.App) App.setzeAufraeumen(weg); window.scrollTo(0, 0); });
+    return null;
   }
 
   /* ---------------- Auswertung ---------------- */
@@ -282,14 +343,15 @@
     const h = haken[q.id] || [];
     return q.schema.reduce((n, [p], i) => n + (h[i] ? p : 0), 0);
   }
-  function zeigeAuswertung(app) {
+  function zeigeAuswertung(app, slot) {
     const s = lade();
-    const lauf = s.lauf;
+    const lauf = s[slot];
+    const einzeln = slot === 'einzel';
     const fragen = lauf.ids.map(frage).filter(Boolean);
     const bereiche = [...new Set(fragen.map((q) => q.bereich))];
     app.innerHTML = `
-      <a class="zurueck" href="#pruefung">← Zum Prüfungssimulator</a>
-      <header class="lf-kopf"><span class="lf-nr pr-marke">Auswertung</span><h1>${esc(ART[lauf.art])}: deine Auswertung</h1>
+      <a class="zurueck" href="#pruefung${einzeln ? '-aufgaben' : ''}">← ${einzeln ? 'Zur Aufgabenliste' : 'Zum Prüfungssimulator'}</a>
+      <header class="lf-kopf"><span class="lf-nr pr-marke">Auswertung</span><h1>${einzeln ? 'Einzelaufgabe' : esc(ART[lauf.art])}: deine Auswertung</h1>
         <p>Vergleiche deine Antwort mit der Musterlösung und hake ehrlich ab, was du richtig hast. Daraus ergeben sich Punkte und Note – so wie die Korrektur der Kammer.</p></header>
       <section class="glas block pr-ergebnis" id="prErgebnis"></section>
       ${fragen.map((q, i) => `
@@ -306,10 +368,10 @@
           <li><label><input type="checkbox" data-q="${esc(q.id)}" data-j="${j}" ${(lauf.haken[q.id] || [])[j] ? 'checked' : ''}><span>${esc(k)}</span><b>${String(p).replace('.', ',')} P.</b></label></li>`).join('')}</ul>
         <p class="klein">Quelle: ${esc(q.quelle)}</p>
       </article>`).join('')}
-      <div class="pr-knoepfe"><button class="btn primaer gross" id="prFertig">✓ Auswertung abschließen</button><a class="btn" href="#pruefung">Später weitermachen</a></div>`;
+      <div class="pr-knoepfe"><button class="btn primaer gross" id="prFertig">✓ Auswertung abschließen</button>${einzeln ? '<button class="btn" id="prNaechste">✓ Abschließen und nächste Aufgabe</button>' : ''}<a class="btn" href="#pruefung${einzeln ? '-aufgaben' : ''}">Später weitermachen</a></div>`;
     const el = (sel) => app.querySelector(sel);
     function rechne() {
-      const st = lade(); const l = st.lauf;
+      const st = lade(); const l = st[slot];
       const proBereich = bereiche.map((b) => {
         const fr = fragen.filter((q) => q.bereich === b);
         const max = fr.reduce((n, q) => n + q.punkte, 0);
@@ -322,10 +384,10 @@
       const [n, wort] = note(prozent);
       fragen.forEach((q) => { const c = app.querySelector(`[data-qp="${q.id}"]`); if (c) c.textContent = `${String(punkteVon(q, l.haken)).replace('.', ',')} / ${String(q.punkte).replace('.', ',')} P.`; });
       const fmt = (x) => (Math.round(x * 10) / 10).toLocaleString('de-DE');
-      const zeit = l.abgegeben ? Math.round((l.abgegeben - l.start) / 60000) : null;
+      const zeit = l.abgegeben ? Math.round((l.abgegeben - l.start - (l.pausenMs || 0)) / 60000) : null;
       let bestehen = '';
       const ap = ['ap-stb', 'ap-fibu', 'ap-wiso'];
-      if (l.art === 'ap' && ap.every((b) => bereiche.includes(b)) && l.ids.length === F().filter((q) => ap.includes(q.bereich)).length) {
+      if (!einzeln && l.art === 'ap' && ap.every((b) => bereiche.includes(b)) && l.ids.length === F().filter((q) => ap.includes(q.bereich)).length) {
         const g = { 'ap-stb': 35, 'ap-fibu': 30, 'ap-wiso': 10 };
         const pb = Object.fromEntries(proBereich.map((x) => [x.b, x.prozent]));
         const schnitt = ap.reduce((sum, b) => sum + pb[b] * g[b], 0) / 75;
@@ -335,7 +397,7 @@
       el('#prErgebnis').innerHTML = `
         <div class="pr-gesamt"><div class="pr-notenkreis n${n}"><b>${n}</b><span>${wort}</span></div>
           <div><h2>${fmt(erreicht)} von ${fmt(max)} Punkten · ${fmt(prozent)} %</h2>
-          <p class="klein">${fragen.length} Aufgaben${zeit !== null ? ` · bearbeitet in ${zeit} Min.` : ''}${l.ende ? ` · Zeitvorgabe ${l.minuten} Min.` : ''}</p></div></div>
+          <p class="klein">${fragen.length} Aufgaben${zeit !== null ? ` · bearbeitet in ${zeit} Min.` : ''}${l.timer ? ` · Zeitvorgabe ${l.minuten} Min.` : ''}</p></div></div>
         <ul class="pr-bereichsnoten">${proBereich.map((x) => { const [nb] = note(x.prozent); return `<li><span>${esc(kurzName(x.b))}</span><span>${fmt(x.erreicht)} / ${fmt(x.max)} P.</span><span class="chip pr-note n${nb}">Note ${nb}</span></li>`; }).join('')}</ul>
         ${bestehen}`;
       return { erreicht, max, n };
@@ -343,30 +405,128 @@
     app.addEventListener('change', (e) => {
       const c = e.target.closest('[data-q]');
       if (!c) return;
-      const st = lade(); if (!st.lauf) return;
-      const h = st.lauf.haken[c.dataset.q] || [];
+      const st = lade(); if (!st[slot]) return;
+      const h = st[slot].haken[c.dataset.q] || [];
       h[Number(c.dataset.j)] = c.checked;
-      st.lauf.haken[c.dataset.q] = h;
+      st[slot].haken[c.dataset.q] = h;
       sichere(st); rechne();
-    });
-    el('#prFertig').addEventListener('click', () => {
+    }, { signal: ansicht.signal });
+    function abschliessen(weiter) {
       const r = rechne();
       const st = lade();
-      const titel = ART[st.lauf.art] + ' · ' + bereiche.map(kurzName).join(', ');
+      const l = st[slot];
+      const titel = einzeln ? 'Einzelaufgabe · ' + fragen[0].thema : ART[l.art] + ' · ' + bereiche.map(kurzName).join(', ');
       st.verlauf.push({ datum: Date.now(), titel, punkte: Math.round(r.erreicht * 10) / 10, max: r.max, note: r.n });
       st.verlauf = st.verlauf.slice(-50);
-      st.lauf = null;
+      fragen.forEach((q) => { const p = punkteVon(q, l.haken); const alt = st.erledigt[q.id]; if (!alt || p >= alt.punkte) st.erledigt[q.id] = { punkte: p, max: q.punkte, datum: Date.now() }; });
+      st[slot] = null;
+      if (weiter) {
+        const offen = F().filter((q) => !q.gespraech && q.bereich === fragen[0].bereich && !st.erledigt[q.id]);
+        const pool = offen.length ? offen : F().filter((q) => !q.gespraech && q.bereich === fragen[0].bereich && q.id !== fragen[0].id);
+        const naechste = mischen(pool)[0];
+        if (naechste) st.einzel = neuerLauf(naechste.pruefung, [naechste.id], l.timer);
+      }
       sichere(st);
-      if (window.Spiel) { Spiel.xp(10 + fragen.length * 2, 'pruefung'); if (r.n <= 2) Spiel.konfetti(); }
-      toast(`Gespeichert: Note ${r.n}`);
-      location.hash = '#pruefung';
-    });
+      if (window.Spiel) { Spiel.xp(einzeln ? 4 : 10 + fragen.length * 2, 'pruefung'); if (r.n <= 2) Spiel.konfetti(); }
+      toast(`Gespeichert: ${einzeln ? Math.round(r.erreicht * 10) / 10 + ' von ' + r.max + ' Punkten' : 'Note ' + r.n}`);
+      location.hash = weiter && st.einzel ? '#pruefung-einzel' : einzeln ? '#pruefung-aufgaben' : '#pruefung';
+    }
+    el('#prFertig').addEventListener('click', () => abschliessen(false));
+    if (el('#prNaechste')) el('#prNaechste').addEventListener('click', () => abschliessen(true));
     rechne();
+    return null;
+  }
+
+  /* ---------------- Umschalter: ganze Prüfung / einzelne Aufgaben ---------------- */
+  function modusHtml(aktiv) {
+    return `<nav class="pr-modus glas" aria-label="Übungsart">
+      <a href="#pruefung" class="${aktiv === 'ganz' ? 'aktiv' : ''}"><span>📝</span>Ganze Prüfung</a>
+      <a href="#pruefung-aufgaben" class="${aktiv === 'einzeln' ? 'aktiv' : ''}"><span>🎯</span>Einzelne Aufgaben</a></nav>`;
+  }
+
+  /* ---------------- Einzelne Aufgaben ---------------- */
+  let filter = { art: 'alle', bereich: 'alle', suche: '', uhr: true };
+  function zeigeAufgaben(app) {
+    const s = lade();
+    const e = s.einzel;
+    app.innerHTML = `
+      <a class="zurueck" href="#start">← Zur Übersicht</a>
+      <header class="lf-kopf"><span class="lf-nr pr-marke">Prüfung</span><h1>Einzelne Aufgaben</h1>
+        <p>Such dir eine Aufgabe aus und bearbeite nur diese – mit eigener Zeitvorgabe, Musterlösung und Punkteschema. Ideal für zwischendurch.</p></header>
+      ${modusHtml('einzeln')}
+      ${e ? `<section class="glas block pr-weiter"><b>Offene Aufgabe: ${esc((frage(e.ids[0]) || {}).thema || '')}</b>${e.abgegeben ? ' (abgegeben)' : e.pausiert ? ' (unterbrochen)' : ''}
+        <div class="pr-knoepfe"><a class="btn primaer" href="#pruefung-einzel${e.abgegeben ? '-auswertung' : ''}">${e.abgegeben ? 'Zur Auswertung' : e.pausiert ? '▶ Fortsetzen' : 'Weiter schreiben'}</a></div></section>` : ''}
+      <section class="glas block pr-filter">
+        <div class="pr-zeile">
+          <select id="prfArt" aria-label="Prüfung"><option value="alle">Beide Prüfungen</option><option value="zp">Zwischenprüfung</option><option value="ap">Abschlussprüfung</option></select>
+          <select id="prfBereich" aria-label="Bereich"></select>
+          <input id="prfSuche" type="search" placeholder="Suchen, z. B. Säumniszuschlag" aria-label="Aufgaben durchsuchen">
+        </div>
+        <div class="pr-zeile">
+          <label class="pr-haken"><input type="checkbox" id="prfUhr" ${filter.uhr ? 'checked' : ''}> Mit Zeitlimit</label>
+          <button class="btn primaer" id="prfZufall">🎲 Zufällige Aufgabe</button>
+          <span class="klein" id="prfZahl"></span>
+        </div>
+      </section>
+      <div id="prfListe"></div>`;
+    const el = (sel) => app.querySelector(sel);
+    el('#prfArt').value = filter.art;
+    el('#prfSuche').value = filter.suche;
+    function bereichsOptionen() {
+      const bs = Object.keys(B()).filter((b) => b !== 'ap-ber' && (filter.art === 'alle' || B()[b].pruefung === filter.art));
+      if (filter.bereich !== 'alle' && !bs.includes(filter.bereich)) filter.bereich = 'alle';
+      el('#prfBereich').innerHTML = '<option value="alle">Alle Bereiche</option>' + bs.map((b) => `<option value="${esc(b)}">${esc((B()[b].pruefung === 'zp' ? 'ZP · ' : 'AP · ') + kurzName(b))}</option>`).join('');
+      el('#prfBereich').value = filter.bereich;
+    }
+    function treffer() {
+      const w = filter.suche.toLowerCase().trim();
+      return F().filter((q) => !q.gespraech
+        && (filter.art === 'alle' || q.pruefung === filter.art)
+        && (filter.bereich === 'alle' || q.bereich === filter.bereich)
+        && (!w || (q.thema + ' ' + q.sachverhalt + ' ' + q.aufgabe).toLowerCase().includes(w)));
+    }
+    function liste() {
+      const st = lade();
+      const fr = treffer();
+      const fertig = fr.filter((q) => st.erledigt[q.id]).length;
+      el('#prfZahl').textContent = `${fr.length} ${fr.length === 1 ? 'Aufgabe' : 'Aufgaben'} · ${fertig} schon bearbeitet`;
+      const gruppen = [...new Set(fr.map((q) => q.bereich))];
+      el('#prfListe').innerHTML = !fr.length ? '<div class="glas leer">Keine Aufgabe passt zu deiner Auswahl.</div>' : gruppen.map((b) => `
+        <section class="abschnitt"><div class="abschnitt-kopf"><h2>${esc(kurzName(b))}</h2><span class="klein">${esc(ART[B()[b].pruefung])}</span></div>
+        <div class="pr-aufgabenliste">${fr.filter((q) => q.bereich === b).map((q) => {
+          const er = st.erledigt[q.id];
+          const [n] = er ? note((er.punkte / er.max) * 100) : [0];
+          return `<button class="glas pr-einzel-karte" data-einzel="${esc(q.id)}">
+            <span class="pr-einzel-titel"><b>${esc(q.thema)}</b><small>${String(q.punkte).replace('.', ',')} Punkte · ≈ ${Math.max(1, Math.round(minutenFuer(q)))} Min.</small></span>
+            ${er ? `<span class="chip pr-note n${n}">✓ ${String(er.punkte).replace('.', ',')}/${er.max}</span>` : '<span class="pr-pfeil">→</span>'}</button>`;
+        }).join('')}</div></section>`).join('');
+    }
+    function starte(id) {
+      const q = frage(id);
+      const st = lade();
+      if (st.einzel && !st.einzel.abgegeben && st.einzel.ids[0] !== id && !confirm('Deine offene Einzelaufgabe wird dabei verworfen. Trotzdem starten?')) return;
+      if (!(st.einzel && st.einzel.ids[0] === id && !st.einzel.abgegeben)) st.einzel = neuerLauf(q.pruefung, [id], filter.uhr);
+      sichere(st);
+      location.hash = '#pruefung-einzel';
+    }
+    el('#prfArt').addEventListener('change', () => { filter.art = el('#prfArt').value; bereichsOptionen(); liste(); });
+    el('#prfBereich').addEventListener('change', () => { filter.bereich = el('#prfBereich').value; liste(); });
+    el('#prfSuche').addEventListener('input', () => { filter.suche = el('#prfSuche').value; liste(); });
+    el('#prfUhr').addEventListener('change', () => { filter.uhr = el('#prfUhr').checked; });
+    el('#prfZufall').addEventListener('click', () => {
+      const st = lade(); const fr = treffer();
+      const offen = fr.filter((q) => !st.erledigt[q.id]);
+      const q = mischen(offen.length ? offen : fr)[0];
+      if (q) starte(q.id); else toast('Keine Aufgabe passt zu deiner Auswahl.');
+    });
+    el('#prfListe').addEventListener('click', (ev) => { const k = ev.target.closest('[data-einzel]'); if (k) starte(k.dataset.einzel); });
+    bereichsOptionen(); liste();
     return null;
   }
 
   /* ---------------- Gesprächssimulation ---------------- */
   function zeigeGespraech(app) {
+    const signal = neueAnsicht();
     const s = lade();
     const g = s.gespraech;
     const q = frage(g.id);
@@ -421,7 +581,7 @@
       app.addEventListener('change', (e) => {
         const c = e.target.closest('[data-j]'); if (!c) return;
         const st = lade(); st.gespraech.haken = st.gespraech.haken || {}; st.gespraech.haken[c.dataset.j] = c.checked; sichere(st); rechne();
-      });
+      }, { signal });
       rechne();
       el('#prGFertig').addEventListener('click', () => {
         const pkt = rechne();
@@ -440,10 +600,11 @@
   function startKachel() {
     const s = lade();
     const offen = s.lauf && !s.lauf.abgegeben;
+    const pause = offen && s.lauf.pausiert;
     const letzte = s.verlauf[s.verlauf.length - 1];
     return `<a class="glas pr-kachel" href="#pruefung${offen ? '-lauf' : ''}">
       <span class="pr-kachel-icon">📝</span>
-      <span><b>Prüfungssimulator</b><small>${offen ? 'Simulation offen – weiterschreiben' : `Zwischen- und Abschlussprüfung · ${F().filter((q) => !q.gespraech).length} Aufgaben + Gespräch`}${letzte ? ` · zuletzt Note ${letzte.note}` : ''}</small></span>
+      <span><b>Prüfungssimulator</b><small>${pause ? 'Simulation unterbrochen – fortsetzen' : offen ? 'Simulation offen – weiterschreiben' : `Ganze Prüfung oder einzelne Aufgaben · ${F().filter((q) => !q.gespraech).length} Aufgaben + Gespräch`}${letzte ? ` · zuletzt Note ${letzte.note}` : ''}</small></span>
       <span class="pr-pfeil">→</span></a>`;
   }
 
