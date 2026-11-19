@@ -930,3 +930,20 @@ li.unter { margin-left: 18px; list-style: circle; }
 .pl-status.warn { color: #b45309; }
 .wo .pl-status { margin: -4px 0 8px; }
 .wo-aktion { display: flex; align-items: center; gap: 10px; }
+
+/* ---------------- Musterlösungen auf der Themenseite ---------------- */
+.loesungen { display: grid; gap: 8px; }
+.loesung { border-radius: 16px; padding: 0; overflow: hidden; }
+.loesung > summary { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 14px 16px; cursor: pointer; list-style: none; }
+.loesung > summary::-webkit-details-marker { display: none; }
+.loesung > summary::after { content: '›'; font-size: 1.4rem; color: var(--leise); transition: transform 0.2s; }
+.loesung[open] > summary::after { transform: rotate(90deg); }
+.loesung > summary .klein { margin: 0 0 0 auto; white-space: nowrap; }
+.loesung[open] > summary .klein { visibility: hidden; }
+.loesung-aufgabe { margin: 0 16px; padding: 12px 14px; border-radius: 12px; background: #fff7ed; border-left: 4px solid #f59e0b; line-height: 1.55; }
+.loesung-aufgabe p, .loesung-text p { margin: 4px 0; }
+.loesung-zeigen { margin: 10px 16px 16px; }
+.loesung-zeigen > summary { cursor: pointer; font-weight: 700; color: var(--akzent); padding: 8px 0; }
+.loesung-text { padding: 12px 14px; border-radius: 12px; background: #ecfdf5; border-left: 4px solid #16a34a; line-height: 1.55; overflow-wrap: anywhere; }
+.loesung-text ul { margin: 4px 0; padding-left: 20px; }
+.loesung-hinweis { margin: 10px 0 0; padding: 10px 12px; border-radius: 12px; background: #eef2ff; font-size: 0.9rem; }

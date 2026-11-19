@@ -959,3 +959,219 @@ D: Instanz = erste
 A: wahl: Ja | *Nein
 S: Vor dem Arbeitsgericht in der ersten Instanz darf man sich selbst vertreten.
 R: § 11 ArbGG
+
+# ---------------- Lernfeld 10: Jahresabschlüsse erstellen und abschließen ----------------
+@ lf10 | Grundlagen des Jahresabschlusses
+F: Herr Brandt betreibt als Einzelkaufmann einen Fahrradladen. In den letzten zwei Jahren hatte er jeweils 650.000 Euro Umsatz und 70.000 Euro Gewinn. Muss er nach dem Handelsgesetzbuch eine Bilanz aufstellen?
+D: Umsatz = 650.000 €; Gewinn = 70.000 €; Grenzen = 800.000 € und 80.000 €
+A: wahl: Ja, jeder Kaufmann muss bilanzieren | *Nein, er ist befreit und darf eine Einnahmenüberschussrechnung machen
+S: Einzelkaufleute sind befreit, wenn sie an zwei Stichtagen hintereinander höchstens 800.000 Euro Umsatz und 80.000 Euro Gewinn haben.
+S: Herr Brandt liegt in beiden Jahren unter beiden Grenzen. | Befreiung = ja
+R: § 241a HGB; § 141 AO
+
+@ lf10 | Grundlagen des Jahresabschlusses
+F: Die Brandt GmbH ist eine kleine Kapitalgesellschaft. Welche Teile gehören zu ihrem Jahresabschluss?
+D: Rechtsform = GmbH; Größe = klein
+A: wahl: Bilanz und Gewinn- und Verlustrechnung | *Bilanz, Gewinn- und Verlustrechnung und Anhang | Bilanz, Anhang und Lagebericht
+S: Bei Kapitalgesellschaften kommt zur Bilanz und zur Gewinn- und Verlustrechnung der Anhang dazu.
+S: Einen Lagebericht brauchen nur mittelgroße und große Gesellschaften, und er gehört nicht zum Jahresabschluss.
+R: § 264 Abs. 1 HGB; § 242 HGB
+
+@ lf10 | Grundlagen des Jahresabschlusses
+F: Der Gewinn laut Handelsbilanz beträgt 80.000 Euro. Darin sind 1.200 Euro nicht abziehbare Geschenke und 450 Euro nicht abziehbare Bewirtungskosten als Aufwand gebucht. Wie hoch ist der steuerliche Gewinn?
+D: Gewinn Handelsbilanz = 80.000 €; Geschenke = 1.200 €; Bewirtung = 450 €
+A: 81650 €
+S: Nicht abziehbare Betriebsausgaben dürfen den steuerlichen Gewinn nicht mindern.
+S: Sie werden deshalb außerhalb der Bilanz wieder hinzugerechnet. | 80.000 € + 1.200 € + 450 € = 81.650 €
+R: § 4 Abs. 5 EStG; § 5 Abs. 1 EStG
+
+@ lf10 | Ansatz- und Bewertungsgrundsätze
+F: Eine Palette Wein wurde für 8.000 Euro eingekauft. Am Bilanzstichtag ist sie nachweislich 30.000 Euro wert. Mit welchem Wert steht sie in der Bilanz?
+D: Anschaffungskosten = 8.000 €; Wert am Stichtag = 30.000 €
+A: 8000 €
+S: Vermögensgegenstände dürfen höchstens mit ihren Anschaffungskosten angesetzt werden.
+S: Der Gewinn aus der Wertsteigerung ist erst verwirklicht, wenn der Wein verkauft ist. | Ansatz = 8.000 €
+R: § 253 Abs. 1 HGB; § 252 Abs. 1 Nr. 4 HGB
+
+@ lf10 | Ansatz- und Bewertungsgrundsätze
+F: Waren im Lager haben 10.000 Euro gekostet. Am Bilanzstichtag können sie nur noch für 5.000 Euro verkauft werden. Mit welchem Wert stehen sie in der Handelsbilanz?
+D: Anschaffungskosten = 10.000 €; Wert am Stichtag = 5.000 €
+A: 5000 €
+S: Für das Umlaufvermögen gilt das strenge Niederstwertprinzip.
+S: Der drohende Verlust muss sofort gezeigt werden. | Abschreibung = 5.000 €
+R: § 253 Abs. 4 HGB; § 252 Abs. 1 Nr. 4 HGB
+
+@ lf10 | Ansatz- und Bewertungsgrundsätze
+F: Ein Unternehmer nutzt seinen Pkw zu 30 Prozent betrieblich und zu 70 Prozent privat. Zu welchem Vermögen gehört der Pkw?
+D: betriebliche Nutzung = 30 %; private Nutzung = 70 %
+A: wahl: Notwendiges Betriebsvermögen | *Gewillkürtes Betriebsvermögen | Notwendiges Privatvermögen
+S: Bei 10 bis 50 Prozent betrieblicher Nutzung darf der Unternehmer den Pkw dem Betrieb zuordnen.
+S: Das nennt man gewillkürtes Betriebsvermögen. | Nutzung = 30 %
+R: R 4.2 Abs. 1 EStR
+
+@ lf10 | Anschaffungskosten
+F: Eine Maschine kostet 50.000 Euro netto. Der Händler gibt 5 Prozent Rabatt. Für Fracht kommen 1.000 Euro und für die Montage 500 Euro dazu. Bei Zahlung werden 2 Prozent Skonto vom Preis nach Rabatt abgezogen. Wie hoch sind die Anschaffungskosten?
+D: Listenpreis = 50.000 €; Rabatt = 5 %; Fracht = 1.000 €; Montage = 500 €; Skonto = 2 %
+A: 48050 €
+S: Der Rabatt mindert den Preis sofort. | 50.000 € − 2.500 € = 47.500 €
+S: Fracht und Montage sind Anschaffungsnebenkosten. | 47.500 € + 1.500 € = 49.000 €
+S: Der Skonto wird vom Preis nach Rabatt berechnet und abgezogen. | 49.000 € − 950 € = 48.050 €
+R: § 255 Abs. 1 HGB; § 17 Abs. 1 UStG
+
+@ lf10 | Anschaffungskosten
+F: Ein Unternehmer kauft ein unbebautes Grundstück für 200.000 Euro. Dazu kommen 5 Prozent Grunderwerbsteuer, 2.000 Euro Notar für den Kaufvertrag, 400 Euro Grundbuch und 600 Euro Notar für die Grundschuld des Kredits. Wie hoch sind die Anschaffungskosten?
+D: Kaufpreis = 200.000 €; Grunderwerbsteuer = 5 %; Notar Kaufvertrag = 2.000 €; Grundbuch = 400 €; Notar Grundschuld = 600 €
+A: 212400 €
+S: Die Grunderwerbsteuer beträgt 5 Prozent vom Kaufpreis. | 200.000 € × 5 % = 10.000 €
+S: Notar für den Kaufvertrag und Grundbuch gehören dazu, die Grundschuld ist Finanzierung und damit Aufwand. | 200.000 € + 10.000 € + 2.000 € + 400 € = 212.400 €
+R: § 255 Abs. 1 HGB; § 255 Abs. 3 HGB
+
+@ lf10 | Anschaffungskosten
+F: Ein bebautes Grundstück kostet einschließlich aller Nebenkosten 270.000 Euro. 30 Prozent entfallen auf Grund und Boden. Wie hoch sind die Anschaffungskosten des Gebäudes?
+D: Anschaffungskosten gesamt = 270.000 €; Anteil Grund und Boden = 30 %
+A: 189000 €
+S: Die Anschaffungskosten werden auf Grund und Boden und Gebäude aufgeteilt.
+S: Auf das Gebäude entfallen 70 Prozent. | 270.000 € × 70 % = 189.000 €
+R: § 255 Abs. 1 HGB; § 7 Abs. 4 EStG
+
+@ lf10 | Anschaffungskosten
+F: Ein Laptop kostet 790 Euro netto. Für die Lieferung zahlt der Unternehmer 20 Euro netto. Darf er den Laptop als geringwertiges Wirtschaftsgut sofort voll abschreiben?
+D: Kaufpreis = 790 €; Lieferung = 20 €; GWG-Grenze = 800 €
+A: wahl: Ja, der Kaufpreis liegt unter 800 Euro | *Nein, die Anschaffungskosten betragen 810 Euro
+S: Zur Grenze von 800 Euro zählen alle Anschaffungskosten, also auch die Lieferung. | 790 € + 20 € = 810 €
+S: 810 Euro liegen über der Grenze. Möglich sind der Sammelposten oder die normale Abschreibung.
+R: § 6 Abs. 2 EStG; § 6 Abs. 2a EStG
+
+@ lf10 | Anschaffungskosten
+F: Ein Pkw kostet laut Rechnung 40.000 Euro netto. Dazu kommen Überführung 900 Euro, Zulassung 80 Euro, eine Tankfüllung 70 Euro und die Kfz-Steuer von 200 Euro. Wie hoch sind die Anschaffungskosten?
+D: Kaufpreis = 40.000 €; Überführung = 900 €; Zulassung = 80 €; Tankfüllung = 70 €; Kfz-Steuer = 200 €
+A: 40980 €
+S: Überführung und Zulassung machen den Pkw betriebsbereit und gehören dazu. | 40.000 € + 900 € + 80 € = 40.980 €
+S: Tankfüllung und Kfz-Steuer sind laufende Kosten und sofort Aufwand.
+R: § 255 Abs. 1 HGB; § 9b Abs. 1 EStG
+
+@ lf10 | Herstellungskosten
+F: Für eine selbst gebaute Maschine fallen an: Material 20.000 Euro, Materialgemeinkosten 10 Prozent, Fertigungslöhne 30.000 Euro, Fertigungsgemeinkosten 150 Prozent und Konstruktionspläne 5.000 Euro. Wie hoch ist die Wertuntergrenze der Herstellungskosten?
+D: Material = 20.000 €; Materialgemeinkosten = 10 %; Löhne = 30.000 €; Fertigungsgemeinkosten = 150 %; Pläne = 5.000 €
+A: 102000 €
+S: Material mit Materialgemeinkosten. | 20.000 € + 2.000 € = 22.000 €
+S: Fertigungslöhne mit Fertigungsgemeinkosten. | 30.000 € + 45.000 € = 75.000 €
+S: Dazu die Sondereinzelkosten der Fertigung. | 22.000 € + 75.000 € + 5.000 € = 102.000 €
+R: § 255 Abs. 2 Satz 2 HGB; § 6 Abs. 1 Nr. 1b EStG
+
+@ lf10 | Herstellungskosten
+F: Die Wertuntergrenze einer selbst gebauten Maschine beträgt 102.000 Euro. Die allgemeinen Verwaltungskosten werden mit 8 Prozent zugeschlagen. Wie hoch ist die Wertobergrenze?
+D: Wertuntergrenze = 102.000 €; Verwaltung = 8 %
+A: 110160 €
+S: Die allgemeinen Verwaltungskosten sind ein Wahlrecht und führen zur Obergrenze. | 102.000 € × 8 % = 8.160 €
+S: Vertriebskosten dürften nie dazu. | 102.000 € + 8.160 € = 110.160 €
+R: § 255 Abs. 2 Satz 3 HGB
+
+@ lf10 | Herstellungskosten
+F: Dürfen Vertriebskosten in die Herstellungskosten einer selbst gebauten Anlage eingerechnet werden?
+D: Vertriebskosten = 3.000 €
+A: wahl: Ja, das ist Pflicht | Ja, das ist ein Wahlrecht | *Nein, das ist verboten
+S: Vertriebskosten und Forschungskosten dürfen nie in die Herstellungskosten.
+R: § 255 Abs. 2 Satz 4 HGB
+
+@ lf10 | Herstellungskosten
+F: In der Handelsbilanz wurden die allgemeinen Verwaltungskosten in die Herstellungskosten eingerechnet. Was gilt für die Steuerbilanz?
+D: Handelsbilanz = mit Verwaltungskosten
+A: wahl: Man darf sie weglassen | *Man muss sie ebenfalls einrechnen | Sie sind steuerlich verboten
+S: Das steuerliche Wahlrecht muss genauso ausgeübt werden wie in der Handelsbilanz.
+S: Man nennt das Übereinstimmungsvorbehalt.
+R: § 6 Abs. 1 Nr. 1b EStG
+
+@ lf10 | Herstellungskosten
+F: Eine selbst gebaute Werkhalle ist am Bilanzstichtag noch nicht fertig. Die bisherigen Herstellungskosten betragen 150.000 Euro. Auf welches Konto wird gebucht?
+D: Herstellungskosten bisher = 150.000 €; Fertigstellung = im neuen Jahr
+A: wahl: Gebäude | *Anlagen im Bau | Materialaufwand
+S: Nicht fertige, selbst erstellte Anlagen werden als Anlagen im Bau aktiviert.
+S: Gegenkonto sind die anderen aktivierten Eigenleistungen. Abgeschrieben wird erst ab Fertigstellung.
+R: § 247 Abs. 2 HGB; § 255 Abs. 2 HGB
+
+@ lf10 | Abschreibung, Teilwert und Zuschreibung
+F: Eine Maschine wird am 1. April 2025 für 60.000 Euro angeschafft. Die Nutzungsdauer beträgt 10 Jahre. Wie hoch ist die lineare Abschreibung für 2025?
+D: Anschaffungskosten = 60.000 €; Nutzungsdauer = 10 Jahre; Monate 2025 = 9
+A: 4500 €
+S: Die Jahres-Abschreibung beträgt ein Zehntel. | 60.000 € : 10 = 6.000 €
+S: Im ersten Jahr wird nur für 9 Monate abgeschrieben. | 6.000 € × 9 : 12 = 4.500 €
+R: § 7 Abs. 1 EStG; § 253 Abs. 3 HGB
+
+@ lf10 | Abschreibung, Teilwert und Zuschreibung
+F: Eine Maschine hat am 31. Dezember 2025 einen vorläufigen Buchwert von 24.000 Euro. Die Restnutzungsdauer beträgt 4 Jahre, die jährliche Abschreibung 6.000 Euro. Der Teilwert liegt bei 10.000 Euro. Ist die Wertminderung dauerhaft?
+D: Buchwert = 24.000 €; Restnutzungsdauer = 4 Jahre; Teilwert = 10.000 €
+A: wahl: *Ja, sie ist dauerhaft | Nein, sie ist vorübergehend
+S: Die halbe Restnutzungsdauer sind 2 Jahre. | 24.000 € − 2 × 6.000 € = 12.000 €
+S: Der Teilwert von 10.000 Euro liegt darunter, also ist die Wertminderung dauerhaft.
+R: § 253 Abs. 3 Satz 5 HGB; § 6 Abs. 1 Nr. 1 Satz 2 EStG
+
+@ lf10 | Abschreibung, Teilwert und Zuschreibung
+F: Der vorläufige Buchwert einer Maschine beträgt 24.000 Euro, der Teilwert dauerhaft 10.000 Euro. Wie hoch ist die außerplanmäßige Abschreibung?
+D: Buchwert = 24.000 €; Teilwert = 10.000 €
+A: 14000 €
+S: Bei dauerhafter Wertminderung wird auf den niedrigeren Wert abgeschrieben. | 24.000 € − 10.000 € = 14.000 €
+R: § 253 Abs. 3 Satz 5 HGB; § 6 Abs. 1 Nr. 1 Satz 2 EStG
+
+@ lf10 | Abschreibung, Teilwert und Zuschreibung
+F: Nach einer Teilwertabschreibung steht eine Maschine mit 10.000 Euro in der Bilanz. Die Restnutzungsdauer beträgt 4 Jahre. Wie hoch ist die Abschreibung im nächsten Jahr?
+D: Buchwert = 10.000 €; Restnutzungsdauer = 4 Jahre
+A: 2500 €
+S: Nach einer Teilwertabschreibung wird der neue Buchwert auf die Restnutzungsdauer verteilt. | 10.000 € : 4 = 2.500 €
+R: § 11c Abs. 2 EStDV; § 7 Abs. 1 EStG
+
+@ lf10 | Abschreibung, Teilwert und Zuschreibung
+F: Eine Maschine steht nach einer früheren Teilwertabschreibung mit 9.000 Euro in der Bilanz. Ohne die Teilwertabschreibung hätte sie einen Buchwert von 20.000 Euro. Jetzt ist sie wieder 25.000 Euro wert. Wie hoch ist die Zuschreibung?
+D: Buchwert = 9.000 €; fortgeführte Anschaffungskosten = 20.000 €; Wert = 25.000 €
+A: 11000 €
+S: Zugeschrieben wird höchstens bis zu den fortgeführten Anschaffungskosten. | Obergrenze = 20.000 €
+S: Der höhere Marktwert spielt keine Rolle. | 20.000 € − 9.000 € = 11.000 €
+R: § 253 Abs. 5 HGB; § 6 Abs. 1 Nr. 1 Satz 4 EStG
+
+@ lf10 | Abschreibung, Teilwert und Zuschreibung
+F: Der Wert einer Maschine sinkt am Bilanzstichtag nur vorübergehend unter den Buchwert. Was gilt in der Handelsbilanz?
+D: Wertminderung = vorübergehend; Vermögen = Sachanlage
+A: wahl: Abschreibungspflicht | Abschreibungswahlrecht | *Abschreibungsverbot
+S: Beim Sachanlagevermögen darf nur bei dauerhafter Wertminderung außerplanmäßig abgeschrieben werden.
+S: Ein Wahlrecht bei vorübergehender Wertminderung gibt es nur für Finanzanlagen.
+R: § 253 Abs. 3 Satz 5 HGB; § 253 Abs. 3 Satz 6 HGB
+
+@ lf10 | Zeitliche Abgrenzung
+F: Ein Unternehmer zahlt am 1. Oktober 2025 die Versicherung für 12 Monate im Voraus, insgesamt 2.400 Euro. Wie hoch ist der aktive Rechnungsabgrenzungsposten am 31. Dezember 2025?
+D: Zahlung = 2.400 €; Zeitraum = 12 Monate; davon 2026 = 9 Monate
+A: 1800 €
+S: Pro Monat kostet die Versicherung 200 Euro. | 2.400 € : 12 = 200 €
+S: Neun Monate gehören ins neue Jahr. | 200 € × 9 = 1.800 €
+R: § 250 Abs. 1 HGB; § 5 Abs. 5 EStG
+
+@ lf10 | Zeitliche Abgrenzung
+F: Ein Vermieter erhält am 1. Dezember 2025 die Miete für Dezember bis Februar im Voraus, insgesamt 3.000 Euro. Wie hoch ist der passive Rechnungsabgrenzungsposten?
+D: Einnahme = 3.000 €; Zeitraum = 3 Monate; davon 2026 = 2 Monate
+A: 2000 €
+S: Pro Monat sind das 1.000 Euro. | 3.000 € : 3 = 1.000 €
+S: Januar und Februar gehören ins neue Jahr. | 1.000 € × 2 = 2.000 €
+R: § 250 Abs. 2 HGB; § 5 Abs. 5 EStG
+
+@ lf10 | Zeitliche Abgrenzung
+F: Für ein Darlehen fallen 1.200 Euro Zinsen im Jahr an. Sie werden nachträglich am 30. Juni 2026 für den Zeitraum Juli 2025 bis Juni 2026 bezahlt. Welchen Betrag bucht der Schuldner am 31. Dezember 2025 als sonstige Verbindlichkeit?
+D: Zinsen = 1.200 € im Jahr; Monate 2025 = 6
+A: 600 €
+S: Pro Monat fallen 100 Euro Zinsen an. | 1.200 € : 12 = 100 €
+S: Juli bis Dezember gehören ins alte Jahr und sind noch nicht bezahlt. | 100 € × 6 = 600 €
+R: § 246 Abs. 1 HGB; § 252 Abs. 1 Nr. 5 HGB
+
+@ lf10 | Zeitliche Abgrenzung
+F: Ein Mieter zahlt die Dezembermiete von 900 Euro erst im Januar. Was bucht der Vermieter am 31. Dezember?
+D: Miete Dezember = 900 €; Zahlung = Januar
+A: wahl: *Sonstige Forderung | Aktiver Rechnungsabgrenzungsposten | Passiver Rechnungsabgrenzungsposten | Sonstige Verbindlichkeit
+S: Der Ertrag gehört ins alte Jahr, das Geld kommt erst im neuen Jahr.
+S: Dafür bucht der Vermieter eine sonstige Forderung.
+R: § 246 Abs. 1 HGB; § 252 Abs. 1 Nr. 5 HGB
+
+@ lf10 | Zeitliche Abgrenzung
+F: Die Kfz-Steuer von 360 Euro für Oktober 2025 bis September 2026 wurde im Oktober bezahlt. Darf in der Steuerbilanz auf den Rechnungsabgrenzungsposten verzichtet werden?
+D: Ausgabe = 360 €; Grenze = 800 €
+A: wahl: *Ja, weil der Betrag 800 Euro nicht übersteigt | Nein, ein Rechnungsabgrenzungsposten ist immer Pflicht
+S: Steuerlich darf der Posten wegfallen, wenn die einzelne Ausgabe höchstens 800 Euro beträgt.
+S: Das Wahlrecht muss dann aber einheitlich für alle solchen Fälle gelten.
+R: § 5 Abs. 5 Satz 2 EStG

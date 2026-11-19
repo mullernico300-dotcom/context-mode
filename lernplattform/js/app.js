@@ -385,6 +385,20 @@
         <a class="btn primaer" href="#aufgaben-${esc(lf.id)}-${aufIndex}">▶ ${richtig ? 'Weiter üben' : 'Aufgaben starten'}</a>
       </section>` : ''}
 
+      ${t.text && Array.isArray(t.text.loesungen) && t.text.loesungen.length ? `
+      <section class="abschnitt">
+        <div class="abschnitt-kopf"><h2>📘 Aufgaben aus dem Unterricht</h2><span class="klein">${t.text.loesungen.length} mit Musterlösung</span></div>
+        <div class="loesungen">${t.text.loesungen.map((l) => `
+          <details class="glas loesung">
+            <summary><b>${esc(l.titel)}</b><span class="klein">Aufgabe ansehen</span></summary>
+            <div class="loesung-aufgabe">${format(l.aufgabe)}</div>
+            <details class="loesung-zeigen"><summary>Erst selbst rechnen – dann Lösung zeigen</summary>
+              <div class="loesung-text">${format(l.loesung)}</div>
+              ${l.hinweis ? `<p class="loesung-hinweis">💡 ${esc(l.hinweis)}</p>` : ''}
+            </details>
+          </details>`).join('')}</div>
+      </section>` : ''}
+
       ${t.paragrafen.length ? `
       <section class="abschnitt">
         <div class="abschnitt-kopf"><h2>§ Paragrafen</h2><span class="klein">in einfacher Sprache</span></div>

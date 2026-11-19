@@ -2,6 +2,8 @@
 """Vertont die Übungsaufgaben aus tools/aufgaben_quelle.txt für die Aufgaben-Videos.
 
 Aufruf:  python3 tools/make_tasks.py <arbeitsordner> <stimme.onnx>
+         NUR=lf10 python3 tools/make_tasks.py ...   vertont nur diese Lernfelder neu, alle anderen Aufgaben
+                                                    (Texte, Ton und Zeitmarken) bleiben unverändert aus js/aufgaben.js
 Ergebnis: audio/<id>-f.mp3 (Frage), audio/<id>-l.mp3 (Lösung), audio/richtig.mp3, audio/falsch.mp3
           und js/aufgaben.js mit Texten, Grafikdaten und Zeitmarken.
 """
@@ -100,8 +102,14 @@ def main(arbeit, stimme):
             if p['gruppe'] not in gruppen[lf['id']]:
                 gruppen[lf['id']].append(p['gruppe'])
 
-    schreibe('richtig', [(ton('Richtig! Sehr gut.'), 0.25)])
-    schreibe('falsch', [(ton('Das ist leider nicht richtig. Schauen wir uns die Lösung an.'), 0.25)])
+    nur = [x.strip() for x in os.environ.get('NUR', '').split(',') if x.strip()]
+    alt = {}
+    if nur:
+        roh = open(os.path.join(APP, 'js', 'aufgaben.js'), encoding='utf8').read()
+        alt = {x['id']: x for x in json.loads(roh[roh.index('window.LERN_AUFGABEN = ') + 23:].rstrip().rstrip(';'))}
+    else:
+        schreibe('richtig', [(ton('Richtig! Sehr gut.'), 0.25)])
+        schreibe('falsch', [(ton('Das ist leider nicht richtig. Schauen wir uns die Lösung an.'), 0.25)])
 
     aus, zaehler = [], {}
     for a in lies_quelle():
@@ -110,6 +118,10 @@ def main(arbeit, stimme):
         a['thema'] = passend[0]
         zaehler[a['lf']] = zaehler.get(a['lf'], 0) + 1
         a['id'] = '%s-a%02d' % (a['lf'], zaehler[a['lf']])
+        if nur and a['lf'] not in nur:
+            assert a['id'] in alt and alt[a['id']]['f'] == a['f'], ('Aufgabe geändert, bitte ohne NUR erzeugen', a['id'])
+            aus.append(alt[a['id']])
+            continue
 
         # Frage: Wörter mit Zeitmarken für die mitlaufende Hervorhebung
         teile, zeiten, t = [], [], 0.0
