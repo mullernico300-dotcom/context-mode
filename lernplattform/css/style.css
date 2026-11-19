@@ -922,3 +922,11 @@ li.unter { margin-left: 18px; list-style: circle; }
 .pr-einzel-titel { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .pr-einzel-titel small { color: var(--leise); }
 @media (max-width: 640px) { .pr-zeile select { flex: 1; } }
+
+/* ---------------- Planer: Speichern ---------------- */
+.pl-speichern { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 8px 8px 14px; border-radius: 14px; margin-bottom: 14px; }
+.pl-status { font-size: 0.82rem; font-weight: 600; color: var(--leise); margin: 0; min-width: 0; }
+.pl-status.ok { color: #15803d; }
+.pl-status.warn { color: #b45309; }
+.wo .pl-status { margin: -4px 0 8px; }
+.wo-aktion { display: flex; align-items: center; gap: 10px; }

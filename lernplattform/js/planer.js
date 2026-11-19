@@ -1,5 +1,5 @@
 /* Planer: Stundenplan, Schul-/Arbeitstage, Tests mit Lernplan, Noten.
-   Alles hier ist persönlich und bleibt NUR im Browser dieses Geräts (localStorage).
+   Persönlich: nur die Person selbst sieht es. Speicher: Browser (localStorage) plus eigenes Konto (data/users/<id>/planer), Noten nur im Browser.
    Schulzeiten, Pausen und Fächer kommen aus js/schule.js (window.SCHULE), sonst aus den Lernfeldern. */
 (function () {
   'use strict';
@@ -10,19 +10,124 @@
   const ARTEN = [['ka', 'Klassenarbeit', 2], ['test', 'Test', 1], ['muendlich', 'Mündlich', 1], ['referat', 'Referat', 1], ['sonst', 'Sonstiges', 1]];
 
   /* ---------------- Speicher ---------------- */
-  function leer() { return { faecher: null, vorlage: {}, tage: {}, tests: [], noten: [], erledigt: {} }; }
+  function leer() { return { faecher: null, vorlage: {}, tage: {}, tests: [], noten: [], erledigt: {}, geaendert: 0 }; }
+  /* Arbeitskopie im Speicher: hält die Daten auch dann, wenn der Browser-Speicher
+     (z. B. in der Claude-App) gesperrt ist oder beim Schließen geleert wird. */
+  let cache = null;
+  const klon = (x) => JSON.parse(JSON.stringify(x));
   function lade() {
     let s = null;
-    try { s = JSON.parse(localStorage.getItem(KEY)); } catch (e) { /* gesperrt */ }
+    if (cache) s = klon(cache);
+    else { try { s = JSON.parse(localStorage.getItem(KEY)); } catch (e) { /* gesperrt */ } }
     s = Object.assign(leer(), s || {});
     ['vorlage', 'tage', 'erledigt'].forEach((k) => { if (!s[k] || typeof s[k] !== 'object') s[k] = {}; });
     ['tests', 'noten'].forEach((k) => { if (!Array.isArray(s[k])) s[k] = []; });
     return s;
   }
-  function sichere(s) {
-    try { localStorage.setItem(KEY, JSON.stringify(s)); return true; }
-    catch (e) { toast('Speichern nicht möglich – der Browser-Speicher ist gesperrt oder voll.'); return false; }
+  let lokalOk = true;
+  function schreibeLokal(s) {
+    cache = klon(s);
+    try { localStorage.setItem(KEY, JSON.stringify(s)); lokalOk = true; } catch (e) { lokalOk = false; }
   }
+  function sichere(s) {
+    s.geaendert = Date.now();
+    schreibeLokal(s);
+    konto.offen = true;
+    planeKonto();
+    zeigeStatus();
+    return true;
+  }
+
+  /* ---------------- Speichern im eigenen Konto ----------------
+     Kalender, Stundenplan, Fächer und Tests liegen zusätzlich in der Artefakt-Datenbank unter
+     data/users/<eigene id>/planer. Diesen Bereich sieht nur die Person selbst – auch der Besitzer nicht.
+     Noten bleiben wie vereinbart nur auf dem Gerät. */
+  const KONTO_FELDER = ['faecher', 'vorlage', 'tage', 'tests', 'erledigt'];
+  const konto = { ref: null, status: 'pruefe', offen: false, zeit: null, laeuft: null, nochmal: false, uhr: null };
+  async function verbindeKonto() {
+    if (!(window.claude && window.claude.use)) { konto.status = 'lokal'; return zeigeStatus(); }
+    try {
+      const [db, user] = await Promise.all([window.claude.use('db'), window.claude.use('user')]);
+      const id = db && user ? await user.id() : null;
+      if (!id) { konto.status = 'lokal'; return zeigeStatus(); }
+      const ref = db.collection('data/users/' + id).doc('planer');
+      const snap = await ref.get();
+      konto.ref = ref;
+      konto.status = 'konto';
+      const d = snap.exists ? snap.data() : null;
+      const s = lade();
+      if (d && (Number(d.geaendert) || 0) > (s.geaendert || 0)) {
+        // Im Konto ist ein neuerer Stand (z. B. von einem anderen Gerät): übernehmen, Noten behalten
+        KONTO_FELDER.forEach((k) => { if (d[k] !== undefined) s[k] = klon(d[k]); });
+        s.geaendert = Number(d.geaendert);
+        schreibeLokal(s);
+        konto.offen = false; konto.zeit = s.geaendert;
+        zeigeStatus();
+        if (window.App && /^#?(planer.*|start)?$/.test(location.hash)) App.route();
+      } else if (s.geaendert && (!d || (Number(d.geaendert) || 0) < s.geaendert)) {
+        konto.offen = true;
+        await speichereKonto();
+      } else { konto.offen = false; konto.zeit = d ? Number(d.geaendert) : null; zeigeStatus(); }
+    } catch (e) { konto.ref = null; konto.status = 'lokal'; zeigeStatus(); }
+  }
+  function planeKonto() {
+    if (!konto.ref) return;
+    clearTimeout(konto.uhr);
+    konto.uhr = setTimeout(() => speichereKonto(), 1500);
+  }
+  /* Ein Schreibvorgang nach dem anderen; Änderungen währenddessen werden danach nachgeholt. */
+  async function speichereKonto() {
+    clearTimeout(konto.uhr);
+    if (!konto.ref) return false;
+    if (konto.laeuft) { konto.nochmal = true; return konto.laeuft; }
+    konto.laeuft = (async () => {
+      const s = lade();
+      const body = { version: 1, geaendert: s.geaendert || Date.now() };
+      KONTO_FELDER.forEach((k) => { body[k] = s[k] === undefined ? null : s[k]; });
+      try {
+        await konto.ref.set(klon(body));
+        konto.zeit = body.geaendert;
+        if ((lade().geaendert || 0) <= body.geaendert) konto.offen = false;
+        konto.status = 'konto';
+        return true;
+      } catch (e) {
+        konto.status = 'fehler';
+        return false;
+      } finally {
+        konto.laeuft = null;
+        zeigeStatus();
+        if (konto.nochmal) { konto.nochmal = false; speichereKonto(); }
+      }
+    })();
+    return konto.laeuft;
+  }
+  async function speichernKnopf() {
+    schreibeLokal(lade());
+    if (konto.ref) {
+      const ok = await speichereKonto();
+      toast(ok ? '💾 Gespeichert – in deinem Konto und auf diesem Gerät' : 'Speichern im Konto hat gerade nicht geklappt. Versuch es gleich nochmal.');
+    } else if (lokalOk) toast('💾 Auf diesem Gerät gespeichert');
+    else toast('Dieser Browser lässt kein dauerhaftes Speichern zu. Erstelle unter „Noten“ eine Sicherung.');
+    zeigeStatus();
+  }
+  function statusText() {
+    const um = (t) => new Date(t).toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' });
+    if (konto.status === 'pruefe') return ['', 'Speicher wird geprüft …'];
+    if (konto.status === 'fehler') return ['warn', 'Nicht im Konto gespeichert – tippe auf Speichern'];
+    if (konto.ref) return konto.offen || konto.laeuft ? ['', 'Wird gespeichert …'] : ['ok', konto.zeit ? `✓ Im Konto gespeichert · ${um(konto.zeit)} Uhr` : '✓ Im Konto gespeichert'];
+    return lokalOk ? ['ok', '✓ Auf diesem Gerät gespeichert'] : ['warn', 'Nur bis zum Schließen gespeichert – Sicherung erstellen'];
+  }
+  function zeigeStatus() {
+    const [klasse, text] = statusText();
+    document.querySelectorAll('[data-pl-status]').forEach((e) => { e.textContent = text; e.className = 'pl-status ' + klasse; });
+  }
+  const speicherLeiste = () => `<div class="pl-speichern glas"><span data-pl-status class="pl-status"></span><button class="btn primaer klein-btn" data-pl-speichern>💾 Speichern</button></div>`;
+  document.addEventListener('click', (e) => { if (e.target.closest('[data-pl-speichern]')) speichernKnopf(); });
+  /* Beim Verlassen oder Wegwischen der App noch schnell sichern */
+  const sofort = () => { if (konto.offen) speichereKonto(); };
+  window.addEventListener('pagehide', sofort);
+  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') sofort(); });
+  setTimeout(verbindeKonto, 0);
 
   /* ---------------- Datum ---------------- */
   const iso = (d) => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
@@ -180,6 +285,7 @@
     toast(gespeichert ? 'Sicherung gespeichert' : 'Sicherung erstellt – kopiere den Text oder speichere die Datei');
   }
   function importieren(text) {
+    /* Sicherung einspielen ersetzt den Stand – auch im Konto */
     let j;
     try { j = JSON.parse(text); } catch (e) { return toast('Das ist keine gültige Sicherung.'); }
     const d = j && j.art === 'lernfeld-trainer-planer' ? j.daten : null;
@@ -199,13 +305,15 @@
     app.innerHTML = `
       <a class="zurueck" href="#start">← Zur Übersicht</a>
       <header class="lf-kopf"><span class="lf-nr pl-marke">Planer</span><h1>Mein Schulplan</h1>
-        <p>Stundenplan, Tests und Noten. <b>Alles hier bleibt nur auf diesem Gerät</b> – niemand sonst sieht es.</p></header>
+        <p>Stundenplan, Tests und Noten. <b>Nur du siehst deine Einträge.</b> Kalender, Stundenplan und Tests werden in deinem Konto gespeichert, Noten nur auf diesem Gerät.</p></header>
       <nav class="tabs glas pl-tabs" aria-label="Planer">
         ${REITER.map(([id, icon, name]) => `<a href="#planer-${id}" class="${id === reiter ? 'aktiv' : ''}"><span>${icon}</span>${name}</a>`).join('')}
       </nav>
+      ${speicherLeiste()}
       <div id="plInhalt"></div>`;
     const el = app.querySelector('#plInhalt');
     ({ heute: zeigeHeute, kalender: zeigeKalender, stundenplan: zeigeStundenplan, tests: zeigeTests, noten: zeigeNoten })[reiter](el);
+    zeigeStatus();
     return null;
   }
 
@@ -713,7 +821,8 @@
     return `
       <section class="glas block wo" id="wochenplan">
         <div class="wo-kopf"><h2>${wt > 4 ? 'Nächste Woche' : 'Diese Woche'}</h2>
-          <a class="link" href="#planer-kalender">Kalender ›</a></div>
+          <div class="wo-aktion"><button class="btn klein-btn" data-pl-speichern title="Kalender speichern">💾<span class="nur-breit"> Speichern</span></button><a class="link" href="#planer-kalender">Kalender ›</a></div></div>
+        <p class="pl-status" data-pl-status></p>
         <div class="wo-tage" role="tablist">${tage.map((d, i) => {
           const a = s.tage[d];
           return `<button role="tab" aria-selected="${d === ausw}" class="wo-tag ${a || ''} ${d === tag ? 'heute' : ''} ${d === ausw ? 'aktiv' : ''}" data-wo-tag="${d}">
@@ -734,10 +843,11 @@
       </section>`;
   }
   function verdrahteWoche(wurzel) {
+    zeigeStatus();
     wurzel.addEventListener('click', (e) => {
       const box = wurzel.querySelector('#wochenplan');
       if (!box || !box.contains(e.target)) return;
-      const neu = () => { box.outerHTML = wocheHtml(); };
+      const neu = () => { box.outerHTML = wocheHtml(); zeigeStatus(); };
       const t = e.target.closest('[data-wo-tag]');
       if (t) { wochenAuswahl = t.dataset.woTag; return neu(); }
       const a = e.target.closest('[data-wo-art]');

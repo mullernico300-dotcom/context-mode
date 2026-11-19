@@ -31,7 +31,8 @@ Ein Modell kann Claude nicht selbst wechseln. Der Nutzer stellt es mit `/model` 
 
 ## Stand (18.11.)
 
-- Planer gebaut (js/planer.js): Heute, Kalender (Schule/Arbeit je Tag, Woche kopieren), Stundenplan (45/90 Min, Pausen, Tag kopieren), Tests mit Lernplan, Noten mit Schnitt und Sicherung. Alles nur im Browser des Geräts (localStorage).
+- Planer gebaut (js/planer.js): Heute, Kalender (Schule/Arbeit je Tag, Woche kopieren), Stundenplan (45/90 Min, Pausen, Tag kopieren), Tests mit Lernplan, Noten mit Schnitt und Sicherung.
+- Planer speichern (19.11.): In der Claude-App blieb der Browser-Speicher nicht erhalten. Jetzt: Knopf „💾 Speichern“ im Planer und im Wochenplan, Statuszeile, automatisches Speichern 1,5 s nach jeder Änderung und beim Verlassen. Kalender, Stundenplan, Fächer, Tests und Lernfortschritt liegen zusätzlich im eigenen Konto unter data/users/<id>/planer (nur die Person selbst sieht das, auch der Besitzer nicht); der neuere Stand (Feld `geaendert`) gewinnt. Noten bleiben wie entschieden nur auf dem Gerät. Wer per öffentlichem Link ohne Schreibrecht kommt, speichert nur im Browser.
 - Unterlagen gebaut (js/unterlagen.js): Fächer, Themen, Dateien, Lernübersichten in der Artefakt-Datenbank (subjects, topics, files, summaries). Lesen: alle mit Link; schreiben/hochladen: nur Bearbeiter (Regeln write "admin", assets nur für Bearbeiter). Geprüft mit as_level view/interact.
 - Lernregister übernommen (Seminare inzwischen als Nachlese-Ordner ergänzt): 6 Fächer, 13 Themen, 15 Dateien, 4 Lernübersichten. Das Lernregister selbst ist noch nicht gelöscht.
 - Schulzeiten, Pausen, Fächer und Lehrkräfte stehen in js/schule.js. Die Datei wird nur im Artefakt veröffentlicht und ist per lernplattform/.gitignore vom Repository ausgeschlossen. Vorlage: js/schule.beispiel.js.
