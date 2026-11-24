@@ -2,7 +2,7 @@
 """Vertont ein Drehbuch (skripte/<name>.json) satzweise mit Piper und schreibt die Zeitleiste für Remotion.
 
 Aufruf:  python3 ton.py skripte/anschaffungskosten.json <stimme.onnx> [<cache-ordner>]
-Ergebnis: public/<id>/sNN.wav (eine Tonspur je Szene) und src/daten/aktuell.json (Drehbuch + Zeitmarken).
+Ergebnis: public/<id>/sNN.wav (eine Tonspur je Szene) und src/daten/<id>.json sowie aktuell.json (Drehbuch + Zeitmarken).
 Jeder Satz bekommt eine Startzeit; die Grafiken einer Szene erscheinen genau dann, wenn ihr Satz beginnt.
 """
 import hashlib, json, os, sys, wave
@@ -33,6 +33,15 @@ def main(skript, stimme, cache=None):
                 voice.synthesize_wav(text, w)
         return pfad
 
+    # Beträge und Prozente in den Grafiken nicht umbrechen (geschütztes Leerzeichen vor € und %)
+    import re
+    def nb(o):
+        if isinstance(o, dict): return {k: nb(v) for k, v in o.items()}
+        if isinstance(o, list): return [nb(v) for v in o]
+        if isinstance(o, str): return re.sub(r'(\d) ([€%])', '\\1\u00a0\\2', o)
+        return o
+    for sz in d['szenen']:
+        sz['daten'] = nb(sz['daten'])
     gesamt = 0.0
     for n, sz in enumerate(d['szenen']):
         datei = 's%02d.wav' % (n + 1)
@@ -56,7 +65,8 @@ def main(skript, stimme, cache=None):
         print('Szene %2d %-11s %5.1f s  %d Sätze' % (n + 1, sz['typ'], t, len(sz['saetze'])))
     d['dauer'] = round(gesamt, 3)
     os.makedirs(os.path.join(HIER, 'src', 'daten'), exist_ok=True)
-    json.dump(d, open(os.path.join(HIER, 'src', 'daten', 'aktuell.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=1)
+    for name in (d['id'] + '.json', 'aktuell.json'):
+        json.dump(d, open(os.path.join(HIER, 'src', 'daten', name), 'w', encoding='utf8'), ensure_ascii=False, indent=1)
     print('Gesamt: %d:%02d min' % (gesamt // 60, gesamt % 60))
 
 

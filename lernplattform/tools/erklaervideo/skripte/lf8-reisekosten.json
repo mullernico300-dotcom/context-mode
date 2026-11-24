@@ -1,0 +1,297 @@
+{
+  "id": "lf8-reisekosten",
+  "lf": "lf8",
+  "thema": "Reisekosten",
+  "kapitel": "LF 8 · Gewinneinkünfte",
+  "titel": "Reisekosten",
+  "kartentitel": "Reisekosten: Verpflegungspauschalen, Kürzung und Fahrtkosten",
+  "farbe": "#2f6fd1",
+  "szenen": [
+    {
+      "typ": "titel",
+      "daten": {
+        "kicker": "LF 8 · Gewinneinkünfte",
+        "titel": "Reisekosten",
+        "untertitel": "Was eine Geschäftsreise steuerlich bringt",
+        "preis": "56 €",
+        "preisLabel": "Verpflegung für 3 Tage"
+      },
+      "saetze": [
+        "Eine Mitarbeiterin fährt drei Tage zu einer Fortbildung nach Nürnberg.",
+        "Welche Kosten darf sie absetzen? Das Hotel, die Fahrt, das Essen?",
+        "Bei Reisekosten gibt es ein paar feste Regeln und Pauschalen. Die schauen wir uns jetzt an."
+      ]
+    },
+    {
+      "typ": "formel",
+      "daten": {
+        "ueberschrift": "Vier Arten von Reisekosten",
+        "ref": "§ 9 EStG",
+        "zeilen": [
+          {
+            "zeichen": "1",
+            "text": "Fahrtkosten",
+            "info": "Privat-Pkw: 0,30 € je gefahrenem km"
+          },
+          {
+            "zeichen": "2",
+            "text": "Übernachtung",
+            "info": "tatsächliche Kosten laut Rechnung"
+          },
+          {
+            "zeichen": "3",
+            "text": "Verpflegung",
+            "info": "nur Pauschalen, nie die echten Kosten"
+          },
+          {
+            "zeichen": "4",
+            "text": "Nebenkosten",
+            "info": "Parken, Gepäck: tatsächliche Kosten"
+          }
+        ]
+      },
+      "saetze": [
+        "Reisekosten bestehen aus vier Teilen.",
+        "Fahrtkosten: Mit dem eigenen Auto gibt es 0,30 Euro für jeden gefahrenen Kilometer.",
+        "Übernachtung: Hier zählen die tatsächlichen Kosten laut Hotelrechnung.",
+        "Verpflegung: Hier gibt es nur Pauschalen. Was das Essen wirklich gekostet hat, ist egal.",
+        "Nebenkosten wie Parkgebühren zählen wieder in tatsächlicher Höhe."
+      ]
+    },
+    {
+      "typ": "zeitstrahl",
+      "daten": {
+        "ueberschrift": "Die Verpflegungspauschalen",
+        "merke": "Genau 8 Stunden weg reicht nicht – es müssen mehr sein",
+        "punkte": [
+          {
+            "label": "eintägig",
+            "titel": "14 €",
+            "text": "mehr als 8 Stunden weg",
+            "folge": "genau 8 Stunden: 0 €",
+            "ref": "§ 9 Abs. 4a EStG",
+            "satz": 1
+          },
+          {
+            "label": "mehrtägig",
+            "titel": "14 € + 28 €",
+            "text": "An- und Abreisetag je 14 €",
+            "folge": "jeder volle Tag dazwischen 28 €",
+            "satz": 2
+          }
+        ]
+      },
+      "saetze": [
+        "Die Verpflegungspauschalen stehen in Paragraf 9 Absatz 4a des Einkommensteuergesetzes.",
+        "Bei einer eintägigen Reise gibt es 14 Euro, wenn man mehr als 8 Stunden unterwegs ist.",
+        "Bei mehreren Tagen gibt es für den An- und Abreisetag je 14 Euro, und für jeden vollen Tag dazwischen 28 Euro.",
+        "Achtung: Genau 8 Stunden reichen nicht. Von 7 bis 16 Uhr sind es aber 9 Stunden, also 14 Euro."
+      ]
+    },
+    {
+      "typ": "wasserfall",
+      "daten": {
+        "kurzTitel": "Beispiel: 3 Tage mit Frühstück",
+        "nk": 2,
+        "sachverhalt": "Fortbildung von Montag bis Mittwoch, zwei Übernachtungen. Der Arbeitgeber bucht das Hotel mit Frühstück.",
+        "balken": [
+          {
+            "label": "Anreisetag",
+            "wert": 14,
+            "art": "start",
+            "satz": 1
+          },
+          {
+            "label": "+ voller Tag",
+            "wert": 28,
+            "art": "plus",
+            "satz": 1
+          },
+          {
+            "label": "+ Abreisetag",
+            "wert": 14,
+            "art": "plus",
+            "satz": 1
+          },
+          {
+            "label": "Summe",
+            "wert": 56,
+            "art": "zwischen",
+            "satz": 2
+          },
+          {
+            "label": "− 2 × Frühstück",
+            "wert": -11.2,
+            "art": "minus",
+            "satz": 3
+          },
+          {
+            "label": "Pauschalen",
+            "wert": 44.8,
+            "art": "ergebnis",
+            "satz": 4
+          }
+        ],
+        "notiz": {
+          "text": "Frühstück gestellt: je 5,60 € weniger (20 % von 28 €)",
+          "satz": 3
+        }
+      },
+      "saetze": [
+        "Rechnen wir die Fortbildung durch: Montag bis Mittwoch, zwei Übernachtungen.",
+        "Montag als Anreisetag 14 Euro, Dienstag als voller Tag 28 Euro, Mittwoch als Abreisetag 14 Euro.",
+        "Zusammen sind das 56 Euro.",
+        "Der Arbeitgeber hat das Hotel mit Frühstück gebucht. Für jedes gestellte Frühstück wird die Pauschale um 5 Euro 60 gekürzt, bei zwei Frühstücken um 11 Euro 20.",
+        "Es bleiben 44 Euro 80 Verpflegungspauschalen."
+      ]
+    },
+    {
+      "typ": "stapel",
+      "daten": {
+        "ueberschrift": "Fahrtkosten mit dem eigenen Auto",
+        "icon": "🚗",
+        "zeilen": [
+          {
+            "text": "Hinfahrt nach Nürnberg",
+            "wert": "275 km",
+            "satz": 1
+          },
+          {
+            "text": "+ Rückfahrt",
+            "wert": "275 km",
+            "satz": 1
+          },
+          {
+            "text": "= gefahrene Kilometer",
+            "wert": "550 km",
+            "satz": 2
+          },
+          {
+            "text": "Entfernungspauschale",
+            "wert": "gilt hier nicht",
+            "raus": true,
+            "satz": 3
+          },
+          {
+            "text": "= Fahrtkosten (550 km × 0,30 €)",
+            "wert": "165,00 €",
+            "ergebnis": true,
+            "satz": 4
+          }
+        ]
+      },
+      "saetze": [
+        "Jetzt die Fahrt mit dem eigenen Auto.",
+        "Nürnberg ist 275 Kilometer entfernt, hin und zurück sind das 550 Kilometer.",
+        "Auf einer Dienstreise gibt es 0,30 Euro für jeden gefahrenen Kilometer, also für Hin- und Rückweg.",
+        "Nicht verwechseln mit der Entfernungspauschale für den Weg zur Arbeit. Die gilt nur für die einfache Strecke und hat hier nichts zu suchen.",
+        "550 Kilometer mal 0,30 Euro ergibt 165 Euro Fahrtkosten."
+      ]
+    },
+    {
+      "typ": "sortieren",
+      "daten": {
+        "ueberschrift": "Gibt es Vorsteuer?",
+        "ja": "ja, mit Beleg",
+        "nein": "nein",
+        "karten": [
+          {
+            "text": "Hotelrechnung",
+            "icon": "🏨",
+            "ja": true,
+            "satz": 1
+          },
+          {
+            "text": "Bahnfahrkarte",
+            "icon": "🚆",
+            "ja": true,
+            "satz": 1
+          },
+          {
+            "text": "Taxiquittung bis 250 €",
+            "icon": "🚕",
+            "ja": true,
+            "satz": 2
+          },
+          {
+            "text": "Verpflegungspauschale",
+            "icon": "🍽️",
+            "ja": false,
+            "satz": 3
+          },
+          {
+            "text": "Kilometerpauschale",
+            "icon": "🛣️",
+            "ja": false,
+            "satz": 3
+          }
+        ]
+      },
+      "saetze": [
+        "Und bei einem Unternehmer: Wann gibt es Vorsteuer?",
+        "Aus Hotelrechnungen und Fahrkarten. Fahrkarten gelten nach Paragraf 34 der Umsatzsteuer-Durchführungsverordnung als Rechnung.",
+        "Auch aus kleinen Quittungen bis 250 Euro, das sind Kleinbetragsrechnungen.",
+        "Aus Pauschalen gibt es nie Vorsteuer, weder aus der Verpflegungspauschale noch aus der Kilometerpauschale."
+      ]
+    },
+    {
+      "typ": "fallen",
+      "daten": {
+        "ueberschrift": "Typische Fallen",
+        "karten": [
+          {
+            "titel": "Genau 8 Stunden",
+            "text": "Es müssen mehr als 8 Stunden sein, sonst 0 €.",
+            "satz": 1
+          },
+          {
+            "titel": "Tage falsch gezählt",
+            "text": "Zwei Übernachtungen sind drei Tage: 14 + 28 + 14 €.",
+            "satz": 2
+          },
+          {
+            "titel": "Vorsteuer aus Pauschalen",
+            "text": "Vorsteuer gibt es nur aus Belegen.",
+            "satz": 3
+          }
+        ]
+      },
+      "saetze": [
+        "Drei Fehler, die oft passieren.",
+        "Erstens: genau 8 Stunden mit 14 Euro rechnen. Es müssen mehr als 8 Stunden sein.",
+        "Zweitens: die Tage falsch zählen. Zwei Übernachtungen bedeuten drei Tage: 14, 28 und noch einmal 14 Euro.",
+        "Drittens: Vorsteuer aus einer Pauschale ziehen. Vorsteuer gibt es nur aus Belegen."
+      ]
+    },
+    {
+      "typ": "merke",
+      "daten": {
+        "ueberschrift": "Das nimmst du mit",
+        "punkte": [
+          {
+            "text": "Verpflegung: 14 € oder 28 €, nur Pauschalen",
+            "satz": 0
+          },
+          {
+            "text": "Gestelltes Frühstück: 5,60 € weniger",
+            "satz": 0
+          },
+          {
+            "text": "Eigenes Auto: 0,30 € je gefahrenem km",
+            "satz": 1
+          },
+          {
+            "text": "Vorsteuer nur aus Belegen",
+            "satz": 1
+          }
+        ],
+        "aufruf": "Jetzt üben: LF 8 → Reisekosten"
+      },
+      "saetze": [
+        "Zusammengefasst: Für Verpflegung gibt es nur Pauschalen, 14 oder 28 Euro. Ein gestelltes Frühstück kürzt um 5 Euro 60.",
+        "Mit dem eigenen Auto gibt es 0,30 Euro je gefahrenem Kilometer, und Vorsteuer gibt es nur aus Belegen.",
+        "Im Lernfeld 8 warten dazu Übungsaufgaben mit Stimme auf dich."
+      ]
+    }
+  ]
+}

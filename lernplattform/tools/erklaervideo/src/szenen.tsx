@@ -23,7 +23,7 @@ export const Titel: React.FC<{ d: D }> = ({ d }) => {
       </div>
       <div style={{ position: 'relative', transform: `translateY(${schweben}px) rotate(${-8 + (1 - schild) * 30}deg) scale(${0.6 + schild * 0.4})`, opacity: schild }}>
         <Karte leuchten={F.gelb} style={{ padding: '40px 56px', textAlign: 'center' }}>
-          <div style={{ fontSize: 34, color: F.leise, fontWeight: 600 }}>Maschine</div>
+          <div style={{ fontSize: 34, color: F.leise, fontWeight: 600 }}>{d.preisLabel || 'Maschine'}</div>
           <div style={{ fontFamily: TITEL, fontSize: 100, fontWeight: 700, color: F.gelb, whiteSpace: 'nowrap' }}>{d.preis}</div>
         </Karte>
         <div style={{
@@ -137,7 +137,7 @@ export const Zeitstrahl: React.FC<{ d: D }> = ({ d }) => {
         })}
       </div>
       <div style={{ opacity: merke, transform: `scale(${0.85 + 0.15 * merke})`, display: 'flex', justifyContent: 'center' }}>
-        <Karte leuchten={akzent} style={{ padding: '20px 40px', fontSize: 40, fontWeight: 700 }}>💡 Skonto immer vom Preis <u>nach</u> Rabatt rechnen</Karte>
+        <Karte leuchten={akzent} style={{ padding: '20px 40px', fontSize: 40, fontWeight: 700 }}>💡 {d.merke ? d.merke : <>Skonto immer vom Preis <u>nach</u> Rabatt rechnen</>}</Karte>
       </div>
     </div>
   );
@@ -147,11 +147,12 @@ export const Zeitstrahl: React.FC<{ d: D }> = ({ d }) => {
 export const Wasserfall: React.FC<{ d: D }> = ({ d }) => {
   const { rein, akzent } = useSzene();
   const sv = rein(0);
-  const max = 10000, hoehe = 440;
+  const max = Math.max(...d.balken.map((b: D) => Math.abs(b.wert))), hoehe = 440;
   let stand = 0;
   const balken = d.balken.map((b: D) => {
     let unten = 0, oben = 0;
     if (b.art === 'minus') { oben = stand; unten = stand + b.wert; stand = unten; }
+    else if (b.art === 'plus') { unten = stand; oben = stand + b.wert; stand = oben; }
     else { unten = 0; oben = b.wert; stand = b.wert; }
     return { ...b, unten, oben };
   });
@@ -159,16 +160,16 @@ export const Wasserfall: React.FC<{ d: D }> = ({ d }) => {
   return (
     <div style={{ padding: '0 80px', display: 'flex', gap: 50 }}>
       <div style={{ width: 560 }}>
-        <Ueberschrift text="Beispiel" />
-        <Karte style={{ padding: 34, fontSize: 36, lineHeight: 1.45, opacity: sv, transform: `translateY(${(1 - sv) * 30}px)` }}>{d.sachverhalt}</Karte>
+        <Ueberschrift text={d.kurzTitel || 'Beispiel'} />
+        <Karte style={{ padding: 30, fontSize: d.sachverhalt.length > 160 ? 30 : 36, lineHeight: 1.42, opacity: sv, transform: `translateY(${(1 - sv) * 30}px)` }}>{d.sachverhalt}</Karte>
         <div style={{ marginTop: 30, opacity: notiz, transform: `translateY(${(1 - notiz) * 30}px)` }}>
-          <Karte leuchten={F.blau} style={{ padding: '24px 30px', fontSize: 34, fontWeight: 650 }}>🧾 {d.notiz.text}</Karte>
+          <Karte leuchten={F.blau} style={{ padding: '18px 26px', fontSize: 30, fontWeight: 650 }}>🧾 {d.notiz.text}</Karte>
         </div>
       </div>
       <div style={{ flex: 1, display: 'flex', alignItems: 'flex-end', gap: 26, height: hoehe + 170, paddingTop: 40 }}>
         {balken.map((b: D, i: number) => {
           const p = rein(b.satz, b.art === 'zwischen' ? 24 : 0, 90);
-          const farbe = b.art === 'minus' ? F.rot : b.art === 'ergebnis' ? akzent : b.art === 'zwischen' ? F.blau : F.lila;
+          const farbe = b.art === 'minus' ? F.rot : b.art === 'plus' ? F.gelb : b.art === 'ergebnis' ? akzent : b.art === 'zwischen' ? F.blau : F.lila;
           const h = ((b.oben - b.unten) / max) * hoehe;
           const sichtH = Math.max(6, h * p);
           return (
@@ -180,10 +181,10 @@ export const Wasserfall: React.FC<{ d: D }> = ({ d }) => {
                   boxShadow: b.art === 'ergebnis' ? `0 0 50px ${farbe}aa` : 'none',
                 }} />
                 <div style={{
-                  position: 'absolute', left: -20, right: -20, textAlign: 'center', bottom: (b.oben / max) * hoehe + 14,
-                  fontFamily: TITEL, fontSize: b.art === 'ergebnis' ? 46 : 38, fontWeight: 700, color: farbe,
+                  position: 'absolute', left: -40, right: -40, textAlign: 'center', bottom: (b.oben / max) * hoehe + 14, whiteSpace: 'nowrap',
+                  fontFamily: TITEL, fontSize: (b.art === 'ergebnis' ? 46 : 38) * (balken.length > 5 ? 0.78 : 1), fontWeight: 700, color: farbe,
                 }}>
-                  {b.art === 'minus' ? '−' : ''}<Zaehler wert={Math.abs(b.wert)} p={p} />
+                  {b.art === 'minus' ? '−' : b.art === 'plus' ? '+' : ''}<Zaehler wert={Math.abs(b.wert)} p={p} nk={d.nk || 0} />
                 </div>
               </div>
               <div style={{ textAlign: 'center', fontSize: 28, color: b.art === 'ergebnis' ? F.text : F.leise, fontWeight: b.art === 'ergebnis' ? 800 : 600, marginTop: 18, height: 76 }}>{b.label}</div>
@@ -249,7 +250,7 @@ export const Stapel: React.FC<{ d: D }> = ({ d }) => {
     <div style={{ padding: '0 80px' }}>
       <Ueberschrift text={d.ueberschrift} />
       <div style={{ display: 'flex', gap: 60, alignItems: 'center' }}>
-      <div style={{ width: 420, fontSize: 230, textAlign: 'center', opacity: rein(0, 10), transform: `scale(${0.6 + 0.4 * rein(0, 10)})` }}>🏡</div>
+      <div style={{ width: 420, fontSize: 230, textAlign: 'center', opacity: rein(0, 10), transform: `scale(${0.6 + 0.4 * rein(0, 10)})` }}>{d.icon || '🏡'}</div>
       <Karte style={{ flex: 1, padding: '14px 44px 20px' }}>
         {d.zeilen.map((z: D, i: number) => {
           const p = rein(z.satz, (i % 2) * 14);
@@ -280,8 +281,8 @@ export const Grenze: React.FC<{ d: D }> = ({ d }) => {
   const skala = rein(0, 8);
   let summe = 0;
   const teile = d.teile.map((t: D) => { const s = { ...t, von: summe }; summe += t.wert; return s; });
-  const p2 = rein(d.teile[1].satz, 10);
-  const ueber = p2 > 0.5;
+  const p2 = d.teile[1] ? rein(d.teile[1].satz, 10) : 1;
+  const ueber = p2 > 0.5 && summe > d.grenze;
   const erg = rein(d.ergebnis.satz, 34);
   const wackel = ueber && frame - cue(2) < 60 ? Math.sin(frame / 1.6) * 4 * (1 - erg) : 0;
   return (
@@ -291,19 +292,19 @@ export const Grenze: React.FC<{ d: D }> = ({ d }) => {
         <div style={{ height: 120, borderRadius: 24, background: 'rgba(255,255,255,0.07)', border: `1.5px solid ${F.linie}`, overflow: 'hidden', position: 'relative', transform: `translateX(${wackel}px)` }}>
           {teile.map((t: D, i: number) => {
             const p = rein(t.satz, i ? 10 : 0, 60);
-            const farbe = i === 0 ? (ueber ? F.rot : akzent) : F.gelb;
+            const farbe = i === 0 ? (ueber && !d.ergebnis.ok ? F.rot : akzent) : F.gelb;
             return <div key={i} style={{ position: 'absolute', top: 0, bottom: 0, left: (t.von / d.max) * breite, width: (t.wert / d.max) * breite * p, background: `linear-gradient(90deg, ${farbe}cc, ${farbe})` }} />;
           })}
         </div>
         <div style={{ position: 'absolute', left: (d.grenze / d.max) * breite - 3, top: -70, bottom: -70, width: 6, borderRadius: 3, background: F.text, boxShadow: `0 0 20px ${F.text}` }} />
-        <div style={{ position: 'absolute', left: (d.grenze / d.max) * breite - 170, top: -130, width: 340, textAlign: 'center', fontSize: 36, fontWeight: 800 }}>Grenze 800 €</div>
+        <div style={{ position: 'absolute', left: (d.grenze / d.max) * breite - 400, top: -130, width: 800, textAlign: 'center', fontSize: 36, fontWeight: 800, whiteSpace: 'nowrap' }}>{d.grenzeLabel || 'Grenze ' + eur(d.grenze)}</div>
         {teile.map((t: D, i: number) => {
           const p = rein(t.satz, i ? 10 : 0);
           return <div key={i} style={{ position: 'absolute', top: 140 + i * 60, left: (t.von / d.max) * breite, fontSize: 34, fontWeight: 650, opacity: p, color: i ? F.gelb : F.text, whiteSpace: 'nowrap' }}>{i ? '+ ' : ''}{t.label}: {eur(t.wert)}</div>;
         })}
       </div>
       <div style={{ display: 'flex', justifyContent: 'center', marginTop: 150, opacity: erg, transform: `scale(${0.8 + 0.2 * erg})` }}>
-        <Pille farbe={F.rot} style={{ fontSize: 48, padding: '18px 40px' }}>✕ {d.ergebnis.text}</Pille>
+        <Pille farbe={d.ergebnis.ok ? akzent : F.rot} style={{ fontSize: 48, padding: '18px 40px' }}>{d.ergebnis.ok ? '✓' : '✕'} {d.ergebnis.text}</Pille>
       </div>
     </div>
   );

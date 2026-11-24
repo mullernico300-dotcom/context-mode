@@ -48,7 +48,6 @@ export const Karte: React.FC<{ style?: React.CSSProperties; children: React.Reac
       border: `1.5px solid ${leuchten || F.linie}`,
       borderRadius: 28,
       boxShadow: leuchten ? `0 0 0 1px ${leuchten}33, 0 20px 60px ${leuchten}33` : '0 20px 60px rgba(0,0,0,0.35)',
-      backdropFilter: 'blur(14px)',
       ...style,
     }}
   >

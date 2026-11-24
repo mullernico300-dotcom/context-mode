@@ -11,5 +11,15 @@ window.ERKLAERVIDEOS = [
   "sek": 286.2,
   "datei": "videos/erklaer/lf10-anschaffungskosten.mp4",
   "poster": "videos/erklaer/lf10-anschaffungskosten.jpg"
+ },
+ {
+  "id": "lf10-herstellungskosten",
+  "lf": "lf10",
+  "thema": "Herstellungskosten",
+  "titel": "Herstellungskosten: Wertuntergrenze, Wertobergrenze und Eigenleistung",
+  "datum": "2026-11-24",
+  "sek": 250.2,
+  "datei": "videos/erklaer/lf10-herstellungskosten.mp4",
+  "poster": "videos/erklaer/lf10-herstellungskosten.jpg"
  }
 ];

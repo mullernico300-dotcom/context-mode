@@ -11,18 +11,20 @@ const { selectComposition, renderMedia, renderStill } = require('@remotion/rende
   const serveUrl = await bundle({ entryPoint: path.join(__dirname, 'src/index.ts'), publicDir: path.join(__dirname, 'public') });
   const browserExecutable = process.env.CHROME || '/opt/pw-browsers/chromium';
   const chromiumOptions = { gl: 'swangle' };
-  const composition = await selectComposition({ serveUrl, id: 'Erklaervideo', browserExecutable, chromiumOptions });
+  /* DREHBUCH=src/daten/<id>.json wählt das Video; ohne Angabe gilt src/daten/aktuell.json */
+  const inputProps = { drehbuch: JSON.parse(require('fs').readFileSync(process.env.DREHBUCH || path.join(__dirname, 'src/daten/aktuell.json'), 'utf8')) };
+  const composition = await selectComposition({ serveUrl, id: 'Erklaervideo', browserExecutable, chromiumOptions, inputProps });
   if (stills) {
     for (const f of stills) {
       const out = ziel.replace(/\.png$/, '') + '-' + f + '.png';
-      await renderStill({ composition, serveUrl, output: out, frame: f, browserExecutable, chromiumOptions });
+      await renderStill({ composition, serveUrl, output: out, frame: f, browserExecutable, chromiumOptions, inputProps, scale: process.env.GROESSE === '720' ? 2 / 3 : 1 });
       console.log('Standbild', out);
     }
     return;
   }
   let zuletzt = -1;
   await renderMedia({
-    composition, serveUrl, codec: 'h264', outputLocation: ziel, browserExecutable, chromiumOptions,
+    composition, serveUrl, codec: 'h264', outputLocation: ziel, browserExecutable, chromiumOptions, inputProps,
     /* GROESSE=720 rendert 1280×720 (schneller, kleiner – Standard für die App, Dateien ≤ 15 MB) */
     scale: process.env.GROESSE === '720' ? 2 / 3 : 1,
     crf: process.env.GROESSE === '720' ? 27 : 20, audioBitrate: process.env.GROESSE === '720' ? '96k' : '128k',

@@ -18,8 +18,9 @@ const Hintergrund: React.FC<{ akzent: string }> = ({ akzent }) => {
   const f = useCurrentFrame();
   const blob = (farbe: string, x: number, y: number, r: number, t: number) => (
     <div style={{
-      position: 'absolute', width: r, height: r, borderRadius: '50%', filter: 'blur(120px)', opacity: 0.35,
-      background: farbe, left: x + Math.sin(f / t) * 120, top: y + Math.cos(f / (t * 1.3)) * 90,
+      position: 'absolute', width: r * 1.6, height: r * 1.6, borderRadius: '50%', opacity: 0.42,
+      background: `radial-gradient(circle, ${farbe} 0%, ${farbe}88 25%, transparent 65%)`,
+      left: x - r * 0.3 + Math.sin(f / t) * 120, top: y - r * 0.3 + Math.cos(f / (t * 1.3)) * 90,
     }} />
   );
   return (
@@ -106,7 +107,7 @@ export const Erklaervideo: React.FC<{ drehbuch: Drehbuch }> = ({ drehbuch: d }) 
 
       {/* Untertitel */}
       <div style={{ position: 'absolute', left: 120, right: 120, bottom: 46, display: 'flex', justifyContent: 'center' }}>
-        <div style={{ padding: '22px 40px', borderRadius: 26, background: 'rgba(5,8,20,0.62)', border: `1px solid ${F.linie}`, backdropFilter: 'blur(12px)' }}>
+        <div style={{ padding: '22px 40px', borderRadius: 26, background: 'rgba(5,8,20,0.78)', border: `1px solid ${F.linie}` }}>
           {z ? <Untertitel satz={sz.saetze[satzNr]} t={tSzene - z.start} dauer={z.dauer} /> : null}
         </div>
       </div>
