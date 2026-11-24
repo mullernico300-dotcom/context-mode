@@ -81,5 +81,15 @@ window.ERKLAERVIDEOS = [
   "sek": 218.0,
   "datei": "videos/erklaer/lf5-beitraege.mp4",
   "poster": "videos/erklaer/lf5-beitraege.jpg"
+ },
+ {
+  "id": "lf10-zeitliche-abgrenzung",
+  "lf": "lf10",
+  "thema": "Zeitliche Abgrenzung",
+  "titel": "Zeitliche Abgrenzung: ARAP, PRAP und sonstige Verbindlichkeiten",
+  "datum": "2026-11-24",
+  "sek": 228.7,
+  "datei": "videos/erklaer/lf10-zeitliche-abgrenzung.mp4",
+  "poster": "videos/erklaer/lf10-zeitliche-abgrenzung.jpg"
  }
 ];
