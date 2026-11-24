@@ -1,0 +1,445 @@
+{
+ "id": "sk-kuendigung",
+ "lf": "sk",
+ "thema": "Kündigung und Kündigungsschutz",
+ "kapitel": "Sozialkunde · Arbeitsrecht",
+ "titel": "Kündigung",
+ "kartentitel": "Kündigung: Form, Fristen und Kündigungsschutz",
+ "farbe": "#e11d48",
+ "szenen": [
+  {
+   "typ": "titel",
+   "daten": {
+    "kicker": "Sozialkunde · Arbeitsrecht",
+    "titel": "Kündigung",
+    "untertitel": "Form, Fristen und Kündigungsschutz",
+    "preis": "4 Wochen",
+    "preisLabel": "Grundkündigungsfrist"
+   },
+   "saetze": [
+    "Dein Chef schickt dir abends eine WhatsApp: Du bist gekündigt. Ist das wirksam?",
+    "Und wie lange musst du noch arbeiten? Wann brauchst du einen Grund?",
+    "Die wichtigsten Regeln zur Kündigung siehst du jetzt."
+   ],
+   "ton": "sk-kuendigung/s01.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 4.005
+    },
+    {
+     "start": 5.055,
+     "dauer": 2.914
+    },
+    {
+     "start": 8.42,
+     "dauer": 2.519
+    }
+   ],
+   "dauer": 11.839
+  },
+  {
+   "typ": "formel",
+   "daten": {
+    "ueberschrift": "So prüfst du eine Kündigung",
+    "ref": "BGB · KSchG",
+    "zeilen": [
+     {
+      "zeichen": "1",
+      "text": "Schriftlich mit Unterschrift?",
+      "info": "§ 623 BGB"
+     },
+     {
+      "zeichen": "2",
+      "text": "Zugegangen?",
+      "info": "§ 130 BGB, z. B. im Briefkasten"
+     },
+     {
+      "zeichen": "3",
+      "text": "Frist eingehalten?",
+      "info": "§ 622 BGB"
+     },
+     {
+      "zeichen": "4",
+      "text": "Betriebsrat angehört?",
+      "info": "§ 102 BetrVG"
+     },
+     {
+      "zeichen": "5",
+      "text": "Kündigungsschutz?",
+      "info": "dann braucht es einen Grund"
+     },
+     {
+      "zeichen": "6",
+      "text": "Klage innerhalb von 3 Wochen",
+      "info": "§ 4 KSchG"
+     }
+    ]
+   },
+   "saetze": [
+    "Prüfe eine Kündigung in sechs Schritten.",
+    "Erstens die Form: Eine Kündigung muss schriftlich auf Papier mit Unterschrift sein. So steht es in Paragraf 623 des Bürgerlichen Gesetzbuchs.",
+    "Zweitens der Zugang: Die Kündigung wirkt erst, wenn sie ankommt, zum Beispiel im Briefkasten liegt.",
+    "Drittens die Frist aus Paragraf 622.",
+    "Viertens: Gibt es einen Betriebsrat, muss er vorher angehört werden. Sonst ist die Kündigung ungültig.",
+    "Fünftens: Gilt das Kündigungsschutzgesetz, braucht der Arbeitgeber einen Grund.",
+    "Und sechstens: Wer sich wehren will, muss innerhalb von 3 Wochen klagen."
+   ],
+   "ton": "sk-kuendigung/s02.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 1.916
+    },
+    {
+     "start": 2.966,
+     "dauer": 9.439
+    },
+    {
+     "start": 12.855,
+     "dauer": 5.584
+    },
+    {
+     "start": 18.889,
+     "dauer": 3.901
+    },
+    {
+     "start": 23.24,
+     "dauer": 5.805
+    },
+    {
+     "start": 29.495,
+     "dauer": 4.47
+    },
+    {
+     "start": 34.415,
+     "dauer": 4.122
+    }
+   ],
+   "dauer": 39.436
+  },
+  {
+   "typ": "sortieren",
+   "daten": {
+    "ueberschrift": "Ist die Kündigung wirksam?",
+    "ja": "wirksam",
+    "nein": "unwirksam",
+    "karten": [
+     {
+      "text": "Brief mit Unterschrift",
+      "icon": "✉️",
+      "ja": true,
+      "satz": 1
+     },
+     {
+      "text": "persönlich übergeben",
+      "icon": "🤝",
+      "ja": true,
+      "satz": 1
+     },
+     {
+      "text": "E-Mail",
+      "icon": "📧",
+      "ja": false,
+      "satz": 2
+     },
+     {
+      "text": "WhatsApp",
+      "icon": "💬",
+      "ja": false,
+      "satz": 2
+     },
+     {
+      "text": "mündlich",
+      "icon": "🗣️",
+      "ja": false,
+      "satz": 3
+     }
+    ]
+   },
+   "saetze": [
+    "Zurück zur WhatsApp vom Anfang.",
+    "Wirksam ist nur ein Brief mit eigenhändiger Unterschrift, zum Beispiel persönlich übergeben oder eingeworfen.",
+    "E-Mail und WhatsApp reichen nicht, auch nicht mit Foto der Unterschrift.",
+    "Und mündlich kündigen geht auch nicht. Die Kündigung vom Anfang ist also unwirksam."
+   ],
+   "ton": "sk-kuendigung/s03.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 1.66
+    },
+    {
+     "start": 2.71,
+     "dauer": 5.991
+    },
+    {
+     "start": 9.151,
+     "dauer": 3.913
+    },
+    {
+     "start": 13.514,
+     "dauer": 4.412
+    }
+   ],
+   "dauer": 18.825
+  },
+  {
+   "typ": "stapel",
+   "daten": {
+    "ueberschrift": "Die Frist berechnen",
+    "icon": "✉️",
+    "zeilen": [
+     {
+      "text": "Kündigung kommt an",
+      "wert": "10.03.2026",
+      "satz": 1
+     },
+     {
+      "text": "+ 4 Wochen (28 Tage)",
+      "wert": "07.04.2026",
+      "satz": 2
+     },
+     {
+      "text": "nächster Termin: 15. oder Monatsende",
+      "wert": "15.04.2026",
+      "satz": 3
+     },
+     {
+      "text": "= Arbeitsverhältnis endet am",
+      "wert": "15.04.2026",
+      "ergebnis": true,
+      "satz": 4
+     }
+    ]
+   },
+   "saetze": [
+    "Jetzt rechnen wir eine Frist aus. Die Grundfrist sind 4 Wochen zum 15. oder zum Monatsende.",
+    "Die Kündigung kommt am 10. März 2026 an.",
+    "Plus 4 Wochen, also 28 Tage, ergibt den 7. April.",
+    "Jetzt brauchst du den nächsten erlaubten Termin: den 15. oder das Monatsende. Der nächste ist der 15. April.",
+    "Das Arbeitsverhältnis endet also am 15. April 2026."
+   ],
+   "ton": "sk-kuendigung/s04.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 6.014
+    },
+    {
+     "start": 7.064,
+     "dauer": 4.005
+    },
+    {
+     "start": 11.519,
+     "dauer": 4.214
+    },
+    {
+     "start": 16.184,
+     "dauer": 6.548
+    },
+    {
+     "start": 23.182,
+     "dauer": 5.004
+    }
+   ],
+   "dauer": 29.086
+  },
+  {
+   "typ": "zeitstrahl",
+   "daten": {
+    "ueberschrift": "Wer kündigt?",
+    "merke": "In der Probezeit: nur 2 Wochen Frist (§ 622 Abs. 3 BGB)",
+    "punkte": [
+     {
+      "label": "Arbeitnehmer",
+      "titel": "4 Wochen",
+      "text": "egal wie lange beschäftigt",
+      "folge": "zum 15. oder zum Monatsende",
+      "ref": "§ 622 Abs. 1 BGB",
+      "satz": 1
+     },
+     {
+      "label": "Arbeitgeber",
+      "titel": "1–7 Monate",
+      "text": "je nach Betriebszugehörigkeit",
+      "folge": "ab 2 Jahren länger, nur zum Monatsende",
+      "ref": "§ 622 Abs. 2 BGB",
+      "satz": 2
+     }
+    ]
+   },
+   "saetze": [
+    "Wichtig ist, wer kündigt.",
+    "Kündigt der Arbeitnehmer, gilt immer die Grundfrist: 4 Wochen zum 15. oder zum Monatsende.",
+    "Kündigt der Arbeitgeber, wird die Frist länger, je länger man im Betrieb ist. Nach 2 Jahren ein Monat, nach 5 Jahren zwei Monate, bis zu sieben Monate nach 20 Jahren. Und dann immer nur zum Monatsende.",
+    "In der Probezeit von höchstens 6 Monaten sind es nur 2 Wochen."
+   ],
+   "ton": "sk-kuendigung/s05.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 1.451
+    },
+    {
+     "start": 2.501,
+     "dauer": 5.526
+    },
+    {
+     "start": 8.478,
+     "dauer": 11.378
+    },
+    {
+     "start": 20.305,
+     "dauer": 3.878
+    }
+   ],
+   "dauer": 25.083
+  },
+  {
+   "typ": "grenze",
+   "daten": {
+    "ueberschrift": "Gilt das Kündigungsschutzgesetz?",
+    "grenze": 10,
+    "grenzeLabel": "mehr als 10 Arbeitnehmer",
+    "max": 20,
+    "einheit": "Arbeitnehmer",
+    "teile": [
+     {
+      "label": "Betrieb",
+      "wert": 12,
+      "satz": 1
+     }
+    ],
+    "ergebnis": {
+     "text": "Kündigungsschutz – der Chef braucht einen Grund",
+     "ok": true,
+     "satz": 3
+    },
+    "ref": "§§ 1, 23 KSchG"
+   },
+   "saetze": [
+    "Das Kündigungsschutzgesetz gilt, wenn zwei Dinge erfüllt sind.",
+    "Der Betrieb hat mehr als 10 Arbeitnehmer. Hier sind es 12.",
+    "Und du bist länger als 6 Monate im Betrieb.",
+    "Dann braucht der Arbeitgeber einen Grund: in deiner Person, zum Beispiel lange Krankheit, in deinem Verhalten, zum Beispiel ständiges Zuspätkommen, oder im Betrieb, zum Beispiel Auftragsmangel."
+   ],
+   "ton": "sk-kuendigung/s06.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 3.146
+    },
+    {
+     "start": 4.196,
+     "dauer": 3.367
+    },
+    {
+     "start": 8.013,
+     "dauer": 2.206
+    },
+    {
+     "start": 10.669,
+     "dauer": 9.741
+    }
+   ],
+   "dauer": 21.31
+  },
+  {
+   "typ": "fallen",
+   "daten": {
+    "ueberschrift": "Typische Fallen",
+    "karten": [
+     {
+      "titel": "Kündigung per Nachricht",
+      "text": "E-Mail und WhatsApp sind immer unwirksam.",
+      "satz": 1
+     },
+     {
+      "titel": "Lange Frist für alle",
+      "text": "Die längeren Fristen gelten nur, wenn der Arbeitgeber kündigt.",
+      "satz": 2
+     },
+     {
+      "titel": "Fristlos zu spät",
+      "text": "Fristlos nur innerhalb von 2 Wochen nach Kenntnis (§ 626 BGB).",
+      "satz": 3
+     }
+    ]
+   },
+   "saetze": [
+    "Drei typische Fehler.",
+    "Erstens: eine Kündigung per Nachricht für wirksam halten. Sie muss auf Papier unterschrieben sein.",
+    "Zweitens: die längeren Fristen auch für den Arbeitnehmer anwenden. Sie gelten nur, wenn der Arbeitgeber kündigt.",
+    "Drittens: Eine fristlose Kündigung braucht einen wichtigen Grund, zum Beispiel Diebstahl. Und sie muss innerhalb von 2 Wochen ausgesprochen werden, nachdem der Grund bekannt wurde."
+   ],
+   "ton": "sk-kuendigung/s07.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 1.533
+    },
+    {
+     "start": 2.583,
+     "dauer": 5.19
+    },
+    {
+     "start": 8.222,
+     "dauer": 6.084
+    },
+    {
+     "start": 14.756,
+     "dauer": 9.288
+    }
+   ],
+   "dauer": 24.944
+  },
+  {
+   "typ": "merke",
+   "daten": {
+    "ueberschrift": "Das nimmst du mit",
+    "punkte": [
+     {
+      "text": "Nur schriftlich mit Unterschrift",
+      "satz": 0
+     },
+     {
+      "text": "4 Wochen zum 15. oder Monatsende",
+      "satz": 0
+     },
+     {
+      "text": "Kündigungsschutz: mehr als 10 Mitarbeiter, länger als 6 Monate",
+      "satz": 1
+     },
+     {
+      "text": "Klage nur innerhalb von 3 Wochen",
+      "satz": 1
+     }
+    ],
+    "aufruf": "Jetzt üben: Sozialkunde → Kündigung"
+   },
+   "saetze": [
+    "Zusammengefasst: Eine Kündigung muss schriftlich mit Unterschrift sein. Die Grundfrist sind 4 Wochen zum 15. oder zum Monatsende.",
+    "Hat der Betrieb mehr als 10 Mitarbeiter und bist du länger als 6 Monate dabei, braucht der Arbeitgeber einen Grund. Und klagen kannst du nur innerhalb von 3 Wochen.",
+    "In der Lern-App findest du dazu Übungsaufgaben mit Stimme."
+   ],
+   "ton": "sk-kuendigung/s08.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 7.152
+    },
+    {
+     "start": 8.202,
+     "dauer": 9.056
+    },
+    {
+     "start": 17.708,
+     "dauer": 3.181
+    }
+   ],
+   "dauer": 21.789
+  }
+ ],
+ "dauer": 192.312
+}

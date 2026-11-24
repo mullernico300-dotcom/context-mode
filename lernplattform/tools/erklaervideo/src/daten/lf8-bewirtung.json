@@ -1,0 +1,458 @@
+{
+ "id": "lf8-bewirtung",
+ "lf": "lf8",
+ "thema": "Bewirtung",
+ "kapitel": "LF 8 · Gewinneinkünfte",
+ "titel": "Bewirtung",
+ "kartentitel": "Bewirtung von Geschäftsfreunden: 70 Prozent und volle Vorsteuer",
+ "farbe": "#2f6fd1",
+ "szenen": [
+  {
+   "typ": "titel",
+   "daten": {
+    "kicker": "LF 8 · Gewinneinkünfte",
+    "titel": "Bewirtung",
+    "untertitel": "Geschäftsessen richtig abziehen und buchen",
+    "preis": "70 %",
+    "preisLabel": "Betriebsausgabe"
+   },
+   "saetze": [
+    "Ein Mandant lädt zwei Kunden zum Geschäftsessen ein. Die Rechnung landet bei dir in der Buchhaltung.",
+    "Wie viel davon ist Betriebsausgabe? Und wie viel Vorsteuer gibt es?",
+    "Bei der Bewirtung gilt eine besondere Regel: 70 Prozent."
+   ],
+   "ton": "lf8-bewirtung/s01.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 4.946
+    },
+    {
+     "start": 5.996,
+     "dauer": 4.342
+    },
+    {
+     "start": 10.788,
+     "dauer": 3.402
+    }
+   ],
+   "dauer": 15.09
+  },
+  {
+   "typ": "formel",
+   "daten": {
+    "ueberschrift": "So gehst du vor",
+    "ref": "§ 4 Abs. 5 S. 1 Nr. 2 EStG",
+    "zeilen": [
+     {
+      "zeichen": "1",
+      "text": "Netto und Umsatzsteuer trennen",
+      "info": "Speisen 7 %, Getränke 19 %"
+     },
+     {
+      "zeichen": "2",
+      "text": "Angemessen?",
+      "info": "Unangemessenes ist nie abziehbar"
+     },
+     {
+      "zeichen": "3",
+      "text": "70 % Betriebsausgabe",
+      "info": "Bewirtungskosten"
+     },
+     {
+      "zeichen": "4",
+      "text": "30 % nicht abziehbar",
+      "info": "eigenes Konto"
+     },
+     {
+      "zeichen": "5",
+      "text": "Vorsteuer zu 100 %",
+      "info": "§ 15 Abs. 1a S. 2 UStG"
+     }
+    ]
+   },
+   "saetze": [
+    "Die Regel steht in Paragraf 4 Absatz 5 Satz 1 Nummer 2 des Einkommensteuergesetzes.",
+    "Erstens: Trenne netto und Umsatzsteuer. Seit 2026 gilt für Speisen im Restaurant 7 Prozent, für Getränke weiter 19 Prozent.",
+    "Zweitens: Ist das Essen angemessen? Unangemessene Kosten sind überhaupt nicht abziehbar.",
+    "Drittens: 70 Prozent der angemessenen Kosten sind Betriebsausgabe.",
+    "Viertens: Die übrigen 30 Prozent sind nicht abziehbar und kommen auf ein eigenes Konto.",
+    "Fünftens: Die Vorsteuer ist trotzdem zu 100 Prozent abziehbar."
+   ],
+   "ton": "lf8-bewirtung/s02.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 5.433
+    },
+    {
+     "start": 6.483,
+     "dauer": 9.381
+    },
+    {
+     "start": 16.314,
+     "dauer": 4.911
+    },
+    {
+     "start": 21.675,
+     "dauer": 4.272
+    },
+    {
+     "start": 26.398,
+     "dauer": 5.317
+    },
+    {
+     "start": 32.165,
+     "dauer": 4.098
+    }
+   ],
+   "dauer": 37.164
+  },
+  {
+   "typ": "stapel",
+   "daten": {
+    "ueberschrift": "Die Rechnung vom März 2026",
+    "icon": "🍽️",
+    "zeilen": [
+     {
+      "text": "Speisen netto",
+      "wert": "200,00 €",
+      "satz": 1
+     },
+     {
+      "text": "+ Umsatzsteuer 7 %",
+      "wert": "14,00 €",
+      "satz": 1
+     },
+     {
+      "text": "Getränke netto",
+      "wert": "100,00 €",
+      "satz": 2
+     },
+     {
+      "text": "+ Umsatzsteuer 19 %",
+      "wert": "19,00 €",
+      "satz": 2
+     },
+     {
+      "text": "= Rechnungsbetrag",
+      "wert": "333,00 €",
+      "ergebnis": true,
+      "satz": 3
+     }
+    ]
+   },
+   "saetze": [
+    "Ein Beispiel aus dem März 2026.",
+    "Die Speisen kosten 200 Euro netto, dazu 7 Prozent Umsatzsteuer, also 14 Euro.",
+    "Die Getränke kosten 100 Euro netto, dazu 19 Prozent, also 19 Euro.",
+    "Der Mandant bezahlt insgesamt 333 Euro per Bank."
+   ],
+   "ton": "lf8-bewirtung/s03.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 3.32
+    },
+    {
+     "start": 4.37,
+     "dauer": 5.851
+    },
+    {
+     "start": 10.672,
+     "dauer": 5.062
+    },
+    {
+     "start": 16.184,
+     "dauer": 4.203
+    }
+   ],
+   "dauer": 21.287
+  },
+  {
+   "typ": "wasserfall",
+   "daten": {
+    "kurzTitel": "70 und 30 Prozent",
+    "sachverhalt": "Netto kostet das Geschäftsessen 300 €. Die Kosten sind angemessen, ein ordnungsgemäßer Beleg liegt vor.",
+    "balken": [
+     {
+      "label": "netto gesamt",
+      "wert": 300,
+      "art": "start",
+      "satz": 1
+     },
+     {
+      "label": "− 30 % nicht abziehbar",
+      "wert": -90,
+      "art": "minus",
+      "satz": 2
+     },
+     {
+      "label": "Betriebsausgabe",
+      "wert": 210,
+      "art": "ergebnis",
+      "satz": 3
+     }
+    ],
+    "notiz": {
+     "text": "Vorsteuer 14 € + 19 € = 33 € voll abziehbar",
+     "satz": 4
+    }
+   },
+   "saetze": [
+    "Jetzt die Aufteilung.",
+    "Netto kostet das Essen 300 Euro.",
+    "30 Prozent davon, also 90 Euro, sind nicht abziehbar.",
+    "70 Prozent, also 210 Euro, sind Betriebsausgabe.",
+    "Und die Vorsteuer von insgesamt 33 Euro gibt es komplett zurück, nicht nur zu 70 Prozent."
+   ],
+   "ton": "lf8-bewirtung/s04.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 1.068
+    },
+    {
+     "start": 2.118,
+     "dauer": 2.426
+    },
+    {
+     "start": 4.995,
+     "dauer": 3.855
+    },
+    {
+     "start": 9.299,
+     "dauer": 4.075
+    },
+    {
+     "start": 13.824,
+     "dauer": 6.084
+    }
+   ],
+   "dauer": 20.808
+  },
+  {
+   "typ": "buchung",
+   "daten": {
+    "ueberschrift": "So wird gebucht",
+    "buchungen": [
+     {
+      "titel": "Geschäftsessen, bezahlt per Bank",
+      "soll": [
+       [
+        "Bewirtungskosten",
+        "210,00 €"
+       ],
+       [
+        "nicht abziehbare Bewirtungskosten",
+        "90,00 €"
+       ],
+       [
+        "Vorsteuer 7 %",
+        "14,00 €"
+       ],
+       [
+        "Vorsteuer 19 %",
+        "19,00 €"
+       ]
+      ],
+      "haben": [
+       [
+        "Bank",
+        "333,00 €"
+       ]
+      ],
+      "satz": 1
+     }
+    ],
+    "fazit": {
+     "text": "Probe: 210 + 90 + 14 + 19 = 333 €",
+     "satz": 2
+    }
+   },
+   "saetze": [
+    "Gebucht wird in einem Buchungssatz.",
+    "Bewirtungskosten 210 Euro, nicht abziehbare Bewirtungskosten 90 Euro, Vorsteuer 7 Prozent 14 Euro und Vorsteuer 19 Prozent 19 Euro an Bank 333 Euro.",
+    "Mach immer die Probe: Die Summe im Soll muss den Bruttobetrag ergeben."
+   ],
+   "ton": "lf8-bewirtung/s05.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 1.649
+    },
+    {
+     "start": 2.699,
+     "dauer": 13.677
+    },
+    {
+     "start": 16.825,
+     "dauer": 3.715
+    }
+   ],
+   "dauer": 21.44
+  },
+  {
+   "typ": "sortieren",
+   "daten": {
+    "ueberschrift": "Was muss auf den Beleg?",
+    "ja": "muss drauf",
+    "nein": "reicht nicht",
+    "karten": [
+     {
+      "text": "Ort und Tag",
+      "icon": "📍",
+      "ja": true,
+      "satz": 1
+     },
+     {
+      "text": "Teilnehmer",
+      "icon": "👥",
+      "ja": true,
+      "satz": 1
+     },
+     {
+      "text": "Anlass",
+      "icon": "💼",
+      "ja": true,
+      "satz": 1
+     },
+     {
+      "text": "maschinelle Rechnung",
+      "icon": "🧾",
+      "ja": true,
+      "satz": 2
+     },
+     {
+      "text": "handgeschriebene Quittung",
+      "icon": "✍️",
+      "ja": false,
+      "satz": 3
+     }
+    ]
+   },
+   "saetze": [
+    "Ohne Nachweis gibt es gar nichts.",
+    "Auf den Beleg gehören Ort, Tag, Teilnehmer, Anlass und Höhe der Kosten.",
+    "Die Rechnung muss maschinell erstellt sein. Über 250 Euro muss außerdem der Name des Unternehmers draufstehen.",
+    "Eine handgeschriebene Quittung reicht nicht."
+   ],
+   "ton": "lf8-bewirtung/s06.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 1.823
+    },
+    {
+     "start": 2.873,
+     "dauer": 4.876
+    },
+    {
+     "start": 8.199,
+     "dauer": 6.49
+    },
+    {
+     "start": 15.139,
+     "dauer": 2.136
+    }
+   ],
+   "dauer": 18.175
+  },
+  {
+   "typ": "fallen",
+   "daten": {
+    "ueberschrift": "Typische Fallen",
+    "karten": [
+     {
+      "titel": "Vorsteuer gekürzt",
+      "text": "Die Vorsteuer ist zu 100 % abziehbar, nicht zu 70 %.",
+      "satz": 1
+     },
+     {
+      "titel": "Unangemessenes aufgeteilt",
+      "text": "Der unangemessene Teil wird nicht noch einmal 70/30 aufgeteilt.",
+      "satz": 2
+     },
+     {
+      "titel": "Feier mit Mitarbeitern",
+      "text": "Eine Feier nur mit eigenen Leuten ist keine Bewirtung von Geschäftsfreunden.",
+      "satz": 3
+     }
+    ]
+   },
+   "saetze": [
+    "Drei typische Fehler.",
+    "Erstens: die Vorsteuer auf 70 Prozent kürzen. Sie ist voll abziehbar.",
+    "Zweitens: unangemessene Kosten noch einmal 70 zu 30 aufteilen. Sie sind komplett nicht abziehbar.",
+    "Drittens: eine Feier nur mit eigenen Mitarbeitern als Bewirtung buchen. Dafür gelten andere Regeln."
+   ],
+   "ton": "lf8-bewirtung/s07.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 1.533
+    },
+    {
+     "start": 2.583,
+     "dauer": 4.76
+    },
+    {
+     "start": 7.793,
+     "dauer": 5.944
+    },
+    {
+     "start": 14.187,
+     "dauer": 5.886
+    }
+   ],
+   "dauer": 20.973
+  },
+  {
+   "typ": "merke",
+   "daten": {
+    "ueberschrift": "Das nimmst du mit",
+    "punkte": [
+     {
+      "text": "70 % Betriebsausgabe, 30 % nicht abziehbar",
+      "satz": 0
+     },
+     {
+      "text": "Vorsteuer zu 100 %",
+      "satz": 0
+     },
+     {
+      "text": "Seit 2026: Speisen 7 %, Getränke 19 %",
+      "satz": 1
+     },
+     {
+      "text": "Beleg: Ort, Tag, Teilnehmer, Anlass, Höhe",
+      "satz": 1
+     }
+    ],
+    "aufruf": "Jetzt üben: LF 8 → Bewirtung"
+   },
+   "saetze": [
+    "Zusammengefasst: 70 Prozent der angemessenen Kosten sind Betriebsausgabe, 30 Prozent nicht. Die Vorsteuer ist trotzdem voll abziehbar.",
+    "Seit 2026 gilt für Speisen 7 Prozent und für Getränke 19 Prozent. Und auf den Beleg gehören Ort, Tag, Teilnehmer, Anlass und Höhe.",
+    "Im Lernfeld 8 findest du dazu Übungsaufgaben mit Stimme."
+   ],
+   "ton": "lf8-bewirtung/s08.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 7.93
+    },
+    {
+     "start": 8.98,
+     "dauer": 9.915
+    },
+    {
+     "start": 19.345,
+     "dauer": 3.541
+    }
+   ],
+   "dauer": 23.786
+  }
+ ],
+ "dauer": 178.722
+}
