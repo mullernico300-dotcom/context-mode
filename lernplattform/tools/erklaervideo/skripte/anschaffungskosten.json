@@ -1,0 +1,432 @@
+{
+  "id": "lf10-anschaffungskosten",
+  "lf": "lf10",
+  "kapitel": "LF 10 · Jahresabschluss",
+  "titel": "Anschaffungskosten",
+  "farbe": "#22c55e",
+  "szenen": [
+    {
+      "typ": "titel",
+      "daten": {
+        "kicker": "LF 10 · Jahresabschluss",
+        "titel": "Anschaffungskosten",
+        "untertitel": "Rabatt, Skonto und Nebenkosten – was wirklich in die Bilanz kommt",
+        "preis": "10.000 €"
+      },
+      "saetze": [
+        "Stell dir vor, dein Mandant kauft eine neue Maschine für 10.000 Euro.",
+        "Steht die Maschine dann auch mit 10.000 Euro in der Bilanz? Meistens nicht.",
+        "In diesem Video lernst du, wie man die Anschaffungskosten richtig berechnet und bucht."
+      ]
+    },
+    {
+      "typ": "formel",
+      "daten": {
+        "ueberschrift": "Das Schema",
+        "ref": "§ 255 Abs. 1 HGB",
+        "zeilen": [
+          {
+            "zeichen": "",
+            "text": "Anschaffungspreis",
+            "info": "netto, ohne Vorsteuer"
+          },
+          {
+            "zeichen": "+",
+            "text": "Anschaffungsnebenkosten",
+            "info": "Fracht, Montage, Zulassung …"
+          },
+          {
+            "zeichen": "+",
+            "text": "nachträgliche Anschaffungskosten",
+            "info": "z. B. späterer Umbau"
+          },
+          {
+            "zeichen": "−",
+            "text": "Anschaffungspreisminderungen",
+            "info": "Rabatt, Skonto, Bonus"
+          },
+          {
+            "zeichen": "=",
+            "text": "Anschaffungskosten",
+            "info": "Wert in der Bilanz",
+            "ergebnis": true
+          }
+        ]
+      },
+      "saetze": [
+        "Was zu den Anschaffungskosten gehört, steht in Paragraf 255 Absatz 1 des Handelsgesetzbuchs.",
+        "Du startest mit dem Anschaffungspreis, also dem Nettopreis ohne Vorsteuer.",
+        "Dazu kommen die Nebenkosten: alles, was nötig ist, damit die Maschine bei dir steht und läuft.",
+        "Fallen später noch Kosten an, zum Beispiel für einen Umbau, sind das nachträgliche Anschaffungskosten.",
+        "Abgezogen werden Preisminderungen wie Rabatt, Skonto oder Bonus.",
+        "Das Ergebnis sind die Anschaffungskosten. Mit diesem Wert kommt die Maschine in die Bilanz."
+      ],
+      "zeigen": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "typ": "sortieren",
+      "daten": {
+        "ueberschrift": "Gehört das dazu?",
+        "ja": "gehört dazu",
+        "nein": "gehört nicht dazu",
+        "karten": [
+          {
+            "text": "Fracht",
+            "icon": "🚚",
+            "ja": true,
+            "satz": 1
+          },
+          {
+            "text": "Montage",
+            "icon": "🔧",
+            "ja": true,
+            "satz": 1
+          },
+          {
+            "text": "Fundament",
+            "icon": "🧱",
+            "ja": true,
+            "satz": 1
+          },
+          {
+            "text": "Zulassung",
+            "icon": "📄",
+            "ja": true,
+            "satz": 2
+          },
+          {
+            "text": "Kennzeichen",
+            "icon": "🔤",
+            "ja": true,
+            "satz": 2
+          },
+          {
+            "text": "Tankfüllung",
+            "icon": "⛽",
+            "ja": false,
+            "satz": 3
+          },
+          {
+            "text": "Kfz-Versicherung",
+            "icon": "🛡️",
+            "ja": false,
+            "satz": 3
+          },
+          {
+            "text": "Kreditzinsen",
+            "icon": "🏦",
+            "ja": false,
+            "satz": 4
+          },
+          {
+            "text": "Notar Grundschuld",
+            "icon": "📜",
+            "ja": false,
+            "satz": 4
+          },
+          {
+            "text": "Vorsteuer",
+            "icon": "💶",
+            "ja": false,
+            "satz": 5
+          }
+        ]
+      },
+      "saetze": [
+        "Bei den Nebenkosten passieren die meisten Fehler. Lass uns sortieren.",
+        "Fracht, Montage und ein Fundament gehören dazu. Ohne sie wäre die Maschine nicht betriebsbereit.",
+        "Beim Auto zählen auch die Zulassung und die Kennzeichen.",
+        "Die Tankfüllung und die Versicherung gehören nicht dazu. Das sind laufende Kosten, also sofort Aufwand.",
+        "Auch Zinsen und der Notar für eine Grundschuld gehören nicht dazu. Das ist Finanzierung, kein Kauf.",
+        "Und ganz wichtig: Die Vorsteuer gehört nie dazu, das sagt Paragraf 9b des Einkommensteuergesetzes."
+      ]
+    },
+    {
+      "typ": "zeitstrahl",
+      "daten": {
+        "ueberschrift": "Rabatt oder Skonto?",
+        "punkte": [
+          {
+            "label": "Rechnung",
+            "titel": "Rabatt",
+            "text": "steht schon in der Rechnung",
+            "folge": "mindert die Anschaffungskosten sofort",
+            "satz": 1
+          },
+          {
+            "label": "Zahlung",
+            "titel": "Skonto",
+            "text": "kommt erst bei schneller Zahlung",
+            "folge": "Anschaffungskosten und Vorsteuer nachträglich berichtigen",
+            "ref": "§ 17 Abs. 1 UStG",
+            "satz": 2
+          }
+        ]
+      },
+      "saetze": [
+        "Rabatt und Skonto mindern beide den Preis, aber zu unterschiedlichen Zeitpunkten.",
+        "Der Rabatt steht schon in der Rechnung. Er mindert die Anschaffungskosten sofort.",
+        "Skonto gibt es erst, wenn schnell bezahlt wird. Dann werden die Anschaffungskosten und die Vorsteuer nachträglich berichtigt.",
+        "Merke: Skonto rechnest du immer vom Preis nach Abzug des Rabatts."
+      ]
+    },
+    {
+      "typ": "wasserfall",
+      "daten": {
+        "ueberschrift": "Beispiel: Maschine mit Rabatt und Skonto",
+        "sachverhalt": "Frau Kramer kauft eine Maschine für 10.000 € + 19 % USt auf Ziel. Der Lieferant gibt 10 % Treuerabatt. Bei Zahlung innerhalb von 14 Tagen gibt es 3 % Skonto.",
+        "balken": [
+          {
+            "label": "Listenpreis",
+            "wert": 10000,
+            "art": "start",
+            "satz": 1
+          },
+          {
+            "label": "− Rabatt 10 %",
+            "wert": -1000,
+            "art": "minus",
+            "satz": 2
+          },
+          {
+            "label": "Zieleinkaufspreis",
+            "wert": 9000,
+            "art": "zwischen",
+            "satz": 2
+          },
+          {
+            "label": "− Skonto 3 %",
+            "wert": -270,
+            "art": "minus",
+            "satz": 4
+          },
+          {
+            "label": "Anschaffungskosten",
+            "wert": 8730,
+            "art": "ergebnis",
+            "satz": 5
+          }
+        ],
+        "notiz": {
+          "text": "Rechnung: 9.000 € + 1.710 € USt = 10.710 €",
+          "satz": 3
+        }
+      },
+      "saetze": [
+        "Jetzt rechnen wir ein Beispiel. Frau Kramer kauft eine Maschine für 10.000 Euro netto auf Ziel. Sie bekommt 10 Prozent Treuerabatt und bei schneller Zahlung 3 Prozent Skonto.",
+        "Wir starten beim Listenpreis von 10.000 Euro.",
+        "Zuerst kommt der Rabatt: 10 Prozent von 10.000 Euro sind 1.000 Euro. Es bleiben 9.000 Euro, der Zieleinkaufspreis.",
+        "Darauf kommen 19 Prozent Umsatzsteuer, also 1.710 Euro. Die Rechnung lautet über 10.710 Euro.",
+        "Frau Kramer zahlt schnell. 3 Prozent Skonto vom Zieleinkaufspreis sind 270 Euro netto.",
+        "Die Anschaffungskosten betragen also 8.730 Euro. Und genau mit diesem Wert steht die Maschine in der Bilanz."
+      ]
+    },
+    {
+      "typ": "buchung",
+      "daten": {
+        "ueberschrift": "So wird gebucht",
+        "buchungen": [
+          {
+            "titel": "Kauf auf Ziel",
+            "soll": [
+              [
+                "Maschinen",
+                "9.000,00 €"
+              ],
+              [
+                "Vorsteuer",
+                "1.710,00 €"
+              ]
+            ],
+            "haben": [
+              [
+                "Verbindlichkeiten aLuL",
+                "10.710,00 €"
+              ]
+            ],
+            "satz": 1
+          },
+          {
+            "titel": "Zahlung mit Skonto",
+            "soll": [
+              [
+                "Verbindlichkeiten aLuL",
+                "10.710,00 €"
+              ]
+            ],
+            "haben": [
+              [
+                "Bank",
+                "10.388,70 €"
+              ],
+              [
+                "Maschinen",
+                "270,00 €"
+              ],
+              [
+                "Vorsteuer",
+                "51,30 €"
+              ]
+            ],
+            "satz": 2
+          }
+        ],
+        "fazit": {
+          "text": "erfolgsneutral – der Gewinn ändert sich nicht",
+          "satz": 4
+        }
+      },
+      "saetze": [
+        "Jetzt buchen wir das Ganze.",
+        "Beim Kauf: Maschinen 9.000 Euro und Vorsteuer 1.710 Euro an Verbindlichkeiten 10.710 Euro.",
+        "Bei der Zahlung: Verbindlichkeiten 10.710 Euro an Bank 10.388 Euro 70, an Maschinen 270 Euro und an Vorsteuer 51 Euro 30.",
+        "Der Skonto wird also direkt auf dem Konto Maschinen abgezogen. Und die Vorsteuer wird gleich mit berichtigt.",
+        "Beide Buchungen sind erfolgsneutral. Der Gewinn ändert sich durch den Kauf nicht, erst durch die Abschreibung."
+      ]
+    },
+    {
+      "typ": "stapel",
+      "daten": {
+        "ueberschrift": "Beim Grundstück genauso",
+        "zeilen": [
+          {
+            "text": "Kaufpreis",
+            "wert": "120.000 €",
+            "satz": 1
+          },
+          {
+            "text": "+ Grunderwerbsteuer 5 %",
+            "wert": "6.000 €",
+            "satz": 1
+          },
+          {
+            "text": "+ Notar Kaufvertrag",
+            "wert": "1.200 €",
+            "satz": 2
+          },
+          {
+            "text": "+ Grundbuch",
+            "wert": "80 €",
+            "satz": 2
+          },
+          {
+            "text": "Notar Grundschuld",
+            "wert": "Aufwand",
+            "raus": true,
+            "satz": 3
+          },
+          {
+            "text": "= Anschaffungskosten",
+            "wert": "127.280 €",
+            "ergebnis": true,
+            "satz": 4
+          }
+        ]
+      },
+      "saetze": [
+        "Beim Grundstück funktioniert es genauso.",
+        "Zum Kaufpreis von 120.000 Euro kommt die Grunderwerbsteuer. In Niedersachsen sind das 5 Prozent, also 6.000 Euro.",
+        "Dazu der Notar für den Kaufvertrag und die Eintragung ins Grundbuch.",
+        "Der Notar für die Grundschuld bleibt draußen. Die Grundschuld sichert den Kredit, das ist Finanzierung und damit Aufwand.",
+        "Ergebnis: 127.280 Euro Anschaffungskosten."
+      ]
+    },
+    {
+      "typ": "grenze",
+      "daten": {
+        "ueberschrift": "Geringwertiges Wirtschaftsgut?",
+        "grenze": 800,
+        "max": 1000,
+        "teile": [
+          {
+            "label": "Laptop",
+            "wert": 790,
+            "satz": 1
+          },
+          {
+            "label": "Lieferung",
+            "wert": 20,
+            "satz": 2
+          }
+        ],
+        "ergebnis": {
+          "text": "810 € – kein GWG",
+          "satz": 2
+        },
+        "ref": "§ 6 Abs. 2 EStG"
+      },
+      "saetze": [
+        "Die Anschaffungskosten entscheiden auch, ob ein Gegenstand sofort abgeschrieben werden darf. Die Grenze für geringwertige Wirtschaftsgüter liegt bei 800 Euro netto.",
+        "Ein Laptop kostet 790 Euro. Das sieht nach einem geringwertigen Wirtschaftsgut aus.",
+        "Aber die Lieferung für 20 Euro gehört zu den Anschaffungskosten. Zusammen sind es 810 Euro, und damit liegt der Laptop über der Grenze.",
+        "Er wird also normal abgeschrieben oder kommt in den Sammelposten."
+      ]
+    },
+    {
+      "typ": "fallen",
+      "daten": {
+        "ueberschrift": "Typische Fallen",
+        "karten": [
+          {
+            "titel": "Skonto falsch berechnet",
+            "text": "Immer vom Preis nach Rabatt rechnen.",
+            "satz": 1
+          },
+          {
+            "titel": "Laufende Kosten aktiviert",
+            "text": "Tankfüllung, Versicherung und Kfz-Steuer sind Aufwand.",
+            "satz": 2
+          },
+          {
+            "titel": "Finanzierung mitgerechnet",
+            "text": "Zinsen und Grundschuld gehören nie dazu.",
+            "satz": 3
+          }
+        ]
+      },
+      "saetze": [
+        "Zum Schluss die drei häufigsten Fehler aus Klassenarbeiten.",
+        "Erstens: Skonto vom Listenpreis rechnen. Richtig ist der Preis nach Rabatt.",
+        "Zweitens: laufende Kosten wie die Tankfüllung aktivieren. Die gehören in den Aufwand.",
+        "Drittens: Finanzierungskosten mitrechnen. Zinsen und Grundschuld gehören nie zu den Anschaffungskosten."
+      ]
+    },
+    {
+      "typ": "merke",
+      "daten": {
+        "ueberschrift": "Das nimmst du mit",
+        "punkte": [
+          {
+            "text": "Anschaffungspreis + Nebenkosten − Preisminderungen",
+            "satz": 0
+          },
+          {
+            "text": "Vorsteuer gehört nie dazu",
+            "satz": 0
+          },
+          {
+            "text": "Rabatt sofort, Skonto nachträglich",
+            "satz": 1
+          },
+          {
+            "text": "Finanzierung und laufende Kosten sind Aufwand",
+            "satz": 1
+          }
+        ],
+        "aufruf": "Jetzt üben: LF 10 → Anschaffungskosten"
+      },
+      "saetze": [
+        "Fassen wir zusammen: Anschaffungspreis plus Nebenkosten minus Preisminderungen. Die Vorsteuer gehört nie dazu.",
+        "Rabatt mindert sofort, Skonto nachträglich. Und Finanzierung oder laufende Kosten sind immer Aufwand.",
+        "Jetzt bist du dran: Im Lernfeld 10 warten die Übungsaufgaben zu den Anschaffungskosten auf dich."
+      ]
+    }
+  ]
+}
