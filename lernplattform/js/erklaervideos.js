@@ -101,5 +101,15 @@ window.ERKLAERVIDEOS = [
   "sek": 207.6,
   "datei": "videos/erklaer/lf6-ige.mp4",
   "poster": "videos/erklaer/lf6-ige.jpg"
+ },
+ {
+  "id": "lf6-einfuhr",
+  "lf": "lf6",
+  "thema": "Einkauf aus einem Nicht-EU-Land (Einfuhr)",
+  "titel": "Einkauf aus dem Drittland: die Einfuhrumsatzsteuer",
+  "datum": "2026-11-24",
+  "sek": 206.8,
+  "datei": "videos/erklaer/lf6-einfuhr.mp4",
+  "poster": "videos/erklaer/lf6-einfuhr.jpg"
  }
 ];
