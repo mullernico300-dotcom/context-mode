@@ -71,5 +71,15 @@ window.ERKLAERVIDEOS = [
   "sek": 200.0,
   "datei": "videos/erklaer/lf8-bewirtung.mp4",
   "poster": "videos/erklaer/lf8-bewirtung.jpg"
+ },
+ {
+  "id": "lf5-beitraege",
+  "lf": "lf5",
+  "thema": "Beiträge berechnen: Grenzen und Beitragssätze 2026",
+  "titel": "Sozialversicherungsbeiträge 2026: Sätze und Grenzen",
+  "datum": "2026-11-24",
+  "sek": 218.0,
+  "datei": "videos/erklaer/lf5-beitraege.mp4",
+  "poster": "videos/erklaer/lf5-beitraege.jpg"
  }
 ];
