@@ -54,6 +54,11 @@ Ein Modell kann Claude nicht selbst wechseln. Der Nutzer stellt es mit `/model` 
 - **Modell:** vor Bau Sonnet oder Opus wählen (siehe Tabelle oben). Bei jedem Wechsel oder Unteragenten vorher Bescheid geben.
 - **Bau:** erst mit neuen Tokens und nach Freigabe der Schultage, Startzeit des Abendlaufs und Mitschrift-Upload.
 
+## Automatische Erklärvideos (Nutzerentscheidung 24.11., ersetzt die Test-Regel unten für Erklärvideos)
+
+- Ein geplanter Lauf erstellt montags, mittwochs und freitags je ein Erklärvideo (3–5 Min., NotebookLM-Stil) zu einem Thema ohne Video und trägt es in die App ein (js/erklaervideos.js, videos/erklaer/ nur im Artefakt). Prompt: tools/erklaervideo/ROUTINE-PROMPT.md.
+- An den anderen Tagen entsteht nichts; die App zeigt „Heute wiederholen“ mit einem älteren Video. Die Startseite zeigt die Videos der letzten 7 Tage.
+
 ## Videos bei Tests (verbindlich)
 
 - Wird ein Test eingetragen (z. B. „EStG, Geschenke, in 4 Tagen“), entsteht genau ein Erklärvideo zu diesem Thema: was der Begriff bedeutet und welche Paragrafen beachtet werden müssen.

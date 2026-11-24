@@ -214,6 +214,7 @@
             <h3>Die Steuerfachangestellten-Zeitung</h3><p>Alle Ausgaben zum Lesen</p></a>
         </div>
       </section>
+      ${Erklaer.startHtml()}
       <section class="abschnitt" id="pruefungsvorbereitung">
         <div class="abschnitt-kopf"><h2>Prüfungsvorbereitung</h2></div>
         ${Pruefung.startKachel()}
@@ -224,6 +225,7 @@
       </section>
       </div>`;
     Planer.verdrahteWoche(document.getElementById('startseite'));
+    Erklaer.verdrahte(document.getElementById('startseite'));
   }
 
   /* ---------------- Themen eines Lernfelds ---------------- */
@@ -367,6 +369,8 @@
 
       ${t.info ? `<section class="glas block thema-info"><div class="text">${format(t.info.text)}</div>${t.info.merke ? `<div class="merke"><b>Merke</b>${esc(t.info.merke)}</div>` : ''}</section>` : ''}
 
+      ${Erklaer.themaHtml(lf.id, t.name)}
+
       ${t.videos.length ? `
       <section class="abschnitt">
         <div class="abschnitt-kopf"><h2>🎬 Lernvideos</h2><span class="klein">mit Ton · je unter 2 Minuten</span></div>
@@ -424,6 +428,7 @@
         ${nr > 0 ? `<a class="btn" href="#thema-${esc(lf.id)}-${nr - 1}">← ${esc(th[nr - 1].name)}</a>` : '<span></span>'}
         ${nr < th.length - 1 ? `<a class="btn primaer" href="#thema-${esc(lf.id)}-${nr + 1}">${esc(th[nr + 1].name)} →</a>` : ''}
       </nav>`;
+    Erklaer.verdrahte(app);
     app.querySelectorAll('[data-video]').forEach((v) => {
       v.addEventListener('play', () => app.querySelectorAll('[data-video]').forEach((o) => { if (o !== v) o.pause(); }));
       v.addEventListener('ended', () => { if (Spiel.videoFertig(v.dataset.video)) toast('Video gesehen · +10 XP'); });

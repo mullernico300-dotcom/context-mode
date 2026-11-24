@@ -1,8 +1,10 @@
 {
   "id": "lf10-anschaffungskosten",
   "lf": "lf10",
+  "thema": "Anschaffungskosten",
   "kapitel": "LF 10 · Jahresabschluss",
   "titel": "Anschaffungskosten",
+  "kartentitel": "Anschaffungskosten: Rabatt, Skonto und Nebenkosten",
   "farbe": "#22c55e",
   "szenen": [
     {
