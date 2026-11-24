@@ -300,7 +300,7 @@ export const Grenze: React.FC<{ d: D }> = ({ d }) => {
         <div style={{ position: 'absolute', left: (d.grenze / d.max) * breite - 400, top: -130, width: 800, textAlign: 'center', fontSize: 36, fontWeight: 800, whiteSpace: 'nowrap' }}>{d.grenzeLabel || 'Grenze ' + eur(d.grenze)}</div>
         {teile.map((t: D, i: number) => {
           const p = rein(t.satz, i ? 10 : 0);
-          return <div key={i} style={{ position: 'absolute', top: 140 + i * 60, left: (t.von / d.max) * breite, fontSize: 34, fontWeight: 650, opacity: p, color: i ? F.gelb : F.text, whiteSpace: 'nowrap' }}>{i ? '+ ' : ''}{t.label}: {eur(t.wert)}</div>;
+          return <div key={i} style={{ position: 'absolute', top: 140 + i * 60, left: (t.von / d.max) * breite, fontSize: 34, fontWeight: 650, opacity: p, color: i ? F.gelb : F.text, whiteSpace: 'nowrap' }}>{i ? '+ ' : ''}{t.label}: {d.einheit ? t.wert.toLocaleString('de-DE') + ' ' + d.einheit : eur(t.wert)}</div>;
         })}
       </div>
       <div style={{ display: 'flex', justifyContent: 'center', marginTop: 150, opacity: erg, transform: `scale(${0.8 + 0.2 * erg})` }}>
