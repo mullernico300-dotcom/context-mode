@@ -31,5 +31,25 @@ window.ERKLAERVIDEOS = [
   "sek": 254.7,
   "datei": "videos/erklaer/lf10-teilwert.mp4",
   "poster": "videos/erklaer/lf10-teilwert.jpg"
+ },
+ {
+  "id": "lf8-geschenke",
+  "lf": "lf8",
+  "thema": "Geschenke",
+  "titel": "Geschenke an Geschäftsfreunde: die 50-Euro-Freigrenze",
+  "datum": "2026-11-24",
+  "sek": 232.9,
+  "datei": "videos/erklaer/lf8-geschenke.mp4",
+  "poster": "videos/erklaer/lf8-geschenke.jpg"
+ },
+ {
+  "id": "lf8-reisekosten",
+  "lf": "lf8",
+  "thema": "Reisekosten",
+  "titel": "Reisekosten: Verpflegungspauschalen, Kürzung und Fahrtkosten",
+  "datum": "2026-11-24",
+  "sek": 194.9,
+  "datei": "videos/erklaer/lf8-reisekosten.mp4",
+  "poster": "videos/erklaer/lf8-reisekosten.jpg"
  }
 ];
