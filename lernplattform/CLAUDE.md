@@ -56,8 +56,8 @@ Ein Modell kann Claude nicht selbst wechseln. Der Nutzer stellt es mit `/model` 
 
 ## Automatische Erklärvideos (Nutzerentscheidung 24.11., ersetzt die Test-Regel unten für Erklärvideos)
 
-- Ein geplanter Lauf erstellt montags, mittwochs und freitags je ein Erklärvideo (3–5 Min., NotebookLM-Stil) zu einem Thema ohne Video und trägt es in die App ein (js/erklaervideos.js, videos/erklaer/ nur im Artefakt). Prompt: tools/erklaervideo/ROUTINE-PROMPT.md.
-- An den anderen Tagen entsteht nichts; die App zeigt „Heute wiederholen“ mit einem älteren Video. Die Startseite zeigt die Videos der letzten 7 Tage.
+- Ein geplanter Lauf (im Dashboard des Nutzers) liefert jeden Tag ein Lernvideo ins Dashboard: montags, mittwochs und freitags ein neues Erklärvideo (3–5 Min., NotebookLM-Stil) zu einem Thema ohne Video, das zusätzlich auf der Themenseite der App erscheint (js/erklaervideos.js, videos/erklaer/ nur im Artefakt); an den anderen Tagen ein älteres Video zum Wiederholen. Prompt: tools/erklaervideo/ROUTINE-PROMPT.md.
+- Die Startseite der App bekommt keinen eigenen Video-Bereich (Nutzerwunsch); Erklärvideos stehen nur auf den Themenseiten.
 
 ## Videos bei Tests (verbindlich)
 

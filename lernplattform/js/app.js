@@ -214,7 +214,6 @@
             <h3>Die Steuerfachangestellten-Zeitung</h3><p>Alle Ausgaben zum Lesen</p></a>
         </div>
       </section>
-      ${Erklaer.startHtml()}
       <section class="abschnitt" id="pruefungsvorbereitung">
         <div class="abschnitt-kopf"><h2>Prüfungsvorbereitung</h2></div>
         ${Pruefung.startKachel()}
@@ -225,7 +224,6 @@
       </section>
       </div>`;
     Planer.verdrahteWoche(document.getElementById('startseite'));
-    Erklaer.verdrahte(document.getElementById('startseite'));
   }
 
   /* ---------------- Themen eines Lernfelds ---------------- */
