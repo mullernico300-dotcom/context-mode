@@ -51,5 +51,25 @@ window.ERKLAERVIDEOS = [
   "sek": 194.9,
   "datei": "videos/erklaer/lf8-reisekosten.mp4",
   "poster": "videos/erklaer/lf8-reisekosten.jpg"
+ },
+ {
+  "id": "sk-kuendigung",
+  "lf": "sk",
+  "thema": "Kündigung und Kündigungsschutz",
+  "titel": "Kündigung: Form, Fristen und Kündigungsschutz",
+  "datum": "2026-11-24",
+  "sek": 199.8,
+  "datei": "videos/erklaer/sk-kuendigung.mp4",
+  "poster": "videos/erklaer/sk-kuendigung.jpg"
+ },
+ {
+  "id": "lf8-bewirtung",
+  "lf": "lf8",
+  "thema": "Bewirtung",
+  "titel": "Bewirtung von Geschäftsfreunden: 70 Prozent und volle Vorsteuer",
+  "datum": "2026-11-24",
+  "sek": 200.0,
+  "datei": "videos/erklaer/lf8-bewirtung.mp4",
+  "poster": "videos/erklaer/lf8-bewirtung.jpg"
  }
 ];
