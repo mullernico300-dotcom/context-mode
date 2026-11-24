@@ -218,7 +218,8 @@
     "Die Kündigung kommt am 10. März 2026 an.",
     "Plus 4 Wochen, also 28 Tage, ergibt den 7. April.",
     "Jetzt brauchst du den nächsten erlaubten Termin: den 15. oder das Monatsende. Der nächste ist der 15. April.",
-    "Das Arbeitsverhältnis endet also am 15. April 2026."
+    "Das Arbeitsverhältnis endet also am 15. April 2026.",
+    "Fällt das Ende der 4 Wochen genau auf den 15. oder das Monatsende, endet das Arbeitsverhältnis direkt an diesem Tag."
    ],
    "ton": "sk-kuendigung/s04.wav",
    "zeiten": [
@@ -241,9 +242,13 @@
     {
      "start": 23.182,
      "dauer": 5.004
+    },
+    {
+     "start": 28.636,
+     "dauer": 7.082
     }
    ],
-   "dauer": 29.086
+   "dauer": 36.618
   },
   {
    "typ": "zeitstrahl",
@@ -441,5 +446,5 @@
    "dauer": 21.789
   }
  ],
- "dauer": 192.312
+ "dauer": 199.844
 }

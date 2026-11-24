@@ -58,6 +58,7 @@ Ein Modell kann Claude nicht selbst wechseln. Der Nutzer stellt es mit `/model` 
 
 - Ein geplanter Lauf (im Dashboard des Nutzers) liefert jeden Tag ein Lernvideo ins Dashboard: montags, mittwochs und freitags ein neues Erklärvideo (3–5 Min., NotebookLM-Stil) zu einem Thema ohne Video, das zusätzlich auf der Themenseite der App erscheint (js/erklaervideos.js, videos/erklaer/ nur im Artefakt); an den anderen Tagen ein älteres Video zum Wiederholen. Prompt: tools/erklaervideo/ROUTINE-PROMPT.md.
 - Die Startseite der App bekommt keinen eigenen Video-Bereich (Nutzerwunsch); Erklärvideos stehen nur auf den Themenseiten.
+- Länge der Erklärvideos (Nutzerwunsch 24.11.): etwa 3:30 Minuten, also ungefähr 3:15 bis 3:45. Passt die Länge nach `ton.py` nicht, Sätze kürzen oder ergänzen und neu vertonen.
 
 ## Videos bei Tests (verbindlich)
 

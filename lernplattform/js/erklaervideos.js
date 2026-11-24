@@ -21,5 +21,15 @@ window.ERKLAERVIDEOS = [
   "sek": 250.2,
   "datei": "videos/erklaer/lf10-herstellungskosten.mp4",
   "poster": "videos/erklaer/lf10-herstellungskosten.jpg"
+ },
+ {
+  "id": "lf10-teilwert",
+  "lf": "lf10",
+  "thema": "Abschreibung, Teilwert und Zuschreibung",
+  "titel": "Abschreibung, Teilwert und Zuschreibung: dauerhaft oder nicht?",
+  "datum": "2026-11-24",
+  "sek": 254.7,
+  "datei": "videos/erklaer/lf10-teilwert.mp4",
+  "poster": "videos/erklaer/lf10-teilwert.jpg"
  }
 ];

@@ -17,26 +17,26 @@
     "preisLabel": "Kfz-Versicherung für 2026"
    },
    "saetze": [
-    "Eine GmbH bezahlt am 18. Dezember 2025 die Kfz-Versicherung für das ganze Jahr 2026: 1.800 Euro.",
-    "Gehört dieser Aufwand ins Jahr 2025, in dem bezahlt wurde? Oder ins Jahr 2026, für das die Versicherung gilt?",
+    "Eine GmbH zahlt im Dezember 2025 die Kfz-Versicherung für 2026: 1.800 Euro.",
+    "Ist das Aufwand für 2025 oder für 2026?",
     "Die Antwort liefert die zeitliche Abgrenzung."
    ],
    "ton": "lf10-zeitliche-abgrenzung/s01.wav",
    "zeiten": [
     {
      "start": 0.6,
-     "dauer": 10.31
+     "dauer": 8.824
     },
     {
-     "start": 11.36,
-     "dauer": 8.081
+     "start": 9.874,
+     "dauer": 5.224
     },
     {
-     "start": 19.89,
+     "start": 15.548,
      "dauer": 2.322
     }
    ],
-   "dauer": 23.112
+   "dauer": 18.77
   },
   {
    "typ": "formel",
@@ -67,36 +67,36 @@
     ]
    },
    "saetze": [
-    "Wer bilanziert, ordnet Aufwand und Ertrag dem Jahr zu, zu dem sie wirtschaftlich gehören. Das steht in Paragraf 252 und Paragraf 250 des Handelsgesetzbuchs.",
-    "Fall eins, der aktive Rechnungsabgrenzungsposten: Das Geld ist schon raus, der Aufwand gehört aber ins neue Jahr.",
-    "Fall zwei, der passive Rechnungsabgrenzungsposten: Das Geld ist schon da, der Ertrag gehört aber ins neue Jahr.",
-    "Fall drei, die sonstige Forderung: Der Ertrag gehört ins alte Jahr, das Geld kommt erst im neuen.",
-    "Fall vier, die sonstige Verbindlichkeit: Der Aufwand gehört ins alte Jahr, bezahlt wird erst im neuen."
+    "Aufwand und Ertrag gehören in das Jahr, zu dem sie wirtschaftlich gehören. So steht es im Handelsgesetzbuch.",
+    "Fall eins, aktive Rechnungsabgrenzung: Das Geld ist raus, der Aufwand gehört ins neue Jahr.",
+    "Fall zwei, passive Rechnungsabgrenzung: Das Geld ist da, der Ertrag gehört ins neue Jahr.",
+    "Fall drei, sonstige Forderung: Ertrag jetzt, Geld später.",
+    "Fall vier, sonstige Verbindlichkeit: Aufwand jetzt, Zahlung später."
    ],
    "ton": "lf10-zeitliche-abgrenzung/s02.wav",
    "zeiten": [
     {
      "start": 0.6,
-     "dauer": 11.273
+     "dauer": 5.828
     },
     {
-     "start": 12.323,
-     "dauer": 6.084
+     "start": 6.878,
+     "dauer": 5.77
     },
     {
-     "start": 18.857,
-     "dauer": 6.118
+     "start": 13.098,
+     "dauer": 5.41
     },
     {
-     "start": 25.425,
-     "dauer": 5.503
+     "start": 18.959,
+     "dauer": 3.785
     },
     {
-     "start": 31.379,
-     "dauer": 5.759
+     "start": 23.193,
+     "dauer": 4.272
     }
    ],
-   "dauer": 38.037
+   "dauer": 28.366
   },
   {
    "typ": "zeitstrahl",
@@ -122,8 +122,8 @@
    },
    "saetze": [
     "Zurück zur Kfz-Versicherung.",
-    "Bezahlt wurde 2025. Weil der Versicherungsschutz aber ganz in 2026 liegt, wird der Aufwand am 31. Dezember auf einen aktiven Rechnungsabgrenzungsposten umgebucht. Der Aufwand 2025 ist null.",
-    "Im Jahr 2026 wird der Posten aufgelöst. Dann entsteht der Aufwand von 1.800 Euro, im richtigen Jahr.",
+    "Bezahlt wurde 2025, der Schutz gilt aber 2026. Also wird am 31. Dezember ein aktiver Rechnungsabgrenzungsposten gebildet. Der Aufwand 2025 ist null.",
+    "2026 wird er aufgelöst: Aufwand 1.800 Euro, im richtigen Jahr.",
     "Merke: aktiver Rechnungsabgrenzungsposten heißt Ausgabe jetzt, Aufwand später."
    ],
    "ton": "lf10-zeitliche-abgrenzung/s03.wav",
@@ -134,18 +134,18 @@
     },
     {
      "start": 2.989,
-     "dauer": 14.954
+     "dauer": 13.526
     },
     {
-     "start": 18.393,
-     "dauer": 7.663
+     "start": 16.964,
+     "dauer": 6.316
     },
     {
-     "start": 26.505,
+     "start": 23.73,
      "dauer": 5.05
     }
    ],
-   "dauer": 32.455
+   "dauer": 29.681
   },
   {
    "typ": "wasserfall",
@@ -180,7 +180,7 @@
    "saetze": [
     "Jetzt der umgekehrte Fall.",
     "Eine Spedition erhält Ende November 5.700 Euro Zinsen für Dezember bis Februar. Das sind 1.900 Euro pro Monat.",
-    "Januar und Februar gehören ins neue Jahr. Für sie bildet die Spedition einen passiven Rechnungsabgrenzungsposten von 3.800 Euro.",
+    "Januar und Februar gehören ins neue Jahr: passiver Rechnungsabgrenzungsposten 3.800 Euro.",
     "Im Jahr 2025 bleibt nur der Ertrag für Dezember: 1.900 Euro."
    ],
    "ton": "lf10-zeitliche-abgrenzung/s04.wav",
@@ -195,14 +195,14 @@
     },
     {
      "start": 11.577,
-     "dauer": 8.406
+     "dauer": 6.594
     },
     {
-     "start": 20.433,
+     "start": 18.622,
      "dauer": 5.735
     }
    ],
-   "dauer": 27.068
+   "dauer": 25.257
   },
   {
    "typ": "buchung",
@@ -310,10 +310,10 @@
    },
    "saetze": [
     "Und jetzt Geld, das erst später fließt.",
-    "Ein Unternehmer muss Pacht für Oktober 2025 bis März 2026 bezahlen, insgesamt 3.600 Euro. Das sind 600 Euro im Monat.",
+    "Pacht für Oktober 2025 bis März 2026: 3.600 Euro, also 600 Euro im Monat.",
     "Oktober, November und Dezember gehören wirtschaftlich zu 2025.",
     "Bezahlt wird aber erst am 1. April 2026, also nach dem Stichtag.",
-    "Deshalb bucht er am 31. Dezember Pachtaufwand an sonstige Verbindlichkeiten, 1.800 Euro. Im April bucht er dann sonstige Verbindlichkeiten 1.800 Euro und Pachtaufwand 1.800 Euro an Bank 3.600 Euro."
+    "Am 31. Dezember bucht er Pachtaufwand an sonstige Verbindlichkeiten, 1.800 Euro. Mit der Zahlung im April wird die Verbindlichkeit ausgeglichen."
    ],
    "ton": "lf10-zeitliche-abgrenzung/s06.wav",
    "zeiten": [
@@ -323,22 +323,22 @@
     },
     {
      "start": 3.337,
-     "dauer": 11.355
+     "dauer": 8.591
     },
     {
-     "start": 15.142,
+     "start": 12.379,
      "dauer": 4.748
     },
     {
-     "start": 20.34,
+     "start": 17.577,
      "dauer": 4.969
     },
     {
-     "start": 25.759,
-     "dauer": 16.115
+     "start": 22.996,
+     "dauer": 9.242
     }
    ],
-   "dauer": 42.774
+   "dauer": 33.138
   },
   {
    "typ": "grenze",
@@ -361,26 +361,26 @@
     "ref": "§ 5 Abs. 5 S. 2 EStG"
    },
    "saetze": [
-    "Eine Erleichterung gibt es im Steuerrecht. Nach Paragraf 5 Absatz 5 Satz 2 des Einkommensteuergesetzes darf ein Rechnungsabgrenzungsposten wegfallen, wenn die einzelne Ausgabe oder Einnahme höchstens 800 Euro beträgt.",
+    "Steuerlich gibt es eine Erleichterung: Bis 800 Euro je Ausgabe darf der Posten wegfallen. So steht es in Paragraf 5 Absatz 5 des Einkommensteuergesetzes.",
     "Beispiel: 360 Euro Kfz-Steuer für Oktober 2025 bis September 2026, bezahlt im Oktober.",
-    "Das liegt unter 800 Euro. Steuerlich darf der Posten also wegfallen. Aber nur, wenn man das Wahlrecht für alle solchen Fälle gleich ausübt."
+    "Das liegt unter 800 Euro, der Posten darf also wegfallen, wenn man das Wahlrecht einheitlich ausübt."
    ],
    "ton": "lf10-zeitliche-abgrenzung/s07.wav",
    "zeiten": [
     {
      "start": 0.6,
-     "dauer": 12.597
+     "dauer": 9.265
     },
     {
-     "start": 13.647,
+     "start": 10.315,
      "dauer": 9.183
     },
     {
-     "start": 23.28,
-     "dauer": 7.802
+     "start": 19.948,
+     "dauer": 5.956
     }
    ],
-   "dauer": 31.982
+   "dauer": 26.804
   },
   {
    "typ": "fallen",
@@ -406,9 +406,9 @@
    },
    "saetze": [
     "Drei typische Fehler.",
-    "Erstens: Rechnungsabgrenzung und sonstige Posten verwechseln. Ist das Geld schon geflossen, ist es ein Rechnungsabgrenzungsposten. Fließt es erst später, ist es eine sonstige Forderung oder Verbindlichkeit.",
+    "Erstens: Rechnungsabgrenzung und sonstige Posten verwechseln. Ist das Geld schon geflossen, ist es Rechnungsabgrenzung. Fließt es später, ist es eine sonstige Forderung oder Verbindlichkeit.",
     "Zweitens: Monate falsch zählen. Dezember bis Februar sind drei Monate.",
-    "Drittens: die Vorsteuer abgrenzen. Die Vorsteuer wird nie abgegrenzt, sie ist mit Rechnung und Zahlung sofort abziehbar."
+    "Drittens: die Vorsteuer abgrenzen. Sie ist sofort abziehbar."
    ],
    "ton": "lf10-zeitliche-abgrenzung/s08.wav",
    "zeiten": [
@@ -418,18 +418,18 @@
     },
     {
      "start": 2.583,
-     "dauer": 11.401
+     "dauer": 10.542
     },
     {
-     "start": 14.434,
+     "start": 13.574,
      "dauer": 4.261
     },
     {
-     "start": 19.144,
-     "dauer": 6.908
+     "start": 18.285,
+     "dauer": 3.738
     }
    ],
-   "dauer": 26.952
+   "dauer": 22.924
   },
   {
    "typ": "merke",
@@ -457,7 +457,7 @@
    },
    "saetze": [
     "Zusammengefasst: Aktiver Rechnungsabgrenzungsposten heißt Ausgabe jetzt, Aufwand später. Passiver heißt Einnahme jetzt, Ertrag später.",
-    "Fließt das Geld erst im neuen Jahr, bildest du eine sonstige Forderung oder Verbindlichkeit. Und steuerlich darf der Rechnungsabgrenzungsposten bis 800 Euro wegfallen.",
+    "Fließt das Geld erst später, ist es eine sonstige Forderung oder Verbindlichkeit. Und steuerlich darf der Posten bis 800 Euro wegfallen.",
     "Im Lernfeld 10 warten dazu Übungsaufgaben mit Lösungen auf dich."
    ],
    "ton": "lf10-zeitliche-abgrenzung/s09.wav",
@@ -468,15 +468,15 @@
     },
     {
      "start": 9.223,
-     "dauer": 8.975
+     "dauer": 7.628
     },
     {
-     "start": 18.648,
+     "start": 17.301,
      "dauer": 4.005
     }
    ],
-   "dauer": 23.553
+   "dauer": 22.207
   }
  ],
- "dauer": 267.431
+ "dauer": 228.642
 }

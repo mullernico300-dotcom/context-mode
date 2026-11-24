@@ -102,7 +102,8 @@
         "Ein Beispiel aus dem März 2026.",
         "Die Speisen kosten 200 Euro netto, dazu 7 Prozent Umsatzsteuer, also 14 Euro.",
         "Die Getränke kosten 100 Euro netto, dazu 19 Prozent, also 19 Euro.",
-        "Der Mandant bezahlt insgesamt 333 Euro per Bank."
+        "Der Mandant bezahlt insgesamt 333 Euro per Bank.",
+        "Speisen und Getränke stehen getrennt auf der Rechnung, weil die Steuersätze verschieden sind."
       ]
     },
     {
@@ -140,7 +141,8 @@
         "Netto kostet das Essen 300 Euro.",
         "30 Prozent davon, also 90 Euro, sind nicht abziehbar.",
         "70 Prozent, also 210 Euro, sind Betriebsausgabe.",
-        "Und die Vorsteuer von insgesamt 33 Euro gibt es komplett zurück, nicht nur zu 70 Prozent."
+        "Und die Vorsteuer von insgesamt 33 Euro gibt es komplett zurück, nicht nur zu 70 Prozent.",
+        "Rechne also immer zuerst mit netto und lass die Vorsteuer aus der Aufteilung heraus."
       ]
     },
     {
@@ -185,7 +187,8 @@
       "saetze": [
         "Gebucht wird in einem Buchungssatz.",
         "Bewirtungskosten 210 Euro, nicht abziehbare Bewirtungskosten 90 Euro, Vorsteuer 7 Prozent 14 Euro und Vorsteuer 19 Prozent 19 Euro an Bank 333 Euro.",
-        "Mach immer die Probe: Die Summe im Soll muss den Bruttobetrag ergeben."
+        "Mach immer die Probe: Die Summe im Soll muss den Bruttobetrag ergeben.",
+        "Die 90 Euro mindern zwar den Gewinn in der Buchführung. In der Steuererklärung werden sie aber wieder hinzugerechnet."
       ]
     },
     {
@@ -231,7 +234,8 @@
         "Ohne Nachweis gibt es gar nichts.",
         "Auf den Beleg gehören Ort, Tag, Teilnehmer, Anlass und Höhe der Kosten.",
         "Die Rechnung muss maschinell erstellt sein. Über 250 Euro muss außerdem der Name des Unternehmers draufstehen.",
-        "Eine handgeschriebene Quittung reicht nicht."
+        "Eine handgeschriebene Quittung reicht nicht.",
+        "Fehlt eine dieser Angaben, ist die ganze Bewirtung nicht abziehbar."
       ]
     },
     {

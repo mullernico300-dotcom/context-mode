@@ -80,7 +80,7 @@
    "saetze": [
     "Arbeitnehmer und Arbeitgeber teilen sich die Beiträge meist je zur Hälfte.",
     "Krankenversicherung: 14,6 Prozent, der Arbeitnehmer zahlt 7,3 Prozent.",
-    "Dazu der Zusatzbeitrag der Krankenkasse, durchschnittlich 2,9 Prozent. Der Arbeitnehmer zahlt die Hälfte, also 1,45 Prozent.",
+    "Dazu kommt der halbe Zusatzbeitrag: 1,45 Prozent.",
     "Pflegeversicherung: 1,8 Prozent. Kinderlose ab 23 Jahren zahlen 2,4 Prozent.",
     "Rentenversicherung: 9,3 Prozent.",
     "Arbeitslosenversicherung: 1,3 Prozent.",
@@ -98,26 +98,26 @@
     },
     {
      "start": 11.136,
-     "dauer": 8.591
+     "dauer": 3.994
     },
     {
-     "start": 20.178,
+     "start": 15.58,
      "dauer": 6.594
     },
     {
-     "start": 27.222,
+     "start": 22.625,
      "dauer": 2.601
     },
     {
-     "start": 30.273,
+     "start": 25.675,
      "dauer": 3.1
     },
     {
-     "start": 33.823,
+     "start": 29.225,
      "dauer": 4.911
     }
    ],
-   "dauer": 39.634
+   "dauer": 35.036
   },
   {
    "typ": "stapel",
@@ -163,7 +163,7 @@
     "Krankenversicherung 219 Euro, Zusatzbeitrag 43 Euro 50.",
     "Pflegeversicherung 54 Euro.",
     "Rentenversicherung 279 Euro und Arbeitslosenversicherung 39 Euro.",
-    "Zusammen 634 Euro 50. Probe: 21,15 Prozent von 3.000 Euro ergibt genau das."
+    "Zusammen 634 Euro 50, genau 21,15 Prozent."
    ],
    "ton": "lf5-beitraege/s03.wav",
    "zeiten": [
@@ -185,10 +185,10 @@
     },
     {
      "start": 20.477,
-     "dauer": 8.231
+     "dauer": 5.875
     }
    ],
-   "dauer": 29.608
+   "dauer": 27.251
   },
   {
    "typ": "zeitstrahl",
@@ -215,7 +215,7 @@
     ]
    },
    "saetze": [
-    "Bei hohen Gehältern gibt es eine Obergrenze: die Beitragsbemessungsgrenze. Davon gibt es zwei.",
+    "Für hohe Gehälter gibt es zwei Obergrenzen, die Beitragsbemessungsgrenzen.",
     "Für Kranken- und Pflegeversicherung liegt sie 2026 bei 5.812 Euro 50 im Monat.",
     "Für Renten- und Arbeitslosenversicherung bei 8.450 Euro im Monat.",
     "Was jemand über der Grenze verdient, ist in diesem Zweig beitragsfrei."
@@ -224,22 +224,22 @@
    "zeiten": [
     {
      "start": 0.6,
-     "dauer": 5.48
+     "dauer": 4.203
     },
     {
-     "start": 6.53,
+     "start": 5.253,
      "dauer": 7.79
     },
     {
-     "start": 14.77,
+     "start": 13.493,
      "dauer": 5.515
     },
     {
-     "start": 20.735,
+     "start": 19.458,
      "dauer": 3.75
     }
    ],
-   "dauer": 25.385
+   "dauer": 24.108
   },
   {
    "typ": "grenze",
@@ -265,7 +265,7 @@
    "saetze": [
     "Zweites Beispiel: 7.000 Euro brutto, 30 Jahre alt, keine Kinder.",
     "Das Gehalt liegt über der Grenze für Kranken- und Pflegeversicherung.",
-    "Also rechnest du Kranken- und Pflegeversicherung nur von 5.812 Euro 50. Renten- und Arbeitslosenversicherung aber vom vollen Brutto, denn 7.000 Euro liegen unter 8.450 Euro."
+    "Kranken- und Pflegeversicherung rechnest du also nur von 5.812 Euro 50. Rente und Arbeitslosen vom vollen Brutto."
    ],
    "ton": "lf5-beitraege/s05.wav",
    "zeiten": [
@@ -279,10 +279,10 @@
     },
     {
      "start": 10.138,
-     "dauer": 13.56
+     "dauer": 7.964
     }
    ],
-   "dauer": 24.598
+   "dauer": 19.002
   },
   {
    "typ": "stapel",
@@ -396,9 +396,9 @@
    },
    "saetze": [
     "Manche Beiträge trägt der Arbeitgeber ganz allein.",
-    "Das sind die Umlagen U1 für Krankheit und U2 für Mutterschaft. U1 zahlen nur Betriebe mit bis zu 30 Arbeitnehmern.",
+    "Das sind die Umlagen U1 für Krankheit und U2 für Mutterschaft.",
     "Und die Insolvenzgeldumlage mit 0,15 Prozent.",
-    "Renten- und Krankenversicherung, auch der Zusatzbeitrag, werden dagegen geteilt."
+    "Renten- und Krankenversicherung, auch der Zusatzbeitrag, werden geteilt."
    ],
    "ton": "lf5-beitraege/s07.wav",
    "zeiten": [
@@ -408,18 +408,18 @@
     },
     {
      "start": 3.79,
-     "dauer": 7.152
+     "dauer": 3.982
     },
     {
-     "start": 11.392,
+     "start": 8.222,
      "dauer": 3.297
     },
     {
-     "start": 15.139,
-     "dauer": 4.145
+     "start": 11.969,
+     "dauer": 3.994
     }
    ],
-   "dauer": 20.184
+   "dauer": 16.863
   },
   {
    "typ": "fallen",
@@ -445,9 +445,9 @@
    },
    "saetze": [
     "Drei typische Fehler.",
-    "Erstens: die zwei Grenzen verwechseln. Die Beitragsbemessungsgrenze deckelt den Beitrag. Die Versicherungspflichtgrenze von 6.450 Euro entscheidet, ob jemand gesetzlich krankenversichert sein muss.",
+    "Erstens: die Grenzen verwechseln. Die Beitragsbemessungsgrenze deckelt den Beitrag. Die Versicherungspflichtgrenze entscheidet, ob jemand gesetzlich krankenversichert sein muss.",
     "Zweitens: für alle Zweige dieselbe Basis nehmen. Liegt das Gehalt zwischen den Grenzen, gibt es zwei verschiedene Basen.",
-    "Drittens: den Pflegesatz falsch wählen. Kinderlose ab 23 zahlen 2,4 Prozent, und der Abschlag gilt nur für Kinder unter 25."
+    "Drittens: der falsche Pflegesatz. Kinderlose ab 23 zahlen 2,4 Prozent."
    ],
    "ton": "lf5-beitraege/s08.wav",
    "zeiten": [
@@ -457,18 +457,18 @@
     },
     {
      "start": 2.583,
-     "dauer": 12.318
+     "dauer": 9.416
     },
     {
-     "start": 15.351,
+     "start": 12.448,
      "dauer": 6.722
     },
     {
-     "start": 22.523,
-     "dauer": 8.975
+     "start": 19.62,
+     "dauer": 5.399
     }
    ],
-   "dauer": 32.397
+   "dauer": 25.919
   },
   {
    "typ": "merke",
@@ -496,7 +496,7 @@
    },
    "saetze": [
     "Zusammengefasst: Der Beitrag ist Basis mal Satz, jeder Zweig einzeln und auf Cent gerundet. Mit einem Kind zahlt der Arbeitnehmer 21,15 Prozent.",
-    "Die Basis ist höchstens die Beitragsbemessungsgrenze: 5.812 Euro 50 für Kranken und Pflege, 8.450 Euro für Rente und Arbeitslosen.",
+    "Die Grenzen: 5.812 Euro 50 für Kranken und Pflege, 8.450 Euro für Rente und Arbeitslosen.",
     "Im Lernfeld 5 findest du dazu Übungsaufgaben mit Stimme."
    ],
    "ton": "lf5-beitraege/s09.wav",
@@ -507,15 +507,15 @@
     },
     {
      "start": 10.64,
-     "dauer": 11.204
+     "dauer": 8.766
     },
     {
-     "start": 22.293,
+     "start": 19.855,
      "dauer": 3.727
     }
    ],
-   "dauer": 26.92
+   "dauer": 24.482
   }
  ],
- "dauer": 244.075
+ "dauer": 218.01
 }
