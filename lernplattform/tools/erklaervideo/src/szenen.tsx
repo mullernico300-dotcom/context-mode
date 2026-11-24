@@ -41,7 +41,7 @@ export const Formel: React.FC<{ d: D }> = ({ d }) => {
   const { rein, akzent } = useSzene();
   return (
     <div style={{ padding: '0 80px' }}>
-      <Ueberschrift text={d.ueberschrift} zusatz={<span style={{ marginLeft: 'auto', opacity: rein(0, 12) }}><Pille farbe={F.blau}>§ {d.ref.replace('§ ', '')}</Pille></span>} />
+      <Ueberschrift text={d.ueberschrift} zusatz={<span style={{ marginLeft: 'auto', opacity: rein(0, 12) }}><Pille farbe={F.blau}>{d.ref}</Pille></span>} />
       <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
         {d.zeilen.map((z: D, k: number) => {
           const p = rein(k + 1);

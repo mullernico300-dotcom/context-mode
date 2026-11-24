@@ -1,0 +1,297 @@
+{
+  "id": "lf6-ige",
+  "lf": "lf6",
+  "thema": "Einkauf aus einem anderen EU-Land (innergemeinschaftlicher Erwerb)",
+  "kapitel": "LF 6 · Umsatzsteuer",
+  "titel": "Innergemeinschaftlicher Erwerb",
+  "kartentitel": "Einkauf aus dem EU-Ausland: der innergemeinschaftliche Erwerb",
+  "farbe": "#a855f7",
+  "szenen": [
+    {
+      "typ": "titel",
+      "daten": {
+        "kicker": "LF 6 · Umsatzsteuer",
+        "titel": "EU-Einkauf",
+        "untertitel": "Der innergemeinschaftliche Erwerb",
+        "preis": "0 €",
+        "preisLabel": "Zahllast"
+      },
+      "saetze": [
+        "Ein Elektrohändler aus Hannover kauft 20 Fernseher bei einem Unternehmen in Linz in Österreich.",
+        "Auf der Rechnung steht keine Umsatzsteuer. Ist der Einkauf also steuerfrei?",
+        "Nein. Der Händler versteuert ihn selbst in Deutschland. Das nennt man innergemeinschaftlichen Erwerb."
+      ]
+    },
+    {
+      "typ": "formel",
+      "daten": {
+        "ueberschrift": "So prüfst du den Erwerb",
+        "ref": "§ 1a UStG",
+        "zeilen": [
+          {
+            "zeichen": "1",
+            "text": "Ware kommt aus einem EU-Land",
+            "info": "in ein anderes EU-Land"
+          },
+          {
+            "zeichen": "2",
+            "text": "Käufer ist Unternehmer",
+            "info": "kauft für seine Firma"
+          },
+          {
+            "zeichen": "3",
+            "text": "Verkäufer ist Unternehmer",
+            "info": "kein Kleinunternehmer"
+          },
+          {
+            "zeichen": "4",
+            "text": "Ort: wo die Ware ankommt",
+            "info": "§ 3d Satz 1 UStG"
+          },
+          {
+            "zeichen": "5",
+            "text": "Steuer schuldet der Käufer",
+            "info": "§ 13a Abs. 1 Nr. 2 UStG"
+          }
+        ]
+      },
+      "saetze": [
+        "Drei Dinge müssen nach Paragraf 1a stimmen.",
+        "Erstens: Die Ware kommt wirklich aus einem EU-Land in ein anderes.",
+        "Zweitens: Der Käufer ist Unternehmer und kauft für seine Firma.",
+        "Drittens: Der Verkäufer ist auch Unternehmer und kein Kleinunternehmer.",
+        "Versteuert wird dort, wo die Ware am Ende ankommt, hier also in Deutschland.",
+        "Und die Steuer schuldet der Käufer, nicht der Verkäufer. Der Verkäufer in Österreich liefert steuerfrei.",
+        "Beim Verkäufer heißt das innergemeinschaftliche Lieferung. Sie ist dort steuerfrei, weil die Ware das Land verlässt."
+      ]
+    },
+    {
+      "typ": "sortieren",
+      "daten": {
+        "ueberschrift": "Erwerb oder Einfuhr?",
+        "ja": "innergemeinschaftlicher Erwerb",
+        "nein": "Einfuhr",
+        "karten": [
+          {
+            "text": "Fernseher aus Österreich",
+            "icon": "📺",
+            "ja": true,
+            "satz": 1
+          },
+          {
+            "text": "eigene Ware ins deutsche Lager",
+            "icon": "🏭",
+            "ja": true,
+            "satz": 2
+          },
+          {
+            "text": "Neuwagen aus Frankreich",
+            "icon": "🚗",
+            "ja": true,
+            "satz": 3
+          },
+          {
+            "text": "Uhren aus der Schweiz",
+            "icon": "⌚",
+            "ja": false,
+            "satz": 4
+          },
+          {
+            "text": "aus Albanien über Österreich",
+            "icon": "🚚",
+            "ja": false,
+            "satz": 5
+          }
+        ]
+      },
+      "saetze": [
+        "Woher kommt die Ware? Das klärst du immer zuerst.",
+        "Die Fernseher aus Österreich: EU-Land, also innergemeinschaftlicher Erwerb.",
+        "Bringt eine Firma eigene Ware dauerhaft ins deutsche Lager, zählt das auch als Erwerb. Das heißt Verbringen.",
+        "Ein neues Fahrzeug aus der EU versteuert der Käufer immer in Deutschland, sogar als Privatperson.",
+        "Die Schweiz ist kein EU-Land. Das ist eine Einfuhr.",
+        "Und Ware aus Albanien bleibt eine Einfuhr, auch wenn der Lkw durch Österreich fährt."
+      ]
+    },
+    {
+      "typ": "stapel",
+      "daten": {
+        "ueberschrift": "Die Fernseher aus Linz",
+        "icon": "📺",
+        "zeilen": [
+          {
+            "text": "Entgelt netto",
+            "wert": "10.000,00 €",
+            "satz": 1
+          },
+          {
+            "text": "Erwerbsteuer 19 %",
+            "wert": "1.900,00 €",
+            "satz": 2
+          },
+          {
+            "text": "− Vorsteuer aus dem Erwerb",
+            "wert": "1.900,00 €",
+            "satz": 3
+          },
+          {
+            "text": "= Zahllast",
+            "wert": "0,00 €",
+            "ergebnis": true,
+            "satz": 4
+          }
+        ]
+      },
+      "saetze": [
+        "Jetzt rechnen wir.",
+        "Die Fernseher kosten 10.000 Euro netto. Das ist das Entgelt.",
+        "Darauf schuldet der Händler 19 Prozent Erwerbsteuer, also 1.900 Euro.",
+        "Gleichzeitig darf er dieselben 1.900 Euro als Vorsteuer abziehen.",
+        "Am Ende bleibt nichts übrig. Die Ware ist trotzdem mit deutscher Steuer erfasst.",
+        "Das gilt aber nur, wenn der Händler voll zum Vorsteuerabzug berechtigt ist."
+      ]
+    },
+    {
+      "typ": "zeitstrahl",
+      "daten": {
+        "ueberschrift": "Wann entsteht die Steuer?",
+        "merke": "Das Zahlungsdatum ist egal",
+        "punkte": [
+          {
+            "label": "20.03.2026",
+            "titel": "Rechnung",
+            "text": "das frühere Datum zählt",
+            "folge": "Voranmeldung März",
+            "ref": "§ 13 Abs. 1 Nr. 6 UStG",
+            "satz": 1
+          },
+          {
+            "label": "30.04.2026",
+            "titel": "Ende Folgemonat",
+            "text": "spätester Zeitpunkt",
+            "folge": "gilt, wenn keine Rechnung kommt",
+            "ref": "§ 13 Abs. 1 Nr. 6 UStG",
+            "satz": 2
+          }
+        ]
+      },
+      "saetze": [
+        "Wann entsteht die Steuer? Vergleiche zwei Daten.",
+        "Die Rechnung ist vom 20. März 2026.",
+        "Spätestens entsteht die Steuer am Ende des Folgemonats, hier am 30. April.",
+        "Das frühere Datum gewinnt: der 20. März. Die Steuer gehört also in die Voranmeldung für März. Wann bezahlt wird, spielt keine Rolle.",
+        "Kommt die Rechnung erst im Mai, entsteht die Steuer trotzdem schon am 30. April."
+      ]
+    },
+    {
+      "typ": "buchung",
+      "daten": {
+        "ueberschrift": "So wird gebucht",
+        "buchungen": [
+          {
+            "titel": "Wareneinkauf",
+            "soll": [
+              [
+                "Wareneingang innergem. Erwerb 19 %",
+                "10.000,00 €"
+              ]
+            ],
+            "haben": [
+              [
+                "Verbindlichkeiten",
+                "10.000,00 €"
+              ]
+            ],
+            "satz": 1
+          },
+          {
+            "titel": "Erwerbsteuer",
+            "soll": [
+              [
+                "Vorsteuer innergem. Erwerb",
+                "1.900,00 €"
+              ]
+            ],
+            "haben": [
+              [
+                "Umsatzsteuer innergem. Erwerb",
+                "1.900,00 €"
+              ]
+            ],
+            "satz": 2
+          }
+        ],
+        "fazit": {
+          "text": "Voranmeldung: Kennzahl 89 = 10.000 €, Kennzahl 61 = 1.900 €",
+          "satz": 3
+        }
+      },
+      "saetze": [
+        "Gebucht wird in zwei Schritten.",
+        "Erstens: Wareneingang innergemeinschaftlicher Erwerb an Verbindlichkeiten, 10.000 Euro.",
+        "Zweitens: Vorsteuer an Umsatzsteuer aus innergemeinschaftlichem Erwerb, je 1.900 Euro.",
+        "In der Voranmeldung stehen die 10.000 Euro in Kennzahl 89 und die Vorsteuer in Kennzahl 61.",
+        "Die Erwerbsteuer und die Vorsteuer gleichen sich aus. Bezahlt wird an das Finanzamt nichts."
+      ]
+    },
+    {
+      "typ": "fallen",
+      "daten": {
+        "ueberschrift": "Typische Fallen",
+        "karten": [
+          {
+            "titel": "Durchfahrt zählt nicht",
+            "text": "Drittlandsware bleibt Einfuhr, auch wenn sie durch die EU fährt.",
+            "satz": 1
+          },
+          {
+            "titel": "Falsche USt-IdNr.",
+            "text": "Die zusätzliche Steuer nach § 3d Satz 2 ist nicht als Vorsteuer abziehbar.",
+            "satz": 2
+          },
+          {
+            "titel": "Erwerbsschwelle",
+            "text": "12.500 € gilt nur für Halbunternehmer, nicht für normale Unternehmer.",
+            "satz": 3
+          }
+        ]
+      },
+      "saetze": [
+        "Drei typische Fehler.",
+        "Erstens: Ware aus einem Drittland für einen Erwerb halten, nur weil sie durch die EU fährt. Es bleibt eine Einfuhr.",
+        "Zweitens: Wer die Umsatzsteuer-Identifikationsnummer eines anderen Landes verwendet, versteuert zusätzlich dort. Diese Steuer ist nicht als Vorsteuer abziehbar.",
+        "Drittens: die Erwerbsschwelle von 12.500 Euro beim normalen Unternehmer anwenden. Sie gilt nur für Halbunternehmer, zum Beispiel Kleinunternehmer."
+      ]
+    },
+    {
+      "typ": "merke",
+      "daten": {
+        "ueberschrift": "Das nimmst du mit",
+        "punkte": [
+          {
+            "text": "Verkäufer liefert steuerfrei, Käufer versteuert",
+            "satz": 0
+          },
+          {
+            "text": "Ort: wo die Ware ankommt",
+            "satz": 0
+          },
+          {
+            "text": "Erwerbsteuer zurück als Vorsteuer",
+            "satz": 1
+          },
+          {
+            "text": "Entstehung: Rechnung, spätestens Ende Folgemonat",
+            "satz": 1
+          }
+        ],
+        "aufruf": "Jetzt üben: LF 6 → EU-Einkauf"
+      },
+      "saetze": [
+        "Zusammengefasst: Der Verkäufer liefert steuerfrei, der Käufer versteuert dort, wo die Ware ankommt.",
+        "Die Erwerbsteuer zieht er gleich wieder als Vorsteuer ab. Und sie entsteht mit der Rechnung, spätestens am Ende des Folgemonats.",
+        "Im Lernfeld 6 findest du dazu Übungsaufgaben mit Stimme."
+      ]
+    }
+  ]
+}

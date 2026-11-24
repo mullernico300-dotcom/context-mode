@@ -38,7 +38,7 @@ def main(skript, stimme, cache=None):
     def nb(o):
         if isinstance(o, dict): return {k: nb(v) for k, v in o.items()}
         if isinstance(o, list): return [nb(v) for v in o]
-        if isinstance(o, str): return re.sub(r'(\d) ([€%])', '\\1\u00a0\\2', o)
+        if isinstance(o, str): return re.sub(r'(§§?) ', '\\1\u00a0', re.sub(r'(\d) ([€%])', '\\1\u00a0\\2', o))
         return o
     for sz in d['szenen']:
         sz['daten'] = nb(sz['daten'])
