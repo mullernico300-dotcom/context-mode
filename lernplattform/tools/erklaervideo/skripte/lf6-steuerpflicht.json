@@ -1,0 +1,266 @@
+{
+  "id": "lf6-steuerpflicht",
+  "lf": "lf6",
+  "thema": "Wer muss in Deutschland Einkommensteuer zahlen?",
+  "kapitel": "LF 6 · Einkommensteuer",
+  "titel": "Steuerpflicht",
+  "kartentitel": "Wer muss in Deutschland Einkommensteuer zahlen?",
+  "farbe": "#a855f7",
+  "szenen": [
+    {
+      "typ": "titel",
+      "daten": {
+        "kicker": "LF 6 · Einkommensteuer",
+        "titel": "Steuerpflicht",
+        "untertitel": "Wer zahlt in Deutschland Einkommensteuer?",
+        "preis": "6 Monate",
+        "preisLabel": "Aufenthalt"
+      },
+      "saetze": [
+        "Ein Ingenieur aus Indien arbeitet ein halbes Jahr in Hannover. Eine Rentnerin lebt in Spanien und bekommt eine deutsche Rente.",
+        "Müssen die beiden in Deutschland Einkommensteuer zahlen? Und wenn ja, auf welche Einkünfte?",
+        "Das klärt die Frage nach der Steuerpflicht."
+      ]
+    },
+    {
+      "typ": "formel",
+      "daten": {
+        "ueberschrift": "So prüfst du die Steuerpflicht",
+        "ref": "§ 1 EStG",
+        "zeilen": [
+          {
+            "zeichen": "1",
+            "text": "Natürliche Person?",
+            "info": "nur Menschen"
+          },
+          {
+            "zeichen": "2",
+            "text": "Wohnsitz in Deutschland?",
+            "info": "§ 8 AO"
+          },
+          {
+            "zeichen": "3",
+            "text": "Gewöhnlicher Aufenthalt?",
+            "info": "§ 9 AO, mehr als 6 Monate"
+          },
+          {
+            "zeichen": "→",
+            "text": "Ja: unbeschränkt, Welteinkommen",
+            "info": "§ 1 Abs. 1 EStG",
+            "ergebnis": true
+          },
+          {
+            "zeichen": "→",
+            "text": "Nein: beschränkt, nur deutsche Einkünfte",
+            "info": "§ 1 Abs. 4, § 49 EStG"
+          }
+        ]
+      },
+      "saetze": [
+        "Einkommensteuer zahlen nur Menschen, also natürliche Personen.",
+        "Hat die Person in Deutschland eine Wohnung, die sie behalten und benutzen will? Dann hat sie hier einen Wohnsitz. Auch ein WG-Zimmer oder ein Zimmer bei den Eltern zählt.",
+        "Oder ist sie länger als 6 Monate am Stück hier? Dann hat sie ihren gewöhnlichen Aufenthalt in Deutschland.",
+        "Trifft eins davon zu, ist sie unbeschränkt steuerpflichtig. Dann werden alle Einkünfte aus der ganzen Welt in Deutschland versteuert.",
+        "Sonst ist sie beschränkt steuerpflichtig, aber nur, wenn sie deutsche Einkünfte hat. Und versteuert werden nur diese."
+      ]
+    },
+    {
+      "typ": "sortieren",
+      "daten": {
+        "ueberschrift": "Unbeschränkt oder beschränkt?",
+        "ja": "unbeschränkt",
+        "nein": "beschränkt",
+        "karten": [
+          {
+            "text": "Azubi mit WG-Zimmer in Hannover",
+            "icon": "🏠",
+            "ja": true,
+            "satz": 1
+          },
+          {
+            "text": "Diplomatin in Paris",
+            "icon": "🏛️",
+            "ja": true,
+            "satz": 2
+          },
+          {
+            "text": "Rentnerin in Spanien, deutsche Rente",
+            "icon": "🏖️",
+            "ja": false,
+            "satz": 3
+          },
+          {
+            "text": "wohnt in Polen, Ferienjob in Görlitz",
+            "icon": "🚌",
+            "ja": false,
+            "satz": 4
+          }
+        ]
+      },
+      "saetze": [
+        "Ordnen wir ein paar Fälle zu.",
+        "Die Auszubildende mit WG-Zimmer in Hannover hat hier einen Wohnsitz: unbeschränkt.",
+        "Die Diplomatin arbeitet für Deutschland in Paris. Sie bleibt trotzdem unbeschränkt steuerpflichtig.",
+        "Die Rentnerin wohnt in Spanien. Ihre deutsche Rente ist aber eine deutsche Einkunft: beschränkt.",
+        "Und wer in Polen wohnt und kurz in Görlitz jobbt, versteuert nur den deutschen Lohn: beschränkt."
+      ]
+    },
+    {
+      "typ": "zeitstrahl",
+      "daten": {
+        "ueberschrift": "Der Ingenieur aus Indien",
+        "merke": "Die 6 Monate wirken ab dem ersten Tag",
+        "punkte": [
+          {
+            "label": "01.03.2026",
+            "titel": "Ankunft",
+            "text": "kein Wohnsitz, nur Hotel",
+            "folge": "steuerpflichtig ab diesem Tag",
+            "ref": "§ 9 Satz 2 AO",
+            "satz": 1
+          },
+          {
+            "label": "15.10.2026",
+            "titel": "Abreise",
+            "text": "mehr als 6 Monate",
+            "folge": "gewöhnlicher Aufenthalt",
+            "ref": "§ 1 Abs. 1 EStG",
+            "satz": 2
+          }
+        ]
+      },
+      "saetze": [
+        "Zurück zum Ingenieur aus Indien. Er hat keine Wohnung, er wohnt im Hotel.",
+        "Er kommt am 1. März 2026 an.",
+        "Und er reist am 15. Oktober wieder ab. Das sind mehr als 6 Monate am Stück.",
+        "Damit hat er seinen gewöhnlichen Aufenthalt in Deutschland. Und zwar rückwirkend ab dem ersten Tag, nicht erst ab dem siebten Monat."
+      ]
+    },
+    {
+      "typ": "stapel",
+      "daten": {
+        "ueberschrift": "Tage zählen",
+        "icon": "⏳",
+        "zeilen": [
+          {
+            "text": "1. bis 31. März",
+            "wert": "31 Tage",
+            "satz": 1
+          },
+          {
+            "text": "April bis September",
+            "wert": "183 Tage",
+            "satz": 2
+          },
+          {
+            "text": "1. bis 15. Oktober",
+            "wert": "15 Tage",
+            "satz": 3
+          },
+          {
+            "text": "= Aufenthalt",
+            "wert": "229 Tage",
+            "ergebnis": true,
+            "satz": 4
+          }
+        ]
+      },
+      "saetze": [
+        "In der Prüfung rechnest du die Tage genau aus. Zähle jeden Monat einzeln.",
+        "Im März sind es 31 Tage.",
+        "April bis September sind 183 Tage.",
+        "Im Oktober noch 15 Tage.",
+        "Zusammen 229 Tage. Das ist deutlich mehr als 6 Monate.",
+        "Tipp: Schreib die Tage je Monat untereinander, dann verrechnest du dich nicht."
+      ]
+    },
+    {
+      "typ": "grenze",
+      "daten": {
+        "ueberschrift": "Grenzpendler: Antrag möglich?",
+        "grenze": 90,
+        "grenzeLabel": "Grenze: 90 %",
+        "max": 125,
+        "einheit": "%",
+        "teile": [
+          {
+            "label": "Deutsche Einkünfte",
+            "wert": 93.75,
+            "satz": 1
+          }
+        ],
+        "ergebnis": {
+          "text": "Antrag: Behandlung wie ein Inländer",
+          "ok": true,
+          "satz": 3
+        },
+        "ref": "§ 1 Abs. 3 EStG"
+      },
+      "saetze": [
+        "Eine Sonderregel gibt es für Grenzpendler. Eine Frau wohnt in den Niederlanden und arbeitet in Deutschland.",
+        "Sie verdient 45.000 Euro in Deutschland und 3.000 Euro in den Niederlanden. 45.000 von 48.000 Euro sind 93,75 Prozent.",
+        "Das sind mindestens 90 Prozent. Es würde auch reichen, wenn die ausländischen Einkünfte höchstens 12.348 Euro betragen.",
+        "Dann kann sie beantragen, wie eine Inländerin behandelt zu werden. So bekommt sie Vergünstigungen, die beschränkt Steuerpflichtige sonst nicht haben."
+      ]
+    },
+    {
+      "typ": "fallen",
+      "daten": {
+        "ueberschrift": "Typische Fallen",
+        "karten": [
+          {
+            "titel": "Firma als Steuerzahler",
+            "text": "Eine OHG oder KG zahlt keine Einkommensteuer, die Gesellschafter schon.",
+            "satz": 1
+          },
+          {
+            "titel": "Zwei Erklärungen",
+            "text": "Wer im Jahr zu- oder wegzieht, hat trotzdem nur eine Veranlagung.",
+            "satz": 2
+          },
+          {
+            "titel": "Falsches Gesetz",
+            "text": "Wohnsitz und Aufenthalt stehen in der AO, §§ 8 und 9.",
+            "satz": 3
+          }
+        ]
+      },
+      "saetze": [
+        "Drei typische Fehler.",
+        "Erstens: eine OHG oder KG für steuerpflichtig halten. Ihr Gewinn wird auf die Gesellschafter verteilt, und jeder versteuert seinen Teil selbst.",
+        "Zweitens: Wer im Laufe des Jahres zuzieht oder wegzieht, bekommt keine zwei Veranlagungen, sondern eine für das ganze Jahr.",
+        "Drittens: Wohnsitz und gewöhnlicher Aufenthalt stehen in der Abgabenordnung, in den Paragrafen 8 und 9, nicht im Einkommensteuergesetz."
+      ]
+    },
+    {
+      "typ": "merke",
+      "daten": {
+        "ueberschrift": "Das nimmst du mit",
+        "punkte": [
+          {
+            "text": "Wohnsitz oder mehr als 6 Monate: unbeschränkt",
+            "satz": 0
+          },
+          {
+            "text": "Unbeschränkt: Welteinkommen",
+            "satz": 0
+          },
+          {
+            "text": "Sonst beschränkt: nur deutsche Einkünfte",
+            "satz": 1
+          },
+          {
+            "text": "Grenzpendler: 90 % oder 12.348 €",
+            "satz": 1
+          }
+        ],
+        "aufruf": "Jetzt üben: LF 6 → Steuerpflicht"
+      },
+      "saetze": [
+        "Zusammengefasst: Wer in Deutschland wohnt oder länger als 6 Monate hier ist, ist unbeschränkt steuerpflichtig und versteuert sein Welteinkommen.",
+        "Alle anderen versteuern nur ihre deutschen Einkünfte. Grenzpendler können ab 90 Prozent einen Antrag stellen.",
+        "Im Lernfeld 6 findest du dazu Übungsaufgaben mit Stimme."
+      ]
+    }
+  ]
+}
