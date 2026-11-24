@@ -91,5 +91,15 @@ window.ERKLAERVIDEOS = [
   "sek": 228.7,
   "datei": "videos/erklaer/lf10-zeitliche-abgrenzung.mp4",
   "poster": "videos/erklaer/lf10-zeitliche-abgrenzung.jpg"
+ },
+ {
+  "id": "lf6-ige",
+  "lf": "lf6",
+  "thema": "Einkauf aus einem anderen EU-Land (innergemeinschaftlicher Erwerb)",
+  "titel": "Einkauf aus dem EU-Ausland: der innergemeinschaftliche Erwerb",
+  "datum": "2026-11-24",
+  "sek": 207.6,
+  "datei": "videos/erklaer/lf6-ige.mp4",
+  "poster": "videos/erklaer/lf6-ige.jpg"
  }
 ];
