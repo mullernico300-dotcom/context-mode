@@ -111,5 +111,15 @@ window.ERKLAERVIDEOS = [
   "sek": 206.8,
   "datei": "videos/erklaer/lf6-einfuhr.mp4",
   "poster": "videos/erklaer/lf6-einfuhr.jpg"
+ },
+ {
+  "id": "lf6-steuerpflicht",
+  "lf": "lf6",
+  "thema": "Wer muss in Deutschland Einkommensteuer zahlen?",
+  "titel": "Wer muss in Deutschland Einkommensteuer zahlen?",
+  "datum": "2026-11-24",
+  "sek": 205.4,
+  "datei": "videos/erklaer/lf6-steuerpflicht.mp4",
+  "poster": "videos/erklaer/lf6-steuerpflicht.jpg"
  }
 ];
