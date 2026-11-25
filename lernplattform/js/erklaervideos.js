@@ -53,36 +53,6 @@ window.ERKLAERVIDEOS = [
   "poster": "videos/erklaer/lf10-zeitliche-abgrenzung.jpg"
  },
  {
-  "id": "lf6-ige",
-  "lf": "lf6",
-  "thema": "Einkauf aus einem anderen EU-Land (innergemeinschaftlicher Erwerb)",
-  "titel": "Einkauf aus dem EU-Ausland: der innergemeinschaftliche Erwerb",
-  "datum": "2026-11-24",
-  "sek": 207.6,
-  "datei": "videos/erklaer/lf6-ige.mp4",
-  "poster": "videos/erklaer/lf6-ige.jpg"
- },
- {
-  "id": "lf6-einfuhr",
-  "lf": "lf6",
-  "thema": "Einkauf aus einem Nicht-EU-Land (Einfuhr)",
-  "titel": "Einkauf aus dem Drittland: die Einfuhrumsatzsteuer",
-  "datum": "2026-11-24",
-  "sek": 206.8,
-  "datei": "videos/erklaer/lf6-einfuhr.mp4",
-  "poster": "videos/erklaer/lf6-einfuhr.jpg"
- },
- {
-  "id": "lf6-steuerpflicht",
-  "lf": "lf6",
-  "thema": "Wer muss in Deutschland Einkommensteuer zahlen?",
-  "titel": "Wer muss in Deutschland Einkommensteuer zahlen?",
-  "datum": "2026-11-24",
-  "sek": 205.4,
-  "datei": "videos/erklaer/lf6-steuerpflicht.mp4",
-  "poster": "videos/erklaer/lf6-steuerpflicht.jpg"
- },
- {
   "id": "lf8-gewinnverteilung",
   "lf": "lf8",
   "thema": "Rechtsformen und Gewinnverteilung",
@@ -201,5 +171,35 @@ window.ERKLAERVIDEOS = [
   "sek": 227.5,
   "datei": "videos/erklaer/sk-arbeitszeit-urlaub.mp4",
   "poster": "videos/erklaer/sk-arbeitszeit-urlaub.jpg"
+ },
+ {
+  "id": "lf6-ige",
+  "lf": "lf6",
+  "thema": "Einkauf aus einem anderen EU-Land (innergemeinschaftlicher Erwerb)",
+  "titel": "Einkauf aus dem EU-Ausland: der innergemeinschaftliche Erwerb",
+  "datum": "2026-11-25",
+  "sek": 122.2,
+  "datei": "videos/erklaer/lf6-ige.mp4",
+  "poster": "videos/erklaer/lf6-ige.jpg"
+ },
+ {
+  "id": "lf6-einfuhr",
+  "lf": "lf6",
+  "thema": "Einkauf aus einem Nicht-EU-Land (Einfuhr)",
+  "titel": "Einkauf aus dem Drittland: die Einfuhrumsatzsteuer",
+  "datum": "2026-11-25",
+  "sek": 119.6,
+  "datei": "videos/erklaer/lf6-einfuhr.mp4",
+  "poster": "videos/erklaer/lf6-einfuhr.jpg"
+ },
+ {
+  "id": "lf6-steuerpflicht",
+  "lf": "lf6",
+  "thema": "Wer muss in Deutschland Einkommensteuer zahlen?",
+  "titel": "Wer muss in Deutschland Einkommensteuer zahlen?",
+  "datum": "2026-11-25",
+  "sek": 122.8,
+  "datei": "videos/erklaer/lf6-steuerpflicht.mp4",
+  "poster": "videos/erklaer/lf6-steuerpflicht.jpg"
  }
 ];
