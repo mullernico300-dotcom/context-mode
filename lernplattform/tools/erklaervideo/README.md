@@ -31,4 +31,17 @@ Stimme: `de_DE-thorsten-high` (Piper, lokal, kostet keine Tokens). Aussprachereg
 | `fallen` | Warnkarten „Typische Fallen“ |
 | `merke` | Zusammenfassung mit Haken und Aufruf zum Üben |
 
+### Premium-Szenen (src/premium.tsx, Beispiel: skripte/lf8-gewinnverteilung.json)
+
+| Typ | Grafik |
+|---|---|
+| `intro` | Titel Wort für Wort, Betrag zählt hoch, Münzen fliegen zu den Personen |
+| `kapitel` | Kapitelkarte mit großer Ziffer („Teil 1“) |
+| `vergleich` | Tabelle mit Spalten (z. B. GbR/OHG/KG), Zeilen, Hervorhebung einer Spalte; Werte mit ✓ grün, ✗ rot, ⚠ gelb |
+| `kreis` | Ringdiagramm für einen Verteilungsschlüssel mit Beträgen |
+| `verteilung` | Gestapelte Säulen je Person, Stufe für Stufe, Summen und Probe |
+| `quiz` | Frage mit drei Antworten, Countdown-Ring, Auflösung mit Stempel; Denkpause im Drehbuch als Satz `[pause 5]` |
+
+Premium-Ablauf: im Drehbuch `"stil": "premium"` und `"musik": "<id>/musik.wav"` setzen → `python3 ton.py …` → `python3 klang.py <id>` (Musik und Klänge, selbst erzeugt) → Full HD rendern ohne `GROESSE` → `BREITE=1920 python3 eintragen.py …`. Premium bringt außerdem Lichtpunkte im Hintergrund, eine langsame Kamerafahrt und Wusch-Klänge beim Szenenwechsel.
+
 Beträge im Drehbuch werden vorher per Skript nachgerechnet; im gesprochenen Text „Prozent“ ausschreiben.
