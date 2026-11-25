@@ -1,0 +1,324 @@
+{
+ "lf": "lf6",
+ "kapitel": "LF 6 · Einkommensteuer",
+ "farbe": "#a855f7",
+ "stil": "premium",
+ "id": "lf6-ehepaare-fristen",
+ "thema": "Ehepaare, Pflicht zur Steuererklärung und Fristen",
+ "titel": "Ehepaare und Fristen",
+ "kartentitel": "Ehepaare, Pflicht zur Steuererklärung und Fristen",
+ "musik": "lf6-ehepaare-fristen/musik.wav",
+ "szenen": [
+  {
+   "typ": "intro",
+   "daten": {
+    "kicker": "LF 6 · Einkommensteuer",
+    "titel": "Gemeinsam oder getrennt?",
+    "untertitel": "Veranlagung, Pflicht und Fristen",
+    "betrag": 410,
+    "betragLabel": "Grenze Nebeneinkünfte",
+    "satzBetrag": 1,
+    "satzTeilen": 2,
+    "personen": [
+     {
+      "name": "Anna",
+      "icon": "👩"
+     },
+     {
+      "name": "Ben",
+      "icon": "👨"
+     }
+    ]
+   },
+   "saetze": [
+    "Anna und Ben haben im Dezember geheiratet.",
+    "Dürfen sie schon eine gemeinsame Steuererklärung machen? Müssen sie überhaupt eine abgeben? Und bis wann?",
+    "Drei Fragen, die in fast jeder Prüfung vorkommen."
+   ],
+   "ton": "lf6-ehepaare-fristen/s01.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 2.438
+    },
+    {
+     "start": 3.488,
+     "dauer": 5.213
+    },
+    {
+     "start": 9.151,
+     "dauer": 2.984
+    }
+   ],
+   "dauer": 13.035
+  },
+  {
+   "typ": "formel",
+   "daten": {
+    "ueberschrift": "Wann dürfen Ehepaare wählen?",
+    "ref": "§ 26 EStG",
+    "zeilen": [
+     {
+      "zeichen": "1",
+      "text": "verheiratet",
+      "info": "auch Heirat am 28.12."
+     },
+     {
+      "zeichen": "2",
+      "text": "beide unbeschränkt steuerpflichtig",
+      "info": "beide wohnen in Deutschland"
+     },
+     {
+      "zeichen": "3",
+      "text": "nicht dauernd getrennt",
+      "info": "ein Tag im Jahr reicht"
+     },
+     {
+      "zeichen": "=",
+      "text": "Wahlrecht",
+      "info": "Zusammen- oder Einzelveranlagung",
+      "ergebnis": true
+     }
+    ]
+   },
+   "saetze": [
+    "Ehepaare dürfen wählen, wenn drei Dinge stimmen.",
+    "Sie sind verheiratet. Eine Heirat im Dezember reicht.",
+    "Beide sind unbeschränkt steuerpflichtig, wohnen also in Deutschland.",
+    "Und sie leben nicht dauernd getrennt. Es reicht, wenn das an einem Tag im Jahr so war.",
+    "Dann wählen sie: Zusammenveranlagung mit Splittingtarif oder Einzelveranlagung. Sagen sie nichts, gilt die Zusammenveranlagung."
+   ],
+   "ton": "lf6-ehepaare-fristen/s02.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 2.67
+    },
+    {
+     "start": 3.72,
+     "dauer": 3.332
+    },
+    {
+     "start": 7.502,
+     "dauer": 3.692
+    },
+    {
+     "start": 11.644,
+     "dauer": 4.272
+    },
+    {
+     "start": 16.367,
+     "dauer": 7.117
+    }
+   ],
+   "dauer": 24.384
+  },
+  {
+   "typ": "sortieren",
+   "daten": {
+    "ueberschrift": "Muss eine Erklärung abgegeben werden?",
+    "ja": "Pflicht",
+    "nein": "freiwillig",
+    "karten": [
+     {
+      "text": "600 € Nebeneinkünfte",
+      "icon": "💶",
+      "ja": true,
+      "satz": 1
+     },
+     {
+      "text": "zwei Jobs, Steuerklasse VI",
+      "icon": "💼",
+      "ja": true,
+      "satz": 2
+     },
+     {
+      "text": "Ehepaar mit Klassen III und V",
+      "icon": "💍",
+      "ja": true,
+      "satz": 2
+     },
+     {
+      "text": "ein Job, Steuerklasse I",
+      "icon": "🧑‍💼",
+      "ja": false,
+      "satz": 3
+     }
+    ]
+   },
+   "saetze": [
+    "Arbeitnehmer müssen nur in bestimmten Fällen eine Erklärung abgeben. Das steht in Paragraf 46.",
+    "Mehr als 410 Euro Nebeneinkünfte: Pflicht.",
+    "Zwei Jobs gleichzeitig mit Steuerklasse sechs, oder ein Ehepaar mit den Klassen drei und fünf: auch Pflicht.",
+    "Wer nur einen Job mit Steuerklasse eins hat, darf freiwillig abgeben. Dafür hat er vier Jahre Zeit."
+   ],
+   "ton": "lf6-ehepaare-fristen/s03.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 5.944
+    },
+    {
+     "start": 6.994,
+     "dauer": 3.135
+    },
+    {
+     "start": 10.579,
+     "dauer": 6.002
+    },
+    {
+     "start": 17.031,
+     "dauer": 5.712
+    }
+   ],
+   "dauer": 23.643
+  },
+  {
+   "typ": "zeitstrahl",
+   "daten": {
+    "ueberschrift": "Abgabefristen für 2026",
+    "merke": "Wochenende oder Feiertag: nächster Werktag",
+    "punkte": [
+     {
+      "label": "31.07.2027 (Samstag)",
+      "titel": "ohne Berater",
+      "text": "verschiebt sich",
+      "folge": "Montag, 02.08.2027",
+      "ref": "§ 149 Abs. 2 AO",
+      "satz": 1
+     },
+     {
+      "label": "29.02.2028",
+      "titel": "mit Berater",
+      "text": "übernächstes Jahr",
+      "folge": "Schaltjahr beachten",
+      "ref": "§ 149 Abs. 3 AO",
+      "satz": 2
+     }
+    ]
+   },
+   "saetze": [
+    "Und bis wann? Nehmen wir das Steuerjahr 2026.",
+    "Ohne Steuerberater gilt der 31. Juli 2027. Das ist ein Samstag, also verschiebt sich die Frist auf Montag, den 2. August.",
+    "Mit Steuerberater gilt Ende Februar des übernächsten Jahres: der 29. Februar 2028, denn 2028 ist ein Schaltjahr.",
+    "Fällt ein Fristende auf ein Wochenende oder einen Feiertag, gilt immer der nächste Werktag."
+   ],
+   "ton": "lf6-ehepaare-fristen/s04.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 4.052
+    },
+    {
+     "start": 5.102,
+     "dauer": 9.056
+    },
+    {
+     "start": 14.608,
+     "dauer": 8.975
+    },
+    {
+     "start": 24.032,
+     "dauer": 4.574
+    }
+   ],
+   "dauer": 29.507
+  },
+  {
+   "typ": "quiz",
+   "daten": {
+    "frage": "Frau Wolfs Mann ist 2025 gestorben. Welcher Tarif gilt für sie 2026?",
+    "optionen": [
+     "Grundtarif",
+     "Splittingtarif",
+     "Gar keine Veranlagung"
+    ],
+    "richtig": 1,
+    "satzDenken": 1,
+    "satzLoesung": 2,
+    "erklaerung": {
+     "text": "§ 32a Abs. 6 EStG",
+     "satz": 3
+    },
+    "stempel": {
+     "index": 0,
+     "text": "erst ab 2027",
+     "satz": 3
+    }
+   },
+   "saetze": [
+    "Kurzes Quiz. Frau Wolfs Mann ist 2025 gestorben. Welcher Tarif gilt für sie im Jahr 2026?",
+    "[pause 5]",
+    "Richtig ist B: noch einmal der Splittingtarif.",
+    "Im Jahr nach dem Tod gibt es das Gnadensplitting. Erst danach gilt der Grundtarif."
+   ],
+   "ton": "lf6-ehepaare-fristen/s05.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 8.638
+    },
+    {
+     "start": 9.688,
+     "dauer": 5.0
+    },
+    {
+     "start": 15.138,
+     "dauer": 2.937
+    },
+    {
+     "start": 18.525,
+     "dauer": 4.272
+    }
+   ],
+   "dauer": 23.698
+  },
+  {
+   "typ": "merke",
+   "daten": {
+    "ueberschrift": "Das nimmst du mit",
+    "punkte": [
+     {
+      "text": "Wahlrecht: verheiratet, beide in DE, ein Tag zusammen",
+      "satz": 0
+     },
+     {
+      "text": "Pflicht: z. B. über 410 € Nebeneinkünfte",
+      "satz": 0
+     },
+     {
+      "text": "Frist: 31.07. oder mit Berater Ende Februar",
+      "satz": 1
+     },
+     {
+      "text": "Gnadensplitting im Jahr nach dem Tod",
+      "satz": 1
+     }
+    ],
+    "aufruf": "Jetzt üben: LF 6 → Ehepaare und Fristen"
+   },
+   "saetze": [
+    "Zusammengefasst: Ehepaare wählen, wenn sie verheiratet sind, beide hier wohnen und an einem Tag im Jahr zusammenleben. Pflicht zur Erklärung besteht zum Beispiel ab 410 Euro Nebeneinkünften.",
+    "Die Frist ist der 31. Juli, mit Berater Ende Februar des übernächsten Jahres. Und im Jahr nach dem Tod gibt es noch den Splittingtarif.",
+    "Im Lernfeld 6 findest du dazu Übungen mit Stimme."
+   ],
+   "ton": "lf6-ehepaare-fristen/s06.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 11.018
+    },
+    {
+     "start": 12.068,
+     "dauer": 7.79
+    },
+    {
+     "start": 20.308,
+     "dauer": 2.972
+    }
+   ],
+   "dauer": 24.18
+  }
+ ],
+ "dauer": 138.446
+}

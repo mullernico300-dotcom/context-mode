@@ -1,352 +1,176 @@
 {
- "id": "lf6-einfuhr",
  "lf": "lf6",
- "thema": "Einkauf aus einem Nicht-EU-Land (Einfuhr)",
  "kapitel": "LF 6 · Umsatzsteuer",
+ "farbe": "#a855f7",
+ "stil": "premium",
+ "id": "lf6-einfuhr",
+ "thema": "Einkauf aus einem Nicht-EU-Land (Einfuhr)",
  "titel": "Einfuhr",
  "kartentitel": "Einkauf aus dem Drittland: die Einfuhrumsatzsteuer",
- "farbe": "#a855f7",
+ "musik": "lf6-einfuhr/musik.wav",
  "szenen": [
   {
-   "typ": "titel",
+   "typ": "intro",
    "daten": {
     "kicker": "LF 6 · Umsatzsteuer",
-    "titel": "Einfuhr",
-    "untertitel": "Einkauf aus einem Nicht-EU-Land",
-    "preis": "19 %",
-    "preisLabel": "Steuersatz"
+    "titel": "Ware aus China",
+    "untertitel": "Die Einfuhrumsatzsteuer",
+    "betrag": 8000,
+    "betragLabel": "Zollwert",
+    "satzBetrag": 1,
+    "satzTeilen": 2,
+    "personen": [
+     {
+      "name": "Händler",
+      "icon": "🏪"
+     },
+     {
+      "name": "Zoll",
+      "icon": "🛃"
+     }
+    ]
    },
    "saetze": [
-    "Eine GmbH aus Braunschweig kauft Maschinenteile in China.",
-    "Die Ware kommt per Schiff in Hamburg an. Bevor sie weiterfährt, will der Zoll Geld sehen.",
-    "Das ist die Einfuhrumsatzsteuer. Wie sie berechnet und gebucht wird, siehst du jetzt."
+    "Ein Händler aus Hannover bestellt Lautsprecher in China.",
+    "Die Ware hat einen Zollwert von 8.000 Euro. Am Hafen will der Zoll Geld sehen.",
+    "Kommt Ware aus einem Land außerhalb der EU, ist das eine Einfuhr. Dafür gibt es die Einfuhrumsatzsteuer."
    ],
    "ton": "lf6-einfuhr/s01.wav",
    "zeiten": [
     {
      "start": 0.6,
-     "dauer": 4.307
+     "dauer": 3.251
     },
     {
-     "start": 5.357,
-     "dauer": 5.097
+     "start": 4.301,
+     "dauer": 4.783
     },
     {
-     "start": 10.904,
-     "dauer": 4.47
+     "start": 9.534,
+     "dauer": 5.782
     }
    ],
-   "dauer": 16.274
+   "dauer": 16.216
   },
   {
-   "typ": "formel",
+   "typ": "stapel",
    "daten": {
-    "ueberschrift": "Die Regeln",
-    "ref": "§ 1 Abs. 1 Nr. 4 UStG",
+    "ueberschrift": "So rechnet der Zoll",
+    "icon": "🛃",
     "zeilen": [
      {
-      "zeichen": "1",
-      "text": "Ware kommt aus einem Drittland",
-      "info": "z. B. China, USA, Schweiz"
+      "text": "Zollwert der Ware",
+      "wert": "8.000,00 €",
+      "satz": 1
      },
      {
-      "zeichen": "2",
-      "text": "Der Zoll erhebt die Steuer",
-      "info": "§ 21 Abs. 2 UStG"
+      "text": "+ Zoll",
+      "wert": "400,00 €",
+      "satz": 2
      },
      {
-      "zeichen": "3",
-      "text": "Basis: Zollwert + Zoll + Transport",
-      "info": "§ 11 UStG"
+      "text": "+ Transport bis zum Zielort in der EU",
+      "wert": "600,00 €",
+      "satz": 2
      },
      {
-      "zeichen": "4",
-      "text": "Unternehmer: Vorsteuer",
-      "info": "§ 15 Abs. 1 S. 1 Nr. 2 UStG"
+      "text": "= Bemessungsgrundlage",
+      "wert": "9.000,00 €",
+      "satz": 3
      },
      {
-      "zeichen": "5",
-      "text": "Privatleute: kein Abzug",
-      "info": "Steuer bleibt Kosten"
+      "text": "Einfuhrumsatzsteuer 19 %",
+      "wert": "1.710,00 €",
+      "ergebnis": true,
+      "satz": 4
      }
     ]
    },
    "saetze": [
-    "Kommt Ware aus einem Land außerhalb der EU, ist das eine Einfuhr. So steht es in Paragraf 1 Absatz 1 Nummer 4.",
-    "Drittland heißt zum Beispiel China, die USA oder die Schweiz.",
-    "Die Steuer erhebt der Zoll. Bezahlen muss sie, wer die Ware beim Zoll anmeldet.",
-    "Berechnet wird sie vom Zollwert plus Zoll plus Transportkosten bis zum ersten Zielort in der EU.",
-    "Ein Unternehmer darf die bezahlte Einfuhrumsatzsteuer als Vorsteuer abziehen.",
-    "Eine Privatperson darf das nicht. Für sie bleibt die Steuer echte Kosten."
+    "So rechnet der Zoll nach Paragraf 11.",
+    "Du startest mit dem Zollwert der Ware, 8.000 Euro.",
+    "Dazu kommen der Zoll, hier 400 Euro, und der Transport bis zum ersten Zielort in der EU, hier 600 Euro.",
+    "Das ergibt 9.000 Euro.",
+    "Darauf 19 Prozent: 1.710 Euro Einfuhrumsatzsteuer."
    ],
    "ton": "lf6-einfuhr/s02.wav",
    "zeiten": [
     {
      "start": 0.6,
-     "dauer": 6.548
+     "dauer": 2.194
     },
     {
-     "start": 7.598,
-     "dauer": 3.657
+     "start": 3.244,
+     "dauer": 3.251
     },
     {
-     "start": 11.705,
-     "dauer": 4.632
+     "start": 6.945,
+     "dauer": 6.989
     },
     {
-     "start": 16.788,
-     "dauer": 5.654
+     "start": 14.384,
+     "dauer": 1.788
     },
     {
-     "start": 22.892,
-     "dauer": 4.18
-    },
-    {
-     "start": 27.521,
-     "dauer": 4.063
+     "start": 16.622,
+     "dauer": 4.888
     }
    ],
-   "dauer": 32.485
+   "dauer": 22.41
   },
   {
-   "typ": "wasserfall",
+   "typ": "sortieren",
    "daten": {
-    "kurzTitel": "Die Basis",
-    "sachverhalt": "Maschinenteile aus China: Zollwert 20.000 €, Zoll 800 €, Fracht bis Hamburg 1.200 €.",
-    "balken": [
+    "ueberschrift": "Vorsteuer abziehbar?",
+    "ja": "Vorsteuer",
+    "nein": "keine Vorsteuer",
+    "karten": [
      {
-      "label": "Zollwert",
-      "wert": 20000,
-      "art": "start",
+      "text": "Händler, Ware für die Firma",
+      "icon": "🏪",
+      "ja": true,
       "satz": 1
      },
      {
-      "label": "+ Zoll",
-      "wert": 800,
-      "art": "plus",
+      "text": "Lieferer liefert verzollt und versteuert",
+      "icon": "📦",
+      "ja": true,
       "satz": 2
      },
      {
-      "label": "+ Fracht bis Hamburg",
-      "wert": 1200,
-      "art": "plus",
-      "satz": 2
-     },
-     {
-      "label": "Bemessungsgrundlage",
-      "wert": 22000,
-      "art": "ergebnis",
+      "text": "Privatmann kauft Motorrad in den USA",
+      "icon": "🏍️",
+      "ja": false,
       "satz": 3
      }
-    ],
-    "notiz": {
-     "text": "× 19 % = 4.180 € Einfuhrumsatzsteuer",
-     "satz": 4
-    }
+    ]
    },
    "saetze": [
-    "Jetzt rechnen wir.",
-    "Der Zollwert der Maschinenteile beträgt 20.000 Euro.",
-    "Dazu kommen 800 Euro Zoll und 1.200 Euro Fracht bis Hamburg, dem ersten Zielort in der EU.",
-    "Die Bemessungsgrundlage ist also 22.000 Euro.",
-    "Darauf 19 Prozent ergibt 4.180 Euro Einfuhrumsatzsteuer.",
-    "Wichtig: Die Fracht zählt nur bis zum ersten Zielort in der EU, hier Hamburg."
+    "Bekommt man das Geld zurück?",
+    "Der Unternehmer zieht die bezahlte Einfuhrumsatzsteuer als Vorsteuer ab, wenn die Ware für seine Firma ist.",
+    "Liefert der Verkäufer verzollt und versteuert, zahlt er die Einfuhrumsatzsteuer. Der Kunde zieht dann die Vorsteuer ganz normal aus der Rechnung.",
+    "Ein Privatmann zahlt die Einfuhrumsatzsteuer und bekommt nichts zurück."
    ],
    "ton": "lf6-einfuhr/s03.wav",
    "zeiten": [
     {
      "start": 0.6,
-     "dauer": 0.998
+     "dauer": 1.405
     },
     {
-     "start": 2.048,
-     "dauer": 3.495
+     "start": 2.455,
+     "dauer": 5.724
     },
     {
-     "start": 5.993,
-     "dauer": 6.931
+     "start": 8.629,
+     "dauer": 7.546
     },
     {
-     "start": 13.374,
-     "dauer": 3.785
-    },
-    {
-     "start": 17.609,
-     "dauer": 5.19
-    },
-    {
-     "start": 23.249,
-     "dauer": 4.063
+     "start": 16.625,
+     "dauer": 3.762
     }
    ],
-   "dauer": 28.212
-  },
-  {
-   "typ": "stapel",
-   "daten": {
-    "ueberschrift": "Was bleibt für die GmbH?",
-    "icon": "🏭",
-    "zeilen": [
-     {
-      "text": "Einfuhrumsatzsteuer an den Zoll",
-      "wert": "4.180,00 €",
-      "satz": 1
-     },
-     {
-      "text": "− Vorsteuer in der Voranmeldung",
-      "wert": "4.180,00 €",
-      "satz": 2
-     },
-     {
-      "text": "= Belastung",
-      "wert": "0,00 €",
-      "ergebnis": true,
-      "satz": 3
-     }
-    ]
-   },
-   "saetze": [
-    "Was kostet das die GmbH am Ende?",
-    "Sie bezahlt 4.180 Euro an den Zoll.",
-    "In ihrer Umsatzsteuer-Voranmeldung zieht sie den gleichen Betrag als Vorsteuer ab.",
-    "Die Belastung ist also null. Die GmbH muss das Geld aber erst einmal vorstrecken."
-   ],
-   "ton": "lf6-einfuhr/s04.wav",
-   "zeiten": [
-    {
-     "start": 0.6,
-     "dauer": 2.38
-    },
-    {
-     "start": 3.43,
-     "dauer": 3.692
-    },
-    {
-     "start": 7.572,
-     "dauer": 4.563
-    },
-    {
-     "start": 12.585,
-     "dauer": 4.83
-    }
-   ],
-   "dauer": 18.314
-  },
-  {
-   "typ": "sortieren",
-   "daten": {
-    "ueberschrift": "Vorsteuer aus der Einfuhr?",
-    "ja": "Vorsteuer ja",
-    "nein": "keine Vorsteuer",
-    "karten": [
-     {
-      "text": "Maschinen für die Firma",
-      "icon": "🏭",
-      "ja": true,
-      "satz": 1
-     },
-     {
-      "text": "Ware für den Laden",
-      "icon": "🛒",
-      "ja": true,
-      "satz": 1
-     },
-     {
-      "text": "Motorrad privat aus den USA",
-      "icon": "🏍️",
-      "ja": false,
-      "satz": 2
-     },
-     {
-      "text": "Uhr privat aus der Schweiz",
-      "icon": "⌚",
-      "ja": false,
-      "satz": 3
-     }
-    ]
-   },
-   "saetze": [
-    "Wer darf die Einfuhrumsatzsteuer abziehen?",
-    "Wird die Ware für die Firma eingeführt, gibt es die Vorsteuer.",
-    "Kauft jemand privat, zum Beispiel ein Motorrad in den USA, zahlt er die Einfuhrumsatzsteuer und bekommt sie nicht zurück.",
-    "Genauso die Uhr aus der Schweiz: privat gekauft, also keine Vorsteuer."
-   ],
-   "ton": "lf6-einfuhr/s05.wav",
-   "zeiten": [
-    {
-     "start": 0.6,
-     "dauer": 2.473
-    },
-    {
-     "start": 3.523,
-     "dauer": 3.413
-    },
-    {
-     "start": 7.386,
-     "dauer": 6.142
-    },
-    {
-     "start": 13.978,
-     "dauer": 4.203
-    }
-   ],
-   "dauer": 19.081
-  },
-  {
-   "typ": "zeitstrahl",
-   "daten": {
-    "ueberschrift": "Wer zahlt an den Zoll?",
-    "merke": "Verzollt und versteuert: Verkäufer registriert sich hier",
-    "punkte": [
-     {
-      "label": "unverzollt",
-      "titel": "Käufer zahlt",
-      "text": "an den Zoll",
-      "folge": "Vorsteuer aus der Einfuhr",
-      "ref": "§ 15 Abs. 1 S. 1 Nr. 2 UStG",
-      "satz": 1
-     },
-     {
-      "label": "verzollt und versteuert",
-      "titel": "Verkäufer zahlt",
-      "text": "Lieferung im Inland",
-      "folge": "Vorsteuer aus der Rechnung",
-      "ref": "§ 3 Abs. 8 UStG",
-      "satz": 2
-     }
-    ]
-   },
-   "saetze": [
-    "Es gibt zwei Varianten.",
-    "Im Normalfall kommt die Ware unverzollt. Dann zahlt der Käufer an den Zoll und zieht die Einfuhrumsatzsteuer als Vorsteuer ab.",
-    "Liefert der Verkäufer verzollt und versteuert, zahlt er selbst an den Zoll. Dann gilt seine Lieferung als in Deutschland ausgeführt.",
-    "Er muss sich dann in Deutschland registrieren und eine Rechnung mit deutscher Umsatzsteuer schreiben.",
-    "Der Käufer zieht die Vorsteuer dann ganz normal aus dieser Rechnung."
-   ],
-   "ton": "lf6-einfuhr/s06.wav",
-   "zeiten": [
-    {
-     "start": 0.6,
-     "dauer": 1.358
-    },
-    {
-     "start": 2.408,
-     "dauer": 6.873
-    },
-    {
-     "start": 9.731,
-     "dauer": 6.931
-    },
-    {
-     "start": 17.113,
-     "dauer": 4.748
-    },
-    {
-     "start": 22.311,
-     "dauer": 3.518
-    }
-   ],
-   "dauer": 26.729
+   "dauer": 21.287
   },
   {
    "typ": "buchung",
@@ -354,118 +178,118 @@
     "ueberschrift": "So wird gebucht",
     "buchungen": [
      {
-      "titel": "Wareneinkauf, unverzollt",
+      "titel": "Ware aus China, auf Rechnung",
       "soll": [
        [
         "Wareneingang",
-        "20.000,00 €"
+        "8.000,00 €"
        ]
       ],
       "haben": [
        [
         "Verbindlichkeiten",
-        "20.000,00 €"
+        "8.000,00 €"
        ]
       ],
       "satz": 1
      },
      {
-      "titel": "Zahlung an den Zoll",
+      "titel": "Einfuhrumsatzsteuer an den Zoll",
       "soll": [
        [
         "Einfuhrumsatzsteuer",
-        "4.180,00 €"
+        "1.710,00 €"
        ]
       ],
       "haben": [
        [
         "Bank",
-        "4.180,00 €"
+        "1.710,00 €"
        ]
       ],
       "satz": 2
      }
     ],
     "fazit": {
-     "text": "Zoll und Fracht gehören zu den Anschaffungskosten der Ware",
+     "text": "Vorsteuer: § 15 Abs. 1 Satz 1 Nr. 2 UStG",
      "satz": 3
     }
    },
    "saetze": [
-    "Gebucht wird so.",
-    "Der Einkauf: Wareneingang an Verbindlichkeiten, 20.000 Euro.",
-    "Die Zahlung an den Zoll: Einfuhrumsatzsteuer an Bank, 4.180 Euro. Das Konto Einfuhrumsatzsteuer ist ein Vorsteuerkonto.",
-    "Zoll und Fracht bucht die GmbH zusätzlich als Anschaffungsnebenkosten der Ware."
+    "Gebucht wird in zwei Schritten.",
+    "Die Ware: Wareneingang an Verbindlichkeiten, 8.000 Euro.",
+    "Die Steuer an den Zoll: Einfuhrumsatzsteuer an Bank, 1.710 Euro.",
+    "Das Konto Einfuhrumsatzsteuer ist ein Vorsteuerkonto. Das Geld kommt also über die Voranmeldung zurück."
    ],
-   "ton": "lf6-einfuhr/s07.wav",
+   "ton": "lf6-einfuhr/s04.wav",
    "zeiten": [
     {
      "start": 0.6,
-     "dauer": 1.057
+     "dauer": 1.718
     },
     {
-     "start": 2.107,
-     "dauer": 4.145
+     "start": 2.768,
+     "dauer": 3.622
     },
     {
-     "start": 6.701,
-     "dauer": 8.162
-    },
-    {
-     "start": 15.313,
+     "start": 6.841,
      "dauer": 4.888
+    },
+    {
+     "start": 12.178,
+     "dauer": 5.48
     }
    ],
-   "dauer": 21.101
+   "dauer": 18.558
   },
   {
-   "typ": "fallen",
+   "typ": "quiz",
    "daten": {
-    "ueberschrift": "Typische Fallen",
-    "karten": [
-     {
-      "titel": "Durchfahrt durch die EU",
-      "text": "Albanien über Österreich nach Deutschland bleibt Einfuhr.",
-      "satz": 1
-     },
-     {
-      "titel": "Schon in der EU verzollt",
-      "text": "Ware, die in einem anderen EU-Land verzollt wurde, ist in Deutschland ein Erwerb.",
-      "satz": 2
-     },
-     {
-      "titel": "Privatperson",
-      "text": "Privatleute ziehen die Einfuhrumsatzsteuer nicht ab.",
-      "satz": 3
-     }
-    ]
+    "frage": "Der Lieferer aus den USA liefert verzollt und versteuert. Wer zahlt die Einfuhrumsatzsteuer?",
+    "optionen": [
+     "Der deutsche Käufer",
+     "Der Lieferer aus den USA",
+     "Niemand"
+    ],
+    "richtig": 1,
+    "satzDenken": 1,
+    "satzLoesung": 2,
+    "erklaerung": {
+     "text": "§ 3 Abs. 8 UStG",
+     "satz": 3
+    },
+    "stempel": {
+     "index": 0,
+     "text": "nicht hier",
+     "satz": 3
+    }
    },
    "saetze": [
-    "Drei typische Fehler.",
-    "Erstens: Fährt Ware aus Albanien durch Österreich nach Deutschland, bleibt es trotzdem eine Einfuhr in Deutschland.",
-    "Zweitens: Wurde Ware aus Serbien schon in Slowenien verzollt, ist sie danach EU-Ware. In Deutschland ist das dann ein innergemeinschaftlicher Erwerb.",
-    "Drittens: Privatleuten die Vorsteuer geben. Nur Unternehmer dürfen abziehen."
+    "Kurzes Quiz. Der Lieferer aus den USA liefert verzollt und versteuert. Wer zahlt die Einfuhrumsatzsteuer?",
+    "[pause 5]",
+    "Richtig ist B: der Lieferer.",
+    "Seine Lieferung gilt dann als in Deutschland ausgeführt. Er muss sich hier registrieren und eine Rechnung mit deutscher Umsatzsteuer schreiben."
    ],
-   "ton": "lf6-einfuhr/s08.wav",
+   "ton": "lf6-einfuhr/s05.wav",
    "zeiten": [
     {
      "start": 0.6,
-     "dauer": 1.533
+     "dauer": 6.385
     },
     {
-     "start": 2.583,
-     "dauer": 6.269
+     "start": 7.435,
+     "dauer": 5.0
     },
     {
-     "start": 9.302,
-     "dauer": 7.976
+     "start": 12.885,
+     "dauer": 2.032
     },
     {
-     "start": 17.728,
-     "dauer": 4.481
+     "start": 15.367,
+     "dauer": 7.43
     }
    ],
-   "dauer": 23.109
+   "dauer": 23.698
   },
   {
    "typ": "merke",
@@ -473,46 +297,46 @@
     "ueberschrift": "Das nimmst du mit",
     "punkte": [
      {
-      "text": "Drittland: Einfuhr, der Zoll kassiert",
+      "text": "Drittland: Einfuhr, Zoll kassiert",
       "satz": 0
      },
      {
-      "text": "Basis: Zollwert + Zoll + Fracht",
+      "text": "Zollwert + Zoll + Transport, darauf 19 %",
       "satz": 0
      },
      {
-      "text": "Unternehmer: als Vorsteuer zurück",
+      "text": "Unternehmer: zurück als Vorsteuer",
       "satz": 1
      },
      {
-      "text": "Verzollt und versteuert: Rechnung mit deutscher Steuer",
+      "text": "Privatleute: kein Abzug",
       "satz": 1
      }
     ],
     "aufruf": "Jetzt üben: LF 6 → Einfuhr"
    },
    "saetze": [
-    "Zusammengefasst: Ware aus einem Drittland ist eine Einfuhr. Der Zoll erhebt Einfuhrumsatzsteuer auf Zollwert plus Zoll plus Fracht bis zum ersten Zielort.",
-    "Unternehmer holen sie als Vorsteuer zurück. Liefert der Verkäufer verzollt und versteuert, kommt die Vorsteuer aus seiner Rechnung.",
-    "Im Lernfeld 6 findest du dazu Übungsaufgaben mit Stimme."
+    "Zusammengefasst: Ware aus dem Drittland ist eine Einfuhr. Der Zoll rechnet Zollwert plus Zoll plus Transport, darauf 19 Prozent.",
+    "Unternehmer holen sich die Steuer als Vorsteuer zurück, Privatleute nicht.",
+    "Im Lernfeld 6 findest du dazu Übungen mit Stimme."
    ],
-   "ton": "lf6-einfuhr/s09.wav",
+   "ton": "lf6-einfuhr/s06.wav",
    "zeiten": [
     {
      "start": 0.6,
-     "dauer": 8.87
+     "dauer": 8.243
     },
     {
-     "start": 9.92,
-     "dauer": 6.78
+     "start": 9.293,
+     "dauer": 3.866
     },
     {
-     "start": 17.15,
-     "dauer": 3.529
+     "start": 13.609,
+     "dauer": 2.972
     }
    ],
-   "dauer": 21.58
+   "dauer": 17.481
   }
  ],
- "dauer": 206.885
+ "dauer": 119.65
 }
