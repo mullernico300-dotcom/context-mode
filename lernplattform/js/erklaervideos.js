@@ -201,5 +201,15 @@ window.ERKLAERVIDEOS = [
   "sek": 122.8,
   "datei": "videos/erklaer/lf6-steuerpflicht.mp4",
   "poster": "videos/erklaer/lf6-steuerpflicht.jpg"
+ },
+ {
+  "id": "lf6-ehepaare-fristen",
+  "lf": "lf6",
+  "thema": "Ehepaare, Pflicht zur Steuererklärung und Fristen",
+  "titel": "Ehepaare, Pflicht zur Steuererklärung und Fristen",
+  "datum": "2026-11-25",
+  "sek": 138.5,
+  "datei": "videos/erklaer/lf6-ehepaare-fristen.mp4",
+  "poster": "videos/erklaer/lf6-ehepaare-fristen.jpg"
  }
 ];
