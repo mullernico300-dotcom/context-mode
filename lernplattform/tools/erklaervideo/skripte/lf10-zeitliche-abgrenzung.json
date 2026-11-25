@@ -1,274 +1,121 @@
 {
-  "id": "lf10-zeitliche-abgrenzung",
   "lf": "lf10",
-  "thema": "Zeitliche Abgrenzung",
   "kapitel": "LF 10 · Jahresabschluss",
+  "farbe": "#22c55e",
+  "stil": "premium",
+  "id": "lf10-zeitliche-abgrenzung",
+  "thema": "Zeitliche Abgrenzung",
   "titel": "Zeitliche Abgrenzung",
   "kartentitel": "Zeitliche Abgrenzung: ARAP, PRAP und sonstige Verbindlichkeiten",
-  "farbe": "#22c55e",
+  "musik": "lf10-zeitliche-abgrenzung/musik.wav",
   "szenen": [
     {
-      "typ": "titel",
+      "typ": "intro",
       "daten": {
         "kicker": "LF 10 · Jahresabschluss",
-        "titel": "Zeitliche Abgrenzung",
-        "untertitel": "Aufwand und Ertrag ins richtige Jahr",
-        "preis": "1.800 €",
-        "preisLabel": "Kfz-Versicherung für 2026"
+        "titel": "Schon bezahlt, noch nicht verbraucht",
+        "untertitel": "Zeitliche Abgrenzung",
+        "betrag": 6000,
+        "betragLabel": "Versicherung im Voraus",
+        "satzBetrag": 1,
+        "satzTeilen": 2,
+        "personen": [
+          { "name": "2025", "icon": "📅" },
+          { "name": "2026", "icon": "🗓️" }
+        ]
       },
       "saetze": [
-        "Eine GmbH zahlt im Dezember 2025 die Kfz-Versicherung für 2026: 1.800 Euro.",
-        "Ist das Aufwand für 2025 oder für 2026?",
-        "Die Antwort liefert die zeitliche Abgrenzung."
+        "Im November 2025 zahlt ein Betrieb seine Versicherung für Dezember bis Mai.",
+        "6.000 Euro. Gehört das alles ins Jahr 2025?",
+        "Nein. Aufwand und Ertrag gehören in das Jahr, zu dem sie wirtschaftlich gehören."
       ]
     },
     {
       "typ": "formel",
       "daten": {
-        "ueberschrift": "Vier Fälle zum Jahresende",
-        "ref": "§ 250 HGB",
+        "ueberschrift": "Die vier Fälle",
+        "ref": "§§ 246, 250, 252 HGB",
         "zeilen": [
-          {
-            "zeichen": "1",
-            "text": "Aktiver Rechnungsabgrenzungsposten",
-            "info": "Ausgabe jetzt · Aufwand später"
-          },
-          {
-            "zeichen": "2",
-            "text": "Passiver Rechnungsabgrenzungsposten",
-            "info": "Einnahme jetzt · Ertrag später"
-          },
-          {
-            "zeichen": "3",
-            "text": "Sonstige Forderung",
-            "info": "Ertrag jetzt · Geld später"
-          },
-          {
-            "zeichen": "4",
-            "text": "Sonstige Verbindlichkeit",
-            "info": "Aufwand jetzt · Zahlung später"
-          }
+          { "zeichen": "A", "text": "Aktive Rechnungsabgrenzung", "info": "Ausgabe jetzt, Aufwand später" },
+          { "zeichen": "P", "text": "Passive Rechnungsabgrenzung", "info": "Einnahme jetzt, Ertrag später" },
+          { "zeichen": "F", "text": "Sonstige Forderung", "info": "Ertrag jetzt, Geld später" },
+          { "zeichen": "V", "text": "Sonstige Verbindlichkeit", "info": "Aufwand jetzt, Zahlung später" }
         ]
       },
       "saetze": [
-        "Aufwand und Ertrag gehören in das Jahr, zu dem sie wirtschaftlich gehören. So steht es im Handelsgesetzbuch.",
-        "Fall eins, aktive Rechnungsabgrenzung: Das Geld ist raus, der Aufwand gehört ins neue Jahr.",
-        "Fall zwei, passive Rechnungsabgrenzung: Das Geld ist da, der Ertrag gehört ins neue Jahr.",
-        "Fall drei, sonstige Forderung: Ertrag jetzt, Geld später.",
-        "Fall vier, sonstige Verbindlichkeit: Aufwand jetzt, Zahlung später."
-      ]
-    },
-    {
-      "typ": "zeitstrahl",
-      "daten": {
-        "ueberschrift": "Fall 1: Versicherung im Voraus bezahlt",
-        "merke": "Aktiver RAP: Ausgabe jetzt, Aufwand später",
-        "punkte": [
-          {
-            "label": "2025",
-            "titel": "Bezahlt",
-            "text": "am 18. Dezember",
-            "folge": "Aufwand 2025: 0 € → aktiver RAP 1.800 €",
-            "satz": 1
-          },
-          {
-            "label": "2026",
-            "titel": "Versichert",
-            "text": "Januar bis Dezember",
-            "folge": "Aufwand 2026: 1.800 € (RAP wird aufgelöst)",
-            "satz": 2
-          }
-        ]
-      },
-      "saetze": [
-        "Zurück zur Kfz-Versicherung.",
-        "Bezahlt wurde 2025, der Schutz gilt aber 2026. Also wird am 31. Dezember ein aktiver Rechnungsabgrenzungsposten gebildet. Der Aufwand 2025 ist null.",
-        "2026 wird er aufgelöst: Aufwand 1.800 Euro, im richtigen Jahr.",
-        "Merke: aktiver Rechnungsabgrenzungsposten heißt Ausgabe jetzt, Aufwand später."
-      ]
-    },
-    {
-      "typ": "wasserfall",
-      "daten": {
-        "kurzTitel": "Fall 2: Zinsen im Voraus erhalten",
-        "sachverhalt": "Eine Spedition erhält am 30.11.2025 von ihrem Darlehensschuldner 5.700 € Zinsen für das Vierteljahr Dezember bis Februar im Voraus.",
-        "balken": [
-          {
-            "label": "Zinsen erhalten",
-            "wert": 5700,
-            "art": "start",
-            "satz": 1
-          },
-          {
-            "label": "− Januar und Februar",
-            "wert": -3800,
-            "art": "minus",
-            "satz": 2
-          },
-          {
-            "label": "Ertrag 2025",
-            "wert": 1900,
-            "art": "ergebnis",
-            "satz": 3
-          }
-        ],
-        "notiz": {
-          "text": "5.700 € : 3 Monate = 1.900 € pro Monat",
-          "satz": 1
-        }
-      },
-      "saetze": [
-        "Jetzt der umgekehrte Fall.",
-        "Eine Spedition erhält Ende November 5.700 Euro Zinsen für Dezember bis Februar. Das sind 1.900 Euro pro Monat.",
-        "Januar und Februar gehören ins neue Jahr: passiver Rechnungsabgrenzungsposten 3.800 Euro.",
-        "Im Jahr 2025 bleibt nur der Ertrag für Dezember: 1.900 Euro."
-      ]
-    },
-    {
-      "typ": "buchung",
-      "daten": {
-        "ueberschrift": "Buchungen zum 31.12.2025",
-        "buchungen": [
-          {
-            "titel": "Fall 1: Versicherung",
-            "soll": [
-              [
-                "Aktive Rechnungsabgrenzung",
-                "1.800 €"
-              ]
-            ],
-            "haben": [
-              [
-                "Kfz-Versicherungen",
-                "1.800 €"
-              ]
-            ],
-            "satz": 1
-          },
-          {
-            "titel": "Fall 2: Zinsen",
-            "soll": [
-              [
-                "Zinserträge",
-                "3.800 €"
-              ]
-            ],
-            "haben": [
-              [
-                "Passive Rechnungsabgrenzung",
-                "3.800 €"
-              ]
-            ],
-            "satz": 2
-          }
-        ],
-        "fazit": {
-          "text": "Im neuen Jahr werden beide Posten wieder aufgelöst",
-          "satz": 3
-        }
-      },
-      "saetze": [
-        "Die Buchungen am 31. Dezember.",
-        "Fall eins: Aktive Rechnungsabgrenzung an Kfz-Versicherungen, 1.800 Euro.",
-        "Fall zwei: Zinserträge an passive Rechnungsabgrenzung, 3.800 Euro.",
-        "Im neuen Jahr wird jeweils umgekehrt gebucht. So landen Aufwand und Ertrag im richtigen Jahr."
+        "Es gibt vier Fälle.",
+        "Geld schon ausgegeben, Aufwand gehört ins neue Jahr: aktiver Rechnungsabgrenzungsposten.",
+        "Geld schon bekommen, Ertrag gehört ins neue Jahr: passiver Rechnungsabgrenzungsposten.",
+        "Ertrag gehört ins alte Jahr, Geld kommt erst später: sonstige Forderung.",
+        "Aufwand gehört ins alte Jahr, bezahlt wird erst später: sonstige Verbindlichkeit."
       ]
     },
     {
       "typ": "stapel",
       "daten": {
-        "ueberschrift": "Fall 4: Pacht wird erst später bezahlt",
-        "icon": "⏳",
+        "ueberschrift": "Die Versicherung",
+        "icon": "🛡️",
         "zeilen": [
-          {
-            "text": "Pacht Oktober 2025 bis März 2026",
-            "wert": "3.600 €",
-            "satz": 1
-          },
-          {
-            "text": "pro Monat",
-            "wert": "600 €",
-            "satz": 1
-          },
-          {
-            "text": "Oktober bis Dezember gehören zu 2025",
-            "wert": "3 × 600 €",
-            "satz": 2
-          },
-          {
-            "text": "Zahlung erst am 1. April 2026",
-            "wert": "erst 2026",
-            "satz": 3
-          },
-          {
-            "text": "= sonstige Verbindlichkeit",
-            "wert": "1.800 €",
-            "ergebnis": true,
-            "satz": 4
-          }
+          { "text": "Beitrag Dezember bis Mai", "wert": "6.000 €", "satz": 1 },
+          { "text": "pro Monat (6 Monate)", "wert": "1.000 €", "satz": 1 },
+          { "text": "Aufwand 2025: Dezember", "wert": "1.000 €", "satz": 2 },
+          { "text": "= Aktive Rechnungsabgrenzung", "wert": "5.000 €", "ergebnis": true, "satz": 3 }
         ]
       },
       "saetze": [
-        "Und jetzt Geld, das erst später fließt.",
-        "Pacht für Oktober 2025 bis März 2026: 3.600 Euro, also 600 Euro im Monat.",
-        "Oktober, November und Dezember gehören wirtschaftlich zu 2025.",
-        "Bezahlt wird aber erst am 1. April 2026, also nach dem Stichtag.",
-        "Am 31. Dezember bucht er Pachtaufwand an sonstige Verbindlichkeiten, 1.800 Euro. Mit der Zahlung im April wird die Verbindlichkeit ausgeglichen."
+        "Rechnen wir.",
+        "6.000 Euro für 6 Monate sind 1.000 Euro pro Monat.",
+        "Nur der Dezember gehört zu 2025, also 1.000 Euro Aufwand.",
+        "Januar bis Mai, also 5.000 Euro, kommen als aktive Rechnungsabgrenzung in die Bilanz."
       ]
     },
     {
-      "typ": "grenze",
+      "typ": "buchung",
       "daten": {
-        "ueberschrift": "Steuerlich: die 800-Euro-Regel",
-        "grenze": 800,
-        "max": 1000,
-        "teile": [
+        "ueberschrift": "So wird gebucht",
+        "buchungen": [
           {
-            "label": "Kfz-Steuer im Voraus",
-            "wert": 360,
+            "titel": "November 2025: Zahlung",
+            "soll": [["Versicherungen", "6.000,00 €"]],
+            "haben": [["Bank", "6.000,00 €"]],
             "satz": 1
+          },
+          {
+            "titel": "31.12.2025: Abgrenzung",
+            "soll": [["Aktive Rechnungsabgrenzung", "5.000,00 €"]],
+            "haben": [["Versicherungen", "5.000,00 €"]],
+            "satz": 2
           }
         ],
-        "ergebnis": {
-          "text": "360 € – der RAP darf steuerlich wegfallen",
-          "ok": true,
-          "satz": 2
-        },
-        "ref": "§ 5 Abs. 5 S. 2 EStG"
+        "fazit": { "text": "Gewinn 2025: − 1.000 €, Gewinn 2026: − 5.000 €", "satz": 3 }
       },
       "saetze": [
-        "Steuerlich gibt es eine Erleichterung: Bis 800 Euro je Ausgabe darf der Posten wegfallen. So steht es in Paragraf 5 Absatz 5 des Einkommensteuergesetzes.",
-        "Beispiel: 360 Euro Kfz-Steuer für Oktober 2025 bis September 2026, bezahlt im Oktober.",
-        "Das liegt unter 800 Euro, der Posten darf also wegfallen, wenn man das Wahlrecht einheitlich ausübt."
+        "Gebucht wird zweimal.",
+        "Bei der Zahlung: Versicherungen an Bank, 6.000 Euro.",
+        "Am Stichtag: aktive Rechnungsabgrenzung an Versicherungen, 5.000 Euro.",
+        "So mindert 2025 nur der Dezember den Gewinn. Die 5.000 Euro werden 2026 zu Aufwand."
       ]
     },
     {
-      "typ": "fallen",
+      "typ": "quiz",
       "daten": {
-        "ueberschrift": "Typische Fallen",
-        "karten": [
-          {
-            "titel": "RAP und sonstige verwechselt",
-            "text": "Geld schon geflossen: RAP. Geld kommt später: sonstige Forderung oder Verbindlichkeit.",
-            "satz": 1
-          },
-          {
-            "titel": "Monate falsch gezählt",
-            "text": "Dezember bis Februar sind drei Monate, April bis Dezember neun.",
-            "satz": 2
-          },
-          {
-            "titel": "Vorsteuer abgegrenzt",
-            "text": "Die Vorsteuer wird nie abgegrenzt, sie ist sofort abziehbar.",
-            "satz": 3
-          }
-        ]
+        "frage": "Pacht 3.600 € für Oktober 2025 bis März 2026, gezahlt am 01.04.2026. Was buchst du am 31.12.2025?",
+        "optionen": [
+          "Aktive Abgrenzung 1.800 €",
+          "Sonstige Verbindlichkeit 1.800 €",
+          "Nichts, erst bei Zahlung"
+        ],
+        "richtig": 1,
+        "satzDenken": 1,
+        "satzLoesung": 2,
+        "erklaerung": { "text": "§ 252 Abs. 1 Nr. 5 HGB", "satz": 3 },
+        "stempel": { "index": 2, "text": "Periode zählt", "satz": 3 }
       },
       "saetze": [
-        "Drei typische Fehler.",
-        "Erstens: Rechnungsabgrenzung und sonstige Posten verwechseln. Ist das Geld schon geflossen, ist es Rechnungsabgrenzung. Fließt es später, ist es eine sonstige Forderung oder Verbindlichkeit.",
-        "Zweitens: Monate falsch zählen. Dezember bis Februar sind drei Monate.",
-        "Drittens: die Vorsteuer abgrenzen. Sie ist sofort abziehbar."
+        "Kurzes Quiz. Die Pacht von 3.600 Euro für Oktober bis März wird erst am 1. April 2026 gezahlt. Was buchst du am 31. Dezember?",
+        "[pause 5]",
+        "Richtig ist B: eine sonstige Verbindlichkeit von 1.800 Euro.",
+        "Oktober bis Dezember sind 3 Monate zu je 600 Euro. Der Aufwand gehört ins alte Jahr, bezahlt wird erst später."
       ]
     },
     {
@@ -276,29 +123,17 @@
       "daten": {
         "ueberschrift": "Das nimmst du mit",
         "punkte": [
-          {
-            "text": "ARAP: Ausgabe jetzt, Aufwand später",
-            "satz": 0
-          },
-          {
-            "text": "PRAP: Einnahme jetzt, Ertrag später",
-            "satz": 0
-          },
-          {
-            "text": "Sonstige Forderung oder Verbindlichkeit: Geld fließt später",
-            "satz": 1
-          },
-          {
-            "text": "Steuerlich bis 800 € Wahlrecht",
-            "satz": 1
-          }
+          { "text": "Aktive Abgrenzung: Ausgabe jetzt, Aufwand später", "satz": 0 },
+          { "text": "Passive Abgrenzung: Einnahme jetzt, Ertrag später", "satz": 0 },
+          { "text": "Sonstige Forderung oder Verbindlichkeit: Zahlung später", "satz": 1 },
+          { "text": "Vorsteuer wird nicht abgegrenzt", "satz": 1 }
         ],
         "aufruf": "Jetzt üben: LF 10 → Zeitliche Abgrenzung"
       },
       "saetze": [
-        "Zusammengefasst: Aktiver Rechnungsabgrenzungsposten heißt Ausgabe jetzt, Aufwand später. Passiver heißt Einnahme jetzt, Ertrag später.",
-        "Fließt das Geld erst später, ist es eine sonstige Forderung oder Verbindlichkeit. Und steuerlich darf der Posten bis 800 Euro wegfallen.",
-        "Im Lernfeld 10 warten dazu Übungsaufgaben mit Lösungen auf dich."
+        "Zusammengefasst: Ausgabe jetzt, Aufwand später ist die aktive Abgrenzung. Einnahme jetzt, Ertrag später die passive.",
+        "Fließt das Geld erst später, buchst du eine sonstige Forderung oder Verbindlichkeit. Die Vorsteuer wird nie abgegrenzt.",
+        "Im Lernfeld 10 findest du dazu Aufgaben aus dem Unterricht."
       ]
     }
   ]

@@ -1,0 +1,134 @@
+{
+  "lf": "sk",
+  "kapitel": "Sozialkunde · Arbeitsrecht",
+  "farbe": "#e11d48",
+  "stil": "premium",
+  "id": "sk-arbeitsvertrag",
+  "thema": "Arbeitsvertrag: Form, Befristung, Rechte und Pflichten",
+  "titel": "Arbeitsvertrag",
+  "kartentitel": "Arbeitsvertrag: Form, Befristung, Rechte und Pflichten",
+  "musik": "sk-arbeitsvertrag/musik.wav",
+  "szenen": [
+    {
+      "typ": "intro",
+      "daten": {
+        "kicker": "Sozialkunde · Arbeitsrecht",
+        "titel": "Per Handschlag eingestellt?",
+        "untertitel": "Form, Befristung, Rechte und Pflichten",
+        "betrag": 2,
+        "betragLabel": "Befristung ohne Grund",
+        "einheit": "Jahre",
+        "satzBetrag": 1,
+        "satzTeilen": 2,
+        "personen": [
+          { "name": "Chefin", "icon": "👩‍💼" },
+          { "name": "Tim", "icon": "🧑" }
+        ]
+      },
+      "saetze": [
+        "Tim wird per Handschlag eingestellt. Einen schriftlichen Vertrag gibt es nicht.",
+        "Ist das gültig? Und was gilt, wenn der Vertrag befristet sein soll?",
+        "Das klären wir jetzt."
+      ]
+    },
+    {
+      "typ": "sortieren",
+      "daten": {
+        "ueberschrift": "Braucht es die Schriftform?",
+        "ja": "schriftlich",
+        "nein": "formfrei",
+        "karten": [
+          { "text": "unbefristeter Arbeitsvertrag", "icon": "🤝", "ja": false, "satz": 1 },
+          { "text": "Befristung", "icon": "⏳", "ja": true, "satz": 2 },
+          { "text": "Kündigung", "icon": "✉️", "ja": true, "satz": 3 }
+        ]
+      },
+      "saetze": [
+        "Welche Form braucht es?",
+        "Ein unbefristeter Arbeitsvertrag gilt auch per Handschlag. Der Arbeitgeber muss die wichtigsten Punkte aber schriftlich aushändigen.",
+        "Eine Befristung muss schriftlich sein.",
+        "Und eine Kündigung auch."
+      ]
+    },
+    {
+      "typ": "grenze",
+      "daten": {
+        "ueberschrift": "Befristung ohne Grund",
+        "grenze": 24,
+        "grenzeLabel": "höchstens 24 Monate",
+        "max": 36,
+        "einheit": "Monate",
+        "teile": [
+          { "label": "Vertrag", "wert": 30, "satz": 1 }
+        ],
+        "ergebnis": { "text": "zu lang: Vertrag gilt als unbefristet", "ok": false, "satz": 2 },
+        "ref": "§§ 14, 16 TzBfG"
+      },
+      "saetze": [
+        "Ohne sachlichen Grund darf ein Vertrag höchstens 2 Jahre befristet sein, mit höchstens drei Verlängerungen.",
+        "Tims Vertrag läuft 30 Monate ohne Grund. Das ist zu lang.",
+        "Ist die Befristung ungültig, gilt der Vertrag als unbefristet. Das Gleiche passiert, wenn die Befristung nicht schriftlich ist."
+      ]
+    },
+    {
+      "typ": "formel",
+      "daten": {
+        "ueberschrift": "Rechte und Pflichten",
+        "ref": "§ 611a BGB",
+        "zeilen": [
+          { "zeichen": "AN", "text": "Arbeit nach Weisung", "info": "§ 106 GewO" },
+          { "zeichen": "AN", "text": "keine Konkurrenz, Schweigepflicht", "info": "§ 60 HGB, § 57 StBerG" },
+          { "zeichen": "AG", "text": "Lohn nach der Arbeit", "info": "Monatsende, § 614 BGB" },
+          { "zeichen": "AG", "text": "Bedingungen schriftlich aushändigen", "info": "§ 2 NachwG" }
+        ]
+      },
+      "saetze": [
+        "Aus dem Vertrag folgen Pflichten für beide.",
+        "Tim arbeitet nach Weisung. Die Chefin bestimmt, was, wo und wann.",
+        "Er darf ihr keine Konkurrenz machen, und in der Kanzlei gilt eine strenge Schweigepflicht.",
+        "Die Chefin zahlt den Lohn nach der Arbeit, also am Monatsende.",
+        "Und sie händigt die wichtigsten Vertragsbedingungen schriftlich aus."
+      ]
+    },
+    {
+      "typ": "quiz",
+      "daten": {
+        "frage": "Die Chefin händigt Tim nichts Schriftliches aus. Was folgt daraus?",
+        "optionen": [
+          "Der Vertrag ist unwirksam",
+          "Gültig, aber Bußgeld bis 2.000 €",
+          "Eine Geldstrafe"
+        ],
+        "richtig": 1,
+        "satzDenken": 1,
+        "satzLoesung": 2,
+        "erklaerung": { "text": "§ 4 NachwG", "satz": 3 },
+        "stempel": { "index": 0, "text": "bleibt gültig", "satz": 3 }
+      },
+      "saetze": [
+        "Kurzes Quiz. Die Chefin händigt Tim nichts Schriftliches aus. Was folgt daraus?",
+        "[pause 5]",
+        "Richtig ist B: Der Vertrag bleibt gültig, aber es droht ein Bußgeld bis 2.000 Euro.",
+        "Achtung: Es ist ein Bußgeld, keine Geldstrafe."
+      ]
+    },
+    {
+      "typ": "merke",
+      "daten": {
+        "ueberschrift": "Das nimmst du mit",
+        "punkte": [
+          { "text": "Unbefristet: formfrei, Nachweis schriftlich", "satz": 0 },
+          { "text": "Befristung: schriftlich, ohne Grund max. 2 Jahre", "satz": 0 },
+          { "text": "Fehler: Vertrag gilt als unbefristet", "satz": 1 },
+          { "text": "Lohn am Monatsende", "satz": 1 }
+        ],
+        "aufruf": "Jetzt üben: Sozialkunde → Arbeitsvertrag"
+      },
+      "saetze": [
+        "Zusammengefasst: Der unbefristete Vertrag ist formfrei, die Bedingungen müssen aber schriftlich ausgehändigt werden.",
+        "Eine Befristung braucht die Schriftform und ohne Grund höchstens 2 Jahre, sonst gilt der Vertrag unbefristet. Der Lohn kommt am Monatsende.",
+        "In der Sozialkunde findest du dazu Übungen mit Stimme."
+      ]
+    }
+  ]
+}

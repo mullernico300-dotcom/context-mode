@@ -1,153 +1,112 @@
 {
-  "id": "lf10-teilwert",
   "lf": "lf10",
-  "thema": "Abschreibung, Teilwert und Zuschreibung",
   "kapitel": "LF 10 · Jahresabschluss",
-  "titel": "Teilwert und Zuschreibung",
-  "kartentitel": "Abschreibung, Teilwert und Zuschreibung: dauerhaft oder nicht?",
   "farbe": "#22c55e",
+  "stil": "premium",
+  "id": "lf10-teilwert",
+  "thema": "Abschreibung, Teilwert und Zuschreibung",
+  "titel": "Teilwert",
+  "kartentitel": "Abschreibung, Teilwert und Zuschreibung: dauerhaft oder nicht?",
+  "musik": "lf10-teilwert/musik.wav",
   "szenen": [
     {
-      "typ": "titel",
-      "daten": { "kicker": "LF 10 · Jahresabschluss", "titel": "Teilwert", "untertitel": "Außerplanmäßig abschreiben und später wieder zuschreiben", "preis": "15.000 €", "preisLabel": "Wert der Maschine heute" },
-      "saetze": [
-        "Eine Unternehmerin kauft eine Maschine für 48.000 Euro. Zwei Jahre später ist sie nur noch 15.000 Euro wert, weil die Kunden wegbleiben.",
-        "Darf oder muss sie die Maschine jetzt abwerten? Und was passiert, wenn der Wert wieder steigt?",
-        "Genau darum geht es in diesem Video."
-      ]
-    },
-    {
-      "typ": "formel",
+      "typ": "intro",
       "daten": {
-        "ueberschrift": "Vom Kaufpreis zum Buchwert",
-        "ref": "§ 253 Abs. 3 HGB",
-        "zeilen": [
-          { "zeichen": "", "text": "Anschaffungskosten", "info": "der Kaufpreis netto" },
-          { "zeichen": "−", "text": "planmäßige Abschreibung", "info": "jedes Jahr gleich viel" },
-          { "zeichen": "=", "text": "fortgeführte Anschaffungskosten", "info": "Wert nach Plan" },
-          { "zeichen": "−", "text": "außerplanmäßige Abschreibung", "info": "nur bei dauerhafter Wertminderung" },
-          { "zeichen": "=", "text": "Buchwert in der Bilanz", "info": "", "ergebnis": true }
+        "kicker": "LF 10 · Jahresabschluss",
+        "titel": "Die Maschine verliert Wert",
+        "untertitel": "Dauerhaft oder nur vorübergehend?",
+        "betrag": 48000,
+        "betragLabel": "Anschaffungskosten",
+        "satzBetrag": 1,
+        "satzTeilen": 2,
+        "personen": [
+          { "name": "Betrieb", "icon": "🏭" },
+          { "name": "Maschine", "icon": "⚙️" }
         ]
       },
       "saetze": [
-        "Erst die Grundlage aus Paragraf 253 Absatz 3 des Handelsgesetzbuchs.",
-        "Du startest mit den Anschaffungskosten.",
-        "Davon geht jedes Jahr die planmäßige Abschreibung ab, linear über die Nutzungsdauer.",
-        "Das ergibt die fortgeführten Anschaffungskosten, also den Wert nach Plan.",
-        "Sinkt der Wert dauerhaft tiefer, kommt eine außerplanmäßige Abschreibung dazu.",
-        "Was übrig bleibt, ist der Buchwert in der Bilanz."
-      ]
-    },
-    {
-      "typ": "zeitstrahl",
-      "daten": {
-        "ueberschrift": "Dauerhaft oder vorübergehend?",
-        "merke": "Steuerlich heißt der niedrigere Wert Teilwert",
-        "punkte": [
-          { "label": "dauerhaft", "titel": "Abschreiben", "text": "Wert bleibt lange niedrig", "folge": "Handelsbilanz: Pflicht · Steuerbilanz: Wahlrecht", "ref": "§ 6 Abs. 1 Nr. 1 EStG", "satz": 1 },
-          { "label": "vorübergehend", "titel": "Nicht abschreiben", "text": "Wert erholt sich bald", "folge": "bei Maschinen, Gebäuden und Fahrzeugen verboten", "satz": 2 }
-        ]
-      },
-      "saetze": [
-        "Entscheidend ist eine Frage: Ist die Wertminderung dauerhaft oder nur vorübergehend?",
-        "Ist sie dauerhaft, muss in der Handelsbilanz außerplanmäßig abgeschrieben werden. In der Steuerbilanz darf man auf den niedrigeren Teilwert gehen, das ist ein Wahlrecht.",
-        "Ist sie nur vorübergehend, ist die Abschreibung bei Maschinen, Gebäuden und Fahrzeugen verboten.",
-        "Der niedrigere Wert heißt im Steuerrecht Teilwert. Das ist der Betrag, den ein Käufer des ganzen Betriebs für dieses Wirtschaftsgut zahlen würde."
-      ]
-    },
-    {
-      "typ": "grenze",
-      "daten": {
-        "ueberschrift": "Der Test: halbe Restnutzungsdauer",
-        "grenze": 18000,
-        "grenzeLabel": "Plan nach 3 Jahren: 18.000 €",
-        "max": 40000,
-        "teile": [ { "label": "Teilwert", "wert": 15000, "satz": 3 } ],
-        "ergebnis": { "text": "15.000 € liegt darunter – dauerhaft", "satz": 3 },
-        "ref": "BMF-Schreiben Teilwert"
-      },
-      "saetze": [
-        "Wann ist eine Wertminderung dauerhaft? Die Finanzverwaltung sagt: wenn der Wert mindestens für die halbe Restnutzungsdauer unter dem planmäßigen Buchwert liegt.",
-        "Unser Beispiel: Die Maschine kostet 48.000 Euro, Nutzungsdauer 8 Jahre, gekauft im Januar 2023. Ende 2024 steht sie nach zwei Jahren Abschreibung noch mit 36.000 Euro in den Büchern.",
-        "Es bleiben 6 Jahre Restnutzungsdauer, die Hälfte sind 3 Jahre. Nach weiteren 3 Jahren hätte sie planmäßig noch 18.000 Euro.",
-        "Der Teilwert liegt bei 15.000 Euro, also darunter. Die Wertminderung ist dauerhaft."
-      ]
-    },
-    {
-      "typ": "wasserfall",
-      "daten": {
-        "kurzTitel": "Bewertung zum 31.12.2024",
-        "sachverhalt": "Maschine: Anschaffungskosten 48.000 € im Januar 2023, Nutzungsdauer 8 Jahre. Am 31.12.2024 ist sie dauerhaft nur noch 15.000 € wert.",
-        "balken": [
-          { "label": "Anschaffungs­kosten", "wert": 48000, "art": "start", "satz": 1 },
-          { "label": "− AfA 2023 und 2024", "wert": -12000, "art": "minus", "satz": 1 },
-          { "label": "vorläufiger Buchwert", "wert": 36000, "art": "zwischen", "satz": 1 },
-          { "label": "− außerplan­mäßig", "wert": -21000, "art": "minus", "satz": 2 },
-          { "label": "Buchwert", "wert": 15000, "art": "ergebnis", "satz": 3 }
-        ],
-        "notiz": { "text": "Ab 2025: 15.000 € : 6 Jahre = 2.500 € AfA pro Jahr", "satz": 4 }
-      },
-      "saetze": [
-        "Jetzt rechnen wir das durch.",
-        "Von 48.000 Euro gehen zwei Jahre Abschreibung zu je 6.000 Euro ab. Der vorläufige Buchwert ist 36.000 Euro.",
-        "Weil die Wertminderung dauerhaft ist, kommen 21.000 Euro außerplanmäßige Abschreibung dazu.",
-        "Der Buchwert am 31. Dezember 2024 beträgt 15.000 Euro.",
-        "Ab 2025 wird dieser neue Wert auf die Restnutzungsdauer verteilt: 15.000 Euro durch 6 Jahre, also 2.500 Euro pro Jahr."
-      ]
-    },
-    {
-      "typ": "buchung",
-      "daten": {
-        "ueberschrift": "So wird gebucht",
-        "buchungen": [
-          { "titel": "31.12.2024", "soll": [["Abschreibungen", "6.000 €"], ["außerplanmäßige Abschreibungen", "21.000 €"]], "haben": [["Maschinen", "27.000 €"]], "satz": 1 },
-          { "titel": "31.12.2025", "soll": [["Abschreibungen", "2.500 €"]], "haben": [["Maschinen", "2.500 €"]], "satz": 2 }
-        ],
-        "fazit": { "text": "Beides mindert den Gewinn", "satz": 3 }
-      },
-      "saetze": [
-        "Und so wird gebucht.",
-        "Am 31. Dezember 2024: Abschreibungen 6.000 Euro und außerplanmäßige Abschreibungen 21.000 Euro an Maschinen 27.000 Euro.",
-        "Ein Jahr später nur noch die neue, kleinere Abschreibung: 2.500 Euro an Maschinen.",
-        "Beide Buchungen mindern den Gewinn."
+        "Ein Betrieb kauft im Januar 2023 eine Maschine. Nutzungsdauer: 8 Jahre.",
+        "Sie kostet 48.000 Euro. Ende 2024 ist sie nur noch 15.000 Euro wert.",
+        "Muss der Betrieb jetzt mehr abschreiben? Das entscheidet ein Test."
       ]
     },
     {
       "typ": "stapel",
       "daten": {
-        "ueberschrift": "Der Wert steigt wieder: Zuschreibung",
-        "icon": "📈",
+        "ueberschrift": "Der Vergleichswert am 31.12.2024",
+        "icon": "⚙️",
         "zeilen": [
-          { "text": "Buchwert 31.12.2026", "wert": "10.000 €", "satz": 1 },
-          { "text": "Wert jetzt", "wert": "19.000 €", "satz": 1 },
-          { "text": "Obergrenze: 48.000 € − 4 × 6.000 €", "wert": "24.000 €", "satz": 2 },
-          { "text": "Zuschreibung über die Obergrenze", "wert": "verboten", "raus": true, "satz": 3 },
-          { "text": "= Zuschreibung (Ertrag)", "wert": "9.000 €", "ergebnis": true, "satz": 4 }
+          { "text": "Anschaffungskosten", "wert": "48.000 €", "satz": 1 },
+          { "text": "− AfA 2023 und 2024 (je 6.000 €)", "wert": "12.000 €", "satz": 1 },
+          { "text": "= vorläufiger Buchwert", "wert": "36.000 €", "satz": 2 },
+          { "text": "− halbe Restnutzungsdauer: 3 × 6.000 €", "wert": "18.000 €", "satz": 3 },
+          { "text": "= Vergleichswert", "wert": "18.000 €", "ergebnis": true, "satz": 4 }
         ]
       },
       "saetze": [
-        "2026 gewinnt die Unternehmerin neue Kunden, die Maschine ist wieder 19.000 Euro wert. Der Grund für die Abwertung ist weggefallen.",
-        "Der Buchwert steht nach zwei weiteren Abschreibungen bei 10.000 Euro.",
-        "Zugeschrieben wird höchstens bis zu den fortgeführten Anschaffungskosten. Ohne die Abwertung stünde die Maschine bei 24.000 Euro.",
-        "Höher als diese Grenze darf man nie gehen, auch wenn der Marktwert darüber liegt.",
-        "19.000 Euro liegen unter der Grenze. Also werden 9.000 Euro zugeschrieben. Das ist ein Ertrag, und er ist Pflicht."
+        "Schritt eins: der Vergleichswert.",
+        "48.000 Euro minus zwei Jahre Abschreibung zu je 6.000 Euro.",
+        "Vorläufiger Buchwert: 36.000 Euro. Die Restnutzungsdauer sind noch 6 Jahre.",
+        "Die Hälfte davon sind 3 Jahre. Nach 3 weiteren Jahren Abschreibung stünde die Maschine bei 18.000 Euro.",
+        "Das ist der Vergleichswert."
       ]
     },
     {
-      "typ": "fallen",
+      "typ": "grenze",
       "daten": {
-        "ueberschrift": "Typische Fallen",
-        "karten": [
-          { "titel": "Erst die normale AfA", "text": "Die AfA des laufenden Jahres zuerst, dann außerplanmäßig.", "satz": 1 },
-          { "titel": "Restnutzungsdauer falsch", "text": "Sie zählt ab dem Bilanzstichtag, nicht ab dem Kauf.", "satz": 2 },
-          { "titel": "Zu hoch zugeschrieben", "text": "Höchstens bis zu den fortgeführten Anschaffungskosten.", "satz": 3 }
+        "ueberschrift": "Dauerhaft?",
+        "grenze": 18000,
+        "grenzeLabel": "Vergleichswert 18.000 €",
+        "max": 36000,
+        "teile": [
+          { "label": "Teilwert", "wert": 15000, "satz": 1 }
+        ],
+        "ergebnis": { "text": "dauerhaft: abschreiben auf 15.000 €", "ok": true, "satz": 2 },
+        "ref": "§ 253 Abs. 3 HGB, § 6 Abs. 1 Nr. 1 EStG"
+      },
+      "saetze": [
+        "Schritt zwei: Vergleich.",
+        "Der Teilwert von 15.000 Euro liegt unter 18.000 Euro. Die Wertminderung ist also dauerhaft.",
+        "In der Handelsbilanz muss der Betrieb außerplanmäßig um 21.000 Euro abschreiben. In der Steuerbilanz darf er es. Neuer Buchwert: 15.000 Euro."
+      ]
+    },
+    {
+      "typ": "zeitstrahl",
+      "daten": {
+        "ueberschrift": "Und wenn der Wert wieder steigt?",
+        "merke": "Zuschreibung höchstens bis zu den fortgeführten Anschaffungskosten",
+        "punkte": [
+          { "label": "2025", "titel": "AfA neu", "text": "15.000 € : 6 Jahre", "folge": "2.500 € pro Jahr", "ref": "§ 11c Abs. 2 EStDV", "satz": 1 },
+          { "label": "31.12.2026", "titel": "Zuschreibung", "text": "Buchwert 10.000 €, Wert 19.000 €", "folge": "+ 9.000 € Ertrag", "ref": "§ 253 Abs. 5 HGB", "satz": 2 }
         ]
       },
       "saetze": [
-        "Drei Fehler, die in Klassenarbeiten oft passieren.",
-        "Erstens: Die normale Abschreibung des Jahres vergessen. Erst planmäßig abschreiben, dann außerplanmäßig.",
-        "Zweitens: Die Restnutzungsdauer ab dem Kauf zählen. Sie zählt ab dem Bilanzstichtag.",
-        "Drittens: Bis zum Marktwert zuschreiben. Die Grenze sind immer die fortgeführten Anschaffungskosten."
+        "Ab 2025 rechnest du die Abschreibung vom neuen Wert.",
+        "15.000 Euro geteilt durch 6 Jahre: 2.500 Euro pro Jahr.",
+        "Ende 2026 steigt der Wert auf 19.000 Euro. Der Buchwert ist 10.000 Euro, also wird um 9.000 Euro zugeschrieben.",
+        "Die Grenze dafür: Ohne die Sonderabschreibung stünde die Maschine bei 24.000 Euro. Höher darf man nie zuschreiben."
+      ]
+    },
+    {
+      "typ": "quiz",
+      "daten": {
+        "frage": "Fortgeführte Anschaffungskosten 24.000 €, der Wert steigt auf 27.000 €. Bis wohin schreibst du zu?",
+        "optionen": [
+          "Bis 27.000 €",
+          "Bis 24.000 €",
+          "Gar nicht"
+        ],
+        "richtig": 1,
+        "satzDenken": 1,
+        "satzLoesung": 2,
+        "erklaerung": { "text": "§ 253 Abs. 5 HGB", "satz": 3 },
+        "stempel": { "index": 0, "text": "zu hoch", "satz": 3 }
+      },
+      "saetze": [
+        "Kurzes Quiz. Die fortgeführten Anschaffungskosten sind 24.000 Euro, der Wert steigt auf 27.000 Euro. Bis wohin schreibst du zu?",
+        "[pause 5]",
+        "Richtig ist B: bis 24.000 Euro.",
+        "Mehr als die fortgeführten Anschaffungskosten geht nie, sonst würdest du einen Gewinn zeigen, der noch nicht verwirklicht ist."
       ]
     },
     {
@@ -155,17 +114,17 @@
       "daten": {
         "ueberschrift": "Das nimmst du mit",
         "punkte": [
-          { "text": "Dauerhaft: Handelsbilanz Pflicht, Steuerbilanz Wahlrecht", "satz": 0 },
-          { "text": "Test: Teilwert unter Plan-Wert nach halber Restnutzungsdauer", "satz": 0 },
-          { "text": "Danach: neuer Buchwert durch Restnutzungsdauer", "satz": 1 },
-          { "text": "Zuschreibung bis höchstens zu den fortgeführten AK", "satz": 1 }
+          { "text": "Vergleichswert: Buchwert nach halber Restnutzungsdauer", "satz": 0 },
+          { "text": "Teilwert darunter: dauerhaft", "satz": 0 },
+          { "text": "Handelsbilanz Pflicht, Steuerbilanz Wahlrecht", "satz": 1 },
+          { "text": "Zuschreibung bis fortgeführte AK", "satz": 1 }
         ],
-        "aufruf": "Jetzt üben: LF 10 → Teilwert und Zuschreibung"
+        "aufruf": "Jetzt üben: LF 10 → Teilwert"
       },
       "saetze": [
-        "Zusammengefasst: Bei dauerhafter Wertminderung ist die Abschreibung in der Handelsbilanz Pflicht und in der Steuerbilanz ein Wahlrecht. Getestet wird mit der halben Restnutzungsdauer.",
-        "Danach wird der neue Buchwert auf die Restnutzungsdauer verteilt. Steigt der Wert wieder, wird höchstens bis zu den fortgeführten Anschaffungskosten zugeschrieben.",
-        "Im Lernfeld 10 findest du dazu Übungsaufgaben mit Lösungen."
+        "Zusammengefasst: Vergleiche den Teilwert mit dem Buchwert nach der halben Restnutzungsdauer. Liegt er darunter, ist die Minderung dauerhaft.",
+        "Dann musst du in der Handelsbilanz abschreiben, steuerlich darfst du. Steigt der Wert wieder, schreibst du höchstens bis zu den fortgeführten Anschaffungskosten zu.",
+        "Im Lernfeld 10 findest du dazu Aufgaben aus dem Unterricht."
       ]
     }
   ]

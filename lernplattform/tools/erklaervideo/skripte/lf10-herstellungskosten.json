@@ -1,117 +1,76 @@
 {
-  "id": "lf10-herstellungskosten",
   "lf": "lf10",
-  "thema": "Herstellungskosten",
   "kapitel": "LF 10 · Jahresabschluss",
+  "farbe": "#22c55e",
+  "stil": "premium",
+  "id": "lf10-herstellungskosten",
+  "thema": "Herstellungskosten",
   "titel": "Herstellungskosten",
   "kartentitel": "Herstellungskosten: Wertuntergrenze, Wertobergrenze und Eigenleistung",
-  "farbe": "#22c55e",
+  "musik": "lf10-herstellungskosten/musik.wav",
   "szenen": [
     {
-      "typ": "titel",
-      "daten": { "kicker": "LF 10 · Jahresabschluss", "titel": "Herstellungskosten", "untertitel": "Was eine selbst gebaute Anlage in der Bilanz wert ist", "preis": "8.928 €", "preisLabel": "Parkplatz in Eigenleistung" },
+      "typ": "intro",
+      "daten": {
+        "kicker": "LF 10 · Jahresabschluss",
+        "titel": "Selbst gebaut",
+        "untertitel": "Herstellungskosten und Eigenleistung",
+        "betrag": 8928,
+        "betragLabel": "Herstellungskosten",
+        "satzBetrag": 1,
+        "satzTeilen": 2,
+        "personen": [
+          { "name": "Baubetrieb", "icon": "👷" },
+          { "name": "Parkplatz", "icon": "🅿️" }
+        ]
+      },
       "saetze": [
-        "Eine Unternehmerin lässt ihren Parkplatz von den eigenen Leuten bauen. Es gibt also keine Rechnung über den fertigen Parkplatz.",
-        "Mit welchem Wert kommt er dann in die Bilanz?",
-        "Die Antwort sind die Herstellungskosten. Wie man sie berechnet und bucht, siehst du jetzt."
+        "Ein Betrieb baut seinen Parkplatz selbst.",
+        "Am Ende stehen 8.928 Euro in der Bilanz. Wie kommt man darauf?",
+        "Mit den Herstellungskosten. Dabei gibt es Pflicht, Wahlrecht und Verbot."
       ]
     },
     {
       "typ": "formel",
       "daten": {
-        "ueberschrift": "Das Pflicht-Schema",
+        "ueberschrift": "Was gehört hinein?",
         "ref": "§ 255 Abs. 2 HGB",
         "zeilen": [
-          { "zeichen": "", "text": "Materialeinzelkosten", "info": "Material, Rohstoffe" },
-          { "zeichen": "+", "text": "Materialgemeinkosten", "info": "Zuschlag in Prozent" },
-          { "zeichen": "+", "text": "Fertigungseinzelkosten", "info": "Löhne der Arbeiter" },
-          { "zeichen": "+", "text": "Fertigungsgemeinkosten", "info": "Zuschlag auf die Löhne" },
-          { "zeichen": "+", "text": "Sondereinzelkosten der Fertigung", "info": "Pläne, Modelle" },
-          { "zeichen": "=", "text": "Wertuntergrenze", "info": "der niedrigste Wert", "ergebnis": true }
+          { "zeichen": "1", "text": "Material- und Fertigungseinzelkosten", "info": "Pflicht" },
+          { "zeichen": "2", "text": "Material- und Fertigungsgemeinkosten", "info": "Pflicht" },
+          { "zeichen": "3", "text": "Sondereinzelkosten der Fertigung", "info": "Pflicht, z. B. Pläne" },
+          { "zeichen": "4", "text": "allgemeine Verwaltungskosten", "info": "Wahlrecht" },
+          { "zeichen": "✕", "text": "Vertrieb, Forschung, Gewinn", "info": "Verbot" }
         ]
       },
       "saetze": [
-        "Was hinein muss, steht in Paragraf 255 Absatz 2 des Handelsgesetzbuchs.",
-        "Du startest mit den Materialeinzelkosten, also dem Material, das direkt verbaut wurde.",
-        "Dazu kommen die Materialgemeinkosten, meistens als Zuschlag in Prozent.",
-        "Dann die Fertigungslöhne, also die Fertigungseinzelkosten.",
-        "Auf die Löhne kommen die Fertigungsgemeinkosten, ebenfalls als Zuschlag.",
-        "Und Sondereinzelkosten der Fertigung, zum Beispiel Konstruktionspläne.",
-        "Zusammen ergibt das die Wertuntergrenze. Weniger darf man nie ansetzen."
-      ]
-    },
-    {
-      "typ": "sortieren",
-      "daten": {
-        "ueberschrift": "Darf das hinein?",
-        "ja": "Pflicht oder Wahlrecht",
-        "nein": "verboten",
-        "karten": [
-          { "text": "Material", "icon": "🧱", "ja": true, "satz": 1 },
-          { "text": "Löhne", "icon": "👷", "ja": true, "satz": 1 },
-          { "text": "Gemeinkosten anteilig", "icon": "⚙️", "ja": true, "satz": 1 },
-          { "text": "Konstruktionspläne", "icon": "📐", "ja": true, "satz": 1 },
-          { "text": "Verwaltung (Wahlrecht)", "icon": "🗂️", "ja": true, "satz": 2 },
-          { "text": "Vertriebskosten", "icon": "📦", "ja": false, "satz": 3 },
-          { "text": "Forschung", "icon": "🔬", "ja": false, "satz": 3 },
-          { "text": "Gewinnzuschlag", "icon": "💰", "ja": false, "satz": 4 }
-        ]
-      },
-      "saetze": [
-        "Jetzt sortieren wir, was hinein darf.",
-        "Material, Löhne, die anteiligen Gemeinkosten und die Pläne sind Pflicht.",
-        "Die allgemeinen Verwaltungskosten sind ein Wahlrecht. Nimmt man sie dazu, erreicht man die Wertobergrenze.",
-        "Vertriebskosten und Forschungskosten sind verboten.",
-        "Und ein Gewinnzuschlag gehört nie hinein. Herstellungskosten sind Kosten, kein Verkaufspreis."
+        "Was gehört hinein?",
+        "Pflicht sind die Einzelkosten für Material und Löhne.",
+        "Dazu die Gemeinkosten für Material und Fertigung, als Zuschlag.",
+        "Und Sondereinzelkosten wie Konstruktionspläne. Bis hier ist das die Wertuntergrenze.",
+        "Verwaltungskosten sind ein Wahlrecht. Mit ihnen erreichst du die Wertobergrenze.",
+        "Vertriebskosten, Forschung und ein Gewinnzuschlag sind immer verboten."
       ]
     },
     {
       "typ": "stapel",
       "daten": {
-        "ueberschrift": "Beispiel: der niedrigste Wert",
-        "icon": "🏭",
+        "ueberschrift": "Der Parkplatz",
+        "icon": "🅿️",
         "zeilen": [
-          { "text": "Material", "wert": "40.000 €", "satz": 1 },
-          { "text": "+ Materialgemeinkosten 25 %", "wert": "10.000 €", "satz": 1 },
-          { "text": "+ Fertigungslöhne", "wert": "60.000 €", "satz": 2 },
-          { "text": "+ Fertigungsgemeinkosten 260 %", "wert": "156.000 €", "satz": 2 },
-          { "text": "+ Konstruktionspläne", "wert": "10.000 €", "satz": 3 },
-          { "text": "Verwaltung 10 % und Vertrieb 6 %", "wert": "bleiben weg", "raus": true, "satz": 4 },
-          { "text": "= Wertuntergrenze", "wert": "276.000 €", "ergebnis": true, "satz": 5 }
+          { "text": "Material: 2.500 € gekauft + 3.500 € Lager", "wert": "6.000 €", "satz": 1 },
+          { "text": "+ Materialgemeinkosten 20 %", "wert": "1.200 €", "satz": 2 },
+          { "text": "+ Löhne 60 Stunden × 18 €", "wert": "1.080 €", "satz": 3 },
+          { "text": "+ Fertigungsgemeinkosten 60 %", "wert": "648 €", "satz": 3 },
+          { "text": "= Wertuntergrenze", "wert": "8.928 €", "ergebnis": true, "satz": 4 }
         ]
       },
       "saetze": [
-        "Ein Beispiel: Eine Maschinenfabrik baut eine Spezialmaschine für den eigenen Betrieb und will den niedrigsten Wert ansetzen.",
-        "Material 40.000 Euro, dazu 25 Prozent Materialgemeinkosten, also 10.000 Euro.",
-        "Fertigungslöhne 60.000 Euro, dazu 260 Prozent Fertigungsgemeinkosten. Das sind 156.000 Euro.",
-        "Die Konstruktionspläne kosten 10.000 Euro.",
-        "Die Verwaltungskosten lassen wir weg, weil wir den niedrigsten Wert wollen. Vertriebskosten dürfen sowieso nicht hinein.",
-        "Ergebnis: 276.000 Euro. Gebucht wird Maschinen an andere aktivierte Eigenleistungen."
-      ]
-    },
-    {
-      "typ": "wasserfall",
-      "daten": {
-        "kurzTitel": "Wertobergrenze",
-        "sachverhalt": "Eine Werkzeugmaschine ist am 31.12. noch nicht fertig. Material 40.000 € (+ 20 %), Löhne 90.000 € (+ 140 %), Konstruktion 20.000 €, Verwaltung 10 %. Gerechnet wird mit der Wertobergrenze.",
-        "balken": [
-          { "label": "Material + 20 %", "wert": 48000, "art": "start", "satz": 1 },
-          { "label": "Fertigung + 140 %", "wert": 216000, "art": "plus", "satz": 2 },
-          { "label": "Konstruktion", "wert": 20000, "art": "plus", "satz": 3 },
-          { "label": "Wertuntergrenze", "wert": 284000, "art": "zwischen", "satz": 3 },
-          { "label": "+ Verwaltung 10 %", "wert": 28400, "art": "plus", "satz": 4 },
-          { "label": "Wertobergrenze", "wert": 312400, "art": "ergebnis", "satz": 5 }
-        ],
-        "notiz": { "text": "Noch nicht fertig: Konto „Anlagen im Bau“", "satz": 6 }
-      },
-      "saetze": [
-        "Und jetzt die Wertobergrenze. Eine Werkzeugmaschine ist am Bilanzstichtag noch nicht fertig.",
-        "Material 40.000 Euro plus 20 Prozent Gemeinkosten ergibt 48.000 Euro.",
-        "Löhne 90.000 Euro plus 140 Prozent Gemeinkosten ergibt 216.000 Euro.",
-        "Dazu 20.000 Euro Konstruktion. Das ist die Wertuntergrenze von 284.000 Euro.",
-        "Für die Obergrenze kommen 10 Prozent Verwaltungskosten dazu, also 28.400 Euro.",
-        "Die Wertobergrenze liegt bei 312.400 Euro.",
-        "Weil die Maschine noch nicht fertig ist, wird sie als Anlagen im Bau aktiviert und noch nicht abgeschrieben."
+        "Jetzt der Parkplatz aus dem Test.",
+        "Material: 2.500 Euro gekauft und 3.500 Euro aus dem Lager, zusammen 6.000 Euro.",
+        "Dazu 20 Prozent Materialgemeinkosten, also 1.200 Euro.",
+        "Die Löhne: 60 Stunden zu 18 Euro, also 1.080 Euro. Darauf 60 Prozent Fertigungsgemeinkosten, 648 Euro.",
+        "Die niedrigsten Herstellungskosten: 8.928 Euro."
       ]
     },
     {
@@ -119,34 +78,41 @@
       "daten": {
         "ueberschrift": "So wird gebucht",
         "buchungen": [
-          { "titel": "31.12.: noch nicht fertig", "soll": [["Anlagen im Bau", "312.400 €"]], "haben": [["andere aktivierte Eigenleistungen", "312.400 €"]], "satz": 1 },
-          { "titel": "30.03.: fertig, Herstellungskosten gesamt 400.000 €", "soll": [["Maschinen", "400.000 €"]], "haben": [["Anlagen im Bau", "312.400 €"], ["andere aktivierte Eigenleistungen", "87.600 €"]], "satz": 2 }
+          {
+            "titel": "Parkplatz aktivieren",
+            "soll": [["Außenanlagen", "8.928,00 €"], ["Vorsteuer", "475,00 €"]],
+            "haben": [["Verbindlichkeiten aLuL", "2.975,00 €"], ["andere aktivierte Eigenleistungen", "6.428,00 €"]],
+            "satz": 1
+          }
         ],
-        "fazit": { "text": "Die Eigenleistung gleicht den Aufwand für Material und Löhne aus", "satz": 4 }
+        "fazit": { "text": "Gewinn + 6.428 €: gleicht den Aufwand für Lager und Löhne aus", "satz": 2 }
       },
       "saetze": [
-        "Jetzt die Buchungen.",
-        "Am 31. Dezember: Anlagen im Bau an andere aktivierte Eigenleistungen, 312.400 Euro.",
-        "Ende März ist die Maschine fertig. Die Herstellungskosten betragen insgesamt 400.000 Euro.",
-        "Gebucht wird Maschinen 400.000 Euro an Anlagen im Bau 312.400 Euro und an andere aktivierte Eigenleistungen 87.600 Euro.",
-        "Das Konto andere aktivierte Eigenleistungen ist ein Ertrag. Es gleicht den Aufwand für Material und Löhne aus, der schon gebucht wurde."
+        "Gebucht wird so.",
+        "Außenanlagen 8.928 Euro und Vorsteuer 475 Euro an Verbindlichkeiten 2.975 Euro und andere aktivierte Eigenleistungen 6.428 Euro.",
+        "Das Ertragskonto gleicht den Aufwand aus, der für Lagermaterial und Löhne schon gebucht ist."
       ]
     },
     {
-      "typ": "fallen",
+      "typ": "quiz",
       "daten": {
-        "ueberschrift": "Typische Fallen",
-        "karten": [
-          { "titel": "Vertrieb oder Gewinn eingerechnet", "text": "Beides ist immer verboten, auch bei der Wertobergrenze.", "satz": 1 },
-          { "titel": "Steuerbilanz anders gerechnet", "text": "Das Wahlrecht für Verwaltungskosten gilt dort genauso wie in der Handelsbilanz.", "satz": 2 },
-          { "titel": "Bank und Verbindlichkeit verwechselt", "text": "Wurde eine Fremdleistung per Bank bezahlt, steht Bank im Buchungssatz.", "satz": 3 }
-        ]
+        "frage": "Dürfen Vertriebskosten in die Wertobergrenze?",
+        "optionen": [
+          "Ja, bei der Obergrenze",
+          "Nein, nie",
+          "Nur steuerlich"
+        ],
+        "richtig": 1,
+        "satzDenken": 1,
+        "satzLoesung": 2,
+        "erklaerung": { "text": "§ 255 Abs. 2 Satz 4 HGB", "satz": 3 },
+        "stempel": { "index": 0, "text": "Verbot", "satz": 3 }
       },
       "saetze": [
-        "Achte auf drei typische Fehler.",
-        "Erstens: Vertriebskosten oder einen Gewinnzuschlag einrechnen. Das ist immer verboten.",
-        "Zweitens: In der Steuerbilanz anders rechnen. Nach Paragraf 6 Absatz 1 Nummer 1b des Einkommensteuergesetzes muss das Wahlrecht genauso ausgeübt werden wie in der Handelsbilanz.",
-        "Drittens: den Zahlungsweg falsch buchen. Wurde eine Fremdleistung per Bank bezahlt, steht Bank im Buchungssatz und nicht Verbindlichkeiten."
+        "Kurzes Quiz. Dürfen Vertriebskosten in die Wertobergrenze?",
+        "[pause 5]",
+        "Richtig ist B: nie.",
+        "Vertriebskosten sind verboten, auch bei der Obergrenze. Nur Verwaltungskosten kommen dort dazu."
       ]
     },
     {
@@ -154,17 +120,17 @@
       "daten": {
         "ueberschrift": "Das nimmst du mit",
         "punkte": [
-          { "text": "Material + Fertigung + Sondereinzelkosten = Wertuntergrenze", "satz": 0 },
-          { "text": "Verwaltung ist Wahlrecht → Wertobergrenze", "satz": 0 },
-          { "text": "Vertrieb, Forschung und Gewinn nie", "satz": 1 },
-          { "text": "Buchung über andere aktivierte Eigenleistungen", "satz": 1 }
+          { "text": "Untergrenze: Einzel- und Gemeinkosten", "satz": 0 },
+          { "text": "Obergrenze: plus Verwaltungskosten", "satz": 0 },
+          { "text": "Nie: Vertrieb, Forschung, Gewinn", "satz": 1 },
+          { "text": "Buchen: an andere aktivierte Eigenleistungen", "satz": 1 }
         ],
         "aufruf": "Jetzt üben: LF 10 → Herstellungskosten"
       },
       "saetze": [
-        "Zusammengefasst: Material und Fertigung mit ihren Gemeinkosten plus Sondereinzelkosten ergeben die Wertuntergrenze. Die Verwaltungskosten sind ein Wahlrecht und führen zur Wertobergrenze.",
-        "Vertrieb, Forschung und Gewinn gehören nie hinein, und gebucht wird über andere aktivierte Eigenleistungen.",
-        "Im Lernfeld 10 findest du dazu Übungsaufgaben und die Musterlösungen aus dem Unterricht."
+        "Zusammengefasst: Die Untergrenze sind Einzel- und Gemeinkosten von Material und Fertigung. Die Obergrenze kommt mit den Verwaltungskosten.",
+        "Vertrieb, Forschung und Gewinn nie. Gebucht wird an andere aktivierte Eigenleistungen.",
+        "Im Lernfeld 10 findest du dazu Aufgaben aus dem Unterricht."
       ]
     }
   ]

@@ -1,301 +1,115 @@
 {
-  "id": "lf5-beitraege",
   "lf": "lf5",
-  "thema": "Beiträge berechnen: Grenzen und Beitragssätze 2026",
   "kapitel": "LF 5 · Sozialversicherung",
-  "titel": "Beiträge berechnen",
-  "kartentitel": "Sozialversicherungsbeiträge 2026: Sätze und Grenzen",
   "farbe": "#14b8a6",
+  "stil": "premium",
+  "id": "lf5-beitraege",
+  "thema": "Beiträge berechnen: Grenzen und Beitragssätze 2026",
+  "titel": "Beiträge 2026",
+  "kartentitel": "Sozialversicherungsbeiträge 2026: Sätze und Grenzen",
+  "musik": "lf5-beitraege/musik.wav",
   "szenen": [
     {
-      "typ": "titel",
+      "typ": "intro",
       "daten": {
         "kicker": "LF 5 · Sozialversicherung",
-        "titel": "Beiträge berechnen",
-        "untertitel": "Beitragssätze und Grenzen 2026",
-        "preis": "21,15 %",
-        "preisLabel": "Arbeitnehmeranteil"
+        "titel": "Was geht vom Lohn ab?",
+        "untertitel": "Beiträge berechnen 2026",
+        "betrag": 3000,
+        "betragLabel": "Bruttolohn",
+        "satzBetrag": 1,
+        "satzTeilen": 2,
+        "personen": [
+          { "name": "Lena, 30", "icon": "👩" },
+          { "name": "Kanzlei", "icon": "🧾" }
+        ]
       },
       "saetze": [
-        "Eine Mandantin fragt: Wie viel Sozialversicherung geht von meinem Gehalt ab?",
-        "Dafür brauchst du zwei Dinge: die Beitragssätze und die Beitragsbemessungsgrenzen.",
-        "Beides schauen wir uns jetzt mit den Werten für 2026 an."
+        "Lena ist 30, hat keine Kinder und verdient 3.000 Euro brutto im Monat.",
+        "Wie viel Sozialversicherung zieht der Arbeitgeber ab?",
+        "Wir rechnen jeden Zweig einzeln, mit den Sätzen von 2026."
+      ]
+    },
+    {
+      "typ": "stapel",
+      "daten": {
+        "ueberschrift": "Arbeitnehmeranteil von 3.000 €",
+        "icon": "🧾",
+        "zeilen": [
+          { "text": "Krankenversicherung 7,3 %", "wert": "219,00 €", "satz": 1 },
+          { "text": "Zusatzbeitrag 1,45 %", "wert": "43,50 €", "satz": 1 },
+          { "text": "Pflege kinderlos 2,4 %", "wert": "72,00 €", "satz": 2 },
+          { "text": "Rente 9,3 % + Arbeitslosigkeit 1,3 %", "wert": "318,00 €", "satz": 3 },
+          { "text": "= Arbeitnehmeranteil", "wert": "652,50 €", "ergebnis": true, "satz": 4 }
+        ]
+      },
+      "saetze": [
+        "Los geht's.",
+        "Krankenversicherung: 7,3 Prozent, also 219 Euro. Dazu der halbe Zusatzbeitrag von 1,45 Prozent, 43 Euro 50.",
+        "Pflege: Lena ist kinderlos und über 23. Sie zahlt 2,4 Prozent, also 72 Euro.",
+        "Rente 9,3 Prozent und Arbeitslosigkeit 1,3 Prozent: zusammen 318 Euro.",
+        "Lenas Anteil: 652 Euro 50. Probe: 3.000 mal 21,75 Prozent ergibt dasselbe."
       ]
     },
     {
       "typ": "formel",
       "daten": {
-        "ueberschrift": "Der Arbeitnehmeranteil",
-        "ref": "§§ 241, 242 SGB V u. a.",
+        "ueberschrift": "Pflegeversicherung nach Kindern",
+        "ref": "§ 55 SGB XI",
         "zeilen": [
-          {
-            "zeichen": "",
-            "text": "Krankenversicherung 7,3 %",
-            "info": "Hälfte von 14,6 %"
-          },
-          {
-            "zeichen": "+",
-            "text": "Zusatzbeitrag 1,45 %",
-            "info": "Hälfte von 2,9 %"
-          },
-          {
-            "zeichen": "+",
-            "text": "Pflegeversicherung 1,8 %",
-            "info": "kinderlos ab 23: 2,4 %"
-          },
-          {
-            "zeichen": "+",
-            "text": "Rentenversicherung 9,3 %",
-            "info": "Hälfte von 18,6 %"
-          },
-          {
-            "zeichen": "+",
-            "text": "Arbeitslosenversicherung 1,3 %",
-            "info": "Hälfte von 2,6 %"
-          },
-          {
-            "zeichen": "=",
-            "text": "Arbeitnehmeranteil 21,15 %",
-            "info": "mit einem Kind",
-            "ergebnis": true
-          }
+          { "zeichen": "0", "text": "kinderlos ab 23 Jahren", "info": "2,4 %" },
+          { "zeichen": "1", "text": "ein Kind", "info": "1,8 %" },
+          { "zeichen": "2", "text": "zwei Kinder unter 25", "info": "1,55 %" },
+          { "zeichen": "3", "text": "drei Kinder unter 25", "info": "1,30 %" }
         ]
       },
       "saetze": [
-        "Arbeitnehmer und Arbeitgeber teilen sich die Beiträge meist je zur Hälfte.",
-        "Krankenversicherung: 14,6 Prozent, der Arbeitnehmer zahlt 7,3 Prozent.",
-        "Dazu kommt der halbe Zusatzbeitrag: 1,45 Prozent.",
-        "Pflegeversicherung: 1,8 Prozent. Kinderlose ab 23 Jahren zahlen 2,4 Prozent.",
-        "Rentenversicherung: 9,3 Prozent.",
-        "Arbeitslosenversicherung: 1,3 Prozent.",
-        "Zusammen sind das 21,15 Prozent vom Brutto, wenn die Person ein Kind hat."
-      ]
-    },
-    {
-      "typ": "stapel",
-      "daten": {
-        "ueberschrift": "Beispiel 1: 3.000 € brutto, ein Kind",
-        "icon": "👩‍💼",
-        "zeilen": [
-          {
-            "text": "Krankenversicherung 7,3 %",
-            "wert": "219,00 €",
-            "satz": 1
-          },
-          {
-            "text": "Zusatzbeitrag 1,45 %",
-            "wert": "43,50 €",
-            "satz": 1
-          },
-          {
-            "text": "Pflegeversicherung 1,8 %",
-            "wert": "54,00 €",
-            "satz": 2
-          },
-          {
-            "text": "Rentenversicherung 9,3 %",
-            "wert": "279,00 €",
-            "satz": 3
-          },
-          {
-            "text": "Arbeitslosenversicherung 1,3 %",
-            "wert": "39,00 €",
-            "satz": 3
-          },
-          {
-            "text": "= Arbeitnehmeranteil",
-            "wert": "634,50 €",
-            "ergebnis": true,
-            "satz": 4
-          }
-        ]
-      },
-      "saetze": [
-        "Erstes Beispiel: 3.000 Euro brutto, ein Kind.",
-        "Krankenversicherung 219 Euro, Zusatzbeitrag 43 Euro 50.",
-        "Pflegeversicherung 54 Euro.",
-        "Rentenversicherung 279 Euro und Arbeitslosenversicherung 39 Euro.",
-        "Zusammen 634 Euro 50, genau 21,15 Prozent."
-      ]
-    },
-    {
-      "typ": "zeitstrahl",
-      "daten": {
-        "ueberschrift": "Zwei Beitragsbemessungsgrenzen",
-        "merke": "Verdienst über der Grenze ist beitragsfrei",
-        "punkte": [
-          {
-            "label": "Kranken- und Pflege",
-            "titel": "5.812,50 €",
-            "text": "im Monat",
-            "folge": "69.750 € im Jahr",
-            "ref": "§ 223 Abs. 3 SGB V",
-            "satz": 1
-          },
-          {
-            "label": "Rente und Arbeitslosen",
-            "titel": "8.450 €",
-            "text": "im Monat",
-            "folge": "101.400 € im Jahr",
-            "ref": "§ 159 SGB VI",
-            "satz": 2
-          }
-        ]
-      },
-      "saetze": [
-        "Für hohe Gehälter gibt es zwei Obergrenzen, die Beitragsbemessungsgrenzen.",
-        "Für Kranken- und Pflegeversicherung liegt sie 2026 bei 5.812 Euro 50 im Monat.",
-        "Für Renten- und Arbeitslosenversicherung bei 8.450 Euro im Monat.",
-        "Was jemand über der Grenze verdient, ist in diesem Zweig beitragsfrei."
+        "Bei der Pflege hängt der Anteil von den Kindern ab.",
+        "Kinderlose ab 23 zahlen 0,6 Prozent Zuschlag, also 2,4 Prozent.",
+        "Mit einem Kind sind es 1,8 Prozent.",
+        "Ab dem zweiten Kind unter 25 sinkt der Satz um 0,25 Prozent je Kind.",
+        "Der Arbeitgeber zahlt immer 1,8 Prozent."
       ]
     },
     {
       "typ": "grenze",
       "daten": {
-        "ueberschrift": "Beispiel 2: 7.000 € brutto",
+        "ueberschrift": "Die Beitragsbemessungsgrenze",
         "grenze": 5812.5,
-        "grenzeLabel": "Grenze KV und PV: 5.812,50 €",
+        "grenzeLabel": "Kranken und Pflege: 5.812,50 €",
         "max": 9000,
         "teile": [
-          {
-            "label": "Brutto",
-            "wert": 7000,
-            "satz": 1
-          }
+          { "label": "Brutto", "wert": 7000, "satz": 1 }
         ],
-        "ergebnis": {
-          "text": "KV und PV nur von 5.812,50 €, RV und AV von 7.000 €",
-          "ok": true,
-          "satz": 2
-        },
-        "ref": "§ 223 SGB V · § 159 SGB VI"
+        "ergebnis": { "text": "Kranken und Pflege nur von 5.812,50 €, Rente und Arbeitslosigkeit von 7.000 €", "ok": true, "satz": 2 },
+        "ref": "§ 223 SGB V, § 159 SGB VI"
       },
       "saetze": [
-        "Zweites Beispiel: 7.000 Euro brutto, 30 Jahre alt, keine Kinder.",
-        "Das Gehalt liegt über der Grenze für Kranken- und Pflegeversicherung.",
-        "Kranken- und Pflegeversicherung rechnest du also nur von 5.812 Euro 50. Rente und Arbeitslosen vom vollen Brutto."
+        "Und bei hohem Lohn? Dann deckelt die Beitragsbemessungsgrenze.",
+        "Peter verdient 7.000 Euro. Für Kranken- und Pflegeversicherung zählen höchstens 5.812 Euro 50.",
+        "Für Rente und Arbeitslosigkeit liegt die Grenze bei 8.450 Euro. Peter liegt darunter, also zählen dort die vollen 7.000 Euro."
       ]
     },
     {
-      "typ": "stapel",
+      "typ": "quiz",
       "daten": {
-        "ueberschrift": "Beispiel 2: die Rechnung",
-        "icon": "🧮",
-        "zeilen": [
-          {
-            "text": "KV 7,3 % von 5.812,50 €",
-            "wert": "424,31 €",
-            "satz": 1
-          },
-          {
-            "text": "Zusatzbeitrag 1,45 % von 5.812,50 €",
-            "wert": "84,28 €",
-            "satz": 1
-          },
-          {
-            "text": "PV 2,4 % von 5.812,50 € (kinderlos)",
-            "wert": "139,50 €",
-            "satz": 2
-          },
-          {
-            "text": "RV 9,3 % von 7.000 €",
-            "wert": "651,00 €",
-            "satz": 3
-          },
-          {
-            "text": "AV 1,3 % von 7.000 €",
-            "wert": "91,00 €",
-            "satz": 3
-          },
-          {
-            "text": "= Arbeitnehmeranteil",
-            "wert": "1.390,09 €",
-            "ergebnis": true,
-            "satz": 4
-          }
-        ]
+        "frage": "Brutto 6.000 €. Von welchem Betrag rechnest du die Rentenversicherung?",
+        "optionen": [
+          "5.812,50 €",
+          "6.000,00 €",
+          "8.450,00 €"
+        ],
+        "richtig": 1,
+        "satzDenken": 1,
+        "satzLoesung": 2,
+        "erklaerung": { "text": "§ 159 SGB VI", "satz": 3 },
+        "stempel": { "index": 0, "text": "nur Kranken und Pflege", "satz": 3 }
       },
       "saetze": [
-        "Jetzt rechnest du jeden Zweig einzeln und rundest auf Cent.",
-        "Krankenversicherung 424 Euro 31, Zusatzbeitrag 84 Euro 28.",
-        "Pflegeversicherung mit 2,4 Prozent, weil kinderlos: 139 Euro 50.",
-        "Rentenversicherung 651 Euro, Arbeitslosenversicherung 91 Euro.",
-        "Zusammen 1.390 Euro 9 Cent."
-      ]
-    },
-    {
-      "typ": "sortieren",
-      "daten": {
-        "ueberschrift": "Zahlt nur der Arbeitgeber?",
-        "ja": "nur Arbeitgeber",
-        "nein": "beide je zur Hälfte",
-        "karten": [
-          {
-            "text": "Umlage U1 Krankheit",
-            "icon": "🤒",
-            "ja": true,
-            "satz": 1
-          },
-          {
-            "text": "Umlage U2 Mutterschaft",
-            "icon": "🍼",
-            "ja": true,
-            "satz": 1
-          },
-          {
-            "text": "Insolvenzgeldumlage 0,15 %",
-            "icon": "🏦",
-            "ja": true,
-            "satz": 2
-          },
-          {
-            "text": "Rentenversicherung",
-            "icon": "👵",
-            "ja": false,
-            "satz": 3
-          },
-          {
-            "text": "Zusatzbeitrag",
-            "icon": "➕",
-            "ja": false,
-            "satz": 3
-          }
-        ]
-      },
-      "saetze": [
-        "Manche Beiträge trägt der Arbeitgeber ganz allein.",
-        "Das sind die Umlagen U1 für Krankheit und U2 für Mutterschaft.",
-        "Und die Insolvenzgeldumlage mit 0,15 Prozent.",
-        "Renten- und Krankenversicherung, auch der Zusatzbeitrag, werden geteilt."
-      ]
-    },
-    {
-      "typ": "fallen",
-      "daten": {
-        "ueberschrift": "Typische Fallen",
-        "karten": [
-          {
-            "titel": "Grenzen verwechselt",
-            "text": "Die Beitragsbemessungsgrenze deckelt den Beitrag. Die Versicherungspflichtgrenze von 6.450 € entscheidet über die Pflicht.",
-            "satz": 1
-          },
-          {
-            "titel": "Eine Basis für alles",
-            "text": "Über 5.812,50 €: KV und PV gedeckelt, RV und AV vom vollen Brutto.",
-            "satz": 2
-          },
-          {
-            "titel": "PV-Satz falsch",
-            "text": "Kinderlos ab 23: 2,4 %. Abschlag nur für Kinder unter 25.",
-            "satz": 3
-          }
-        ]
-      },
-      "saetze": [
-        "Drei typische Fehler.",
-        "Erstens: die Grenzen verwechseln. Die Beitragsbemessungsgrenze deckelt den Beitrag. Die Versicherungspflichtgrenze entscheidet, ob jemand gesetzlich krankenversichert sein muss.",
-        "Zweitens: für alle Zweige dieselbe Basis nehmen. Liegt das Gehalt zwischen den Grenzen, gibt es zwei verschiedene Basen.",
-        "Drittens: der falsche Pflegesatz. Kinderlose ab 23 zahlen 2,4 Prozent."
+        "Kurzes Quiz. Das Brutto ist 6.000 Euro. Von welchem Betrag rechnest du die Rentenversicherung?",
+        "[pause 5]",
+        "Richtig ist B: von den vollen 6.000 Euro.",
+        "Die 5.812 Euro 50 gelten nur für Kranken- und Pflegeversicherung. Bei der Rente liegt die Grenze bei 8.450 Euro."
       ]
     },
     {
@@ -303,29 +117,17 @@
       "daten": {
         "ueberschrift": "Das nimmst du mit",
         "punkte": [
-          {
-            "text": "Beitrag = Basis × Satz, auf Cent runden",
-            "satz": 0
-          },
-          {
-            "text": "Arbeitnehmeranteil: 21,15 % mit einem Kind",
-            "satz": 0
-          },
-          {
-            "text": "Grenze KV und PV: 5.812,50 €",
-            "satz": 1
-          },
-          {
-            "text": "Grenze RV und AV: 8.450 €",
-            "satz": 1
-          }
+          { "text": "Normalfall: 21,15 % Arbeitnehmeranteil", "satz": 0 },
+          { "text": "Kinderlos ab 23: plus 0,6 % Pflege", "satz": 0 },
+          { "text": "Grenzen: 5.812,50 € und 8.450 € im Monat", "satz": 1 },
+          { "text": "Bemessungsgrenze ist nicht Versicherungspflichtgrenze", "satz": 1 }
         ],
-        "aufruf": "Jetzt üben: LF 5 → Beiträge berechnen"
+        "aufruf": "Jetzt üben: LF 5 → Beiträge"
       },
       "saetze": [
-        "Zusammengefasst: Der Beitrag ist Basis mal Satz, jeder Zweig einzeln und auf Cent gerundet. Mit einem Kind zahlt der Arbeitnehmer 21,15 Prozent.",
-        "Die Grenzen: 5.812 Euro 50 für Kranken und Pflege, 8.450 Euro für Rente und Arbeitslosen.",
-        "Im Lernfeld 5 findest du dazu Übungsaufgaben mit Stimme."
+        "Zusammengefasst: Im Normalfall zahlt der Arbeitnehmer 21,15 Prozent, Kinderlose ab 23 zusätzlich 0,6 Prozent.",
+        "Die Grenzen sind 5.812 Euro 50 für Kranken und Pflege und 8.450 Euro für Rente und Arbeitslosigkeit. Verwechsle sie nicht mit der Versicherungspflichtgrenze von 6.450 Euro.",
+        "Im Lernfeld 5 findest du dazu Übungen."
       ]
     }
   ]
