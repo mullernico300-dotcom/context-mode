@@ -121,5 +121,15 @@ window.ERKLAERVIDEOS = [
   "sek": 205.4,
   "datei": "videos/erklaer/lf6-steuerpflicht.mp4",
   "poster": "videos/erklaer/lf6-steuerpflicht.jpg"
+ },
+ {
+  "id": "lf8-gewinnverteilung",
+  "lf": "lf8",
+  "thema": "Rechtsformen und Gewinnverteilung",
+  "titel": "OHG, KG, GbR: Wer haftet und wer bekommt wie viel Gewinn?",
+  "datum": "2026-11-25",
+  "sek": 244.2,
+  "datei": "videos/erklaer/lf8-gewinnverteilung.mp4",
+  "poster": "videos/erklaer/lf8-gewinnverteilung.jpg"
  }
 ];
