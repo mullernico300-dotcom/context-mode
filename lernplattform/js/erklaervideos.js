@@ -33,46 +33,6 @@ window.ERKLAERVIDEOS = [
   "poster": "videos/erklaer/lf10-teilwert.jpg"
  },
  {
-  "id": "lf8-geschenke",
-  "lf": "lf8",
-  "thema": "Geschenke",
-  "titel": "Geschenke an Geschäftsfreunde: die 50-Euro-Freigrenze",
-  "datum": "2026-11-24",
-  "sek": 232.9,
-  "datei": "videos/erklaer/lf8-geschenke.mp4",
-  "poster": "videos/erklaer/lf8-geschenke.jpg"
- },
- {
-  "id": "lf8-reisekosten",
-  "lf": "lf8",
-  "thema": "Reisekosten",
-  "titel": "Reisekosten: Verpflegungspauschalen, Kürzung und Fahrtkosten",
-  "datum": "2026-11-24",
-  "sek": 194.9,
-  "datei": "videos/erklaer/lf8-reisekosten.mp4",
-  "poster": "videos/erklaer/lf8-reisekosten.jpg"
- },
- {
-  "id": "sk-kuendigung",
-  "lf": "sk",
-  "thema": "Kündigung und Kündigungsschutz",
-  "titel": "Kündigung: Form, Fristen und Kündigungsschutz",
-  "datum": "2026-11-24",
-  "sek": 199.8,
-  "datei": "videos/erklaer/sk-kuendigung.mp4",
-  "poster": "videos/erklaer/sk-kuendigung.jpg"
- },
- {
-  "id": "lf8-bewirtung",
-  "lf": "lf8",
-  "thema": "Bewirtung",
-  "titel": "Bewirtung von Geschäftsfreunden: 70 Prozent und volle Vorsteuer",
-  "datum": "2026-11-24",
-  "sek": 200.0,
-  "datei": "videos/erklaer/lf8-bewirtung.mp4",
-  "poster": "videos/erklaer/lf8-bewirtung.jpg"
- },
- {
   "id": "lf5-beitraege",
   "lf": "lf5",
   "thema": "Beiträge berechnen: Grenzen und Beitragssätze 2026",
@@ -161,5 +121,85 @@ window.ERKLAERVIDEOS = [
   "sek": 102.0,
   "datei": "videos/erklaer/lf8-betriebsausgaben.mp4",
   "poster": "videos/erklaer/lf8-betriebsausgaben.jpg"
+ },
+ {
+  "id": "lf8-betrieb-verkaufen",
+  "lf": "lf8",
+  "thema": "Betrieb verkaufen oder aufgeben",
+  "titel": "Betrieb verkaufen: Gewinn und Freibetrag",
+  "datum": "2026-11-25",
+  "sek": 116.7,
+  "datei": "videos/erklaer/lf8-betrieb-verkaufen.mp4",
+  "poster": "videos/erklaer/lf8-betrieb-verkaufen.jpg"
+ },
+ {
+  "id": "lf8-geschenke",
+  "lf": "lf8",
+  "thema": "Geschenke",
+  "titel": "Geschenke an Geschäftsfreunde: die 50-Euro-Freigrenze",
+  "datum": "2026-11-25",
+  "sek": 117.9,
+  "datei": "videos/erklaer/lf8-geschenke.mp4",
+  "poster": "videos/erklaer/lf8-geschenke.jpg"
+ },
+ {
+  "id": "lf8-reisekosten",
+  "lf": "lf8",
+  "thema": "Reisekosten",
+  "titel": "Reisekosten: Verpflegungspauschalen, Kürzung und Fahrtkosten",
+  "datum": "2026-11-25",
+  "sek": 113.2,
+  "datei": "videos/erklaer/lf8-reisekosten.mp4",
+  "poster": "videos/erklaer/lf8-reisekosten.jpg"
+ },
+ {
+  "id": "lf8-bewirtung",
+  "lf": "lf8",
+  "thema": "Bewirtung",
+  "titel": "Bewirtung von Geschäftsfreunden: 70 Prozent und volle Vorsteuer",
+  "datum": "2026-11-25",
+  "sek": 106.7,
+  "datei": "videos/erklaer/lf8-bewirtung.mp4",
+  "poster": "videos/erklaer/lf8-bewirtung.jpg"
+ },
+ {
+  "id": "sk-rechtsgeschaefte",
+  "lf": "sk",
+  "thema": "Rechtsgeschäfte: Wer darf was, Form und Fehler",
+  "titel": "Rechtsgeschäfte: Geschäftsfähigkeit, Form und Anfechtung",
+  "datum": "2026-11-25",
+  "sek": 101.7,
+  "datei": "videos/erklaer/sk-rechtsgeschaefte.mp4",
+  "poster": "videos/erklaer/sk-rechtsgeschaefte.jpg"
+ },
+ {
+  "id": "sk-recht-personen",
+  "lf": "sk",
+  "thema": "Recht, Personen, Sachen und Eigentum",
+  "titel": "Personen, Sachen und Eigentum: die Grundbegriffe",
+  "datum": "2026-11-25",
+  "sek": 99.2,
+  "datei": "videos/erklaer/sk-recht-personen.mp4",
+  "poster": "videos/erklaer/sk-recht-personen.jpg"
+ },
+ {
+  "id": "sk-kuendigung",
+  "lf": "sk",
+  "thema": "Kündigung und Kündigungsschutz",
+  "titel": "Kündigung: Form, Fristen und Kündigungsschutz",
+  "datum": "2026-11-25",
+  "sek": 105.0,
+  "datei": "videos/erklaer/sk-kuendigung.mp4",
+  "poster": "videos/erklaer/sk-kuendigung.jpg"
+ },
+ {
+  "id": "sk-arbeitszeit-urlaub",
+  "lf": "sk",
+  "thema": "Arbeitszeit, Pausen und Urlaub",
+  "titel": "Arbeitszeit, Pausen und Urlaub: 8 Stunden, 30 Minuten, 20 Tage",
+  "datum": "2026-11-25",
+  "sek": 227.5,
+  "datei": "videos/erklaer/sk-arbeitszeit-urlaub.mp4",
+  "poster": "videos/erklaer/sk-arbeitszeit-urlaub.jpg"
  }
 ];
