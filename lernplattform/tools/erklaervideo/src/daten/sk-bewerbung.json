@@ -1,0 +1,339 @@
+{
+ "lf": "sk",
+ "kapitel": "Sozialkunde · Arbeitsrecht",
+ "farbe": "#e11d48",
+ "stil": "premium",
+ "id": "sk-bewerbung",
+ "thema": "Bewerbung und Regeln im Arbeitsrecht",
+ "titel": "Bewerbung",
+ "kartentitel": "Bewerbung: Rangfolge im Arbeitsrecht und erlaubte Fragen",
+ "musik": "sk-bewerbung/musik.wav",
+ "szenen": [
+  {
+   "typ": "intro",
+   "daten": {
+    "kicker": "Sozialkunde · Arbeitsrecht",
+    "titel": "Darf der Chef das fragen?",
+    "untertitel": "Bewerbung und Regeln im Arbeitsrecht",
+    "betrag": 50,
+    "betragLabel": "Fahrtkosten",
+    "satzBetrag": 1,
+    "satzTeilen": 2,
+    "personen": [
+     {
+      "name": "Bewerberin",
+      "icon": "👩"
+     },
+     {
+      "name": "Chef",
+      "icon": "👔"
+     }
+    ]
+   },
+   "saetze": [
+    "Mia hat ein Vorstellungsgespräch. Die Fahrt kostet sie 50 Euro.",
+    "Im Gespräch fragt der Chef: Sind Sie schwanger? Muss Mia ehrlich antworten? Und wer zahlt die Fahrt?",
+    "Dafür schauen wir uns die Regeln im Arbeitsrecht an."
+   ],
+   "ton": "sk-bewerbung/s01.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 3.762
+    },
+    {
+     "start": 4.812,
+     "dauer": 5.526
+    },
+    {
+     "start": 10.788,
+     "dauer": 2.554
+    }
+   ],
+   "dauer": 14.242
+  },
+  {
+   "typ": "formel",
+   "daten": {
+    "ueberschrift": "Welche Regel gilt?",
+    "ref": "Rangprinzip, § 4 Abs. 3 TVG",
+    "zeilen": [
+     {
+      "zeichen": "1",
+      "text": "Grundgesetz",
+      "info": "z. B. Berufsfreiheit"
+     },
+     {
+      "zeichen": "2",
+      "text": "Gesetze",
+      "info": "BGB, AGG, JArbSchG"
+     },
+     {
+      "zeichen": "3",
+      "text": "Tarifvertrag",
+      "info": "Gewerkschaft und Arbeitgeber"
+     },
+     {
+      "zeichen": "4",
+      "text": "Betriebsvereinbarung",
+      "info": "Betriebsrat und Arbeitgeber"
+     },
+     {
+      "zeichen": "5",
+      "text": "Arbeitsvertrag",
+      "info": "gilt, wenn günstiger"
+     }
+    ]
+   },
+   "saetze": [
+    "Im Arbeitsrecht gibt es eine Rangfolge.",
+    "Ganz oben steht das Grundgesetz.",
+    "Dann die Gesetze, zum Beispiel das BGB und das Gleichbehandlungsgesetz.",
+    "Dann Tarifvertrag und Betriebsvereinbarung.",
+    "Ganz unten der Arbeitsvertrag. Grundsätzlich geht die höhere Regel vor.",
+    "Aber: Eine niedrigere Regel gilt, wenn sie für den Arbeitnehmer günstiger ist. Das ist das Günstigkeitsprinzip."
+   ],
+   "ton": "sk-bewerbung/s02.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 2.252
+    },
+    {
+     "start": 3.302,
+     "dauer": 1.73
+    },
+    {
+     "start": 5.482,
+     "dauer": 4.644
+    },
+    {
+     "start": 10.576,
+     "dauer": 2.473
+    },
+    {
+     "start": 13.499,
+     "dauer": 3.947
+    },
+    {
+     "start": 17.897,
+     "dauer": 6.269
+    }
+   ],
+   "dauer": 25.066
+  },
+  {
+   "typ": "sortieren",
+   "daten": {
+    "ueberschrift": "Ist die Frage erlaubt?",
+    "ja": "erlaubt",
+    "nein": "unzulässig",
+    "karten": [
+     {
+      "text": "Berufserfahrung",
+      "icon": "📄",
+      "ja": true,
+      "satz": 1
+     },
+     {
+      "text": "Flugtauglichkeit beim Piloten",
+      "icon": "✈️",
+      "ja": true,
+      "satz": 1
+     },
+     {
+      "text": "Schwangerschaft",
+      "icon": "🤰",
+      "ja": false,
+      "satz": 2
+     },
+     {
+      "text": "Religion",
+      "icon": "⛪",
+      "ja": false,
+      "satz": 3
+     },
+     {
+      "text": "Schwerbehinderung",
+      "icon": "♿",
+      "ja": false,
+      "satz": 3
+     }
+    ]
+   },
+   "saetze": [
+    "Der Chef darf nur fragen, was für den Job wirklich wichtig ist.",
+    "Berufserfahrung: erlaubt. Beim Piloten auch die Flugtauglichkeit.",
+    "Nach einer Schwangerschaft zu fragen ist unzulässig, auch bei einem befristeten Vertrag.",
+    "Ebenso Religion oder eine Schwerbehinderung. Das verbietet das Gleichbehandlungsgesetz."
+   ],
+   "ton": "sk-bewerbung/s03.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 3.286
+    },
+    {
+     "start": 4.336,
+     "dauer": 3.82
+    },
+    {
+     "start": 8.605,
+     "dauer": 4.18
+    },
+    {
+     "start": 13.235,
+     "dauer": 5.039
+    }
+   ],
+   "dauer": 19.174
+  },
+  {
+   "typ": "zeitstrahl",
+   "daten": {
+    "ueberschrift": "Und wenn man lügt?",
+    "merke": "Bei Diskriminierung: Entschädigung, aber kein Anspruch auf die Stelle",
+    "punkte": [
+     {
+      "label": "erlaubte Frage",
+      "titel": "Lüge",
+      "text": "Arbeitgeber kann anfechten",
+      "folge": "Vertrag fällt weg",
+      "ref": "§ 123 BGB",
+      "satz": 1
+     },
+     {
+      "label": "unzulässige Frage",
+      "titel": "Lüge",
+      "text": "keine Folgen",
+      "folge": "Recht zur Lüge",
+      "ref": "§ 7 AGG",
+      "satz": 2
+     }
+    ]
+   },
+   "saetze": [
+    "Und wenn der Bewerber lügt?",
+    "Lügt er bei einer erlaubten Frage, kann der Arbeitgeber den Vertrag wegen Täuschung anfechten.",
+    "Bei einer unzulässigen Frage darf man lügen. Das hat keine Folgen.",
+    "Wird jemand diskriminiert, kann er Entschädigung verlangen. Einen Anspruch auf die Stelle gibt es aber nicht."
+   ],
+   "ton": "sk-bewerbung/s04.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 1.312
+    },
+    {
+     "start": 2.362,
+     "dauer": 4.946
+    },
+    {
+     "start": 7.758,
+     "dauer": 3.495
+    },
+    {
+     "start": 11.702,
+     "dauer": 5.48
+    }
+   ],
+   "dauer": 18.082
+  },
+  {
+   "typ": "quiz",
+   "daten": {
+    "frage": "Mia wird zum Gespräch eingeladen. Muss der Betrieb ihre Fahrtkosten erstatten?",
+    "optionen": [
+     "Nein, nie",
+     "Ja, außer es wurde vorher ausgeschlossen",
+     "Nur bei Zusage"
+    ],
+    "richtig": 1,
+    "satzDenken": 1,
+    "satzLoesung": 2,
+    "erklaerung": {
+     "text": "§ 670 BGB",
+     "satz": 3
+    },
+    "stempel": {
+     "index": 2,
+     "text": "egal",
+     "satz": 3
+    }
+   },
+   "saetze": [
+    "Kurzes Quiz. Mia wurde zum Gespräch eingeladen. Muss der Betrieb ihre Fahrtkosten erstatten?",
+    "[pause 5]",
+    "Richtig ist B: ja, außer der Betrieb hat das vorher ausdrücklich ausgeschlossen.",
+    "Ob Mia die Stelle bekommt, spielt dafür keine Rolle."
+   ],
+   "ton": "sk-bewerbung/s05.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 5.387
+    },
+    {
+     "start": 6.437,
+     "dauer": 5.0
+    },
+    {
+     "start": 11.887,
+     "dauer": 4.481
+    },
+    {
+     "start": 16.818,
+     "dauer": 2.647
+    }
+   ],
+   "dauer": 20.366
+  },
+  {
+   "typ": "merke",
+   "daten": {
+    "ueberschrift": "Das nimmst du mit",
+    "punkte": [
+     {
+      "text": "Höhere Regel geht vor, außer die niedrigere ist günstiger",
+      "satz": 0
+     },
+     {
+      "text": "Nur Fragen zum Job sind erlaubt",
+      "satz": 0
+     },
+     {
+      "text": "Lüge bei unzulässiger Frage: keine Folgen",
+      "satz": 1
+     },
+     {
+      "text": "Vorstellungskosten erstattet der Betrieb",
+      "satz": 1
+     }
+    ],
+    "aufruf": "Jetzt üben: Sozialkunde → Bewerbung"
+   },
+   "saetze": [
+    "Zusammengefasst: Die höhere Regel geht vor, außer die niedrigere ist für dich günstiger. Gefragt werden darf nur, was für den Job wichtig ist.",
+    "Bei einer unzulässigen Frage darfst du lügen. Und die Kosten für das Vorstellungsgespräch erstattet der Betrieb.",
+    "In der Sozialkunde findest du dazu Übungen mit Stimme."
+   ],
+   "ton": "sk-bewerbung/s06.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 7.906
+    },
+    {
+     "start": 8.956,
+     "dauer": 5.608
+    },
+    {
+     "start": 15.014,
+     "dauer": 3.042
+    }
+   ],
+   "dauer": 18.956
+  }
+ ],
+ "dauer": 115.885
+}

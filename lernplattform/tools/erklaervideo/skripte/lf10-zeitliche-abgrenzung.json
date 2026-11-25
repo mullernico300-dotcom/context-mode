@@ -13,15 +13,21 @@
       "typ": "intro",
       "daten": {
         "kicker": "LF 10 · Jahresabschluss",
-        "titel": "Schon bezahlt, noch nicht verbraucht",
+        "titel": "Schon bezahlt?",
         "untertitel": "Zeitliche Abgrenzung",
         "betrag": 6000,
         "betragLabel": "Versicherung im Voraus",
         "satzBetrag": 1,
         "satzTeilen": 2,
         "personen": [
-          { "name": "2025", "icon": "📅" },
-          { "name": "2026", "icon": "🗓️" }
+          {
+            "name": "2025",
+            "icon": "📅"
+          },
+          {
+            "name": "2026",
+            "icon": "🗓️"
+          }
         ]
       },
       "saetze": [
@@ -36,10 +42,26 @@
         "ueberschrift": "Die vier Fälle",
         "ref": "§§ 246, 250, 252 HGB",
         "zeilen": [
-          { "zeichen": "A", "text": "Aktive Rechnungsabgrenzung", "info": "Ausgabe jetzt, Aufwand später" },
-          { "zeichen": "P", "text": "Passive Rechnungsabgrenzung", "info": "Einnahme jetzt, Ertrag später" },
-          { "zeichen": "F", "text": "Sonstige Forderung", "info": "Ertrag jetzt, Geld später" },
-          { "zeichen": "V", "text": "Sonstige Verbindlichkeit", "info": "Aufwand jetzt, Zahlung später" }
+          {
+            "zeichen": "A",
+            "text": "Aktive Rechnungsabgrenzung",
+            "info": "Ausgabe jetzt, Aufwand später"
+          },
+          {
+            "zeichen": "P",
+            "text": "Passive Rechnungsabgrenzung",
+            "info": "Einnahme jetzt, Ertrag später"
+          },
+          {
+            "zeichen": "F",
+            "text": "Sonstige Forderung",
+            "info": "Ertrag jetzt, Geld später"
+          },
+          {
+            "zeichen": "V",
+            "text": "Sonstige Verbindlichkeit",
+            "info": "Aufwand jetzt, Zahlung später"
+          }
         ]
       },
       "saetze": [
@@ -56,10 +78,27 @@
         "ueberschrift": "Die Versicherung",
         "icon": "🛡️",
         "zeilen": [
-          { "text": "Beitrag Dezember bis Mai", "wert": "6.000 €", "satz": 1 },
-          { "text": "pro Monat (6 Monate)", "wert": "1.000 €", "satz": 1 },
-          { "text": "Aufwand 2025: Dezember", "wert": "1.000 €", "satz": 2 },
-          { "text": "= Aktive Rechnungsabgrenzung", "wert": "5.000 €", "ergebnis": true, "satz": 3 }
+          {
+            "text": "Beitrag Dezember bis Mai",
+            "wert": "6.000 €",
+            "satz": 1
+          },
+          {
+            "text": "pro Monat (6 Monate)",
+            "wert": "1.000 €",
+            "satz": 1
+          },
+          {
+            "text": "Aufwand 2025: Dezember",
+            "wert": "1.000 €",
+            "satz": 2
+          },
+          {
+            "text": "= Aktive Rechnungsabgrenzung",
+            "wert": "5.000 €",
+            "ergebnis": true,
+            "satz": 3
+          }
         ]
       },
       "saetze": [
@@ -76,18 +115,41 @@
         "buchungen": [
           {
             "titel": "November 2025: Zahlung",
-            "soll": [["Versicherungen", "6.000,00 €"]],
-            "haben": [["Bank", "6.000,00 €"]],
+            "soll": [
+              [
+                "Versicherungen",
+                "6.000,00 €"
+              ]
+            ],
+            "haben": [
+              [
+                "Bank",
+                "6.000,00 €"
+              ]
+            ],
             "satz": 1
           },
           {
             "titel": "31.12.2025: Abgrenzung",
-            "soll": [["Aktive Rechnungsabgrenzung", "5.000,00 €"]],
-            "haben": [["Versicherungen", "5.000,00 €"]],
+            "soll": [
+              [
+                "Aktive Rechnungsabgrenzung",
+                "5.000,00 €"
+              ]
+            ],
+            "haben": [
+              [
+                "Versicherungen",
+                "5.000,00 €"
+              ]
+            ],
             "satz": 2
           }
         ],
-        "fazit": { "text": "Gewinn 2025: − 1.000 €, Gewinn 2026: − 5.000 €", "satz": 3 }
+        "fazit": {
+          "text": "Gewinn 2025: − 1.000 €, Gewinn 2026: − 5.000 €",
+          "satz": 3
+        }
       },
       "saetze": [
         "Gebucht wird zweimal.",
@@ -108,8 +170,15 @@
         "richtig": 1,
         "satzDenken": 1,
         "satzLoesung": 2,
-        "erklaerung": { "text": "§ 252 Abs. 1 Nr. 5 HGB", "satz": 3 },
-        "stempel": { "index": 2, "text": "Periode zählt", "satz": 3 }
+        "erklaerung": {
+          "text": "§ 252 Abs. 1 Nr. 5 HGB",
+          "satz": 3
+        },
+        "stempel": {
+          "index": 2,
+          "text": "Periode zählt",
+          "satz": 3
+        }
       },
       "saetze": [
         "Kurzes Quiz. Die Pacht von 3.600 Euro für Oktober bis März wird erst am 1. April 2026 gezahlt. Was buchst du am 31. Dezember?",
@@ -123,10 +192,22 @@
       "daten": {
         "ueberschrift": "Das nimmst du mit",
         "punkte": [
-          { "text": "Aktive Abgrenzung: Ausgabe jetzt, Aufwand später", "satz": 0 },
-          { "text": "Passive Abgrenzung: Einnahme jetzt, Ertrag später", "satz": 0 },
-          { "text": "Sonstige Forderung oder Verbindlichkeit: Zahlung später", "satz": 1 },
-          { "text": "Vorsteuer wird nicht abgegrenzt", "satz": 1 }
+          {
+            "text": "Aktive Abgrenzung: Ausgabe jetzt, Aufwand später",
+            "satz": 0
+          },
+          {
+            "text": "Passive Abgrenzung: Einnahme jetzt, Ertrag später",
+            "satz": 0
+          },
+          {
+            "text": "Sonstige Forderung oder Verbindlichkeit: Zahlung später",
+            "satz": 1
+          },
+          {
+            "text": "Vorsteuer wird nicht abgegrenzt",
+            "satz": 1
+          }
         ],
         "aufruf": "Jetzt üben: LF 10 → Zeitliche Abgrenzung"
       },

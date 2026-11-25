@@ -13,16 +13,22 @@
       "typ": "intro",
       "daten": {
         "kicker": "LF 5 · Sozialversicherung",
-        "titel": "Fünf Versicherungen auf einem Zettel",
+        "titel": "Fünf Zweige",
         "untertitel": "Die Zweige der Sozialversicherung",
         "betrag": 5,
-        "betragLabel": "Zweige",
+        "betragLabel": "Sozialversicherung",
         "einheit": "Zweige",
         "satzBetrag": 1,
         "satzTeilen": 2,
         "personen": [
-          { "name": "Arbeitgeber", "icon": "🏢" },
-          { "name": "Arbeitnehmer", "icon": "🧑" }
+          {
+            "name": "Arbeitgeber",
+            "icon": "🏢"
+          },
+          {
+            "name": "Arbeitnehmer",
+            "icon": "🧑"
+          }
         ]
       },
       "saetze": [
@@ -37,11 +43,31 @@
         "ueberschrift": "Die fünf Zweige",
         "ref": "SGB V, XI, VI, III, VII",
         "zeilen": [
-          { "zeichen": "1", "text": "Krankenversicherung", "info": "Krankenkassen, SGB V" },
-          { "zeichen": "2", "text": "Pflegeversicherung", "info": "Pflegekassen, SGB XI" },
-          { "zeichen": "3", "text": "Rentenversicherung", "info": "Deutsche Rentenversicherung, SGB VI" },
-          { "zeichen": "4", "text": "Arbeitslosenversicherung", "info": "Bundesagentur für Arbeit, SGB III" },
-          { "zeichen": "5", "text": "Unfallversicherung", "info": "Berufsgenossenschaften, SGB VII" }
+          {
+            "zeichen": "1",
+            "text": "Krankenversicherung",
+            "info": "Krankenkassen, SGB V"
+          },
+          {
+            "zeichen": "2",
+            "text": "Pflegeversicherung",
+            "info": "Pflegekassen, SGB XI"
+          },
+          {
+            "zeichen": "3",
+            "text": "Rentenversicherung",
+            "info": "Deutsche Rentenversicherung, SGB VI"
+          },
+          {
+            "zeichen": "4",
+            "text": "Arbeitslosenversicherung",
+            "info": "Bundesagentur für Arbeit, SGB III"
+          },
+          {
+            "zeichen": "5",
+            "text": "Unfallversicherung",
+            "info": "Berufsgenossenschaften, SGB VII"
+          }
         ]
       },
       "saetze": [
@@ -60,11 +86,36 @@
         "ja": "halb und halb",
         "nein": "nur Arbeitgeber",
         "karten": [
-          { "text": "Krankenversicherung mit Zusatzbeitrag", "icon": "🏥", "ja": true, "satz": 1 },
-          { "text": "Pflegeversicherung", "icon": "🧓", "ja": true, "satz": 1 },
-          { "text": "Rentenversicherung", "icon": "👵", "ja": true, "satz": 2 },
-          { "text": "Arbeitslosenversicherung", "icon": "📋", "ja": true, "satz": 2 },
-          { "text": "Unfallversicherung", "icon": "🦺", "ja": false, "satz": 3 }
+          {
+            "text": "Krankenversicherung mit Zusatzbeitrag",
+            "icon": "🏥",
+            "ja": true,
+            "satz": 1
+          },
+          {
+            "text": "Pflegeversicherung",
+            "icon": "🧓",
+            "ja": true,
+            "satz": 1
+          },
+          {
+            "text": "Rentenversicherung",
+            "icon": "👵",
+            "ja": true,
+            "satz": 2
+          },
+          {
+            "text": "Arbeitslosenversicherung",
+            "icon": "📋",
+            "ja": true,
+            "satz": 2
+          },
+          {
+            "text": "Unfallversicherung",
+            "icon": "🦺",
+            "ja": false,
+            "satz": 3
+          }
         ]
       },
       "saetze": [
@@ -80,8 +131,22 @@
         "ueberschrift": "Wie fließt das Geld?",
         "merke": "Unfallversicherung geht direkt an die Berufsgenossenschaft",
         "punkte": [
-          { "label": "Lohnabrechnung", "titel": "Arbeitgeber zieht ab", "text": "Arbeitnehmeranteil vom Lohn", "folge": "schuldet den Gesamtbeitrag", "ref": "§ 28e SGB IV", "satz": 1 },
-          { "label": "drittletzter Bankarbeitstag", "titel": "Zahlung", "text": "an die Krankenkasse", "folge": "sie verteilt an die Träger", "ref": "§§ 23, 28h SGB IV", "satz": 2 }
+          {
+            "label": "Lohnabrechnung",
+            "titel": "Abzug",
+            "text": "Arbeitnehmeranteil vom Lohn",
+            "folge": "schuldet den Gesamtbeitrag",
+            "ref": "§ 28e SGB IV",
+            "satz": 1
+          },
+          {
+            "label": "drittletzter Bankarbeitstag",
+            "titel": "Zahlung",
+            "text": "an die Krankenkasse",
+            "folge": "sie verteilt an die Träger",
+            "ref": "§§ 23, 28h SGB IV",
+            "satz": 2
+          }
         ]
       },
       "saetze": [
@@ -103,8 +168,15 @@
         "richtig": 1,
         "satzDenken": 1,
         "satzLoesung": 2,
-        "erklaerung": { "text": "§ 150 Abs. 1 SGB VII", "satz": 3 },
-        "stempel": { "index": 0, "text": "nicht im Gesamtbeitrag", "satz": 3 }
+        "erklaerung": {
+          "text": "§ 150 Abs. 1 SGB VII",
+          "satz": 3
+        },
+        "stempel": {
+          "index": 0,
+          "text": "nicht im Gesamtbeitrag",
+          "satz": 3
+        }
       },
       "saetze": [
         "Kurzes Quiz. Wer bekommt den Beitrag zur Unfallversicherung?",
@@ -118,10 +190,22 @@
       "daten": {
         "ueberschrift": "Das nimmst du mit",
         "punkte": [
-          { "text": "Kranken, Pflege, Rente, Arbeitslosigkeit: halb und halb", "satz": 0 },
-          { "text": "Unfall: nur Arbeitgeber", "satz": 0 },
-          { "text": "Einzugsstelle: Krankenkasse", "satz": 1 },
-          { "text": "Kinderlosenzuschlag zahlt der Arbeitnehmer allein", "satz": 1 }
+          {
+            "text": "Kranken, Pflege, Rente, Arbeitslosigkeit: halb und halb",
+            "satz": 0
+          },
+          {
+            "text": "Unfall: nur Arbeitgeber",
+            "satz": 0
+          },
+          {
+            "text": "Einzugsstelle: Krankenkasse",
+            "satz": 1
+          },
+          {
+            "text": "Kinderlosenzuschlag zahlt der Arbeitnehmer allein",
+            "satz": 1
+          }
         ],
         "aufruf": "Jetzt üben: LF 5 → Sozialversicherung"
       },

@@ -1,0 +1,355 @@
+{
+ "lf": "lf10",
+ "kapitel": "LF 10 · Jahresabschluss",
+ "farbe": "#22c55e",
+ "stil": "premium",
+ "id": "lf10-anschaffungskosten",
+ "thema": "Anschaffungskosten",
+ "titel": "Anschaffungskosten",
+ "kartentitel": "Anschaffungskosten: Rabatt, Skonto und Nebenkosten",
+ "musik": "lf10-anschaffungskosten/musik.wav",
+ "szenen": [
+  {
+   "typ": "intro",
+   "daten": {
+    "kicker": "LF 10 · Jahresabschluss",
+    "titel": "Was kostet die Maschine?",
+    "untertitel": "Anschaffungskosten richtig berechnen",
+    "betrag": 10000,
+    "betragLabel": "Listenpreis netto",
+    "satzBetrag": 1,
+    "satzTeilen": 2,
+    "personen": [
+     {
+      "name": "Betrieb",
+      "icon": "🏭"
+     },
+     {
+      "name": "Lieferant",
+      "icon": "🚚"
+     }
+    ]
+   },
+   "saetze": [
+    "Ein Betrieb kauft eine Maschine.",
+    "Der Listenpreis: 10.000 Euro netto. Aber mit welchem Wert kommt sie in die Bilanz?",
+    "Mit den Anschaffungskosten. Und die sind fast nie gleich dem Listenpreis."
+   ],
+   "ton": "lf10-anschaffungskosten/s01.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 1.533
+    },
+    {
+     "start": 2.583,
+     "dauer": 5.016
+    },
+    {
+     "start": 8.048,
+     "dauer": 3.855
+    }
+   ],
+   "dauer": 12.803
+  },
+  {
+   "typ": "formel",
+   "daten": {
+    "ueberschrift": "Das Schema",
+    "ref": "§ 255 Abs. 1 HGB",
+    "zeilen": [
+     {
+      "zeichen": "1",
+      "text": "Anschaffungspreis netto",
+      "info": "ohne Vorsteuer, § 9b EStG"
+     },
+     {
+      "zeichen": "+",
+      "text": "Anschaffungsnebenkosten",
+      "info": "Fracht, Montage, Zulassung"
+     },
+     {
+      "zeichen": "+",
+      "text": "nachträgliche Anschaffungskosten",
+      "info": "kommen später dazu"
+     },
+     {
+      "zeichen": "−",
+      "text": "Preisminderungen",
+      "info": "Rabatt, Skonto, Bonus"
+     },
+     {
+      "zeichen": "=",
+      "text": "Anschaffungskosten",
+      "info": "Wert in der Bilanz",
+      "ergebnis": true
+     }
+    ]
+   },
+   "saetze": [
+    "Das Schema hat vier Schritte.",
+    "Du startest mit dem Preis netto. Die Vorsteuer gehört nie dazu.",
+    "Dazu kommen die Nebenkosten: alles, was nötig ist, damit die Maschine läuft.",
+    "Auch Kosten, die später noch für den Kauf anfallen, gehören dazu.",
+    "Abgezogen werden Rabatt, Skonto und Bonus.",
+    "Das Ergebnis sind die Anschaffungskosten."
+   ],
+   "ton": "lf10-anschaffungskosten/s02.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 1.683
+    },
+    {
+     "start": 2.733,
+     "dauer": 3.762
+    },
+    {
+     "start": 6.945,
+     "dauer": 4.644
+    },
+    {
+     "start": 12.039,
+     "dauer": 3.831
+    },
+    {
+     "start": 16.32,
+     "dauer": 2.74
+    },
+    {
+     "start": 19.51,
+     "dauer": 2.543
+    }
+   ],
+   "dauer": 22.953
+  },
+  {
+   "typ": "sortieren",
+   "daten": {
+    "ueberschrift": "Gehört das dazu?",
+    "ja": "Anschaffungskosten",
+    "nein": "sofort Aufwand",
+    "karten": [
+     {
+      "text": "Überführung",
+      "icon": "🚚",
+      "ja": true,
+      "satz": 1
+     },
+     {
+      "text": "Zulassung und Kennzeichen",
+      "icon": "🔖",
+      "ja": true,
+      "satz": 1
+     },
+     {
+      "text": "erste Tankfüllung",
+      "icon": "⛽",
+      "ja": false,
+      "satz": 2
+     },
+     {
+      "text": "Kfz-Versicherung",
+      "icon": "🛡️",
+      "ja": false,
+      "satz": 2
+     },
+     {
+      "text": "Zinsen für den Kredit",
+      "icon": "🏦",
+      "ja": false,
+      "satz": 3
+     }
+    ]
+   },
+   "saetze": [
+    "Beim Lkw wird es spannend.",
+    "Überführung, Zulassung und Kennzeichen gehören dazu. Ohne sie fährt der Lkw nicht.",
+    "Tankfüllung und Versicherung sind laufende Kosten, also sofort Aufwand.",
+    "Und Zinsen für einen Kredit sind Finanzierungskosten. Auch sie gehören nicht dazu."
+   ],
+   "ton": "lf10-anschaffungskosten/s03.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 1.672
+    },
+    {
+     "start": 2.722,
+     "dauer": 4.679
+    },
+    {
+     "start": 7.851,
+     "dauer": 4.342
+    },
+    {
+     "start": 12.643,
+     "dauer": 4.365
+    }
+   ],
+   "dauer": 17.908
+  },
+  {
+   "typ": "stapel",
+   "daten": {
+    "ueberschrift": "Die Maschine",
+    "icon": "⚙️",
+    "zeilen": [
+     {
+      "text": "Listenpreis",
+      "wert": "10.000 €",
+      "satz": 1
+     },
+     {
+      "text": "− Rabatt 10 %",
+      "wert": "1.000 €",
+      "satz": 1
+     },
+     {
+      "text": "= Zieleinkaufspreis",
+      "wert": "9.000 €",
+      "satz": 2
+     },
+     {
+      "text": "− Skonto 3 %",
+      "wert": "270 €",
+      "satz": 3
+     },
+     {
+      "text": "= Anschaffungskosten",
+      "wert": "8.730 €",
+      "ergebnis": true,
+      "satz": 4
+     }
+    ]
+   },
+   "saetze": [
+    "Zurück zur Maschine.",
+    "Vom Listenpreis gehen 10 Prozent Rabatt ab, also 1.000 Euro.",
+    "Bleiben 9.000 Euro.",
+    "Bezahlt wird mit 3 Prozent Skonto. Wichtig: Skonto rechnest du vom Preis nach Rabatt, also 270 Euro.",
+    "Anschaffungskosten: 8.730 Euro."
+   ],
+   "ton": "lf10-anschaffungskosten/s04.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 1.057
+    },
+    {
+     "start": 2.107,
+     "dauer": 3.913
+    },
+    {
+     "start": 6.469,
+     "dauer": 1.567
+    },
+    {
+     "start": 8.486,
+     "dauer": 6.711
+    },
+    {
+     "start": 15.647,
+     "dauer": 3.599
+    }
+   ],
+   "dauer": 20.146
+  },
+  {
+   "typ": "quiz",
+   "daten": {
+    "frage": "Computer 800 € netto, Zustellung 20 €, 2 % Skonto. Ist er ein geringwertiges Wirtschaftsgut?",
+    "optionen": [
+     "Ja, Preis ist 800 €",
+     "Nein, Anschaffungskosten 804 €",
+     "Nur mit Vorsteuer"
+    ],
+    "richtig": 1,
+    "satzDenken": 1,
+    "satzLoesung": 2,
+    "erklaerung": {
+     "text": "§ 6 Abs. 2 EStG",
+     "satz": 3
+    },
+    "stempel": {
+     "index": 0,
+     "text": "Nebenkosten zählen",
+     "satz": 3
+    }
+   },
+   "saetze": [
+    "Kurzes Quiz aus dem Test. Ein Computer kostet 800 Euro netto, die Zustellung 20 Euro, bezahlt wird mit 2 Prozent Skonto. Ist er ein geringwertiges Wirtschaftsgut?",
+    "[pause 5]",
+    "Richtig ist B: nein.",
+    "800 plus 20 minus 16 Euro Skonto ergibt 804 Euro. Die Grenze von 800 Euro gilt für die gesamten Anschaffungskosten."
+   ],
+   "ton": "lf10-anschaffungskosten/s05.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 10.426
+    },
+    {
+     "start": 11.476,
+     "dauer": 5.0
+    },
+    {
+     "start": 16.926,
+     "dauer": 1.637
+    },
+    {
+     "start": 19.013,
+     "dauer": 8.754
+    }
+   ],
+   "dauer": 28.667
+  },
+  {
+   "typ": "merke",
+   "daten": {
+    "ueberschrift": "Das nimmst du mit",
+    "punkte": [
+     {
+      "text": "Preis + Nebenkosten − Minderungen",
+      "satz": 0
+     },
+     {
+      "text": "Immer netto, ohne Vorsteuer",
+      "satz": 0
+     },
+     {
+      "text": "Skonto vom Preis nach Rabatt",
+      "satz": 1
+     },
+     {
+      "text": "Tanken, Versicherung, Zinsen: sofort Aufwand",
+      "satz": 1
+     }
+    ],
+    "aufruf": "Jetzt üben: LF 10 → Anschaffungskosten"
+   },
+   "saetze": [
+    "Zusammengefasst: Preis plus Nebenkosten minus Minderungen, immer netto.",
+    "Skonto rechnest du vom Preis nach Rabatt. Tanken, Versicherung und Zinsen sind sofort Aufwand.",
+    "Im Lernfeld 10 findest du dazu Aufgaben aus dem Unterricht."
+   ],
+   "ton": "lf10-anschaffungskosten/s06.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 4.122
+    },
+    {
+     "start": 5.172,
+     "dauer": 5.062
+    },
+    {
+     "start": 10.683,
+     "dauer": 3.46
+    }
+   ],
+   "dauer": 15.043
+  }
+ ],
+ "dauer": 117.52
+}

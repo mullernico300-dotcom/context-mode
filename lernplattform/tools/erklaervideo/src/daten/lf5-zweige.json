@@ -1,0 +1,340 @@
+{
+  "lf": "lf5",
+  "kapitel": "LF 5 · Sozialversicherung",
+  "farbe": "#14b8a6",
+  "stil": "premium",
+  "id": "lf5-zweige",
+  "thema": "Die fünf Zweige der Sozialversicherung",
+  "titel": "Sozialversicherung",
+  "kartentitel": "Die fünf Zweige der Sozialversicherung: wer zahlt, wer kassiert?",
+  "musik": "lf5-zweige/musik.wav",
+  "szenen": [
+    {
+      "typ": "intro",
+      "daten": {
+        "kicker": "LF 5 · Sozialversicherung",
+        "titel": "Fünf Zweige",
+        "untertitel": "Die Zweige der Sozialversicherung",
+        "betrag": 5,
+        "betragLabel": "Sozialversicherung",
+        "einheit": "Zweige",
+        "satzBetrag": 1,
+        "satzTeilen": 2,
+        "personen": [
+          {
+            "name": "Arbeitgeber",
+            "icon": "🏢"
+          },
+          {
+            "name": "Arbeitnehmer",
+            "icon": "🧑"
+          }
+        ]
+      },
+      "saetze": [
+        "Auf jeder Lohnabrechnung stehen Abzüge für die Sozialversicherung.",
+        "Es gibt fünf Zweige. Aber nicht jeder wird gleich bezahlt.",
+        "Wir klären, wer zahlt und wohin das Geld geht."
+      ],
+      "ton": "lf5-zweige/s01.wav",
+      "zeiten": [
+        {
+          "start": 0.6,
+          "dauer": 3.553
+        },
+        {
+          "start": 4.603,
+          "dauer": 3.274
+        },
+        {
+          "start": 8.327,
+          "dauer": 2.612
+        }
+      ],
+      "dauer": 11.839
+    },
+    {
+      "typ": "formel",
+      "daten": {
+        "ueberschrift": "Die fünf Zweige",
+        "ref": "SGB V, XI, VI, III, VII",
+        "zeilen": [
+          {
+            "zeichen": "1",
+            "text": "Krankenversicherung",
+            "info": "Krankenkassen, SGB V"
+          },
+          {
+            "zeichen": "2",
+            "text": "Pflegeversicherung",
+            "info": "Pflegekassen, SGB XI"
+          },
+          {
+            "zeichen": "3",
+            "text": "Rentenversicherung",
+            "info": "Deutsche Rentenversicherung, SGB VI"
+          },
+          {
+            "zeichen": "4",
+            "text": "Arbeitslosenversicherung",
+            "info": "Bundesagentur für Arbeit, SGB III"
+          },
+          {
+            "zeichen": "5",
+            "text": "Unfallversicherung",
+            "info": "Berufsgenossenschaften, SGB VII"
+          }
+        ]
+      },
+      "saetze": [
+        "Die fünf Zweige und ihre Träger.",
+        "Die Krankenversicherung bei den Krankenkassen.",
+        "Die Pflegeversicherung bei den Pflegekassen.",
+        "Die Rentenversicherung bei der Deutschen Rentenversicherung.",
+        "Die Arbeitslosenversicherung bei der Bundesagentur für Arbeit.",
+        "Und die Unfallversicherung bei den Berufsgenossenschaften. Zu jedem Zweig gehört ein eigenes Sozialgesetzbuch."
+      ],
+      "ton": "lf5-zweige/s02.wav",
+      "zeiten": [
+        {
+          "start": 0.6,
+          "dauer": 1.811
+        },
+        {
+          "start": 2.861,
+          "dauer": 2.519
+        },
+        {
+          "start": 5.831,
+          "dauer": 2.45
+        },
+        {
+          "start": 8.73,
+          "dauer": 2.891
+        },
+        {
+          "start": 12.071,
+          "dauer": 3.239
+        },
+        {
+          "start": 15.76,
+          "dauer": 5.944
+        }
+      ],
+      "dauer": 22.605
+    },
+    {
+      "typ": "sortieren",
+      "daten": {
+        "ueberschrift": "Wer zahlt den Beitrag?",
+        "ja": "halb und halb",
+        "nein": "nur Arbeitgeber",
+        "karten": [
+          {
+            "text": "Krankenversicherung mit Zusatzbeitrag",
+            "icon": "🏥",
+            "ja": true,
+            "satz": 1
+          },
+          {
+            "text": "Pflegeversicherung",
+            "icon": "🧓",
+            "ja": true,
+            "satz": 1
+          },
+          {
+            "text": "Rentenversicherung",
+            "icon": "👵",
+            "ja": true,
+            "satz": 2
+          },
+          {
+            "text": "Arbeitslosenversicherung",
+            "icon": "📋",
+            "ja": true,
+            "satz": 2
+          },
+          {
+            "text": "Unfallversicherung",
+            "icon": "🦺",
+            "ja": false,
+            "satz": 3
+          }
+        ]
+      },
+      "saetze": [
+        "Merksatz: vier Zweige halb und halb, einer nur der Arbeitgeber.",
+        "Kranken- und Pflegeversicherung zahlen beide je zur Hälfte, auch den Zusatzbeitrag.",
+        "Renten- und Arbeitslosenversicherung ebenso.",
+        "Die Unfallversicherung zahlt der Arbeitgeber allein. Es gibt keinen Arbeitnehmeranteil."
+      ],
+      "ton": "lf5-zweige/s03.wav",
+      "zeiten": [
+        {
+          "start": 0.6,
+          "dauer": 3.971
+        },
+        {
+          "start": 5.021,
+          "dauer": 4.714
+        },
+        {
+          "start": 10.184,
+          "dauer": 2.357
+        },
+        {
+          "start": 12.991,
+          "dauer": 4.725
+        }
+      ],
+      "dauer": 18.616
+    },
+    {
+      "typ": "zeitstrahl",
+      "daten": {
+        "ueberschrift": "Wie fließt das Geld?",
+        "merke": "Unfallversicherung geht direkt an die Berufsgenossenschaft",
+        "punkte": [
+          {
+            "label": "Lohnabrechnung",
+            "titel": "Abzug",
+            "text": "Arbeitnehmeranteil vom Lohn",
+            "folge": "schuldet den Gesamtbeitrag",
+            "ref": "§ 28e SGB IV",
+            "satz": 1
+          },
+          {
+            "label": "drittletzter Bankarbeitstag",
+            "titel": "Zahlung",
+            "text": "an die Krankenkasse",
+            "folge": "sie verteilt an die Träger",
+            "ref": "§§ 23, 28h SGB IV",
+            "satz": 2
+          }
+        ]
+      },
+      "saetze": [
+        "Wie kommt das Geld zu den Trägern?",
+        "Der Arbeitgeber zieht den Arbeitnehmeranteil vom Lohn ab. Er schuldet den ganzen Gesamtsozialversicherungsbeitrag.",
+        "Er zahlt alles spätestens am drittletzten Bankarbeitstag des Monats an die Krankenkasse des Arbeitnehmers. Sie ist die Einzugsstelle und verteilt das Geld weiter.",
+        "Die Unfallversicherung gehört nicht dazu. Sie geht direkt an die Berufsgenossenschaft."
+      ],
+      "ton": "lf5-zweige/s04.wav",
+      "zeiten": [
+        {
+          "start": 0.6,
+          "dauer": 1.672
+        },
+        {
+          "start": 2.722,
+          "dauer": 6.095
+        },
+        {
+          "start": 9.267,
+          "dauer": 8.835
+        },
+        {
+          "start": 18.552,
+          "dauer": 4.458
+        }
+      ],
+      "dauer": 23.91
+    },
+    {
+      "typ": "quiz",
+      "daten": {
+        "frage": "Wer bekommt den Beitrag zur Unfallversicherung?",
+        "optionen": [
+          "Die Krankenkasse",
+          "Die Berufsgenossenschaft",
+          "Die Rentenversicherung"
+        ],
+        "richtig": 1,
+        "satzDenken": 1,
+        "satzLoesung": 2,
+        "erklaerung": {
+          "text": "§ 150 Abs. 1 SGB VII",
+          "satz": 3
+        },
+        "stempel": {
+          "index": 0,
+          "text": "nicht im Gesamtbeitrag",
+          "satz": 3
+        }
+      },
+      "saetze": [
+        "Kurzes Quiz. Wer bekommt den Beitrag zur Unfallversicherung?",
+        "[pause 5]",
+        "Richtig ist B: die Berufsgenossenschaft.",
+        "Die Unfallversicherung ist nicht Teil des Gesamtsozialversicherungsbeitrags und läuft nicht über die Krankenkasse."
+      ],
+      "ton": "lf5-zweige/s05.wav",
+      "zeiten": [
+        {
+          "start": 0.6,
+          "dauer": 3.634
+        },
+        {
+          "start": 4.684,
+          "dauer": 5.0
+        },
+        {
+          "start": 10.134,
+          "dauer": 2.09
+        },
+        {
+          "start": 12.674,
+          "dauer": 6.153
+        }
+      ],
+      "dauer": 19.727
+    },
+    {
+      "typ": "merke",
+      "daten": {
+        "ueberschrift": "Das nimmst du mit",
+        "punkte": [
+          {
+            "text": "Kranken, Pflege, Rente, Arbeitslosigkeit: halb und halb",
+            "satz": 0
+          },
+          {
+            "text": "Unfall: nur Arbeitgeber",
+            "satz": 0
+          },
+          {
+            "text": "Einzugsstelle: Krankenkasse",
+            "satz": 1
+          },
+          {
+            "text": "Kinderlosenzuschlag zahlt der Arbeitnehmer allein",
+            "satz": 1
+          }
+        ],
+        "aufruf": "Jetzt üben: LF 5 → Sozialversicherung"
+      },
+      "saetze": [
+        "Zusammengefasst: Vier Zweige zahlen beide je zur Hälfte, die Unfallversicherung nur der Arbeitgeber.",
+        "Das Geld geht an die Krankenkasse als Einzugsstelle. Nur den Zuschlag für Kinderlose in der Pflegeversicherung trägt der Arbeitnehmer allein.",
+        "Im Lernfeld 5 findest du dazu Übungen."
+      ],
+      "ton": "lf5-zweige/s06.wav",
+      "zeiten": [
+        {
+          "start": 0.6,
+          "dauer": 5.433
+        },
+        {
+          "start": 6.483,
+          "dauer": 7.767
+        },
+        {
+          "start": 14.701,
+          "dauer": 2.426
+        }
+      ],
+      "dauer": 18.027
+    }
+  ],
+  "dauer": 114.724
+}

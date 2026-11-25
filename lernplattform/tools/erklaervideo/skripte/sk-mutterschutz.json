@@ -21,8 +21,14 @@
         "satzBetrag": 1,
         "satzTeilen": 2,
         "personen": [
-          { "name": "Sara", "icon": "🤰" },
-          { "name": "Kanzlei", "icon": "🏢" }
+          {
+            "name": "Sara",
+            "icon": "🤰"
+          },
+          {
+            "name": "Kanzlei",
+            "icon": "🏢"
+          }
         ]
       },
       "saetze": [
@@ -37,8 +43,22 @@
         "ueberschrift": "Die Schutzfristen",
         "merke": "Kündigungsverbot bis 4 Monate nach der Geburt",
         "punkte": [
-          { "label": "29.04.2026", "titel": "6 Wochen vorher", "text": "darf nur, wenn sie will", "folge": "jederzeit widerrufbar", "ref": "§ 3 Abs. 1 MuSchG", "satz": 1 },
-          { "label": "05.08.2026", "titel": "8 Wochen danach", "text": "absolutes Arbeitsverbot", "folge": "12 Wochen bei Früh- und Mehrlingsgeburt", "ref": "§ 3 Abs. 2 MuSchG", "satz": 2 }
+          {
+            "label": "29.04.2026",
+            "titel": "vorher",
+            "text": "darf nur, wenn sie will",
+            "folge": "jederzeit widerrufbar",
+            "ref": "§ 3 Abs. 1 MuSchG",
+            "satz": 1
+          },
+          {
+            "label": "05.08.2026",
+            "titel": "nachher",
+            "text": "absolutes Arbeitsverbot",
+            "folge": "12 Wochen bei Frühgeburt",
+            "ref": "§ 3 Abs. 2 MuSchG",
+            "satz": 2
+          }
         ]
       },
       "saetze": [
@@ -55,10 +75,30 @@
         "ja": "erlaubt",
         "nein": "verboten",
         "karten": [
-          { "text": "8 Stunden im Büro", "icon": "💻", "ja": true, "satz": 1 },
-          { "text": "Arbeit bis 22 Uhr", "icon": "🌙", "ja": false, "satz": 2 },
-          { "text": "Sonntagsarbeit", "icon": "📅", "ja": false, "satz": 2 },
-          { "text": "Fließbandarbeit", "icon": "🏭", "ja": false, "satz": 3 }
+          {
+            "text": "8 Stunden im Büro",
+            "icon": "💻",
+            "ja": true,
+            "satz": 1
+          },
+          {
+            "text": "Arbeit bis 22 Uhr",
+            "icon": "🌙",
+            "ja": false,
+            "satz": 2
+          },
+          {
+            "text": "Sonntagsarbeit",
+            "icon": "📅",
+            "ja": false,
+            "satz": 2
+          },
+          {
+            "text": "Fließbandarbeit",
+            "icon": "🏭",
+            "ja": false,
+            "satz": 3
+          }
         ]
       },
       "saetze": [
@@ -80,8 +120,15 @@
         "richtig": 1,
         "satzDenken": 1,
         "satzLoesung": 2,
-        "erklaerung": { "text": "§§ 19, 20 MuSchG", "satz": 3 },
-        "stempel": { "index": 0, "text": "außerhalb der Fristen", "satz": 3 }
+        "erklaerung": {
+          "text": "§§ 19, 20 MuSchG",
+          "satz": 3
+        },
+        "stempel": {
+          "index": 0,
+          "text": "außerhalb der Fristen",
+          "satz": 3
+        }
       },
       "saetze": [
         "Kurzes Quiz. Wer zahlt Sara während der Schutzfristen?",
@@ -95,10 +142,22 @@
       "daten": {
         "ueberschrift": "Das nimmst du mit",
         "punkte": [
-          { "text": "6 Wochen vorher, 8 Wochen nachher", "satz": 0 },
-          { "text": "Kein Nachtdienst, kein Sonntag, nichts Gefährliches", "satz": 0 },
-          { "text": "Kündigungsverbot bis 4 Monate nach Geburt", "satz": 1 },
-          { "text": "Mutterschaftsgeld ist nicht Mutterschutzlohn", "satz": 1 }
+          {
+            "text": "6 Wochen vorher, 8 Wochen nachher",
+            "satz": 0
+          },
+          {
+            "text": "Kein Nachtdienst, kein Sonntag, nichts Gefährliches",
+            "satz": 0
+          },
+          {
+            "text": "Kündigungsverbot bis 4 Monate nach Geburt",
+            "satz": 1
+          },
+          {
+            "text": "Mutterschaftsgeld ist nicht Mutterschutzlohn",
+            "satz": 1
+          }
         ],
         "aufruf": "Jetzt üben: Sozialkunde → Mutterschutz"
       },

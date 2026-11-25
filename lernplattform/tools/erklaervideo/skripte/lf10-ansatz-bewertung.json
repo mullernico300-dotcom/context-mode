@@ -20,8 +20,14 @@
         "satzBetrag": 1,
         "satzTeilen": 2,
         "personen": [
-          { "name": "Weinhandel", "icon": "🍷" },
-          { "name": "Steuerberater", "icon": "👔" }
+          {
+            "name": "Weinhandel",
+            "icon": "🍷"
+          },
+          {
+            "name": "Steuerberater",
+            "icon": "👔"
+          }
         ]
       },
       "saetze": [
@@ -36,11 +42,31 @@
         "ueberschrift": "Die Grundsätze aus § 252 HGB",
         "ref": "§ 252 Abs. 1 HGB",
         "zeilen": [
-          { "zeichen": "1", "text": "Bilanzidentität", "info": "Eröffnung = Schluss Vorjahr" },
-          { "zeichen": "2", "text": "Unternehmensfortführung", "info": "keine Zerschlagungswerte" },
-          { "zeichen": "3", "text": "Einzelbewertung, Stichtag", "info": "jedes Teil einzeln, am 31.12." },
-          { "zeichen": "4", "text": "Vorsicht", "info": "Gewinne erst realisiert, Verluste schon drohend" },
-          { "zeichen": "5–6", "text": "Periode und Stetigkeit", "info": "richtiges Jahr, gleiche Methode" }
+          {
+            "zeichen": "1",
+            "text": "Bilanzidentität",
+            "info": "Eröffnung = Schluss Vorjahr"
+          },
+          {
+            "zeichen": "2",
+            "text": "Unternehmensfortführung",
+            "info": "keine Zerschlagungswerte"
+          },
+          {
+            "zeichen": "3",
+            "text": "Einzelbewertung, Stichtag",
+            "info": "jedes Teil einzeln, am 31.12."
+          },
+          {
+            "zeichen": "4",
+            "text": "Vorsicht",
+            "info": "Gewinne erst realisiert, Verluste schon drohend"
+          },
+          {
+            "zeichen": "5",
+            "text": "Periode und Stetigkeit",
+            "info": "richtiges Jahr, gleiche Methode"
+          }
         ]
       },
       "saetze": [
@@ -59,10 +85,30 @@
         "ja": "richtig",
         "nein": "falsch",
         "karten": [
-          { "text": "Wein nur noch halb wert: abschreiben", "icon": "📉", "ja": true, "satz": 1 },
-          { "text": "Wein jetzt 30.000 € wert: so ansetzen", "icon": "📈", "ja": false, "satz": 2 },
-          { "text": "Neu anfangen ohne Vorjahreswerte", "icon": "🆕", "ja": false, "satz": 3 },
-          { "text": "Jedes Jahr anders abschreiben", "icon": "🎲", "ja": false, "satz": 4 }
+          {
+            "text": "Wein nur noch halb wert: abschreiben",
+            "icon": "📉",
+            "ja": true,
+            "satz": 1
+          },
+          {
+            "text": "Wein jetzt 30.000 € wert: so ansetzen",
+            "icon": "📈",
+            "ja": false,
+            "satz": 2
+          },
+          {
+            "text": "Neu anfangen ohne Vorjahreswerte",
+            "icon": "🆕",
+            "ja": false,
+            "satz": 3
+          },
+          {
+            "text": "Jedes Jahr anders abschreiben",
+            "icon": "🎲",
+            "ja": false,
+            "satz": 4
+          }
         ]
       },
       "saetze": [
@@ -78,9 +124,21 @@
       "daten": {
         "ueberschrift": "Typische Fallen",
         "karten": [
-          { "titel": "Realisation und Imparität", "text": "Gewinn erst beim Verkauf, Verlust schon, wenn er droht.", "satz": 1 },
-          { "titel": "Umlaufvermögen", "text": "Niedrigerer Wert am Stichtag: immer abschreiben, § 253 Abs. 4 HGB.", "satz": 2 },
-          { "titel": "Fortführung", "text": "Eine bloße Überlegung, aufzuhören, reicht nicht für Zerschlagungswerte.", "satz": 3 }
+          {
+            "titel": "Realisation und Imparität",
+            "text": "Gewinn erst beim Verkauf, Verlust schon, wenn er droht.",
+            "satz": 1
+          },
+          {
+            "titel": "Umlaufvermögen",
+            "text": "Niedrigerer Wert am Stichtag: immer abschreiben, § 253 Abs. 4 HGB.",
+            "satz": 2
+          },
+          {
+            "titel": "Fortführung",
+            "text": "Eine bloße Überlegung, aufzuhören, reicht nicht für Zerschlagungswerte.",
+            "satz": 3
+          }
         ]
       },
       "saetze": [
@@ -102,8 +160,15 @@
         "richtig": 2,
         "satzDenken": 1,
         "satzLoesung": 2,
-        "erklaerung": { "text": "§ 5 Abs. 2 EStG", "satz": 3 },
-        "stempel": { "index": 1, "text": "nur im HGB", "satz": 3 }
+        "erklaerung": {
+          "text": "§ 5 Abs. 2 EStG",
+          "satz": 3
+        },
+        "stempel": {
+          "index": 1,
+          "text": "nur im HGB",
+          "satz": 3
+        }
       },
       "saetze": [
         "Kurzes Quiz. Selbst programmierte Software: Darf sie in die Steuerbilanz?",
@@ -117,10 +182,22 @@
       "daten": {
         "ueberschrift": "Das nimmst du mit",
         "punkte": [
-          { "text": "Ansatz: Pflicht, Wahlrecht oder Verbot", "satz": 0 },
-          { "text": "Höchstens Anschaffungskosten", "satz": 0 },
-          { "text": "Verluste sofort, Gewinne erst beim Verkauf", "satz": 1 },
-          { "text": "Antwort: richtig/falsch + Grundsatz + Paragraf", "satz": 1 }
+          {
+            "text": "Ansatz: Pflicht, Wahlrecht oder Verbot",
+            "satz": 0
+          },
+          {
+            "text": "Höchstens Anschaffungskosten",
+            "satz": 0
+          },
+          {
+            "text": "Verluste sofort, Gewinne erst beim Verkauf",
+            "satz": 1
+          },
+          {
+            "text": "Antwort: richtig/falsch + Grundsatz + Paragraf",
+            "satz": 1
+          }
         ],
         "aufruf": "Jetzt üben: LF 10 → Bewertungsgrundsätze"
       },

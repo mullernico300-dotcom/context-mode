@@ -1,0 +1,323 @@
+{
+ "lf": "lf10",
+ "kapitel": "LF 10 · Jahresabschluss",
+ "farbe": "#22c55e",
+ "stil": "premium",
+ "id": "lf10-grundlagen",
+ "thema": "Grundlagen des Jahresabschlusses",
+ "titel": "Jahresabschluss",
+ "kartentitel": "Grundlagen: Wer bilanziert und was gehört zum Jahresabschluss?",
+ "musik": "lf10-grundlagen/musik.wav",
+ "szenen": [
+  {
+   "typ": "intro",
+   "daten": {
+    "kicker": "LF 10 · Jahresabschluss",
+    "titel": "Bilanz oder nicht?",
+    "untertitel": "Wer muss einen Jahresabschluss machen?",
+    "betrag": 800000,
+    "betragLabel": "Umsatzgrenze",
+    "satzBetrag": 1,
+    "satzTeilen": 2,
+    "personen": [
+     {
+      "name": "Tischlerei",
+      "icon": "🪚"
+     },
+     {
+      "name": "GmbH",
+      "icon": "🏢"
+     }
+    ]
+   },
+   "saetze": [
+    "Am 31. Dezember ist Stichtag. Jetzt wird Bilanz gezogen.",
+    "Aber muss das jeder? Eine wichtige Zahl dabei: 800.000 Euro Umsatz.",
+    "Wir klären, wer bilanzieren muss und was alles zum Jahresabschluss gehört."
+   ],
+   "ton": "lf10-grundlagen/s01.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 3.959
+    },
+    {
+     "start": 5.009,
+     "dauer": 4.632
+    },
+    {
+     "start": 10.091,
+     "dauer": 4.725
+    }
+   ],
+   "dauer": 15.717
+  },
+  {
+   "typ": "sortieren",
+   "daten": {
+    "ueberschrift": "Wer muss bilanzieren?",
+    "ja": "Bilanz",
+    "nein": "Einnahmenüberschussrechnung",
+    "karten": [
+     {
+      "text": "GmbH",
+      "icon": "🏢",
+      "ja": true,
+      "satz": 1
+     },
+     {
+      "text": "OHG",
+      "icon": "🤝",
+      "ja": true,
+      "satz": 1
+     },
+     {
+      "text": "Einzelkaufmann, 900.000 € Umsatz",
+      "icon": "🧑‍💼",
+      "ja": true,
+      "satz": 2
+     },
+     {
+      "text": "Einzelkaufmann, 500.000 € Umsatz, 50.000 € Gewinn",
+      "icon": "🪚",
+      "ja": false,
+      "satz": 3
+     }
+    ]
+   },
+   "saetze": [
+    "Jeder Kaufmann muss Bücher führen und bilanzieren. Das steht in Paragraf 238 HGB.",
+    "GmbH und OHG bilanzieren immer.",
+    "Der Einzelkaufmann mit 900.000 Euro Umsatz liegt über der Grenze. Er bilanziert auch.",
+    "Nur ein Einzelkaufmann mit höchstens 800.000 Euro Umsatz und 80.000 Euro Gewinn ist befreit. Er darf eine Einnahmenüberschussrechnung machen."
+   ],
+   "ton": "lf10-grundlagen/s02.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 6.722
+    },
+    {
+     "start": 7.772,
+     "dauer": 2.694
+    },
+    {
+     "start": 10.916,
+     "dauer": 6.095
+    },
+    {
+     "start": 17.461,
+     "dauer": 9.381
+    }
+   ],
+   "dauer": 27.742
+  },
+  {
+   "typ": "formel",
+   "daten": {
+    "ueberschrift": "Was gehört zum Jahresabschluss?",
+    "ref": "§§ 242, 264 HGB",
+    "zeilen": [
+     {
+      "zeichen": "1",
+      "text": "Bilanz",
+      "info": "alle Kaufleute"
+     },
+     {
+      "zeichen": "2",
+      "text": "Gewinn- und Verlustrechnung",
+      "info": "alle Kaufleute"
+     },
+     {
+      "zeichen": "3",
+      "text": "Anhang",
+      "info": "nur Kapitalgesellschaften"
+     },
+     {
+      "zeichen": "✕",
+      "text": "Lagebericht",
+      "info": "kein Teil des Jahresabschlusses"
+     }
+    ]
+   },
+   "saetze": [
+    "Was gehört dazu?",
+    "Bilanz und Gewinn- und Verlustrechnung: Das ist der Jahresabschluss beim Einzelunternehmen und bei der OHG.",
+    "Kapitalgesellschaften wie die GmbH brauchen zusätzlich einen Anhang. Er erklärt die Zahlen und enthält den Anlagenspiegel.",
+    "Der Lagebericht beschreibt die Lage des Unternehmens. Mittelgroße und große Gesellschaften erstellen ihn, aber er gehört nicht zum Jahresabschluss."
+   ],
+   "ton": "lf10-grundlagen/s03.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 1.068
+    },
+    {
+     "start": 2.118,
+     "dauer": 6.223
+    },
+    {
+     "start": 8.791,
+     "dauer": 6.908
+    },
+    {
+     "start": 16.149,
+     "dauer": 7.848
+    }
+   ],
+   "dauer": 24.897
+  },
+  {
+   "typ": "stapel",
+   "daten": {
+    "ueberschrift": "Vom Handels- zum Steuergewinn",
+    "icon": "🪚",
+    "zeilen": [
+     {
+      "text": "Gewinn laut Handelsbilanz",
+      "wert": "65.400 €",
+      "satz": 1
+     },
+     {
+      "text": "+ nicht abziehbare Geschenke",
+      "wert": "2.380 €",
+      "satz": 2
+     },
+     {
+      "text": "+ nicht abziehbare Bewirtung",
+      "wert": "500 €",
+      "satz": 2
+     },
+     {
+      "text": "= steuerlicher Gewinn",
+      "wert": "68.280 €",
+      "ergebnis": true,
+      "satz": 3
+     }
+    ]
+   },
+   "saetze": [
+    "Die Handelsbilanz ist die Grundlage der Steuerbilanz. Das nennt man Maßgeblichkeitsprinzip.",
+    "Die Tischlerei hat laut Handelsbilanz 65.400 Euro Gewinn.",
+    "Darin stecken Geschenke über 50 Euro und Bewirtung, die steuerlich nicht abziehbar sind. Die rechnest du wieder hinzu.",
+    "Steuerlicher Gewinn: 68.280 Euro."
+   ],
+   "ton": "lf10-grundlagen/s04.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 5.248
+    },
+    {
+     "start": 6.298,
+     "dauer": 5.016
+    },
+    {
+     "start": 11.763,
+     "dauer": 6.026
+    },
+    {
+     "start": 18.239,
+     "dauer": 4.145
+    }
+   ],
+   "dauer": 23.284
+  },
+  {
+   "typ": "quiz",
+   "daten": {
+    "frage": "Was ist Teil des Jahresabschlusses einer GmbH?",
+    "optionen": [
+     "Der Lagebericht",
+     "Der Anhang",
+     "Das Inventar"
+    ],
+    "richtig": 1,
+    "satzDenken": 1,
+    "satzLoesung": 2,
+    "erklaerung": {
+     "text": "§ 264 Abs. 1 HGB",
+     "satz": 3
+    },
+    "stempel": {
+     "index": 0,
+     "text": "kein Teil",
+     "satz": 3
+    }
+   },
+   "saetze": [
+    "Kurzes Quiz. Was ist Teil des Jahresabschlusses einer GmbH?",
+    "[pause 5]",
+    "Richtig ist B: der Anhang.",
+    "Genau das wurde im Test gefragt. Der Lagebericht gehört nicht dazu."
+   ],
+   "ton": "lf10-grundlagen/s05.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 3.587
+    },
+    {
+     "start": 4.637,
+     "dauer": 5.0
+    },
+    {
+     "start": 10.087,
+     "dauer": 1.985
+    },
+    {
+     "start": 12.523,
+     "dauer": 3.75
+    }
+   ],
+   "dauer": 17.173
+  },
+  {
+   "typ": "merke",
+   "daten": {
+    "ueberschrift": "Das nimmst du mit",
+    "punkte": [
+     {
+      "text": "Kaufleute bilanzieren, § 238 HGB",
+      "satz": 0
+     },
+     {
+      "text": "Befreit: Einzelkaufmann bis 800.000 € Umsatz und 80.000 € Gewinn",
+      "satz": 0
+     },
+     {
+      "text": "Jahresabschluss: Bilanz + GuV, GmbH plus Anhang",
+      "satz": 1
+     },
+     {
+      "text": "Lagebericht gehört nicht dazu",
+      "satz": 1
+     }
+    ],
+    "aufruf": "Jetzt üben: LF 10 → Grundlagen"
+   },
+   "saetze": [
+    "Zusammengefasst: Kaufleute bilanzieren. Befreit ist nur der kleine Einzelkaufmann bis 800.000 Euro Umsatz und 80.000 Euro Gewinn.",
+    "Der Jahresabschluss besteht aus Bilanz und Gewinn- und Verlustrechnung, bei der GmbH kommt der Anhang dazu. Der Lagebericht gehört nicht dazu.",
+    "Im Lernfeld 10 findest du dazu Aufgaben aus dem Unterricht."
+   ],
+   "ton": "lf10-grundlagen/s06.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 8.673
+    },
+    {
+     "start": 9.723,
+     "dauer": 8.696
+    },
+    {
+     "start": 18.869,
+     "dauer": 3.46
+    }
+   ],
+   "dauer": 23.228
+  }
+ ],
+ "dauer": 132.04
+}

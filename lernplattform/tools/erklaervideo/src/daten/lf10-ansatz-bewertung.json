@@ -1,0 +1,336 @@
+{
+  "lf": "lf10",
+  "kapitel": "LF 10 · Jahresabschluss",
+  "farbe": "#22c55e",
+  "stil": "premium",
+  "id": "lf10-ansatz-bewertung",
+  "thema": "Ansatz- und Bewertungsgrundsätze",
+  "titel": "Bewertungsgrundsätze",
+  "kartentitel": "Ansatz- und Bewertungsgrundsätze: die Regeln aus § 252 HGB",
+  "musik": "lf10-ansatz-bewertung/musik.wav",
+  "szenen": [
+    {
+      "typ": "intro",
+      "daten": {
+        "kicker": "LF 10 · Jahresabschluss",
+        "titel": "Der Wein ist mehr wert",
+        "untertitel": "Ansatz- und Bewertungsgrundsätze",
+        "betrag": 8000,
+        "betragLabel": "Anschaffungskosten Wein",
+        "satzBetrag": 1,
+        "satzTeilen": 2,
+        "personen": [
+          {
+            "name": "Weinhandel",
+            "icon": "🍷"
+          },
+          {
+            "name": "Steuerberater",
+            "icon": "👔"
+          }
+        ]
+      },
+      "saetze": [
+        "Ein Weinhandel hat Wein für 8.000 Euro gekauft.",
+        "Heute ist der Wein 30.000 Euro wert. Darf er mit 30.000 Euro in die Bilanz?",
+        "Die Antwort steht in den Bewertungsgrundsätzen des HGB."
+      ],
+      "ton": "lf10-ansatz-bewertung/s01.wav",
+      "zeiten": [
+        {
+          "start": 0.6,
+          "dauer": 3.03
+        },
+        {
+          "start": 4.08,
+          "dauer": 5.085
+        },
+        {
+          "start": 9.615,
+          "dauer": 3.762
+        }
+      ],
+      "dauer": 14.277
+    },
+    {
+      "typ": "formel",
+      "daten": {
+        "ueberschrift": "Die Grundsätze aus § 252 HGB",
+        "ref": "§ 252 Abs. 1 HGB",
+        "zeilen": [
+          {
+            "zeichen": "1",
+            "text": "Bilanzidentität",
+            "info": "Eröffnung = Schluss Vorjahr"
+          },
+          {
+            "zeichen": "2",
+            "text": "Unternehmensfortführung",
+            "info": "keine Zerschlagungswerte"
+          },
+          {
+            "zeichen": "3",
+            "text": "Einzelbewertung, Stichtag",
+            "info": "jedes Teil einzeln, am 31.12."
+          },
+          {
+            "zeichen": "4",
+            "text": "Vorsicht",
+            "info": "Gewinne erst realisiert, Verluste schon drohend"
+          },
+          {
+            "zeichen": "5",
+            "text": "Periode und Stetigkeit",
+            "info": "richtiges Jahr, gleiche Methode"
+          }
+        ]
+      },
+      "saetze": [
+        "Paragraf 252 nennt sechs Grundsätze.",
+        "Erstens Bilanzidentität: Die Eröffnungsbilanz stimmt mit der Schlussbilanz des Vorjahres überein.",
+        "Zweitens: Man bewertet so, als ob das Unternehmen weiterläuft.",
+        "Drittens: Jeder Gegenstand wird einzeln bewertet, mit dem Wert am Stichtag.",
+        "Viertens Vorsicht: Gewinne erst, wenn sie verwirklicht sind. Verluste schon, wenn sie drohen.",
+        "Fünftens und sechstens: Alles kommt in das richtige Jahr, und die Methoden bleiben gleich."
+      ],
+      "ton": "lf10-ansatz-bewertung/s02.wav",
+      "zeiten": [
+        {
+          "start": 0.6,
+          "dauer": 3.75
+        },
+        {
+          "start": 4.8,
+          "dauer": 5.143
+        },
+        {
+          "start": 10.393,
+          "dauer": 3.866
+        },
+        {
+          "start": 14.709,
+          "dauer": 4.168
+        },
+        {
+          "start": 19.327,
+          "dauer": 4.899
+        },
+        {
+          "start": 24.677,
+          "dauer": 4.853
+        }
+      ],
+      "dauer": 30.43
+    },
+    {
+      "typ": "sortieren",
+      "daten": {
+        "ueberschrift": "Richtig oder falsch?",
+        "ja": "richtig",
+        "nein": "falsch",
+        "karten": [
+          {
+            "text": "Wein nur noch halb wert: abschreiben",
+            "icon": "📉",
+            "ja": true,
+            "satz": 1
+          },
+          {
+            "text": "Wein jetzt 30.000 € wert: so ansetzen",
+            "icon": "📈",
+            "ja": false,
+            "satz": 2
+          },
+          {
+            "text": "Neu anfangen ohne Vorjahreswerte",
+            "icon": "🆕",
+            "ja": false,
+            "satz": 3
+          },
+          {
+            "text": "Jedes Jahr anders abschreiben",
+            "icon": "🎲",
+            "ja": false,
+            "satz": 4
+          }
+        ]
+      },
+      "saetze": [
+        "Jetzt prüfen wir die Ideen eines Steuerberaters.",
+        "Der Wein ist nur noch halb so viel wert: abschreiben ist richtig. Der drohende Verlust muss sofort gezeigt werden.",
+        "Der Wein ist mehr wert: Ansatz mit 30.000 Euro ist falsch. Höchstens die Anschaffungskosten, also 8.000 Euro.",
+        "Neu anfangen ohne Vorjahreswerte ist falsch. Das verstößt gegen die Bilanzidentität.",
+        "Und jedes Jahr nach Lust abschreiben verstößt gegen die Stetigkeit."
+      ],
+      "ton": "lf10-ansatz-bewertung/s03.wav",
+      "zeiten": [
+        {
+          "start": 0.6,
+          "dauer": 2.763
+        },
+        {
+          "start": 3.813,
+          "dauer": 5.817
+        },
+        {
+          "start": 10.08,
+          "dauer": 7.279
+        },
+        {
+          "start": 17.809,
+          "dauer": 4.748
+        },
+        {
+          "start": 23.008,
+          "dauer": 3.471
+        }
+      ],
+      "dauer": 27.379
+    },
+    {
+      "typ": "fallen",
+      "daten": {
+        "ueberschrift": "Typische Fallen",
+        "karten": [
+          {
+            "titel": "Realisation und Imparität",
+            "text": "Gewinn erst beim Verkauf, Verlust schon, wenn er droht.",
+            "satz": 1
+          },
+          {
+            "titel": "Umlaufvermögen",
+            "text": "Niedrigerer Wert am Stichtag: immer abschreiben, § 253 Abs. 4 HGB.",
+            "satz": 2
+          },
+          {
+            "titel": "Fortführung",
+            "text": "Eine bloße Überlegung, aufzuhören, reicht nicht für Zerschlagungswerte.",
+            "satz": 3
+          }
+        ]
+      },
+      "saetze": [
+        "Drei typische Fallen.",
+        "Erstens: Realisation und Imparität nicht verwechseln. Gewinne erst beim Verkauf, Verluste schon, wenn sie drohen.",
+        "Zweitens: Im Umlaufvermögen muss auf den niedrigeren Wert abgeschrieben werden, auch wenn er nur vorübergehend ist.",
+        "Drittens: Nur weil die Inhaber über das Aufhören nachdenken, gibt es keine Zerschlagungswerte."
+      ],
+      "ton": "lf10-ansatz-bewertung/s04.wav",
+      "zeiten": [
+        {
+          "start": 0.6,
+          "dauer": 1.312
+        },
+        {
+          "start": 2.362,
+          "dauer": 6.827
+        },
+        {
+          "start": 9.639,
+          "dauer": 6.037
+        },
+        {
+          "start": 16.126,
+          "dauer": 5.41
+        }
+      ],
+      "dauer": 22.436
+    },
+    {
+      "typ": "quiz",
+      "daten": {
+        "frage": "Selbst programmierte Software: Darf sie in die Steuerbilanz?",
+        "optionen": [
+          "Ja, Pflicht",
+          "Ja, Wahlrecht",
+          "Nein, Verbot"
+        ],
+        "richtig": 2,
+        "satzDenken": 1,
+        "satzLoesung": 2,
+        "erklaerung": {
+          "text": "§ 5 Abs. 2 EStG",
+          "satz": 3
+        },
+        "stempel": {
+          "index": 1,
+          "text": "nur im HGB",
+          "satz": 3
+        }
+      },
+      "saetze": [
+        "Kurzes Quiz. Selbst programmierte Software: Darf sie in die Steuerbilanz?",
+        "[pause 5]",
+        "Richtig ist C: Nein.",
+        "Im HGB gibt es ein Wahlrecht. Steuerlich dürfen nur gekaufte immaterielle Wirtschaftsgüter aktiviert werden."
+      ],
+      "ton": "lf10-ansatz-bewertung/s05.wav",
+      "zeiten": [
+        {
+          "start": 0.6,
+          "dauer": 4.145
+        },
+        {
+          "start": 5.195,
+          "dauer": 5.0
+        },
+        {
+          "start": 10.645,
+          "dauer": 1.8
+        },
+        {
+          "start": 12.894,
+          "dauer": 7.129
+        }
+      ],
+      "dauer": 20.923
+    },
+    {
+      "typ": "merke",
+      "daten": {
+        "ueberschrift": "Das nimmst du mit",
+        "punkte": [
+          {
+            "text": "Ansatz: Pflicht, Wahlrecht oder Verbot",
+            "satz": 0
+          },
+          {
+            "text": "Höchstens Anschaffungskosten",
+            "satz": 0
+          },
+          {
+            "text": "Verluste sofort, Gewinne erst beim Verkauf",
+            "satz": 1
+          },
+          {
+            "text": "Antwort: richtig/falsch + Grundsatz + Paragraf",
+            "satz": 1
+          }
+        ],
+        "aufruf": "Jetzt üben: LF 10 → Bewertungsgrundsätze"
+      },
+      "saetze": [
+        "Zusammengefasst: Erst klärst du, ob etwas in die Bilanz darf. Dann bewertest du, höchstens mit den Anschaffungskosten.",
+        "Verluste zeigst du sofort, Gewinne erst beim Verkauf. In der Prüfung nennst du immer richtig oder falsch, den Grundsatz und den Paragrafen.",
+        "Im Lernfeld 10 findest du dazu Aufgaben aus dem Unterricht."
+      ],
+      "ton": "lf10-ansatz-bewertung/s06.wav",
+      "zeiten": [
+        {
+          "start": 0.6,
+          "dauer": 6.362
+        },
+        {
+          "start": 7.412,
+          "dauer": 7.245
+        },
+        {
+          "start": 15.107,
+          "dauer": 3.46
+        }
+      ],
+      "dauer": 19.467
+    }
+  ],
+  "dauer": 134.911
+}

@@ -1,0 +1,264 @@
+{
+  "lf": "sk",
+  "kapitel": "Sozialkunde · Arbeitsrecht",
+  "farbe": "#e11d48",
+  "stil": "premium",
+  "id": "sk-mutterschutz",
+  "thema": "Mutterschutz",
+  "titel": "Mutterschutz",
+  "kartentitel": "Mutterschutz: Schutzfristen, Verbote und Geld",
+  "musik": "sk-mutterschutz/musik.wav",
+  "szenen": [
+    {
+      "typ": "intro",
+      "daten": {
+        "kicker": "Sozialkunde · Arbeitsrecht",
+        "titel": "Ein Baby kommt",
+        "untertitel": "Mutterschutz in der Ausbildung und im Job",
+        "betrag": 14,
+        "betragLabel": "Schutzfrist",
+        "einheit": "Wochen",
+        "satzBetrag": 1,
+        "satzTeilen": 2,
+        "personen": [
+          {
+            "name": "Sara",
+            "icon": "🤰"
+          },
+          {
+            "name": "Kanzlei",
+            "icon": "🏢"
+          }
+        ]
+      },
+      "saetze": [
+        "Sara ist Auszubildende und schwanger. Ihr Kind soll am 10. Juni 2026 kommen.",
+        "Wie lange darf sie nicht arbeiten? Und wer zahlt in dieser Zeit?",
+        "Das regelt das Mutterschutzgesetz. Es gilt auch für Azubis und Praktikantinnen."
+      ],
+      "ton": "sk-mutterschutz/s01.wav",
+      "zeiten": [
+        {
+          "start": 0.6,
+          "dauer": 5.538
+        },
+        {
+          "start": 6.588,
+          "dauer": 3.564
+        },
+        {
+          "start": 10.602,
+          "dauer": 4.458
+        }
+      ],
+      "dauer": 15.96
+    },
+    {
+      "typ": "zeitstrahl",
+      "daten": {
+        "ueberschrift": "Die Schutzfristen",
+        "merke": "Kündigungsverbot bis 4 Monate nach der Geburt",
+        "punkte": [
+          {
+            "label": "29.04.2026",
+            "titel": "vorher",
+            "text": "darf nur, wenn sie will",
+            "folge": "jederzeit widerrufbar",
+            "ref": "§ 3 Abs. 1 MuSchG",
+            "satz": 1
+          },
+          {
+            "label": "05.08.2026",
+            "titel": "nachher",
+            "text": "absolutes Arbeitsverbot",
+            "folge": "12 Wochen bei Frühgeburt",
+            "ref": "§ 3 Abs. 2 MuSchG",
+            "satz": 2
+          }
+        ]
+      },
+      "saetze": [
+        "Die Schutzfrist beginnt 6 Wochen vor dem errechneten Termin, also am 29. April. Sara darf dann nur arbeiten, wenn sie es ausdrücklich will.",
+        "Kommt das Kind am 10. Juni, endet die Frist 8 Wochen danach, am 5. August. In dieser Zeit darf sie auf keinen Fall arbeiten.",
+        "Bei Früh- und Mehrlingsgeburten sind es 12 Wochen.",
+        "Und während der Schwangerschaft und bis 4 Monate nach der Geburt darf der Arbeitgeber nicht kündigen."
+      ],
+      "ton": "sk-mutterschutz/s02.wav",
+      "zeiten": [
+        {
+          "start": 0.6,
+          "dauer": 8.034
+        },
+        {
+          "start": 9.084,
+          "dauer": 7.349
+        },
+        {
+          "start": 16.883,
+          "dauer": 3.216
+        },
+        {
+          "start": 20.549,
+          "dauer": 4.969
+        }
+      ],
+      "dauer": 26.418
+    },
+    {
+      "typ": "sortieren",
+      "daten": {
+        "ueberschrift": "Erlaubt in der Schwangerschaft?",
+        "ja": "erlaubt",
+        "nein": "verboten",
+        "karten": [
+          {
+            "text": "8 Stunden im Büro",
+            "icon": "💻",
+            "ja": true,
+            "satz": 1
+          },
+          {
+            "text": "Arbeit bis 22 Uhr",
+            "icon": "🌙",
+            "ja": false,
+            "satz": 2
+          },
+          {
+            "text": "Sonntagsarbeit",
+            "icon": "📅",
+            "ja": false,
+            "satz": 2
+          },
+          {
+            "text": "Fließbandarbeit",
+            "icon": "🏭",
+            "ja": false,
+            "satz": 3
+          }
+        ]
+      },
+      "saetze": [
+        "Auch vor der Schutzfrist gelten Grenzen.",
+        "Bis zu 8,5 Stunden am Tag darf Sara arbeiten, zum Beispiel 8 Stunden im Büro.",
+        "Arbeit zwischen 20 und 6 Uhr und an Sonn- und Feiertagen ist grundsätzlich verboten.",
+        "Gefährliche Arbeit wie Fließband oder Akkord ebenfalls. Dann wird zuerst der Arbeitsplatz umgestaltet."
+      ],
+      "ton": "sk-mutterschutz/s03.wav",
+      "zeiten": [
+        {
+          "start": 0.6,
+          "dauer": 2.067
+        },
+        {
+          "start": 3.117,
+          "dauer": 4.865
+        },
+        {
+          "start": 8.431,
+          "dauer": 5.399
+        },
+        {
+          "start": 14.28,
+          "dauer": 5.77
+        }
+      ],
+      "dauer": 20.95
+    },
+    {
+      "typ": "quiz",
+      "daten": {
+        "frage": "Wer zahlt Sara während der Schutzfristen?",
+        "optionen": [
+          "Arbeitgeber: Mutterschutzlohn",
+          "Krankenkasse plus Zuschuss vom Arbeitgeber",
+          "Niemand"
+        ],
+        "richtig": 1,
+        "satzDenken": 1,
+        "satzLoesung": 2,
+        "erklaerung": {
+          "text": "§§ 19, 20 MuSchG",
+          "satz": 3
+        },
+        "stempel": {
+          "index": 0,
+          "text": "außerhalb der Fristen",
+          "satz": 3
+        }
+      },
+      "saetze": [
+        "Kurzes Quiz. Wer zahlt Sara während der Schutzfristen?",
+        "[pause 5]",
+        "Richtig ist B: Die Krankenkasse zahlt Mutterschaftsgeld, höchstens 13 Euro am Tag, und der Arbeitgeber legt den Rest bis zum Nettolohn drauf.",
+        "Mutterschutzlohn gibt es nur bei einem Beschäftigungsverbot außerhalb der Schutzfristen."
+      ],
+      "ton": "sk-mutterschutz/s04.wav",
+      "zeiten": [
+        {
+          "start": 0.6,
+          "dauer": 3.042
+        },
+        {
+          "start": 4.092,
+          "dauer": 5.0
+        },
+        {
+          "start": 9.542,
+          "dauer": 8.034
+        },
+        {
+          "start": 18.026,
+          "dauer": 4.551
+        }
+      ],
+      "dauer": 23.477
+    },
+    {
+      "typ": "merke",
+      "daten": {
+        "ueberschrift": "Das nimmst du mit",
+        "punkte": [
+          {
+            "text": "6 Wochen vorher, 8 Wochen nachher",
+            "satz": 0
+          },
+          {
+            "text": "Kein Nachtdienst, kein Sonntag, nichts Gefährliches",
+            "satz": 0
+          },
+          {
+            "text": "Kündigungsverbot bis 4 Monate nach Geburt",
+            "satz": 1
+          },
+          {
+            "text": "Mutterschaftsgeld ist nicht Mutterschutzlohn",
+            "satz": 1
+          }
+        ],
+        "aufruf": "Jetzt üben: Sozialkunde → Mutterschutz"
+      },
+      "saetze": [
+        "Zusammengefasst: Die Schutzfrist dauert 6 Wochen vor und 8 Wochen nach der Geburt. Nachtarbeit, Sonntagsarbeit und gefährliche Arbeit sind verboten.",
+        "Bis 4 Monate nach der Geburt darf nicht gekündigt werden. Und verwechsle nicht Mutterschaftsgeld der Krankenkasse mit dem Mutterschutzlohn des Arbeitgebers.",
+        "In der Sozialkunde findest du dazu Übungen mit Stimme."
+      ],
+      "ton": "sk-mutterschutz/s05.wav",
+      "zeiten": [
+        {
+          "start": 0.6,
+          "dauer": 8.301
+        },
+        {
+          "start": 9.351,
+          "dauer": 7.744
+        },
+        {
+          "start": 17.545,
+          "dauer": 3.042
+        }
+      ],
+      "dauer": 21.487
+    }
+  ],
+  "dauer": 108.292
+}
