@@ -3,56 +3,6 @@
    datei und poster (Pfade im Artefakt). Neueste Einträge unten anhängen, nie alte löschen. */
 window.ERKLAERVIDEOS = [
  {
-  "id": "lf10-anschaffungskosten",
-  "lf": "lf10",
-  "thema": "Anschaffungskosten",
-  "titel": "Anschaffungskosten: Rabatt, Skonto und Nebenkosten",
-  "datum": "2026-11-24",
-  "sek": 286.2,
-  "datei": "videos/erklaer/lf10-anschaffungskosten.mp4",
-  "poster": "videos/erklaer/lf10-anschaffungskosten.jpg"
- },
- {
-  "id": "lf10-herstellungskosten",
-  "lf": "lf10",
-  "thema": "Herstellungskosten",
-  "titel": "Herstellungskosten: Wertuntergrenze, Wertobergrenze und Eigenleistung",
-  "datum": "2026-11-24",
-  "sek": 250.2,
-  "datei": "videos/erklaer/lf10-herstellungskosten.mp4",
-  "poster": "videos/erklaer/lf10-herstellungskosten.jpg"
- },
- {
-  "id": "lf10-teilwert",
-  "lf": "lf10",
-  "thema": "Abschreibung, Teilwert und Zuschreibung",
-  "titel": "Abschreibung, Teilwert und Zuschreibung: dauerhaft oder nicht?",
-  "datum": "2026-11-24",
-  "sek": 254.7,
-  "datei": "videos/erklaer/lf10-teilwert.mp4",
-  "poster": "videos/erklaer/lf10-teilwert.jpg"
- },
- {
-  "id": "lf5-beitraege",
-  "lf": "lf5",
-  "thema": "Beiträge berechnen: Grenzen und Beitragssätze 2026",
-  "titel": "Sozialversicherungsbeiträge 2026: Sätze und Grenzen",
-  "datum": "2026-11-24",
-  "sek": 218.0,
-  "datei": "videos/erklaer/lf5-beitraege.mp4",
-  "poster": "videos/erklaer/lf5-beitraege.jpg"
- },
- {
-  "id": "lf10-zeitliche-abgrenzung",
-  "lf": "lf10",
-  "thema": "Zeitliche Abgrenzung",
-  "titel": "Zeitliche Abgrenzung: ARAP, PRAP und sonstige Verbindlichkeiten",
-  "datum": "2026-11-24",
-  "sek": 228.7,
-  "datei": "videos/erklaer/lf10-zeitliche-abgrenzung.mp4",
-  "poster": "videos/erklaer/lf10-zeitliche-abgrenzung.jpg"
- },
- {
   "id": "lf8-gewinnverteilung",
   "lf": "lf8",
   "thema": "Rechtsformen und Gewinnverteilung",
@@ -211,5 +161,105 @@ window.ERKLAERVIDEOS = [
   "sek": 138.5,
   "datei": "videos/erklaer/lf6-ehepaare-fristen.mp4",
   "poster": "videos/erklaer/lf6-ehepaare-fristen.jpg"
+ },
+ {
+  "id": "lf10-grundlagen",
+  "lf": "lf10",
+  "thema": "Grundlagen des Jahresabschlusses",
+  "titel": "Grundlagen: Wer bilanziert und was gehört zum Jahresabschluss?",
+  "datum": "2026-11-25",
+  "sek": 132.1,
+  "datei": "videos/erklaer/lf10-grundlagen.mp4",
+  "poster": "videos/erklaer/lf10-grundlagen.jpg"
+ },
+ {
+  "id": "lf10-ansatz-bewertung",
+  "lf": "lf10",
+  "thema": "Ansatz- und Bewertungsgrundsätze",
+  "titel": "Ansatz- und Bewertungsgrundsätze: die Regeln aus § 252 HGB",
+  "datum": "2026-11-25",
+  "sek": 134.9,
+  "datei": "videos/erklaer/lf10-ansatz-bewertung.mp4",
+  "poster": "videos/erklaer/lf10-ansatz-bewertung.jpg"
+ },
+ {
+  "id": "lf10-anschaffungskosten",
+  "lf": "lf10",
+  "thema": "Anschaffungskosten",
+  "titel": "Anschaffungskosten: Rabatt, Skonto und Nebenkosten",
+  "datum": "2026-11-25",
+  "sek": 117.5,
+  "datei": "videos/erklaer/lf10-anschaffungskosten.mp4",
+  "poster": "videos/erklaer/lf10-anschaffungskosten.jpg"
+ },
+ {
+  "id": "lf10-herstellungskosten",
+  "lf": "lf10",
+  "thema": "Herstellungskosten",
+  "titel": "Herstellungskosten: Wertuntergrenze, Wertobergrenze und Eigenleistung",
+  "datum": "2026-11-25",
+  "sek": 130.5,
+  "datei": "videos/erklaer/lf10-herstellungskosten.mp4",
+  "poster": "videos/erklaer/lf10-herstellungskosten.jpg"
+ },
+ {
+  "id": "lf10-teilwert",
+  "lf": "lf10",
+  "thema": "Abschreibung, Teilwert und Zuschreibung",
+  "titel": "Abschreibung, Teilwert und Zuschreibung: dauerhaft oder nicht?",
+  "datum": "2026-11-25",
+  "sek": 138.8,
+  "datei": "videos/erklaer/lf10-teilwert.mp4",
+  "poster": "videos/erklaer/lf10-teilwert.jpg"
+ },
+ {
+  "id": "lf10-zeitliche-abgrenzung",
+  "lf": "lf10",
+  "thema": "Zeitliche Abgrenzung",
+  "titel": "Zeitliche Abgrenzung: ARAP, PRAP und sonstige Verbindlichkeiten",
+  "datum": "2026-11-25",
+  "sek": 128.1,
+  "datei": "videos/erklaer/lf10-zeitliche-abgrenzung.mp4",
+  "poster": "videos/erklaer/lf10-zeitliche-abgrenzung.jpg"
+ },
+ {
+  "id": "lf5-zweige",
+  "lf": "lf5",
+  "thema": "Die fünf Zweige der Sozialversicherung",
+  "titel": "Die fünf Zweige der Sozialversicherung: wer zahlt, wer kassiert?",
+  "datum": "2026-11-25",
+  "sek": 114.7,
+  "datei": "videos/erklaer/lf5-zweige.mp4",
+  "poster": "videos/erklaer/lf5-zweige.jpg"
+ },
+ {
+  "id": "lf5-beitraege",
+  "lf": "lf5",
+  "thema": "Beiträge berechnen: Grenzen und Beitragssätze 2026",
+  "titel": "Sozialversicherungsbeiträge 2026: Sätze und Grenzen",
+  "datum": "2026-11-25",
+  "sek": 153.4,
+  "datei": "videos/erklaer/lf5-beitraege.mp4",
+  "poster": "videos/erklaer/lf5-beitraege.jpg"
+ },
+ {
+  "id": "sk-bewerbung",
+  "lf": "sk",
+  "thema": "Bewerbung und Regeln im Arbeitsrecht",
+  "titel": "Bewerbung: Rangfolge im Arbeitsrecht und erlaubte Fragen",
+  "datum": "2026-11-25",
+  "sek": 115.9,
+  "datei": "videos/erklaer/sk-bewerbung.mp4",
+  "poster": "videos/erklaer/sk-bewerbung.jpg"
+ },
+ {
+  "id": "sk-arbeitsvertrag",
+  "lf": "sk",
+  "thema": "Arbeitsvertrag: Form, Befristung, Rechte und Pflichten",
+  "titel": "Arbeitsvertrag: Form, Befristung, Rechte und Pflichten",
+  "datum": "2026-11-25",
+  "sek": 103.9,
+  "datei": "videos/erklaer/sk-arbeitsvertrag.mp4",
+  "poster": "videos/erklaer/sk-arbeitsvertrag.jpg"
  }
 ];
