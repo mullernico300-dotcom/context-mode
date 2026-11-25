@@ -131,5 +131,25 @@ window.ERKLAERVIDEOS = [
   "sek": 244.2,
   "datei": "videos/erklaer/lf8-gewinnverteilung.mp4",
   "poster": "videos/erklaer/lf8-gewinnverteilung.jpg"
+ },
+ {
+  "id": "lf8-grundbegriffe",
+  "lf": "lf8",
+  "thema": "Grundbegriffe: Einkünfte und das Rechenschema",
+  "titel": "Die sieben Einkunftsarten und das Rechenschema",
+  "datum": "2026-11-25",
+  "sek": 120.8,
+  "datei": "videos/erklaer/lf8-grundbegriffe.mp4",
+  "poster": "videos/erklaer/lf8-grundbegriffe.jpg"
+ },
+ {
+  "id": "lf8-gewerbebetrieb",
+  "lf": "lf8",
+  "thema": "Gewerbebetrieb",
+  "titel": "Wann liegt ein Gewerbebetrieb vor?",
+  "datum": "2026-11-25",
+  "sek": 119.5,
+  "datei": "videos/erklaer/lf8-gewerbebetrieb.mp4",
+  "poster": "videos/erklaer/lf8-gewerbebetrieb.jpg"
  }
 ];
