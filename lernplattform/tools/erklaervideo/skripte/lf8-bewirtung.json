@@ -1,67 +1,39 @@
 {
-  "id": "lf8-bewirtung",
   "lf": "lf8",
-  "thema": "Bewirtung",
   "kapitel": "LF 8 · Gewinneinkünfte",
+  "farbe": "#3b82f6",
+  "stil": "premium",
+  "id": "lf8-bewirtung",
+  "thema": "Bewirtung",
   "titel": "Bewirtung",
   "kartentitel": "Bewirtung von Geschäftsfreunden: 70 Prozent und volle Vorsteuer",
-  "farbe": "#2f6fd1",
+  "musik": "lf8-bewirtung/musik.wav",
   "szenen": [
     {
-      "typ": "titel",
+      "typ": "intro",
       "daten": {
         "kicker": "LF 8 · Gewinneinkünfte",
-        "titel": "Bewirtung",
-        "untertitel": "Geschäftsessen richtig abziehen und buchen",
-        "preis": "70 %",
-        "preisLabel": "Betriebsausgabe"
-      },
-      "saetze": [
-        "Ein Mandant lädt zwei Kunden zum Geschäftsessen ein. Die Rechnung landet bei dir in der Buchhaltung.",
-        "Wie viel davon ist Betriebsausgabe? Und wie viel Vorsteuer gibt es?",
-        "Bei der Bewirtung gilt eine besondere Regel: 70 Prozent."
-      ]
-    },
-    {
-      "typ": "formel",
-      "daten": {
-        "ueberschrift": "So gehst du vor",
-        "ref": "§ 4 Abs. 5 S. 1 Nr. 2 EStG",
-        "zeilen": [
+        "titel": "Geschäftsessen buchen",
+        "untertitel": "70 Prozent und volle Vorsteuer",
+        "betrag": 333,
+        "betragLabel": "Rechnung brutto",
+        "satzBetrag": 1,
+        "satzTeilen": 2,
+        "personen": [
           {
-            "zeichen": "1",
-            "text": "Netto und Umsatzsteuer trennen",
-            "info": "Speisen 7 %, Getränke 19 %"
+            "name": "Mandant",
+            "icon": "👔"
           },
           {
-            "zeichen": "2",
-            "text": "Angemessen?",
-            "info": "Unangemessenes ist nie abziehbar"
-          },
-          {
-            "zeichen": "3",
-            "text": "70 % Betriebsausgabe",
-            "info": "Bewirtungskosten"
-          },
-          {
-            "zeichen": "4",
-            "text": "30 % nicht abziehbar",
-            "info": "eigenes Konto"
-          },
-          {
-            "zeichen": "5",
-            "text": "Vorsteuer zu 100 %",
-            "info": "§ 15 Abs. 1a S. 2 UStG"
+            "name": "Kunde",
+            "icon": "🤝"
           }
         ]
       },
       "saetze": [
-        "Die Regel steht in Paragraf 4 Absatz 5 Satz 1 Nummer 2 des Einkommensteuergesetzes.",
-        "Erstens: Trenne netto und Umsatzsteuer. Seit 2026 gilt für Speisen im Restaurant 7 Prozent, für Getränke weiter 19 Prozent.",
-        "Zweitens: Ist das Essen angemessen? Unangemessene Kosten sind überhaupt nicht abziehbar.",
-        "Drittens: 70 Prozent der angemessenen Kosten sind Betriebsausgabe.",
-        "Viertens: Die übrigen 30 Prozent sind nicht abziehbar und kommen auf ein eigenes Konto.",
-        "Fünftens: Die Vorsteuer ist trotzdem zu 100 Prozent abziehbar."
+        "Ein Mandant lädt zwei Kunden zum Essen ein.",
+        "Die Rechnung: 333 Euro. Wie viel davon ist Betriebsausgabe, und wie viel Vorsteuer gibt es?",
+        "Die Regel: 70 Prozent, und die Vorsteuer voll."
       ]
     },
     {
@@ -99,50 +71,41 @@
         ]
       },
       "saetze": [
-        "Ein Beispiel aus dem März 2026.",
-        "Die Speisen kosten 200 Euro netto, dazu 7 Prozent Umsatzsteuer, also 14 Euro.",
-        "Die Getränke kosten 100 Euro netto, dazu 19 Prozent, also 19 Euro.",
-        "Der Mandant bezahlt insgesamt 333 Euro per Bank.",
-        "Speisen und Getränke stehen getrennt auf der Rechnung, weil die Steuersätze verschieden sind."
+        "Die Rechnung vom März 2026.",
+        "Speisen 200 Euro netto, dazu 7 Prozent, also 14 Euro.",
+        "Getränke 100 Euro netto, dazu 19 Prozent, also 19 Euro.",
+        "Zusammen 333 Euro."
       ]
     },
     {
-      "typ": "wasserfall",
+      "typ": "kreis",
       "daten": {
-        "kurzTitel": "70 und 30 Prozent",
-        "sachverhalt": "Netto kostet das Geschäftsessen 300 €. Die Kosten sind angemessen, ein ordnungsgemäßer Beleg liegt vor.",
-        "balken": [
+        "ueberschrift": "70 zu 30",
+        "betrag": 300,
+        "betragLabel": "Netto aufzuteilen",
+        "mitte": {
+          "oben": "7 : 3",
+          "unten": "1 Teil = 30 €",
+          "satz": 0
+        },
+        "teile": [
           {
-            "label": "netto gesamt",
-            "wert": 300,
-            "art": "start",
+            "label": "Abzug",
+            "anteil": 7,
             "satz": 1
           },
           {
-            "label": "− 30 % nicht abziehbar",
-            "wert": -90,
-            "art": "minus",
+            "label": "kein Abzug",
+            "anteil": 3,
             "satz": 2
-          },
-          {
-            "label": "Betriebsausgabe",
-            "wert": 210,
-            "art": "ergebnis",
-            "satz": 3
           }
-        ],
-        "notiz": {
-          "text": "Vorsteuer 14 € + 19 € = 33 € voll abziehbar",
-          "satz": 4
-        }
+        ]
       },
       "saetze": [
-        "Jetzt die Aufteilung.",
         "Netto kostet das Essen 300 Euro.",
-        "30 Prozent davon, also 90 Euro, sind nicht abziehbar.",
         "70 Prozent, also 210 Euro, sind Betriebsausgabe.",
-        "Und die Vorsteuer von insgesamt 33 Euro gibt es komplett zurück, nicht nur zu 70 Prozent.",
-        "Rechne also immer zuerst mit netto und lass die Vorsteuer aus der Aufteilung heraus."
+        "30 Prozent, also 90 Euro, sind nicht abziehbar.",
+        "Die Vorsteuer von 33 Euro gibt es trotzdem komplett zurück."
       ]
     },
     {
@@ -185,86 +148,38 @@
         }
       },
       "saetze": [
-        "Gebucht wird in einem Buchungssatz.",
-        "Bewirtungskosten 210 Euro, nicht abziehbare Bewirtungskosten 90 Euro, Vorsteuer 7 Prozent 14 Euro und Vorsteuer 19 Prozent 19 Euro an Bank 333 Euro.",
-        "Mach immer die Probe: Die Summe im Soll muss den Bruttobetrag ergeben.",
-        "Die 90 Euro mindern zwar den Gewinn in der Buchführung. In der Steuererklärung werden sie aber wieder hinzugerechnet."
+        "Gebucht wird in einem Satz.",
+        "Bewirtungskosten 210, nicht abziehbare Bewirtungskosten 90, Vorsteuer 14 und 19 Euro an Bank 333 Euro.",
+        "Probe: Die Summe im Soll ergibt genau den Bruttobetrag."
       ]
     },
     {
-      "typ": "sortieren",
+      "typ": "quiz",
       "daten": {
-        "ueberschrift": "Was muss auf den Beleg?",
-        "ja": "muss drauf",
-        "nein": "reicht nicht",
-        "karten": [
-          {
-            "text": "Ort und Tag",
-            "icon": "📍",
-            "ja": true,
-            "satz": 1
-          },
-          {
-            "text": "Teilnehmer",
-            "icon": "👥",
-            "ja": true,
-            "satz": 1
-          },
-          {
-            "text": "Anlass",
-            "icon": "💼",
-            "ja": true,
-            "satz": 1
-          },
-          {
-            "text": "maschinelle Rechnung",
-            "icon": "🧾",
-            "ja": true,
-            "satz": 2
-          },
-          {
-            "text": "handgeschriebene Quittung",
-            "icon": "✍️",
-            "ja": false,
-            "satz": 3
-          }
-        ]
+        "frage": "Wie viel Vorsteuer darf der Mandant aus der Rechnung abziehen?",
+        "optionen": [
+          "70 % von 33 € = 23,10 €",
+          "Die vollen 33 €",
+          "Gar keine"
+        ],
+        "richtig": 1,
+        "satzDenken": 1,
+        "satzLoesung": 2,
+        "erklaerung": {
+          "text": "§ 15 Abs. 1a S. 2 UStG",
+          "satz": 3
+        },
+        "stempel": {
+          "index": 0,
+          "text": "falsch gekürzt",
+          "satz": 3
+        }
       },
       "saetze": [
-        "Ohne Nachweis gibt es gar nichts.",
-        "Auf den Beleg gehören Ort, Tag, Teilnehmer, Anlass und Höhe der Kosten.",
-        "Die Rechnung muss maschinell erstellt sein. Über 250 Euro muss außerdem der Name des Unternehmers draufstehen.",
-        "Eine handgeschriebene Quittung reicht nicht.",
-        "Fehlt eine dieser Angaben, ist die ganze Bewirtung nicht abziehbar."
-      ]
-    },
-    {
-      "typ": "fallen",
-      "daten": {
-        "ueberschrift": "Typische Fallen",
-        "karten": [
-          {
-            "titel": "Vorsteuer gekürzt",
-            "text": "Die Vorsteuer ist zu 100 % abziehbar, nicht zu 70 %.",
-            "satz": 1
-          },
-          {
-            "titel": "Unangemessenes aufgeteilt",
-            "text": "Der unangemessene Teil wird nicht noch einmal 70/30 aufgeteilt.",
-            "satz": 2
-          },
-          {
-            "titel": "Feier mit Mitarbeitern",
-            "text": "Eine Feier nur mit eigenen Leuten ist keine Bewirtung von Geschäftsfreunden.",
-            "satz": 3
-          }
-        ]
-      },
-      "saetze": [
-        "Drei typische Fehler.",
-        "Erstens: die Vorsteuer auf 70 Prozent kürzen. Sie ist voll abziehbar.",
-        "Zweitens: unangemessene Kosten noch einmal 70 zu 30 aufteilen. Sie sind komplett nicht abziehbar.",
-        "Drittens: eine Feier nur mit eigenen Mitarbeitern als Bewirtung buchen. Dafür gelten andere Regeln."
+        "Kurzes Quiz. Wie viel Vorsteuer darf der Mandant abziehen?",
+        "[pause 5]",
+        "Richtig ist B: die vollen 33 Euro.",
+        "Die Kürzung auf 70 Prozent gilt nur für die Betriebsausgabe, nicht für die Vorsteuer."
       ]
     },
     {
@@ -292,9 +207,9 @@
         "aufruf": "Jetzt üben: LF 8 → Bewirtung"
       },
       "saetze": [
-        "Zusammengefasst: 70 Prozent der angemessenen Kosten sind Betriebsausgabe, 30 Prozent nicht. Die Vorsteuer ist trotzdem voll abziehbar.",
-        "Seit 2026 gilt für Speisen 7 Prozent und für Getränke 19 Prozent. Und auf den Beleg gehören Ort, Tag, Teilnehmer, Anlass und Höhe.",
-        "Im Lernfeld 8 findest du dazu Übungsaufgaben mit Stimme."
+        "Zusammengefasst: 70 Prozent Betriebsausgabe, 30 Prozent nicht abziehbar, die Vorsteuer voll.",
+        "Seit 2026 gilt für Speisen 7 Prozent, für Getränke 19 Prozent. Und auf den Beleg gehören Ort, Tag, Teilnehmer, Anlass und Höhe.",
+        "Im Lernfeld 8 findest du dazu Übungen mit Stimme."
       ]
     }
   ]

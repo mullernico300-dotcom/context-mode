@@ -1,117 +1,61 @@
 {
- "id": "lf8-geschenke",
  "lf": "lf8",
- "thema": "Geschenke",
  "kapitel": "LF 8 · Gewinneinkünfte",
+ "farbe": "#3b82f6",
+ "stil": "premium",
+ "id": "lf8-geschenke",
+ "thema": "Geschenke",
  "titel": "Geschenke",
  "kartentitel": "Geschenke an Geschäftsfreunde: die 50-Euro-Freigrenze",
- "farbe": "#2f6fd1",
+ "musik": "lf8-geschenke/musik.wav",
  "szenen": [
   {
-   "typ": "titel",
+   "typ": "intro",
    "daten": {
     "kicker": "LF 8 · Gewinneinkünfte",
-    "titel": "Geschenke",
-    "untertitel": "Wann sind Geschenke an Kunden abziehbar?",
-    "preis": "50 €",
-    "preisLabel": "pro Empfänger und Jahr"
+    "titel": "Abziehbar oder nicht?",
+    "untertitel": "Geschenke an Geschäftsfreunde",
+    "betrag": 50,
+    "betragLabel": "Freigrenze netto",
+    "satzBetrag": 1,
+    "satzTeilen": 2,
+    "personen": [
+     {
+      "name": "Meyer",
+      "icon": "🍷"
+     },
+     {
+      "name": "Schulz",
+      "icon": "🎁"
+     }
+    ]
    },
    "saetze": [
-    "Weihnachten in der Kanzlei: Ein Mandant hat seinen besten Kunden Weinpräsente geschenkt und will die Kosten als Betriebsausgabe abziehen.",
-    "Geht das? Und gibt es die Vorsteuer zurück?",
-    "Alles hängt an einer Zahl: 50 Euro."
+    "Weihnachten: Ein Mandant beschenkt seine besten Kunden.",
+    "Darf er die Kosten abziehen? Alles hängt an 50 Euro netto pro Person und Jahr.",
+    "Und an einer Frage: Freigrenze oder Freibetrag?"
    ],
    "ton": "lf8-geschenke/s01.wav",
    "zeiten": [
     {
      "start": 0.6,
-     "dauer": 6.966
+     "dauer": 2.81
     },
     {
-     "start": 8.016,
-     "dauer": 2.821
+     "start": 3.86,
+     "dauer": 4.667
     },
     {
-     "start": 11.287,
-     "dauer": 2.589
+     "start": 8.977,
+     "dauer": 2.984
     }
    ],
-   "dauer": 14.776
-  },
-  {
-   "typ": "formel",
-   "daten": {
-    "ueberschrift": "So prüfst du",
-    "ref": "§ 4 Abs. 5 S. 1 Nr. 1 EStG",
-    "zeilen": [
-     {
-      "zeichen": "1",
-      "text": "Ist es ein Geschenk?",
-      "info": "unentgeltlich, an Kunden oder Geschäftsfreunde"
-     },
-     {
-      "zeichen": "2",
-      "text": "Nur im Betrieb nutzbar?",
-      "info": "dann voll abziehbar"
-     },
-     {
-      "zeichen": "3",
-      "text": "Alles an diese Person zusammenrechnen",
-      "info": "netto, für das ganze Jahr"
-     },
-     {
-      "zeichen": "4",
-      "text": "Höchstens 50 € netto",
-      "info": "abziehbar, mit Vorsteuer"
-     },
-     {
-      "zeichen": "5",
-      "text": "Mehr als 50 €",
-      "info": "nichts abziehbar, keine Vorsteuer"
-     }
-    ]
-   },
-   "saetze": [
-    "Die Regel steht in Paragraf 4 Absatz 5 Satz 1 Nummer 1 des Einkommensteuergesetzes. Prüfe in fünf Schritten.",
-    "Erstens: Ist es überhaupt ein Geschenk? Also ohne Gegenleistung, an Kunden oder Geschäftsfreunde, nicht an eigene Mitarbeiter.",
-    "Zweitens: Kann der Empfänger das Geschenk nur im Betrieb nutzen, zum Beispiel ein Fachbuch für einen Arzt? Dann ist es voll abziehbar.",
-    "Drittens: Rechne alle Geschenke an diese Person im ganzen Jahr zusammen, netto.",
-    "Viertens: Sind es höchstens 50 Euro, ist alles abziehbar und die Vorsteuer auch.",
-    "Fünftens: Sind es mehr als 50 Euro, ist gar nichts abziehbar, und die Vorsteuer gibt es auch nicht."
-   ],
-   "ton": "lf8-geschenke/s02.wav",
-   "zeiten": [
-    {
-     "start": 0.6,
-     "dauer": 7.047
-    },
-    {
-     "start": 8.097,
-     "dauer": 7.349
-    },
-    {
-     "start": 15.896,
-     "dauer": 7.117
-    },
-    {
-     "start": 23.463,
-     "dauer": 4.331
-    },
-    {
-     "start": 28.244,
-     "dauer": 4.841
-    },
-    {
-     "start": 33.535,
-     "dauer": 6.026
-    }
-   ],
-   "dauer": 40.461
+   "dauer": 12.861
   },
   {
    "typ": "grenze",
    "daten": {
-    "ueberschrift": "Freigrenze: ein Cent zu viel und alles ist weg",
+    "ueberschrift": "Freigrenze: ein Cent zu viel",
     "grenze": 50,
     "grenzeLabel": "Grenze 50 € netto",
     "max": 70,
@@ -129,113 +73,37 @@
     ],
     "ergebnis": {
      "text": "55 € – alles nicht abziehbar",
+     "ok": false,
      "satz": 3
     },
-    "ref": "Freigrenze"
+    "ref": "§ 4 Abs. 5 S. 1 Nr. 1 EStG"
    },
    "saetze": [
-    "Wichtig: Die 50 Euro sind eine Freigrenze und kein Freibetrag.",
-    "Kunde Meyer bekommt im Dezember ein Weinpräsent für 45 Euro netto. Das liegt unter der Grenze.",
-    "Im Sommer hatte er aber schon einen Kalender für 10 Euro bekommen. Zusammen sind das 55 Euro.",
-    "Damit ist die Grenze überschritten, und zwar nicht nur um 5 Euro. Beide Geschenke sind komplett nicht abziehbar."
+    "Die 50 Euro sind eine Freigrenze, kein Freibetrag.",
+    "Kunde Meyer bekommt im Dezember Wein für 45 Euro netto.",
+    "Im Sommer gab es schon einen Kalender für 10 Euro. Zusammen sind das 55 Euro.",
+    "Damit ist die Grenze überschritten, und beide Geschenke sind komplett nicht abziehbar."
    ],
-   "ton": "lf8-geschenke/s03.wav",
+   "ton": "lf8-geschenke/s02.wav",
    "zeiten": [
     {
      "start": 0.6,
-     "dauer": 4.087
+     "dauer": 3.32
     },
     {
-     "start": 5.137,
-     "dauer": 6.258
+     "start": 4.37,
+     "dauer": 4.04
     },
     {
-     "start": 11.844,
-     "dauer": 5.979
+     "start": 8.861,
+     "dauer": 5.526
     },
     {
-     "start": 18.274,
-     "dauer": 5.898
+     "start": 14.837,
+     "dauer": 4.261
     }
    ],
-   "dauer": 25.071
-  },
-  {
-   "typ": "sortieren",
-   "daten": {
-    "ueberschrift": "Was zählt für die 50 Euro?",
-    "ja": "zählt mit",
-    "nein": "zählt nicht",
-    "karten": [
-     {
-      "text": "Nettopreis",
-      "icon": "🏷️",
-      "ja": true,
-      "satz": 1
-     },
-     {
-      "text": "weitere Geschenke im Jahr",
-      "icon": "🎁",
-      "ja": true,
-      "satz": 1
-     },
-     {
-      "text": "Geldgeschenk",
-      "icon": "💶",
-      "ja": true,
-      "satz": 2
-     },
-     {
-      "text": "Verpackung",
-      "icon": "📦",
-      "ja": false,
-      "satz": 3
-     },
-     {
-      "text": "Versand",
-      "icon": "🚚",
-      "ja": false,
-      "satz": 3
-     },
-     {
-      "text": "abziehbare Vorsteuer",
-      "icon": "🧾",
-      "ja": false,
-      "satz": 4
-     }
-    ]
-   },
-   "saetze": [
-    "Was zählt für die 50 Euro mit?",
-    "Der Nettopreis und alle weiteren Geschenke an dieselbe Person im selben Jahr.",
-    "Auch Geld zählt mit, obwohl dafür keine Umsatzsteuer anfällt.",
-    "Verpackung und Versand zählen nicht.",
-    "Und die abziehbare Vorsteuer auch nicht. Deshalb rechnest du immer netto."
-   ],
-   "ton": "lf8-geschenke/s04.wav",
-   "zeiten": [
-    {
-     "start": 0.6,
-     "dauer": 1.997
-    },
-    {
-     "start": 3.047,
-     "dauer": 4.029
-    },
-    {
-     "start": 7.526,
-     "dauer": 3.495
-    },
-    {
-     "start": 11.47,
-     "dauer": 2.125
-    },
-    {
-     "start": 14.045,
-     "dauer": 3.495
-    }
-   ],
-   "dauer": 18.439
+   "dauer": 19.998
   },
   {
    "typ": "stapel",
@@ -272,31 +140,31 @@
     ]
    },
    "saetze": [
-    "Ein beliebter Prüfungstrick: Das Geschenk kostet brutto 59 Euro 50.",
-    "Bei 19 Prozent Umsatzsteuer stecken darin 9 Euro 50 Umsatzsteuer.",
-    "Netto sind das genau 50 Euro. Und genau 50 Euro sind noch erlaubt.",
-    "Das Geschenk ist also abziehbar, und die Vorsteuer gibt es zurück."
+    "Ein beliebter Prüfungstrick.",
+    "Das Geschenk kostet 59 Euro 50 brutto. Darin stecken 9 Euro 50 Umsatzsteuer.",
+    "Netto sind das genau 50 Euro, und genau 50 Euro sind noch erlaubt.",
+    "Also abziehbar, und die Vorsteuer gibt es zurück."
    ],
-   "ton": "lf8-geschenke/s05.wav",
+   "ton": "lf8-geschenke/s03.wav",
    "zeiten": [
     {
      "start": 0.6,
-     "dauer": 4.923
+     "dauer": 1.707
     },
     {
-     "start": 5.973,
-     "dauer": 4.818
+     "start": 2.757,
+     "dauer": 6.223
     },
     {
-     "start": 11.241,
+     "start": 9.43,
      "dauer": 4.621
     },
     {
-     "start": 16.312,
-     "dauer": 3.425
+     "start": 14.5,
+     "dauer": 3.007
     }
    ],
-   "dauer": 20.636
+   "dauer": 18.407
   },
   {
    "typ": "buchung",
@@ -341,136 +209,85 @@
      }
     ],
     "fazit": {
-     "text": "Über 50 €: brutto buchen, keine Vorsteuer (§ 15 Abs. 1a UStG)",
+     "text": "Über 50 €: brutto buchen, keine Vorsteuer (§ 15 Abs. 1a UStG)",
      "satz": 3
     }
    },
    "saetze": [
-    "Die Buchungen. Geschenke müssen auf eigenen Konten mit dem Namen des Empfängers stehen, sonst sind sie nach Paragraf 4 Absatz 7 nicht abziehbar.",
-    "Weinpräsent für 45 Euro netto: Geschenke abzugsfähig 45 Euro und Vorsteuer 8 Euro 55 an Bank 53 Euro 55.",
-    "Kamera für 120 Euro netto: Geschenke nicht abzugsfähig 142 Euro 80 an Bank. Hier wird der Bruttobetrag gebucht.",
-    "Denn ist das Geschenk nicht abziehbar, gibt es nach Paragraf 15 Absatz 1a des Umsatzsteuergesetzes auch keine Vorsteuer."
+    "Gebucht wird auf eigenen Konten mit dem Namen des Empfängers.",
+    "Wein für 45 Euro netto: Geschenke abzugsfähig 45 Euro und Vorsteuer 8 Euro 55 an Bank 53 Euro 55.",
+    "Kamera für 120 Euro netto: Geschenke nicht abzugsfähig 142 Euro 80 an Bank.",
+    "Ist das Geschenk nicht abziehbar, gibt es auch keine Vorsteuer."
    ],
-   "ton": "lf8-geschenke/s06.wav",
+   "ton": "lf8-geschenke/s04.wav",
    "zeiten": [
     {
      "start": 0.6,
-     "dauer": 7.732
+     "dauer": 3.065
     },
     {
-     "start": 8.782,
-     "dauer": 10.925
+     "start": 4.115,
+     "dauer": 10.623
     },
     {
-     "start": 20.157,
-     "dauer": 8.591
+     "start": 15.188,
+     "dauer": 7.012
     },
     {
-     "start": 29.199,
-     "dauer": 6.885
+     "start": 22.651,
+     "dauer": 3.204
     }
    ],
-   "dauer": 36.983
+   "dauer": 26.755
   },
   {
-   "typ": "zeitstrahl",
+   "typ": "quiz",
    "daten": {
-    "ueberschrift": "Kunden oder eigene Mitarbeiter?",
-    "merke": "Pauschal versteuern: 30 % nach § 37b EStG",
-    "punkte": [
-     {
-      "label": "Kunden",
-      "titel": "50 € netto",
-      "text": "pro Person und Jahr",
-      "folge": "Freigrenze für den Betriebsausgabenabzug",
-      "ref": "§ 4 Abs. 5 S. 1 Nr. 1 EStG",
-      "satz": 1
-     },
-     {
-      "label": "Mitarbeiter",
-      "titel": "60 € brutto",
-      "text": "zum Geburtstag",
-      "folge": "Aufmerksamkeit ist lohnsteuerfrei",
-      "ref": "R 19.6 LStR",
-      "satz": 2
-     }
-    ]
+    "frage": "Ein Kunde bekommt im Jahr Wein für 30 € und ein Buch für 25 € netto. Was ist abziehbar?",
+    "optionen": [
+     "Beides, 50 € sind ein Freibetrag",
+     "Nichts, beide Geschenke nicht",
+     "Nur der Wein"
+    ],
+    "richtig": 1,
+    "satzDenken": 1,
+    "satzLoesung": 2,
+    "erklaerung": {
+     "text": "Freigrenze: § 4 Abs. 5 S. 1 Nr. 1 EStG",
+     "satz": 3
+    },
+    "stempel": {
+     "index": 0,
+     "text": "Freigrenze!",
+     "satz": 3
+    }
    },
    "saetze": [
-    "Achtung, bei eigenen Mitarbeitern gelten andere Regeln.",
-    "Bei Kunden geht es um die 50 Euro netto pro Jahr für den Abzug als Betriebsausgabe.",
-    "Bei Mitarbeitern ist ein Geschenk zu einem persönlichen Anlass wie dem Geburtstag bis 60 Euro brutto lohnsteuerfrei.",
-    "Und wer dem Beschenkten die Steuer abnehmen will, kann sie nach Paragraf 37b pauschal mit 30 Prozent übernehmen."
+    "Kurzes Quiz. Ein Kunde bekommt Wein für 30 Euro und ein Buch für 25 Euro netto. Was ist abziehbar?",
+    "[pause 5]",
+    "Richtig ist B: Zusammen sind es 55 Euro. Damit ist nichts abziehbar.",
+    "Die 50 Euro sind eine Freigrenze. Ein Cent darüber, und alles ist weg."
    ],
-   "ton": "lf8-geschenke/s07.wav",
+   "ton": "lf8-geschenke/s05.wav",
    "zeiten": [
     {
      "start": 0.6,
-     "dauer": 3.274
+     "dauer": 7.384
     },
     {
-     "start": 4.324,
-     "dauer": 5.224
+     "start": 8.434,
+     "dauer": 5.0
     },
     {
-     "start": 9.999,
-     "dauer": 6.432
+     "start": 13.884,
+     "dauer": 5.248
     },
     {
-     "start": 16.88,
-     "dauer": 6.931
+     "start": 19.582,
+     "dauer": 4.47
     }
    ],
-   "dauer": 24.712
-  },
-  {
-   "typ": "fallen",
-   "daten": {
-    "ueberschrift": "Typische Fallen",
-    "karten": [
-     {
-      "titel": "Freibetrag gedacht",
-      "text": "Es ist eine Freigrenze: bei 50,01 € ist alles weg.",
-      "satz": 1
-     },
-     {
-      "titel": "Brutto geprüft",
-      "text": "Die Grenze gilt netto: 59,50 € brutto sind genau 50 € netto.",
-      "satz": 2
-     },
-     {
-      "titel": "Nicht zusammengerechnet",
-      "text": "Alle Geschenke an eine Person im Jahr zählen zusammen.",
-      "satz": 3
-     }
-    ]
-   },
-   "saetze": [
-    "Die drei häufigsten Fehler.",
-    "Erstens: die 50 Euro für einen Freibetrag halten. Es ist eine Freigrenze. Ein Cent drüber, und alles ist weg.",
-    "Zweitens: brutto statt netto prüfen. 59 Euro 50 brutto sind genau 50 Euro netto, also noch abziehbar.",
-    "Drittens: nicht zusammenrechnen. Alle Geschenke an dieselbe Person im selben Jahr zählen zusammen. Übrigens: Ältere Bücher nennen noch 35 Euro, seit 2024 gelten 50 Euro."
-   ],
-   "ton": "lf8-geschenke/s08.wav",
-   "zeiten": [
-    {
-     "start": 0.6,
-     "dauer": 1.556
-    },
-    {
-     "start": 2.606,
-     "dauer": 6.815
-    },
-    {
-     "start": 9.871,
-     "dauer": 7.5
-    },
-    {
-     "start": 17.821,
-     "dauer": 12.318
-    }
-   ],
-   "dauer": 31.039
+   "dauer": 24.951
   },
   {
    "typ": "merke",
@@ -497,27 +314,27 @@
     "aufruf": "Jetzt üben: LF 8 → Geschenke"
    },
    "saetze": [
-    "Zusammengefasst: Geschenke an Kunden sind abziehbar, wenn sie pro Person und Jahr höchstens 50 Euro netto kosten. Es ist eine Freigrenze.",
-    "Ist das Geschenk nicht abziehbar, gibt es auch keine Vorsteuer. Und gebucht wird auf eigenen Konten mit dem Namen des Empfängers.",
-    "Im Lernfeld 8 findest du dazu Übungsaufgaben mit Stimme."
+    "Zusammengefasst: höchstens 50 Euro netto pro Person und Jahr. Es ist eine Freigrenze.",
+    "Nicht abziehbar heißt: keine Vorsteuer. Und gebucht wird auf eigenen Konten.",
+    "Im Lernfeld 8 findest du dazu Übungen mit Stimme."
    ],
-   "ton": "lf8-geschenke/s09.wav",
+   "ton": "lf8-geschenke/s06.wav",
    "zeiten": [
     {
      "start": 0.6,
-     "dauer": 8.092
+     "dauer": 5.317
     },
     {
-     "start": 9.142,
-     "dauer": 6.757
+     "start": 6.367,
+     "dauer": 4.296
     },
     {
-     "start": 16.349,
-     "dauer": 3.541
+     "start": 11.113,
+     "dauer": 2.902
     }
    ],
-   "dauer": 20.79
+   "dauer": 14.916
   }
  ],
- "dauer": 232.909
+ "dauer": 117.888
 }

@@ -1,0 +1,201 @@
+{
+  "lf": "sk",
+  "kapitel": "Sozialkunde · Recht",
+  "farbe": "#e11d48",
+  "stil": "premium",
+  "id": "sk-rechtsgeschaefte",
+  "thema": "Rechtsgeschäfte: Wer darf was, Form und Fehler",
+  "titel": "Rechtsgeschäfte",
+  "kartentitel": "Rechtsgeschäfte: Geschäftsfähigkeit, Form und Anfechtung",
+  "musik": "sk-rechtsgeschaefte/musik.wav",
+  "szenen": [
+    {
+      "typ": "intro",
+      "daten": {
+        "kicker": "Sozialkunde · Recht",
+        "titel": "Gilt der Vertrag?",
+        "untertitel": "Geschäftsfähigkeit, Form und Fehler",
+        "betrag": 25,
+        "betragLabel": "Kaufpreis",
+        "satzBetrag": 1,
+        "satzTeilen": 2,
+        "personen": [
+          {
+            "name": "Martha, 6",
+            "icon": "👧"
+          },
+          {
+            "name": "Jonas, 15",
+            "icon": "🧑"
+          }
+        ]
+      },
+      "saetze": [
+        "Martha ist 6 und kauft einen Lolli. Jonas ist 15 und kauft Kopfhörer.",
+        "Sind diese Verträge wirksam?",
+        "Das hängt vom Alter ab, von der Form, und davon, ob sich jemand geirrt hat."
+      ]
+    },
+    {
+      "typ": "zeitstrahl",
+      "daten": {
+        "ueberschrift": "Geschäftsfähigkeit nach Alter",
+        "merke": "Taschengeld: sofort bezahlt ist wirksam (§ 110 BGB)",
+        "punkte": [
+          {
+            "label": "unter 7 Jahren",
+            "titel": "geschäftsunfähig",
+            "text": "Erklärung nichtig",
+            "folge": "auch mit Taschengeld",
+            "ref": "§§ 104, 105 BGB",
+            "satz": 1
+          },
+          {
+            "label": "7 bis 17 Jahre",
+            "titel": "beschränkt",
+            "text": "Eltern müssen zustimmen",
+            "folge": "sonst schwebend unwirksam",
+            "ref": "§§ 106–108 BGB",
+            "satz": 2
+          }
+        ]
+      },
+      "saetze": [
+        "Zuerst die Geschäftsfähigkeit.",
+        "Unter 7 Jahren ist man geschäftsunfähig. Was man erklärt, ist nichtig, also von Anfang an ungültig.",
+        "Von 7 bis 17 ist man beschränkt geschäftsfähig. Ohne Zustimmung der Eltern ist der Vertrag schwebend unwirksam.",
+        "Ausnahme: Bezahlt man sofort mit dem Taschengeld, ist der Kauf wirksam."
+      ]
+    },
+    {
+      "typ": "sortieren",
+      "daten": {
+        "ueberschrift": "Braucht es eine Form?",
+        "ja": "Form nötig",
+        "nein": "formfrei",
+        "karten": [
+          {
+            "text": "Grundstückskauf: Notar",
+            "icon": "🏡",
+            "ja": true,
+            "satz": 1
+          },
+          {
+            "text": "Bürgschaft: schriftlich",
+            "icon": "✍️",
+            "ja": true,
+            "satz": 1
+          },
+          {
+            "text": "Kündigung: schriftlich",
+            "icon": "📄",
+            "ja": true,
+            "satz": 2
+          },
+          {
+            "text": "Kauf im Laden",
+            "icon": "🛒",
+            "ja": false,
+            "satz": 3
+          }
+        ]
+      },
+      "saetze": [
+        "Dann die Form. Fehlt eine vorgeschriebene Form, ist das Geschäft nichtig.",
+        "Ein Grundstückskauf braucht den Notar, eine Bürgschaft die Schriftform.",
+        "Auch die Kündigung eines Arbeitsvertrags muss schriftlich sein.",
+        "Der normale Kauf im Laden ist formfrei."
+      ]
+    },
+    {
+      "typ": "formel",
+      "daten": {
+        "ueberschrift": "Anfechtung",
+        "ref": "§§ 119, 123, 142 BGB",
+        "zeilen": [
+          {
+            "zeichen": "1",
+            "text": "Irrtum: vertippt, versprochen",
+            "info": "sofort anfechten, § 121"
+          },
+          {
+            "zeichen": "2",
+            "text": "Täuschung oder Drohung",
+            "info": "ein Jahr Zeit, § 124"
+          },
+          {
+            "zeichen": "=",
+            "text": "Folge der Anfechtung",
+            "info": "von Anfang an ungültig, § 142",
+            "ergebnis": true
+          }
+        ]
+      },
+      "saetze": [
+        "Und wenn sich jemand geirrt hat?",
+        "Wer sich vertippt oder verspricht, kann anfechten. Aber sofort, wenn er den Fehler bemerkt.",
+        "Wer getäuscht oder bedroht wurde, hat ein Jahr Zeit.",
+        "Nach der Anfechtung gilt das Geschäft als von Anfang an ungültig."
+      ]
+    },
+    {
+      "typ": "quiz",
+      "daten": {
+        "frage": "Martha, 6 Jahre, kauft mit ihrem Taschengeld einen Lolli. Ist der Kauf wirksam?",
+        "optionen": [
+          "Ja, Taschengeldparagraf",
+          "Nein, er ist nichtig",
+          "Schwebend unwirksam"
+        ],
+        "richtig": 1,
+        "satzDenken": 1,
+        "satzLoesung": 2,
+        "erklaerung": {
+          "text": "§§ 104, 105 BGB",
+          "satz": 3
+        },
+        "stempel": {
+          "index": 0,
+          "text": "erst ab 7",
+          "satz": 3
+        }
+      },
+      "saetze": [
+        "Kurzes Quiz. Martha ist 6 und kauft mit ihrem Taschengeld einen Lolli. Ist der Kauf wirksam?",
+        "[pause 5]",
+        "Richtig ist B: nichtig. Martha ist unter 7 und damit geschäftsunfähig.",
+        "Der Taschengeldparagraf gilt erst ab 7 Jahren."
+      ]
+    },
+    {
+      "typ": "merke",
+      "daten": {
+        "ueberschrift": "Das nimmst du mit",
+        "punkte": [
+          {
+            "text": "Unter 7: nichtig",
+            "satz": 0
+          },
+          {
+            "text": "7 bis 17: Eltern müssen zustimmen",
+            "satz": 0
+          },
+          {
+            "text": "Form fehlt: nichtig",
+            "satz": 1
+          },
+          {
+            "text": "Anfechtung: rückwirkend ungültig",
+            "satz": 1
+          }
+        ],
+        "aufruf": "Jetzt üben: Sozialkunde → Rechtsgeschäfte"
+      },
+      "saetze": [
+        "Zusammengefasst: Unter 7 ist alles nichtig. Von 7 bis 17 brauchst du die Zustimmung der Eltern.",
+        "Fehlt die vorgeschriebene Form, ist das Geschäft nichtig. Und eine Anfechtung macht es rückwirkend ungültig.",
+        "In der Sozialkunde findest du dazu Übungen mit Stimme."
+      ]
+    }
+  ]
+}

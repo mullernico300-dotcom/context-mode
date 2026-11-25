@@ -151,5 +151,15 @@ window.ERKLAERVIDEOS = [
   "sek": 119.5,
   "datei": "videos/erklaer/lf8-gewerbebetrieb.mp4",
   "poster": "videos/erklaer/lf8-gewerbebetrieb.jpg"
+ },
+ {
+  "id": "lf8-betriebsausgaben",
+  "lf": "lf8",
+  "thema": "Betriebsausgaben, Werbungskosten und private Kosten",
+  "titel": "Betriebsausgaben, Werbungskosten oder privat?",
+  "datum": "2026-11-25",
+  "sek": 102.0,
+  "datei": "videos/erklaer/lf8-betriebsausgaben.mp4",
+  "poster": "videos/erklaer/lf8-betriebsausgaben.jpg"
  }
 ];

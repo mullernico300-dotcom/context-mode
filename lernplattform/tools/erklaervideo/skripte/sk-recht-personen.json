@@ -1,0 +1,210 @@
+{
+  "lf": "sk",
+  "kapitel": "Sozialkunde · Recht",
+  "farbe": "#e11d48",
+  "stil": "premium",
+  "id": "sk-recht-personen",
+  "thema": "Recht, Personen, Sachen und Eigentum",
+  "titel": "Personen und Eigentum",
+  "kartentitel": "Personen, Sachen und Eigentum: die Grundbegriffe",
+  "musik": "sk-recht-personen/musik.wav",
+  "szenen": [
+    {
+      "typ": "intro",
+      "daten": {
+        "kicker": "Sozialkunde · Recht",
+        "titel": "Wem gehört was?",
+        "untertitel": "Personen, Sachen und Eigentum",
+        "betrag": 300,
+        "betragLabel": "Kaufpreis Fahrrad",
+        "satzBetrag": 1,
+        "satzTeilen": 2,
+        "personen": [
+          {
+            "name": "Lena",
+            "icon": "🚲"
+          },
+          {
+            "name": "GmbH",
+            "icon": "🏢"
+          }
+        ]
+      },
+      "saetze": [
+        "Lena verkauft ihr Fahrrad für 300 Euro. Eine GmbH kauft einen Laptop.",
+        "Wer kann überhaupt Verträge schließen? Und wann gehört dir eine Sache?",
+        "Das klären die Grundbegriffe des Rechts."
+      ]
+    },
+    {
+      "typ": "vergleich",
+      "daten": {
+        "ueberschrift": "Wer ist eine Person?",
+        "spalten": [
+          {
+            "titel": "Mensch",
+            "icon": "🧑",
+            "satz": 1
+          },
+          {
+            "titel": "GmbH",
+            "icon": "🏢",
+            "satz": 2
+          },
+          {
+            "titel": "Kammer",
+            "icon": "🏛️",
+            "satz": 3
+          }
+        ],
+        "zeilen": [
+          {
+            "label": "Art",
+            "satz": 1,
+            "werte": [
+              "natürliche Person",
+              "juristische Person, Privatrecht",
+              "juristische Person, öffentliches Recht"
+            ]
+          },
+          {
+            "label": "Gesetz",
+            "satz": 3,
+            "werte": [
+              "§ 1 BGB",
+              "§ 13 GmbHG",
+              "§ 73 StBerG"
+            ]
+          }
+        ]
+      },
+      "saetze": [
+        "Rechtsfähig ist, wer Rechte und Pflichten haben kann.",
+        "Jeder Mensch ist rechtsfähig, ab der vollendeten Geburt. Er ist eine natürliche Person.",
+        "Eine GmbH ist eine juristische Person des Privatrechts. Sie hat eigene Rechte, wie ein Mensch.",
+        "Die Steuerberaterkammer ist eine juristische Person des öffentlichen Rechts."
+      ]
+    },
+    {
+      "typ": "zeitstrahl",
+      "daten": {
+        "ueberschrift": "Eigentum übertragen",
+        "merke": "Sachen sind nur Dinge zum Anfassen (§ 90 BGB)",
+        "punkte": [
+          {
+            "label": "bewegliche Sache",
+            "titel": "Einigung + Übergabe",
+            "text": "z. B. Fahrrad",
+            "folge": "schon beim Käufer: Einigung reicht",
+            "ref": "§ 929 BGB",
+            "satz": 1
+          },
+          {
+            "label": "Grundstück",
+            "titel": "Notar + Grundbuch",
+            "text": "Auflassung",
+            "folge": "Eintragung im Grundbuch",
+            "ref": "§§ 873, 925 BGB",
+            "satz": 2
+          }
+        ]
+      },
+      "saetze": [
+        "Und wann gehört dir eine Sache?",
+        "Bei beweglichen Sachen braucht es Einigung und Übergabe. Hat der Käufer das Fahrrad schon geliehen, reicht die Einigung.",
+        "Bei Grundstücken: Einigung vor dem Notar, die Auflassung, und Eintragung im Grundbuch.",
+        "Sachen sind übrigens nur Dinge, die man anfassen kann."
+      ]
+    },
+    {
+      "typ": "stapel",
+      "daten": {
+        "ueberschrift": "Fristen berechnen",
+        "icon": "⏳",
+        "zeilen": [
+          {
+            "text": "Brief kommt an",
+            "wert": "Mo, 2. März",
+            "satz": 1
+          },
+          {
+            "text": "dieser Tag zählt nicht mit",
+            "wert": "§ 187 BGB",
+            "raus": true,
+            "satz": 1
+          },
+          {
+            "text": "= Wochenfrist endet",
+            "wert": "Mo, 9. März",
+            "ergebnis": true,
+            "satz": 2
+          }
+        ]
+      },
+      "saetze": [
+        "Noch ein Klassiker: Fristen berechnen.",
+        "Ein Brief kommt am Montag, den 2. März an. Dieser Tag zählt nicht mit.",
+        "Eine Frist von einer Woche endet am gleichen Wochentag, also am Montag, den 9. März."
+      ]
+    },
+    {
+      "typ": "quiz",
+      "daten": {
+        "frage": "Ist die Vorstandsvorsitzende einer AG eine juristische Person?",
+        "optionen": [
+          "Ja, sie leitet die AG",
+          "Nein, sie ist eine natürliche Person",
+          "Nur in der Arbeitszeit"
+        ],
+        "richtig": 1,
+        "satzDenken": 1,
+        "satzLoesung": 2,
+        "erklaerung": {
+          "text": "Die AG ist die juristische Person",
+          "satz": 3
+        },
+        "stempel": {
+          "index": 0,
+          "text": "Verwechslung",
+          "satz": 3
+        }
+      },
+      "saetze": [
+        "Kurzes Quiz. Ist die Vorstandsvorsitzende einer AG eine juristische Person?",
+        "[pause 5]",
+        "Richtig ist B. Sie ist ein Mensch, also eine natürliche Person.",
+        "Die juristische Person ist die AG selbst."
+      ]
+    },
+    {
+      "typ": "merke",
+      "daten": {
+        "ueberschrift": "Das nimmst du mit",
+        "punkte": [
+          {
+            "text": "Mensch: natürliche Person",
+            "satz": 0
+          },
+          {
+            "text": "GmbH, Kammer: juristische Person",
+            "satz": 0
+          },
+          {
+            "text": "Eigentum: Einigung + Übergabe",
+            "satz": 1
+          },
+          {
+            "text": "Frist: Ereignistag zählt nicht",
+            "satz": 1
+          }
+        ],
+        "aufruf": "Jetzt üben: Sozialkunde → Personen und Eigentum"
+      },
+      "saetze": [
+        "Zusammengefasst: Menschen sind natürliche Personen, GmbH und Kammer juristische Personen.",
+        "Eigentum geht durch Einigung und Übergabe über. Und bei Fristen zählt der Ereignistag nicht mit.",
+        "In der Sozialkunde findest du dazu Übungen mit Stimme."
+      ]
+    }
+  ]
+}
