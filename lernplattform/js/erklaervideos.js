@@ -261,5 +261,15 @@ window.ERKLAERVIDEOS = [
   "sek": 103.9,
   "datei": "videos/erklaer/sk-arbeitsvertrag.mp4",
   "poster": "videos/erklaer/sk-arbeitsvertrag.jpg"
+ },
+ {
+  "id": "sk-mutterschutz",
+  "lf": "sk",
+  "thema": "Mutterschutz",
+  "titel": "Mutterschutz: Schutzfristen, Verbote und Geld",
+  "datum": "2026-11-25",
+  "sek": 108.4,
+  "datei": "videos/erklaer/sk-mutterschutz.mp4",
+  "poster": "videos/erklaer/sk-mutterschutz.jpg"
  }
 ];
