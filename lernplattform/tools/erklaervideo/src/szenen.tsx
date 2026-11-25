@@ -1,6 +1,7 @@
 import React from 'react';
 import { interpolate } from 'remotion';
 import { F, TITEL, Karte, Ueberschrift, Pille, Zaehler, useSzene, eur } from './basis';
+import { PREMIUM } from './premium';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 type D = any;
@@ -362,4 +363,5 @@ export const Merke: React.FC<{ d: D }> = ({ d }) => {
 export const SZENEN: Record<string, React.FC<{ d: D }>> = {
   titel: Titel, formel: Formel, sortieren: Sortieren, zeitstrahl: Zeitstrahl, wasserfall: Wasserfall,
   buchung: Buchung, stapel: Stapel, grenze: Grenze, fallen: Fallen, merke: Merke,
+  ...PREMIUM,
 };

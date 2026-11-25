@@ -50,10 +50,16 @@ def main(skript, stimme, cache=None):
             aus.setnchannels(1); aus.setsampwidth(2); aus.setframerate(RATE)
             aus.writeframes(b'\x00\x00' * int(VOR * RATE))
             for i, satz in enumerate(sz['saetze']):
-                with wave.open(ton(sprich(satz))) as w:
-                    dauer = w.getnframes() / w.getframerate()
+                stille = re.match(r'^\[pause ([\d.]+)\]$', satz)  # „[pause 5]“: Denkpause ohne Sprache, z. B. beim Quiz
+                if stille:
+                    dauer = float(stille.group(1))
                     starts.append({'start': round(t, 3), 'dauer': round(dauer, 3)})
-                    aus.writeframes(w.readframes(w.getnframes()))
+                    aus.writeframes(b'\x00\x00' * int(dauer * RATE))
+                else:
+                    with wave.open(ton(sprich(satz))) as w:
+                        dauer = w.getnframes() / w.getframerate()
+                        starts.append({'start': round(t, 3), 'dauer': round(dauer, 3)})
+                        aus.writeframes(w.readframes(w.getnframes()))
                 t += dauer
                 pause = PAUSE if i < len(sz['saetze']) - 1 else NACH
                 aus.writeframes(b'\x00\x00' * int(pause * RATE))

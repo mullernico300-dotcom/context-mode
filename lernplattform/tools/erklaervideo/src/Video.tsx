@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, Audio, Sequence, interpolate, staticFile, useCurrentFrame, useVideoConfig } from 'remotion';
+import { AbsoluteFill, Audio, Sequence, interpolate, random, staticFile, useCurrentFrame, useVideoConfig } from 'remotion';
 import '@fontsource/inter/400.css';
 import '@fontsource/inter/600.css';
 import '@fontsource/inter/700.css';
@@ -14,7 +14,7 @@ export type Drehbuch = any;
 export const framesVon = (d: Drehbuch, fps: number) => d.szenen.map((s: any) => Math.round(s.dauer * fps));
 
 /* Bewegter Hintergrund: weiche Farbflächen und feines Raster */
-const Hintergrund: React.FC<{ akzent: string }> = ({ akzent }) => {
+const Hintergrund: React.FC<{ akzent: string; premium?: boolean }> = ({ akzent, premium }) => {
   const f = useCurrentFrame();
   const blob = (farbe: string, x: number, y: number, r: number, t: number) => (
     <div style={{
@@ -32,6 +32,12 @@ const Hintergrund: React.FC<{ akzent: string }> = ({ akzent }) => {
         backgroundImage: 'linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px)',
         backgroundSize: '64px 64px',
       }} />
+      {/* Premium: feine, langsam aufsteigende Lichtpunkte */}
+      {premium && Array.from({ length: 28 }, (_, i) => {
+        const x = random('x' + i) * 1920, tempo = 0.4 + random('v' + i) * 0.9, gr = 3 + random('g' + i) * 6;
+        const y = 1120 - ((f * tempo + random('y' + i) * 1200) % 1200);
+        return <div key={i} style={{ position: 'absolute', left: x + Math.sin(f / 40 + i) * 20, top: y, width: gr, height: gr, borderRadius: 99, background: i % 3 ? akzent : F.blau, opacity: 0.18 + random('o' + i) * 0.3, boxShadow: `0 0 ${gr * 3}px ${akzent}` }} />;
+      })}
     </AbsoluteFill>
   );
 };
@@ -65,10 +71,16 @@ export const Erklaervideo: React.FC<{ drehbuch: Drehbuch }> = ({ drehbuch: d }) 
   sz.zeiten.forEach((z: any, i: number) => { if (tSzene >= z.start - 0.05) satzNr = i; });
   const z = sz.zeiten[satzNr];
   const akzent = d.farbe;
+  const premium = d.stil === 'premium';
+  const satzText: string = sz.saetze[satzNr] || '';
+  const stumm = satzText.startsWith('[');
 
   return (
     <AbsoluteFill style={{ fontFamily: SCHRIFT, color: F.text }}>
-      <Hintergrund akzent={akzent} />
+      <Hintergrund akzent={akzent} premium={premium} />
+
+      {/* Premium: leise Hintergrundmusik, ein- und ausgeblendet */}
+      {d.musik && <Audio src={staticFile(d.musik)} volume={(f) => 0.13 * interpolate(f, [0, 45, durationInFrames - 75, durationInFrames], [0, 1, 1, 0], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' })} />}
 
       {/* Szenen mit Ton */}
       {d.szenen.map((s: any, i: number) => {
@@ -76,8 +88,9 @@ export const Erklaervideo: React.FC<{ drehbuch: Drehbuch }> = ({ drehbuch: d }) 
         return (
           <Sequence key={i} from={starts[i]} durationInFrames={laengen[i]}>
             <Audio src={staticFile(s.ton)} />
+            {premium && i > 0 && <Audio src={staticFile(s.typ === 'kapitel' ? 'klang/kapitel.wav' : 'klang/whoosh.wav')} volume={s.typ === 'kapitel' ? 0.32 : 0.16} />}
             <SzeneCtx.Provider value={{ zeiten: s.zeiten, akzent, dauer: s.dauer }}>
-              <Uebergang laenge={laengen[i]}>
+              <Uebergang laenge={laengen[i]} kamera={premium}>
                 <AbsoluteFill style={{ top: 150, bottom: 190 }}>
                   <Szene d={s.daten} />
                 </AbsoluteFill>
@@ -107,9 +120,11 @@ export const Erklaervideo: React.FC<{ drehbuch: Drehbuch }> = ({ drehbuch: d }) 
 
       {/* Untertitel */}
       <div style={{ position: 'absolute', left: 120, right: 120, bottom: 46, display: 'flex', justifyContent: 'center' }}>
-        <div style={{ padding: '22px 40px', borderRadius: 26, background: 'rgba(5,8,20,0.78)', border: `1px solid ${F.linie}` }}>
-          {z ? <Untertitel satz={sz.saetze[satzNr]} t={tSzene - z.start} dauer={z.dauer} /> : null}
-        </div>
+        {z && !stumm ? (
+          <div style={{ padding: '22px 40px', borderRadius: 26, background: 'rgba(5,8,20,0.78)', border: `1px solid ${F.linie}` }}>
+            <Untertitel satz={satzText} t={tSzene - z.start} dauer={z.dauer} />
+          </div>
+        ) : null}
       </div>
 
       {/* Ausblenden am Ende */}
@@ -119,12 +134,12 @@ export const Erklaervideo: React.FC<{ drehbuch: Drehbuch }> = ({ drehbuch: d }) 
 };
 
 /* Weiche Blende zwischen den Szenen */
-const Uebergang: React.FC<{ laenge: number; children: React.ReactNode }> = ({ laenge, children }) => {
+const Uebergang: React.FC<{ laenge: number; kamera?: boolean; children: React.ReactNode }> = ({ laenge, kamera, children }) => {
   const f = useCurrentFrame();
   const rein = interpolate(f, [0, 14], [0, 1], { extrapolateRight: 'clamp' });
   const raus = interpolate(f, [laenge - 12, laenge], [1, 0], { extrapolateLeft: 'clamp' });
   return (
-    <AbsoluteFill style={{ opacity: Math.min(rein, raus), transform: `scale(${0.97 + 0.03 * rein}) translateY(${(1 - rein) * 20}px)` }}>
+    <AbsoluteFill style={{ opacity: Math.min(rein, raus), transform: `scale(${0.97 + 0.03 * rein + (kamera ? 0.025 * (f / laenge) : 0)}) translateY(${(1 - rein) * 20}px)` }}>
       {children}
     </AbsoluteFill>
   );

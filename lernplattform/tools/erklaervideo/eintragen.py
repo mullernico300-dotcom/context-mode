@@ -12,6 +12,7 @@ import datetime, json, os, subprocess, sys
 HIER = os.path.dirname(os.path.abspath(__file__))
 APP = os.path.abspath(os.path.join(HIER, '..', '..'))
 GRENZE = 15 * 1000 * 1000
+BREITE = os.environ.get('BREITE', '1280')  # BREITE=1920 behält Full HD (Premium-Videos)
 
 
 def dauer(datei):
@@ -29,11 +30,11 @@ def main(skript, video, datum=None):
     mp4 = os.path.join(ziel, d['id'] + '.mp4')
     jpg = os.path.join(ziel, d['id'] + '.jpg')
     crf = 27
-    subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', video, '-vf', 'scale=1280:-2', '-c:v', 'libx264', '-preset', 'slow',
+    subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', video, '-vf', 'scale=%s:-2' % BREITE, '-c:v', 'libx264', '-preset', 'slow',
                     '-crf', str(crf), '-c:a', 'aac', '-b:a', '96k', '-movflags', '+faststart', mp4], check=True)
     while os.path.getsize(mp4) > GRENZE and crf < 40:
         crf += 3
-        subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', video, '-vf', 'scale=1280:-2', '-c:v', 'libx264', '-preset', 'slow',
+        subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', video, '-vf', 'scale=%s:-2' % BREITE, '-c:v', 'libx264', '-preset', 'slow',
                         '-crf', str(crf), '-c:a', 'aac', '-b:a', '80k', '-movflags', '+faststart', mp4], check=True)
     assert os.path.getsize(mp4) <= GRENZE, 'Video bleibt über 15 MB'
     subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-ss', '12', '-i', mp4, '-frames:v', '1', '-q:v', '3', jpg], check=True)

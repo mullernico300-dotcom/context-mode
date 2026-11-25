@@ -1,0 +1,639 @@
+{
+ "id": "lf8-gewinnverteilung",
+ "lf": "lf8",
+ "thema": "Rechtsformen und Gewinnverteilung",
+ "kapitel": "LF 8 · Personengesellschaften",
+ "titel": "Gewinnverteilung",
+ "kartentitel": "OHG, KG, GbR: Wer haftet und wer bekommt wie viel Gewinn?",
+ "farbe": "#3b82f6",
+ "stil": "premium",
+ "musik": "lf8-gewinnverteilung/musik.wav",
+ "szenen": [
+  {
+   "typ": "intro",
+   "daten": {
+    "kicker": "LF 8 · Personengesellschaften",
+    "titel": "Wer bekommt wie viel?",
+    "untertitel": "Rechtsformen und Gewinnverteilung",
+    "betrag": 150000,
+    "betragLabel": "Gewinn der OHG 2025",
+    "satzBetrag": 1,
+    "satzTeilen": 2,
+    "personen": [
+     {
+      "name": "Anna",
+      "icon": "👩‍💼"
+     },
+     {
+      "name": "Ben",
+      "icon": "👨‍🔧"
+     },
+     {
+      "name": "Carla",
+      "icon": "👩‍💻"
+     }
+    ]
+   },
+   "saetze": [
+    "Anna, Ben und Carla führen zusammen eine OHG.",
+    "Im Jahr 2025 macht die OHG 150.000 Euro Gewinn.",
+    "Doch wer bekommt davon wie viel? Und wer haftet, wenn es einmal schiefgeht?",
+    "Genau das klären wir jetzt, Schritt für Schritt."
+   ],
+   "ton": "lf8-gewinnverteilung/s01.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 3.193
+    },
+    {
+     "start": 4.243,
+     "dauer": 5.782
+    },
+    {
+     "start": 10.475,
+     "dauer": 4.04
+    },
+    {
+     "start": 14.965,
+     "dauer": 2.496
+    }
+   ],
+   "dauer": 18.361
+  },
+  {
+   "typ": "kapitel",
+   "daten": {
+    "nr": "1",
+    "titel": "Rechtsformen",
+    "text": "Wer haftet wofür?"
+   },
+   "saetze": [
+    "Teil eins: Welche Personengesellschaften gibt es, und wer haftet?"
+   ],
+   "ton": "lf8-gewinnverteilung/s02.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 4.133
+    }
+   ],
+   "dauer": 5.633
+  },
+  {
+   "typ": "vergleich",
+   "daten": {
+    "ueberschrift": "Drei Formen im Vergleich",
+    "spalten": [
+     {
+      "titel": "GbR",
+      "icon": "🤝",
+      "satz": 1
+     },
+     {
+      "titel": "OHG",
+      "icon": "🏢",
+      "satz": 2
+     },
+     {
+      "titel": "KG",
+      "icon": "⚖️",
+      "satz": 3
+     }
+    ],
+    "zeilen": [
+     {
+      "label": "Haftung",
+      "satz": 1,
+      "werte": [
+       "✓ alle persönlich",
+       "✓ alle persönlich und unbegrenzt",
+       "⚠ Kommanditist nur bis zur Haftsumme"
+      ]
+     },
+     {
+      "label": "Geschäfte führen",
+      "satz": 4,
+      "werte": [
+       "alle gemeinsam",
+       "die Gesellschafter",
+       "Komplementär, Kommanditist kontrolliert"
+      ]
+     },
+     {
+      "label": "Gesetz",
+      "satz": 4,
+      "werte": [
+       "§§ 705 ff. BGB",
+       "§§ 105 ff. HGB",
+       "§§ 161 ff. HGB"
+      ]
+     }
+    ],
+    "fokus": {
+     "spalte": 1,
+     "satz": 5
+    }
+   },
+   "saetze": [
+    "Drei Formen solltest du kennen.",
+    "Die GbR ist die einfachste. Sie entsteht ohne Formalitäten, die Gesellschafter haften persönlich.",
+    "Bei der OHG haften alle Gesellschafter persönlich und unbegrenzt, auch mit ihrem Privatvermögen.",
+    "Bei der KG haftet der Komplementär voll, der Kommanditist nur bis zu seiner Haftsumme.",
+    "Die Geschäfte führen bei GbR und OHG alle selbst, bei der KG der Komplementär.",
+    "Unser Beispiel ist eine OHG."
+   ],
+   "ton": "lf8-gewinnverteilung/s03.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 1.683
+    },
+    {
+     "start": 2.733,
+     "dauer": 5.526
+    },
+    {
+     "start": 8.71,
+     "dauer": 5.921
+    },
+    {
+     "start": 15.081,
+     "dauer": 4.354
+    },
+    {
+     "start": 19.885,
+     "dauer": 5.248
+    },
+    {
+     "start": 25.582,
+     "dauer": 1.939
+    }
+   ],
+   "dauer": 28.421
+  },
+  {
+   "typ": "kapitel",
+   "daten": {
+    "nr": "2",
+    "titel": "Gewinnverteilung",
+    "text": "In drei Stufen zum Euro"
+   },
+   "saetze": [
+    "Teil zwei: Wie wird der Gewinn verteilt?"
+   ],
+   "ton": "lf8-gewinnverteilung/s04.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 2.31
+    }
+   ],
+   "dauer": 3.81
+  },
+  {
+   "typ": "formel",
+   "daten": {
+    "ueberschrift": "Die drei Stufen",
+    "ref": "§ 120 HGB · Gesellschaftsvertrag",
+    "zeilen": [
+     {
+      "zeichen": "1",
+      "text": "Vorab: Tätigkeitsvergütung",
+      "info": "für die Mitarbeit im Betrieb"
+     },
+     {
+      "zeichen": "2",
+      "text": "Zinsen auf das Kapital",
+      "info": "Kapital × Zinssatz"
+     },
+     {
+      "zeichen": "3",
+      "text": "Rest nach Schlüssel",
+      "info": "z. B. 3 : 2 : 2"
+     },
+     {
+      "zeichen": "✓",
+      "text": "Probe: Summe = Gewinn",
+      "info": "immer machen",
+      "ergebnis": true
+     }
+    ]
+   },
+   "saetze": [
+    "Meist regelt der Gesellschaftsvertrag die Verteilung in drei Stufen.",
+    "Stufe eins: Wer im Betrieb mitarbeitet, bekommt vorab eine Tätigkeitsvergütung.",
+    "Stufe zwei: Jeder bekommt Zinsen auf sein Kapital.",
+    "Stufe drei: Der Rest wird nach einem festen Schlüssel verteilt.",
+    "Und am Ende machst du immer die Probe: Alle Anteile zusammen ergeben den Gewinn."
+   ],
+   "ton": "lf8-gewinnverteilung/s05.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 3.529
+    },
+    {
+     "start": 4.579,
+     "dauer": 4.656
+    },
+    {
+     "start": 9.685,
+     "dauer": 3.007
+    },
+    {
+     "start": 13.142,
+     "dauer": 3.39
+    },
+    {
+     "start": 16.982,
+     "dauer": 4.354
+    }
+   ],
+   "dauer": 22.236
+  },
+  {
+   "typ": "wasserfall",
+   "daten": {
+    "kurzTitel": "Stufe für Stufe",
+    "sachverhalt": "Gewinn 150.000 €. Vorab: Anna 30.000 €, Ben 18.000 €. Zinsen 5 % auf das Kapital: Anna 200.000 €, Ben 100.000 €, Carla 60.000 €. Rest 3 : 2 : 2.",
+    "balken": [
+     {
+      "label": "Gewinn",
+      "wert": 150000,
+      "art": "start",
+      "satz": 1
+     },
+     {
+      "label": "− Vorab",
+      "wert": -48000,
+      "art": "minus",
+      "satz": 2
+     },
+     {
+      "label": "− Zinsen",
+      "wert": -18000,
+      "art": "minus",
+      "satz": 3
+     },
+     {
+      "label": "Rest für den Schlüssel",
+      "wert": 84000,
+      "art": "ergebnis",
+      "satz": 4
+     }
+    ],
+    "notiz": {
+     "text": "Zinsen: 10.000 + 5.000 + 3.000 = 18.000 €",
+     "satz": 3
+    }
+   },
+   "saetze": [
+    "Jetzt rechnen wir mit dem Vertrag unserer OHG.",
+    "Wir starten mit dem Gewinn: 150.000 Euro.",
+    "Anna und Ben arbeiten mit. Sie bekommen vorab 30.000 und 18.000 Euro, zusammen 48.000.",
+    "Dann 5 Prozent Zinsen auf das Kapital: 10.000 Euro für Anna, 5.000 für Ben und 3.000 für Carla. Zusammen 18.000 Euro.",
+    "Übrig bleiben 84.000 Euro. Die werden im Verhältnis 3 zu 2 zu 2 verteilt."
+   ],
+   "ton": "lf8-gewinnverteilung/s06.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 2.775
+    },
+    {
+     "start": 3.825,
+     "dauer": 3.437
+    },
+    {
+     "start": 7.711,
+     "dauer": 7.454
+    },
+    {
+     "start": 15.615,
+     "dauer": 8.533
+    },
+    {
+     "start": 24.598,
+     "dauer": 6.049
+    }
+   ],
+   "dauer": 31.547
+  },
+  {
+   "typ": "kreis",
+   "daten": {
+    "ueberschrift": "Der Schlüssel 3 : 2 : 2",
+    "betrag": 84000,
+    "betragLabel": "Rest zu verteilen",
+    "mitte": {
+     "oben": "7 Teile",
+     "unten": "1 Teil = 12.000 €",
+     "satz": 1
+    },
+    "teile": [
+     {
+      "label": "Anna",
+      "anteil": 3,
+      "satz": 2
+     },
+     {
+      "label": "Ben",
+      "anteil": 2,
+      "satz": 3
+     },
+     {
+      "label": "Carla",
+      "anteil": 2,
+      "satz": 3
+     }
+    ]
+   },
+   "saetze": [
+    "Jetzt der Schlüssel. Zuerst zählst du die Teile zusammen.",
+    "3 plus 2 plus 2 sind 7 Teile. Ein Teil ist also 84.000 durch 7, gleich 12.000 Euro.",
+    "Anna bekommt 3 Teile, also 36.000 Euro.",
+    "Ben und Carla bekommen je 2 Teile, also je 24.000 Euro."
+   ],
+   "ton": "lf8-gewinnverteilung/s07.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 2.844
+    },
+    {
+     "start": 3.894,
+     "dauer": 6.989
+    },
+    {
+     "start": 11.334,
+     "dauer": 3.669
+    },
+    {
+     "start": 15.452,
+     "dauer": 4.516
+    }
+   ],
+   "dauer": 20.869
+  },
+  {
+   "typ": "verteilung",
+   "daten": {
+    "ueberschrift": "Wer bekommt was?",
+    "stufen": [
+     {
+      "label": "Vorab",
+      "satz": 1
+     },
+     {
+      "label": "Zinsen",
+      "satz": 2
+     },
+     {
+      "label": "Rest",
+      "satz": 3
+     }
+    ],
+    "personen": [
+     {
+      "name": "Anna",
+      "icon": "👩‍💼",
+      "werte": [
+       30000,
+       10000,
+       36000
+      ]
+     },
+     {
+      "name": "Ben",
+      "icon": "👨‍🔧",
+      "werte": [
+       18000,
+       5000,
+       24000
+      ]
+     },
+     {
+      "name": "Carla",
+      "icon": "👩‍💻",
+      "werte": [
+       0,
+       3000,
+       24000
+      ]
+     }
+    ],
+    "summeSatz": 4,
+    "probe": {
+     "text": "76.000 + 47.000 + 27.000 = 150.000 €",
+     "satz": 5
+    }
+   },
+   "saetze": [
+    "Jetzt setzen wir alles zusammen.",
+    "Stufe eins, vorab: Anna 30.000, Ben 18.000, Carla nichts.",
+    "Stufe zwei, die Zinsen: 10.000, 5.000 und 3.000 Euro.",
+    "Stufe drei, der Rest: 36.000, 24.000 und 24.000 Euro.",
+    "Macht zusammen: Anna 76.000 Euro, Ben 47.000 Euro und Carla 27.000 Euro.",
+    "Probe: Zusammen sind das genau 150.000 Euro. Passt.",
+    "Jeder versteuert seinen Anteil selbst, auch wenn er nicht ausgezahlt wird."
+   ],
+   "ton": "lf8-gewinnverteilung/s08.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 1.567
+    },
+    {
+     "start": 2.617,
+     "dauer": 4.957
+    },
+    {
+     "start": 8.025,
+     "dauer": 4.772
+    },
+    {
+     "start": 13.247,
+     "dauer": 6.803
+    },
+    {
+     "start": 20.5,
+     "dauer": 8.266
+    },
+    {
+     "start": 29.216,
+     "dauer": 4.574
+    },
+    {
+     "start": 34.241,
+     "dauer": 3.785
+    }
+   ],
+   "dauer": 38.925
+  },
+  {
+   "typ": "kapitel",
+   "daten": {
+    "nr": "3",
+    "titel": "Prüfungsfallen",
+    "text": "Hier gehen Punkte verloren"
+   },
+   "saetze": [
+    "Teil drei: Wo in der Prüfung die meisten Punkte verloren gehen."
+   ],
+   "ton": "lf8-gewinnverteilung/s09.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 3.46
+    }
+   ],
+   "dauer": 4.96
+  },
+  {
+   "typ": "quiz",
+   "daten": {
+    "frage": "Kein Vertrag zur Gewinnverteilung. Wie wird der Gewinn einer OHG verteilt?",
+    "optionen": [
+     "4 % auf das Kapital, Rest nach Köpfen",
+     "Nach den vereinbarten Beteiligungsanteilen",
+     "Immer gleichmäßig nach Köpfen"
+    ],
+    "richtig": 1,
+    "satzDenken": 1,
+    "satzLoesung": 2,
+    "erklaerung": {
+     "text": "§ 120 HGB i. V. m. § 709 Abs. 3 BGB",
+     "satz": 3
+    },
+    "stempel": {
+     "index": 0,
+     "text": "seit 2024 weg",
+     "satz": 3
+    }
+   },
+   "saetze": [
+    "Kurzes Quiz. Es gibt keinen Vertrag zur Gewinnverteilung. Wie wird verteilt? Du hast fünf Sekunden.",
+    "[pause 5]",
+    "Richtig ist B: nach den vereinbarten Beteiligungsanteilen. Fehlen die, nach dem Wert der Beiträge, sonst nach Köpfen.",
+    "Die alte Regel mit 4 Prozent auf das Kapital gibt es seit 2024 nicht mehr. Ältere Lehrbücher nennen sie aber noch."
+   ],
+   "ton": "lf8-gewinnverteilung/s10.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 5.886
+    },
+    {
+     "start": 6.936,
+     "dauer": 5.0
+    },
+    {
+     "start": 12.386,
+     "dauer": 6.873
+    },
+    {
+     "start": 19.709,
+     "dauer": 7.57
+    }
+   ],
+   "dauer": 28.179
+  },
+  {
+   "typ": "fallen",
+   "daten": {
+    "ueberschrift": "Typische Fallen",
+    "karten": [
+     {
+      "titel": "Teile nicht gezählt",
+      "text": "3 : 2 : 2 sind 7 Teile. Geteilt wird durch 7.",
+      "satz": 1
+     },
+     {
+      "titel": "Falsche Reihenfolge",
+      "text": "Erst Vorab, dann Zinsen, dann der Rest.",
+      "satz": 2
+     },
+     {
+      "titel": "Vergütung als Aufwand",
+      "text": "Gebuchte Tätigkeitsvergütungen gehören steuerlich zum Gewinn des Gesellschafters.",
+      "satz": 3
+     }
+    ]
+   },
+   "saetze": [
+    "Drei typische Fehler.",
+    "Erstens: die Teile nicht zusammenzählen. Beim Schlüssel 3 zu 2 zu 2 teilst du durch 7.",
+    "Zweitens: die Reihenfolge vertauschen. Erst die Vorabvergütung, dann die Zinsen, dann der Rest.",
+    "Drittens: Eine als Aufwand gebuchte Tätigkeitsvergütung gehört steuerlich trotzdem zum Gewinn des Gesellschafters."
+   ],
+   "ton": "lf8-gewinnverteilung/s11.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 1.533
+    },
+    {
+     "start": 2.583,
+     "dauer": 4.981
+    },
+    {
+     "start": 8.013,
+     "dauer": 5.271
+    },
+    {
+     "start": 13.734,
+     "dauer": 6.026
+    }
+   ],
+   "dauer": 20.66
+  },
+  {
+   "typ": "merke",
+   "daten": {
+    "ueberschrift": "Das nimmst du mit",
+    "punkte": [
+     {
+      "text": "GbR und OHG: alle haften persönlich",
+      "satz": 0
+     },
+     {
+      "text": "KG: Kommanditist nur bis zur Haftsumme",
+      "satz": 0
+     },
+     {
+      "text": "Vorab → Zinsen → Rest nach Schlüssel",
+      "satz": 1
+     },
+     {
+      "text": "Ohne Vertrag: Beteiligungsanteile, keine 4 %",
+      "satz": 1
+     }
+    ],
+    "aufruf": "Jetzt üben: LF 8 → Gewinnverteilung"
+   },
+   "saetze": [
+    "Zusammengefasst: Bei GbR und OHG haften alle Gesellschafter persönlich. Der Kommanditist einer KG nur bis zu seiner Haftsumme.",
+    "Den Gewinn verteilst du in drei Stufen: Vorab, Zinsen, Rest nach Schlüssel. Und ohne Vertrag gelten die Beteiligungsanteile.",
+    "Im Lernfeld 8 findest du dazu Übungsaufgaben mit Stimme. Viel Erfolg!"
+   ],
+   "ton": "lf8-gewinnverteilung/s12.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 7.407
+    },
+    {
+     "start": 8.457,
+     "dauer": 6.745
+    },
+    {
+     "start": 15.653,
+     "dauer": 4.063
+    }
+   ],
+   "dauer": 20.616
+  }
+ ],
+ "dauer": 244.217
+}
