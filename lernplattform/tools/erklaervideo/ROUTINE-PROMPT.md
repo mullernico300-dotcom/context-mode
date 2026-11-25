@@ -1,3 +1,5 @@
+> Überholt: Die Dashboard-Aufgabe nutzt seit 25.11. den Premium-Ablauf (siehe README.md und CLAUDE.md). Diese Datei bleibt nur als Referenz.
+
 Täglicher Lauf „Lernvideo des Tages“ für den Lernfeld-Trainer. Ziel: Ich bekomme jeden Tag genau ein Lernvideo hier im Dashboard. Montag, Mittwoch und Freitag ein neues, an den anderen Tagen ein älteres zum Wiederholen. Arbeite selbstständig bis zum Ende, ohne Rückfragen, und antworte am Schluss auf Deutsch.
 
 GRUNDLAGEN

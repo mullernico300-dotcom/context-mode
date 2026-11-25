@@ -59,6 +59,8 @@ Ein Modell kann Claude nicht selbst wechseln. Der Nutzer stellt es mit `/model` 
 - Ein geplanter Lauf (im Dashboard des Nutzers) liefert jeden Tag ein Lernvideo ins Dashboard: montags, mittwochs und freitags ein neues Erklärvideo (3–5 Min., NotebookLM-Stil) zu einem Thema ohne Video, das zusätzlich auf der Themenseite der App erscheint (js/erklaervideos.js, videos/erklaer/ nur im Artefakt); an den anderen Tagen ein älteres Video zum Wiederholen. Prompt: tools/erklaervideo/ROUTINE-PROMPT.md.
 - Die Startseite der App bekommt keinen eigenen Video-Bereich (Nutzerwunsch); Erklärvideos stehen nur auf den Themenseiten.
 - Länge der Erklärvideos (Nutzerwunsch 24.11.): etwa 3:30 Minuten, also ungefähr 3:15 bis 3:45. Passt die Länge nach `ton.py` nicht, Sätze kürzen oder ergänzen und neu vertonen.
+- Stil der Erklärvideos (Nutzerentscheidung 25.11.): immer Premium wie das Vorbild `skripte/lf8-gewinnverteilung.json` – Intro, Kapitelkarten, Quiz mit Countdown, Musik und Klänge (`klang.py`), Full HD (`BREITE=1920 python3 eintragen.py …`). Ablauf in tools/erklaervideo/README.md.
+- Die Dashboard-Aufgabe „Dashboard Erklärvideos (Mo, Mi, Fr 4:30)“ holt das Werkzeug aus dem Lernfeld-Trainer-Artefakt (Dateien unter tools/erklaervideo/ und tools/make_videos.py). Nach Änderungen am Werkzeug diese Dateien dort neu veröffentlichen.
 
 ## Videos bei Tests (verbindlich)
 
