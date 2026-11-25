@@ -1,0 +1,313 @@
+{
+ "id": "lf8-grundbegriffe",
+ "lf": "lf8",
+ "thema": "Grundbegriffe: Einkünfte und das Rechenschema",
+ "kapitel": "LF 8 · Einkommensteuer",
+ "titel": "Einkunftsarten",
+ "kartentitel": "Die sieben Einkunftsarten und das Rechenschema",
+ "farbe": "#3b82f6",
+ "stil": "premium",
+ "musik": "lf8-grundbegriffe/musik.wav",
+ "szenen": [
+  {
+   "typ": "intro",
+   "daten": {
+    "kicker": "LF 8 · Einkommensteuer",
+    "titel": "Ist das steuerbar?",
+    "untertitel": "Die sieben Einkunftsarten",
+    "betrag": 30000,
+    "betragLabel": "Einnahmen im Jahr",
+    "satzBetrag": 1,
+    "satzTeilen": 2,
+    "personen": [
+     {
+      "name": "Lohn",
+      "icon": "💼"
+     },
+     {
+      "name": "Lotto",
+      "icon": "🎰"
+     }
+    ]
+   },
+   "saetze": [
+    "Ein Kollege fragt dich: Ist mein Lottogewinn eigentlich steuerpflichtig?",
+    "Die Antwort liegt in den Einkunftsarten. Sie sind das Fundament der gesamten Einkommensteuer.",
+    "Es gibt sieben davon. Wer sie sortieren kann, hat das Rechenschema schon halb im Kopf."
+   ],
+   "ton": "lf8-grundbegriffe/s01.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 3.506
+    },
+    {
+     "start": 4.556,
+     "dauer": 5.016
+    },
+    {
+     "start": 10.022,
+     "dauer": 4.238
+    }
+   ],
+   "dauer": 15.159
+  },
+  {
+   "typ": "sortieren",
+   "daten": {
+    "ueberschrift": "Ist das steuerbar?",
+    "ja": "steuerbar",
+    "nein": "nicht steuerbar",
+    "karten": [
+     {
+      "text": "Lohn aus einem Job",
+      "icon": "💼",
+      "ja": true,
+      "satz": 1
+     },
+     {
+      "text": "Lottogewinn",
+      "icon": "🎰",
+      "ja": false,
+      "satz": 2
+     },
+     {
+      "text": "Erbschaft",
+      "icon": "🏛️",
+      "ja": false,
+      "satz": 2
+     }
+    ]
+   },
+   "saetze": [
+    "Erst die Frage: Gehört die Einnahme zu einer der sieben Einkunftsarten? Wenn ja, ist sie steuerbar.",
+    "Lohn aus einem Job gehört zur nichtselbständigen Arbeit. Das ist steuerbar.",
+    "Ein Lottogewinn oder eine Erbschaft passt in keine Einkunftsart. Also nicht steuerbar."
+   ],
+   "ton": "lf8-grundbegriffe/s02.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 5.584
+    },
+    {
+     "start": 6.634,
+     "dauer": 4.191
+    },
+    {
+     "start": 11.276,
+     "dauer": 5.05
+    }
+   ],
+   "dauer": 17.226
+  },
+  {
+   "typ": "formel",
+   "daten": {
+    "ueberschrift": "Das Rechenschema",
+    "ref": "§ 2 EStG",
+    "zeilen": [
+     {
+      "zeichen": "1",
+      "text": "Einkünfte aus sieben Arten",
+      "info": "Gewinn oder Überschuss"
+     },
+     {
+      "zeichen": "2",
+      "text": "Summe der Einkünfte",
+      "info": "alles addiert"
+     },
+     {
+      "zeichen": "3",
+      "text": "Gesamtbetrag der Einkünfte",
+      "info": "minus Entlastungsbeträge"
+     },
+     {
+      "zeichen": "4",
+      "text": "Einkommen",
+      "info": "minus Sonderausgaben"
+     },
+     {
+      "zeichen": "5",
+      "text": "zu versteuerndes Einkommen",
+      "info": "minus Kinderfreibeträge",
+      "ergebnis": true
+     }
+    ]
+   },
+   "saetze": [
+    "So sieht das Rechenschema aus, Schritt für Schritt.",
+    "Erstens: die Einkünfte aus den sieben Arten. Bei den Gewinneinkünften rechnest du den Gewinn aus, bei den anderen Einnahmen minus Werbungskosten.",
+    "Zweitens: alles addiert ergibt die Summe der Einkünfte.",
+    "Drittens und viertens: Entlastungsbeträge und Sonderausgaben werden abgezogen.",
+    "Am Ende bleibt das zu versteuernde Einkommen. Darauf wird die Steuer nach dem Tarif berechnet."
+   ],
+   "ton": "lf8-grundbegriffe/s03.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 2.473
+    },
+    {
+     "start": 3.523,
+     "dauer": 7.546
+    },
+    {
+     "start": 11.519,
+     "dauer": 2.949
+    },
+    {
+     "start": 14.918,
+     "dauer": 4.667
+    },
+    {
+     "start": 20.036,
+     "dauer": 5.039
+    }
+   ],
+   "dauer": 25.974
+  },
+  {
+   "typ": "stapel",
+   "daten": {
+    "ueberschrift": "Ein Beispiel: Lohn",
+    "icon": "💶",
+    "zeilen": [
+     {
+      "text": "Einnahmen aus Lohn",
+      "wert": "30.000 €",
+      "satz": 0
+     },
+     {
+      "text": "− Werbungskosten-Pauschbetrag",
+      "wert": "1.230 €",
+      "satz": 1
+     },
+     {
+      "text": "= Einkünfte aus Lohn",
+      "wert": "28.770 €",
+      "ergebnis": true,
+      "satz": 2
+     }
+    ]
+   },
+   "saetze": [
+    "Jetzt ein Beispiel. Du hast im Jahr 30.000 Euro Lohn.",
+    "Der Werbungskosten-Pauschbetrag ist 1.230 Euro. Den bekommst du ohne Nachweis abgezogen.",
+    "Übrig bleiben 28.770 Euro. Das sind deine Einkünfte aus nichtselbständiger Arbeit."
+   ],
+   "ton": "lf8-grundbegriffe/s04.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 3.46
+    },
+    {
+     "start": 4.51,
+     "dauer": 6.351
+    },
+    {
+     "start": 11.31,
+     "dauer": 6.502
+    }
+   ],
+   "dauer": 18.712
+  },
+  {
+   "typ": "fallen",
+   "daten": {
+    "ueberschrift": "Typische Fallen",
+    "karten": [
+     {
+      "titel": "Nicht steuerbar ist nicht steuerfrei",
+      "text": "Lotto ist nicht steuerbar. Arbeitslosengeld ist steuerfrei, wirkt aber über den Steuersatz.",
+      "satz": 1
+     },
+     {
+      "titel": "Trinkgeld",
+      "text": "Freiwillige Gäste-Trinkgelder sind steuerfrei. Ein Anspruch darauf ist Lohn.",
+      "satz": 2
+     },
+     {
+      "titel": "Lohnsteuer",
+      "text": "Die Lohnsteuer ist nur eine Vorauszahlung auf die Einkommensteuer.",
+      "satz": 3
+     }
+    ]
+   },
+   "saetze": [
+    "Drei Fallen, die oft Punkte kosten.",
+    "Erstens: nicht steuerbar und steuerfrei sind zwei verschiedene Dinge. Arbeitslosengeld ist steuerfrei, erhöht aber den Steuersatz für dein übriges Einkommen.",
+    "Zweitens: Trinkgeld ist nur steuerfrei, wenn es freiwillig gezahlt wird. Gibt es einen Anspruch darauf, ist es Lohn.",
+    "Drittens: Die Lohnsteuer ist keine eigene Steuer. Sie wird bei der Steuererklärung angerechnet."
+   ],
+   "ton": "lf8-grundbegriffe/s05.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 1.985
+    },
+    {
+     "start": 3.035,
+     "dauer": 8.824
+    },
+    {
+     "start": 12.309,
+     "dauer": 7.012
+    },
+    {
+     "start": 19.771,
+     "dauer": 5.132
+    }
+   ],
+   "dauer": 25.803
+  },
+  {
+   "typ": "merke",
+   "daten": {
+    "ueberschrift": "Das nimmst du mit",
+    "punkte": [
+     {
+      "text": "Sieben Einkunftsarten, sonst nicht steuerbar",
+      "satz": 0
+     },
+     {
+      "text": "Steuerfrei heißt: steuerbar, aber verschont",
+      "satz": 0
+     },
+     {
+      "text": "Addieren, abziehen, Tarif anwenden",
+      "satz": 1
+     },
+     {
+      "text": "Ende: zu versteuerndes Einkommen",
+      "satz": 1
+     }
+    ],
+    "aufruf": "Jetzt üben: LF 8 → Einkunftsarten"
+   },
+   "saetze": [
+    "Zum Schluss: Passt eine Einnahme nicht in die sieben Einkunftsarten, ist sie nicht steuerbar. Passt sie hinein, prüfst du, ob sie steuerfrei ist.",
+    "Dann rechnest du Schritt für Schritt bis zum zu versteuernden Einkommen. Dort wird der Tarif angewendet.",
+    "Im Lernfeld 8 findest du dazu Übungen mit Stimme."
+   ],
+   "ton": "lf8-grundbegriffe/s06.wav",
+   "zeiten": [
+    {
+     "start": 0.6,
+     "dauer": 7.454
+    },
+    {
+     "start": 8.504,
+     "dauer": 5.155
+    },
+    {
+     "start": 14.108,
+     "dauer": 2.902
+    }
+   ],
+   "dauer": 17.911
+  }
+ ],
+ "dauer": 120.785
+}

@@ -1,0 +1,199 @@
+{
+  "id": "lf8-betriebsausgaben",
+  "lf": "lf8",
+  "thema": "Betriebsausgaben, Werbungskosten und private Kosten",
+  "kapitel": "LF 8 · Einkommensteuer",
+  "titel": "Betriebsausgaben",
+  "kartentitel": "Betriebsausgaben, Werbungskosten oder privat?",
+  "farbe": "#3b82f6",
+  "stil": "premium",
+  "musik": "lf8-betriebsausgaben/musik.wav",
+  "szenen": [
+    {
+      "typ": "intro",
+      "daten": {
+        "kicker": "LF 8 · Einkommensteuer",
+        "titel": "Abziehbar oder privat?",
+        "untertitel": "Betriebsausgaben und Werbungskosten",
+        "betrag": 5000,
+        "betragLabel": "Ausgaben im Jahr",
+        "satzBetrag": 1,
+        "satzTeilen": 2,
+        "personen": [
+          {
+            "name": "Mia",
+            "icon": "🥐"
+          },
+          {
+            "name": "Tim",
+            "icon": "🧑‍💻"
+          }
+        ]
+      },
+      "saetze": [
+        "Mia führt eine Bäckerei, Tim ist Angestellter.",
+        "Beide kaufen Dinge, die sie für Job oder Betrieb brauchen. Was darf man davon abziehen?",
+        "Die Antwort hängt vom Zusammenhang ab: betrieblich, beruflich oder privat."
+      ]
+    },
+    {
+      "typ": "sortieren",
+      "daten": {
+        "ueberschrift": "Abziehbar?",
+        "ja": "abziehbar",
+        "nein": "privat",
+        "karten": [
+          {
+            "text": "Backofen für die Bäckerei",
+            "icon": "🔥",
+            "ja": true,
+            "satz": 1
+          },
+          {
+            "text": "Fachbuch für den Job",
+            "icon": "📘",
+            "ja": true,
+            "satz": 2
+          },
+          {
+            "text": "Friseur",
+            "icon": "💇",
+            "ja": false,
+            "satz": 3
+          },
+          {
+            "text": "Alltagskleidung",
+            "icon": "👕",
+            "ja": false,
+            "satz": 3
+          }
+        ]
+      },
+      "saetze": [
+        "Erst die Frage: Ist der Aufwand betrieblich oder beruflich veranlasst?",
+        "Der Backofen gehört zur Bäckerei. Er ist eine Betriebsausgabe.",
+        "Ein Fachbuch für den Job sind Werbungskosten. Auch die sind abziehbar.",
+        "Friseur und Alltagskleidung sind private Lebenshaltungskosten. Die darf man nie abziehen."
+      ]
+    },
+    {
+      "typ": "formel",
+      "daten": {
+        "ueberschrift": "Welche Art von Aufwand?",
+        "ref": "§ 4 Abs. 4 · § 9 · § 12 EStG",
+        "zeilen": [
+          {
+            "zeichen": "1",
+            "text": "Gewinneinkunft",
+            "info": "Betriebsausgaben, § 4 Abs. 4"
+          },
+          {
+            "zeichen": "2",
+            "text": "Überschusseinkunft",
+            "info": "Werbungskosten, § 9 Abs. 1"
+          },
+          {
+            "zeichen": "3",
+            "text": "Privat veranlasst",
+            "info": "nie abziehbar, § 12 Nr. 1",
+            "ergebnis": true
+          }
+        ]
+      },
+      "saetze": [
+        "Die Einkunftsart entscheidet, wie der Aufwand heißt.",
+        "Bei Gewinneinkünften heißt er Betriebsausgabe, bei Überschusseinkünften Werbungskosten.",
+        "Gehört er zur privaten Lebensführung, ist er gar nicht abziehbar. Auch dann, wenn er dem Beruf nützt."
+      ]
+    },
+    {
+      "typ": "stapel",
+      "daten": {
+        "ueberschrift": "Beispiel: Laptop für die Bäckerei",
+        "icon": "💻",
+        "zeilen": [
+          {
+            "text": "Anschaffungskosten netto",
+            "wert": "750 €",
+            "satz": 0
+          },
+          {
+            "text": "Grenze geringwertiges Wirtschaftsgut",
+            "wert": "800 €",
+            "satz": 1
+          },
+          {
+            "text": "= sofort komplett abziehbar",
+            "wert": "750 €",
+            "ergebnis": true,
+            "satz": 2
+          }
+        ]
+      },
+      "saetze": [
+        "Ein Beispiel: Mia kauft einen Laptop für ihre Bäckerei. Netto kostet er 750 Euro.",
+        "Bis 800 Euro netto ist ein Gerät ein geringwertiges Wirtschaftsgut.",
+        "Dann darf Mia die 750 Euro sofort komplett als Betriebsausgabe abziehen."
+      ]
+    },
+    {
+      "typ": "fallen",
+      "daten": {
+        "ueberschrift": "Typische Fallen",
+        "karten": [
+          {
+            "titel": "Allgemeine Bücher",
+            "text": "Ein allgemeines Nachschlagewerk ist privat. Nur Fachliteratur zählt.",
+            "satz": 1
+          },
+          {
+            "titel": "Geschenke",
+            "text": "Geschenke über 50 Euro je Empfänger und Jahr sind nicht abziehbar.",
+            "satz": 2
+          },
+          {
+            "titel": "Firmenwagen privat",
+            "text": "Privat genutzt: 1 Prozent des Listenpreises pro Monat, oder Fahrtenbuch.",
+            "satz": 3
+          }
+        ]
+      },
+      "saetze": [
+        "Drei typische Fehler.",
+        "Erstens: Ein allgemeines Nachschlagewerk ist privat. Nur Fachliteratur zählt zu den Werbungskosten.",
+        "Zweitens: Geschenke über 50 Euro je Empfänger und Jahr sind nicht abziehbar.",
+        "Drittens: Den privat genutzten Firmenwagen setzt du mit 1 Prozent des Listenpreises pro Monat an."
+      ]
+    },
+    {
+      "typ": "merke",
+      "daten": {
+        "ueberschrift": "Das nimmst du mit",
+        "punkte": [
+          {
+            "text": "Gewinn: Betriebsausgaben",
+            "satz": 0
+          },
+          {
+            "text": "Überschuss: Werbungskosten",
+            "satz": 0
+          },
+          {
+            "text": "Privat: nie abziehbar",
+            "satz": 1
+          },
+          {
+            "text": "Bis 800 Euro netto: sofort",
+            "satz": 1
+          }
+        ],
+        "aufruf": "Jetzt üben: LF 8 → Betriebsausgaben"
+      },
+      "saetze": [
+        "Zusammengefasst: Gewinneinkünfte haben Betriebsausgaben, Überschusseinkünfte Werbungskosten.",
+        "Was privat veranlasst ist, darfst du nie abziehen. Und bis 800 Euro netto geht ein Gerät sofort.",
+        "Im Lernfeld 8 findest du dazu Übungen mit Stimme."
+      ]
+    }
+  ]
+}

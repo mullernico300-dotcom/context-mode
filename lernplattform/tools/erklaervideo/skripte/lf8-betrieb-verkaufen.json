@@ -1,0 +1,197 @@
+{
+  "id": "lf8-betrieb-verkaufen",
+  "lf": "lf8",
+  "thema": "Betrieb verkaufen oder aufgeben",
+  "kapitel": "LF 8 · Einkommensteuer",
+  "titel": "Betrieb verkaufen",
+  "kartentitel": "Betrieb verkaufen: Gewinn und Freibetrag",
+  "farbe": "#3b82f6",
+  "stil": "premium",
+  "musik": "lf8-betrieb-verkaufen/musik.wav",
+  "szenen": [
+    {
+      "typ": "intro",
+      "daten": {
+        "kicker": "LF 8 · Einkommensteuer",
+        "titel": "Betrieb verkauft",
+        "untertitel": "Was bleibt als Gewinn?",
+        "betrag": 300000,
+        "betragLabel": "Verkaufspreis",
+        "satzBetrag": 1,
+        "satzTeilen": 2,
+        "personen": [
+          {
+            "name": "Peter",
+            "icon": "🏪"
+          },
+          {
+            "name": "Finanzamt",
+            "icon": "🧾"
+          }
+        ]
+      },
+      "saetze": [
+        "Peter verkauft seinen Laden. Der Käufer zahlt 300.000 Euro.",
+        "Was davon ist für das Finanzamt Gewinn? Und gibt es einen Freibetrag?",
+        "Das schauen wir uns jetzt Schritt für Schritt an."
+      ]
+    },
+    {
+      "typ": "formel",
+      "daten": {
+        "ueberschrift": "Der Veräußerungsgewinn",
+        "ref": "§ 16 Abs. 2 EStG",
+        "zeilen": [
+          {
+            "zeichen": "1",
+            "text": "Verkaufspreis",
+            "info": "was der Käufer zahlt"
+          },
+          {
+            "zeichen": "2",
+            "text": "− Verkaufskosten",
+            "info": "z. B. Notar, Makler"
+          },
+          {
+            "zeichen": "3",
+            "text": "− Buchwert des Betriebsvermögens",
+            "info": "Wert in der Bilanz"
+          },
+          {
+            "zeichen": "=",
+            "text": "Veräußerungsgewinn",
+            "info": "Einkünfte aus Gewerbebetrieb",
+            "ergebnis": true
+          }
+        ]
+      },
+      "saetze": [
+        "Beim Verkauf des ganzen Betriebs rechnest du zuerst den Veräußerungsgewinn.",
+        "Vom Verkaufspreis ziehst du die Verkaufskosten und den Buchwert ab.",
+        "Das Ergebnis gehört zu den Einkünften aus Gewerbebetrieb."
+      ]
+    },
+    {
+      "typ": "stapel",
+      "daten": {
+        "ueberschrift": "Ein Beispiel",
+        "icon": "🏪",
+        "zeilen": [
+          {
+            "text": "Verkaufspreis",
+            "wert": "300.000 €",
+            "satz": 0
+          },
+          {
+            "text": "− Verkaufskosten",
+            "wert": "10.000 €",
+            "satz": 1
+          },
+          {
+            "text": "− Buchwert Betriebsvermögen",
+            "wert": "150.000 €",
+            "satz": 1
+          },
+          {
+            "text": "= Veräußerungsgewinn",
+            "wert": "140.000 €",
+            "ergebnis": true,
+            "satz": 2
+          }
+        ]
+      },
+      "saetze": [
+        "Ein Beispiel: Peter verkauft seinen Laden für 300.000 Euro.",
+        "Die Verkaufskosten betragen 10.000 Euro, der Buchwert 150.000 Euro.",
+        "Der Veräußerungsgewinn beträgt also 140.000 Euro."
+      ]
+    },
+    {
+      "typ": "grenze",
+      "daten": {
+        "ueberschrift": "Der Freibetrag",
+        "grenze": 136000,
+        "grenzeLabel": "ab 136.000 € schmilzt er",
+        "max": 200000,
+        "teile": [
+          {
+            "label": "Veräußerungsgewinn",
+            "wert": 140000,
+            "satz": 1
+          }
+        ],
+        "ergebnis": {
+          "text": "Freibetrag 41.000 € bei 55 Jahren",
+          "ok": true,
+          "satz": 3
+        },
+        "ref": "§ 16 Abs. 4 EStG"
+      },
+      "saetze": [
+        "Jetzt der Freibetrag.",
+        "Peter ist 58 Jahre alt. Den Freibetrag von 45.000 Euro gibt es einmal im Leben, auf Antrag.",
+        "Ab 136.000 Euro Gewinn schmilzt er. 140.000 minus 136.000 sind 4.000 Euro. 45.000 minus 4.000 bleiben 41.000 Euro.",
+        "Zu versteuern sind dann 140.000 minus 41.000, also 99.000 Euro."
+      ]
+    },
+    {
+      "typ": "fallen",
+      "daten": {
+        "ueberschrift": "Typische Fallen",
+        "karten": [
+          {
+            "titel": "Alter vergessen",
+            "text": "Den Freibetrag gibt es erst ab 55 Jahren oder bei dauernder Berufsunfähigkeit.",
+            "satz": 1
+          },
+          {
+            "titel": "Schulden",
+            "text": "Nicht übernommene Verbindlichkeiten mindern das übertragene Kapital nicht.",
+            "satz": 2
+          },
+          {
+            "titel": "Fünftelregelung",
+            "text": "Mildert die Steuer bei großen Gewinnen, ist aber mit § 6b ausgeschlossen.",
+            "satz": 3
+          }
+        ]
+      },
+      "saetze": [
+        "Drei typische Fehler.",
+        "Erstens: Der Freibetrag gilt erst ab 55 Jahren oder bei dauernder Berufsunfähigkeit.",
+        "Zweitens: Schulden, die der Käufer nicht übernimmt, mindern das übertragene Kapital nicht.",
+        "Drittens: Die Fünftelregelung nach Paragraf 34 mildert die Steuer. Wer aber § 6b nutzt, darf sie nicht anwenden."
+      ]
+    },
+    {
+      "typ": "merke",
+      "daten": {
+        "ueberschrift": "Das nimmst du mit",
+        "punkte": [
+          {
+            "text": "Preis minus Kosten minus Buchwert",
+            "satz": 0
+          },
+          {
+            "text": "Freibetrag 45.000 €, ab 55 Jahren",
+            "satz": 0
+          },
+          {
+            "text": "Schmilzt ab 136.000 €",
+            "satz": 1
+          },
+          {
+            "text": "Einmal im Leben, auf Antrag",
+            "satz": 1
+          }
+        ],
+        "aufruf": "Jetzt üben: LF 8 → Betrieb verkaufen"
+      },
+      "saetze": [
+        "Zusammengefasst: Der Veräußerungsgewinn ist Preis minus Kosten minus Buchwert.",
+        "Der Freibetrag von 45.000 Euro gilt ab 55 Jahren, einmal im Leben, und schmilzt ab 136.000 Euro.",
+        "Im Lernfeld 8 findest du dazu Übungen mit Stimme."
+      ]
+    }
+  ]
+}

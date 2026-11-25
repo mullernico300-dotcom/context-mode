@@ -33,7 +33,7 @@ export const Intro: React.FC<{ d: D }> = ({ d }) => {
         <div style={{ position: 'absolute', left: '50%', top: 0, transform: `translateX(-50%) scale(${0.7 + 0.3 * topf})`, opacity: topf * (1 - 0.65 * teilen) }}>
           <Karte leuchten={F.gelb} style={{ padding: '16px 50px', textAlign: 'center' }}>
             <div style={{ fontSize: 28, color: F.leise, fontWeight: 600 }}>{d.betragLabel}</div>
-            <div style={{ fontFamily: TITEL, fontSize: 80, fontWeight: 700, color: F.gelb, whiteSpace: 'nowrap' }}>{eur(Math.round(d.betrag * zahl / 1000) * 1000)}</div>
+            <div style={{ fontFamily: TITEL, fontSize: 80, fontWeight: 700, color: F.gelb, whiteSpace: 'nowrap' }}>{eur(Math.round(d.betrag * zahl))}</div>
           </Karte>
         </div>
         {d.personen.map((ps: D, i: number) => {
