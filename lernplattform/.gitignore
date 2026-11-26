@@ -2,3 +2,6 @@ js/schule.js
 
 # Erklärvideos liegen nur im Artefakt (je bis 15 MB), nicht im Repository
 videos/erklaer/
+
+# Python-Zwischenspeicher
+__pycache__/
