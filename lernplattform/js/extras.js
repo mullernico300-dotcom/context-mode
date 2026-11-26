@@ -113,8 +113,9 @@
 
   /* ---------------- Inhalte automatisch aus Paragrafen ---------------- */
   function kartenFuer(lf) {
-    if (lf.karten.length) return lf.karten;
-    return lf.paragrafen.map((p) => ({ vorne: `Was regelt ${p.ref}?`, hinten: p.text, thema: p.gruppe }));
+    // eigene Karten zuerst, dazu je Paragraf eine automatische Karte (ergänzt, ersetzt nicht)
+    const auto = lf.paragrafen.map((p) => ({ vorne: `Was regelt ${p.ref}?`, hinten: p.text, thema: p.gruppe }));
+    return lf.karten.concat(auto);
   }
 
   function kurz(text, max) {
@@ -127,7 +128,7 @@
 
   function quizFuer(lf) {
     const eigene = lf.quiz.filter((q) => q.frage && q.antworten.filter((a) => a).length >= 2 && q.antworten[q.richtig]);
-    if (eigene.length >= 5 || lf.paragrafen.length < 4) return eigene;
+    if (lf.paragrafen.length < 4) return eigene; // eigene Fragen kommen immer zuerst, die automatischen aus den Paragrafen ergänzen sie
     const refs = [...new Set(lf.paragrafen.map((p) => p.ref))];
     const auto = lf.paragrafen.map((p) => {
       // Ablenker: bevorzugt aus demselben Gesetz (z. B. alle „BGB“), damit es nicht zu leicht wird

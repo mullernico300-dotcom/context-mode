@@ -895,8 +895,242 @@ window.LERN_DATEN = {
           "text": "Die Insolvenzgeldumlage (U3) zahlt nur der Arbeitgeber. 2026 beträgt sie 0,15 % des rentenversicherungspflichtigen Entgelts, auch für Auszubildende."
         }
       ],
-      "karten": [],
-      "quiz": [],
+      "karten": [
+        {
+          "vorne": "Nenne die fünf Zweige der Sozialversicherung.",
+          "hinten": "Krankenversicherung (SGB V), Pflegeversicherung (SGB XI), Rentenversicherung (SGB VI), Arbeitslosenversicherung (SGB III), Unfallversicherung (SGB VII)."
+        },
+        {
+          "vorne": "Welcher Zweig wird allein vom Arbeitgeber bezahlt?",
+          "hinten": "Die Unfallversicherung (§ 150 Abs. 1 SGB VII). Sie geht direkt an die Berufsgenossenschaft."
+        },
+        {
+          "vorne": "Woraus besteht der Gesamtsozialversicherungsbeitrag?",
+          "hinten": "Aus den Beiträgen zur Kranken-, Pflege-, Renten- und Arbeitslosenversicherung (§ 28d SGB IV). Die Unfallversicherung gehört nicht dazu."
+        },
+        {
+          "vorne": "Wer zahlt den Gesamtsozialversicherungsbeitrag an wen?",
+          "hinten": "Der Arbeitgeber schuldet und zahlt ihn (§ 28e SGB IV) an die Krankenkasse des Arbeitnehmers als Einzugsstelle (§ 28h SGB IV)."
+        },
+        {
+          "vorne": "Wann sind die Beiträge fällig?",
+          "hinten": "Spätestens am drittletzten Bankarbeitstag des Monats, in dem gearbeitet wurde (§ 23 Abs. 1 Satz 2 SGB IV)."
+        },
+        {
+          "vorne": "Wie hoch ist der Arbeitnehmeranteil 2026 in den einzelnen Zweigen?",
+          "hinten": "KV 7,3 % + 1,45 % Zusatzbeitrag, PV 1,8 % (kinderlos ab 23: 2,4 %), RV 9,3 %, AV 1,3 %. Zusammen 21,15 %, kinderlos 21,75 %."
+        },
+        {
+          "vorne": "Was ist der Unterschied zwischen Versicherungspflichtgrenze und Beitragsbemessungsgrenze?",
+          "hinten": "Versicherungspflichtgrenze (6.450 €/Monat): ab hier darf man aus der gesetzlichen Krankenversicherung aussteigen. Beitragsbemessungsgrenze (KV/PV 5.812,50 €, RV/AV 8.450 €): bis hierhin werden Beiträge berechnet."
+        },
+        {
+          "vorne": "Was zahlt ein Kinderloser ab 23 in der Pflegeversicherung?",
+          "hinten": "Einen Zuschlag von 0,6 %, den der Arbeitnehmer allein trägt: Anteil 2,4 % statt 1,8 % (§ 55 Abs. 3 SGB XI)."
+        },
+        {
+          "vorne": "Wie sinkt der Pflegebeitrag mit Kindern?",
+          "hinten": "Ab dem 2. Kind unter 25: Abschlag 0,25 % je Kind. 2 Kinder 1,55 %, 3 Kinder 1,30 %, 4 Kinder 1,05 %, ab 5 Kindern 0,80 %."
+        },
+        {
+          "vorne": "Was sind die Umlagen U1, U2 und U3?",
+          "hinten": "U1: Entgeltfortzahlung bei Krankheit (nur Betriebe bis 30 Arbeitnehmer). U2: Mutterschaft (alle Arbeitgeber). U3: Insolvenzgeld (0,15 % 2026). Alle zahlt der Arbeitgeber allein."
+        }
+      ],
+      "quiz": [
+        {
+          "frage": "Wie viele Zweige hat die gesetzliche Sozialversicherung?",
+          "antworten": [
+            "Vier",
+            "Sechs",
+            "Drei",
+            "Fünf"
+          ],
+          "richtig": 3,
+          "stufe": 1,
+          "erklaerung": "Kranken-, Pflege-, Renten-, Arbeitslosen- und Unfallversicherung."
+        },
+        {
+          "frage": "Welchen Sozialversicherungszweig bezahlt der Arbeitgeber allein?",
+          "antworten": [
+            "Die Rentenversicherung",
+            "Die Unfallversicherung",
+            "Die Pflegeversicherung",
+            "Die Arbeitslosenversicherung"
+          ],
+          "richtig": 1,
+          "stufe": 1,
+          "erklaerung": "Den Beitrag zur Unfallversicherung zahlt allein der Unternehmer, § 150 Abs. 1 SGB VII."
+        },
+        {
+          "frage": "Wer ist Träger der gesetzlichen Unfallversicherung?",
+          "antworten": [
+            "Die Berufsgenossenschaften",
+            "Die Krankenkassen",
+            "Die Deutsche Rentenversicherung",
+            "Die Bundesagentur für Arbeit"
+          ],
+          "richtig": 0,
+          "stufe": 1,
+          "erklaerung": "Träger sind die Berufsgenossenschaften (SGB VII). Der Beitrag läuft nicht über die Krankenkasse."
+        },
+        {
+          "frage": "Wer ist Einzugsstelle für den Gesamtsozialversicherungsbeitrag?",
+          "antworten": [
+            "Das Finanzamt",
+            "Die Berufsgenossenschaft",
+            "Die Krankenkasse des Arbeitnehmers",
+            "Die Deutsche Rentenversicherung"
+          ],
+          "richtig": 2,
+          "stufe": 1,
+          "erklaerung": "Die Krankenkasse zieht ein und verteilt an die anderen Träger, § 28h Abs. 1 SGB IV."
+        },
+        {
+          "frage": "Wann sind die Sozialversicherungsbeiträge spätestens fällig?",
+          "antworten": [
+            "Am drittletzten Bankarbeitstag des Monats, in dem gearbeitet wurde",
+            "Am 10. des Folgemonats",
+            "Am letzten Tag des Folgemonats",
+            "Am 15. des Monats, in dem gearbeitet wurde"
+          ],
+          "richtig": 0,
+          "stufe": 1,
+          "erklaerung": "Fälligkeit: drittletzter Bankarbeitstag des Arbeitsmonats, § 23 Abs. 1 Satz 2 SGB IV."
+        },
+        {
+          "frage": "Wie viel Prozent vom allgemeinen Beitragssatz zur Krankenversicherung (14,6 %) zahlt der Arbeitnehmer?",
+          "antworten": [
+            "7,3 %",
+            "14,6 %",
+            "8,75 %",
+            "9,3 %"
+          ],
+          "richtig": 0,
+          "stufe": 2,
+          "erklaerung": "Der allgemeine Beitragssatz wird hälftig geteilt: 7,3 %, § 241 SGB V."
+        },
+        {
+          "frage": "Der durchschnittliche Zusatzbeitrag 2026 beträgt 2,9 %. Wie viel davon zahlt der Arbeitnehmer?",
+          "antworten": [
+            "2,9 %",
+            "1,45 %",
+            "0,725 %",
+            "Nichts"
+          ],
+          "richtig": 1,
+          "stufe": 2,
+          "erklaerung": "Auch den Zusatzbeitrag tragen beide je zur Hälfte: 1,45 %, § 249 Abs. 1 SGB V."
+        },
+        {
+          "frage": "Welche monatliche Grenze gilt 2026 für die Beitragsbemessung in der Kranken- und Pflegeversicherung?",
+          "antworten": [
+            "6.450,00 €",
+            "8.450,00 €",
+            "7.000,00 €",
+            "5.812,50 €"
+          ],
+          "richtig": 3,
+          "stufe": 2,
+          "erklaerung": "BBG Kranken-/Pflegeversicherung: 69.750 € im Jahr, 5.812,50 € im Monat, § 223 Abs. 3 SGB V."
+        },
+        {
+          "frage": "Welche monatliche Grenze gilt 2026 für die Beitragsbemessung in der Renten- und Arbeitslosenversicherung?",
+          "antworten": [
+            "8.450,00 €",
+            "5.812,50 €",
+            "6.450,00 €",
+            "9.000,00 €"
+          ],
+          "richtig": 0,
+          "stufe": 2,
+          "erklaerung": "BBG Rentenversicherung: 101.400 € im Jahr, 8.450 € im Monat, § 159 SGB VI. Sie gilt auch für die Arbeitslosenversicherung."
+        },
+        {
+          "frage": "Ab welchem Monatsverdienst 2026 darf ein Angestellter aus der gesetzlichen Krankenversicherung ausscheiden (Versicherungspflichtgrenze)?",
+          "antworten": [
+            "Über 5.812,50 €",
+            "Über 8.450 €",
+            "Über 4.800 €",
+            "Über 6.450 €"
+          ],
+          "richtig": 3,
+          "stufe": 2,
+          "erklaerung": "Versicherungspflichtgrenze 2026: 77.400 € im Jahr, also 6.450 € im Monat, § 6 Abs. 6 SGB V. Nicht mit der Beitragsbemessungsgrenze verwechseln."
+        },
+        {
+          "frage": "Wie hoch ist der Arbeitnehmeranteil zur Pflegeversicherung bei zwei Kindern unter 25 Jahren?",
+          "antworten": [
+            "1,8 %",
+            "1,55 %",
+            "2,4 %",
+            "1,30 %"
+          ],
+          "richtig": 1,
+          "stufe": 2,
+          "erklaerung": "Ab dem 2. Kind unter 25 gibt es 0,25 % Abschlag je Kind: 1,8 % − 0,25 % = 1,55 %, § 55 Abs. 3 SGB XI."
+        },
+        {
+          "frage": "Lena ist 30, kinderlos und verdient 2.400 € brutto. Wie hoch ist ihr gesamter Arbeitnehmeranteil (KV mit Zusatzbeitrag, PV, RV, AV)?",
+          "antworten": [
+            "507,60 €",
+            "540,00 €",
+            "504,00 €",
+            "522,00 €"
+          ],
+          "richtig": 3,
+          "stufe": 3,
+          "erklaerung": "KV 7,3 % + 1,45 %, PV 2,4 % (kinderlos), RV 9,3 %, AV 1,3 % = 21,75 % von 2.400 € = 522,00 €. Mit Kind wären es nur 507,60 €."
+        },
+        {
+          "frage": "Brutto 7.000 €. Wie hoch ist der Arbeitnehmeranteil zur Krankenversicherung (7,3 % + 1,45 %)?",
+          "antworten": [
+            "612,50 €",
+            "508,59 €",
+            "739,38 €",
+            "490,00 €"
+          ],
+          "richtig": 1,
+          "stufe": 3,
+          "erklaerung": "Gedeckelt auf 5.812,50 €: 5.812,50 € × 8,75 % = 508,59 €. Die vollen 7.000 € ergäben 612,50 €."
+        },
+        {
+          "frage": "Brutto 9.000 €. Wie hoch ist der Arbeitnehmeranteil zur Rentenversicherung?",
+          "antworten": [
+            "837,00 €",
+            "785,85 €",
+            "540,56 €",
+            "1.571,70 €"
+          ],
+          "richtig": 1,
+          "stufe": 3,
+          "erklaerung": "Beitragsbemessungsgrenze 8.450 €: 8.450 € × 9,3 % = 785,85 €. Der Arbeitnehmer zahlt nur den halben Satz."
+        },
+        {
+          "frage": "Für welche Arbeitgeber gilt die Umlage U1 (Entgeltfortzahlung bei Krankheit)?",
+          "antworten": [
+            "Für alle Arbeitgeber",
+            "Nur für Arbeitgeber mit mehr als 30 Arbeitnehmern",
+            "Nur für Arbeitgeber mit Auszubildenden",
+            "Nur für Arbeitgeber mit bis zu 30 Arbeitnehmern"
+          ],
+          "richtig": 3,
+          "stufe": 3,
+          "erklaerung": "U1 zahlen nur kleine Betriebe (bis 30 Arbeitnehmer; Azubis zählen nicht mit, Teilzeit anteilig), § 3 Abs. 1 AAG. U2 zahlen alle."
+        },
+        {
+          "frage": "Wer zahlt die Insolvenzgeldumlage (U3), 2026 sind es 0,15 %?",
+          "antworten": [
+            "Der Arbeitgeber allein",
+            "Arbeitgeber und Arbeitnehmer je zur Hälfte",
+            "Der Arbeitnehmer allein",
+            "Die Krankenkasse"
+          ],
+          "richtig": 0,
+          "stufe": 3,
+          "erklaerung": "Die Umlagen U1 bis U3 trägt der Arbeitgeber allein, §§ 358, 360 SGB III."
+        }
+      ],
       "raetsel": [],
       "registerId": "0fbsnlzh1hsp4s16gp2y",
       "registerStand": 1794599471386,
@@ -3088,8 +3322,262 @@ window.LERN_DATEN = {
         "Ich kenne Kündigungsfristen und den Kündigungsschutz."
       ],
       "themen": [],
-      "karten": [],
-      "quiz": [],
+      "karten": [
+        {
+          "vorne": "Was bedeutet „rechtsfähig“, und ab wann ist man es?",
+          "hinten": "Man kann Rechte und Pflichten haben. Jeder Mensch ist es ab der vollendeten Geburt (§ 1 BGB), eine GmbH als juristische Person ebenfalls."
+        },
+        {
+          "vorne": "Wie geht das Eigentum auf den Käufer über?",
+          "hinten": "Bewegliche Sachen: Einigung und Übergabe (§ 929 BGB). Grundstücke: Auflassung vor dem Notar und Eintragung im Grundbuch (§§ 873, 925 BGB)."
+        },
+        {
+          "vorne": "Die drei Stufen der Geschäftsfähigkeit",
+          "hinten": "Unter 7 Jahren geschäftsunfähig (nichtig), 7 bis 17 beschränkt geschäftsfähig (Eltern müssen zustimmen), ab 18 voll geschäftsfähig (§§ 104 bis 106 BGB)."
+        },
+        {
+          "vorne": "Was besagt der Taschengeldparagraph?",
+          "hinten": "Zahlt ein Minderjähriger mit seinem Taschengeld sofort, ist der Kauf von Anfang an wirksam (§ 110 BGB)."
+        },
+        {
+          "vorne": "Welche Formvorschriften musst du kennen?",
+          "hinten": "Grundstückskauf: Notar (§ 311b). Bürgschaft: schriftlich (§ 766). Mietvertrag über 1 Jahr: soll schriftlich sein, sonst unbefristet (§ 550). Verstoß: nichtig (§ 125 BGB)."
+        },
+        {
+          "vorne": "Anfechtung: Gründe, Fristen, Folge",
+          "hinten": "Irrtum: sofort (§§ 119, 121). Täuschung oder Drohung: 1 Jahr (§§ 123, 124). Folge: Das Geschäft ist von Anfang an nichtig (§ 142 BGB)."
+        },
+        {
+          "vorne": "Was verbietet das AGG, und was bekommt, wer diskriminiert wurde?",
+          "hinten": "Benachteiligung wegen Herkunft, Geschlecht, Religion, Behinderung, Alter oder sexueller Identität. Es gibt Schadensersatz und Entschädigung, aber keinen Anspruch auf die Stelle (§ 15 AGG)."
+        },
+        {
+          "vorne": "Wie ist der Arbeitsvertrag zu dokumentieren?",
+          "hinten": "Er gilt auch mündlich. Die wichtigsten Bedingungen muss der Arbeitgeber schriftlich aushändigen (§ 2 NachwG). Sonst droht ein Bußgeld bis 2.000 € (§ 4 NachwG)."
+        },
+        {
+          "vorne": "Befristung: Wann ist sie zulässig?",
+          "hinten": "Mit sachlichem Grund, oder ohne Grund höchstens 2 Jahre mit höchstens drei Verlängerungen. Schriftform nötig. Ist sie ungültig, gilt der Vertrag als unbefristet (§§ 14, 16 TzBfG)."
+        },
+        {
+          "vorne": "Arbeitszeit, Pausen und Ruhezeit",
+          "hinten": "8 Stunden täglich (bis 10 Stunden bei Durchschnitt 8). Pause: über 6 Stunden 30 Minuten, über 9 Stunden 45 Minuten. Nach Feierabend 11 Stunden Ruhe (§§ 3 bis 5 ArbZG)."
+        },
+        {
+          "vorne": "Wie viel Urlaub gibt es mindestens?",
+          "hinten": "24 Werktage (Montag bis Samstag), das sind 20 Tage bei der 5-Tage-Woche. Voller Anspruch nach 6 Monaten Wartezeit, davor 1/12 je vollem Monat (§§ 3 bis 5 BUrlG)."
+        },
+        {
+          "vorne": "Was gilt bei Krankheit?",
+          "hinten": "Lohn bis zu 6 Wochen vom Arbeitgeber, nach 4 Wochen im Betrieb. Sofort krankmelden, Krankschreibung bei mehr als 3 Kalendertagen. Danach Krankengeld (§§ 3, 5 EntgFG, § 44 SGB V)."
+        },
+        {
+          "vorne": "Mutterschutz: Fristen, Verbote und Geld",
+          "hinten": "6 Wochen vor und 8 Wochen nach der Geburt (12 bei Früh- oder Mehrlingsgeburt). Kein Nachtdienst, kein Sonntag, nichts Gefährliches. Kündigungsverbot bis 4 Monate nach der Geburt. Mutterschaftsgeld höchstens 13 € am Tag (§§ 3 bis 20 MuSchG)."
+        },
+        {
+          "vorne": "Kündigung: Form, Fristen, Klage",
+          "hinten": "Schriftlich mit Unterschrift (§ 623 BGB). Normal 4 Wochen zum 15. oder Monatsende, in der Probezeit 2 Wochen (§ 622). Fristlos nur aus wichtigem Grund binnen 2 Wochen (§ 626). Klagefrist 3 Wochen (§ 4 KSchG)."
+        },
+        {
+          "vorne": "Wann gilt der Kündigungsschutz, und welche Gründe gibt es?",
+          "hinten": "Nach mehr als 6 Monaten in Betrieben mit mehr als 10 Arbeitnehmern (§§ 1, 23 KSchG). Gründe: Person (z. B. lange Krankheit), Verhalten (z. B. ständiges Zuspätkommen) oder Betrieb (z. B. Auftragsmangel)."
+        }
+      ],
+      "quiz": [
+        {
+          "frage": "Ab wann ist ein Mensch rechtsfähig, kann also Rechte und Pflichten haben?",
+          "antworten": [
+            "Mit 7 Jahren",
+            "Mit Vollendung der Geburt",
+            "Mit 18 Jahren",
+            "Mit dem Schulabschluss"
+          ],
+          "richtig": 1,
+          "stufe": 1,
+          "erklaerung": "Jeder Mensch ist ab der vollendeten Geburt rechtsfähig, § 1 BGB. Geschäftsfähig wird man erst später."
+        },
+        {
+          "frage": "Ab welchem Alter ist man beschränkt geschäftsfähig?",
+          "antworten": [
+            "Ab 14 Jahren",
+            "Ab 7 Jahren",
+            "Ab 16 Jahren",
+            "Ab 18 Jahren"
+          ],
+          "richtig": 1,
+          "stufe": 1,
+          "erklaerung": "Unter 7 Jahren: geschäftsunfähig. Von 7 bis 17 Jahren: beschränkt geschäftsfähig, §§ 104 bis 106 BGB. Ab 18: voll."
+        },
+        {
+          "frage": "Ein 15-Jähriger kauft sich ein Spiel und bezahlt sofort bar vom Taschengeld. Wie ist der Kauf zu beurteilen?",
+          "antworten": [
+            "Von Anfang an wirksam (Taschengeldparagraph)",
+            "Schwebend unwirksam, die Eltern müssen zustimmen",
+            "Nichtig, weil er noch nicht volljährig ist",
+            "Nur wirksam, wenn der Verkäufer das Alter nicht kannte"
+          ],
+          "richtig": 0,
+          "stufe": 2,
+          "erklaerung": "Wer mit Taschengeld sofort bezahlt, schließt einen von Anfang an gültigen Vertrag, § 110 BGB."
+        },
+        {
+          "frage": "Wie muss ein Grundstückskauf beurkundet werden?",
+          "antworten": [
+            "Schriftlich ohne Notar",
+            "Vom Notar",
+            "Mündlich reicht",
+            "Per E-Mail"
+          ],
+          "richtig": 1,
+          "stufe": 2,
+          "erklaerung": "Ohne notarielle Beurkundung ist der Vertrag nichtig, § 311b Abs. 1 BGB. Er wird erst mit der Grundbucheintragung geheilt."
+        },
+        {
+          "frage": "Wann muss man seine Erklärung wegen eines Irrtums (z. B. vertippt) anfechten?",
+          "antworten": [
+            "Innerhalb eines Jahres",
+            "Sofort, nachdem man den Irrtum bemerkt hat",
+            "Innerhalb von 3 Wochen",
+            "Jederzeit"
+          ],
+          "richtig": 1,
+          "stufe": 2,
+          "erklaerung": "Die Irrtumsanfechtung muss unverzüglich erfolgen, § 121 BGB. Bei Täuschung oder Drohung bleibt ein Jahr Zeit, § 124 BGB."
+        },
+        {
+          "frage": "Ein Bewerber wird im Vorstellungsgespräch gefragt, ob er schwanger sei. Darf er lügen?",
+          "antworten": [
+            "Ja, die Frage ist unzulässig",
+            "Nein, dann kann der Arbeitgeber anfechten",
+            "Nur schriftlich",
+            "Nur wenn er die Stelle unbedingt will"
+          ],
+          "richtig": 0,
+          "stufe": 1,
+          "erklaerung": "Bei unzulässigen Fragen darf man lügen, ohne dass der Arbeitgeber anfechten kann. Bei zulässigen Fragen wäre das anders, § 123 BGB."
+        },
+        {
+          "frage": "Wie lange darf ein Arbeitsvertrag ohne sachlichen Grund höchstens befristet werden?",
+          "antworten": [
+            "1 Jahr",
+            "3 Jahre",
+            "5 Jahre",
+            "2 Jahre"
+          ],
+          "richtig": 3,
+          "stufe": 2,
+          "erklaerung": "Ohne Grund höchstens 2 Jahre, mit höchstens drei Verlängerungen, und die Befristung muss schriftlich sein, § 14 TzBfG."
+        },
+        {
+          "frage": "Ein Arbeitnehmer arbeitet 7 Stunden am Tag. Wie lang muss die Pause mindestens sein?",
+          "antworten": [
+            "30 Minuten",
+            "15 Minuten",
+            "45 Minuten",
+            "60 Minuten"
+          ],
+          "richtig": 0,
+          "stufe": 1,
+          "erklaerung": "Bei mehr als 6 Stunden: 30 Minuten, bei mehr als 9 Stunden: 45 Minuten, § 4 ArbZG."
+        },
+        {
+          "frage": "Mira fängt am 1. September an (5-Tage-Woche, 20 Urlaubstage). Wie viel Urlaub hat sie im ersten Jahr?",
+          "antworten": [
+            "6 Tage",
+            "20 Tage",
+            "5 Tage",
+            "7 Tage"
+          ],
+          "richtig": 3,
+          "stufe": 3,
+          "erklaerung": "Wartezeit von 6 Monaten noch nicht erfüllt: Teilurlaub 1/12 je vollem Monat. 4/12 von 20 Tagen = 6,67, aufgerundet 7 Tage, § 5 BUrlG."
+        },
+        {
+          "frage": "Wie lange zahlt der Arbeitgeber bei Krankheit den Lohn weiter?",
+          "antworten": [
+            "Bis zu 6 Wochen",
+            "Bis zu 4 Wochen",
+            "Bis zu 3 Monate",
+            "Nur 3 Tage"
+          ],
+          "richtig": 0,
+          "stufe": 1,
+          "erklaerung": "Entgeltfortzahlung bis zu 6 Wochen, danach zahlt die Krankenkasse Krankengeld, § 3 EntgFG, § 44 SGB V."
+        },
+        {
+          "frage": "Wie lange nach der Geburt darf eine Frau auf keinen Fall arbeiten (Normalfall)?",
+          "antworten": [
+            "6 Wochen",
+            "12 Wochen",
+            "4 Monate",
+            "8 Wochen"
+          ],
+          "richtig": 3,
+          "stufe": 2,
+          "erklaerung": "8 Wochen nach der Geburt, bei Früh- und Mehrlingsgeburten 12 Wochen, § 3 Abs. 2 MuSchG."
+        },
+        {
+          "frage": "Wer zahlt in den Schutzfristen vor und nach der Geburt?",
+          "antworten": [
+            "Krankenkasse (Mutterschaftsgeld) und Arbeitgeber (Zuschuss)",
+            "Der Arbeitgeber allein",
+            "Die Agentur für Arbeit",
+            "Niemand"
+          ],
+          "richtig": 0,
+          "stufe": 3,
+          "erklaerung": "Die Krankenkasse zahlt höchstens 13 € am Tag, der Arbeitgeber legt bis zum Nettolohn drauf, §§ 19, 20 MuSchG."
+        },
+        {
+          "frage": "Wie muss eine Kündigung erklärt werden?",
+          "antworten": [
+            "Per E-Mail",
+            "Per WhatsApp",
+            "Schriftlich auf Papier mit Unterschrift",
+            "Mündlich"
+          ],
+          "richtig": 2,
+          "stufe": 1,
+          "erklaerung": "Kündigung und Aufhebungsvertrag brauchen die Schriftform mit eigenhändiger Unterschrift, § 623 BGB."
+        },
+        {
+          "frage": "Wie lange hat man Zeit, gegen eine Kündigung zu klagen?",
+          "antworten": [
+            "1 Woche",
+            "4 Wochen",
+            "3 Monate",
+            "3 Wochen ab Erhalt"
+          ],
+          "richtig": 3,
+          "stufe": 2,
+          "erklaerung": "Die Klagefrist beträgt 3 Wochen ab Zugang der Kündigung, § 4 KSchG. Danach gilt die Kündigung meist als wirksam."
+        },
+        {
+          "frage": "Wann gilt der allgemeine Kündigungsschutz des Kündigungsschutzgesetzes?",
+          "antworten": [
+            "Ab dem ersten Tag in jedem Betrieb",
+            "Nach 2 Jahren im Betrieb",
+            "Nach mehr als 6 Monaten im Betrieb mit mehr als 10 Arbeitnehmern",
+            "Nur für Betriebe mit Betriebsrat"
+          ],
+          "richtig": 2,
+          "stufe": 3,
+          "erklaerung": "Voraussetzungen: länger als 6 Monate im Betrieb und mehr als 10 Arbeitnehmer, §§ 1, 23 KSchG."
+        },
+        {
+          "frage": "Wer muss einer Kündigung eines schwerbehinderten Menschen vorher zustimmen?",
+          "antworten": [
+            "Das Arbeitsgericht",
+            "Das Integrationsamt",
+            "Die Krankenkasse",
+            "Der Betriebsrat allein"
+          ],
+          "richtig": 1,
+          "stufe": 1,
+          "erklaerung": "Die Zustimmung des Integrationsamts ist vor der Kündigung nötig, sobald das Arbeitsverhältnis länger als 6 Monate besteht, § 168 SGB IX."
+        }
+      ],
       "raetsel": [],
       "paragrafen": [
         {
