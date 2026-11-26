@@ -1,0 +1,104 @@
+/* ===== Dunkelmodus: Tokens ===== */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --akzent: #818cf8;
+  --text: #f2f2f7;
+  --leise: #a0a0ab;
+  --linie: rgba(255, 255, 255, 0.10);
+  --flaeche: #1c1c1e;
+  --flaeche-2: #2c2c2e;
+  --grund: #0a0a0c;
+  --glas: rgba(28, 28, 30, 0.74);
+  --rand: rgba(255, 255, 255, 0.10);
+  --schatten: 0 1px 2px rgba(0, 0, 0, 0.45), 0 12px 32px rgba(0, 0, 0, 0.38);
+  --gut: #34d399;
+  --schlecht: #fb7185;
+}
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] body { background: var(--grund); color: var(--text); }
+:root[data-theme="dark"] .hintergrund { background: #0a0a0c; }
+:root[data-theme="dark"] .hintergrund i { opacity: 0.20; }
+:root[data-theme="dark"] a { color: var(--akzent); }
+:root[data-theme="dark"] ::placeholder { color: rgba(160, 160, 171, 0.8); }
+:root[data-theme="dark"] input,
+:root[data-theme="dark"] textarea,
+:root[data-theme="dark"] select { background: var(--flaeche-2); color: var(--text); border-color: var(--linie); }
+:root[data-theme="dark"] img:not([src$=".svg"]) { filter: brightness(0.92); }
+
+/* ===== Schalter hell / dunkel / automatisch (Kopfleiste) ===== */
+.thema-knopf {
+  border: 0; background: transparent; color: var(--leise);
+  font-size: 1rem; line-height: 1; padding: 6px 9px; border-radius: 999px;
+  display: inline-flex; align-items: center; gap: 4px; cursor: pointer;
+}
+.thema-knopf:hover { background: rgba(127, 127, 150, 0.16); color: var(--text); }
+.thema-knopf small { font-size: 0.72rem; font-weight: 700; }
+
+/* ===== Header: ruhigeres Glas ===== */
+.leiste { -webkit-backdrop-filter: blur(22px) saturate(1.7); backdrop-filter: blur(22px) saturate(1.7); }
+
+/* ===== Untere Leiste: Liquid Glass (Handy) ===== */
+@media (max-width: 719px) {
+  body { padding-bottom: calc(108px + env(safe-area-inset-bottom, 0px)); }
+  .unten {
+    display: grid; grid-template-columns: repeat(5, minmax(0, 1fr));
+    position: fixed; z-index: 30;
+    left: 14px; right: 14px; bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    padding: 6px; gap: 0; border-radius: 30px; overflow: hidden; isolation: isolate;
+    background: rgba(238, 241, 255, 0.52);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    -webkit-backdrop-filter: blur(22px) saturate(1.9) brightness(1.04);
+    backdrop-filter: blur(22px) saturate(1.9) brightness(1.04);
+    box-shadow: 0 14px 34px rgba(40, 40, 100, 0.28), 0 0 0 0.5px rgba(60, 60, 120, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.95),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.28), inset 0 0 20px rgba(255, 255, 255, 0.20);
+    transition: left 0.45s cubic-bezier(0.3, 1.2, 0.5, 1), right 0.45s cubic-bezier(0.3, 1.2, 0.5, 1),
+      padding 0.35s ease, border-radius 0.35s ease, transform 0.35s ease;
+  }
+  /* Lichtreflex oben */
+  .unten::before {
+    content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.60), rgba(255, 255, 255, 0) 46%);
+    opacity: 0.55;
+  }
+  .unten a { position: relative; z-index: 1; background: transparent; color: var(--leise); transition: font-size 0.3s ease, padding 0.3s ease, color 0.2s; }
+  .unten a span { filter: grayscale(0.2); }
+  .unten a.aktiv { color: var(--text); background: transparent; }
+  .unten:not(.mit-linse) a.aktiv { background: rgba(255, 255, 255, 0.55); }
+  /* Gleitende „Linse“ hinter dem aktiven Eintrag (wird von js/design.js positioniert) */
+  .unten-linse {
+    position: absolute; z-index: 0; top: 5px; bottom: 5px; left: 0; width: 0; border-radius: 25px; pointer-events: none;
+    background: rgba(255, 255, 255, 0.58);
+    -webkit-backdrop-filter: blur(8px) saturate(1.7); backdrop-filter: blur(8px) saturate(1.7);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95), inset 0 -1px 0 rgba(255, 255, 255, 0.35), 0 3px 12px rgba(60, 60, 130, 0.20);
+    transform: translateX(var(--lx, 0px)); width: var(--lw, 0px); opacity: 0;
+    transition: transform 0.5s cubic-bezier(0.3, 1.35, 0.5, 1), width 0.5s cubic-bezier(0.3, 1.35, 0.5, 1), opacity 0.2s;
+  }
+  .unten.mit-linse .unten-linse { opacity: 1; }
+  /* Beim Hinunterscrollen: kompakt, nur Symbole */
+  .unten.klein { left: 38px; right: 38px; padding: 3px 6px; border-radius: 24px; }
+  .unten.klein a { font-size: 0; padding: 7px 0 6px; }
+  .unten.klein a span { font-size: 1.28rem; }
+  .unten.klein .unten-linse { top: 3px; bottom: 3px; border-radius: 20px; }
+  #toast { bottom: calc(112px + env(safe-area-inset-bottom, 0px)); }
+}
+:root[data-theme="dark"] .unten {
+  background: rgba(44, 44, 50, 0.46);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.05), inset 0 0 22px rgba(255, 255, 255, 0.04);
+}
+:root[data-theme="dark"] .unten::before { background: linear-gradient(180deg, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0) 46%); opacity: 0.6; }
+:root[data-theme="dark"] .unten:not(.mit-linse) a.aktiv { background: rgba(255, 255, 255, 0.14); }
+:root[data-theme="dark"] .unten-linse {
+  background: rgba(255, 255, 255, 0.16);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.30), inset 0 -1px 0 rgba(255, 255, 255, 0.06), 0 3px 12px rgba(0, 0, 0, 0.40);
+}
+:root[data-theme="dark"] .unten a span { filter: grayscale(0.2) brightness(1.1); }
+
+/* Ohne Unterstützung für Unschärfe: feste Fläche */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .unten, .unten-linse { background: var(--flaeche) !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .unten, .unten a, .unten-linse { transition: none !important; }
+}
